@@ -6,8 +6,6 @@
 Welcome to Scala IDE's documentation!
 =====================================
 
-*[Luc] this content has only been imported from Assembla and formatted. It still need to be reviewed*
-
 The `Scala IDE`_ for Eclipse is centered around seamless integration with the Eclipse Java tools, providing many of the features Eclipse users have come to expect including:
 
 * Support for mixed Scala/Java projects and any combination of Scala/Java project dependencies. Type driven operations are transparent across Scala and Java files and projects, allowing straightforward references from Scala to Java and vice versa.
