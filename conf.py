@@ -41,7 +41,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = u'Scala IDE'
-copyright = u'2011, Luc Bourlier, Mirco Dotta, Iulian Dragos'
+copyright = u'2011, Miles Sabin, Luc Bourlier, Mirco Dotta, Iulian Dragos'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
