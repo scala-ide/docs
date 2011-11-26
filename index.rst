@@ -6,7 +6,7 @@
 Welcome to Scala IDE's documentation!
 =====================================
 
-The `Scala IDE`_ for Eclipse is centered around seamless integration with the Eclipse Java tools, providing many of the features Eclipse users have come to expect including:
+`Scala IDE`_ provides support for development of Scala applications in the Eclipse platform. Its main target is the support for the `Scala`_ language and the integration with the Eclipse Java tools. It provides many of the features Eclipse users have come to expect including:
 
 * Support for mixed Scala/Java projects and any combination of Scala/Java project dependencies. Type driven operations are transparent across Scala and Java files and projects, allowing straightforward references from Scala to Java and vice versa.
 
@@ -25,7 +25,7 @@ This documentation is the starting point for the installation guide and other in
 Contents:
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
 
    Getting Started <gettingstarted>
    Setup <setup>
@@ -48,5 +48,6 @@ Indices and tables
 * :ref:`search`
 
 .. _Developer Documentation: http://scala-ide-portfolio.assembla.com/wiki/show/scala-ide/Developer_Documentation
+.. _Scala: http://www.scala-lang.org/
 .. _Scala IDE: http://www.scala-ide.org/
 
