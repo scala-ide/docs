@@ -5,7 +5,7 @@ This documentation web site is using `Sphinx`_ to generate html pages from `reSt
 
 To setup Sphinx locally, use ``easy_instal``:
 
-.. code-block:: bash
+::
 
     $ sudo easy_install sphinx
     $ sudo easy_install pygments # required on some systems
