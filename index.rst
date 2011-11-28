@@ -32,8 +32,7 @@ Contents:
    Features <features>
    Known Issues <knownissues>
    FAQ <faq>
-   Mailing List <usermailinglist>
-   Bug Report <bugreport>
+   Community <community>
    Using Unit Testing Frameworks <testingframeworks>
    License <license>
    
