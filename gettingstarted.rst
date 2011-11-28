@@ -36,6 +36,19 @@ The version of Scala used inside Scala IDE cannot be chosen per project. So if y
 
 __ http://download.scala-ide.org
 
+Finishing installation
+......................
+
+Copy the URL as location and hit ``OK`` to validate.
+
+Select at least ``JDT Weaving`` and ``Scala IDE for Eclipse`` from the list of available plug-ins.
+
+Go through the following screen to validate the list of plug-ins to install, the :doc:`license` and start the installation.
+
+After having restarted Eclipse, Scala IDE is installed.
+
+For a more fine-tuned setup, check the :doc:`Advanced Setup <advancedsetup>` page.
+
 Using Scala IDE with an existing project
 ----------------------------------------
 

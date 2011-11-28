@@ -28,15 +28,18 @@ Contents:
    :maxdepth: 1
 
    Getting Started <gettingstarted>
-   Setup <setup>
+   Advanced Setup <advancedsetup>
    Features <features>
    Known Issues <knownissues>
    FAQ <faq>
-   Mailing List <mailinglist>
+   Mailing List <usermailinglist>
    Bug Report <bugreport>
    Using Unit Testing Frameworks <testingframeworks>
    License <license>
    
+.. topic:: Contribute!
+
+   This documentation could use your help to grow and be refined. It is managed as a GitHub project at http://github.com/scala-ide/scala-ide-docs. Use the different available :doc:`tools <community>` to communicate with development team.
 
 Indices and tables
 ==================
