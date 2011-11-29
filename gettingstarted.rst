@@ -8,9 +8,11 @@ Requirements
 
 * Eclipse, including the JDT. Either the "Classic" or "Eclipse for Java Developers" is sufficient.
 
-  * Scala IDE is officially supporting version 3.6.2.
+  * Scala IDE is officially supporting Eclipse 3.6.2.
 
-  * versior 3.7.1 is reported to work fine.
+  * Scala IDE can be installed on Eclipse 3.7.1, but not all features are working perfectly. For example, discovery of unit tests is not working (ticket `1000782`__).
+
+__ https://www.assembla.com/spaces/scala-ide/tickets/1000782
 
 Installation
 ------------
@@ -26,7 +28,7 @@ Choosing what version to install
 
 `download.scala-ide.org`__ provides the URLs of all available update sites. The release ones are in the first section. Scala IDE is linked to specific version of Scala, so you have to decide which one you are going to use:
 
-* **release-29** provides support for projects using Scala 2.9.x (2.9.0-1 or 2.9.1). *This is the current version of Scala, choose it if you are unsure*.
+* **release-29** provides support for projects using Scala 2.9.x (2.9.0-1 or 2.9.1). *This is the current version of Scala. Pick this one if you are unsure*.
 
 * **release-28** provides support for projects using Scala 2.8.x (2.8.1 or 2.8.2).
 
