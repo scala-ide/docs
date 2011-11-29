@@ -32,7 +32,7 @@ As is the following on Oracle 64-bits JVM:
 
    -XX:+UseCompressedOops
 
-Required preferences
+Required Preferences
 --------------------
 
 * **JDT Weaving**
@@ -43,7 +43,7 @@ Required preferences
 
   .. image:: /images/advancedsetup-jdtweaving-01.png
 
-Optional preferences
+Optional Preferences
 --------------------
 
 * **Heap Status**
@@ -51,6 +51,33 @@ Optional preferences
   When the memory usage nears the limit, the Garbage Collector activity increases (when the compiler runs, ...) and system slows down. It is good to keep a eye on the heap status. It is possible by enabling ``Show heap status`` in the ``General`` section.
 
   .. image:: /images/advancedsetup-heapstatus-01.png
+
+Performance
+-----------
+
+Garbage Collection activity and swap can be really bad for performance. It can trigger Eclipse freezes and general system slow down. 
+
+Monitoring what is happening is the best option to keep a healthy system:
+
+* to monitor CPU and swap, use your native system monitor (some of the other system monitors are big resource users themseflves).
+* to monitor Garbage Collector activity, use *visualvm* on the eclipse instance. It is a profiling tool provided with jdk 1.6.x. It is possible also to get a feel of the memory usage with `the heap status bar <Optional Preferences>`_ in Eclipse.
+
+Depending of the problem, the memory allocated to the JVM can be increased, or some of the other application closed (like the web browser, or some flash application, ...).
+
+Additional Links
+----------------
+
+* `Optimizing Eclipse performances`__ from `Normation`__.
+
+* `What are the best JVM settings for Eclipse?`__ from `Stack Overflow`__ forum
+
+* `My Eclipse Setup`__ from davidB
+
+__ http://blog.normation.com/2010/05/24/optimizing-eclipse-performances/
+__ http://blog.normation.com/
+__ http://stackoverflow.com/questions/142357/what-are-the-best-jvm-settings-for-eclipse
+__ http://blog.normation.com/
+__ http://dwayneb.free.fr/posts/my_eclipse_setup/
 
 .. rubric:: Footnotes
 
