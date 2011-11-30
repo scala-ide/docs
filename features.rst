@@ -1,0 +1,11 @@
+Features
+========
+
+The aim of Scala IDE is to provide a support for Scala development equivalent to the support provided by Eclipse for Java development.
+
+Here is a list of selected features provided by Scala IDE:
+
+.. toctree::
+   :maxdepth: 1
+
+   features/showinferredsemicolons
