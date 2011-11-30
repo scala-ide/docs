@@ -25,16 +25,16 @@ This documentation is the starting point for the installation guide and other in
 Contents:
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
 
-   Getting Started <gettingstarted>
-   Advanced Setup <advancedsetup>
-   Features <features>
-   Known Issues <knownissues>
-   FAQ <faq>
-   Community <community>
-   Using Unit Testing Frameworks <testingframeworks>
-   License <license>
+   gettingstarted
+   advancedsetup
+   features
+   knownissues
+   faq
+   community
+   testingframeworks
+   license
    
 .. topic:: Contribute!
 
