@@ -12,6 +12,14 @@ Requirements
 
   * Scala IDE can be installed on Eclipse 3.7.1, but not all features are working perfectly. For example, discovery of unit tests is not working (ticket `1000782`__).
 
+.. caution:: plug-in interferences
+
+   Scala IDE, like a few other Eclipse add-ons, uses runtime weaving to be able to communicate with Eclipse's JDT. This can create problems when installing Scala IDE along one of those other plug-ins. It can work without noticeable problems with some (like AJDT), or with some more visible unexpected behavior with others (like Spring Tool Suite).
+
+   Our recommdation is to avoid to setup such combinations. But if you want to see how it works for you, make sure to install Scala IDE **AFTER** the other add-ons.
+
+*[luc] caution needs to be more visible. yellow background?*
+
 __ https://www.assembla.com/spaces/scala-ide/tickets/1000782
 
 Installation
@@ -43,7 +51,7 @@ Finishing installation
 
 Copy the URL as location and hit ``OK`` to validate.
 
-Select at least ``JDT Weaving`` and ``Scala IDE for Eclipse`` from the list of available plug-ins.
+Select ``Scala IDE for Eclipse`` from the list of available features.
 
 Go through the following screen to validate the list of plug-ins to install, the :doc:`license` and start the installation.
 
