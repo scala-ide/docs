@@ -8,4 +8,7 @@ Here is a list of selected features provided by Scala IDE:
 .. toctree::
    :maxdepth: 1
 
+   features/refactoring
+   features/formatting
+   features/occurences
    features/showinferredsemicolons
