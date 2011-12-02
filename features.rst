@@ -6,7 +6,7 @@ The aim of Scala IDE is to provide a support for Scala development equivalent to
 Here is a list of selected features provided by Scala IDE:
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
 
    features/typingviewing
    features/navigating

@@ -1,27 +1,48 @@
 Typing and Viewing
 ==================
 
+As You Type Error Reporting
+---------------------------
+
+The Scala code is check as it is entered. It allows to see small or more complex compilation error as the code is type. No more endless cycle *code → code → code → compile → error reported → fix error → compile → error reported → fix error →...*.
+
+.. image:: /images/feature-typing-error-01.png
+
 Code Completion
 ---------------
 
-*[luc] todo. in scala, in java*
+Scala IDE provides full code completion support, returning the entities available in the current context.
+
+In **Scala source files**, code completion returns the valid Scala and Java proposals.
+
+.. image:: /images/feature-code-completion-01.png
+
+The Scala elements compatible with Java are provided in **Java source files**.
+
+.. image:: /images/feature-code-completion-02.png
 
 Code Templates
 --------------
 
-*[luc] todo*
+Code templates are available in the completion proposals in code assist. They provide shorcuts for boilerplate code like main method definition and asInstanceOf invocation.
+
+.. image:: /images/feature-template-01.png
+
+The list of available templates can be viewed and modified in the ``Scala → Templates`` preference page.
 
 Mark Occurences
 ---------------
 
-As in the Java tooling, Mark Occurences highlight within a file where a type, variable or method is referenced.
+As in the Java tooling, Mark Occurences highlights within a file where a type, variable or method is referenced.
 
 .. image:: /images/feature-occurences-01.png
 
 Quick Fix Imports
 -----------------
 
-*[luc] todo*
+`Quick Fix`_ can be used to easily add a required import statement.
+
+.. image:: /images/feature-quickfix-import-01.png
 
 Show Inferred Semicolons
 ------------------------
@@ -30,20 +51,24 @@ Use the |icon| toggle button in the to enable *infer semicolons*. It will displa
 
 .. |icon| image:: /images/show_inferred_semicolons.png
 
-Without:
+Without: |without| With: |with|
 
-.. image:: /images/feature-inferredsemicolons-01.png
-
-With:
-
-.. image:: /images/feature-inferredsemicolons-02.png
+.. |without| image:: /images/feature-inferredsemicolons-01.png
+.. |with| image:: /images/feature-inferredsemicolons-02.png
 
 Structured Selection
 --------------------
 
-*[luc] todo. Does it works on osX?*
+Using ``alt+shift+up`` and ``alt+shift+down`` selects larger or smaller portion of the AST. It allows for quick selection of sub-expressions or statements.
+
+.. image:: /images/feature-structured-selection-01.png
 
 Syntax Highlighting
 -------------------
 
-*[luc] todo. scala, xml, scala in xml*
+The Scala editor has full syntax highlighting support, including comments, control structures and embedded XML.
+
+.. image:: /images/feature-syntax-highlighting-01.png
+
+
+.. _Quick Fix: http://wiki.eclipse.org/FAQ_What_is_a_Quick_Fix%3F
