@@ -12,6 +12,8 @@ To setup Sphinx locally, use ``easy_instal``:
 
 Then simply use ``make html`` from the repository root to generate the files.
 
+The pages are generated in ``_build/html/``
+
 .. _reStructuredText: http://docutils.sourceforge.net/rst.html
 .. _Sphinx: http://sphinx.pocoo.org/
 
