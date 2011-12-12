@@ -12,3 +12,4 @@ Here is a list of selected features provided by Scala IDE:
    features/navigating
    features/refactoring
    features/formatting
+   features/scalainterpreter
