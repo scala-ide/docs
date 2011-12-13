@@ -1,27 +1,31 @@
 Scala Interpreter
 =================
 
-Scala IDE integrate the Scala REPL. It is set in a view called ``Scala Interpreter``. One REPL can be started by project. All artefacts defined or referenced in the projects are available inside the interpreter.
+Scala IDE integrate the Scala REPL. It is set in a view called ``Scala Interpreter``. 
+
+Each view instance is associated to a project, andn all artefacts definde or refenced in the project are available to the interpreter.
 
 Starting the interpreter
 ------------------------
 
 There are multiple ways to start it:
 
-* directly, using the ``Window → Show View → Scala Interpreter`` from the Scala perspective, or ``Window → Show View → Other... → Scala → Scala Interpreter`` from anywhere. The view will ask which project it needs to be linked too.
+* Opening the view. The view can be opened with ``Window → Show View → Scala Interpreter`` from the Scala perspective, or ``Window → Show View → Other... → Scala → Scala Interpreter`` from anywhere. This will display the list of available projects. The interpreter is initialised and configured to use the selected one.
 
-* by selecting some Scala code in an editor, and using the ``Run Selection in Scala Interpreter`` command. The command can be invoked using the |runSelection| button in the toolbar, or the ``Ctrl+Shitf+x`` or ``Cmd+Shift+x`` key shortcut. The view is automatically configured to use the current project.
-
-.. |runSelection| image:: /images/run_interpreter.gif
+* Executing some code. The |runSelection| ``Run Selection in Scala Interpreter`` command triggers the creation of a view for the current project if needed. The code currently selected in the editor is then run in the interpreter. 
 
 Using the interpreter
 ---------------------
 
-Scala code can be entered directly in the interpreter view.
+Scala code can be entered directly in the interpreter view, in the ``Evaluate`` field.
+
+The previously entered commands are kept in a history. They can be browsed using the ``Up`` and ``Down`` arrow keys.
 
 .. image:: /images/feature-interpreter-01.png
 
-Existing code can be selected and run in the interpreter using the ``Run Selection in Scala Interpreter`` command.
+Existing code can be selected in the Scala Editor, and run in the interpreter using the |runSelection| ``Run Selection in Scala Interpreter`` command.
+
+The command can also be invoked using the ``Ctrl+Shitf+x`` or ``Cmd+Shift+x`` key shortcut.
 
 .. image:: /images/feature-interpreter-02.png
 
@@ -43,4 +47,6 @@ The toolbar contains the following five buttons:
 .. |terminateReplay| image:: /images/term_restart.gif
 .. |clear| image:: /images/clear_co.gif
 .. |autoreplay| image:: /images/refresh_interpreter.gif
+
+.. |runSelection| image:: /images/run_interpreter.gif
 
