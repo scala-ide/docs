@@ -30,7 +30,6 @@ Contents:
    gettingstarted
    advancedsetup
    features
-   knownissues
    faq
    community
    testingframeworks
@@ -52,4 +51,9 @@ Indices and tables
 .. _Developer Documentation: http://scala-ide-portfolio.assembla.com/wiki/show/scala-ide/Developer_Documentation
 .. _Scala: http://www.scala-lang.org/
 .. _Scala IDE: http://www.scala-ide.org/
+
+.. toctree::
+   :hidden:
+
+   README
 

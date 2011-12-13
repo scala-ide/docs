@@ -1,5 +1,11 @@
-Known Issues
-============
+Frequently Asked Questions
+==========================
+
+Scala Interpreter
+-----------------
+
+Know Issues
+-----------
 
 .. topic:: Red screen of death (red squigglies everywhere)
 
