@@ -41,7 +41,7 @@ Required Preferences
 
   It is set in the ``JDT Weaving`` section of the Eclipse preferences [#preferences]_. It should say *'JDT Weaving is currently ENABLED'*. If it is not the case, use the ``Click to Enable`` button to enable it.
 
-  .. image:: /images/advancedsetup-jdtweaving-01.png
+  .. image:: images/advancedsetup-jdtweaving-01.png
 
 Optional Preferences
 --------------------
@@ -50,7 +50,7 @@ Optional Preferences
 
   When the memory usage nears the limit, the Garbage Collector activity increases (when the compiler runs, ...) and system slows down. It is good to keep a eye on the heap status. It is possible by enabling ``Show heap status`` in the ``General`` section.
 
-  .. image:: /images/advancedsetup-heapstatus-01.png
+  .. image:: images/advancedsetup-heapstatus-01.png
 
 Performance
 -----------

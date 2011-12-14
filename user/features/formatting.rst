@@ -5,11 +5,11 @@ The Scala formatter `scalariform`_ is integrated in Scala IDE. It allows for a g
 
 Before:
 
-.. image:: /images/feature-formatting-01.png
+.. image:: ../images/feature-formatting-01.png
 
 After:
 
-.. image:: /images/feature-formatting-02.png
+.. image:: ../images/feature-formatting-02.png
 
 Scalariform options can be modified in the ``Scala → Formatter`` preference page.
 
