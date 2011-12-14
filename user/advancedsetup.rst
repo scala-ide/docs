@@ -6,7 +6,7 @@ This page contains information to help you configure Eclipse and Scala IDE, to i
 Eclipse Configuration
 ---------------------
 
-The default Eclipse heap configuration is often inadequate for the Scala IDE. It is strongly recommended to edit the ``eclipse/eclipse.ini`` (``eclipse/Eclipse.app/Contents/MacOS/eclipse.ini`` on Mac osX) file and add the following lines to increase various heap limits and VM options:
+The default Eclipse heap configuration is often inadequate for the Scala IDE. It is strongly recommended to edit the ``eclipse/eclipse.ini`` (``eclipse/Eclipse.app/Contents/MacOS/eclipse.ini`` on Mac osX) file and add the following lines to increase various heap limits and virtual machine options:
 
 .. code-block:: bash
 
@@ -37,7 +37,7 @@ Required Preferences
 
 * **JDT Weaving**
 
-  ScalaIDE uses AOP to tweak the Eclipse JDT, so JDT weaving has to be enable. Otherwise, Scala files would be managed as Java files.
+  Scala IDE uses AOP to tweak the Eclipse JDT, so JDT weaving has to be enable. Otherwise, Scala files would be managed as Java files.
 
   It is set in the ``JDT Weaving`` section of the Eclipse preferences [#preferences]_. It should say *'JDT Weaving is currently ENABLED'*. If it is not the case, use the ``Click to Enable`` button to enable it.
 
@@ -59,7 +59,7 @@ Garbage Collection activity and swap can be really bad for performance. It can t
 
 Monitoring what is happening is the best option to keep a healthy system:
 
-* to monitor CPU and swap, use your native system monitor (some of the other system monitors are big resource users themseflves).
+* to monitor CPU and swap, use your native system monitor (some of the other system monitors are big resource users themselves).
 * to monitor Garbage Collector activity, use *visualvm* on the eclipse instance. It is a profiling tool provided with jdk 1.6.x. It is possible also to get a feel of the memory usage with `the heap status bar <Optional Preferences>`_ in Eclipse.
 
 Depending of the problem, the memory allocated to the JVM can be increased, or some of the other application closed (like the web browser, or some flash application, ...).

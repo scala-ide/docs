@@ -20,4 +20,4 @@ It is activated by holding the ``Ctrl`` or the ``Cmd`` key, and hovering on vari
 Open declaration
 ----------------
 
-In a similare way to hyperlinking, ``F3`` can be used to the declaration of the element currently under the carret.
+In a similar way to hyperlinking, ``F3`` can be used to the declaration of the element currently under the caret.

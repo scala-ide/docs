@@ -119,7 +119,7 @@ Setting a few preferences in Eclipse will make everything easier to use.
 *   If you don't have the Web Development Tools for Eclipse installed, Eclipse opens ``.html`` files in a web browser. Configure it to use the ``Scala Editor`` instead.
 
     .. image:: images/play20-scalaide20-14.png
-       :alt: html file in text editor
+       :alt: HTML file in text editor
 
 Importing the Play web application into Scala IDE
 -------------------------------------------------
@@ -195,7 +195,7 @@ Now that everything is setup, we can change the content. Let's add a way to have
 Going further
 -------------
 
-You now have all you need to create great web applications with Play 2.0 and scala.
+You now have all you need to create great web applications with Play 2.0 and Scala.
 
 For more information about Play 2.0, check out the `Play 2.0 wiki`_.
 

@@ -8,7 +8,7 @@ Scala IDE is using 2 mailing lists host on Google Groups:
 
 * `scala-ide-user`_ is the mailing list for questions and discussions relating to the installation and use of Scala IDE.
 
-* `scala-ide-dev`_ is the mailing list used by the development team and the commiters to discuss current and future work on Scala IDE.
+* `scala-ide-dev`_ is the mailing list used by the development team and the committers to discuss current and future work on Scala IDE.
 
 When posting a message, please remember the suggestions from `How To Ask Questions The Smart Way`__. It helps you getting the best answer and us staying sane.
 

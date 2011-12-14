@@ -14,9 +14,9 @@ Welcome to Scala IDE's documentation!
 
 * Project and source navigation including Scala support in the Package explorer view with embedded outline, outline view, quick outline, open type, open type hierarchy.
 
-* Incremental compilation, application launching with integrated debugger, hyperlinking from stacktraces to Scala source, interactive console.
+* Incremental compilation, application launching with integrated debugger, hyperlinking from stack traces to Scala source, interactive console.
 
-* Support for Eclipse plugin and OSGi development including hyperlinking to Scala source from plugin.xml and manifest files.
+* Support for Eclipse plug-in and OSGi development including hyperlinking to Scala source from plugin.xml and manifest files.
 
 The Scala IDE is released under a :doc:`BSD-like license <license>` and community involvement in its development is strongly encouraged. See the `Developer Documentation`_ on how to take part.
 

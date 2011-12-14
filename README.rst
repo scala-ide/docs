@@ -1,9 +1,9 @@
 Documentation for Scala IDE
 ---------------------------
 
-This documentation web site is using `Sphinx`_ to generate html pages from `reStructuredText`_ files.
+This documentation web site is using `Sphinx`_ to generate HTML pages from `reStructuredText`_ files.
 
-To setup Sphinx locally, use ``easy_instal``:
+To setup Sphinx locally, use ``easy_install``:
 
 ::
 

@@ -3,14 +3,14 @@ Scala Interpreter
 
 Scala IDE integrate the Scala REPL. It is set in a view called ``Scala Interpreter``. 
 
-Each view instance is associated to a project, andn all artefacts definde or refenced in the project are available to the interpreter.
+Each view instance is associated to a project, and all artifacts defined or referenced in the project are available to the interpreter.
 
 Starting the interpreter
 ------------------------
 
 There are multiple ways to start it:
 
-* Opening the view. The view can be opened with ``Window → Show View → Scala Interpreter`` from the Scala perspective, or ``Window → Show View → Other... → Scala → Scala Interpreter`` from anywhere. This will display the list of available projects. The interpreter is initialised and configured to use the selected one.
+* Opening the view. The view can be opened with ``Window → Show View → Scala Interpreter`` from the Scala perspective, or ``Window → Show View → Other... → Scala → Scala Interpreter`` from anywhere. This will display the list of available projects. The interpreter is initialized and configured to use the selected one.
 
 * Executing some code. The |runSelection| ``Run Selection in Scala Interpreter`` command triggers the creation of a view for the current project if needed. The code currently selected in the editor is then run in the interpreter. 
 
@@ -41,11 +41,11 @@ Toolbar
 The toolbar contains the following five buttons:
 
 ================= ================================= ================================================================================================
-|replayAll|       Replay All Comands                Execute again all commands from the current session.
+|replayAll|       Replay All Commands                Execute again all commands from the current session.
 |terminate|       Terminate                         Stop the interpreter.
 |terminateReplay| Terminate and Replay              Reset the interpreter, and execute again all commands from the current session.
 |clear|           Clear Output                      Clear the view, but keeps the current session state.
-|autoreplay|      Replay History on Project Rebuild If enable, the commands from the current session are executed everytime the project is rebuilt.
+|autoreplay|      Replay History on Project Rebuild If enable, the commands from the current session are executed every time the project is rebuilt.
 ================= ================================= ================================================================================================
 
 .. |replayAll| image:: ../images/restart_co.gif

@@ -24,16 +24,16 @@ The Scala elements compatible with Java are provided in **Java source files**.
 Code Templates
 --------------
 
-Code templates are available in the completion proposals in code assist. They provide shorcuts for boilerplate code like main method definition and asInstanceOf invocation.
+Code templates are available in the completion proposals in code assist. They provide shortcuts for boilerplate code like main method definition and asInstanceOf invocation.
 
 .. image:: ../images/feature-template-01.png
 
 The list of available templates can be viewed and modified in the ``Scala → Templates`` preference page.
 
-Mark Occurences
+Mark Occurrences
 ---------------
 
-As in the Java tooling, Mark Occurences highlights within a file where a type, variable or method is referenced.
+As in the Java tooling, Mark Occurrences highlights within a file where a type, variable or method is referenced.
 
 .. image:: ../images/feature-occurences-01.png
 

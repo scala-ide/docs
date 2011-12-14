@@ -1,7 +1,7 @@
 Formatting
 ==========
 
-The Scala formatter `scalariform`_ is integrated in Scala IDE. It allows for a good formatting of both Scala code and XML litterals.
+The Scala formatter `scalariform`_ is integrated in Scala IDE. It allows for a good formatting of both Scala code and XML literals.
 
 Before:
 
