@@ -30,6 +30,7 @@ Contents:
    gettingstarted
    advancedsetup
    features
+   tutorials/index
    faq
    community
    testingframeworks
