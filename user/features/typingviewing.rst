@@ -31,7 +31,7 @@ Code templates are available in the completion proposals in code assist. They pr
 The list of available templates can be viewed and modified in the ``Scala → Templates`` preference page.
 
 Mark Occurrences
----------------
+----------------
 
 As in the Java tooling, Mark Occurrences highlights within a file where a type, variable or method is referenced.
 
