@@ -35,12 +35,29 @@ can be replaced with something like (for an 8 megabyte stack, 700MB initial heap
    -Xms700m
    -Xmx2048m
 
-I am using m2eclipse and Scala IDE complains about 'no scala library...' or 'More than one scala library...'
-............................................................................................................
+Scala IDE complains about 'no scala library...' or 'More than one scala library...'
+...................................................................................
 
-In Scala IDE 2.0.0, a classpath validator has been added to check that the Scala library has been correctly setup. For projects imported using m2eclipse, it can report an error because the Scala library is visible more than once in the build path. The `m2eclipse-scala`_ project was created to, among other things, fix these classpath problems.
+In Scala IDE 2.0.0, a classpath validator has been added to check that the Scala library has been correctly setup. It is checking two points: that the project build path contains only one Scala libraries, and that its version is compatible with the installed version of Scala IDE.
+
+Not using m2eclipse
+___________________
+
+It needs to be fixed manually.
+
+* If the error is 'no scala library...', one Scala library needs to be added to the build path. The simplest thing is to add the Scala library container: right-click on the project in the Package Explorer view, then in the context menu select ``Build Path → Add Libraries...``, and add the ``Scala Library``.
+
+
+* If the error is 'more than one scala library...', the number of Scala libraries needs to limited to one in the build path. If possible, make it being the Scala library container provided by Scala IDE.
+
+Using m2eclipse
+_______________
+
+With projects imported using m2eclipse, the classpath validator can report an error because the Scala library is visible more than once in the build path. The `m2eclipse-scala`_ project was created to, among other things, fix these classpath problems.
 
 Use this `update site`__ to get the latest version.
+
+After installation, re-importing your projects should get them configured correctly.
 
 __ http://alchim31.free.fr/m2e-scala/update-site/
 
