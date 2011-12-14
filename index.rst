@@ -50,4 +50,5 @@ Indices and tables
    :hidden:
 
    README
+   contribute
 
