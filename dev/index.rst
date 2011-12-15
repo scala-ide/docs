@@ -10,3 +10,4 @@ Contents:
    :maxdepth: 2
    
    setup/setup
+   architecture/architecture

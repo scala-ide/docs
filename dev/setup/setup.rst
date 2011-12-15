@@ -1,7 +1,8 @@
 Setup Eclipse for Scala IDE development
 =======================================
 
-In this page you will learn everything you need to know to setup the Scala IDE project in Eclipse.
+In this page you will learn everything you need to know to setup the Scala IDE project in Eclipse. 
+After this reading you will be all set and ready to start hacking the Scala IDE sources!
 
 Requirements
 ------------
@@ -26,7 +27,7 @@ to use |Eclipse Helios (TM)|.
 
 Since the Scala IDE sources are mostly written in Scala (again, not really a surprising fact), you 
 should install the Scala IDE plugin for Eclipse. Developers are strongly encouraged to use a nighlty 
-build, as their feedback is vital to the project (catching errors early is always a good thing). 
+build, as your feedback is vital to the project (catching errors early is the road to awesomness). 
 We suggest you to use the `Scala IDE 2.1 nightly for Scala 2.9 <FIXME: Add link!>`.
 
 You will also need a terminal to run some script. If you are on Windows, we suggest you to 
@@ -167,9 +168,10 @@ Additional information
 ``org.scala-ide.sdt.aspects`` project
 .....................................
 
-The Scala IDE uses AspectJ to weave in the JDT internals. If you want to work on JDT integratation 
-within the Scala IDE, then it is a good idea to import ``org.scala-ide.sdt.aspects`` project in your 
-Eclipse workspace and also install the `AspectJ Eclipse plugin <http://www.eclipse.org/ajdt>`_.
+The Scala IDE uses AspectJ to weave into Eclipse and hook in to JDT internals. If you want to work 
+on JDT integratation within the Scala IDE, then it is a good idea to import 
+``org.scala-ide.sdt.aspects`` project in your Eclipse workspace and also install the `AspectJ 
+Eclipse plugin <http://www.eclipse.org/ajdt>`_.
 
 
 Using JRebel
