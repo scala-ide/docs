@@ -10,7 +10,7 @@ Welcome to Scala IDE's documentation!
 
 * Support for mixed Scala/Java projects and any combination of Scala/Java project dependencies. Type driven operations are transparent across Scala and Java files and projects, allowing straightforward references from Scala to Java and vice versa.
 
-* A Scala editor with syntax highlighting, inferred type and scaladoc hovers, hyperlinking to definitions, code completion, error and warning markers, indentation, brace matching.
+* A Scala editor with syntax highlighting, inferred type,  hyperlinking to definitions, code completion, error and warning markers, indentation, brace matching.
 
 * Project and source navigation including Scala support in the Package explorer view with embedded outline, outline view, quick outline, open type, open type hierarchy.
 
@@ -48,4 +48,5 @@ Indices and tables
    :hidden:
 
    README
+   sources/README
 
