@@ -11,3 +11,4 @@ Contents:
    
    setup/setup
    architecture/architecture
+   testing/testing
