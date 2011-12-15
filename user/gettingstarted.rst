@@ -77,7 +77,11 @@ __ https://github.com/musk/SbtEclipsify/tree/0.8.0
 Start from an existing maven project
 ....................................
 
-(please contribute)
+`maven`_ support on the Eclipse platform is provided by the `m2eclipse`_ plug-in. Because of some specificities of Scala, `m2eclipse-scala`_ has been created as an extension to m2eclipse to provide better Scala support.
+
+To install the latest version of m2eclipse-scala, use the update site at this location: http://alchim31.free.fr/m2e-scala/update-site/.
+
+After installation, maven projects can be imported using ``File → Import → Maven → Existing Maven Projects``.
 
 Troubleshooting
 ---------------
@@ -86,5 +90,8 @@ Check the :doc:`Known Issues <faq>` page.
 
 
 .. _eclipsify: https://github.com/musk/SbtEclipsify/tree/0.8.0
+.. _m2eclipse: http://www.eclipse.org/m2e/
+.. _m2eclipse-scala: https://github.com/sonatype/m2eclipse-scala
+.. _maven: http://maven.apache.org/
 .. _sbt: http://www.scala-sbt.org/
 .. _sbteclipse: https://github.com/typesafehub/sbteclipse
