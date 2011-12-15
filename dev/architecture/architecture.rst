@@ -1,5 +1,5 @@
-Scala IDE Architecture
-======================
+Architecture
+============
 
 In this page you will learn about the Scala IDE's architecture. First, an overview of the 
 different existing modules is provided. Then, a few specific aspects of the Scala IDE's architecture 

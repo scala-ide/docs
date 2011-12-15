@@ -10,6 +10,7 @@ Contents:
    :maxdepth: 2
    
    setup/setup
-   architecture/architecture
+   building/building
    testing/testing
+   architecture/architecture
    appendix/appendix

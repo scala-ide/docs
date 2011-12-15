@@ -1,5 +1,5 @@
-Setup Eclipse for Scala IDE development
-=======================================
+Setup
+=====
 
 In this page you will learn everything you need to know to setup the Scala IDE project in Eclipse. 
 After this reading you will be all set and ready to start hacking the Scala IDE sources!
@@ -37,8 +37,8 @@ bash scripts, or else you have the time and motivation to look inside the script
 in Windows batch files (if you do so, send us a pull request, and we will include them in the project).
 
 
-Fork the Scala IDE sources 
---------------------------
+Fork the project
+----------------
 
 The first thing you should do is forking the `Scala IDE Git repository 
 <http://github.com/scala-ide/scala-ide>`_. If you are new to GitHub, `read here to learn how to fork 
@@ -56,8 +56,8 @@ Now, fire up Eclipse and import the Scala IDE project. In a few moment you will 
 hacking on the Scala IDE!
 
 
-Import the Scala IDE project into Eclipse
------------------------------------------
+Import the projects into Eclipse
+--------------------------------
 
 The Scala IDE project already contains the metadata files needed by Eclipse to setup the project. 
 To import the Scala IDE in your workspace simply click on File > Import. The Eclipse Import dialog 

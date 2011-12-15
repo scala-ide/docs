@@ -1,4 +1,4 @@
-Testing the Scala IDE
+Regression Test Suite
 =====================
 
 The Scala IDE relies for most of its functionality on two pillars:
