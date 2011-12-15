@@ -1,7 +1,7 @@
-What to Work on
+What to work on
 ===============
 
-You probably already know exactly what you’re interested in working on! Whatever you decide to work 
+You probably already know exactly what you're interested in working on! Whatever you decide to work 
 on, please post a message on the `scala-ide-dev <http://groups.google.com/group/scala-ide-dev>`_ 
 list to see if anyone else is working on anything related and collaborate if possible.
 

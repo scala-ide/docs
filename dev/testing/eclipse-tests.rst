@@ -1,5 +1,5 @@
-Testing Scala IDE's Eclipse integration
-=======================================
+Testing Eclipse integration
+===========================
 
 All tests are grouped under the ``org.scala-ide.sdt.core.tests`` project, following standard 
 practice for Eclipse plugin tests (in OSGi terms, this module is a ‘bundle fragment’ of 

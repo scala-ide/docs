@@ -24,8 +24,8 @@ This tutorial will show you how to set up the Scala IDE in Eclipse so you can us
   + Project -> Properties.
   + Java Build Path
   + Libraries
-  + Add Jars, lib/*.jar
-  + Add Jars again, lib/ant/*.jar
+  + Add Jars, lib/\*.jar
+  + Add Jars again, lib/ant/\*.jar
 
 * Set the correct properties for the source code:
 
