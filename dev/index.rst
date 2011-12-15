@@ -12,3 +12,4 @@ Contents:
    setup/setup
    architecture/architecture
    testing/testing
+   appendix/appendix
