@@ -17,4 +17,4 @@ Contents:
    testingframeworks
    /license
    
-.. include:: /contribute.rst
+.. include:: /contribute.rst.inc

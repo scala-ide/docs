@@ -44,9 +44,9 @@ This action can be configure in the ``Scala → Organize Import`` preference pag
 Renaming
 --------
 
-The `Rename`_ action alllows to change any name, and update its reference.
+The `Rename`_ action allows to change any name, and update its reference.
 
-The action is performed in inline mode if the name as only a local scope.
+The action is performed in in-line mode if the name as only a local scope.
 
 .. image:: ../images/feature-refactoring-rename-01.png
 

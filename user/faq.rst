@@ -12,7 +12,7 @@ Right click on the project in the Package Explorer view, and in the context menu
 I am running out of stack space in Eclipse.  How do I increase the stack size?
 ..............................................................................
 
-If you are starting Eclipse from the command line, you can supply vm args, including stack size, like this:
+If you are starting Eclipse from the command line, you can supply virtual machine arguments, including stack size, like this:
 
 .. code-block:: bash
 
@@ -35,7 +35,7 @@ can be replaced with something like (for an 8 megabyte stack, 700MB initial heap
    -Xms700m
    -Xmx2048m
 
-Scala IDE complains about 'no scala library...' or 'More than one scala library...'
+Scala IDE complains about 'no Scala library...' or 'More than one Scala library...'
 ...................................................................................
 
 In Scala IDE 2.0.0, a classpath validator has been added to check that the Scala library has been correctly setup. It is checking two points: that the project build path contains only one Scala libraries, and that its version is compatible with the installed version of Scala IDE.
@@ -45,10 +45,10 @@ ___________________
 
 It needs to be fixed manually.
 
-* If the error is 'no scala library...', one Scala library needs to be added to the build path. The simplest thing is to add the Scala library container: right-click on the project in the Package Explorer view, then in the context menu select ``Build Path → Add Libraries...``, and add the ``Scala Library``.
+* If the error is 'no Scala library...', one Scala library needs to be added to the build path. The simplest thing is to add the Scala library container: right-click on the project in the Package Explorer view, then in the context menu select ``Build Path → Add Libraries...``, and add the ``Scala Library``.
 
 
-* If the error is 'more than one scala library...', the number of Scala libraries needs to limited to one in the build path. If possible, make it being the Scala library container provided by Scala IDE.
+* If the error is 'more than one Scala library...', the number of Scala libraries needs to limited to one in the build path. If possible, make it being the Scala library container provided by Scala IDE.
 
 Using m2eclipse
 _______________
@@ -68,7 +68,7 @@ What are the limitations?
 .........................
 
 * The colon commands available in the terminal REPL are not supported.
-* Commands cannot be forcebly killed. For example, if an infinite loop is launched, it will continue in the background until Eclipse is shutdown.
+* Commands cannot be forcibly killed. For example, if an infinite loop is launched, it will continue in the background until Eclipse is shutdown.
 
 Know Issues
 -----------
@@ -84,12 +84,12 @@ The code contains Unicode niceties like ``←`` and ``⇒``, but the editor does
 
 The operating system is not using UTF-8 by default, and its default encoding is used inside Eclipse.
 
-The encoding used to open files can be configured at different levels. Most of the time, setting Eclipse default encodint to UTF-8 in ``General → Workspace`` is enough. But in some case, the wrong encoding might also have been set in the project properties, or even the file properties.
+The encoding used to open files can be configured at different levels. Most of the time, setting Eclipse default encoding to UTF-8 in ``General → Workspace`` is enough. But in some case, the wrong encoding might also have been set in the project properties, or even the file properties.
 
-Red screen of death (red squigglies everywhere)
+Red screen of death (red squiggles everywhere)
 ...............................................
 
-The number one cause of nothing works is a mismatch between the Scala version of the Eclipse plugin and your project's. Make sure there is only one version of the Scala library on your classpath, and that it matches the version provided by Scala IDE.
+The number one cause of nothing works is a mismatch between the Scala version of the Eclipse plug-in and your project's. Make sure there is only one version of the Scala library on your classpath, and that it matches the version provided by Scala IDE.
 The prime suspect is Maven Dependencies, which can download and add an incompatible scala-library.jar.
 
 The classpath validator added in Scala IDE 2.0.0 should detect this problem and provide meaning full problem markers.
@@ -130,7 +130,7 @@ This will reduce the probability of getting a deadlock, but wont fix it.
 
 If you encounter this problem, the best thing is to take a thread dump:
 
-   Once the IDE is frozen, the following command provide the process id of the running VMs:
+   Once the IDE is frozen, the following command provide the process id of the running virtual machines:
 
    .. code-block:: bash
 
@@ -149,11 +149,11 @@ NoClassDefFoundError (scala/tools/nsc/settings/MutableSettings$SettingValue)
 
 **Symptoms**:
 
-After upgrading the Scala plugin, ``java.lang.NoClassDefFoundError: scala/tools/nsc/settings/MutableSettings$SettingValue`` exception is reported for all Scala projects in the workspace. Scala IDE is then unusable.
+After upgrading the Scala plug-in, ``java.lang.NoClassDefFoundError: scala/tools/nsc/settings/MutableSettings$SettingValue`` exception is reported for all Scala projects in the workspace. Scala IDE is then unusable.
 
 **Solution**:
 
-If you have several update sites providing different version of Scala IDE, Eclipse may have decided that a newest Scala library should be used instead of the one provided by the plug-in to be installed. To avoid this problem, make sure to the uncheck the ``Contact all update sites during install to find required software``. It is situated at the bottom of the ``Help → Install New Software...`` dialog.
+If you have several update sites providing different version of Scala IDE, Eclipse may have decided that a newest Scala library should be used instead of the one provided by the plug-in to be installed. To avoid this problem, make sure to uncheck the ``Contact all update sites during install to find required software`` option. It is situated at the bottom of the ``Help → Install New Software...`` dialog.
 
 .. _#1000317: https://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000317
 .. _m2eclipse-scala: https://github.com/sonatype/m2eclipse-scala
