@@ -1,7 +1,12 @@
-Welcome to Scala IDE's Developer Documentation!
-===============================================
+Welcome to the Scala IDE Developer Documentation
+================================================
 
-Write some stuff about this doc...
+This document is intended for developers interested in exploring with the Scala IDE sources to 
+contribute to the project.
+
+Feel free to ask questions related to the Scala IDE internals and discuss ideas for enhancements 
+and bug fixes on the `scala-ide-dev <http://groups.google.com/group/scala-ide-dev>`_ mailing list.
+
 
 
 Contents:
@@ -14,3 +19,6 @@ Contents:
    testing/testing
    architecture/architecture
    appendix/appendix
+   /license
+   
+.. include:: /contribute.rst.inc

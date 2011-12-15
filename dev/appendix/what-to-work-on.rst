@@ -1,4 +1,4 @@
-What to Work On
+What to Work on
 ===============
 
 You probably already know exactly what you’re interested in working on! Whatever you decide to work 
