@@ -1,6 +1,7 @@
 Scala compiler development under Eclipse 
 ========================================
 
+
 This tutorial will show you how to set up the Scala IDE in Eclipse so you can use it to work on the Scala compiler:
 
 * Download and install the latest stable Eclipse release from eclipse.org.

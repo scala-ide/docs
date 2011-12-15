@@ -41,8 +41,11 @@ Fork the project
 ----------------
 
 The first thing you should do is forking the `Scala IDE Git repository 
-<http://github.com/scala-ide/scala-ide>`_. If you are new to GitHub, `read here to learn how to fork 
-a project <http://help.github.com/fork-a-repo/>`_.
+<http://github.com/scala-ide/scala-ide>`_, that will greatly simplify the process of sengind us 
+patches. 
+
+If you are new to GitHub, `read here to learn how to fork a project 
+<http://help.github.com/fork-a-repo/>`_.
 
 Once you forked the project, simply open a terminal and clone your own fork to download the project's 
 sources. The command for cloning the fork should be very close to the following one (mind that 
@@ -51,6 +54,10 @@ you will have to replace *<username>* with your actual Git username).
 .. code-block:: bash
 
 	$ git clone git@github.com:<username>/scala-ide.git
+
+Make sure to `add an *upstream* <http://help.github.com/fork-a-repo/>` to the original scala-ide 
+git remote repository, so that you can keep fetching the latest changes made in the project and 
+re-integrate them back in your fork.
 
 Now, fire up Eclipse and import the Scala IDE project. In a few moment you will be all set to start 
 hacking on the Scala IDE!
@@ -127,15 +134,15 @@ If after rebuilding you still see errors, drop us a note in the `Scala IDE Devel
 Mailing List <http://groups.google.com/group/scala-ide-dev?pli=1>`_.
 
 
-Launching the Scala IDE within Eclipse
---------------------------------------
+Run the Scala IDE within Eclipse
+--------------------------------
 
 So, you managed to have the Scala IDE sources compiling, now it's time to learn how to run the Scala 
 IDE within Eclipse. 
 
-One way to test an Eclipse plugin is to launch a second instance of Eclipse using the plugins 
-in your workspace. Since Scala IDE uses weaving, you need to launch the IDE with weaving enabled, 
-which is not configurable in the vanilla launcher. 
+Doing this is especially useful if you need to do some manual debugging of the plugin. Since the 
+Scala IDE uses weaving, you need to launch the IDE with weaving enabled, which is not configurable 
+in the vanilla launcher. 
 
 That is why we suggest you to install the 
 `Equinox Weaving Launcher <http://www.assembla.com/spaces/equinox-weaving-launcher/wiki>`_.
