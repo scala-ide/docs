@@ -18,7 +18,7 @@ Welcome to Scala IDE's documentation!
 
 * Support for Eclipse plug-in and OSGi development including hyperlinking to Scala source from plugin.xml and manifest files.
 
-The Scala IDE is released under a :doc:`BSD-like license <license>` and community involvement in its development is strongly encouraged. See the `Developer Documentation`_ on how to take part.
+The Scala IDE is released under a :doc:`BSD-like license <license>` and community involvement in its development is strongly encouraged. See the :doc:`Developer Documentation <dev/index>` on how to take part.
 
 This documentation is the starting point for the installation guide and other information regarding the use of the Scala IDE for Eclipse.
 
@@ -29,7 +29,6 @@ Contents:
 
    user/index
    tutorials/index
-   dev/index
    
 .. include:: /contribute.rst.inc
 
@@ -42,7 +41,6 @@ Indices and tables
 * :ref:`modindex`
 * :ref:`search`
 
-.. _Developer Documentation: http://scala-ide-portfolio.assembla.com/wiki/show/scala-ide/Developer_Documentation
 .. _Scala: http://www.scala-lang.org/
 .. _Scala IDE: http://www.scala-ide.org/
 
