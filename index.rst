@@ -31,7 +31,7 @@ Contents:
    tutorials/index
    dev/index
    
-.. include:: /contribute.rst
+.. include:: /contribute.rst.inc
 
 Indices and tables
 ==================
@@ -50,5 +50,4 @@ Indices and tables
    :hidden:
 
    README
-   contribute
 
