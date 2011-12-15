@@ -48,5 +48,6 @@ Indices and tables
    :hidden:
 
    README
+   TODO
    sources/README
 
