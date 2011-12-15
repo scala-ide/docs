@@ -6,8 +6,8 @@ The Scala IDE relies for most of its functionality on two pillars:
 .. toctree::
   :maxdepth: 1
 
-  presentation-compiler-tests
   eclipse-tests
+  presentation-compiler-tests
 
 Testing should therefore be directed to the two of them, but also to their integration. 
 
