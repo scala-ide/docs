@@ -1,25 +1,6 @@
 Testing Scala IDE's Eclipse integration
 =======================================
 
-While unit tests make sense, it is sometimes difficult to test things in isolation, especially when 
-they involve the Scala compiler. Imagine a test for code completion: there must be a source file, a 
-position inside the source file, an instantiated Scala PC, a correct classpath. For hyperlinking, it 
-may be even worse: in addition to the above, you’d need to have a source locator (in order to find 
-attached sources to a jar file). Of course, you could mock most of these things, but that would be 
-very tedious. The alternative is to use real projects and an Eclipse instance, where this 
-functionality can be tested programmatically. We call them integration tests, because they exercise 
-a full Eclipse installation, and mimic very much what the user is doing.
-
-.. note:: 
-
-	All tests have to run without a UI (headless mode). If any UI class is instantiated, the test 
-	will fail in Jenkins (the slaves do not have a GUI). Make sure that any test you write does not 
-	depend on UI classes, and always check that the test runs from the command line.
-	
-
-The testing project
--------------------
-
 All tests are grouped under the ``org.scala-ide.sdt.core.tests`` project, following standard 
 practice for Eclipse plugin tests (in OSGi terms, this module is a ‘bundle fragment’ of 
 ``org.scala-ide.sdt.core``, but this means only that it has access to all packages defined by 
