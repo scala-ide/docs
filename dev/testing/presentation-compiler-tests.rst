@@ -95,7 +95,8 @@ A while back we had some issue with completion. It was unclear why, but sometime
 simply not working as expected. Since completion is a feature that is offered by the Presentation 
 Compiler (via method ``askCompletionAt``), it was difficult to tell where the problem was. We had a 
 very simple code's snippet for which completion was not working in the IDE. Let's have a look at it 
-(this is extracted from the bug report #1000475):
+(this is extracted from the bug report `#1000475 
+<http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000475>`_):
 
 .. code-block:: scala 
 
