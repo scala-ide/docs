@@ -178,7 +178,7 @@ and the actual test:
 Running tests within Eclipse
 ----------------------------
 
-To run the tests inside Eclipse you need to install the Equinox Weaving Launcher plugin for Eclipse. 
+To run the tests inside Eclipse you need to :ref:`install the Equinox Weaving Launcher <setup_install-equinox-weaving-launcher>` plugin for Eclipse. 
 Once you have installed the plugin, running a test in headless mode boils down to the following 
 steps:
 

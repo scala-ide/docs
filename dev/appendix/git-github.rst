@@ -3,6 +3,7 @@
 Git & GitHub
 ============
 
+This page needs your help!
 
 Git
 ---

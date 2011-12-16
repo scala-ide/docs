@@ -1,3 +1,5 @@
+.. _repository-organization_page:
+
 Repository organization
 =======================
 

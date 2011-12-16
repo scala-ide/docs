@@ -26,15 +26,17 @@ to use |Eclipse Helios (TM)|.
    .. with trademark sign
 
 Since the Scala IDE sources are mostly written in Scala (again, not really a surprising fact), you 
-should install the Scala IDE plugin for Eclipse. Developers are strongly encouraged to use a nighlty 
-build, as your feedback is vital to the project (catching errors early is the road to awesomness). 
-We suggest you to use the `Scala IDE 2.1 nightly for Scala 2.9 <FIXME: Add link!>`.
+need to install the Scala IDE plugin for Eclipse (since support for Scala 2.8 will be dropped after 
+the final 2.0.0 release of the Scala IDE, we suggest you to use the Scala IDE plugin for Scala 2.9 
+or Scala 2.10 - trunk). Developers are strongly encouraged to use a nighlty build, as your feedback 
+is vital to the project (catching errors early is the road to awesomness).
 
 You will also need a terminal to run some script. If you are on Windows, we suggest you to 
 install `Cygwin <http://www.cygwin.com/>`_ (how could you live without it on Windows anyway!?). 
 It is not mandatory to use Cygwin, but in this documentation we assume you have a way to run 
 bash scripts, or else you have the time and motivation to look inside the script and convert them 
-in Windows batch files (if you do so, send us a pull request, and we will include them in the project).
+in Windows batch files (if you do so, make sure to send a pull request our way, and we will make 
+the Windows scripts available to all contributors).
 
 .. _setup_fork-the-project:
 
@@ -43,12 +45,12 @@ Fork the project
 
 The first thing you should do is forking the `Scala IDE Git repository 
 <http://github.com/scala-ide/scala-ide>`_, that will greatly simplify the process of sengind us 
-patches. 
+patches (remember to also read about the :ref:`workflow_page` before creating pull requests).
 
 If you are new to GitHub, `read here to learn how to fork a project 
 <http://help.github.com/fork-a-repo/>`_.
 
-Once you forked the project, simply open a terminal and clone your own fork to download the project's 
+After forking the project, simply open a terminal and clone your own fork to download the project's 
 sources. The command for cloning the fork should be very close to the following one (mind that 
 you will have to replace *<username>* with your actual Git username).
 
@@ -56,9 +58,9 @@ you will have to replace *<username>* with your actual Git username).
 
 	$ git clone git@github.com:<username>/scala-ide.git
 
-Make sure to `add an *upstream* <http://help.github.com/fork-a-repo/>` to the original scala-ide 
-git remote repository, so that you can keep fetching the latest changes made in the project and 
-re-integrate them back in your fork.
+Make sure to `add an Upstream <http://help.github.com/fork-a-repo/#Set-Up-Your-Local-Repo>`_ pointing 
+to the original scala-ide git remote repository, so that you can keep fetching the latest changes 
+made in the project, and easily integrate them back in your fork.
 
 Now, fire up Eclipse and import the Scala IDE project. In a few moment you will be all set to start 
 hacking on the Scala IDE!
@@ -90,13 +92,7 @@ Open a terminal, go in your (local) Scala IDE project's root folder, and then
 The script to run is different depending on the Scala version packaged with the Scala IDE plugin 
 you have installed.
  
-If you are using the Scala IDE with Scala 2.8
- 
-.. code-block:: bash
-	
-	$ ./build-toolchain-2.8.x.sh
-	
-or, if you are using the Scala IDE with Scala 2.9
+If you are using the Scala IDE with Scala 2.9
  
 .. code-block:: bash
 	
@@ -147,6 +143,9 @@ in the vanilla launcher.
 
 That is why we suggest you to install the 
 `Equinox Weaving Launcher <http://www.assembla.com/spaces/equinox-weaving-launcher/wiki>`_.
+
+
+.. _setup_install-equinox-weaving-launcher:
 
 Install the Equinox Weaving Launcher
 ....................................

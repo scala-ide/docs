@@ -8,19 +8,22 @@ done, for example, during the Hudson-driven nightly builds on Amazon EC2.
 Requirements
 ------------
 
-* You have cloned the Scala IDE project. Read the :doc:`Setup instruction <../setup/setup>` for 
+* You have cloned the Scala IDE project. Read :ref:`setup_fork-the-project` for 
   more information about this point.
-* A recent JDK (the Oracle JDK 6 is recommended)
-* Maven 3
-
+* Oracle `JDK 5 
+  <http://www.oracle.com/technetwork/java/javasebusiness/downloads/java-archive-downloads-javase5-419410.html#jdk-1.5.0_22-oth-JPR>`_ 
+  or `JDK 6 
+  <http://www.oracle.com/technetwork/java/javasebusiness/downloads/java-archive-downloads-javase6-419409.html#jdk-6u29-oth-JPR>`_ 
+  (JDK 7 is currently not supported because of `this Eclipse bug <https://bugs.eclipse.org/bugs/show_bug.cgi?id=317785>`_, which 
+  affects all Eclipse versions prior to 3.7.1).
+* `Maven 3 <http://maven.apache.org/download.html>`_
 
 .. _building_run-the-build:
 
 Run the build
 -------------
 
-Using a Unix-like OS, the process is as follows. First, from the project's root, navigate to the 
-build directory:
+Oper your terminal, navigate to the project's root, and then:
 
 .. code-block:: bash
 
@@ -30,18 +33,16 @@ Build using the provided scripts,
 
 .. code-block:: bash
 
-      # For builds relative to Scala 2.8.x
-      $ ./build-ide-2.8.x.sh
-      #
       # For builds relative to Scala 2.9.x
       $ ./build-ide-2.9.x.sh
       #
       # For builds relative to Scala trunk
       $ ./build-ide-trunk.sh
 
-..note:: 
+.. note:: 
+
 	When working on the Scala IDE you need to make sure that new code can be compiled with Scala 
-	2.8.x, 2.9.x and 2.10 (trunk).
+	2.9.x and 2.10 (trunk).
 
 Assuming your build is successful you should find an Eclipse update site has been built in 
 ``org.scala-ide.sdt.update-site/target/site`` and a zipped version of the same at 
@@ -57,7 +58,7 @@ Build the Scala IDE with a local version of the Scala Compiler
 
 .. note::
 
-	Chances are that most of you will not need to be concerned by this. You need to build a local 
+	Chances are that most of you will not need to read this section. You need to build a local 
 	version of the Scala compiler only if you intend to modify the Scala compiler and check how the 
 	Scala IDE plugin reacts to the changes. If that is exactly what you want to do, keep reading.
 	Otherwise, you can safely skip this section.

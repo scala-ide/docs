@@ -1,3 +1,5 @@
+.. _workflow_page:
+
 Workflow
 ========
 
@@ -66,8 +68,9 @@ When you are done working on a ticket, make sure that:
   learning how to build the Scala IDE with different versions of Scala). Of course, that also 
   implies all tests succeeded.
   
-* Rebase your branch on the latest upstream (read `here 
-  <https://github.com/diaspora/diaspora/wiki/Git-Workflow>`_ for more information on how to do this).
+* Rebase your branch on the latest upstream (read `here`__ for more information on how to do this).
+
+__ https://github.com/diaspora/diaspora/wiki/Git-Workflow
 
 If you get stuck with any of the above, just write a note in the `scala-ide-dev 
 <https://groups.google.com/group/scala-ide-dev?hl=en>`_ mailing list. We are very keen in making 
@@ -78,13 +81,14 @@ to help you fix any of the above points.
 Send us a pull request
 ......................
 
-Once you think your work is ready to be integrated, send us a pull request (read `here 
-<http://help.github.com/send-pull-requests/>`_ for how to do this). When sending a pull request, 
-contributors will review your code. There might be a few iterations (code review, update code) 
-before your pull request is merged in the mainline. Don't get discouraged, we absolutely want 
-your code to be in the mainline, but we also need to make sure that the quality standards are met. 
-In the end, all we want is simply a better Scala IDE and a nice codebase, so that we can make it as 
-simple as possible for new contributors to enter the project.
+Once you think your work is ready to be integrated, send us a pull request (read `here`__ for how 
+to do this). When sending a pull request, contributors will review your code. There might be a few 
+iterations (code review, update code) before your pull request is merged in the mainline. Don't get 
+discouraged, we absolutely want your code to be in the mainline, but we also need to make sure that 
+the quality standards are met. In the end, all we want is simply a better Scala IDE and a nice 
+codebase, so that we can make it as simple as possible for new contributors to enter the project.
+
+__ http://help.github.com/send-pull-requests/
 
 Of course, after sending a pull request, you can immediately start working on a new task ;)
 
@@ -95,8 +99,8 @@ Committers
 .. note::
 
 	
-	This section assumes that you know how the :doc:`repository is organized 
-	<../repository-organization/repository-organization>`.
+	This section assumes that you know how the :ref:`repository is organized 
+	<repository-organization_page>`.
 	
 
 The workflow for committers is very similar to the one described in the above 
