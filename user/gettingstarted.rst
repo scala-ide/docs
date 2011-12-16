@@ -45,7 +45,7 @@ Copy the URL as location and hit ``OK`` to validate.
 
 Select ``Scala IDE for Eclipse`` from the list of available features.
 
-Go through the following screen to validate the list of plug-ins to install, the :doc:`../license` and start the installation.
+Go through the next screens to validate the list of plug-ins to install, the :doc:`../license` and start the installation.
 
 After having restarted Eclipse, Scala IDE is installed.
 
@@ -86,7 +86,7 @@ After installation, maven projects can be imported using ``File → Import → M
 Troubleshooting
 ---------------
 
-Check the :doc:`Known Issues <faq>` page.
+Check the :ref:`faq_known-issues` section.
 
 
 .. _eclipsify: https://github.com/musk/SbtEclipsify/tree/0.8.0
