@@ -70,6 +70,8 @@ What are the limitations?
 * The colon commands available in the terminal REPL are not supported.
 * Commands cannot be forcibly killed. For example, if an infinite loop is launched, it will continue in the background until Eclipse is shutdown.
 
+.. _faq_known-issues:
+
 Know Issues
 -----------
 
