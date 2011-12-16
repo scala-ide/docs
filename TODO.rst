@@ -4,7 +4,6 @@ List of tasks to be done
 Needed
 ------
 
-* migrate the changelog from https://scala-ide-portfolio.assembla.com/spaces/scala-ide/wiki/Changelog
 * A list of the main (current?) contributor to the project
 
 Nice to Have
