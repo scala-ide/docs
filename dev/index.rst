@@ -18,6 +18,8 @@ Contents:
    architecture/architecture
    building/building
    testing/testing
+   repository-organization/repository-organization
+   workflow/workflow
    appendix/appendix
    /license
    

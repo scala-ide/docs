@@ -36,6 +36,7 @@ It is not mandatory to use Cygwin, but in this documentation we assume you have 
 bash scripts, or else you have the time and motivation to look inside the script and convert them 
 in Windows batch files (if you do so, send us a pull request, and we will include them in the project).
 
+.. _setup_fork-the-project:
 
 Fork the project
 ----------------

@@ -6,5 +6,7 @@ Contents:
 .. toctree::
    :maxdepth: 1
    
-   scala-compiler-dev-with-eclipse
    what-to-work-on
+   scala-compiler-dev-with-eclipse
+   git-github
+   resources

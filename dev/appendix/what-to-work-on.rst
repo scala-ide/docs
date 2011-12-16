@@ -11,3 +11,6 @@ a number of well-delimited improvements that are nice-to-have and nobody is curr
 
 See `Open Tickets <http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets>`_ for further 
 inspiration.
+
+Last, our :ref:`testing_regression-test-suite` could be expanded. Creating tests is one of the best 
+way to start contributing now and bring immediate value to the project!

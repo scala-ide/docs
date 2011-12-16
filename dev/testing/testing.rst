@@ -1,3 +1,5 @@
+.. _testing_regression-test-suite:
+
 Regression Test Suite
 =====================
 

@@ -1,5 +1,5 @@
-Command line build
-==================
+Building the Scala IDE
+======================
 
 The Scala IDE for Eclipse can be built on the command line using Maven, as is 
 done, for example, during the Hudson-driven nightly builds on Amazon EC2. 
@@ -13,6 +13,8 @@ Requirements
 * A recent JDK (the Oracle JDK 6 is recommended)
 * Maven 3
 
+
+.. _building_run-the-build:
 
 Run the build
 -------------
