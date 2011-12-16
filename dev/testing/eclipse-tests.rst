@@ -2,7 +2,7 @@ Testing Eclipse integration
 ===========================
 
 All tests are grouped under the ``org.scala-ide.sdt.core.tests`` project, following standard 
-practice for Eclipse plugin tests (in OSGi terms, this module is a ‘bundle fragment’ of 
+practice for Eclipse plug-in tests (in OSGi terms, this module is a ‘bundle fragment’ of 
 ``org.scala-ide.sdt.core``, but this means only that it has access to all packages defined by 
 ``org.scala-ide.sdt.core``).
 
@@ -17,7 +17,7 @@ the target instance, creates a clean (empty) workspace, and launches the test ru
 bundles and the JDT bundles. Depending on the way the test is launched, these dependencies are 
 provided differently:
 
-* using the existing (running) Eclipse instance, and adding all existing plugins to the launched instance (they can be enabled/disabled individually in the Run Configurations dialog)
+* using the existing (running) Eclipse instance, and adding all existing plug-ins to the launched instance (they can be enabled/disabled individually in the Run Configurations dialog)
 * using the declared dependencies in META-INF/MANIFEST.MF. Tycho will download them using the configured p2 repositories, in the same way that maven resolves library dependencies
 
 
@@ -178,11 +178,11 @@ and the actual test:
 Running tests within Eclipse
 ----------------------------
 
-To run the tests inside Eclipse you need to :ref:`install the Equinox Weaving Launcher <setup_install-equinox-weaving-launcher>` plugin for Eclipse. 
-Once you have installed the plugin, running a test in headless mode boils down to the following 
+To run the tests inside Eclipse you need to :ref:`install the Equinox Weaving Launcher <setup_install-equinox-weaving-launcher>` plug-in for Eclipse. 
+Once you have installed the plug-in, running a test in headless mode boils down to the following 
 steps:
 
-* Open Run Configurations and double click on JUnit Plug-in Test with Equinox Weaving (which shouuld have appeared after installing the above mentioned plugin).
+* Open Run Configurations and double click on JUnit Plug-in Test with Equinox Weaving (which should have appeared after installing the above mentioned plug-in).
 * In the Test tab, fill in the information about the test you want to run.
 * In the Main tab, under Program to Run, check Run an application and select *[No Application] – Headless Mode*.
 * In the Arguments tab, make sure to pass ``-Dsdtcore.headless`` in the VM arguments.

@@ -62,9 +62,9 @@ to rebuild it anymore (unless you update the sources, of course).
 Depending on the machine you are using, this make take some consistent amount of time. For instance, 
 on my 2011 MacBook Pro it used to take about 30' minutes (but after I moved to a SSD, the same 
 machine could build the distribution in about 10 minutes!). Just be patient and remember you are 
-building the whole Scala distribution, not really the tinest Scala project in the world :).
+building the whole Scala distribution, not really the tiniest Scala project in the world :).
 
-Hopefully, you should have successfully built the scala compiler. It's finally time to write your 
+Hopefully, you should have successfully built the Scala compiler. It's finally time to write your 
 first test for the Scala Presentation Compiler (PC).
 
 Create a Presentation Compiler Test
@@ -80,7 +80,7 @@ Defining a new test boils down to performing the following steps:
 
 1. Create a ``testXXX`` folder (the name is up to you, but please avoid spaces and don't use any esoteric character :)
 2. Inside ``testXXX``, create a ``src`` folder (the name here is important, remember we use convention over configuration). In ``src`` you will put your ``XXX.scala`` test file (we will see below what this file should contain to work). The test file is the definition of your test, i.e., it will tell the test framework how you want to exercise the Presentation Compiler.
-3. ``testXXX`` also needs to contain a ``Runner.scala``. In its simplest form this scala file only contains the following object declaration (again, it's important to name the object `Test`):
+3. ``testXXX`` also needs to contain a ``Runner.scala``. In its simplest form this Scala file only contains the following object declaration (again, it's important to name the object `Test`):
    
    .. code-block:: scala 
   
@@ -144,10 +144,10 @@ You should see something like
 	testing: [...]/files/presentation/ide-bug-1000475                     [  OK  ]
 
 Well, actually if you have written your own test, it will be likely fail and not succeed. The 
-reason is pretty simple, we didn't yet discussed how to define a test's oracle, i.e., how do we 
+reason is pretty simple, we didn't yet discussed how to define a test oracle, i.e., how do we 
 assert that the test is correct/wrong?
 
-Create the Test's oracle
+Create the Test oracle
 ------------------------
 
 Creating a test oracle is straightforward. Did you noticed the `.check` files in 

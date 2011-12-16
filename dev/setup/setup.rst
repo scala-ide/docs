@@ -14,7 +14,7 @@ GitHub is truly awesome!
 Unsurprisingly, you will need Eclipse to contribute to the Scala IDE for Eclipse. 
 If you haven't download Eclipse yet, we recommend to use 
 `Eclipse Helios Classic <http://www.eclipse.org/downloads/packages/eclipse-classic-362/heliossr2>`_.
-Also note that the plugin sources are currently not compatible with |Eclipse Indigo (TM)|, you need 
+Also note that the plug-in sources are currently not compatible with |Eclipse Indigo (TM)|, you need 
 to use |Eclipse Helios (TM)|.
 
 .. |Eclipse Helios Classic (TM)| unicode:: Eclipse U+0020 Indigo U+2122
@@ -26,10 +26,10 @@ to use |Eclipse Helios (TM)|.
    .. with trademark sign
 
 Since the Scala IDE sources are mostly written in Scala (again, not really a surprising fact), you 
-need to install the Scala IDE plugin for Eclipse (since support for Scala 2.8 will be dropped after 
-the final 2.0.0 release of the Scala IDE, we suggest you to use the Scala IDE plugin for Scala 2.9 
-or Scala 2.10 - trunk). Developers are strongly encouraged to use a nighlty build, as your feedback 
-is vital to the project (catching errors early is the road to awesomness).
+need to install the Scala IDE plug-in for Eclipse (since support for Scala 2.8 will be dropped after 
+the final 2.0.0 release of the Scala IDE, we suggest you to use the Scala IDE plug-in for Scala 2.9 
+or Scala 2.10 - trunk). Developers are strongly encouraged to use a nightly build, as your feedback 
+is vital to the project (catching errors early is the road to awesomeness).
 
 You will also need a terminal to run some script. If you are on Windows, we suggest you to 
 install `Cygwin <http://www.cygwin.com/>`_ (how could you live without it on Windows anyway!?). 
@@ -44,7 +44,7 @@ Fork the project
 ----------------
 
 The first thing you should do is forking the `Scala IDE Git repository 
-<http://github.com/scala-ide/scala-ide>`_, that will greatly simplify the process of sengind us 
+<http://github.com/scala-ide/scala-ide>`_, that will greatly simplify the process of sending us 
 patches (remember to also read about the :ref:`workflow_page` before creating pull requests).
 
 If you are new to GitHub, `read here to learn how to fork a project 
@@ -59,7 +59,7 @@ you will have to replace *<username>* with your actual Git username).
 	$ git clone git@github.com:<username>/scala-ide.git
 
 Make sure to `add an Upstream <http://help.github.com/fork-a-repo/#Set-Up-Your-Local-Repo>`_ pointing 
-to the original scala-ide git remote repository, so that you can keep fetching the latest changes 
+to the original Scala IDE git remote repository, so that you can keep fetching the latest changes 
 made in the project, and easily integrate them back in your fork.
 
 Now, fire up Eclipse and import the Scala IDE project. In a few moment you will be all set to start 
@@ -89,7 +89,7 @@ Open a terminal, go in your (local) Scala IDE project's root folder, and then
  
 	$ cd org.scala-ide.build-toolchain
  
-The script to run is different depending on the Scala version packaged with the Scala IDE plugin 
+The script to run is different depending on the Scala version packaged with the Scala IDE plug-in 
 you have installed.
  
 If you are using the Scala IDE with Scala 2.9
@@ -137,7 +137,7 @@ Run the Scala IDE within Eclipse
 So, you managed to have the Scala IDE sources compiling, now it's time to learn how to run the Scala 
 IDE within Eclipse. 
 
-Doing this is especially useful if you need to do some manual debugging of the plugin. Since the 
+Doing this is especially useful if you need to do some manual debugging of the plug-in. Since the 
 Scala IDE uses weaving, you need to launch the IDE with weaving enabled, which is not configurable 
 in the vanilla launcher. 
 
@@ -154,7 +154,7 @@ To install the Equinox Weaving Launcher, use the following Eclipse update site:
 
 	http://download.scala-ide.org/equinox-weaving-launcher
 
-This adds two more launch configurations: Eclipse Application with Equinox Weaving, and JUnit plugin 
+This adds two more launch configurations: Eclipse Application with Equinox Weaving, and JUnit plug-in 
 test with Equinox Weaving.
 
 Create a run configuration for launching Eclipse with Scala IDE
@@ -176,9 +176,9 @@ Additional information
 .....................................
 
 The Scala IDE uses AspectJ to weave into Eclipse and hook in to JDT internals. If you want to work 
-on JDT integratation within the Scala IDE, then it is a good idea to import 
+on JDT integration within the Scala IDE, then it is a good idea to import 
 ``org.scala-ide.sdt.aspects`` project in your Eclipse workspace and also install the `AspectJ 
-Eclipse plugin <http://www.eclipse.org/ajdt>`_.
+Eclipse plug-in <http://www.eclipse.org/ajdt>`_.
 
 
 Using JRebel

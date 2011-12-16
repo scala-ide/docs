@@ -32,7 +32,7 @@ __ http://progit.org/book/
 
 Don't get discouraged by git, at the beginning it may be bit painful to get your head around it, 
 as its philosophy is a lot different from other tools you may got yourself acquainted with 
-(read CVS or SVN). You may feel lost, but don't give up. Your effort will be soon recompensated, 
+(read CVS or SVN). You may feel lost, but don't give up. Your effort will be soon recompensed, 
 and once you understand the philosophy and are comfortable with the basic commands, you will likely 
 start to appreciate its simplicity (and at that point, you may even discover that you will never 
 want to go back to something different ;)).
@@ -74,7 +74,7 @@ ecosystem. The social coding experience, the slick UI, the gigantic number of fe
 project can use for free (code review, issue tracking, forking, ...). If you are not on GitHub, you 
 are really missing out on something amazing.
 
-A continuosly increasing number of project has moved to GitHub. Both `Scala 
+A continuously increasing number of project has moved to GitHub. Both `Scala 
 <https://github.com/scala/scala>`_ and the `Scala IDE 
 <https://github.com/scala-ide/scala-ide>`_ projects are on GitHub, and even `Linux has a mirror on 
 GitHub <https://github.com/mirrors/linux>`_!

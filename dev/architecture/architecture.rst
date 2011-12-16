@@ -17,12 +17,12 @@ The Scala IDE project is composed of several modules. Here is a generic descript
 * ``org.scala-ide.scala.compiler``: Wraps the Scala Compiler in a OSGi bundle (needed by the Eclipse runtime).
 * ``org.scala-ide.scala.library``: Wraps the Scala Library in a OSGi bundle (needed by the Eclipse runtime).
 * ``org.scala-ide.sdt.aspects``: Contains the AspectJ classes used to weave into Eclipse and hook in JDT internals.
-* ``org.scala-ide.sdt.core``: Contains the Scala IDE plugin's source code.
-* ``org.scala-ide.sdt.core.tests``: Contains the functional tests used to excercise the Scala IDE in headless mode (with no User Interface).
+* ``org.scala-ide.sdt.core``: Contains the Scala IDE plug-in's source code.
+* ``org.scala-ide.sdt.core.tests``: Contains the functional tests used to exercise the Scala IDE in headless mode (with no User Interface).
 * ``org.scala-ide.sdt.feature``: Packages the ``org.scala-ide.sdt.core`` project binaries into the "Scala IDE for Eclipse" component, which is then made available through the Scala IDE update site.
 * ``org.scala-ide.sdt.source.feature``: Packages both the ``org.scala-ide.sdt.core`` and ``org.scala-ide.sdt.aspects`` project sources into the "Scala IDE for Eclipse Source Feature" component, which is then made available through the Scala IDE update site.
 * ``org.scala-ide.sdt.weaving.feature``: Packages the ``org.scala-ide.sdt.aspects`` project binaries into the "JDT Weaving for Scala" component, which is included within the "Scala IDE for Eclipse" component.
-* ``org.scala-ide.sdt.update-site``: Contains the result of a successull compilation of the Scala IDE project, packaged in the form expected by the Eclipse Update Manager.
+* ``org.scala-ide.sdt.update-site``: Contains the result of a successful compilation of the Scala IDE project, packaged in the form expected by the Eclipse Update Manager.
 
 Scala IDE & Eclipse JDT
 -----------------------
@@ -104,7 +104,7 @@ or UI elements) sees Scala code.
 	In the future we would like to explore other roads. For instance, we have been thinking about 
 	using the binaries (instead of the sources), so that we would not need to duplicate the Scala 
 	compiler backend's logic. Though, doing this would force users working on mixed Scala/Java projects 
-	to enable continuos build (to make sure that the class binaries are actually produced), which 
+	to enable continuous build (to make sure that the class binaries are actually produced), which 
 	may not be acceptable.
 	
 The Scala Presentation Compiler
@@ -113,7 +113,7 @@ The Scala Presentation Compiler
 In order to provide semantic actions, the IDE needs to *understand* the edited Scala code. That 
 means parsing and type-checking. The `Scala Presentation Compiler 
 <https://github.com/scala-ide/scala-ide/blob/master/org.scala-ide.sdt.core/src/scala/tools/eclipse/ScalaPresentationCompiler.scala>`_ 
-is an asynchronous front-end compiler for Scala, part of the standard scala compiler.
+is an asynchronous front-end compiler for Scala, part of the standard Scala compiler.
 
 Code formatting
 ---------------
@@ -123,10 +123,10 @@ automated Scala formatting written by Matt Russell. `Structured selection
 <https://github.com/scala-ide/scala-ide/blob/master/org.scala-ide.sdt.core/src/scala/tools/eclipse/ScalaStructureSelectEnclosingAction.scala>`_ 
 and `tokenising 
 <https://github.com/mdr/Scala-IDE/blob/f1a02cd3455aead4582a1652beddcc0b3dbd0f10/org.scala-ide.sdt.core/src/scala/tools/eclipse/lexical/ScalaCodeScanner.scala>`_ 
-for syntax colouring are also backed by Scalariform.
+for syntax coloring are also backed by Scalariform.
 
 
-Refactorings
+Refactoring
 ------------
 
 Refactoring is delegated to the `scala-refactoring <http://scala-refactoring.org/>`_ library written 

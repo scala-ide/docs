@@ -23,7 +23,7 @@ Requirements
 Run the build
 -------------
 
-Oper your terminal, navigate to the project's root, and then:
+Open your terminal, navigate to the project's root, and then:
 
 .. code-block:: bash
 
@@ -49,7 +49,7 @@ Assuming your build is successful you should find an Eclipse update site has bee
 ``org.scala-ide.sdt.update-site/target/site_assembly.zip``. You can install directly into Eclipse 
 from this update site by adding it as a local update site via the Eclipse 
 "Install New Software ..." action. Alternatively, if you make the unpacked site available via a web 
-server, then the http URL of its root directory is acceptable as an ordinary Eclipse update site URL.
+server, then the HTTP URL of its root directory is acceptable as an ordinary Eclipse update site URL.
 
 
 
@@ -60,26 +60,26 @@ Build the Scala IDE with a local version of the Scala Compiler
 
 	Chances are that most of you will not need to read this section. You need to build a local 
 	version of the Scala compiler only if you intend to modify the Scala compiler and check how the 
-	Scala IDE plugin reacts to the changes. If that is exactly what you want to do, keep reading.
+	Scala IDE plug-in reacts to the changes. If that is exactly what you want to do, keep reading.
 	Otherwise, you can safely skip this section.
 
-First, build the scala compiler, package into maven format and deploy locally,
+First, build the Scala compiler, package into maven format and deploy locally,
 
 .. code-block:: bash
 
-    # You are in the main scala directory
+    # You are in the main Scala directory
     $ ant distpack-opt
     $ (cd dists/maven/latest; ant -Dlocal.snapshot.repository=${LOCAL_REPO} -Dlocal.release.repository=${LOCAL_REPO} deploy.snapshot.local)
     
     # If you use the standard .m2 location for maven, then the last command reduces to
     $ (cd dists/maven/latest; ant deploy.snapshot.local)
 
-Go to directory where you cloned your scala-ide and run the necessary scripts that use your local 
+Go to directory where you cloned your Scala IDE and run the necessary scripts that use your local 
 trunk version
 
 .. code-block:: bash
 
-	# Packages the Scala compiler and library into OSGI bundles
+    # Packages the Scala compiler and library into OSGI bundles
     $ org.scala-ide.build-toolchain/build-toolchain-local-trunk.sh
     
     # Uses the above bundled compiler and library to build the Scala IDE
@@ -87,11 +87,11 @@ trunk version
 
 
 If the build was successful you will end up with a right update-site - it contains the local changes 
-you made in the scala compiler. 
+you made in the Scala compiler. 
 
 
 .. note::
 
-	If you get weird errors about missing methods, then you are probably mixing scala versions in the 
-	scripts and the pluign. Before starting the new instance of Eclipse (with your version of the 
-	Scala plugin) make sure that no errors occurred.
+	If you get weird errors about missing methods, then you are probably mixing Scala versions in the 
+	scripts and the plug-in. Before starting the new instance of Eclipse (with your version of the 
+	Scala plug-in) make sure that no errors occurred.

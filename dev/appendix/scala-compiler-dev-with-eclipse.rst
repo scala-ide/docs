@@ -12,10 +12,10 @@ This tutorial will show you how to set up the Scala IDE in Eclipse so you can us
   + Click Add. Select All. Finish steps to install.
 
 * Tweak the settings for eclipse.ini as discussed here:  https://www.assembla.com/spaces/scala-ide/wiki/Setup
-* Import the scala project in your workspace:
+* Import the Scala project in your workspace:
 
   + File -> Import ... Existing Projects into Workspace.
-  + Pick the scala trunk as the source directory.
+  + Pick the Scala trunk as the source directory.
   + Finish.
 
 * Unselect Project -> Build Automatically. (Recommended.)

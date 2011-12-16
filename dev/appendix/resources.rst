@@ -2,7 +2,7 @@ External Resources
 ==================
 
 Here you can find a collection of documents that you may find useful for the development of the 
-Scala IDE plugin.
+Scala IDE plug-in.
 
 JDT Resources
 -------------
@@ -19,7 +19,7 @@ General JDT documentation
 
 * `A useful overview of JDT fundamentals <http://www.slideshare.net/oliviert/jdt-fundamentals-2010>`_.
 * `Fantastic API and Services presentation - Eclipsecon 2005 <http://www.eclipsecon.org/2005/presentations/EclipseCON2005_Tutorial29.pdf>`_.
-* `Eclipse JDT plugin developer guide <http://help.eclipse.org/helios/index.jsp?topic=/org.eclipse.jdt.doc.isv/guide/jdt_int.htm>`_.
+* `Eclipse JDT plug-in developer guide <http://help.eclipse.org/helios/index.jsp?topic=/org.eclipse.jdt.doc.isv/guide/jdt_int.htm>`_.
 
 JDT Indexer
 -----------
@@ -30,7 +30,7 @@ JDT Indexer
 AspectJ Resources
 -----------------
 
-The Scala IDE for Eclipse uses `AspectJ <http://eclipse.org/aspectj/>`_, an aspect-oriented programming extension of Java, to modify the behaviour of the JDT. The following are useful references
+The Scala IDE for Eclipse uses `AspectJ <http://eclipse.org/aspectj/>`_, an aspect-oriented programming extension of Java, to modify the behavior of the JDT. The following are useful references
 
 * `The AspectJ Programming Guide <http://www.eclipse.org/aspectj/doc/released/progguide/index.html>`_
 * `The AspectJ Development Tools (AJDT) <http://www.eclipse.org/ajdt/>`_
@@ -38,4 +38,4 @@ The Scala IDE for Eclipse uses `AspectJ <http://eclipse.org/aspectj/>`_, an aspe
 PDE Resources
 -------------
 
-The PDE (Plugin Development Environment) is a set of eclipse plugins for developing eclipse plugins. There is some helpful introductory information `here <http://wiki.eclipse.org/The_Official_Eclipse_FAQs#Plug-In_Development_Environment>`_.
+The PDE (Plug-in Development Environment) is a set of eclipse plug-ins for developing eclipse plug-ins. There is some helpful introductory information `here <http://wiki.eclipse.org/The_Official_Eclipse_FAQs#Plug-In_Development_Environment>`_.
