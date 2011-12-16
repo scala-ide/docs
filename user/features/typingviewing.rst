@@ -44,6 +44,8 @@ Quick Fix Imports
 
 .. image:: ../images/feature-quickfix-import-01.png
 
+.. _typingviewing_show-inferred-semicolons:
+
 Show Inferred Semicolons
 ------------------------
 

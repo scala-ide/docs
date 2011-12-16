@@ -29,6 +29,7 @@ Contents:
 
    user/index
    tutorials/index
+   changelog
    
 .. include:: /contribute.rst.inc
 

@@ -1,3 +1,5 @@
+.. _scalainterpreter_scala-interpreter:
+
 Scala Interpreter
 =================
 
