@@ -11,7 +11,7 @@ The Scala code is check as it is entered. It allows to see small or more complex
 Code Completion
 ---------------
 
-Scala IDE provides full code completion support, returning the entities available in the current context.
+Scala IDE provides full code completion support, returning the entities available in the current context. Code completion is enable by using ``Ctrl+Space`` in the Scala Editor.
 
 In **Scala source files**, code completion returns the valid Scala and Java proposals.
 
