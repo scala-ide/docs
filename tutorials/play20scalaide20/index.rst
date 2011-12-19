@@ -41,26 +41,36 @@ Creating a Play 2.0 application
 
     .. image:: images/play20-scalaide20-01.png
        :alt: play new testApp
+       :width: 100%
+       :target: ../../_images/play20-scalaide20-01.png
 
 *   Go into the application folder.
 
     .. image:: images/play20-scalaide20-02.png
        :alt: cd testApp
+       :width: 100%
+       :target: ../../_images/play20-scalaide20-02.png
 
 *   And launch Play.
 
     .. image:: images/play20-scalaide20-03.png
        :alt: play
+       :width: 100%
+       :target: ../../_images/play20-scalaide20-03.png
 
 *   In Play, launch your newly created web application.
 
     .. image:: images/play20-scalaide20-04.png
        :alt: run
+       :width: 100%
+       :target: ../../_images/play20-scalaide20-04.png
 
 *   Check that the application works: http://localhost:9000/.
 
     .. image:: images/play20-scalaide20-05.png
        :alt: running
+       :width: 100%
+       :target: ../../_images/play20-scalaide20-05.png
 
 Configuring the Play 2.0 web application for Scala IDE
 ------------------------------------------------------
@@ -73,6 +83,8 @@ The eclipsify support is not yet integrated it Play 2.0, so we are using `sbtecl
 
     .. image:: images/play20-scalaide20-06.png
        :alt: ctrl-d, exit
+       :width: 100%
+       :target: ../../_images/play20-scalaide20-06.png
 
 *   Add sbteclipse to sbt by creating the ``project/build.sbt`` file and adding the following lines.
 
@@ -85,21 +97,29 @@ The eclipsify support is not yet integrated it Play 2.0, so we are using `sbtecl
 
     .. image:: images/play20-scalaide20-07.png
        :alt: modify project/build.sbt
+       :width: 100%
+       :target: ../../_images/play20-scalaide20-07.png
 
 *   Go back into Play.
 
     .. image:: images/play20-scalaide20-08.png
        :alt: play
+       :width: 100%
+       :target: ../../_images/play20-scalaide20-08.png
 
 *   Generate the Eclipse project configuration.
 
     .. image:: images/play20-scalaide20-09.png
        :alt: eclipse
+       :width: 100%
+       :target: ../../_images/play20-scalaide20-09.png
 
 *   And relaunch the web application, so it is available later.
 
     .. image:: images/play20-scalaide20-10.png
        :alt: run
+       :width: 100%
+       :target: ../../_images/play20-scalaide20-10.png
 
 Configuring Scala IDE for the Play 2.0 web application
 ------------------------------------------------------
@@ -110,16 +130,22 @@ Setting a few preferences in Eclipse will make everything easier to use.
 
     .. image:: images/play20-scalaide20-12.png
        :alt: http://localhost:9000/
+       :width: 100%
+       :target: ../../_images/play20-scalaide20-12.png
 
 *   Configure Eclipse so changes on the filesystem are automatically picked up.
 
     .. image:: images/play20-scalaide20-13.png
        :alt: refresh automatically
+       :width: 100%
+       :target: ../../_images/play20-scalaide20-13.png
 
 *   If you don't have the Web Development Tools for Eclipse installed, Eclipse opens ``.html`` files in a web browser. Configure it to use the ``Scala Editor`` instead.
 
     .. image:: images/play20-scalaide20-14.png
        :alt: HTML file in text editor
+       :width: 100%
+       :target: ../../_images/play20-scalaide20-14.png
 
 Importing the Play web application into Scala IDE
 -------------------------------------------------
@@ -130,11 +156,15 @@ Everything is setup, it is time to import the project in the IDE.
 
     .. image:: images/play20-scalaide20-15.png
        :alt: import project
+       :width: 100%
+       :target: ../../_images/play20-scalaide20-15.png
 
 *   Everything is good, everything compiles.
 
     .. image:: images/play20-scalaide20-16.png
        :alt: everything compiles
+       :width: 100%
+       :target: ../../_images/play20-scalaide20-16.png
 
 Doing some development
 ----------------------
@@ -145,6 +175,8 @@ Now that everything is setup, we can change the content. Let's add a way to have
 
     .. image:: images/play20-scalaide20-19.png
        :alt: create model.Quote
+       :width: 100%
+       :target: ../../_images/play20-scalaide20-19.png
 
 *   Add variables to ``models.Quote``.
 
@@ -176,6 +208,8 @@ Now that everything is setup, we can change the content. Let's add a way to have
     
     .. image:: images/play20-scalaide20-17.png
        :alt: compilation error
+       :width: 100%
+       :target: ../../_images/play20-scalaide20-17.png
 
 *   Fix the application code, using a smart quote.
 
@@ -191,6 +225,8 @@ Now that everything is setup, we can change the content. Let's add a way to have
 
     .. image:: images/play20-scalaide20-18.png
        :alt: done
+       :width: 100%
+       :target: ../../_images/play20-scalaide20-18.png
 
 Going further
 -------------
