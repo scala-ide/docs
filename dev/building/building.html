@@ -1,0 +1,227 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Building the Scala IDE &mdash; Scala IDE v2.0.0 documentation</title>
+    <link rel="stylesheet" href="../../_static/resources/stylesheets/base.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/resources/stylesheets/bootstrap.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/resources/stylesheets/base.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/resources/stylesheets/doc.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/resources/stylesheets/sphinx.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '2.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="Scala IDE v2.0.0 documentation" href="../../index.html" /> 
+  </head>
+  <body>
+<div class="top-bar">
+  <div class="top-bar-inner">
+    <div class="container">
+      <a class="brand" href="/index.html"><img src="../../_static/resources/images/logo.png" height="70px"></a>
+      <ul class="nav">
+        <li><a href="/index.html#features">Features</a></li>
+        <li><a href="/docs/index.html">Documentation</a></li>
+        <li><a href="/download/current.html">Download</a></li>
+        <li><a href="/blog/index.html">Blog</a></li>
+      </ul>	
+    </div>
+  </div>
+</div>
+<div class="slider">
+  <div class="container">
+    <div class="row">
+      <div class="span16">        
+        <h1>Building the Scala IDE</h1>
+	  </div>
+    </div>
+  </div>
+</div>
+<div class="bottom">
+  <div class="container">
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li><a href="../../index.html">Scala IDE v2.0.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div> 
+    <div class="row">
+      <div class="span11" style="margin-top:-45px">        
+        <div class="section" id="building-the-scala-ide">
+<h1>Building the Scala IDE<a class="headerlink" href="#building-the-scala-ide" title="Permalink to this headline">¶</a></h1>
+<p>The Scala IDE for Eclipse can be built on the command line using Maven, as is
+done, for example, during the Hudson-driven nightly builds on Amazon EC2.</p>
+<div class="section" id="requirements">
+<h2>Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>You have cloned the Scala IDE project. Read <a class="reference internal" href="../setup/setup.html#setup-fork-the-project"><em>Fork the project</em></a> for
+more information about this point.</li>
+<li>Oracle <a class="reference external" href="http://www.oracle.com/technetwork/java/javasebusiness/downloads/java-archive-downloads-javase5-419410.html#jdk-1.5.0_22-oth-JPR">JDK 5</a>
+or <a class="reference external" href="http://www.oracle.com/technetwork/java/javasebusiness/downloads/java-archive-downloads-javase6-419409.html#jdk-6u29-oth-JPR">JDK 6</a>
+(JDK 7 is currently not supported because of <a class="reference external" href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=317785">this Eclipse bug</a>, which
+affects all Eclipse versions prior to 3.7.1).</li>
+<li><a class="reference external" href="http://maven.apache.org/download.html">Maven 3</a></li>
+</ul>
+</div>
+<div class="section" id="run-the-build">
+<span id="building-run-the-build"></span><h2>Run the build<a class="headerlink" href="#run-the-build" title="Permalink to this headline">¶</a></h2>
+<p>Open your terminal, navigate to the project&#8217;s root, and then:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span><span class="nb">cd </span>org.scala-ide.build
+</pre></div>
+</div>
+<p>Build using the provided scripts,</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="c"># For builds relative to Scala 2.9.x</span>
+<span class="nv">$ </span>./build-ide-2.9.x.sh
+<span class="c">#</span>
+<span class="c"># For builds relative to Scala trunk</span>
+<span class="nv">$ </span>./build-ide-trunk.sh
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">When working on the Scala IDE you need to make sure that new code can be compiled with Scala
+2.9.x and 2.10 (trunk).</p>
+</div>
+<p>Assuming your build is successful you should find an Eclipse update site has been built in
+<tt class="docutils literal"><span class="pre">org.scala-ide.sdt.update-site/target/site</span></tt> and a zipped version of the same at
+<tt class="docutils literal"><span class="pre">org.scala-ide.sdt.update-site/target/site_assembly.zip</span></tt>. You can install directly into Eclipse
+from this update site by adding it as a local update site via the Eclipse
+&#8220;Install New Software ...&#8221; action. Alternatively, if you make the unpacked site available via a web
+server, then the HTTP URL of its root directory is acceptable as an ordinary Eclipse update site URL.</p>
+</div>
+<div class="section" id="build-the-scala-ide-with-a-local-version-of-the-scala-compiler">
+<h2>Build the Scala IDE with a local version of the Scala Compiler<a class="headerlink" href="#build-the-scala-ide-with-a-local-version-of-the-scala-compiler" title="Permalink to this headline">¶</a></h2>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Chances are that most of you will not need to read this section. You need to build a local
+version of the Scala compiler only if you intend to modify the Scala compiler and check how the
+Scala IDE plug-in reacts to the changes. If that is exactly what you want to do, keep reading.
+Otherwise, you can safely skip this section.</p>
+</div>
+<p>First, build the Scala compiler, package into maven format and deploy locally,</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="c"># You are in the main Scala directory</span>
+<span class="nv">$ </span>ant distpack-opt
+<span class="nv">$ </span><span class="o">(</span><span class="nb">cd </span>dists/maven/latest; ant -Dlocal.snapshot.repository<span class="o">=</span><span class="k">${</span><span class="nv">LOCAL_REPO</span><span class="k">}</span> -Dlocal.release.repository<span class="o">=</span><span class="k">${</span><span class="nv">LOCAL_REPO</span><span class="k">}</span> deploy.snapshot.local<span class="o">)</span>
+
+<span class="c"># If you use the standard .m2 location for maven, then the last command reduces to</span>
+<span class="nv">$ </span><span class="o">(</span><span class="nb">cd </span>dists/maven/latest; ant deploy.snapshot.local<span class="o">)</span>
+</pre></div>
+</div>
+<p>Go to directory where you cloned your Scala IDE and run the necessary scripts that use your local
+trunk version</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="c"># Packages the Scala compiler and library into OSGI bundles</span>
+<span class="nv">$ </span>org.scala-ide.build-toolchain/build-toolchain-local-trunk.sh
+
+<span class="c"># Uses the above bundled compiler and library to build the Scala IDE</span>
+<span class="nv">$ </span>org.scala-ide.build/build-ide-local-trunk.sh
+</pre></div>
+</div>
+<p>If the build was successful you will end up with a right update-site - it contains the local changes
+you made in the Scala compiler.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If you get weird errors about missing methods, then you are probably mixing Scala versions in the
+scripts and the plug-in. Before starting the new instance of Eclipse (with your version of the
+Scala plug-in) make sure that no errors occurred.</p>
+</div>
+</div>
+</div>
+
+	  </div>
+      <div class="span5">        
+        
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Building the Scala IDE</a><ul>
+<li><a class="reference internal" href="#requirements">Requirements</a></li>
+<li><a class="reference internal" href="#run-the-build">Run the build</a></li>
+<li><a class="reference internal" href="#build-the-scala-ide-with-a-local-version-of-the-scala-compiler">Build the Scala IDE with a local version of the Scala Compiler</a></li>
+</ul>
+</li>
+</ul>
+
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../_sources/dev/building/building.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+	  </div>	
+    </div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li><a href="../../index.html">Scala IDE v2.0.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="footer">
+  <div class="container">
+    <ul>
+      <li><h5>Download</h5></li>
+      <li><a href="/download/current.html">Current</a></li>
+      <li><a href="/download/nightly.html">Nightly</a></li>
+    </ul>
+    <ul>
+      <li><h5>Documentation</h5></li>
+      <li><a href="#">Getting Started</a></li>
+      <li><a href="#">Tutorials</a></li>
+    </ul>
+    <ul>
+      <li><h5>Contribute</h5></li>
+      <li><a href="https://github.com/scala-ide/scala-ide">Source Code</a></li>
+      <li><a href="#">Developer Documentation</a></li>
+      <li><a href="http://groups.google.com/group/scala-ide-dev">Developer Mailing List</a></li>      
+      <li><a href="#">Report a Bug</a></li>      
+    </ul>
+    <ul>
+      <li><img src="../../_static/resources/images/watermark.png" align="center"/></li>
+    </ul>
+  </div>
+  <div class="container copyright">
+    <p>
+      <a href="http://creativecommons.org/licenses/by/2.0/uk/">Creative Commons</a>, <a href="http://www.typesafe.com">Typesafe Inc.</a>
+    </p>		
+  </div>
+</div>
+
+  </body>
+</html>

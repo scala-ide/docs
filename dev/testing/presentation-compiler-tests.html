@@ -1,0 +1,281 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Testing the Scala Presentation Compiler in isolation &mdash; Scala IDE v2.0.0 documentation</title>
+    <link rel="stylesheet" href="../../_static/resources/stylesheets/base.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/resources/stylesheets/bootstrap.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/resources/stylesheets/base.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/resources/stylesheets/doc.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/resources/stylesheets/sphinx.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '2.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="Scala IDE v2.0.0 documentation" href="../../index.html" /> 
+  </head>
+  <body>
+<div class="top-bar">
+  <div class="top-bar-inner">
+    <div class="container">
+      <a class="brand" href="/index.html"><img src="../../_static/resources/images/logo.png" height="70px"></a>
+      <ul class="nav">
+        <li><a href="/index.html#features">Features</a></li>
+        <li><a href="/docs/index.html">Documentation</a></li>
+        <li><a href="/download/current.html">Download</a></li>
+        <li><a href="/blog/index.html">Blog</a></li>
+      </ul>	
+    </div>
+  </div>
+</div>
+<div class="slider">
+  <div class="container">
+    <div class="row">
+      <div class="span16">        
+        <h1>Testing the Scala Presentation Compiler in isolation</h1>
+	  </div>
+    </div>
+  </div>
+</div>
+<div class="bottom">
+  <div class="container">
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li><a href="../../index.html">Scala IDE v2.0.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div> 
+    <div class="row">
+      <div class="span11" style="margin-top:-45px">        
+        <div class="section" id="testing-the-scala-presentation-compiler-in-isolation">
+<h1>Testing the Scala Presentation Compiler in isolation<a class="headerlink" href="#testing-the-scala-presentation-compiler-in-isolation" title="Permalink to this headline">¶</a></h1>
+<p>Sometimes, tracking down a bug in the Scala IDE may be harder than what you would expect.
+Specifically, it might be difficult to tell which component is actually causing the problem: is it
+because of the Presentation Compiler (or the underlying Scala compiler), or is it a bug in the
+Eclipse side?</p>
+<p>You are simply dealing with too much complexity. The only pragmatic solution you had so far was to
+start a debugging session and step through code. That involved a fair amount of complexity (despite
+the Scala compiler is really well written) and, worse, it&#8217;s usually very time consuming.</p>
+<p>The best solution is to simply write a test first (folks used to TDD will welcome the idea). This is
+a good practice in general (write a regression test that demonstrates the problem first, then fix
+it).</p>
+<p>So, if you are unsure if the presentation compiler is on blame for a specific issue, just write a
+test for it!. This will have two benefits:</p>
+<ul class="simple">
+<li>You can easily make up your mind and know if the problem is in the compiler, and</li>
+<li>even if the compiler is not on blame, it can be very useful to add the test to the regression suite. This way we can prevent the feature to break in the future.</li>
+</ul>
+<p>Sweet, isn&#8217;t it!?</p>
+<p>And, as we will learn, defining a new test is really simple. But, before being able to write a test,
+we need some infrastructure work.</p>
+<div class="section" id="fork-the-scala-sources">
+<h2>Fork the Scala sources<a class="headerlink" href="#fork-the-scala-sources" title="Permalink to this headline">¶</a></h2>
+<p>The first thing you should do is forking the <a class="reference external" href="https://github.com/scala/scala">Scala Git repository</a>. If you are new to GitHub, <a class="reference external" href="http://help.github.com/fork-a-repo/">read here to learn how to fork
+a project</a>.</p>
+<p>Forking the project is a good idea if you later on write a few test and decide to issue a pull
+request, so that your tests can be integrated back into the Scala project.</p>
+<p>Once you forked the project, simply open a terminal and clone your own fork to download the project&#8217;s
+sources. The command for cloning the fork should be very close to the following one (mind that
+you will have to replace <em>&lt;username&gt;</em> with your actual Git username).</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>git clone git@github.com:&lt;username&gt;/scala.git
+</pre></div>
+</div>
+</div>
+<div class="section" id="build-the-scala-sources">
+<h2>Build the Scala sources<a class="headerlink" href="#build-the-scala-sources" title="Permalink to this headline">¶</a></h2>
+<p>After cloning your fork of the Scala project, you will have to build the sources using Ant (not the
+most compelling building tool on Earth, we know. The good news is that the Scala team is moving to
+SBT right now, so soon enough we&#8217;ll be relieved from using Ant).</p>
+<p>To build the compiler, open a terminal, go in your (local) Scala project&#8217;s root folder, and then</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>ant
+</pre></div>
+</div>
+<p>It will take some time to build the compiler and standard library, but once it&#8217;s done you won&#8217;t need
+to rebuild it anymore (unless you update the sources, of course).</p>
+<p>Depending on the machine you are using, this make take some consistent amount of time. For instance,
+on my 2011 MacBook Pro it used to take about 30&#8217; minutes (but after I moved to a SSD, the same
+machine could build the distribution in about 10 minutes!). Just be patient and remember you are
+building the whole Scala distribution, not really the tiniest Scala project in the world :).</p>
+<p>Hopefully, you should have successfully built the Scala compiler. It&#8217;s finally time to write your
+first test for the Scala Presentation Compiler (PC).</p>
+</div>
+<div class="section" id="create-a-presentation-compiler-test">
+<h2>Create a Presentation Compiler Test<a class="headerlink" href="#create-a-presentation-compiler-test" title="Permalink to this headline">¶</a></h2>
+<p>Tests for the Presentation Compiler are placed in folder <tt class="docutils literal"><span class="pre">&lt;project-root&gt;/test/files/presentation</span></tt>.
+There, you will see several other directories, each of them is associated with (at least) a file
+that matches the folder&#8217;s name. You will be soon know what each folder and file is for, but what is
+important to keep in mind at this point is that the test framework works by convention. So, folders
+and files with the same name are used for running the same test.</p>
+<p>Defining a new test boils down to performing the following steps:</p>
+<ol class="arabic">
+<li><p class="first">Create a <tt class="docutils literal"><span class="pre">testXXX</span></tt> folder (the name is up to you, but please avoid spaces and don&#8217;t use any esoteric character :)</p>
+</li>
+<li><p class="first">Inside <tt class="docutils literal"><span class="pre">testXXX</span></tt>, create a <tt class="docutils literal"><span class="pre">src</span></tt> folder (the name here is important, remember we use convention over configuration). In <tt class="docutils literal"><span class="pre">src</span></tt> you will put your <tt class="docutils literal"><span class="pre">XXX.scala</span></tt> test file (we will see below what this file should contain to work). The test file is the definition of your test, i.e., it will tell the test framework how you want to exercise the Presentation Compiler.</p>
+</li>
+<li><p class="first"><tt class="docutils literal"><span class="pre">testXXX</span></tt> also needs to contain a <tt class="docutils literal"><span class="pre">Runner.scala</span></tt>. In its simplest form this Scala file only contains the following object declaration (again, it&#8217;s important to name the object <cite>Test</cite>):</p>
+<div class="highlight-scala"><div class="highlight"><pre><span class="k">object</span> <span class="nc">Test</span> <span class="k">extends</span> <span class="n">scala</span><span class="o">.</span><span class="n">tools</span><span class="o">.</span><span class="n">nsc</span><span class="o">.</span><span class="n">interactive</span><span class="o">.</span><span class="n">tests</span><span class="o">.</span><span class="nc">InteractiveTest</span>
+</pre></div>
+</div>
+</li>
+</ol>
+<p>At this point you are almost done. Well, of course the one thing that is still missing is the test
+file (remember point 2. above). So, let&#8217;s have a look at how we can create a new test, and let&#8217;s do
+that with a practical example.</p>
+<p>A while back we had some issue with completion. It was unclear why, but sometimes completion was
+simply not working as expected. Since completion is a feature that is offered by the Presentation
+Compiler (via method <tt class="docutils literal"><span class="pre">askCompletionAt</span></tt>), it was difficult to tell where the problem was. We had a
+very simple code&#8217;s snippet for which completion was not working in the IDE. Let&#8217;s have a look at it
+(this is extracted from the bug report <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000475">#1000475</a>):</p>
+<div class="highlight-scala"><div class="highlight"><pre><span class="k">class</span> <span class="nc">SimpleCompletion</span> <span class="o">{</span><span class="k">val</span> <span class="n">v</span> <span class="k">=</span> <span class="k">new</span> <span class="nc">Object</span><span class="o">;</span> <span class="n">v</span><span class="o">.</span><span class="n">toS</span> <span class="cm">/* ask completion here won&#39;t work */</span> <span class="o">}</span>
+</pre></div>
+</div>
+<p>So, to made up our mind and understand if that was a problem with the Presentation Compiler, we
+simply created a test folder named <tt class="docutils literal"><span class="pre">ide-bug-1000475</span></tt> with the folder structure described above.
+Then we added the following test (in a <tt class="docutils literal"><span class="pre">.scala</span></tt> file) in the <tt class="docutils literal"><span class="pre">src</span></tt> directory:</p>
+<div class="highlight-scala"><div class="highlight"><pre><span class="k">class</span> <span class="nc">SimpleCompletion</span> <span class="o">{</span> <span class="k">val</span> <span class="n">v</span> <span class="k">=</span> <span class="k">new</span> <span class="nc">Object</span><span class="o">;</span> <span class="n">v</span><span class="o">.</span><span class="n">toS</span><span class="cm">/*!*/</span> <span class="o">}</span>
+</pre></div>
+</div>
+<p>You might wonder what <tt class="docutils literal"><span class="pre">/*!*/</span></tt> is for. We refer to it as a text marker. Text markers are used by
+the testing framework to associate an action to a particular position in the source file. <tt class="docutils literal"><span class="pre">/*!*/</span></tt>
+will hence be mapped into a askCompletionAt request in the Presentation Compiler, passing the
+position of the marker as an argument.</p>
+<p>Asking completion is not the only action you can perform in a test, there are actually other test
+markers that are defined out-of-the-box and you can immediately use, and more are likely to come in
+the future. The currently available markers are:</p>
+<div class="highlight-scala"><div class="highlight"><pre><span class="k">object</span> <span class="nc">CompletionMarker</span> <span class="k">extends</span> <span class="nc">TestMarker</span><span class="o">(</span><span class="s">&quot;/*!*/&quot;</span><span class="o">)</span>
+
+<span class="k">object</span> <span class="nc">TypeMarker</span> <span class="k">extends</span> <span class="nc">TestMarker</span><span class="o">(</span><span class="s">&quot;/*?*/&quot;</span><span class="o">)</span>
+
+<span class="k">object</span> <span class="nc">HyperlinkMarker</span> <span class="k">extends</span> <span class="nc">TestMarker</span><span class="o">(</span><span class="s">&quot;/*#*/&quot;</span><span class="o">)</span>
+</pre></div>
+</div>
+<p>Each of them is very easy to use. Just look at the other tests if you have any doubt.</p>
+<p>Now, we can try running the test. Again in the opened terminal, go under <tt class="docutils literal"><span class="pre">&lt;project-root&gt;/test</span></tt>
+and type</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>./partest files/presentation/ide-bug-1000475
+</pre></div>
+</div>
+<p>You should see something like</p>
+<div class="highlight-bash"><div class="highlight"><pre>Testing individual files
+testing: <span class="o">[</span>...<span class="o">]</span>/files/presentation/ide-bug-1000475                     <span class="o">[</span>  OK  <span class="o">]</span>
+</pre></div>
+</div>
+<p>Well, actually if you have written your own test, it will be likely fail and not succeed. The
+reason is pretty simple, we didn&#8217;t yet discussed how to define a test oracle, i.e., how do we
+assert that the test is correct/wrong?</p>
+</div>
+<div class="section" id="create-the-test-oracle">
+<h2>Create the Test oracle<a class="headerlink" href="#create-the-test-oracle" title="Permalink to this headline">¶</a></h2>
+<p>Creating a test oracle is straightforward. Did you noticed the <cite>.check</cite> files in
+<tt class="docutils literal"><span class="pre">&lt;project-root&gt;/test/files/presentation</span></tt> folder?</p>
+<p>They are the test oracles. So, go ahead and create a <tt class="docutils literal"><span class="pre">.check</span></tt> file that matches the test folder&#8217;s
+name (for our running example it would be <tt class="docutils literal"><span class="pre">ide-bug-1000475.check</span></tt>). Inside, you simply have to
+append the output that was printed in the console when the test failed (some <tt class="docutils literal"><span class="pre">sed</span></tt> might be needed
+to clean up the text ;), assuming you think the output is correct (if the output is incorrect, you
+might just have discovered a bug in the Presentation Compiler!).</p>
+<p>Re-run the test and hopefully it should pass. If it does succeed, then the odds are that you have to
+fix the issue in the Eclipse side, meaning that the Scala compiler is not on blame.</p>
+<p>The bad news is that you will need some more digging to narrow down the cause. But, the good news is
+that now you are now one step closer to the solution!</p>
+</div>
+</div>
+
+	  </div>
+      <div class="span5">        
+        
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Testing the Scala Presentation Compiler in isolation</a><ul>
+<li><a class="reference internal" href="#fork-the-scala-sources">Fork the Scala sources</a></li>
+<li><a class="reference internal" href="#build-the-scala-sources">Build the Scala sources</a></li>
+<li><a class="reference internal" href="#create-a-presentation-compiler-test">Create a Presentation Compiler Test</a></li>
+<li><a class="reference internal" href="#create-the-test-oracle">Create the Test oracle</a></li>
+</ul>
+</li>
+</ul>
+
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../_sources/dev/testing/presentation-compiler-tests.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+	  </div>	
+    </div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li><a href="../../index.html">Scala IDE v2.0.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="footer">
+  <div class="container">
+    <ul>
+      <li><h5>Download</h5></li>
+      <li><a href="/download/current.html">Current</a></li>
+      <li><a href="/download/nightly.html">Nightly</a></li>
+    </ul>
+    <ul>
+      <li><h5>Documentation</h5></li>
+      <li><a href="#">Getting Started</a></li>
+      <li><a href="#">Tutorials</a></li>
+    </ul>
+    <ul>
+      <li><h5>Contribute</h5></li>
+      <li><a href="https://github.com/scala-ide/scala-ide">Source Code</a></li>
+      <li><a href="#">Developer Documentation</a></li>
+      <li><a href="http://groups.google.com/group/scala-ide-dev">Developer Mailing List</a></li>      
+      <li><a href="#">Report a Bug</a></li>      
+    </ul>
+    <ul>
+      <li><img src="../../_static/resources/images/watermark.png" align="center"/></li>
+    </ul>
+  </div>
+  <div class="container copyright">
+    <p>
+      <a href="http://creativecommons.org/licenses/by/2.0/uk/">Creative Commons</a>, <a href="http://www.typesafe.com">Typesafe Inc.</a>
+    </p>		
+  </div>
+</div>
+
+  </body>
+</html>

@@ -1,0 +1,32 @@
+.slider h1 { margin-bottom: 0px; color: #ffffff;}
+
+.bottom {background-color:#eeeeee;
+	background-color:#eeeeee;
+	background-repeat:repeat-x;
+	background-image:-khtml-gradient(linear, left top, left bottom, from(#ffffff), to(#eeeeee));
+	background-image:-moz-linear-gradient(top, #ffffff, #eeeeee);
+	background-image:-ms-linear-gradient(top, #ffffff, #eeeeee);
+	background-image:-webkit-gradient(linear, left top, left bottom, color-stop(0%, #ffffff), color-stop(100%, #eeeeee));
+	background-image:-webkit-linear-gradient(top, #ffffff, #eeeeee);
+	background-image:-o-linear-gradient(top, #ffffff, #eeeeee);
+	background-image:linear-gradient(top, #ffffff, #eeeeee);
+	-webkit-background-size:100% 20px;
+	-moz-background-size:100% 20px;
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#eeeeee', GradientType=0);
+	padding-bottom:15px;
+	padding-top:15px;
+	border-top: 1px solid #add8dd;}
+	
+.bottom h1 {
+	text-shadow:0 1px 0 #eeeeee;
+}	
+
+.bottom h4 {
+	text-shadow:0 1px 0 rgba(255,255,255,.7);
+}
+
+.bottom h2 {
+    color: rgba(0,0,0,0.6);
+	text-shadow:0 1px 0 rgba(255,255,255,.7);
+	margin-bottom: 6px;
+}

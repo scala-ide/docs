@@ -1,0 +1,167 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Regression Test Suite &mdash; Scala IDE v2.0.0 documentation</title>
+    <link rel="stylesheet" href="../../_static/resources/stylesheets/base.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/resources/stylesheets/bootstrap.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/resources/stylesheets/base.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/resources/stylesheets/doc.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/resources/stylesheets/sphinx.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '2.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="Scala IDE v2.0.0 documentation" href="../../index.html" /> 
+  </head>
+  <body>
+<div class="top-bar">
+  <div class="top-bar-inner">
+    <div class="container">
+      <a class="brand" href="/index.html"><img src="../../_static/resources/images/logo.png" height="70px"></a>
+      <ul class="nav">
+        <li><a href="/index.html#features">Features</a></li>
+        <li><a href="/docs/index.html">Documentation</a></li>
+        <li><a href="/download/current.html">Download</a></li>
+        <li><a href="/blog/index.html">Blog</a></li>
+      </ul>	
+    </div>
+  </div>
+</div>
+<div class="slider">
+  <div class="container">
+    <div class="row">
+      <div class="span16">        
+        <h1>Regression Test Suite</h1>
+	  </div>
+    </div>
+  </div>
+</div>
+<div class="bottom">
+  <div class="container">
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li><a href="../../index.html">Scala IDE v2.0.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div> 
+    <div class="row">
+      <div class="span11" style="margin-top:-45px">        
+        <div class="section" id="regression-test-suite">
+<span id="testing-regression-test-suite"></span><h1>Regression Test Suite<a class="headerlink" href="#regression-test-suite" title="Permalink to this headline">¶</a></h1>
+<p>The Scala IDE relies for most of its functionality on two pillars:</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="eclipse-tests.html">Testing Eclipse integration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="presentation-compiler-tests.html">Testing the Scala Presentation Compiler in isolation</a></li>
+</ul>
+</div>
+<p>Testing should therefore be directed to the two of them, but also to their integration.</p>
+<p>While unit tests make sense, it is sometimes difficult to test things in isolation, especially when
+they involve the Scala compiler. Imagine a test for code completion: there must be a source file, a
+position inside the source file, an instantiated Scala PC, a correct classpath. For hyperlinking, it
+may be even worse: in addition to the above, you’d need to have a source locator (in order to find
+attached sources to a jar file). Of course, you could mock most of these things, but that would be
+very tedious. The alternative is to use real projects and an Eclipse instance, where this
+functionality can be tested programmatically. We call them integration tests, because they exercise
+a full Eclipse installation, and mimic very much what the user is doing.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">All tests have to run without a UI (headless mode). If any UI class is instantiated, the test
+will fail in Jenkins (the slaves do not have a GUI). Make sure that any test you write does not
+depend on UI classes, and always check that the test runs from the command line.</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The presentation compiler test suite is part of the <a class="reference external" href="https://github.com/scala/scala/tree/master/src/compiler/scala/tools/nsc/interactive/tests">Scala project source tree</a>.</p>
+</div>
+</div>
+
+	  </div>
+      <div class="span5">        
+        
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../_sources/dev/testing/testing.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+	  </div>	
+    </div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li><a href="../../index.html">Scala IDE v2.0.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="footer">
+  <div class="container">
+    <ul>
+      <li><h5>Download</h5></li>
+      <li><a href="/download/current.html">Current</a></li>
+      <li><a href="/download/nightly.html">Nightly</a></li>
+    </ul>
+    <ul>
+      <li><h5>Documentation</h5></li>
+      <li><a href="#">Getting Started</a></li>
+      <li><a href="#">Tutorials</a></li>
+    </ul>
+    <ul>
+      <li><h5>Contribute</h5></li>
+      <li><a href="https://github.com/scala-ide/scala-ide">Source Code</a></li>
+      <li><a href="#">Developer Documentation</a></li>
+      <li><a href="http://groups.google.com/group/scala-ide-dev">Developer Mailing List</a></li>      
+      <li><a href="#">Report a Bug</a></li>      
+    </ul>
+    <ul>
+      <li><img src="../../_static/resources/images/watermark.png" align="center"/></li>
+    </ul>
+  </div>
+  <div class="container copyright">
+    <p>
+      <a href="http://creativecommons.org/licenses/by/2.0/uk/">Creative Commons</a>, <a href="http://www.typesafe.com">Typesafe Inc.</a>
+    </p>		
+  </div>
+</div>
+
+  </body>
+</html>

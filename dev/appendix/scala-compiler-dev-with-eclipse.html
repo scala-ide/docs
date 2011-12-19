@@ -1,0 +1,177 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Scala compiler development under Eclipse &mdash; Scala IDE v2.0.0 documentation</title>
+    <link rel="stylesheet" href="../../_static/resources/stylesheets/base.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/resources/stylesheets/bootstrap.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/resources/stylesheets/base.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/resources/stylesheets/doc.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/resources/stylesheets/sphinx.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '2.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="Scala IDE v2.0.0 documentation" href="../../index.html" /> 
+  </head>
+  <body>
+<div class="top-bar">
+  <div class="top-bar-inner">
+    <div class="container">
+      <a class="brand" href="/index.html"><img src="../../_static/resources/images/logo.png" height="70px"></a>
+      <ul class="nav">
+        <li><a href="/index.html#features">Features</a></li>
+        <li><a href="/docs/index.html">Documentation</a></li>
+        <li><a href="/download/current.html">Download</a></li>
+        <li><a href="/blog/index.html">Blog</a></li>
+      </ul>	
+    </div>
+  </div>
+</div>
+<div class="slider">
+  <div class="container">
+    <div class="row">
+      <div class="span16">        
+        <h1>Scala compiler development under Eclipse</h1>
+	  </div>
+    </div>
+  </div>
+</div>
+<div class="bottom">
+  <div class="container">
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li><a href="../../index.html">Scala IDE v2.0.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div> 
+    <div class="row">
+      <div class="span11" style="margin-top:-45px">        
+        <div class="section" id="scala-compiler-development-under-eclipse">
+<h1>Scala compiler development under Eclipse<a class="headerlink" href="#scala-compiler-development-under-eclipse" title="Permalink to this headline">¶</a></h1>
+<p>This tutorial will show you how to set up the Scala IDE in Eclipse so you can use it to work on the Scala compiler:</p>
+<ul class="simple">
+<li>Download and install the latest stable Eclipse release from eclipse.org.</li>
+<li>Install the Scala IDE.<ul>
+<li>In Eclipse go to Help -&gt; Install New Software ... In &#8220;Work with:&#8221;, put</li>
+<li><a class="reference external" href="http://download.scala-ide.org/nightly-update-master-trunk">http://download.scala-ide.org/nightly-update-master-trunk</a> (you need the nightly build of the Scala IDE)</li>
+<li>Click Add. Select All. Finish steps to install.</li>
+</ul>
+</li>
+<li>Tweak the settings for eclipse.ini as discussed here:  <a class="reference external" href="https://www.assembla.com/spaces/scala-ide/wiki/Setup">https://www.assembla.com/spaces/scala-ide/wiki/Setup</a></li>
+<li>Import the Scala project in your workspace:<ul>
+<li>File -&gt; Import ... Existing Projects into Workspace.</li>
+<li>Pick the Scala trunk as the source directory.</li>
+<li>Finish.</li>
+</ul>
+</li>
+<li>Unselect Project -&gt; Build Automatically. (Recommended.)</li>
+<li>Import the libraries in lib/ into the project<ul>
+<li>Project -&gt; Properties.</li>
+<li>Java Build Path</li>
+<li>Libraries</li>
+<li>Add Jars, lib/*.jar</li>
+<li>Add Jars again, lib/ant/*.jar</li>
+</ul>
+</li>
+<li>Set the correct properties for the source code:<ul>
+<li>Project -&gt; Properties.</li>
+<li>Java Build Path.</li>
+<li>Source.</li>
+<li>Remove all.</li>
+<li>Add Folder... and select scala/src/compiler, scala/src/fjbg, scala/src/msil.</li>
+</ul>
+</li>
+<li>There is one error reported in scala/src/compiler/scala/tools/nsc/io/Jar.scala where two possible implicit conversions can take place &#8211; just ignore that :)</li>
+</ul>
+<p>Thanks to Hubert and Nada.</p>
+</div>
+
+	  </div>
+      <div class="span5">        
+        
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../_sources/dev/appendix/scala-compiler-dev-with-eclipse.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+	  </div>	
+    </div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li><a href="../../index.html">Scala IDE v2.0.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="footer">
+  <div class="container">
+    <ul>
+      <li><h5>Download</h5></li>
+      <li><a href="/download/current.html">Current</a></li>
+      <li><a href="/download/nightly.html">Nightly</a></li>
+    </ul>
+    <ul>
+      <li><h5>Documentation</h5></li>
+      <li><a href="#">Getting Started</a></li>
+      <li><a href="#">Tutorials</a></li>
+    </ul>
+    <ul>
+      <li><h5>Contribute</h5></li>
+      <li><a href="https://github.com/scala-ide/scala-ide">Source Code</a></li>
+      <li><a href="#">Developer Documentation</a></li>
+      <li><a href="http://groups.google.com/group/scala-ide-dev">Developer Mailing List</a></li>      
+      <li><a href="#">Report a Bug</a></li>      
+    </ul>
+    <ul>
+      <li><img src="../../_static/resources/images/watermark.png" align="center"/></li>
+    </ul>
+  </div>
+  <div class="container copyright">
+    <p>
+      <a href="http://creativecommons.org/licenses/by/2.0/uk/">Creative Commons</a>, <a href="http://www.typesafe.com">Typesafe Inc.</a>
+    </p>		
+  </div>
+</div>
+
+  </body>
+</html>

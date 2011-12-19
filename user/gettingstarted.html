@@ -1,0 +1,250 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Getting Started &mdash; Scala IDE v2.0.0 documentation</title>
+    <link rel="stylesheet" href="../_static/resources/stylesheets/base.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/resources/stylesheets/bootstrap.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/resources/stylesheets/base.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/resources/stylesheets/doc.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/resources/stylesheets/sphinx.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '2.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="Scala IDE v2.0.0 documentation" href="../index.html" />
+    <link rel="up" title="User Documentation" href="index.html" />
+    <link rel="next" title="Advanced Setup" href="advancedsetup.html" />
+    <link rel="prev" title="User Documentation" href="index.html" /> 
+  </head>
+  <body>
+<div class="top-bar">
+  <div class="top-bar-inner">
+    <div class="container">
+      <a class="brand" href="/index.html"><img src="../_static/resources/images/logo.png" height="70px"></a>
+      <ul class="nav">
+        <li><a href="/index.html#features">Features</a></li>
+        <li><a href="/docs/index.html">Documentation</a></li>
+        <li><a href="/download/current.html">Download</a></li>
+        <li><a href="/blog/index.html">Blog</a></li>
+      </ul>	
+    </div>
+  </div>
+</div>
+<div class="slider">
+  <div class="container">
+    <div class="row">
+      <div class="span16">        
+        <h1>Getting Started</h1>
+	  </div>
+    </div>
+  </div>
+</div>
+<div class="bottom">
+  <div class="container">
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="advancedsetup.html" title="Advanced Setup"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="User Documentation"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">Scala IDE v2.0.0 documentation</a> &raquo;</li>
+          <li><a href="index.html" accesskey="U">User Documentation</a> &raquo;</li> 
+      </ul>
+    </div> 
+    <div class="row">
+      <div class="span11" style="margin-top:-45px">        
+        <div class="section" id="getting-started">
+<h1>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="requirements">
+<h2>Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>the Java Development Kit, version 1.5.0 or newer. We recommend the latest 1.6.x version, there have been issues reported when using Eclipse and Java 7.</li>
+<li>Eclipse, including the JDT. Either the &#8220;Classic&#8221; or &#8220;Eclipse for Java Developers&#8221; is sufficient.<ul>
+<li>Scala IDE is officially supporting Eclipse 3.6.2.</li>
+<li>Scala IDE can be installed on Eclipse 3.7.1, but not all features are working perfectly. For example, discovery of unit tests is not working (ticket <a class="reference external" href="https://www.assembla.com/spaces/scala-ide/tickets/1000782">1000782</a>).</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="installation">
+<h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
+<p>Scala IDE for Eclipse is best installed (and updated) directly from within Eclipse.</p>
+<p>This is done by using <tt class="docutils literal"><span class="pre">Help</span> <span class="pre">→</span> <span class="pre">Install</span> <span class="pre">New</span> <span class="pre">Software...</span></tt>, add the <tt class="docutils literal"><span class="pre">Add...</span></tt> button in the dialog.</p>
+<p>Choose a name for the update site (<cite>Scala IDE</cite> is an obvious choice). Then read the next section to select which version you will install.</p>
+<div class="section" id="choosing-what-version-to-install">
+<h3>Choosing what version to install<a class="headerlink" href="#choosing-what-version-to-install" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="http://download.scala-ide.org">download.scala-ide.org</a> provides the URLs of all available update sites. The release ones are in the first section. Scala IDE is linked to specific version of Scala, so you have to decide which one you are going to use:</p>
+<ul class="simple">
+<li><strong>release-29</strong> provides support for projects using Scala 2.9.x (2.9.0-1 or 2.9.1). <em>This is the current version of Scala. Pick this one if you are unsure</em>.</li>
+<li><strong>release-28</strong> provides support for projects using Scala 2.8.x (2.8.1 or 2.8.2).</li>
+</ul>
+<p>If you want to live on the bleeding edge (like using Scala 2.10.x or Scala IDE master), check the description of each update site to find the one that fits your needs.</p>
+<p>The version of Scala used inside Scala IDE cannot be chosen per project. So if you want to work with project using different version of Scala (like 2.8.2 and 2.9.1), you need different installation of Scala IDE.</p>
+</div>
+<div class="section" id="finishing-installation">
+<h3>Finishing installation<a class="headerlink" href="#finishing-installation" title="Permalink to this headline">¶</a></h3>
+<p>Copy the URL as location and hit <tt class="docutils literal"><span class="pre">OK</span></tt> to validate.</p>
+<p>Select <tt class="docutils literal"><span class="pre">Scala</span> <span class="pre">IDE</span> <span class="pre">for</span> <span class="pre">Eclipse</span></tt> from the list of available features.</p>
+<p>Go through the next screens to validate the list of plug-ins to install, the <a class="reference internal" href="../license.html"><em>License</em></a> and start the installation.</p>
+<p>After having restarted Eclipse, Scala IDE is installed.</p>
+<p>For a more fine-tuned setup, check the <a class="reference internal" href="advancedsetup.html"><em>Advanced Setup</em></a> page.</p>
+</div>
+</div>
+<div class="section" id="using-scala-ide-with-an-existing-project">
+<h2>Using Scala IDE with an existing project<a class="headerlink" href="#using-scala-ide-with-an-existing-project" title="Permalink to this headline">¶</a></h2>
+<p>You have successfully installed the Scala plug-in, and you can now import your favorite project.</p>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p class="last">Before you begin, make sure your Scala sources follow the Java convention for packages.
+Each package should appear in its own directory with the same name. Eclipse expects this convention to be followed when it looks for classes.</p>
+</div>
+<div class="section" id="start-from-an-existing-sbt-project">
+<h3>Start from an existing SBT project<a class="headerlink" href="#start-from-an-existing-sbt-project" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="http://www.scala-sbt.org/">sbt</a> is the standard build tool for Scala projects. There are two versions in wide use today: 0.7.x and 0.10+. Both have plug-ins that can generate Eclipse project files out of the sbt project definition.</p>
+<ul class="simple">
+<li>If you are using <strong>sbt 0.7.x</strong>, use <a class="reference external" href="https://github.com/musk/SbtEclipsify/tree/0.8.0">eclipsify</a>. Follow this <a class="reference external" href="https://github.com/musk/SbtEclipsify/tree/0.8.0">instructions</a> to install the plug-in. You may want to check out the update-sources plug-in, which can download attached sources for your dependencies. This allows you to navigate through the libraries source in the IDE.</li>
+<li>If you are using <strong>sbt 0.11.x</strong> use <a class="reference external" href="https://github.com/typesafehub/sbteclipse">sbteclipse</a>. Follow the instructions on the project page to install and use the plug-in to generate the project definition. sbteclipse can download attached sources natively, so you do not need the update-sources plug-in.</li>
+</ul>
+<p>Once you have installed and generated the Eclipse project files using one of the above plug-ins, start Eclipse. Use <tt class="docutils literal"><span class="pre">File</span> <span class="pre">→</span> <span class="pre">Import</span> <span class="pre">→</span> <span class="pre">General/Existing</span> <span class="pre">Project</span> <span class="pre">into</span> <span class="pre">Workspace</span></tt>. Select the directory containing your project as <tt class="docutils literal"><span class="pre">root</span> <span class="pre">directory</span></tt>, select the project and hit <tt class="docutils literal"><span class="pre">Finish</span></tt>. And <em>Voila</em>.</p>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p class="last">sbt manages the dependency to scala-library.jar. Make sure the version of Scala you use in your sbt project matches the version of Scala installed in Eclipse.</p>
+</div>
+</div>
+<div class="section" id="start-from-an-existing-maven-project">
+<h3>Start from an existing maven project<a class="headerlink" href="#start-from-an-existing-maven-project" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="http://maven.apache.org/">maven</a> support on the Eclipse platform is provided by the <a class="reference external" href="http://www.eclipse.org/m2e/">m2eclipse</a> plug-in. Because of some specificities of Scala, <a class="reference external" href="https://github.com/sonatype/m2eclipse-scala">m2eclipse-scala</a> has been created as an extension to m2eclipse to provide better Scala support.</p>
+<p>To install the latest version of m2eclipse-scala, use the update site at this location: <a class="reference external" href="http://alchim31.free.fr/m2e-scala/update-site/">http://alchim31.free.fr/m2e-scala/update-site/</a>.</p>
+<p>After installation, maven projects can be imported using <tt class="docutils literal"><span class="pre">File</span> <span class="pre">→</span> <span class="pre">Import</span> <span class="pre">→</span> <span class="pre">Maven</span> <span class="pre">→</span> <span class="pre">Existing</span> <span class="pre">Maven</span> <span class="pre">Projects</span></tt>.</p>
+</div>
+</div>
+<div class="section" id="troubleshooting">
+<h2>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permalink to this headline">¶</a></h2>
+<p>Check the <a class="reference internal" href="faq.html#faq-known-issues"><em>Know Issues</em></a> section.</p>
+</div>
+</div>
+
+	  </div>
+      <div class="span5">        
+        
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Getting Started</a><ul>
+<li><a class="reference internal" href="#requirements">Requirements</a></li>
+<li><a class="reference internal" href="#installation">Installation</a><ul>
+<li><a class="reference internal" href="#choosing-what-version-to-install">Choosing what version to install</a></li>
+<li><a class="reference internal" href="#finishing-installation">Finishing installation</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#using-scala-ide-with-an-existing-project">Using Scala IDE with an existing project</a><ul>
+<li><a class="reference internal" href="#start-from-an-existing-sbt-project">Start from an existing SBT project</a></li>
+<li><a class="reference internal" href="#start-from-an-existing-maven-project">Start from an existing maven project</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#troubleshooting">Troubleshooting</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="index.html"
+                        title="previous chapter">User Documentation</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="advancedsetup.html"
+                        title="next chapter">Advanced Setup</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/user/gettingstarted.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+	  </div>	
+    </div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="advancedsetup.html" title="Advanced Setup"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="User Documentation"
+             >previous</a> |</li>
+        <li><a href="../index.html">Scala IDE v2.0.0 documentation</a> &raquo;</li>
+          <li><a href="index.html" >User Documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="footer">
+  <div class="container">
+    <ul>
+      <li><h5>Download</h5></li>
+      <li><a href="/download/current.html">Current</a></li>
+      <li><a href="/download/nightly.html">Nightly</a></li>
+    </ul>
+    <ul>
+      <li><h5>Documentation</h5></li>
+      <li><a href="#">Getting Started</a></li>
+      <li><a href="#">Tutorials</a></li>
+    </ul>
+    <ul>
+      <li><h5>Contribute</h5></li>
+      <li><a href="https://github.com/scala-ide/scala-ide">Source Code</a></li>
+      <li><a href="#">Developer Documentation</a></li>
+      <li><a href="http://groups.google.com/group/scala-ide-dev">Developer Mailing List</a></li>      
+      <li><a href="#">Report a Bug</a></li>      
+    </ul>
+    <ul>
+      <li><img src="../_static/resources/images/watermark.png" align="center"/></li>
+    </ul>
+  </div>
+  <div class="container copyright">
+    <p>
+      <a href="http://creativecommons.org/licenses/by/2.0/uk/">Creative Commons</a>, <a href="http://www.typesafe.com">Typesafe Inc.</a>
+    </p>		
+  </div>
+</div>
+
+  </body>
+</html>

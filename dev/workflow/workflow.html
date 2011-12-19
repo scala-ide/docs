@@ -1,0 +1,268 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Workflow &mdash; Scala IDE v2.0.0 documentation</title>
+    <link rel="stylesheet" href="../../_static/resources/stylesheets/base.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/resources/stylesheets/bootstrap.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/resources/stylesheets/base.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/resources/stylesheets/doc.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/resources/stylesheets/sphinx.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '2.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="Scala IDE v2.0.0 documentation" href="../../index.html" /> 
+  </head>
+  <body>
+<div class="top-bar">
+  <div class="top-bar-inner">
+    <div class="container">
+      <a class="brand" href="/index.html"><img src="../../_static/resources/images/logo.png" height="70px"></a>
+      <ul class="nav">
+        <li><a href="/index.html#features">Features</a></li>
+        <li><a href="/docs/index.html">Documentation</a></li>
+        <li><a href="/download/current.html">Download</a></li>
+        <li><a href="/blog/index.html">Blog</a></li>
+      </ul>	
+    </div>
+  </div>
+</div>
+<div class="slider">
+  <div class="container">
+    <div class="row">
+      <div class="span16">        
+        <h1>Workflow</h1>
+	  </div>
+    </div>
+  </div>
+</div>
+<div class="bottom">
+  <div class="container">
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li><a href="../../index.html">Scala IDE v2.0.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div> 
+    <div class="row">
+      <div class="span11" style="margin-top:-45px">        
+        <div class="section" id="workflow">
+<span id="workflow-page"></span><h1>Workflow<a class="headerlink" href="#workflow" title="Permalink to this headline">¶</a></h1>
+<p>In this page we discuss the workflow for both external contributors and committers. The difference
+between the two is very thin, and it boils down to having the rights for integrating patches (pull
+requests, in GitHub terminology) in the mainline.</p>
+<p>We assume you are comfortable with both Git and GitHub. If you need an introduction to these
+essential tools, we suggest you to start by reading <a class="reference internal" href="../appendix/git-github.html#git-github-page"><em>Git &amp; GitHub</em></a>.</p>
+<div class="section" id="external-contributors">
+<h2>External contributors<a class="headerlink" href="#external-contributors" title="Permalink to this headline">¶</a></h2>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If you are an external contributor, the first thing you want to do is <a class="reference internal" href="../setup/setup.html#setup-fork-the-project"><em>forking the Scala IDE
+repository</em></a>.</p>
+</div>
+<p>In your own fork, you are clearly free to adopt the workflow that better suits you. Though, the
+moment you decide to send a pull request (so that your changes can be integrated in the Scala IDE
+project), you need to make sure that both the branch name and your code match the required standards.
+That is why we suggest you to follow the conventions discussed in this section also in your
+own fork, it will just make it simpler and faster to push your changes in the main project.</p>
+<p>There are two, very simple, steps that you should do before starting any work:</p>
+<ul class="simple">
+<li>First, discuss with the core dev team what you would like to work on. There are several reasons
+why you should do this, but mainly it is about making sure that everyone knows what you are doing,
+so that we can avoid duplicating effort (which would be indeed a shame), and you may get some precious
+feedback, which can help you being more effective and avoid wasting time. As usual, to get in
+touch just drop a note in the <a class="reference external" href="https://groups.google.com/group/scala-ide-dev?hl=en">scala-ide-dev</a> mailing list.</li>
+<li>Second, make sure that a ticket describing the defect/feature you want to tackle exists in our
+<a class="reference external" href="https://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets">Assembla issue tracker</a>. If you
+can&#8217;t find one, just go ahead and create it. Once you have a ticket, assign it to you. In short,
+we would like defect/enhancement/feature to be driven by tickets as much as possible, as this
+help us keeping track of changes between each release.</li>
+</ul>
+<p>Alright, now it&#8217;s time to create a new branch (standard git workflow).</p>
+<div class="section" id="branch-name-convention">
+<span id="workflow-branch-name-convention"></span><h3>Branch name convention<a class="headerlink" href="#branch-name-convention" title="Permalink to this headline">¶</a></h3>
+<p>The convention for naming a branch is straightforward, the name should convey what the branch is
+about (i.e., a short description) and the ticket number should be suffixed. Words are separated by
+dashes (<tt class="docutils literal"><span class="pre">-</span></tt>). For instance, <tt class="docutils literal"><span class="pre">scala-java-interop-1000508</span></tt> is a perfectly valid name.</p>
+</div>
+<div class="section" id="ready-to-push-your-changes">
+<h3>Ready to push your changes?<a class="headerlink" href="#ready-to-push-your-changes" title="Permalink to this headline">¶</a></h3>
+<p>When you are done working on a ticket, make sure that:</p>
+<ul class="simple">
+<li>Your code is clean and documented. And you have made your best effort to decouple UI elements from
+core logic (that enables you to create tests for the core logic).</li>
+<li>You have done your best to create a set of tests that exercise the implemented feature. (Read
+<a class="reference internal" href="../testing/testing.html#testing-regression-test-suite"><em>Regression Test Suite</em></a> for learning how to create tests for the Scala IDE).</li>
+<li>Your branch compiles against Scala 2.9.x and 2.10 (read <a class="reference internal" href="../building/building.html#building-run-the-build"><em>Run the build</em></a> for
+learning how to build the Scala IDE with different versions of Scala). Of course, that also
+implies all tests succeeded.</li>
+<li>Rebase your branch on the latest upstream (read <a class="reference external" href="https://github.com/diaspora/diaspora/wiki/Git-Workflow">here</a> for more information on how to do this).</li>
+</ul>
+<p>If you get stuck with any of the above, just write a note in the <a class="reference external" href="https://groups.google.com/group/scala-ide-dev?hl=en">scala-ide-dev</a> mailing list. We are very keen in making
+sure you can integrate your awesome work back in the project&#8217;s mainline, so we will be very happy
+to help you fix any of the above points.</p>
+</div>
+<div class="section" id="send-us-a-pull-request">
+<h3>Send us a pull request<a class="headerlink" href="#send-us-a-pull-request" title="Permalink to this headline">¶</a></h3>
+<p>Once you think your work is ready to be integrated, send us a pull request (read <a class="reference external" href="http://help.github.com/send-pull-requests/">here</a> for how
+to do this). When sending a pull request, contributors will review your code. There might be a few
+iterations (code review, update code) before your pull request is merged in the mainline. Don&#8217;t get
+discouraged, we absolutely want your code to be in the mainline, but we also need to make sure that
+the quality standards are met. In the end, all we want is simply a better Scala IDE and a nice
+codebase, so that we can make it as simple as possible for new contributors to enter the project.</p>
+<p>Of course, after sending a pull request, you can immediately start working on a new task ;)</p>
+</div>
+</div>
+<div class="section" id="committers">
+<h2>Committers<a class="headerlink" href="#committers" title="Permalink to this headline">¶</a></h2>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">This section assumes that you know how the <a class="reference internal" href="../repository-organization/repository-organization.html#repository-organization-page"><em>repository is organized</em></a>.</p>
+</div>
+<p>The workflow for committers is very similar to the one described in the above
+<a class="reference internal" href="#external-contributors">External contributors</a> section, with the only difference that you don&#8217;t need to fork the project
+and you can push your branches directly in the main Scala IDE git repository.</p>
+<p>It is easy to decide where your branch should live:</p>
+<ul class="simple">
+<li>If you are experimenting a new idea, create it under <tt class="docutils literal"><span class="pre">experimental</span></tt>.</li>
+<li>If you want to work on a defect/enhancement/feature, create it under <tt class="docutils literal"><span class="pre">issue</span></tt>. If you can&#8217;t find
+a ticket describing what you want to work on, create a new one before starting to do any work. For
+each branch created under issue it is mandatory to have a ticket linked to it.</li>
+</ul>
+<p>Overall, we expect to have very few (possibly none at all) branches living in <tt class="docutils literal"><span class="pre">experimental</span></tt>, as we
+would like defect/enhancement/feature to be driven by tickets as much as possible.</p>
+<p>Branches should be named using the same convention described in <a class="reference internal" href="#workflow-branch-name-convention"><em>Branch name convention</em></a>.</p>
+<p>When creating a new branch under <tt class="docutils literal"><span class="pre">issue</span></tt>, you should push your branch remotely as soon as
+possible. Don&#8217;t be afraid of sharing bad code, none will blame you for that. The only moment when
+code quality does matter is when you ask to merge your changes into the mainline (<tt class="docutils literal"><span class="pre">master</span></tt>
+branch). Until that moment you are free of committing almost anything on your own branch (but please
+do not push binaries in remote branches, as they will considerably increase the repository&#8217;s
+footprint).</p>
+<p>When you are done working on a branch, create a pull request for it.</p>
+<p>Once the review process is over, you are good to merge. But before doing so, you need to know on
+what branches you should merge to. In general, you will always need to merge with master. Though,
+depending on the ticket you have been working on, you may also want to merge in one of the release
+branches.</p>
+<p>A new release branch is created when it is time to start working on stabilizing the Scala IDE for a
+final release. For instance, at the time of this writing, work is being done for releasing 2.0.0.
+Consequently, when working on a ticket with its Milestone set to 2.0, you will always need to merge
+your work with both master and <tt class="docutils literal"><span class="pre">scala-ide-2.0.x</span></tt>. If the ticket&#8217;s Milestone is not 2.0, you may still
+be allowed to merge in the <tt class="docutils literal"><span class="pre">scala-ide-2.0.x</span></tt> release branch, depending on the content of your changes.
+The best way to know whether you should merge in a release branch is, again, to open a discussion in
+the <a class="reference external" href="https://groups.google.com/group/scala-ide-dev?hl=en">scala-ide-dev</a> mailing list.</p>
+<p>The following are the steps you should follow when your work is ready to be integrated in the
+mainline:</p>
+<ul class="simple">
+<li>before merging, rebase your branch (this step is optional, but it keeps the repository&#8217;s history cleaner),</li>
+<li>merge your branch into master (and in a release branch if needed. Look at the ticket&#8217;s Milestone field),</li>
+<li>close the ticket, and</li>
+<li>delete the remote branch associated with the above closed ticket.</li>
+</ul>
+<p>Now you are ready to hack on a new ticket ;)</p>
+<p>If anything above is unclear, please make sure to ask in the <a class="reference external" href="https://groups.google.com/group/scala-ide-dev?hl=en">scala-ide-dev</a> mailing list for clarification.</p>
+</div>
+</div>
+
+	  </div>
+      <div class="span5">        
+        
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Workflow</a><ul>
+<li><a class="reference internal" href="#external-contributors">External contributors</a><ul>
+<li><a class="reference internal" href="#branch-name-convention">Branch name convention</a></li>
+<li><a class="reference internal" href="#ready-to-push-your-changes">Ready to push your changes?</a></li>
+<li><a class="reference internal" href="#send-us-a-pull-request">Send us a pull request</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#committers">Committers</a></li>
+</ul>
+</li>
+</ul>
+
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../_sources/dev/workflow/workflow.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+	  </div>	
+    </div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li><a href="../../index.html">Scala IDE v2.0.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="footer">
+  <div class="container">
+    <ul>
+      <li><h5>Download</h5></li>
+      <li><a href="/download/current.html">Current</a></li>
+      <li><a href="/download/nightly.html">Nightly</a></li>
+    </ul>
+    <ul>
+      <li><h5>Documentation</h5></li>
+      <li><a href="#">Getting Started</a></li>
+      <li><a href="#">Tutorials</a></li>
+    </ul>
+    <ul>
+      <li><h5>Contribute</h5></li>
+      <li><a href="https://github.com/scala-ide/scala-ide">Source Code</a></li>
+      <li><a href="#">Developer Documentation</a></li>
+      <li><a href="http://groups.google.com/group/scala-ide-dev">Developer Mailing List</a></li>      
+      <li><a href="#">Report a Bug</a></li>      
+    </ul>
+    <ul>
+      <li><img src="../../_static/resources/images/watermark.png" align="center"/></li>
+    </ul>
+  </div>
+  <div class="container copyright">
+    <p>
+      <a href="http://creativecommons.org/licenses/by/2.0/uk/">Creative Commons</a>, <a href="http://www.typesafe.com">Typesafe Inc.</a>
+    </p>		
+  </div>
+</div>
+
+  </body>
+</html>

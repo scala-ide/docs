@@ -1,0 +1,309 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Testing Eclipse integration &mdash; Scala IDE v2.0.0 documentation</title>
+    <link rel="stylesheet" href="../../_static/resources/stylesheets/base.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/resources/stylesheets/bootstrap.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/resources/stylesheets/base.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/resources/stylesheets/doc.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/resources/stylesheets/sphinx.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '2.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="Scala IDE v2.0.0 documentation" href="../../index.html" /> 
+  </head>
+  <body>
+<div class="top-bar">
+  <div class="top-bar-inner">
+    <div class="container">
+      <a class="brand" href="/index.html"><img src="../../_static/resources/images/logo.png" height="70px"></a>
+      <ul class="nav">
+        <li><a href="/index.html#features">Features</a></li>
+        <li><a href="/docs/index.html">Documentation</a></li>
+        <li><a href="/download/current.html">Download</a></li>
+        <li><a href="/blog/index.html">Blog</a></li>
+      </ul>	
+    </div>
+  </div>
+</div>
+<div class="slider">
+  <div class="container">
+    <div class="row">
+      <div class="span16">        
+        <h1>Testing Eclipse integration</h1>
+	  </div>
+    </div>
+  </div>
+</div>
+<div class="bottom">
+  <div class="container">
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li><a href="../../index.html">Scala IDE v2.0.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div> 
+    <div class="row">
+      <div class="span11" style="margin-top:-45px">        
+        <div class="section" id="testing-eclipse-integration">
+<h1>Testing Eclipse integration<a class="headerlink" href="#testing-eclipse-integration" title="Permalink to this headline">¶</a></h1>
+<p>All tests are grouped under the <tt class="docutils literal"><span class="pre">org.scala-ide.sdt.core.tests</span></tt> project, following standard
+practice for Eclipse plug-in tests (in OSGi terms, this module is a ‘bundle fragment’ of
+<tt class="docutils literal"><span class="pre">org.scala-ide.sdt.core</span></tt>, but this means only that it has access to all packages defined by
+<tt class="docutils literal"><span class="pre">org.scala-ide.sdt.core</span></tt>).</p>
+<p>One can run tests in two ways:</p>
+<ul class="simple">
+<li>using the Eclipse JUnit Plugin Test runner (with Equinox weaving, of course)</li>
+<li>using maven/tycho</li>
+</ul>
+<p>Both ways launch a new Eclipse instance, installs the <tt class="docutils literal"><span class="pre">sdt.core</span></tt> and <tt class="docutils literal"><span class="pre">sdt.core.tests</span></tt> bundles in
+the target instance, creates a clean (empty) workspace, and launches the test runner. Of course,
+<tt class="docutils literal"><span class="pre">sdt.core</span></tt> can not run by itself: it needs a lot of other bundles, such as the eclipse core
+bundles and the JDT bundles. Depending on the way the test is launched, these dependencies are
+provided differently:</p>
+<ul class="simple">
+<li>using the existing (running) Eclipse instance, and adding all existing plug-ins to the launched instance (they can be enabled/disabled individually in the Run Configurations dialog)</li>
+<li>using the declared dependencies in META-INF/MANIFEST.MF. Tycho will download them using the configured p2 repositories, in the same way that maven resolves library dependencies</li>
+</ul>
+<div class="section" id="individual-tests">
+<h2>Individual tests<a class="headerlink" href="#individual-tests" title="Permalink to this headline">¶</a></h2>
+<p>An integration test is usually set up by copying an existing project from
+<tt class="docutils literal"><span class="pre">org.scala-ide.sdt.core.tests/test-workspace</span></tt> to the target (clean) workspace, then running a
+number of <tt class="docutils literal"><span class="pre">&#64;Test</span></tt> methods on it. The setup step is taken care of by subclassing
+<a class="reference external" href="https://github.com/scala-ide/scala-ide/blob/master/org.scala-ide.sdt.core.tests/src/scala/tools/eclipse/testsetup/TestProjectSetup.scala">TestProjectSetup</a>,
+usually with an object. For example, the <a class="reference external" href="https://github.com/scala-ide/scala-ide/blob/master/org.scala-ide.sdt.core.tests/src/scala/tools/eclipse/structurebuilder/StructureBuilderTest.scala">StructureBuilderTest</a>
+declares</p>
+<div class="highlight-scala"><div class="highlight"><pre><span class="k">object</span> <span class="nc">StructureBuilderTest</span> <span class="k">extends</span> <span class="n">testsetup</span><span class="o">.</span><span class="nc">TestProjectSetup</span><span class="o">(</span><span class="s">&quot;simple-structure-builder&quot;</span><span class="o">)</span>
+</pre></div>
+</div>
+<p>This gives a number of convenience handles that make it easy to retrieve elements of interest later:</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">project</span></tt> it is the (<a class="reference external" href="https://github.com/scala-ide/scala-ide/blob/master/org.scala-ide.sdt.core/src/scala/tools/eclipse/ScalaProject.scala">ScalaProject</a>) associated to the copied project.</li>
+<li><tt class="docutils literal"><span class="pre">srcPackageRoot</span></tt> is the <a class="reference external" href="http://publib.boulder.ibm.com/infocenter/iadthelp/v6r0/index.jsp?topic=/org.eclipse.jdt.doc.isv/reference/api/org/eclipse/jdt/core/IPackageFragmentRoot.html">IPackageFragmentRoot</a> instance of the <em>src</em> folder.</li>
+</ul>
+<p>You can use compilationUnit with a full path to retrieve the <a class="reference external" href="http://publib.boulder.ibm.com/infocenter/iadthelp/v6r0/index.jsp?topic=/org.eclipse.jdt.doc.isv/reference/api/org/eclipse/jdt/core/ICompilationUnit.html">ICompilationUnit</a>
+of the corresponding file.</p>
+<p>Note that these handles are pure JDT API elements. Using them, you can build your test methods that
+exercise the JDT and Scala integration layers. For instance, to test that annotations are correctly
+reported by the <a class="reference external" href="http://github.com/scala-ide/scala-ide/blob/master/org.scala-ide.sdt.core/src/scala/tools/eclipse/javaelements/ScalaStructureBuilder.scala">ScalaStructureBuilder</a>,
+one would write the following method:</p>
+<div class="highlight-scala"><div class="highlight"><pre><span class="nd">@Test</span> <span class="k">def</span> <span class="n">testAnnotations</span><span class="o">()</span> <span class="o">{</span>
+  <span class="k">val</span> <span class="n">annotsPkg</span> <span class="k">=</span> <span class="n">srcPackageRoot</span><span class="o">.</span><span class="n">getPackageFragment</span><span class="o">(</span><span class="s">&quot;annots&quot;</span><span class="o">);</span>
+  <span class="n">assertNotNull</span><span class="o">(</span><span class="n">annotsPkg</span><span class="o">)</span>
+  <span class="k">val</span> <span class="n">cu</span> <span class="k">=</span> <span class="n">annotsPkg</span><span class="o">.</span><span class="n">getCompilationUnit</span><span class="o">(</span><span class="s">&quot;ScalaTestSuite.scala&quot;</span><span class="o">)</span>
+  <span class="n">assertTrue</span><span class="o">(</span><span class="n">cu</span><span class="o">.</span><span class="n">exists</span><span class="o">)</span>
+  <span class="k">val</span> <span class="n">tpe</span> <span class="k">=</span> <span class="n">cu</span><span class="o">.</span><span class="n">findPrimaryType</span><span class="o">()</span>
+  <span class="n">assertNotNull</span><span class="o">(</span><span class="s">&quot;Primary type should not be null&quot;</span><span class="o">,</span> <span class="n">tpe</span><span class="o">)</span>
+  <span class="k">val</span> <span class="n">m1</span> <span class="k">=</span> <span class="n">tpe</span><span class="o">.</span><span class="n">getMethod</span><span class="o">(</span><span class="s">&quot;someTestMethod&quot;</span><span class="o">,</span> <span class="nc">Array</span><span class="o">())</span>
+  <span class="k">val</span> <span class="n">m2</span> <span class="k">=</span> <span class="n">tpe</span><span class="o">.</span><span class="n">getMethod</span><span class="o">(</span><span class="s">&quot;anotherTestMethod&quot;</span><span class="o">,</span> <span class="nc">Array</span><span class="o">())</span>
+
+  <span class="n">assertTrue</span><span class="o">(</span><span class="n">m1</span><span class="o">.</span><span class="n">getAnnotations</span><span class="o">.</span><span class="n">length</span> <span class="o">==</span> <span class="mi">1</span><span class="o">)</span>
+  <span class="n">assertTrue</span><span class="o">(</span><span class="n">m1</span><span class="o">.</span><span class="n">getAnnotation</span><span class="o">(</span><span class="s">&quot;Test&quot;</span><span class="o">).</span><span class="n">exists</span><span class="o">)</span>
+  <span class="n">assertTrue</span><span class="o">(</span><span class="n">m2</span><span class="o">.</span><span class="n">getAnnotations</span><span class="o">.</span><span class="n">length</span> <span class="o">==</span> <span class="mi">1</span><span class="o">)</span>
+  <span class="n">assertTrue</span><span class="o">(</span><span class="n">m2</span><span class="o">.</span><span class="n">getAnnotation</span><span class="o">(</span><span class="s">&quot;Test&quot;</span><span class="o">).</span><span class="n">exists</span><span class="o">)</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+<p>This assumes the project has a file called <tt class="docutils literal"><span class="pre">ScalaTestSuite.scala</span></tt>, under <tt class="docutils literal"><span class="pre">src/annots</span></tt>. Note the
+use of the JDT API again. Equivalently, one could use the convenience method
+<tt class="docutils literal"><span class="pre">compilationUnit(&quot;annots/ScalaTestSuite.scala&quot;)</span></tt>.</p>
+</div>
+<div class="section" id="resolving-positions">
+<h2>Resolving positions<a class="headerlink" href="#resolving-positions" title="Permalink to this headline">¶</a></h2>
+<p>What you’ve seen so far works well for tests that operate on whole compilation units. However, many
+times an operation needs to be performed on a certain element, at a certain position in the source
+file. Positions are integer offsets in a source file, and one way would be to hard code them in the
+testing code. However, this is fragile, and makes the test cumbersome to write. A better way is to
+use markers in the source that is subject to testing, and convert them automatically to the
+corresponding offset.</p>
+</div>
+<div class="section" id="markers">
+<h2>Markers<a class="headerlink" href="#markers" title="Permalink to this headline">¶</a></h2>
+<p>A marker is any string, but we use block comments with a character in between: <tt class="docutils literal"><span class="pre">/*!*/</span></tt>. Such a
+marker has the advantage that it keeps the source compilable. Have a look at the hyperlink test
+project:</p>
+<div class="highlight-scala"><div class="highlight"><pre><span class="k">class</span> <span class="nc">SimpleHyperlinking</span> <span class="o">{</span>
+  <span class="k">type</span> <span class="kt">Tpe</span><span class="o">[</span><span class="kt">T</span><span class="o">]</span> <span class="k">=</span> <span class="nc">List</span><span class="cm">/*^*/</span><span class="o">[</span><span class="kt">T</span><span class="o">]</span>
+
+  <span class="k">def</span> <span class="n">foo</span><span class="o">(</span><span class="n">xs</span><span class="k">:</span> <span class="kt">Tpe/*^*/</span><span class="o">[</span><span class="kt">Int</span><span class="o">])</span> <span class="k">=</span> <span class="o">{</span>
+    <span class="k">val</span> <span class="n">arr</span> <span class="k">=</span> <span class="nc">Array</span><span class="cm">/*^*/</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span> <span class="mi">2</span><span class="o">,</span> <span class="mi">3</span><span class="o">)</span>
+    <span class="k">val</span> <span class="n">sum</span> <span class="k">=</span> <span class="n">xs</span><span class="o">.</span><span class="n">sum</span><span class="cm">/*^*/</span>
+    <span class="k">val</span> <span class="n">x</span><span class="k">:</span> <span class="kt">String/*^*/</span> <span class="o">=</span> <span class="s">&quot;Hello, world&quot;</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+<p>Each marker will be used by our test method as a position to ask for hyperlinking. In the test
+method, we retrieve these positions (using <a class="reference external" href="https://github.com/scala-ide/scala-ide/blob/master/org.scala-ide.sdt.core.tests/src/scala/tools/eclipse/testsetup/SDTTestUtils.scala">SDTTestUtils</a>)
+and pass them to the hyperlink detector:</p>
+<div class="highlight-scala"><div class="highlight"><pre><span class="k">val</span> <span class="n">contents</span> <span class="k">=</span> <span class="n">unit</span><span class="o">.</span><span class="n">getContents</span>
+<span class="k">val</span> <span class="n">positions</span> <span class="k">=</span> <span class="nc">SDTTestUtils</span><span class="o">.</span><span class="n">positionsOf</span><span class="o">(</span><span class="n">contents</span><span class="o">,</span> <span class="s">&quot;/*^*/&quot;</span><span class="o">)</span>
+<span class="c1">// ..</span>
+<span class="k">val</span> <span class="n">detector</span> <span class="k">=</span> <span class="k">new</span> <span class="nc">ScalaHyperlinkDetector</span>
+<span class="k">for</span> <span class="o">(</span><span class="n">pos</span> <span class="k">&lt;-</span> <span class="n">positions</span><span class="o">)</span> <span class="o">{</span>
+  <span class="k">val</span> <span class="n">wordRegion</span> <span class="k">=</span> <span class="nc">ScalaWordFinder</span><span class="o">.</span><span class="n">findWord</span><span class="o">(</span><span class="n">unit</span><span class="o">.</span><span class="n">getContents</span><span class="o">,</span> <span class="n">pos</span> <span class="o">-</span> <span class="mi">1</span><span class="o">)</span>
+  <span class="k">val</span> <span class="n">links</span> <span class="k">=</span> <span class="n">detector</span><span class="o">.</span><span class="n">scalaHyperlinks</span><span class="o">(</span><span class="n">unit</span><span class="o">,</span> <span class="n">wordRegion</span><span class="o">)</span>
+  <span class="n">println</span><span class="o">(</span><span class="s">&quot;Found links: &quot;</span> <span class="o">+</span> <span class="n">links</span><span class="o">)</span>
+  <span class="n">assertTrue</span><span class="o">(</span><span class="n">links</span><span class="o">.</span><span class="n">isDefined</span><span class="o">)</span>
+  <span class="n">assertEquals</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span> <span class="n">links</span><span class="o">.</span><span class="n">get</span><span class="o">.</span><span class="n">size</span><span class="o">)</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="advanced-markers">
+<h2>Advanced markers<a class="headerlink" href="#advanced-markers" title="Permalink to this headline">¶</a></h2>
+<p>Sometimes a simple marker does not carry enough information. Consider testing the mark occurrences
+functionality: each word that is highlighted may appear a different number of times in the source.
+One can associate a number with a marker by using <a class="reference external" href="https://github.com/scala-ide/scala-ide/blob/master/org.scala-ide.sdt.core.tests/src/scala/tools/eclipse/testsetup/SDTTestUtils.scala">SDTTestUtils.markersOf</a>.</p>
+<p>Consider this example:</p>
+<div class="highlight-scala"><pre>class DummyOccurrences(param: Int, func/*&lt;2*/: (Int/*&lt;5*/, Int) =&gt; Int) {
+  type T/*&lt;2*/ = Int
+
+  def sum(xs: List[T]) = {
+    xs.foldLeft(param/*&lt;3*/)(_ + _)
+    for (j &lt;- xs) {
+      (param /: xs)(func)
+    }
+  }
+}</pre>
+</div>
+<p>In this test file, we expect that <cite>func</cite> will be highlighted 2 times, <cite>Int</cite> 5 times, and so on. The
+test method will use the parsed integer to assert the correct number of matches is reported by the
+<a class="reference external" href="https://github.com/scala-ide/scala-ide/blob/master/org.scala-ide.sdt.core/src/scala/tools/eclipse/markoccurrences/ScalaOccurrencesFinder.scala">ScalaOccurrencesFinder</a>.</p>
+<div class="highlight-scala"><div class="highlight"><pre><span class="k">val</span> <span class="n">contents</span> <span class="k">=</span> <span class="n">unit</span><span class="o">.</span><span class="n">getContents</span>
+<span class="k">val</span> <span class="n">positions</span> <span class="k">=</span> <span class="nc">SDTTestUtils</span><span class="o">.</span><span class="n">markersOf</span><span class="o">(</span><span class="n">contents</span><span class="o">,</span> <span class="s">&quot;&lt;&quot;</span><span class="o">)</span>
+
+<span class="n">println</span><span class="o">(</span><span class="s">&quot;checking %d positions&quot;</span><span class="o">.</span><span class="n">format</span><span class="o">(</span><span class="n">positions</span><span class="o">.</span><span class="n">size</span><span class="o">))</span>
+</pre></div>
+</div>
+<p>and the actual test:</p>
+<div class="highlight-scala"><div class="highlight"><pre><span class="k">for</span> <span class="o">((</span><span class="n">pos</span><span class="o">,</span> <span class="n">count</span><span class="o">)</span> <span class="k">&lt;-</span> <span class="n">positions</span><span class="o">)</span> <span class="o">{</span>
+  <span class="n">println</span><span class="o">(</span><span class="s">&quot;looking at position %d for %d occurrences&quot;</span><span class="o">.</span><span class="n">format</span><span class="o">(</span><span class="n">pos</span><span class="o">,</span> <span class="n">count</span><span class="o">))</span>
+  <span class="k">val</span> <span class="n">region</span> <span class="k">=</span> <span class="nc">ScalaWordFinder</span><span class="o">.</span><span class="n">findWord</span><span class="o">(</span><span class="n">contents</span><span class="o">,</span> <span class="n">pos</span> <span class="o">-</span> <span class="mi">1</span><span class="o">)</span>
+  <span class="n">println</span><span class="o">(</span><span class="s">&quot;using word region: &quot;</span> <span class="o">+</span> <span class="n">region</span><span class="o">)</span>
+  <span class="k">val</span> <span class="n">finder</span> <span class="k">=</span> <span class="k">new</span> <span class="nc">ScalaOccurrencesFinder</span><span class="o">(</span><span class="n">unit</span><span class="o">,</span> <span class="n">region</span><span class="o">.</span><span class="n">getOffset</span><span class="o">,</span> <span class="n">region</span><span class="o">.</span><span class="n">getLength</span><span class="o">)</span>
+  <span class="k">val</span> <span class="n">occurrences</span> <span class="k">=</span> <span class="n">finder</span><span class="o">.</span><span class="n">findOccurrences</span>
+  <span class="n">assertTrue</span><span class="o">(</span><span class="n">finder</span><span class="o">.</span><span class="n">findOccurrences</span><span class="o">.</span><span class="n">isDefined</span><span class="o">)</span>
+  <span class="n">assertEquals</span><span class="o">(</span><span class="n">count</span><span class="o">,</span> <span class="n">occurrences</span><span class="o">.</span><span class="n">get</span><span class="o">.</span><span class="n">locations</span><span class="o">.</span><span class="n">size</span><span class="o">)</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="running-tests-within-eclipse">
+<h2>Running tests within Eclipse<a class="headerlink" href="#running-tests-within-eclipse" title="Permalink to this headline">¶</a></h2>
+<p>To run the tests inside Eclipse you need to <a class="reference internal" href="../setup/setup.html#setup-install-equinox-weaving-launcher"><em>install the Equinox Weaving Launcher</em></a> plug-in for Eclipse.
+Once you have installed the plug-in, running a test in headless mode boils down to the following
+steps:</p>
+<ul class="simple">
+<li>Open Run Configurations and double click on JUnit Plug-in Test with Equinox Weaving (which should have appeared after installing the above mentioned plug-in).</li>
+<li>In the Test tab, fill in the information about the test you want to run.</li>
+<li>In the Main tab, under Program to Run, check Run an application and select <em>[No Application] – Headless Mode</em>.</li>
+<li>In the Arguments tab, make sure to pass <tt class="docutils literal"><span class="pre">-Dsdtcore.headless</span></tt> in the VM arguments.</li>
+<li>In the Plug-ins tab, make sure that bundle <tt class="docutils literal"><span class="pre">org.scala-ide.sdt.core.tests</span></tt> is selected (or the test wont be able to find the test class file)</li>
+</ul>
+<p>At this point you should be good to run the test.</p>
+</div>
+</div>
+
+	  </div>
+      <div class="span5">        
+        
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Testing Eclipse integration</a><ul>
+<li><a class="reference internal" href="#individual-tests">Individual tests</a></li>
+<li><a class="reference internal" href="#resolving-positions">Resolving positions</a></li>
+<li><a class="reference internal" href="#markers">Markers</a></li>
+<li><a class="reference internal" href="#advanced-markers">Advanced markers</a></li>
+<li><a class="reference internal" href="#running-tests-within-eclipse">Running tests within Eclipse</a></li>
+</ul>
+</li>
+</ul>
+
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../_sources/dev/testing/eclipse-tests.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+	  </div>	
+    </div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li><a href="../../index.html">Scala IDE v2.0.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="footer">
+  <div class="container">
+    <ul>
+      <li><h5>Download</h5></li>
+      <li><a href="/download/current.html">Current</a></li>
+      <li><a href="/download/nightly.html">Nightly</a></li>
+    </ul>
+    <ul>
+      <li><h5>Documentation</h5></li>
+      <li><a href="#">Getting Started</a></li>
+      <li><a href="#">Tutorials</a></li>
+    </ul>
+    <ul>
+      <li><h5>Contribute</h5></li>
+      <li><a href="https://github.com/scala-ide/scala-ide">Source Code</a></li>
+      <li><a href="#">Developer Documentation</a></li>
+      <li><a href="http://groups.google.com/group/scala-ide-dev">Developer Mailing List</a></li>      
+      <li><a href="#">Report a Bug</a></li>      
+    </ul>
+    <ul>
+      <li><img src="../../_static/resources/images/watermark.png" align="center"/></li>
+    </ul>
+  </div>
+  <div class="container copyright">
+    <p>
+      <a href="http://creativecommons.org/licenses/by/2.0/uk/">Creative Commons</a>, <a href="http://www.typesafe.com">Typesafe Inc.</a>
+    </p>		
+  </div>
+</div>
+
+  </body>
+</html>

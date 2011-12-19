@@ -1,0 +1,270 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Architecture &mdash; Scala IDE v2.0.0 documentation</title>
+    <link rel="stylesheet" href="../../_static/resources/stylesheets/base.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/resources/stylesheets/bootstrap.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/resources/stylesheets/base.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/resources/stylesheets/doc.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/resources/stylesheets/sphinx.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '2.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="Scala IDE v2.0.0 documentation" href="../../index.html" /> 
+  </head>
+  <body>
+<div class="top-bar">
+  <div class="top-bar-inner">
+    <div class="container">
+      <a class="brand" href="/index.html"><img src="../../_static/resources/images/logo.png" height="70px"></a>
+      <ul class="nav">
+        <li><a href="/index.html#features">Features</a></li>
+        <li><a href="/docs/index.html">Documentation</a></li>
+        <li><a href="/download/current.html">Download</a></li>
+        <li><a href="/blog/index.html">Blog</a></li>
+      </ul>	
+    </div>
+  </div>
+</div>
+<div class="slider">
+  <div class="container">
+    <div class="row">
+      <div class="span16">        
+        <h1>Architecture</h1>
+	  </div>
+    </div>
+  </div>
+</div>
+<div class="bottom">
+  <div class="container">
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li><a href="../../index.html">Scala IDE v2.0.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div> 
+    <div class="row">
+      <div class="span11" style="margin-top:-45px">        
+        <div class="section" id="architecture">
+<h1>Architecture<a class="headerlink" href="#architecture" title="Permalink to this headline">¶</a></h1>
+<p>In this page you will learn about the Scala IDE&#8217;s architecture. First, an overview of the
+different existing modules is provided. Then, a few specific aspects of the Scala IDE&#8217;s architecture
+and its components are discussed.</p>
+<div class="section" id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<p>The Scala IDE project is composed of several modules. Here is a generic description of what each module contains:</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">org.scala-ide.build</span></tt>: Contains the scripts for building the Scala IDE from the command line.</li>
+<li><tt class="docutils literal"><span class="pre">org.scala-ide.build-toolchain</span></tt>: Contains the script for retrieving dependencies that are needed by the Scala IDE.</li>
+<li><tt class="docutils literal"><span class="pre">org.scala-ide.sbt.full.library</span></tt>: Groups together a bunch of SBT jars into one OSGi bundle.</li>
+<li><tt class="docutils literal"><span class="pre">org.scala-ide.scala.compiler</span></tt>: Wraps the Scala Compiler in a OSGi bundle (needed by the Eclipse runtime).</li>
+<li><tt class="docutils literal"><span class="pre">org.scala-ide.scala.library</span></tt>: Wraps the Scala Library in a OSGi bundle (needed by the Eclipse runtime).</li>
+<li><tt class="docutils literal"><span class="pre">org.scala-ide.sdt.aspects</span></tt>: Contains the AspectJ classes used to weave into Eclipse and hook in JDT internals.</li>
+<li><tt class="docutils literal"><span class="pre">org.scala-ide.sdt.core</span></tt>: Contains the Scala IDE plug-in&#8217;s source code.</li>
+<li><tt class="docutils literal"><span class="pre">org.scala-ide.sdt.core.tests</span></tt>: Contains the functional tests used to exercise the Scala IDE in headless mode (with no User Interface).</li>
+<li><tt class="docutils literal"><span class="pre">org.scala-ide.sdt.feature</span></tt>: Packages the <tt class="docutils literal"><span class="pre">org.scala-ide.sdt.core</span></tt> project binaries into the &#8220;Scala IDE for Eclipse&#8221; component, which is then made available through the Scala IDE update site.</li>
+<li><tt class="docutils literal"><span class="pre">org.scala-ide.sdt.source.feature</span></tt>: Packages both the <tt class="docutils literal"><span class="pre">org.scala-ide.sdt.core</span></tt> and <tt class="docutils literal"><span class="pre">org.scala-ide.sdt.aspects</span></tt> project sources into the &#8220;Scala IDE for Eclipse Source Feature&#8221; component, which is then made available through the Scala IDE update site.</li>
+<li><tt class="docutils literal"><span class="pre">org.scala-ide.sdt.weaving.feature</span></tt>: Packages the <tt class="docutils literal"><span class="pre">org.scala-ide.sdt.aspects</span></tt> project binaries into the &#8220;JDT Weaving for Scala&#8221; component, which is included within the &#8220;Scala IDE for Eclipse&#8221; component.</li>
+<li><tt class="docutils literal"><span class="pre">org.scala-ide.sdt.update-site</span></tt>: Contains the result of a successful compilation of the Scala IDE project, packaged in the form expected by the Eclipse Update Manager.</li>
+</ul>
+</div>
+<div class="section" id="scala-ide-eclipse-jdt">
+<h2>Scala IDE &amp; Eclipse JDT<a class="headerlink" href="#scala-ide-eclipse-jdt" title="Permalink to this headline">¶</a></h2>
+<p>The Scala IDE uses the <a class="reference external" href="http://eclipse.org/jdt/">Eclipse Java Development Tools (JDT)</a> weaving
+in order to inherit as much as possible of the existing Eclipse Java functionality. AspectJ
+and the weaving service of Eclipse (in fact, its OSGi container, called Equinox) allow us to
+intercept method calls in the JDT, and provide Scala-specific implementations for things like the
+<a class="reference external" href="https://github.com/scala-ide/scala-ide/blob/master/org.scala-ide.sdt.core/src/scala/tools/eclipse/ScalaSourceFileEditor.scala">source file editor</a>
+or the <a class="reference external" href="https://github.com/scala-ide/scala-ide/blob/master/org.scala-ide.sdt.core/src/scala/tools/eclipse/javaelements/ScalaIndexBuilder.scala">indexer</a>.</p>
+<p>By hooking into the JDT, and providing specific implementations of JDT interfaces, Scala entities
+(classes, types, methods, etc) are seen by the JDT as Java elements, meaning:</p>
+<ul class="simple">
+<li>Java code completion “sees” Scala classes.</li>
+<li>The Java presentation compiler “sees” errors when using Scala classes.</li>
+<li>JDT tools, such as the JUnit runner, just ‘work’.</li>
+<li>Lots of UI elements can be reused (the Outline View, Package Explorer, etc).</li>
+</ul>
+<p>Of course, Scala entities can not be faithfully represented in Java terms. Some Scala features will
+be therefore only partially supported when working in mixed Java-Scala projects (for instance,
+type members are represented as normal, value fields).</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">This will hopefully change in the near future, as we plan to create our own models for
+representing Scala entities and hook that into JDT (rather than the current solution, where we
+are using Java models to expose Scala entities).</p>
+</div>
+<p>Although not intended to be extended with other languages, the JDT offers extension points for some
+functionality. Whenever possible, we prefer to use the regular, supported mechanism for extension,
+instead of weaving. This is the case for both code completion and hyperlinking.</p>
+<div class="section" id="jdt-weaving-and-java-integration">
+<h3>JDT Weaving and Java integration<a class="headerlink" href="#jdt-weaving-and-java-integration" title="Permalink to this headline">¶</a></h3>
+<p>All Scala aspect code is found in <tt class="docutils literal"><span class="pre">org.scala-ide.sdt.aspects</span></tt> project. This module defines:</p>
+<ul class="simple">
+<li>pointcuts and aspects to intercept JDT method calls,</li>
+<li>Java interfaces and classes that are used by these aspects. The main IDE module, <tt class="docutils literal"><span class="pre">org.scala-ide.sdt.core</span></tt> implements or inherits these classes. This way, there is a clean separation between the hooks, and the actual implementations.</li>
+</ul>
+<p>The other side of this coin is the actual Scala-specific implementation in
+<tt class="docutils literal"><span class="pre">org.scala-ide.sdt.core</span></tt>. The package <tt class="docutils literal"><span class="pre">scala.tools.eclipse.javaelements</span></tt> contains Scala
+subclasses of Java element classes, such as <tt class="docutils literal"><span class="pre">ScalaClassElement</span></tt> or <tt class="docutils literal"><span class="pre">ScalaDefElement</span></tt>.</p>
+<p>Although the JDT defines interfaces for these elements, we inherit from their internal
+implementations. This makes our code prone to breakage in newer releases of the JDT, but gives us
+much more functionality. In some cases it is even impossible to do otherwise, as the JDT code itself
+casts such interfaces to their concrete, internal, implementations.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">As mentioned in the previous section, we plan to create our own models for representing Scala
+entities. That will help us better representing Scala entities in the editor and it will
+mitigate incompatibilities with newer version of the JDT.</p>
+</div>
+</div>
+</div>
+<div class="section" id="the-scala-structure-builder">
+<h2>The Scala Structure Builder<a class="headerlink" href="#the-scala-structure-builder" title="Permalink to this headline">¶</a></h2>
+<p>The workhorse of Java-Scala integration is the <a class="reference external" href="http://github.com/scala-ide/scala-ide/blob/master/org.scala-ide.sdt.core/src/scala/tools/eclipse/javaelements/ScalaStructureBuilder.scala">ScalaStructureBuilder</a>
+class. This class translates Scala sources (using the Abstract Syntax Trees - AST) to the JDT model elements (using the
+<a class="reference external" href="http://github.com/scala-ide/scala-ide/blob/master/org.scala-ide.sdt.core/src/scala/tools/eclipse/javaelements/ScalaElements.scala">Scala specific subclasses</a>,
+of course), and it is fully responsible for the way the Eclipse Java compiler (and related JDT tools
+or UI elements) sees Scala code.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>This approach has some important limitation with respect to correct interoperation of mixed
+Scala/Java code, and it is the source of several issues in the Scala IDE. One major point of
+pain is that the Scala Structure Builder needs to faithfully emulate the Scala compiler to
+provide correct interoperation between Scala and Java code. Doing this in general is:</p>
+<ul class="simple">
+<li>difficult, as we are somewhat trying to re-engineer what the compiler already does when it produces bytecode, and</li>
+<li>fragile, as the produced bytecode may vary from one Scala version to another.</li>
+</ul>
+<p class="last">In the future we would like to explore other roads. For instance, we have been thinking about
+using the binaries (instead of the sources), so that we would not need to duplicate the Scala
+compiler backend&#8217;s logic. Though, doing this would force users working on mixed Scala/Java projects
+to enable continuous build (to make sure that the class binaries are actually produced), which
+may not be acceptable.</p>
+</div>
+</div>
+<div class="section" id="the-scala-presentation-compiler">
+<h2>The Scala Presentation Compiler<a class="headerlink" href="#the-scala-presentation-compiler" title="Permalink to this headline">¶</a></h2>
+<p>In order to provide semantic actions, the IDE needs to <em>understand</em> the edited Scala code. That
+means parsing and type-checking. The <a class="reference external" href="https://github.com/scala-ide/scala-ide/blob/master/org.scala-ide.sdt.core/src/scala/tools/eclipse/ScalaPresentationCompiler.scala">Scala Presentation Compiler</a>
+is an asynchronous front-end compiler for Scala, part of the standard Scala compiler.</p>
+</div>
+<div class="section" id="code-formatting">
+<h2>Code formatting<a class="headerlink" href="#code-formatting" title="Permalink to this headline">¶</a></h2>
+<p>Code formatting is delegated to <a class="reference external" href="https://github.com/mdr/scalariform/">Scalariform</a>, a library for
+automated Scala formatting written by Matt Russell. <a class="reference external" href="https://github.com/scala-ide/scala-ide/blob/master/org.scala-ide.sdt.core/src/scala/tools/eclipse/ScalaStructureSelectEnclosingAction.scala">Structured selection</a>
+and <a class="reference external" href="https://github.com/mdr/Scala-IDE/blob/f1a02cd3455aead4582a1652beddcc0b3dbd0f10/org.scala-ide.sdt.core/src/scala/tools/eclipse/lexical/ScalaCodeScanner.scala">tokenising</a>
+for syntax coloring are also backed by Scalariform.</p>
+</div>
+<div class="section" id="refactoring">
+<h2>Refactoring<a class="headerlink" href="#refactoring" title="Permalink to this headline">¶</a></h2>
+<p>Refactoring is delegated to the <a class="reference external" href="http://scala-refactoring.org/">scala-refactoring</a> library written
+by Mirko Stocker.</p>
+</div>
+</div>
+
+	  </div>
+      <div class="span5">        
+        
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Architecture</a><ul>
+<li><a class="reference internal" href="#overview">Overview</a></li>
+<li><a class="reference internal" href="#scala-ide-eclipse-jdt">Scala IDE &amp; Eclipse JDT</a><ul>
+<li><a class="reference internal" href="#jdt-weaving-and-java-integration">JDT Weaving and Java integration</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#the-scala-structure-builder">The Scala Structure Builder</a></li>
+<li><a class="reference internal" href="#the-scala-presentation-compiler">The Scala Presentation Compiler</a></li>
+<li><a class="reference internal" href="#code-formatting">Code formatting</a></li>
+<li><a class="reference internal" href="#refactoring">Refactoring</a></li>
+</ul>
+</li>
+</ul>
+
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../_sources/dev/architecture/architecture.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+	  </div>	
+    </div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li><a href="../../index.html">Scala IDE v2.0.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="footer">
+  <div class="container">
+    <ul>
+      <li><h5>Download</h5></li>
+      <li><a href="/download/current.html">Current</a></li>
+      <li><a href="/download/nightly.html">Nightly</a></li>
+    </ul>
+    <ul>
+      <li><h5>Documentation</h5></li>
+      <li><a href="#">Getting Started</a></li>
+      <li><a href="#">Tutorials</a></li>
+    </ul>
+    <ul>
+      <li><h5>Contribute</h5></li>
+      <li><a href="https://github.com/scala-ide/scala-ide">Source Code</a></li>
+      <li><a href="#">Developer Documentation</a></li>
+      <li><a href="http://groups.google.com/group/scala-ide-dev">Developer Mailing List</a></li>      
+      <li><a href="#">Report a Bug</a></li>      
+    </ul>
+    <ul>
+      <li><img src="../../_static/resources/images/watermark.png" align="center"/></li>
+    </ul>
+  </div>
+  <div class="container copyright">
+    <p>
+      <a href="http://creativecommons.org/licenses/by/2.0/uk/">Creative Commons</a>, <a href="http://www.typesafe.com">Typesafe Inc.</a>
+    </p>		
+  </div>
+</div>
+
+  </body>
+</html>

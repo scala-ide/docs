@@ -1,0 +1,25 @@
+.related h3 {
+	visibility: hidden;
+}
+.related ul {
+	visibility: hidden;	
+	float: right;
+	list-style-type: none;
+	margin-left: 0;
+	padding-left: 0;
+	display: inline;
+	}
+.related ul li {
+	visibility: hidden;	
+	margin-left: 0;
+	margin-bottom: 0;
+	list-style: none;
+	display: inline;
+	}
+	
+.related ul li:first-child {
+	visibility: hidden;	
+	border-left: none;
+	list-style: none;
+	display: inline;
+}	

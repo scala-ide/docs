@@ -1,0 +1,236 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Scala Interpreter &mdash; Scala IDE v2.0.0 documentation</title>
+    <link rel="stylesheet" href="../../_static/resources/stylesheets/base.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/resources/stylesheets/bootstrap.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/resources/stylesheets/base.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/resources/stylesheets/doc.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/resources/stylesheets/sphinx.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '2.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="Scala IDE v2.0.0 documentation" href="../../index.html" />
+    <link rel="up" title="Features" href="../features.html" />
+    <link rel="next" title="Tutorial" href="../../tutorials/index.html" />
+    <link rel="prev" title="Formatting" href="formatting.html" /> 
+  </head>
+  <body>
+<div class="top-bar">
+  <div class="top-bar-inner">
+    <div class="container">
+      <a class="brand" href="/index.html"><img src="../../_static/resources/images/logo.png" height="70px"></a>
+      <ul class="nav">
+        <li><a href="/index.html#features">Features</a></li>
+        <li><a href="/docs/index.html">Documentation</a></li>
+        <li><a href="/download/current.html">Download</a></li>
+        <li><a href="/blog/index.html">Blog</a></li>
+      </ul>	
+    </div>
+  </div>
+</div>
+<div class="slider">
+  <div class="container">
+    <div class="row">
+      <div class="span16">        
+        <h1>Scala Interpreter</h1>
+	  </div>
+    </div>
+  </div>
+</div>
+<div class="bottom">
+  <div class="container">
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../tutorials/index.html" title="Tutorial"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="formatting.html" title="Formatting"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../index.html">Scala IDE v2.0.0 documentation</a> &raquo;</li>
+          <li><a href="../index.html" >User Documentation</a> &raquo;</li>
+          <li><a href="../features.html" accesskey="U">Features</a> &raquo;</li> 
+      </ul>
+    </div> 
+    <div class="row">
+      <div class="span11" style="margin-top:-45px">        
+        <div class="section" id="scala-interpreter">
+<span id="scalainterpreter-scala-interpreter"></span><h1>Scala Interpreter<a class="headerlink" href="#scala-interpreter" title="Permalink to this headline">¶</a></h1>
+<p>Scala IDE integrate the Scala REPL. It is set in a view called <tt class="docutils literal"><span class="pre">Scala</span> <span class="pre">Interpreter</span></tt>.</p>
+<p>Each view instance is associated to a project, and all artifacts defined or referenced in the project are available to the interpreter.</p>
+<div class="section" id="starting-the-interpreter">
+<h2>Starting the interpreter<a class="headerlink" href="#starting-the-interpreter" title="Permalink to this headline">¶</a></h2>
+<p>There are multiple ways to start it:</p>
+<ul class="simple">
+<li>Opening the view. The view can be opened with <tt class="docutils literal"><span class="pre">Window</span> <span class="pre">→</span> <span class="pre">Show</span> <span class="pre">View</span> <span class="pre">→</span> <span class="pre">Scala</span> <span class="pre">Interpreter</span></tt> from the Scala perspective, or <tt class="docutils literal"><span class="pre">Window</span> <span class="pre">→</span> <span class="pre">Show</span> <span class="pre">View</span> <span class="pre">→</span> <span class="pre">Other...</span> <span class="pre">→</span> <span class="pre">Scala</span> <span class="pre">→</span> <span class="pre">Scala</span> <span class="pre">Interpreter</span></tt> from anywhere. This will display the list of available projects. The interpreter is initialized and configured to use the selected one.</li>
+<li>Executing some code. The <img alt="runSelection" src="../../_images/run_interpreter.gif" /> <tt class="docutils literal"><span class="pre">Run</span> <span class="pre">Selection</span> <span class="pre">in</span> <span class="pre">Scala</span> <span class="pre">Interpreter</span></tt> command triggers the creation of a view for the current project if needed. The code currently selected in the editor is then run in the interpreter.</li>
+</ul>
+</div>
+<div class="section" id="using-the-interpreter">
+<h2>Using the interpreter<a class="headerlink" href="#using-the-interpreter" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">Scala code can be entered directly in the interpreter view, in the <tt class="docutils literal"><span class="pre">Evaluate</span></tt> field.</p>
+<p>The previously entered commands are kept in a history. They can be browsed using the <tt class="docutils literal"><span class="pre">Up</span></tt> and <tt class="docutils literal"><span class="pre">Down</span></tt> arrow keys.</p>
+<img alt="../../_images/feature-interpreter-01.png" src="../../_images/feature-interpreter-01.png" />
+</li>
+<li><p class="first">Existing code can be selected in the Scala Editor, and run in the interpreter using the <img alt="runSelection" src="../../_images/run_interpreter.gif" /> <tt class="docutils literal"><span class="pre">Run</span> <span class="pre">Selection</span> <span class="pre">in</span> <span class="pre">Scala</span> <span class="pre">Interpreter</span></tt> command.</p>
+<p>The command can also be invoked using the <tt class="docutils literal"><span class="pre">Ctrl+Shitf+x</span></tt> or <tt class="docutils literal"><span class="pre">Cmd+Shift+x</span></tt> key shortcut.</p>
+<img alt="../../_images/feature-interpreter-02.png" src="../../_images/feature-interpreter-02.png" />
+</li>
+<li><p class="first">An other way is to use the interpreter is combination with an editor to test new code.</p>
+<p>With a little bit of wrapping code, it is possible to create a setup where any code can be entered, and type checked. Then the code can be run in the interpreter to see its result.</p>
+<img alt="../../_images/feature-interpreter-03.png" src="../../_images/feature-interpreter-03.png" />
+</li>
+</ol>
+</div>
+<div class="section" id="toolbar">
+<h2>Toolbar<a class="headerlink" href="#toolbar" title="Permalink to this headline">¶</a></h2>
+<p>The toolbar contains the following five buttons:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="12%" />
+<col width="23%" />
+<col width="66%" />
+</colgroup>
+<tbody valign="top">
+<tr><td><img alt="replayAll" src="../../_images/restart_co.gif" /></td>
+<td>Replay All Commands</td>
+<td>Execute again all commands from the current session.</td>
+</tr>
+<tr><td><img alt="terminate" src="../../_images/terminate_co.gif" /></td>
+<td>Terminate</td>
+<td>Stop the interpreter.</td>
+</tr>
+<tr><td><img alt="terminateReplay" src="../../_images/term_restart.gif" /></td>
+<td>Terminate and Replay</td>
+<td>Reset the interpreter, and execute again all commands from the current session.</td>
+</tr>
+<tr><td><img alt="clear" src="../../_images/clear_co.gif" /></td>
+<td>Clear Output</td>
+<td>Clear the view, but keeps the current session state.</td>
+</tr>
+<tr><td><img alt="autoreplay" src="../../_images/refresh_interpreter.gif" /></td>
+<td>Replay History on Project Rebuild</td>
+<td>If enable, the commands from the current session are executed every time the project is rebuilt.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+	  </div>
+      <div class="span5">        
+        
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Scala Interpreter</a><ul>
+<li><a class="reference internal" href="#starting-the-interpreter">Starting the interpreter</a></li>
+<li><a class="reference internal" href="#using-the-interpreter">Using the interpreter</a></li>
+<li><a class="reference internal" href="#toolbar">Toolbar</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="formatting.html"
+                        title="previous chapter">Formatting</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="../../tutorials/index.html"
+                        title="next chapter">Tutorial</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../_sources/user/features/scalainterpreter.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+	  </div>	
+    </div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../tutorials/index.html" title="Tutorial"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="formatting.html" title="Formatting"
+             >previous</a> |</li>
+        <li><a href="../../index.html">Scala IDE v2.0.0 documentation</a> &raquo;</li>
+          <li><a href="../index.html" >User Documentation</a> &raquo;</li>
+          <li><a href="../features.html" >Features</a> &raquo;</li> 
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="footer">
+  <div class="container">
+    <ul>
+      <li><h5>Download</h5></li>
+      <li><a href="/download/current.html">Current</a></li>
+      <li><a href="/download/nightly.html">Nightly</a></li>
+    </ul>
+    <ul>
+      <li><h5>Documentation</h5></li>
+      <li><a href="#">Getting Started</a></li>
+      <li><a href="#">Tutorials</a></li>
+    </ul>
+    <ul>
+      <li><h5>Contribute</h5></li>
+      <li><a href="https://github.com/scala-ide/scala-ide">Source Code</a></li>
+      <li><a href="#">Developer Documentation</a></li>
+      <li><a href="http://groups.google.com/group/scala-ide-dev">Developer Mailing List</a></li>      
+      <li><a href="#">Report a Bug</a></li>      
+    </ul>
+    <ul>
+      <li><img src="../../_static/resources/images/watermark.png" align="center"/></li>
+    </ul>
+  </div>
+  <div class="container copyright">
+    <p>
+      <a href="http://creativecommons.org/licenses/by/2.0/uk/">Creative Commons</a>, <a href="http://www.typesafe.com">Typesafe Inc.</a>
+    </p>		
+  </div>
+</div>
+
+  </body>
+</html>

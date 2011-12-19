@@ -1,0 +1,244 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Using Unit Testing Frameworks &mdash; Scala IDE v2.0.0 documentation</title>
+    <link rel="stylesheet" href="../_static/resources/stylesheets/base.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/resources/stylesheets/bootstrap.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/resources/stylesheets/base.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/resources/stylesheets/doc.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/resources/stylesheets/sphinx.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '2.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="Scala IDE v2.0.0 documentation" href="../index.html" />
+    <link rel="up" title="User Documentation" href="index.html" />
+    <link rel="next" title="License" href="../license.html" />
+    <link rel="prev" title="Community" href="community.html" /> 
+  </head>
+  <body>
+<div class="top-bar">
+  <div class="top-bar-inner">
+    <div class="container">
+      <a class="brand" href="/index.html"><img src="../_static/resources/images/logo.png" height="70px"></a>
+      <ul class="nav">
+        <li><a href="/index.html#features">Features</a></li>
+        <li><a href="/docs/index.html">Documentation</a></li>
+        <li><a href="/download/current.html">Download</a></li>
+        <li><a href="/blog/index.html">Blog</a></li>
+      </ul>	
+    </div>
+  </div>
+</div>
+<div class="slider">
+  <div class="container">
+    <div class="row">
+      <div class="span16">        
+        <h1>Using Unit Testing Frameworks</h1>
+	  </div>
+    </div>
+  </div>
+</div>
+<div class="bottom">
+  <div class="container">
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../license.html" title="License"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="community.html" title="Community"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">Scala IDE v2.0.0 documentation</a> &raquo;</li>
+          <li><a href="index.html" accesskey="U">User Documentation</a> &raquo;</li> 
+      </ul>
+    </div> 
+    <div class="row">
+      <div class="span11" style="margin-top:-45px">        
+        <div class="section" id="using-unit-testing-frameworks">
+<h1>Using Unit Testing Frameworks<a class="headerlink" href="#using-unit-testing-frameworks" title="Permalink to this headline">¶</a></h1>
+<p>Test from multiple unit testing frameworks can be run inside Scala IDE, using the JUnit 4 runners provided by the frameworks</p>
+<div class="section" id="setting-up-junit-4">
+<h2>Setting up JUnit 4<a class="headerlink" href="#setting-up-junit-4" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="inside-eclipse">
+<h3>Inside Eclipse<a class="headerlink" href="#inside-eclipse" title="Permalink to this headline">¶</a></h3>
+<p>To add JUnit to a project from inside Eclipse, right-click on the project in the package explorer view, select <tt class="docutils literal"><span class="pre">Build</span> <span class="pre">Path</span> <span class="pre">→</span> <span class="pre">Add</span> <span class="pre">Libraries...</span></tt>, select <tt class="docutils literal"><span class="pre">JUnit</span></tt>, and then <tt class="docutils literal"><span class="pre">JUnit</span> <span class="pre">4</span></tt> in the next wizard page.</p>
+</div>
+<div class="section" id="in-sbt">
+<h3>In sbt<a class="headerlink" href="#in-sbt" title="Permalink to this headline">¶</a></h3>
+<p>To add JUnit in the sbt configuration, add the following dependency in the <tt class="docutils literal"><span class="pre">build.sbt</span></tt> file:</p>
+<div class="highlight-scala"><div class="highlight"><pre><span class="n">libraryDependencies</span> <span class="o">++=</span> <span class="nc">Seq</span><span class="o">(</span>
+   <span class="s">&quot;junit&quot;</span> <span class="o">%</span> <span class="s">&quot;junit&quot;</span> <span class="o">%</span> <span class="s">&quot;4.8.1&quot;</span> <span class="o">%</span> <span class="s">&quot;test&quot;</span>
+<span class="o">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="in-maven">
+<h3>In maven<a class="headerlink" href="#in-maven" title="Permalink to this headline">¶</a></h3>
+<p>To add JUnit in the maven configuration, add the following dependency in the <tt class="docutils literal"><span class="pre">pom.xml</span></tt> file:</p>
+<div class="highlight-xml"><div class="highlight"><pre><span class="nt">&lt;dependency&gt;</span>
+     <span class="nt">&lt;groupId&gt;</span>junit<span class="nt">&lt;/groupId&gt;</span>
+     <span class="nt">&lt;artifactId&gt;</span>junit<span class="nt">&lt;/artifactId&gt;</span>
+     <span class="nt">&lt;version&gt;</span>4.8.1<span class="nt">&lt;/version&gt;</span>
+     <span class="nt">&lt;scope&gt;</span>test<span class="nt">&lt;/scope&gt;</span>
+<span class="nt">&lt;/dependency&gt;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="using-junit-4">
+<h2>Using JUnit 4<a class="headerlink" href="#using-junit-4" title="Permalink to this headline">¶</a></h2>
+<p>To run a test suite using JUnit in Scala IDE, open the source file of the test, right-click in it, and select <tt class="docutils literal"><span class="pre">Run</span> <span class="pre">as</span> <span class="pre">→</span> <span class="pre">JUnit</span> <span class="pre">Test</span></tt>.</p>
+<p>You can re-run your test using the launch configuration which is automatically created. Check the <a class="reference external" href="http://help.eclipse.org/indigo/index.jsp?topic=%2Forg.eclipse.jdt.doc.user%2FgettingStarted%2Fqs-12.htm">Eclipse documentation</a> for more details.</p>
+</div>
+<div class="section" id="scalatest">
+<h2>ScalaTest<a class="headerlink" href="#scalatest" title="Permalink to this headline">¶</a></h2>
+<p>The <a class="reference external" href="http://scalatest.org">ScalaTest</a> framework provides a runner (<tt class="docutils literal"><span class="pre">org.scalatest.junit.JUnitRunner</span></tt>) allowing to use JUnit to run the test suites.</p>
+<p>Adding this annotation makes a ScalaTest test suite runnable with JUnit4:</p>
+<div class="highlight-scala"><div class="highlight"><pre><span class="nd">@RunWith</span><span class="o">(</span><span class="n">classOf</span><span class="o">[</span><span class="kt">JUnitRunner</span><span class="o">])</span>
+</pre></div>
+</div>
+<p>The test suite from the <a class="reference external" href="http://scalatest.org/getting_started_with_fun_suite">FunSuite</a> example becomes the following when run in Scala IDE:</p>
+<img alt="../_images/testing-scalatest-01.png" src="../_images/testing-scalatest-01.png" />
+</div>
+<div class="section" id="specs">
+<h2>Specs<a class="headerlink" href="#specs" title="Permalink to this headline">¶</a></h2>
+<p>The <a class="reference external" href="http://etorreborre.github.com/specs2/">Specs</a> framework provides a runner (<tt class="docutils literal"><span class="pre">org.specs.runner.JUnitSuiteRunner</span></tt>) allowing to use JUnit to run the suites.</p>
+<p>Adding this annotation makes a Specs suite runnable with JUnit4:</p>
+<div class="highlight-scala"><div class="highlight"><pre><span class="nd">@RunWith</span><span class="o">(</span><span class="n">classOf</span><span class="o">[</span><span class="kt">JUnitSuiteRunner</span><span class="o">])</span>
+</pre></div>
+</div>
+<p>For Specs2, the annotation is the following:</p>
+<div class="highlight-scala"><div class="highlight"><pre><span class="nd">@RunWith</span><span class="o">(</span><span class="n">classOf</span><span class="o">[</span><span class="kt">JUniRunner</span><span class="o">])</span>
+</pre></div>
+</div>
+<p>The <a class="reference external" href="http://etorreborre.github.com/specs2/guide/org.specs2.guide.QuickStart.html">HelloWorldSpec</a> example becomes the following when run in the Scala IDE:</p>
+<img alt="../_images/testing-specs-01.png" src="../_images/testing-specs-01.png" />
+</div>
+<div class="section" id="junit">
+<h2>JUnit<a class="headerlink" href="#junit" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="http://junit.org">JUnit</a> test suites can be run directly in Scala IDE.</p>
+<img alt="../_images/testing-junit-01.png" src="../_images/testing-junit-01.png" />
+</div>
+</div>
+
+	  </div>
+      <div class="span5">        
+        
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Using Unit Testing Frameworks</a><ul>
+<li><a class="reference internal" href="#setting-up-junit-4">Setting up JUnit 4</a><ul>
+<li><a class="reference internal" href="#inside-eclipse">Inside Eclipse</a></li>
+<li><a class="reference internal" href="#in-sbt">In sbt</a></li>
+<li><a class="reference internal" href="#in-maven">In maven</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#using-junit-4">Using JUnit 4</a></li>
+<li><a class="reference internal" href="#scalatest">ScalaTest</a></li>
+<li><a class="reference internal" href="#specs">Specs</a></li>
+<li><a class="reference internal" href="#junit">JUnit</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="community.html"
+                        title="previous chapter">Community</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="../license.html"
+                        title="next chapter">License</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/user/testingframeworks.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+	  </div>	
+    </div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../license.html" title="License"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="community.html" title="Community"
+             >previous</a> |</li>
+        <li><a href="../index.html">Scala IDE v2.0.0 documentation</a> &raquo;</li>
+          <li><a href="index.html" >User Documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="footer">
+  <div class="container">
+    <ul>
+      <li><h5>Download</h5></li>
+      <li><a href="/download/current.html">Current</a></li>
+      <li><a href="/download/nightly.html">Nightly</a></li>
+    </ul>
+    <ul>
+      <li><h5>Documentation</h5></li>
+      <li><a href="#">Getting Started</a></li>
+      <li><a href="#">Tutorials</a></li>
+    </ul>
+    <ul>
+      <li><h5>Contribute</h5></li>
+      <li><a href="https://github.com/scala-ide/scala-ide">Source Code</a></li>
+      <li><a href="#">Developer Documentation</a></li>
+      <li><a href="http://groups.google.com/group/scala-ide-dev">Developer Mailing List</a></li>      
+      <li><a href="#">Report a Bug</a></li>      
+    </ul>
+    <ul>
+      <li><img src="../_static/resources/images/watermark.png" align="center"/></li>
+    </ul>
+  </div>
+  <div class="container copyright">
+    <p>
+      <a href="http://creativecommons.org/licenses/by/2.0/uk/">Creative Commons</a>, <a href="http://www.typesafe.com">Typesafe Inc.</a>
+    </p>		
+  </div>
+</div>
+
+  </body>
+</html>
