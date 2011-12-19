@@ -1,6 +1,6 @@
 {% extends "basic/layout.html" %}
 
-{% set css_files = [ "_static/resources/stylesheets/bootstrap.css" ] %}
+{% set css_files = [ "_static/resources/stylesheets/bootstrap.css","_static/resources/stylesheets/base.css","_static/resources/stylesheets/doc.css","_static/resources/stylesheets/sphinx.css" ] %}
 
 {% block header %}
 <div class="top-bar">
@@ -8,37 +8,47 @@
     <div class="container">
       <a class="brand" href="{{ pathto('/index.html', 1) }}"><img src="{{ pathto('_static/resources/images/logo.png', 1) }}" height="70px"></a>
       <ul class="nav">
-        <li><a href="/docs">Documentation</a></li>
-        <li><a href="downloads.html">Downloads</a></li>
-        <li><a href="contribute.html">Contribute</a></li>
+        <li><a href="{{ pathto('/index.html#features', 1) }}">Features</a></li>
+        <li><a href="{{ pathto('/docs/index.html', 1) }}">Documentation</a></li>
+        <li><a href="{{ pathto('/download/current.html', 1) }}">Download</a></li>
+        <li><a href="{{ pathto('/blog/index.html', 1) }}">Blog</a></li>
       </ul>	
     </div>
   </div>
 </div>
-{% endblock %}
-
-{% block content %} 
-<div class="bottom">
+<div class="slider">
   <div class="container">
     <div class="row">
-      <div class="span11">        
-	{{ body }}
+      <div class="span16">        
+        <h1>{{ title }}</h1>
 	  </div>
-      <div class="span5">        
-	{{ sidebar() }}
-	  </div>	
     </div>
   </div>
 </div>
+<div class="bottom">
+  <div class="container">
+{% endblock %}
+
+{% block content %} 
+    <div class="row">
+      <div class="span11" style="margin-top:-45px">        
+        {{ body }}
+	  </div>
+      <div class="span5">        
+        {{ sidebar() }}
+	  </div>	
+    </div>
 {% endblock %}
 
 {% block footer %}
-  <div class="footer">
+  </div>
+</div>
+<div class="footer">
   <div class="container">
     <ul>
       <li><h5>Download</h5></li>
-      <li><a href="#">Current</a></li>
-      <li><a href="#">Nightly</a></li>
+      <li><a href="{{ pathto('/download/current.html', 1) }}">Current</a></li>
+      <li><a href="{{ pathto('/download/nightly.html', 1) }}">Nightly</a></li>
     </ul>
     <ul>
       <li><h5>Documentation</h5></li>
@@ -49,7 +59,8 @@
       <li><h5>Contribute</h5></li>
       <li><a href="https://github.com/scala-ide/scala-ide">Source Code</a></li>
       <li><a href="#">Developer Documentation</a></li>
-      <li><a href="#">Developer Mailing List</a></li>      
+      <li><a href="http://groups.google.com/group/scala-ide-dev">Developer Mailing List</a></li>      
+      <li><a href="#">Report a Bug</a></li>      
     </ul>
     <ul>
       <li><img src="{{ pathto('_static/resources/images/watermark.png', 1) }}" align="center"/></li>
