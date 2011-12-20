@@ -7,6 +7,8 @@ As You Type Error Reporting
 The Scala code is check as it is entered. It allows to see small or more complex compilation error as the code is type. No more endless cycle *code → code → code → compile → error reported → fix error → compile → error reported → fix error →...*.
 
 .. image:: ../images/feature-typing-error-01.png
+   :width: 100%
+   :target: ../../_images/feature-typing-error-01.png
 
 Code Completion
 ---------------
@@ -16,10 +18,14 @@ Scala IDE provides full code completion support, returning the entities availabl
 In **Scala source files**, code completion returns the valid Scala and Java proposals.
 
 .. image:: ../images/feature-code-completion-01.png
+   :width: 100%
+   :target: ../../_images/feature-code-completion-01.png
 
 The Scala elements compatible with Java are provided in **Java source files**.
 
 .. image:: ../images/feature-code-completion-02.png
+   :width: 100%
+   :target: ../../_images/feature-code-completion-02.png
 
 Code Templates
 --------------
@@ -27,6 +33,8 @@ Code Templates
 Code templates are available in the completion proposals in code assist. They provide shortcuts for boilerplate code like main method definition and asInstanceOf invocation.
 
 .. image:: ../images/feature-template-01.png
+   :width: 100%
+   :target: ../../_images/feature-template-01.png
 
 The list of available templates can be viewed and modified in the ``Scala → Templates`` preference page.
 
@@ -43,6 +51,8 @@ Quick Fix Imports
 `Quick Fix`_ can be used to easily add a required import statement.
 
 .. image:: ../images/feature-quickfix-import-01.png
+   :width: 100%
+   :target: ../../_images/feature-quickfix-import-01.png
 
 .. _typingviewing_show-inferred-semicolons:
 
@@ -71,6 +81,8 @@ Syntax Highlighting
 The Scala editor has full syntax highlighting support, including comments, control structures and embedded XML.
 
 .. image:: ../images/feature-syntax-highlighting-01.png
+   :width: 100%
+   :target: ../../_images/feature-syntax-highlighting-01.png
 
 
 .. _Quick Fix: http://wiki.eclipse.org/FAQ_What_is_a_Quick_Fix%3F

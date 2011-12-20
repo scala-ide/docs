@@ -61,6 +61,8 @@ The test suite from the `FunSuite`__ example becomes the following when run in S
 __ http://scalatest.org/getting_started_with_fun_suite
 
 .. image:: images/testing-scalatest-01.png
+   :width: 100%
+   :target: ../_images/testing-scalatest-01.png
 
 Specs
 -----
@@ -84,6 +86,8 @@ The `HelloWorldSpec`__ example becomes the following when run in the Scala IDE:
 __ http://etorreborre.github.com/specs2/guide/org.specs2.guide.QuickStart.html
 
 .. image:: images/testing-specs-01.png
+   :width: 100%
+   :target: ../_images/testing-specs-01.png
 
 JUnit
 -----
@@ -91,6 +95,8 @@ JUnit
 `JUnit`_ test suites can be run directly in Scala IDE.
 
 .. image:: images/testing-junit-01.png
+   :width: 100%
+   :target: ../_images/testing-junit-01.png
 
 .. _JUnit: http://junit.org
 .. _ScalaTest: http://scalatest.org

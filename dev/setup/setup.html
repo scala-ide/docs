@@ -25,7 +25,10 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <link rel="top" title="Scala IDE v2.0.0 documentation" href="../../index.html" /> 
+    <link rel="top" title="Scala IDE v2.0.0 documentation" href="../../index.html" />
+    <link rel="up" title="Welcome to the Scala IDE Developer Documentation" href="../index.html" />
+    <link rel="next" title="Architecture" href="../architecture/architecture.html" />
+    <link rel="prev" title="Welcome to the Scala IDE Developer Documentation" href="../index.html" /> 
   </head>
   <body>
 <div class="top-bar">
@@ -59,7 +62,14 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li><a href="../../index.html">Scala IDE v2.0.0 documentation</a> &raquo;</li> 
+        <li class="right" >
+          <a href="../architecture/architecture.html" title="Architecture"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../index.html" title="Welcome to the Scala IDE Developer Documentation"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../index.html">Scala IDE v2.0.0 documentation</a> &raquo;</li>
+          <li><a href="../index.html" accesskey="U">Welcome to the Scala IDE Developer Documentation</a> &raquo;</li> 
       </ul>
     </div> 
     <div class="row">
@@ -140,13 +150,13 @@ see a number of JARs with a Scala version appended.</p>
 <p>Now, right click on the <tt class="docutils literal"><span class="pre">org.scala-ide.sbt.full.library</span></tt> project and then click &#8220;Properties&#8221;. A
 dialog will open. Click on &#8220;Java Build Path&#8221; and select the Libraries tab. You should see something
 on the lines of:</p>
-<img alt="../../_images/sbt-full-jars.png" src="../../_images/sbt-full-jars.png" />
+<a class="reference external image-reference" href="../../_images/sbt-full-jars.png"><img alt="../../_images/sbt-full-jars1.png" src="../../_images/sbt-full-jars1.png" style="width: 100%;" /></a>
 <p>If you are seeing errors it means that the imported JARs do not match the ones existing in
 <tt class="docutils literal"><span class="pre">org.scala-ide.sbt.full.library/lib</span></tt> folder. To fix this, first remove all JARs, and then click
 the &#8220;Add JARs...&#8221; button and browse to <tt class="docutils literal"><span class="pre">org.scala-ide.sbt.full.library/lib</span></tt>. Select all JARs in the
 folder and click OK.</p>
 <p>Now click the &#8220;Order and Export&#8221; tab and make sure to export all JARs click the &#8220;Select All&#8221; button.</p>
-<img alt="../../_images/order-export.png" src="../../_images/order-export.png" />
+<a class="reference external image-reference" href="../../_images/order-export.png"><img alt="../../_images/order-export1.png" src="../../_images/order-export1.png" style="width: 100%;" /></a>
 <p>Click OK. The build errors should go away. If they don&#8217;t, try to refresh all the projects (in
 Eclipse, select all the imported Scala IDE projects and press F5) and do a full clean,
 re-build (to do so, click on the &#8220;Project&#8221; menu item, and the &#8220;Clean...&#8221;).</p>
@@ -213,7 +223,14 @@ run configuration. For Windows, this is
         <li class="right" style="margin-right: 10px">
           <a href="../../genindex.html" title="General Index"
              >index</a></li>
-        <li><a href="../../index.html">Scala IDE v2.0.0 documentation</a> &raquo;</li> 
+        <li class="right" >
+          <a href="../architecture/architecture.html" title="Architecture"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../index.html" title="Welcome to the Scala IDE Developer Documentation"
+             >previous</a> |</li>
+        <li><a href="../../index.html">Scala IDE v2.0.0 documentation</a> &raquo;</li>
+          <li><a href="../index.html" >Welcome to the Scala IDE Developer Documentation</a> &raquo;</li> 
       </ul>
     </div>
   </div>
@@ -227,8 +244,8 @@ run configuration. For Windows, this is
     </ul>
     <ul>
       <li><h5>Documentation</h5></li>
-      <li><a href="#">Getting Started</a></li>
-      <li><a href="#">Tutorials</a></li>
+      <li><a href="/docs/user/gettingstarted.html">Getting Started</a></li>
+      <li><a href="/docs/tutorials/index.html">Tutorials</a></li>
     </ul>
     <ul>
       <li><h5>Contribute</h5></li>

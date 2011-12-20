@@ -22,6 +22,8 @@ Extracting Methods
 The `Extract Method`_ action extract the set of selected statements into a new method. The original code is replaced by the equivalent method call.
 
 .. image:: ../images/feature-refactoring-extract-method-01.png
+   :width: 100%
+   :target: ../../_images/feature-refactoring-extract-method-01.png
 
 Inlining Local Values
 ------------------------
@@ -31,6 +33,8 @@ The `Inline Local`_ action helps removing unneeded values.
 The action is performed on the currently selected value.
 
 .. image:: ../images/feature-refactoring-inline-local-01.png
+   :width: 100%
+   :target: ../../_images/feature-refactoring-inline-local-01.png
 
 Organizing Imports
 ------------------
@@ -38,6 +42,8 @@ Organizing Imports
 The `Organize Imports`_ action allows to do some automated cleanup on the list of imports. It removes the unused or unneeded imports and organizes the remainder.
 
 .. image:: ../images/feature-refactoring-organize-import-01.png
+   :width: 100%
+   :target: ../../_images/feature-refactoring-organize-import-01.png
 
 This action can be configure in the ``Scala → Organize Import`` preference page.
 
@@ -49,10 +55,14 @@ The `Rename`_ action allows to change any name, and update its reference.
 The action is performed in in-line mode if the name as only a local scope.
 
 .. image:: ../images/feature-refactoring-rename-01.png
+   :width: 100%
+   :target: ../../_images/feature-refactoring-rename-01.png
 
 The action is done through a wizard if the name can be referenced from different source files.
 
 .. image:: ../images/feature-refactoring-rename-02.png
+   :width: 100%
+   :target: ../../_images/feature-refactoring-rename-02.png
 
 .. _Extract Local: http://scala-refactoring.org/extract-local/
 .. _Extract Method: http://scala-refactoring.org/extract-method/

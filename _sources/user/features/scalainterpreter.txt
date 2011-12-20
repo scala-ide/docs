@@ -24,18 +24,24 @@ Using the interpreter
    The previously entered commands are kept in a history. They can be browsed using the ``Up`` and ``Down`` arrow keys.
 
    .. image:: ../images/feature-interpreter-01.png
+      :width: 100%
+      :target: ../../_images/feature-interpreter-01.png
 
 #. Existing code can be selected in the Scala Editor, and run in the interpreter using the |runSelection| ``Run Selection in Scala Interpreter`` command.
 
    The command can also be invoked using the ``Ctrl+Shitf+x`` or ``Cmd+Shift+x`` key shortcut.
 
    .. image:: ../images/feature-interpreter-02.png
+      :width: 100%
+      :target: ../../_images/feature-interpreter-02.png
 
 #. An other way is to use the interpreter is combination with an editor to test new code.
 
    With a little bit of wrapping code, it is possible to create a setup where any code can be entered, and type checked. Then the code can be run in the interpreter to see its result.
 
    .. image:: ../images/feature-interpreter-03.png
+      :width: 100%
+      :target: ../../_images/feature-interpreter-03.png
 
 Toolbar
 -------

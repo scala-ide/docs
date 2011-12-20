@@ -113,6 +113,8 @@ dialog will open. Click on "Java Build Path" and select the Libraries tab. You s
 on the lines of:
  
 .. image:: images/sbt-full-jars.png
+   :width: 100%
+   :target: ../../_images/sbt-full-jars.png
  
 If you are seeing errors it means that the imported JARs do not match the ones existing in 
 ``org.scala-ide.sbt.full.library/lib`` folder. To fix this, first remove all JARs, and then click 
@@ -122,6 +124,8 @@ folder and click OK.
 Now click the "Order and Export" tab and make sure to export all JARs click the "Select All" button. 
  
 .. image:: images/order-export.png
+   :width: 100%
+   :target: ../../_images/order-export.png
  
 Click OK. The build errors should go away. If they don't, try to refresh all the projects (in 
 Eclipse, select all the imported Scala IDE projects and press F5) and do a full clean, 
