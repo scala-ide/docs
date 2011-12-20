@@ -30,17 +30,9 @@ Contents:
    user/index
    tutorials/index
    changelog
+   Developer Documentation <dev/index>
    
 .. include:: /contribute.rst.inc
-
-Indices and tables
-==================
-
-*[luc] need to see what that does*
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
 
 .. _Scala: http://www.scala-lang.org/
 .. _Scala IDE: http://www.scala-ide.org/
