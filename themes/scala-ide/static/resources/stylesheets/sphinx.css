@@ -23,3 +23,7 @@
 	list-style: none;
 	display: inline;
 }	
+
+a.headerlink {
+	visibility: hidden;
+}
