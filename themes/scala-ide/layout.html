@@ -2,6 +2,13 @@
 
 {% set css_files = [ "_static/resources/stylesheets/bootstrap.css","_static/resources/stylesheets/base.css","_static/resources/stylesheets/doc.css","_static/resources/stylesheets/sphinx.css" ] %}
 
+{% block extrahead %}
+<!-- jquery -->
+<script src="{{ pathto('_static/resources/javascript/jquery.js', 1) }}" type="text/javascript" ></script>
+<script src="{{ pathto('_static/resources/javascript/bootstrap-dropdown.js', 1) }}" type="text/javascript" ></script>
+<script src="{{ pathto('_static/resources/javascript/bootstrap-dropdown-app.js', 1) }}" type="text/javascript" ></script>
+{% endblock %}
+
 {% block header %}
 <div class="top-bar">
   <div class="top-bar-inner">
@@ -10,8 +17,15 @@
       <ul class="nav">
         <li><a href="{{ pathto('/index.html#features', 1) }}">Features</a></li>
         <li><a href="{{ pathto('/docs/index.html', 1) }}">Documentation</a></li>
-        <li><a href="{{ pathto('/download/current.html', 1) }}">Download</a></li>
+		<li class="menu">
+	      	<a href="#" class="menu">Download</a>
+	      	<ul class="menu-dropdown">
+	        	<li><a href="{{ pathto('/download/current.html', 1) }}">Current</a></li>
+	        	<li><a href="{{ pathto('/download/nightly.html', 1) }}">Nightlies</a></li>
+	      	</ul>
+		</li>
         <li><a href="{{ pathto('/blog/index.html', 1) }}">Blog</a></li>
+        <li><a href="{{ pathto('/blog/team.html', 1) }}">Team</a></li>
       </ul>	
     </div>
   </div>
@@ -47,12 +61,13 @@
     <ul>
       <li><h5>Download</h5></li>
       <li><a href="{{ pathto('/download/current.html', 1) }}">Current</a></li>
-      <li><a href="{{ pathto('/download/nightly.html', 1) }}">Nightly</a></li>
+      <li><a href="{{ pathto('/download/nightly.html', 1) }}">Nightlies</a></li>
     </ul>
     <ul>
       <li><h5>Documentation</h5></li>
       <li><a href="{{ pathto('/docs/user/gettingstarted.html', 1) }}">Getting Started</a></li>
       <li><a href="{{ pathto('/docs/tutorials/index.html', 1) }}">Tutorials</a></li>
+      <li><a href="http://groups.google.com/group/scala-ide-user">User Mailing List</a></li>
     </ul>
     <ul>
       <li><h5>Contribute</h5></li>
