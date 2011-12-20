@@ -28,7 +28,12 @@
     <link rel="top" title="Scala IDE v2.0.0 documentation" href="../index.html" />
     <link rel="up" title="User Documentation" href="index.html" />
     <link rel="next" title="Advanced Setup" href="advancedsetup.html" />
-    <link rel="prev" title="User Documentation" href="index.html" /> 
+    <link rel="prev" title="User Documentation" href="index.html" />
+<!-- jquery -->
+<script src="../_static/resources/javascript/jquery.js" type="text/javascript" ></script>
+<script src="../_static/resources/javascript/bootstrap-dropdown.js" type="text/javascript" ></script>
+<script src="../_static/resources/javascript/bootstrap-dropdown-app.js" type="text/javascript" ></script>
+
   </head>
   <body>
 <div class="top-bar">
@@ -38,8 +43,15 @@
       <ul class="nav">
         <li><a href="/index.html#features">Features</a></li>
         <li><a href="/docs/index.html">Documentation</a></li>
-        <li><a href="/download/current.html">Download</a></li>
+		<li class="menu">
+	      	<a href="#" class="menu">Download</a>
+	      	<ul class="menu-dropdown">
+	        	<li><a href="/download/current.html">Current</a></li>
+	        	<li><a href="/download/nightly.html">Nightlies</a></li>
+	      	</ul>
+		</li>
         <li><a href="/blog/index.html">Blog</a></li>
+        <li><a href="/blog/team.html">Team</a></li>
       </ul>	
     </div>
   </div>
@@ -104,7 +116,7 @@
 <li><strong>release-28</strong> provides support for projects using Scala 2.8.x (2.8.1 or 2.8.2).</li>
 </ul>
 <p>If you want to live on the bleeding edge (like using Scala 2.10.x or Scala IDE master), check the description of each update site to find the one that fits your needs.</p>
-<p>The version of Scala used inside Scala IDE cannot be chosen per project. So if you want to work with project using different version of Scala (like 2.8.2 and 2.9.1), you need different installation of Scala IDE.</p>
+<p>The version of Scala used inside Scala IDE cannot be chosen per project. So if you want to work with a project using different version of Scala (like 2.8.2 and 2.9.1), you need different installation of Scala IDE.</p>
 </div>
 <div class="section" id="finishing-installation">
 <h3>Finishing installation<a class="headerlink" href="#finishing-installation" title="Permalink to this headline">¶</a></h3>
@@ -128,7 +140,7 @@ Each package should appear in its own directory with the same name. Eclipse expe
 <p><a class="reference external" href="http://www.scala-sbt.org/">sbt</a> is the standard build tool for Scala projects. There are two versions in wide use today: 0.7.x and 0.10+. Both have plug-ins that can generate Eclipse project files out of the sbt project definition.</p>
 <ul class="simple">
 <li>If you are using <strong>sbt 0.7.x</strong>, use <a class="reference external" href="https://github.com/musk/SbtEclipsify/tree/0.8.0">eclipsify</a>. Follow this <a class="reference external" href="https://github.com/musk/SbtEclipsify/tree/0.8.0">instructions</a> to install the plug-in. You may want to check out the update-sources plug-in, which can download attached sources for your dependencies. This allows you to navigate through the libraries source in the IDE.</li>
-<li>If you are using <strong>sbt 0.11.x</strong> use <a class="reference external" href="https://github.com/typesafehub/sbteclipse">sbteclipse</a>. Follow the instructions on the project page to install and use the plug-in to generate the project definition. sbteclipse can download attached sources natively, so you do not need the update-sources plug-in.</li>
+<li>If you are using <strong>sbt 0.12.x</strong>, use <a class="reference external" href="https://github.com/typesafehub/sbteclipse">sbteclipse</a>. Follow the instructions on the project page to install and use the plug-in to generate the project definition. sbteclipse can download attached sources natively, so you do not need the update-sources plug-in.</li>
 </ul>
 <p>Once you have installed and generated the Eclipse project files using one of the above plug-ins, start Eclipse. Use <tt class="docutils literal"><span class="pre">File</span> <span class="pre">→</span> <span class="pre">Import</span> <span class="pre">→</span> <span class="pre">General/Existing</span> <span class="pre">Project</span> <span class="pre">into</span> <span class="pre">Workspace</span></tt>. Select the directory containing your project as <tt class="docutils literal"><span class="pre">root</span> <span class="pre">directory</span></tt>, select the project and hit <tt class="docutils literal"><span class="pre">Finish</span></tt>. And <em>Voila</em>.</p>
 <div class="admonition important">
@@ -177,12 +189,13 @@ Each package should appear in its own directory with the same name. Eclipse expe
     <ul>
       <li><h5>Download</h5></li>
       <li><a href="/download/current.html">Current</a></li>
-      <li><a href="/download/nightly.html">Nightly</a></li>
+      <li><a href="/download/nightly.html">Nightlies</a></li>
     </ul>
     <ul>
       <li><h5>Documentation</h5></li>
       <li><a href="/docs/user/gettingstarted.html">Getting Started</a></li>
       <li><a href="/docs/tutorials/index.html">Tutorials</a></li>
+      <li><a href="http://groups.google.com/group/scala-ide-user">User Mailing List</a></li>
     </ul>
     <ul>
       <li><h5>Contribute</h5></li>

@@ -27,7 +27,12 @@
     <script type="text/javascript" src="_static/doctools.js"></script>
     <link rel="top" title="Scala IDE v2.0.0 documentation" href="index.html" />
     <link rel="next" title="Sources folder" href="sources/README.html" />
-    <link rel="prev" title="Documentation for Scala IDE" href="README.html" /> 
+    <link rel="prev" title="Documentation for Scala IDE" href="README.html" />
+<!-- jquery -->
+<script src="_static/resources/javascript/jquery.js" type="text/javascript" ></script>
+<script src="_static/resources/javascript/bootstrap-dropdown.js" type="text/javascript" ></script>
+<script src="_static/resources/javascript/bootstrap-dropdown-app.js" type="text/javascript" ></script>
+
   </head>
   <body>
 <div class="top-bar">
@@ -37,8 +42,15 @@
       <ul class="nav">
         <li><a href="/index.html#features">Features</a></li>
         <li><a href="/docs/index.html">Documentation</a></li>
-        <li><a href="/download/current.html">Download</a></li>
+		<li class="menu">
+	      	<a href="#" class="menu">Download</a>
+	      	<ul class="menu-dropdown">
+	        	<li><a href="/download/current.html">Current</a></li>
+	        	<li><a href="/download/nightly.html">Nightlies</a></li>
+	      	</ul>
+		</li>
         <li><a href="/blog/index.html">Blog</a></li>
+        <li><a href="/blog/team.html">Team</a></li>
       </ul>	
     </div>
   </div>
@@ -118,12 +130,13 @@
     <ul>
       <li><h5>Download</h5></li>
       <li><a href="/download/current.html">Current</a></li>
-      <li><a href="/download/nightly.html">Nightly</a></li>
+      <li><a href="/download/nightly.html">Nightlies</a></li>
     </ul>
     <ul>
       <li><h5>Documentation</h5></li>
       <li><a href="/docs/user/gettingstarted.html">Getting Started</a></li>
       <li><a href="/docs/tutorials/index.html">Tutorials</a></li>
+      <li><a href="http://groups.google.com/group/scala-ide-user">User Mailing List</a></li>
     </ul>
     <ul>
       <li><h5>Contribute</h5></li>

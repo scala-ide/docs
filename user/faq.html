@@ -28,7 +28,12 @@
     <link rel="top" title="Scala IDE v2.0.0 documentation" href="../index.html" />
     <link rel="up" title="User Documentation" href="index.html" />
     <link rel="next" title="Community" href="community.html" />
-    <link rel="prev" title="Setup and use Play framework 2.0 in Scala IDE 2.0" href="../tutorials/play20scalaide20/index.html" /> 
+    <link rel="prev" title="Setup and use Play framework 2.0 in Scala IDE 2.0" href="../tutorials/play20scalaide20/index.html" />
+<!-- jquery -->
+<script src="../_static/resources/javascript/jquery.js" type="text/javascript" ></script>
+<script src="../_static/resources/javascript/bootstrap-dropdown.js" type="text/javascript" ></script>
+<script src="../_static/resources/javascript/bootstrap-dropdown-app.js" type="text/javascript" ></script>
+
   </head>
   <body>
 <div class="top-bar">
@@ -38,8 +43,15 @@
       <ul class="nav">
         <li><a href="/index.html#features">Features</a></li>
         <li><a href="/docs/index.html">Documentation</a></li>
-        <li><a href="/download/current.html">Download</a></li>
+		<li class="menu">
+	      	<a href="#" class="menu">Download</a>
+	      	<ul class="menu-dropdown">
+	        	<li><a href="/download/current.html">Current</a></li>
+	        	<li><a href="/download/nightly.html">Nightlies</a></li>
+	      	</ul>
+		</li>
         <li><a href="/blog/index.html">Blog</a></li>
+        <li><a href="/blog/team.html">Team</a></li>
       </ul>	
     </div>
   </div>
@@ -143,9 +155,9 @@
 </div>
 <div class="section" id="red-screen-of-death-red-squiggles-everywhere">
 <h3>Red screen of death (red squiggles everywhere)<a class="headerlink" href="#red-screen-of-death-red-squiggles-everywhere" title="Permalink to this headline">¶</a></h3>
-<p>The number one cause of nothing works is a mismatch between the Scala version of the Eclipse plug-in and your project&#8217;s. Make sure there is only one version of the Scala library on your classpath, and that it matches the version provided by Scala IDE.
+<p>The number one cause of <em>nothing works</em> is a mismatch between the Scala version of the Eclipse plug-in and your project&#8217;s. Make sure there is only one version of the Scala library on your classpath, and that it matches the version provided by Scala IDE.
 The prime suspect is Maven Dependencies, which can download and add an incompatible scala-library.jar.</p>
-<p>The classpath validator added in Scala IDE 2.0.0 should detect this problem and provide meaning full problem markers.</p>
+<p>The classpath validator added in Scala IDE 2.0.0 should detect this problem and provide meaningful problem markers.</p>
 </div>
 <div class="section" id="no-completions-available">
 <h3>No completions available<a class="headerlink" href="#no-completions-available" title="Permalink to this headline">¶</a></h3>
@@ -219,12 +231,13 @@ The prime suspect is Maven Dependencies, which can download and add an incompati
     <ul>
       <li><h5>Download</h5></li>
       <li><a href="/download/current.html">Current</a></li>
-      <li><a href="/download/nightly.html">Nightly</a></li>
+      <li><a href="/download/nightly.html">Nightlies</a></li>
     </ul>
     <ul>
       <li><h5>Documentation</h5></li>
       <li><a href="/docs/user/gettingstarted.html">Getting Started</a></li>
       <li><a href="/docs/tutorials/index.html">Tutorials</a></li>
+      <li><a href="http://groups.google.com/group/scala-ide-user">User Mailing List</a></li>
     </ul>
     <ul>
       <li><h5>Contribute</h5></li>
