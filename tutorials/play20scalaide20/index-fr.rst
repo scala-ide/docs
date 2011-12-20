@@ -1,10 +1,14 @@
 Configurer et utiliser Play framework 2.0 avec Scala IDE 2.0
 ============================================================
 
+|usflag| :doc:`english version<index>`
+
+.. |usflag| image:: ../../user/images/usflag.png
+
 Que contient ce guide?
 ----------------------
 
-Ce guide vous montera comment configurer une application web Play pour pouvoir l'importer dans Scala IDE, comment configurer `Scala IDE`_ pour pouvoir utiliser correctement le Play framework et finallement comment déveloper un application web Play avec Scala IDE.
+Ce guide vous montera comment configurer une application web Play pour pouvoir l'importer dans Scala IDE, comment configurer `Scala IDE`_ pour pouvoir utiliser correctement le Play framework et finalement comment développer un application web Play avec Scala IDE.
 
 Prérequis
 .........
@@ -15,20 +19,20 @@ Prérequis
 
 *   Une connaissance de base de l'interface utilisateur d'Eclipse est nécessaire.
 
-*   Aucune connaissance du language Scala est nécessaire (dans ce guide).
+*   Aucune connaissance du langage Scala est nécessaire (dans ce guide).
 
 *   Aucune connaissance de Play framework est nécessaire (dans ce guide).
 
 Installer Play 2.0
 ------------------
 
-Pour pouvoir créer une web application Play, Play framework est necessaire. Si vous ne l'avez pas encore installé, suivez ces quelques etapes, ou utilisez la `documentation de Play`__.
+Pour pouvoir créer une web application Play, Play framework est nécessaire. Si vous ne l'avez pas encore installé, suivez ces quelques étapes, ou utilisez la `documentation de Play`__.
 
-*   Download Play framework 2.0-beta from http://www.playframework.org/2.0.
+*   Téléchargez Play framework 2.0-beta sur http://www.playframework.org/2.0.
 
-*   Unzip it in your preferred location. Let's say ``/path/to/play20`` for the purpose of this document.
+*   Unzippez l'archive dans votre répertoire préféré. Nous utiliserons ``/path/to/play20`` dans ce document.
 
-*   For convenience, add the Play folder to your system PATH:
+*   Pour simplifier l'utilisation, ajoutez le répertoire de Play dans le PATH:
 
     .. code-block:: bash
 
@@ -36,59 +40,59 @@ Pour pouvoir créer une web application Play, Play framework est necessaire. Si 
 
 __ `Play documentation`_
 
-Creating a Play 2.0 application
--------------------------------
+Créer une application Play 2.0
+------------------------------
 
-*   In your development folder, ask Play to create a new web application, as a ``simple Scala application``.
+*   Dans votre répertoire de développement, demandez à Play de créer une nouvelle application web, de type ``simple Scala application``.
 
     .. image:: images/play20-scalaide20-01.png
        :alt: play new testApp
        :width: 100%
        :target: ../../_images/play20-scalaide20-01.png
 
-*   Go into the application folder.
+*   Allez dans le répertoire de l'application.
 
     .. image:: images/play20-scalaide20-02.png
        :alt: cd testApp
        :width: 100%
        :target: ../../_images/play20-scalaide20-02.png
 
-*   And launch Play.
+*   Et lancez Play.
 
     .. image:: images/play20-scalaide20-03.png
        :alt: play
        :width: 100%
        :target: ../../_images/play20-scalaide20-03.png
 
-*   In Play, launch your newly created web application.
+*   Dans Play, démarrez l'application web que vous venez de créer.
 
     .. image:: images/play20-scalaide20-04.png
        :alt: run
        :width: 100%
        :target: ../../_images/play20-scalaide20-04.png
 
-*   Check that the application works: http://localhost:9000/.
+*   Vérifiez que l'application fonctionne: http://localhost:9000/.
 
     .. image:: images/play20-scalaide20-05.png
        :alt: running
        :width: 100%
        :target: ../../_images/play20-scalaide20-05.png
 
-Configuring the Play 2.0 web application for Scala IDE
-------------------------------------------------------
+Configurer l'application web Play 2.0 pour Scala IDE
+----------------------------------------------------
 
-Now that the Play application is running, it needs to be configured so it can be imported into Scala IDE.
+Maintenant que l'application Play fonctionne, il faut la configurer pour pouvoir l'importer dans Scala IDE.
 
-The eclipsify support is not yet integrated it Play 2.0, so we are using `sbteclipse`_ to make it an Eclipse project.
+Le support eclipsify n'est pas integrated dans Play 2.0 pour le moment. Donc nous utilisons `sbteclipse`_ pour faire de l'application web un projet Eclipse.
 
-*   First, exit Play using ``ctrl-d``, and then ``exit``.
+*   D'abord, sortez de Play, en utilisant ``ctrl-d``, puis ``exit``.
 
     .. image:: images/play20-scalaide20-06.png
        :alt: ctrl-d, exit
        :width: 100%
        :target: ../../_images/play20-scalaide20-06.png
 
-*   Add sbteclipse to sbt by creating the ``project/build.sbt`` file and adding the following lines.
+*   Ajoutez sbteclipse à sbt en créant le fichier ``project/build.sbt`` avec le contenu suivant.
 
     .. code-block:: scala
 
@@ -102,85 +106,85 @@ The eclipsify support is not yet integrated it Play 2.0, so we are using `sbtecl
        :width: 100%
        :target: ../../_images/play20-scalaide20-07.png
 
-*   Go back into Play.
+*   Retournez dans Play.
 
     .. image:: images/play20-scalaide20-08.png
        :alt: play
        :width: 100%
        :target: ../../_images/play20-scalaide20-08.png
 
-*   Generate the Eclipse project configuration.
+*   Générez la configuration du projet Eclipse.
 
     .. image:: images/play20-scalaide20-09.png
        :alt: eclipse
        :width: 100%
        :target: ../../_images/play20-scalaide20-09.png
 
-*   And relaunch the web application, so it is available later.
+*   Et relancez l'application web, de manière à ce qu'elle soit disponible plus tard.
 
     .. image:: images/play20-scalaide20-10.png
        :alt: run
        :width: 100%
        :target: ../../_images/play20-scalaide20-10.png
 
-Configuring Scala IDE for the Play 2.0 web application
-------------------------------------------------------
+Configurer Scala IDE pour l'application web Play 2.0
+----------------------------------------------------
 
-Setting a few preferences in Eclipse will make everything easier to use.
+Changer quelques préférences dans Eclipse va permettre de rendre son utilisation plus simple.
 
-*   Open the internal web browser view in Eclipse, and check you can access your web application.
+*   Ouvrez la *internal web browser view* dans Eclipse, et vérifiez que vous pouvez accéder votre application web.
 
     .. image:: images/play20-scalaide20-12.png
        :alt: http://localhost:9000/
        :width: 100%
        :target: ../../_images/play20-scalaide20-12.png
 
-*   Configure Eclipse so changes on the filesystem are automatically picked up.
+*   Configurez Eclipse pour que les changements dans le système de fichier soient charger automatiquement.
 
     .. image:: images/play20-scalaide20-13.png
        :alt: refresh automatically
        :width: 100%
        :target: ../../_images/play20-scalaide20-13.png
 
-*   If you don't have the Web Development Tools for Eclipse installed, Eclipse opens ``.html`` files in a web browser. Configure it to use the ``Scala Editor`` instead.
+*   Si vous n'avez pas la version *Web Development Tools* d'Eclipse installée, Eclipse ouvre les fichiers ``.html`` dans un navigateur. Configurer Eclipse pour qu'il utilise le ``Scala Editor`` à la place.
 
     .. image:: images/play20-scalaide20-14.png
        :alt: HTML file in text editor
        :width: 100%
        :target: ../../_images/play20-scalaide20-14.png
 
-Importing the Play web application into Scala IDE
--------------------------------------------------
+Importer l'application web Play dans Scala IDE
+----------------------------------------------
 
-Everything is setup, it is time to import the project in the IDE.
+Tout est configuré, il est temps d'importer le projet dans Scala IDE.
 
-*   Import the Play 2.0 application as an ``Existing Projects into Workspace``.
+*   Importez l'application Play 2.0 en tant que ``Existing Projects into Workspace``.
 
     .. image:: images/play20-scalaide20-15.png
        :alt: import project
        :width: 100%
        :target: ../../_images/play20-scalaide20-15.png
 
-*   Everything is good, everything compiles.
+*   Tout est parfait, tout compile.
 
     .. image:: images/play20-scalaide20-16.png
        :alt: everything compiles
        :width: 100%
        :target: ../../_images/play20-scalaide20-16.png
 
-Doing some development
-----------------------
+Faire un peu de développement
+-----------------------------
 
-Now that everything is setup, we can change the content. Let's add a way to have a quote on the main page.
+Maintenant que tout est configuré, nous pouvons changer le contenu. Ajoutons le moyen d'avoir une citation sur la page principale.
 
-*   First, create the ``models.Quote`` class using the new ``Scala Class`` wizard.
+*   D'abord, créez la classe ``models.Quote`` en utilisant l'assistant nouvelle ``Scala Class``.
 
     .. image:: images/play20-scalaide20-19.png
        :alt: create model.Quote
        :width: 100%
        :target: ../../_images/play20-scalaide20-19.png
 
-*   Add variables to ``models.Quote``.
+*   Ajoutez les variables à ``models.Quote``.
 
     .. code-block:: scala
 
@@ -190,7 +194,7 @@ Now that everything is setup, we can change the content. Let's add a way to have
        
        }
 
-*   Add an extra parameter to the ``index.scala.html`` view and update the layout.
+*   Ajoutez un paramètre supplémentaire à la vue ``index.scala.html`` et modifiez la mise en page.
 
     .. code-block:: scala
 
@@ -204,16 +208,16 @@ Now that everything is setup, we can change the content. Let's add a way to have
        
        }
 
-*   The templates are transformed into Scala code by the Play framework, so use the ``refresh`` button in the internal web browser to trigger it.
+*   Les templates sont transformés en code Scala par le Play framework, donc utilisez le bouton ``refresh`` du navigateur interne pour l'effectuer.
 
-    Play returns a compilation error, the application is not using the template correctly. The error is also visible in the code of ``Application.scala``.
+    Play répond avec une erreur compilation, l'application n'utilise pas le template correctement. L'erreur est aussi visible dans le code de ``Application.scala``.
     
     .. image:: images/play20-scalaide20-17.png
        :alt: compilation error
        :width: 100%
        :target: ../../_images/play20-scalaide20-17.png
 
-*   Fix the application code, using a smart quote.
+*   Corrigez le code de l'application, en utilisant une citation élégante.
 
     .. code-block:: scala
 
@@ -223,22 +227,25 @@ Now that everything is setup, we can change the content. Let's add a way to have
                    "Sacha Guitry")))
          }
 
-*   The code compiles. Check the result in the internal web browser.
+*   Le code compile. Vérifiez le résultat dans le navigateur interne.
 
     .. image:: images/play20-scalaide20-18.png
        :alt: done
        :width: 100%
        :target: ../../_images/play20-scalaide20-18.png
 
-Going further
--------------
+Aller plus loin
+----------------
 
-You now have all you need to create great web applications with Play 2.0 and Scala.
+Vous avez maintenant tout ce dont vous besoin pour créer de belles applications web avec Play 2.0 et Scala.
 
-For more information about Play 2.0, check out the `Play 2.0 wiki`_.
+Pour plus d'information sur Play 2.0, allez voir le `wiki Play 2.0`__.
 
-For more information about Scala, go to the `documentation website`_ or get the downloadable `eBook`_.
+__ `Play 2.0 wiki`_
 
+Pour plus d'information sur Scala, allez sur le `site de documentation`__ ou récupérez le `eBook`_ téléchargeable.
+
+__ `documentation website`_
 
 .. _Scala IDE: http://www.scala-ide.org
 .. _Eclipse: http://www.eclipse.org/
