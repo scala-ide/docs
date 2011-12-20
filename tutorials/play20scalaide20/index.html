@@ -76,6 +76,7 @@
       <div class="span11" style="margin-top:-45px">        
         <div class="section" id="setup-and-use-play-framework-2-0-in-scala-ide-2-0">
 <h1>Setup and use Play framework 2.0 in Scala IDE 2.0<a class="headerlink" href="#setup-and-use-play-framework-2-0-in-scala-ide-2-0" title="Permalink to this headline">¶</a></h1>
+<p><img alt="frflag" src="../../_images/frflag.png" /> <a class="reference internal" href="index-fr.html"><em>version française</em></a></p>
 <div class="section" id="what-is-in-this-guide">
 <h2>What is in this guide?<a class="headerlink" href="#what-is-in-this-guide" title="Permalink to this headline">¶</a></h2>
 <p>This guide will show you how to configure a Play web application to import it in Scala IDE, how to configure <a class="reference external" href="http://www.scala-ide.org">Scala IDE</a> to work fine with the Play framework and finally how to develop Play web application from inside Scala IDE.</p>
@@ -113,19 +114,19 @@
 <h2>Creating a Play 2.0 application<a class="headerlink" href="#creating-a-play-2-0-application" title="Permalink to this headline">¶</a></h2>
 <ul>
 <li><p class="first">In your development folder, ask Play to create a new web application, as a <tt class="docutils literal"><span class="pre">simple</span> <span class="pre">Scala</span> <span class="pre">application</span></tt>.</p>
-<a class="reference external image-reference" href="../../_images/play20-scalaide20-01.png"><img alt="play new testApp" src="../../_images/play20-scalaide20-011.png" style="width: 100%;" /></a>
+<a class="reference external image-reference" href="../../_images/play20-scalaide20-01.png"><img alt="play new testApp" src="../../_images/play20-scalaide20-01.png" style="width: 100%;" /></a>
 </li>
 <li><p class="first">Go into the application folder.</p>
-<a class="reference external image-reference" href="../../_images/play20-scalaide20-02.png"><img alt="cd testApp" src="../../_images/play20-scalaide20-021.png" style="width: 100%;" /></a>
+<a class="reference external image-reference" href="../../_images/play20-scalaide20-02.png"><img alt="cd testApp" src="../../_images/play20-scalaide20-02.png" style="width: 100%;" /></a>
 </li>
 <li><p class="first">And launch Play.</p>
-<a class="reference external image-reference" href="../../_images/play20-scalaide20-03.png"><img alt="play" src="../../_images/play20-scalaide20-031.png" style="width: 100%;" /></a>
+<a class="reference external image-reference" href="../../_images/play20-scalaide20-03.png"><img alt="play" src="../../_images/play20-scalaide20-03.png" style="width: 100%;" /></a>
 </li>
 <li><p class="first">In Play, launch your newly created web application.</p>
-<a class="reference external image-reference" href="../../_images/play20-scalaide20-04.png"><img alt="run" src="../../_images/play20-scalaide20-041.png" style="width: 100%;" /></a>
+<a class="reference external image-reference" href="../../_images/play20-scalaide20-04.png"><img alt="run" src="../../_images/play20-scalaide20-04.png" style="width: 100%;" /></a>
 </li>
 <li><p class="first">Check that the application works: <a class="reference external" href="http://localhost:9000/">http://localhost:9000/</a>.</p>
-<a class="reference external image-reference" href="../../_images/play20-scalaide20-05.png"><img alt="running" src="../../_images/play20-scalaide20-051.png" style="width: 100%;" /></a>
+<a class="reference external image-reference" href="../../_images/play20-scalaide20-05.png"><img alt="running" src="../../_images/play20-scalaide20-05.png" style="width: 100%;" /></a>
 </li>
 </ul>
 </div>
@@ -135,7 +136,7 @@
 <p>The eclipsify support is not yet integrated it Play 2.0, so we are using <a class="reference external" href="https://github.com/typesafehub/sbteclipse">sbteclipse</a> to make it an Eclipse project.</p>
 <ul>
 <li><p class="first">First, exit Play using <tt class="docutils literal"><span class="pre">ctrl-d</span></tt>, and then <tt class="docutils literal"><span class="pre">exit</span></tt>.</p>
-<a class="reference external image-reference" href="../../_images/play20-scalaide20-06.png"><img alt="ctrl-d, exit" src="../../_images/play20-scalaide20-061.png" style="width: 100%;" /></a>
+<a class="reference external image-reference" href="../../_images/play20-scalaide20-06.png"><img alt="ctrl-d, exit" src="../../_images/play20-scalaide20-06.png" style="width: 100%;" /></a>
 </li>
 <li><p class="first">Add sbteclipse to sbt by creating the <tt class="docutils literal"><span class="pre">project/build.sbt</span></tt> file and adding the following lines.</p>
 <div class="highlight-scala"><div class="highlight"><pre><span class="n">resolvers</span> <span class="o">+=</span> <span class="nc">Classpaths</span><span class="o">.</span><span class="n">typesafeResolver</span>
@@ -143,16 +144,16 @@
 <span class="n">addSbtPlugin</span><span class="o">(</span><span class="s">&quot;com.typesafe.sbteclipse&quot;</span> <span class="o">%</span> <span class="s">&quot;sbteclipse&quot;</span> <span class="o">%</span> <span class="s">&quot;1.5.0&quot;</span><span class="o">)</span>
 </pre></div>
 </div>
-<a class="reference external image-reference" href="../../_images/play20-scalaide20-07.png"><img alt="modify project/build.sbt" src="../../_images/play20-scalaide20-071.png" style="width: 100%;" /></a>
+<a class="reference external image-reference" href="../../_images/play20-scalaide20-07.png"><img alt="modify project/build.sbt" src="../../_images/play20-scalaide20-07.png" style="width: 100%;" /></a>
 </li>
 <li><p class="first">Go back into Play.</p>
-<a class="reference external image-reference" href="../../_images/play20-scalaide20-08.png"><img alt="play" src="../../_images/play20-scalaide20-081.png" style="width: 100%;" /></a>
+<a class="reference external image-reference" href="../../_images/play20-scalaide20-08.png"><img alt="play" src="../../_images/play20-scalaide20-08.png" style="width: 100%;" /></a>
 </li>
 <li><p class="first">Generate the Eclipse project configuration.</p>
-<a class="reference external image-reference" href="../../_images/play20-scalaide20-09.png"><img alt="eclipse" src="../../_images/play20-scalaide20-091.png" style="width: 100%;" /></a>
+<a class="reference external image-reference" href="../../_images/play20-scalaide20-09.png"><img alt="eclipse" src="../../_images/play20-scalaide20-09.png" style="width: 100%;" /></a>
 </li>
 <li><p class="first">And relaunch the web application, so it is available later.</p>
-<a class="reference external image-reference" href="../../_images/play20-scalaide20-10.png"><img alt="run" src="../../_images/play20-scalaide20-101.png" style="width: 100%;" /></a>
+<a class="reference external image-reference" href="../../_images/play20-scalaide20-10.png"><img alt="run" src="../../_images/play20-scalaide20-10.png" style="width: 100%;" /></a>
 </li>
 </ul>
 </div>
@@ -161,13 +162,13 @@
 <p>Setting a few preferences in Eclipse will make everything easier to use.</p>
 <ul>
 <li><p class="first">Open the internal web browser view in Eclipse, and check you can access your web application.</p>
-<a class="reference external image-reference" href="../../_images/play20-scalaide20-12.png"><img alt="http://localhost:9000/" src="../../_images/play20-scalaide20-121.png" style="width: 100%;" /></a>
+<a class="reference external image-reference" href="../../_images/play20-scalaide20-12.png"><img alt="http://localhost:9000/" src="../../_images/play20-scalaide20-12.png" style="width: 100%;" /></a>
 </li>
 <li><p class="first">Configure Eclipse so changes on the filesystem are automatically picked up.</p>
-<a class="reference external image-reference" href="../../_images/play20-scalaide20-13.png"><img alt="refresh automatically" src="../../_images/play20-scalaide20-131.png" style="width: 100%;" /></a>
+<a class="reference external image-reference" href="../../_images/play20-scalaide20-13.png"><img alt="refresh automatically" src="../../_images/play20-scalaide20-13.png" style="width: 100%;" /></a>
 </li>
 <li><p class="first">If you don&#8217;t have the Web Development Tools for Eclipse installed, Eclipse opens <tt class="docutils literal"><span class="pre">.html</span></tt> files in a web browser. Configure it to use the <tt class="docutils literal"><span class="pre">Scala</span> <span class="pre">Editor</span></tt> instead.</p>
-<a class="reference external image-reference" href="../../_images/play20-scalaide20-14.png"><img alt="HTML file in text editor" src="../../_images/play20-scalaide20-141.png" style="width: 100%;" /></a>
+<a class="reference external image-reference" href="../../_images/play20-scalaide20-14.png"><img alt="HTML file in text editor" src="../../_images/play20-scalaide20-14.png" style="width: 100%;" /></a>
 </li>
 </ul>
 </div>
@@ -176,10 +177,10 @@
 <p>Everything is setup, it is time to import the project in the IDE.</p>
 <ul>
 <li><p class="first">Import the Play 2.0 application as an <tt class="docutils literal"><span class="pre">Existing</span> <span class="pre">Projects</span> <span class="pre">into</span> <span class="pre">Workspace</span></tt>.</p>
-<a class="reference external image-reference" href="../../_images/play20-scalaide20-15.png"><img alt="import project" src="../../_images/play20-scalaide20-151.png" style="width: 100%;" /></a>
+<a class="reference external image-reference" href="../../_images/play20-scalaide20-15.png"><img alt="import project" src="../../_images/play20-scalaide20-15.png" style="width: 100%;" /></a>
 </li>
 <li><p class="first">Everything is good, everything compiles.</p>
-<a class="reference external image-reference" href="../../_images/play20-scalaide20-16.png"><img alt="everything compiles" src="../../_images/play20-scalaide20-161.png" style="width: 100%;" /></a>
+<a class="reference external image-reference" href="../../_images/play20-scalaide20-16.png"><img alt="everything compiles" src="../../_images/play20-scalaide20-16.png" style="width: 100%;" /></a>
 </li>
 </ul>
 </div>
@@ -188,7 +189,7 @@
 <p>Now that everything is setup, we can change the content. Let&#8217;s add a way to have a quote on the main page.</p>
 <ul>
 <li><p class="first">First, create the <tt class="docutils literal"><span class="pre">models.Quote</span></tt> class using the new <tt class="docutils literal"><span class="pre">Scala</span> <span class="pre">Class</span></tt> wizard.</p>
-<a class="reference external image-reference" href="../../_images/play20-scalaide20-19.png"><img alt="create model.Quote" src="../../_images/play20-scalaide20-191.png" style="width: 100%;" /></a>
+<a class="reference external image-reference" href="../../_images/play20-scalaide20-19.png"><img alt="create model.Quote" src="../../_images/play20-scalaide20-19.png" style="width: 100%;" /></a>
 </li>
 <li><p class="first">Add variables to <tt class="docutils literal"><span class="pre">models.Quote</span></tt>.</p>
 <div class="highlight-scala"><div class="highlight"><pre><span class="k">package</span> <span class="nn">models</span>
@@ -214,7 +215,7 @@
 </li>
 <li><p class="first">The templates are transformed into Scala code by the Play framework, so use the <tt class="docutils literal"><span class="pre">refresh</span></tt> button in the internal web browser to trigger it.</p>
 <p>Play returns a compilation error, the application is not using the template correctly. The error is also visible in the code of <tt class="docutils literal"><span class="pre">Application.scala</span></tt>.</p>
-<a class="reference external image-reference" href="../../_images/play20-scalaide20-17.png"><img alt="compilation error" src="../../_images/play20-scalaide20-171.png" style="width: 100%;" /></a>
+<a class="reference external image-reference" href="../../_images/play20-scalaide20-17.png"><img alt="compilation error" src="../../_images/play20-scalaide20-17.png" style="width: 100%;" /></a>
 </li>
 <li><p class="first">Fix the application code, using a smart quote.</p>
 <div class="highlight-scala"><div class="highlight"><pre><span class="k">def</span> <span class="n">index</span> <span class="k">=</span> <span class="nc">Action</span> <span class="o">{</span>
@@ -226,7 +227,7 @@
 </div>
 </li>
 <li><p class="first">The code compiles. Check the result in the internal web browser.</p>
-<a class="reference external image-reference" href="../../_images/play20-scalaide20-18.png"><img alt="done" src="../../_images/play20-scalaide20-181.png" style="width: 100%;" /></a>
+<a class="reference external image-reference" href="../../_images/play20-scalaide20-18.png"><img alt="done" src="../../_images/play20-scalaide20-18.png" style="width: 100%;" /></a>
 </li>
 </ul>
 </div>

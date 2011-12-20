@@ -16,6 +16,15 @@ Requirements
 
 __ https://www.assembla.com/spaces/scala-ide/tickets/1000782
 
+Screencast
+----------
+
+The getting started screencast provides a more visual explanation on the installation and the first steps with Scala IDE.
+
+.. raw:: html
+
+   <iframe src="http://player.vimeo.com/video/33860742" width="490" height="306" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe>
+
 Installation
 ------------
 

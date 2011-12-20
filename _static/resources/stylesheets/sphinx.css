@@ -81,3 +81,8 @@ box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25);
 	font-weight: bold;
 	line-height: 20px;
 }
+
+tt > .pre {
+	font-family: monaco, monospace;
+	font-size: 11px;
+}
