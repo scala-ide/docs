@@ -1,28 +1,28 @@
-Setup and use Play framework 2.0 in Scala IDE 2.0
-=================================================
+Configurer et utiliser Play framework 2.0 avec Scala IDE 2.0
+============================================================
 
-What is in this guide?
+Que contient ce guide?
 ----------------------
 
-This guide will show you how to configure a Play web application to import it in Scala IDE, how to configure `Scala IDE`_ to work fine with the Play framework and finally how to develop Play web application from inside Scala IDE.
+Ce guide vous montera comment configurer une application web Play pour pouvoir l'importer dans Scala IDE, comment configurer `Scala IDE`_ pour pouvoir utiliser correctement le Play framework et finallement comment déveloper un application web Play avec Scala IDE.
 
-Prerequisites
-.............
+Prérequis
+.........
 
-*   `Eclipse`_ 3.6.2 (Helios) with Scala IDE for Scala 2.9 installed (update site: http://download.scala-ide.org/releases-29/stable/site).
+*   `Eclipse`_ 3.6.2 (Helios) avec Scala IDE pour Scala 2.9 installé (update site: http://download.scala-ide.org/releases-29/stable/site).
 
-    Check the :ref:`getting started <gettingstarted_getting-started>` page for instructions on how to install Scala IDE.
+    La page :ref:`getting started<gettingstarted_getting-started>` (en anglais) contient les instructions pour l'installation de Scala IDE.
 
-*   A basic knowledge of the Eclipse user interface is required.
+*   Une connaissance de base de l'interface utilisateur d'Eclipse est nécessaire.
 
-*   No knowledge of the Scala language is required (in this guide).
+*   Aucune connaissance du language Scala est nécessaire (dans ce guide).
 
-*   No knowledge of the Play framework is required (in this guide).
+*   Aucune connaissance de Play framework est nécessaire (dans ce guide).
 
-Setting up Play 2.0
--------------------
+Installer Play 2.0
+------------------
 
-To be able to create a Play web application, the Play framework need to be installed. If you have not installed it already, follow this few steps, or use the `Play documentation`_.
+Pour pouvoir créer une web application Play, Play framework est necessaire. Si vous ne l'avez pas encore installé, suivez ces quelques etapes, ou utilisez la `documentation de Play`__.
 
 *   Download Play framework 2.0-beta from http://www.playframework.org/2.0.
 
@@ -33,6 +33,8 @@ To be able to create a Play web application, the Play framework need to be insta
     .. code-block:: bash
 
        export PATH=$PATH:/path/to/play20
+
+__ `Play documentation`_
 
 Creating a Play 2.0 application
 -------------------------------
