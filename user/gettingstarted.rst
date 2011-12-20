@@ -45,7 +45,7 @@ Choosing what version to install
 
 If you want to live on the bleeding edge (like using Scala 2.10.x or Scala IDE master), check the description of each update site to find the one that fits your needs.
 
-The version of Scala used inside Scala IDE cannot be chosen per project. So if you want to work with project using different version of Scala (like 2.8.2 and 2.9.1), you need different installation of Scala IDE.
+The version of Scala used inside Scala IDE cannot be chosen per project. So if you want to work with a project using different version of Scala (like 2.8.2 and 2.9.1), you need different installation of Scala IDE.
 
 __ http://download.scala-ide.org
 
@@ -77,7 +77,7 @@ Start from an existing SBT project
 
 * If you are using **sbt 0.7.x**, use `eclipsify`_. Follow this `instructions`__ to install the plug-in. You may want to check out the update-sources plug-in, which can download attached sources for your dependencies. This allows you to navigate through the libraries source in the IDE.
 
-* If you are using **sbt 0.11.x** use `sbteclipse`_. Follow the instructions on the project page to install and use the plug-in to generate the project definition. sbteclipse can download attached sources natively, so you do not need the update-sources plug-in.
+* If you are using **sbt 0.12.x**, use `sbteclipse`_. Follow the instructions on the project page to install and use the plug-in to generate the project definition. sbteclipse can download attached sources natively, so you do not need the update-sources plug-in.
 
 Once you have installed and generated the Eclipse project files using one of the above plug-ins, start Eclipse. Use ``File → Import → General/Existing Project into Workspace``. Select the directory containing your project as ``root directory``, select the project and hit ``Finish``. And *Voila*.
 

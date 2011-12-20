@@ -39,18 +39,16 @@ Required Preferences
 
   Scala IDE uses AOP to tweak the Eclipse JDT, so JDT weaving has to be enable. Otherwise, Scala files would be managed as Java files.
 
-  It is set in the ``JDT Weaving`` section of the Eclipse preferences [#preferences]_. It should say *'JDT Weaving is currently ENABLED'*. If it is not the case, use the ``Click to Enable`` button to enable it.
+  It is set in the ``JDT Weaving`` section of Scala Setup Diagnostics dialog [#diagnostics]_. *JDT Weaving* should be checked (and disabled, to prevent accidental changes). If it is not the case, click to enable it.
 
   .. image:: images/advancedsetup-jdtweaving-01.png
-     :width: 100%
-     :target: ../_images/advancedsetup-jdtweaving-01.png
 
 Optional Preferences
 --------------------
 
 * **Heap Status**
 
-  When the memory usage nears the limit, the Garbage Collector activity increases (when the compiler runs, ...) and system slows down. It is good to keep a eye on the heap status. It is possible by enabling ``Show heap status`` in the ``General`` section.
+  When the memory usage nears the limit, the Garbage Collector activity increases (when the compiler runs, ...) and system slows down. It is good to keep a eye on the heap status. It is possible by enabling ``Show heap status`` in the ``General`` section [#preferences]_.
 
   .. image:: images/advancedsetup-heapstatus-01.png
      :width: 100%
@@ -86,3 +84,4 @@ __ http://dwayneb.free.fr/posts/my_eclipse_setup/
 .. rubric:: Footnotes
 
 .. [#preferences] The Eclipse preferences are accessible using ``Windows → Preferences`` (or ``Eclipse → Preferences`` on Mac osX).
+.. [#diagnostics] The Scala Diagnostics dialog is accessible using ``Scala → Run Setup Diagnostics``.
