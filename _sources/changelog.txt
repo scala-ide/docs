@@ -4,12 +4,19 @@ Changelog
 2.0.0 (release/scala-ide-2.0.0)
 -------------------------------
 
+2.0.0-final (released: 2011-12-21)
+..................................
+
+* Scala IDE plugin now signed (no more warning dialog displayed when installing the Scala IDE). `#1000719`_
+
+.. _#1000719: http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000719
+
 2.0.0-rc04 (released: 2011-12-13)
 ....................................
 
 * Scala IDE now again compatible with Groovy IDE. `#1000798`_
 
-.. _#1000798: https://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000798% 
+.. _#1000798: https://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000798 
 
 2.0.0-rc03 (released: 2011-12-09)
 ....................................
