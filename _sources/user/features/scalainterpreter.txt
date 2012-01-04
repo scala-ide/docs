@@ -29,7 +29,7 @@ Using the interpreter
 
 #. Existing code can be selected in the Scala Editor, and run in the interpreter using the |runSelection| ``Run Selection in Scala Interpreter`` command.
 
-   The command can also be invoked using the ``Ctrl+Shitf+x`` or ``Cmd+Shift+x`` key shortcut.
+   The command can also be invoked using the ``Ctrl+Shift+x`` or ``Cmd+Shift+x`` key shortcut.
 
    .. image:: ../images/feature-interpreter-02.png
       :width: 100%
