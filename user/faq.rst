@@ -86,7 +86,7 @@ The code contains Unicode niceties like ``←`` and ``⇒``, but the editor does
 
 The operating system is not using UTF-8 by default, and its default encoding is used inside Eclipse.
 
-The encoding used to open files can be configured at different levels. Most of the time, setting Eclipse default encoding to UTF-8 in ``General → Workspace`` is enough. But in some case, the wrong encoding might also have been set in the project properties, or even the file properties.
+The encoding used to open files can be configured at different levels. Most of the time, setting Eclipse default encoding to UTF-8 in ``General → Workspace`` in the preferences [#preferences]_ is enough. But in some case, the wrong encoding might also have been set in the project properties, or even the file properties.
 
 Red screen of death (red squiggles everywhere)
 ...............................................
@@ -159,3 +159,5 @@ If you have several update sites providing different version of Scala IDE, Eclip
 
 .. _#1000317: https://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000317
 .. _m2eclipse-scala: https://github.com/sonatype/m2eclipse-scala
+
+.. [#preferences] The Eclipse preferences are accessible using ``Windows → Preferences`` (or ``Eclipse → Preferences`` on Mac osX).
