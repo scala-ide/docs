@@ -116,7 +116,7 @@
 </div>
 <div class="section" id="scala-ide-complains-about-no-scala-library-or-more-than-one-scala-library">
 <h3>Scala IDE complains about &#8216;no Scala library...&#8217; or &#8216;More than one Scala library...&#8217;<a class="headerlink" href="#scala-ide-complains-about-no-scala-library-or-more-than-one-scala-library" title="Permalink to this headline">¶</a></h3>
-<p>In Scala IDE 2.0.0, a classpath validator has been added to check that the Scala library has been correctly setup. It is checking two points: that the project build path contains only one Scala libraries, and that its version is compatible with the installed version of Scala IDE.</p>
+<p>In Scala IDE v2.0.0, a classpath validator has been added to check that the Scala library has been correctly setup. It is checking two points: that the project build path contains only one Scala libraries, and that its version is compatible with the installed version of Scala IDE.</p>
 <div class="section" id="not-using-m2eclipse">
 <h4>Not using m2eclipse<a class="headerlink" href="#not-using-m2eclipse" title="Permalink to this headline">¶</a></h4>
 <p>It needs to be fixed manually.</p>
@@ -151,13 +151,13 @@
 <p>The code contains Unicode niceties like <tt class="docutils literal"><span class="pre">←</span></tt> and <tt class="docutils literal"><span class="pre">⇒</span></tt>, but the editor doesn&#8217;t seem to be able to display them, and errors are reported at their location.</p>
 <p><strong>Solution</strong>:</p>
 <p>The operating system is not using UTF-8 by default, and its default encoding is used inside Eclipse.</p>
-<p>The encoding used to open files can be configured at different levels. Most of the time, setting Eclipse default encoding to UTF-8 in <tt class="docutils literal"><span class="pre">General</span> <span class="pre">→</span> <span class="pre">Workspace</span></tt> is enough. But in some case, the wrong encoding might also have been set in the project properties, or even the file properties.</p>
+<p>The encoding used to open files can be configured at different levels. Most of the time, setting Eclipse default encoding to UTF-8 in <tt class="docutils literal"><span class="pre">General</span> <span class="pre">→</span> <span class="pre">Workspace</span></tt> in the preferences <a class="footnote-reference" href="#preferences" id="id2">[1]</a> is enough. But in some case, the wrong encoding might also have been set in the project properties, or even the file properties.</p>
 </div>
 <div class="section" id="red-screen-of-death-red-squiggles-everywhere">
 <h3>Red screen of death (red squiggles everywhere)<a class="headerlink" href="#red-screen-of-death-red-squiggles-everywhere" title="Permalink to this headline">¶</a></h3>
 <p>The number one cause of <em>nothing works</em> is a mismatch between the Scala version of the Eclipse plug-in and your project&#8217;s. Make sure there is only one version of the Scala library on your classpath, and that it matches the version provided by Scala IDE.
 The prime suspect is Maven Dependencies, which can download and add an incompatible scala-library.jar.</p>
-<p>The classpath validator added in Scala IDE 2.0.0 should detect this problem and provide meaningful problem markers.</p>
+<p>The classpath validator added in Scala IDE v2.0.0 should detect this problem and provide meaningful problem markers.</p>
 </div>
 <div class="section" id="no-completions-available">
 <h3>No completions available<a class="headerlink" href="#no-completions-available" title="Permalink to this headline">¶</a></h3>
@@ -199,6 +199,12 @@ The prime suspect is Maven Dependencies, which can download and add an incompati
 <p>After upgrading the Scala plug-in, <tt class="docutils literal"><span class="pre">java.lang.NoClassDefFoundError:</span> <span class="pre">scala/tools/nsc/settings/MutableSettings$SettingValue</span></tt> exception is reported for all Scala projects in the workspace. Scala IDE is then unusable.</p>
 <p><strong>Solution</strong>:</p>
 <p>If you have several update sites providing different version of Scala IDE, Eclipse may have decided that a newest Scala library should be used instead of the one provided by the plug-in to be installed. To avoid this problem, make sure to uncheck the <tt class="docutils literal"><span class="pre">Contact</span> <span class="pre">all</span> <span class="pre">update</span> <span class="pre">sites</span> <span class="pre">during</span> <span class="pre">install</span> <span class="pre">to</span> <span class="pre">find</span> <span class="pre">required</span> <span class="pre">software</span></tt> option. It is situated at the bottom of the <tt class="docutils literal"><span class="pre">Help</span> <span class="pre">→</span> <span class="pre">Install</span> <span class="pre">New</span> <span class="pre">Software...</span></tt> dialog.</p>
+<table class="docutils footnote" frame="void" id="preferences" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id2">[1]</a></td><td>The Eclipse preferences are accessible using <tt class="docutils literal"><span class="pre">Windows</span> <span class="pre">→</span> <span class="pre">Preferences</span></tt> (or <tt class="docutils literal"><span class="pre">Eclipse</span> <span class="pre">→</span> <span class="pre">Preferences</span></tt> on Mac osX).</td></tr>
+</tbody>
+</table>
 </div>
 </div>
 </div>
