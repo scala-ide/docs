@@ -10,6 +10,8 @@ Que contient ce guide?
 
 Ce guide vous montera comment configurer une application web Play pour pouvoir l'importer dans Scala IDE, comment configurer `Scala IDE`_ pour pouvoir utiliser correctement le Play framework et finalement comment développer un application web Play avec Scala IDE.
 
+*La version anglaise est la version de référence. J'essaierai de garder la version française à jour.*
+
 Prérequis
 .........
 
@@ -247,10 +249,24 @@ Pour plus d'information sur Scala, allez sur le `site de documentation`__ ou ré
 
 __ `documentation website`_
 
+Feedback
+--------
+
+Ce guide fait parti du `project de documentation de Scala IDE`__ sur github.
+Vous pouvez utiliser le système de ticket et de pull request de github pour nous faire parvenir des commentaires ou autre.
+
+__ `Scala IDE documentation project`__
+
+Luc Bourlier - `+Luc Bourlier`_ `@sky1uc`_
+
+
 .. _Scala IDE: http://www.scala-ide.org
+.. _Scala IDE documentation project: https://github.com/scala-ide/docs
 .. _Eclipse: http://www.eclipse.org/
 .. _Play documentation: https://github.com/playframework/Play20/wiki/Installing
 .. _sbteclipse: https://github.com/typesafehub/sbteclipse
 .. _Play 2.0 wiki: https://github.com/playframework/play20/wiki
 .. _documentation website: http://docs.scala-lang.org/
 .. _eBook: http://typesafe.com/resources/scala-for-the-impatient
+.. _+Luc Bourlier: https://plus.google.com/106787944777810934000/posts
+.. _@sky1uc: https://twitter.com/sky1uc
