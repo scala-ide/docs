@@ -241,11 +241,22 @@ For more information about Play 2.0, check out the `Play 2.0 wiki`_.
 
 For more information about Scala, go to the `documentation website`_ or get the downloadable `eBook`_.
 
+Feedback
+--------
+
+This guide is managed through in the `Scala IDE documentation project`_ on github.
+Please use github ticket and pull request system for feedback.
+
+Luc Bourlier - `+Luc Bourlier`_ `@sky1uc`_
+
 
 .. _Scala IDE: http://www.scala-ide.org
+.. _Scala IDE documentation project: https://github.com/scala-ide/docs
 .. _Eclipse: http://www.eclipse.org/
 .. _Play documentation: https://github.com/playframework/Play20/wiki/Installing
 .. _sbteclipse: https://github.com/typesafehub/sbteclipse
 .. _Play 2.0 wiki: https://github.com/playframework/play20/wiki
 .. _documentation website: http://docs.scala-lang.org/
 .. _eBook: http://typesafe.com/resources/scala-for-the-impatient
+.. _+Luc Bourlier: https://plus.google.com/106787944777810934000/posts
+.. _@sky1uc: https://twitter.com/sky1uc
