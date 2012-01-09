@@ -146,7 +146,7 @@ Scala IDE uses weaving, you need to launch the IDE with weaving enabled, which i
 in the vanilla launcher. 
 
 That is why we suggest you to install the 
-`Equinox Weaving Launcher <http://www.assembla.com/spaces/equinox-weaving-launcher/wiki>`_.
+`Equinox Weaving Launcher <https://github.com/milessabin/equinox-weaving-launcher>`_.
 
 
 .. _setup_install-equinox-weaving-launcher:
@@ -156,7 +156,7 @@ Install the Equinox Weaving Launcher
 
 To install the Equinox Weaving Launcher, use the following Eclipse update site:
 
-	http://download.scala-ide.org/equinox-weaving-launcher
+	http://www.chuusai.com/eclipse/equinox-weaving-launcher/
 
 This adds two more launch configurations: Eclipse Application with Equinox Weaving, and JUnit plug-in 
 test with Equinox Weaving.
