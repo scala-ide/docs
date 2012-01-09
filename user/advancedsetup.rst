@@ -62,7 +62,7 @@ Garbage Collection activity and swap can be really bad for performance. It can t
 Monitoring what is happening is the best option to keep a healthy system:
 
 * to monitor CPU and swap, use your native system monitor (some of the other system monitors are big resource users themselves).
-* to monitor Garbage Collector activity, use *visualvm* on the eclipse instance. It is a profiling tool provided with jdk 1.6.x. It is possible also to get a feel of the memory usage with `the heap status bar <Optional Preferences>`_ in Eclipse.
+* to monitor Garbage Collector activity, use *visualvm* on the eclipse instance. It is a profiling tool provided with jdk 1.6.x. It is possible also to get a feel of the memory usage with the heap status bar `Optional Preferences`_ in Eclipse.
 
 Depending of the problem, the memory allocated to the JVM can be increased, or some of the other application closed (like the web browser, or some flash application, ...).
 
@@ -83,5 +83,5 @@ __ http://dwayneb.free.fr/posts/my_eclipse_setup/
 
 .. rubric:: Footnotes
 
-.. [#preferences] The Eclipse preferences are accessible using ``Windows → Preferences`` (or ``Eclipse → Preferences`` on Mac osX).
+.. [#preferences] The Eclipse preferences are accessible using ``Windows → Preferences`` (or ``Eclipse → Preferences`` on Mac OS X).
 .. [#diagnostics] The Scala Diagnostics dialog is accessible using ``Scala → Run Setup Diagnostics``.
