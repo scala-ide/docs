@@ -116,7 +116,7 @@
 </div>
 <div class="section" id="scala-ide-complains-about-no-scala-library-or-more-than-one-scala-library">
 <h3>Scala IDE complains about &#8216;no Scala library...&#8217; or &#8216;More than one Scala library...&#8217;<a class="headerlink" href="#scala-ide-complains-about-no-scala-library-or-more-than-one-scala-library" title="Permalink to this headline">¶</a></h3>
-<p>In Scala IDE v2.0.0, a classpath validator has been added to check that the Scala library has been correctly setup. It is checking two points: that the project build path contains only one Scala libraries, and that its version is compatible with the installed version of Scala IDE.</p>
+<p>In Scala IDE 2.0.0, a classpath validator has been added to check that the Scala library has been correctly setup. It is checking two points: that the project build path contains only one Scala libraries, and that its version is compatible with the installed version of Scala IDE.</p>
 <div class="section" id="not-using-m2eclipse">
 <h4>Not using m2eclipse<a class="headerlink" href="#not-using-m2eclipse" title="Permalink to this headline">¶</a></h4>
 <p>It needs to be fixed manually.</p>
@@ -157,7 +157,7 @@
 <h3>Red screen of death (red squiggles everywhere)<a class="headerlink" href="#red-screen-of-death-red-squiggles-everywhere" title="Permalink to this headline">¶</a></h3>
 <p>The number one cause of <em>nothing works</em> is a mismatch between the Scala version of the Eclipse plug-in and your project&#8217;s. Make sure there is only one version of the Scala library on your classpath, and that it matches the version provided by Scala IDE.
 The prime suspect is Maven Dependencies, which can download and add an incompatible scala-library.jar.</p>
-<p>The classpath validator added in Scala IDE v2.0.0 should detect this problem and provide meaningful problem markers.</p>
+<p>The classpath validator added in Scala IDE 2.0.0 should detect this problem and provide meaningful problem markers.</p>
 </div>
 <div class="section" id="no-completions-available">
 <h3>No completions available<a class="headerlink" href="#no-completions-available" title="Permalink to this headline">¶</a></h3>

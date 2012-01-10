@@ -38,7 +38,7 @@ can be replaced with something like (for an 8 megabyte stack, 700MB initial heap
 Scala IDE complains about 'no Scala library...' or 'More than one Scala library...'
 ...................................................................................
 
-In Scala IDE v2.0.0, a classpath validator has been added to check that the Scala library has been correctly setup. It is checking two points: that the project build path contains only one Scala libraries, and that its version is compatible with the installed version of Scala IDE.
+In Scala IDE 2.0.0, a classpath validator has been added to check that the Scala library has been correctly setup. It is checking two points: that the project build path contains only one Scala libraries, and that its version is compatible with the installed version of Scala IDE.
 
 Not using m2eclipse
 ___________________
@@ -94,7 +94,7 @@ Red screen of death (red squiggles everywhere)
 The number one cause of *nothing works* is a mismatch between the Scala version of the Eclipse plug-in and your project's. Make sure there is only one version of the Scala library on your classpath, and that it matches the version provided by Scala IDE.
 The prime suspect is Maven Dependencies, which can download and add an incompatible scala-library.jar.
 
-The classpath validator added in Scala IDE v2.0.0 should detect this problem and provide meaningful problem markers.
+The classpath validator added in Scala IDE 2.0.0 should detect this problem and provide meaningful problem markers.
 
 No completions available
 ........................
