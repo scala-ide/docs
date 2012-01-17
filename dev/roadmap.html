@@ -1,0 +1,184 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Roadmap &mdash; Scala IDE v2.0.0 documentation</title>
+    <link rel="stylesheet" href="../_static/resources/stylesheets/base.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/resources/stylesheets/bootstrap.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/resources/stylesheets/base.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/resources/stylesheets/doc.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/resources/stylesheets/sphinx.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '2.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="Scala IDE v2.0.0 documentation" href="../index.html" />
+    <link rel="up" title="Welcome to the Scala IDE Developer Documentation" href="index.html" />
+    <link rel="next" title="License" href="../license.html" />
+    <link rel="prev" title="External Resources" href="appendix/resources.html" />
+<!-- jquery -->
+<script src="../_static/resources/javascript/jquery.js" type="text/javascript" ></script>
+<script src="../_static/resources/javascript/bootstrap-dropdown.js" type="text/javascript" ></script>
+<script src="../_static/resources/javascript/bootstrap-dropdown-app.js" type="text/javascript" ></script>
+
+  </head>
+  <body>
+<div class="top-bar">
+  <div class="top-bar-inner">
+    <div class="container">
+      <a class="brand" href="/index.html"><img src="../_static/resources/images/logo.png" height="70px"></a>
+      <ul class="nav">
+        <li><a href="/index.html#features">Features</a></li>
+        <li><a href="/docs/index.html">Documentation</a></li>
+		<li class="menu">
+	      	<a href="#" class="menu">Download</a>
+	      	<ul class="menu-dropdown">
+	        	<li><a href="/download/current.html">Current</a></li>
+	        	<li><a href="/download/nightly.html">Nightlies</a></li>
+	      	</ul>
+		</li>
+        <li><a href="/blog/index.html">Blog</a></li>
+        <li><a href="/team.html">Team</a></li>
+      </ul>	
+    </div>
+  </div>
+</div>
+<div class="slider">
+  <div class="container">
+    <div class="row">
+      <div class="span16">        
+        <h1>Roadmap</h1>
+	  </div>
+    </div>
+  </div>
+</div>
+<div class="bottom">
+  <div class="container">
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../license.html" title="License"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="appendix/resources.html" title="External Resources"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">Scala IDE v2.0.0 documentation</a> &raquo;</li>
+          <li><a href="index.html" accesskey="U">Welcome to the Scala IDE Developer Documentation</a> &raquo;</li> 
+      </ul>
+    </div> 
+    <div class="row">
+      <div class="span11" style="margin-top:-45px">        
+        <div class="section" id="roadmap">
+<h1>Roadmap<a class="headerlink" href="#roadmap" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="scala-ide-for-eclipse-2-1-helium">
+<h2>Scala IDE for Eclipse 2.1 (Helium)<a class="headerlink" href="#scala-ide-for-eclipse-2-1-helium" title="Permalink to this headline">¶</a></h2>
+<p>It is an ambitious plan, specially for milestone 1. The idea being to work on the most complex change first, the Scala model, and start on other items, so they can be refined by the time of the final release.</p>
+<p>The targeted roadmap, <em>with is the name of the lead contributor(s) for each item</em>:</p>
+<p><strong>Milestone 1</strong> - mid-March 2012</p>
+<ul class="simple">
+<li>Semantic highlighting - <em>Matt Russell</em></li>
+<li>Move to Eclipse Indigo - <em>Typesafe team</em> - <a class="reference external" href="http://www.assembla.com/spaces/scala-ide/tickets/1000852">#1000852</a></li>
+<li>Design and implement a Scala model - <em>Typesafe team</em> - <a class="reference external" href="http://www.assembla.com/spaces/scala-ide/tickets/1000861">#1000861</a></li>
+<li>Create an abstraction layer with the Scala compiler - <em>Typesafe team</em> - <a class="reference external" href="http://www.assembla.com/spaces/scala-ide/tickets/1000862">#1000862</a></li>
+<li>Use the Scala model for the Outline view - <em>Typesafe team</em> - <a class="reference external" href="http://www.assembla.com/spaces/scala-ide/tickets/1000863">#1000863</a></li>
+<li>Smoother step over/in in the debugger - <em>Typesafe team</em> - <a class="reference external" href="http://www.assembla.com/spaces/scala-ide/tickets/1000864">#1000864</a></li>
+<li>Create a worksheet (like a REPL but in an editor) - <em>Typesafe team</em> - <a class="reference external" href="http://www.assembla.com/spaces/scala-ide/tickets/1000865">#1000865</a></li>
+<li>Create a new JDT model builder, using the compiled classes - <em>Typesafe team</em> - <a class="reference external" href="http://www.assembla.com/spaces/scala-ide/tickets/1000866">#1000866</a></li>
+<li>Extract the presentation compiler in its own project - <em>Typesafe team</em> - <a class="reference external" href="http://www.assembla.com/spaces/scala-ide/tickets/1000867">#1000867</a></li>
+</ul>
+<p><strong>Milestone 2</strong> - mid-May 2012</p>
+<ul class="simple">
+<li>Add support for Find References - <em>Typesafe team</em> - <a class="reference external" href="http://www.assembla.com/spaces/scala-ide/tickets/1000868">#1000868</a></li>
+<li>Create a real Scala Editor (with all completion, indentation, formatting, ... support) - <em>Typesafe team</em> - <a class="reference external" href="http://www.assembla.com/spaces/scala-ide/tickets/1000860">#1000860</a></li>
+<li>Improve dependency tracking - <em>Typesafe team</em> - <a class="reference external" href="http://www.assembla.com/spaces/scala-ide/tickets/1000869">#1000869</a></li>
+</ul>
+<p><strong>Milestone 3</strong> - mid-June 2012</p>
+<ul class="simple">
+<li>Add support for Type Hierarchy (both in JDT and Scala specific) - <em>Typesafe team</em> - <a class="reference external" href="http://www.assembla.com/spaces/scala-ide/tickets/1000870">#1000870</a></li>
+<li>Scala Search (implicit use) - <em>Typesafe team</em> - <a class="reference external" href="http://www.assembla.com/spaces/scala-ide/tickets/1000871">#1000871</a></li>
+<li>Add support Call Hierarchy - <em>Typesafe team</em> - <a class="reference external" href="http://www.assembla.com/spaces/scala-ide/tickets/1000872">#1000872</a></li>
+<li>Finalize the API in Scala IDE - <em>Typesafe team</em> - <a class="reference external" href="http://www.assembla.com/spaces/scala-ide/tickets/1000873">#1000873</a></li>
+</ul>
+<p><strong>Not aligned</strong></p>
+<ul class="simple">
+<li>Specs2 support - <em>Eric Torreborre?</em></li>
+<li>More refactoring support - <em>Mirko Stocker, Michael Holzer</em></li>
+<li>Implicit highlighting -</li>
+</ul>
+</div>
+</div>
+
+	  </div>
+      <div class="span5">        
+	  </div>	
+    </div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../license.html" title="License"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="appendix/resources.html" title="External Resources"
+             >previous</a> |</li>
+        <li><a href="../index.html">Scala IDE v2.0.0 documentation</a> &raquo;</li>
+          <li><a href="index.html" >Welcome to the Scala IDE Developer Documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="footer">
+  <div class="container">
+    <ul>
+      <li><h5>Download</h5></li>
+      <li><a href="/download/current.html">Current</a></li>
+      <li><a href="/download/nightly.html">Nightlies</a></li>
+    </ul>
+    <ul>
+      <li><h5>Documentation</h5></li>
+      <li><a href="/docs/user/gettingstarted.html">Getting Started</a></li>
+      <li><a href="/docs/tutorials/index.html">Tutorials</a></li>
+      <li><a href="http://groups.google.com/group/scala-ide-user">User Mailing List</a></li>
+    </ul>
+    <ul>
+      <li><h5>Contribute</h5></li>
+      <li><a href="https://github.com/scala-ide/scala-ide">Source Code</a></li>
+      <li><a href="/docs/dev/index.html">Developer Documentation</a></li>
+      <li><a href="http://groups.google.com/group/scala-ide-dev">Developer Mailing List</a></li>      
+      <li><a href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/support/tickets">Report a Bug</a></li>      
+    </ul>
+    <ul>
+      <li><img src="../_static/resources/images/watermark.png" align="center"/></li>
+    </ul>
+  </div>
+  <div class="container copyright">
+    <p>
+      <a href="http://creativecommons.org/licenses/by/2.0/uk/">Creative Commons</a>
+    </p>		
+  </div>
+</div>
+
+  </body>
+</html>

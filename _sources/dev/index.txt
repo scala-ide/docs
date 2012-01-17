@@ -21,6 +21,7 @@ Contents:
    repository-organization/repository-organization
    workflow/workflow
    appendix/appendix
+   roadmap
    /license
    
 .. include:: /contribute.rst.inc
