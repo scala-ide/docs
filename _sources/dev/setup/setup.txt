@@ -2,50 +2,40 @@ Setup
 =====
 
 In this page you will learn everything you need to know to setup the Scala IDE project in Eclipse. 
-After this reading you will be all set and ready to start hacking the Scala IDE sources!
+You are literally instants away from being all set and ready to start hacking the Scala IDE sources!
 
 Requirements
 ------------
 
-The Scala IDE project is on `GitHub <https://github.com/scala-ide/scala-ide>`_ and in this writing 
-we assume you have a GitHub account. If you don't, go ahead and create one. You won't be disappointed, 
-GitHub is truly awesome!
+* `JDK 5 <http://www.oracle.com/technetwork/java/javasebusiness/downloads/java-archive-downloads-javase5-419410.html>`_ 
+  or `JDK 6 <http://www.oracle.com/technetwork/java/javasebusiness/downloads/java-archive-downloads-javase6-419409.html>`_ 
+  (JDK 7 is **not** supported. As a matter of fact, there have been issues reported when running Eclipse with a Java 7 JVM. For instance, 
+  see https://bugs.eclipse.org/bugs/show_bug.cgi?id=364735).
 
-Unsurprisingly, you will need Eclipse to contribute to the Scala IDE for Eclipse. 
-If you haven't download Eclipse yet, we recommend to use 
-`Eclipse Helios Classic <http://www.eclipse.org/downloads/packages/eclipse-classic-362/heliossr2>`_.
-Also note that the plug-in sources are currently not compatible with |Eclipse Indigo (TM)|, you need 
-to use |Eclipse Helios (TM)|.
+* `Maven 3 <http://maven.apache.org/download.html>`_.
 
-.. |Eclipse Helios Classic (TM)| unicode:: Eclipse U+0020 Indigo U+2122
-   .. with trademark sign
+* `Git <http://git-scm.com/>`_ and a `GitHub <https://github.com/>`_ account.
 
-.. |Eclipse Indigo (TM)| unicode:: Eclipse U+0020 Indigo U+2122
-   .. with trademark sign
-.. |Eclipse Helios (TM)| unicode:: Eclipse U+0020 Helios U+2122
-   .. with trademark sign
+* `Eclipse 3.7 (Indigo) <http://www.eclipse.org/downloads/>`_, including the JDT. Either "Eclipse Classic" or "Eclipse for Java Developers" is sufficient (Be aware, the plugin's sources are no longer compatible with Eclipse 3.6). 
 
-Since the Scala IDE sources are mostly written in Scala (again, not really a surprising fact), you 
-need to install the Scala IDE plug-in for Eclipse (since support for Scala 2.8 will be dropped after 
-the final 2.0.0 release of the Scala IDE, we suggest you to use the Scala IDE plug-in for Scala 2.9 
-or Scala 2.10 - trunk). Developers are strongly encouraged to use a nightly build, as your feedback 
-is vital to the project (catching errors early is the road to awesomeness).
+* The `Scala IDE Helium for Scala 2.9 <http://scala-ide.org/download/nightly.html>`_.
+
 
 You will also need a terminal to run some script. If you are on Windows, we suggest you to 
 install `Cygwin <http://www.cygwin.com/>`_ (how could you live without it on Windows anyway!?). 
 It is not mandatory to use Cygwin, but in this documentation we assume you have a way to run 
-bash scripts, or else you have the time and motivation to look inside the script and convert them 
-in Windows batch files (if you do so, make sure to send a pull request our way, and we will make 
-the Windows scripts available to all contributors).
+bash scripts, or else, you have the time and motivation to look inside the existing scripts and 
+convert them in Windows batch files, if needed (if you do so, make sure to send a pull request our way, 
+and we will make the Windows scripts available to all contributors).
 
 .. _setup_fork-the-project:
 
 Fork the project
 ----------------
 
-The first thing you should do is forking the `Scala IDE Git repository 
-<http://github.com/scala-ide/scala-ide>`_, that will greatly simplify the process of sending us 
-patches (remember to also read about the :ref:`workflow_page` before creating pull requests).
+The first thing you should do is forking the `Scala IDE repository <http://github.com/scala-ide/scala-ide>`_, 
+that will greatly simplify the process of sending us patches (remember to also read about the 
+:ref:`workflow_page` before creating pull requests).
 
 If you are new to GitHub, `read here to learn how to fork a project 
 <http://help.github.com/fork-a-repo/>`_.

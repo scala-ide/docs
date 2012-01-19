@@ -12,7 +12,7 @@ Requirements
 
   * Scala IDE is officially supporting Eclipse 3.6.2.
 
-  * Scala IDE can be installed on Eclipse 3.7.1, but not all features are working perfectly. For example, discovery of unit tests is not working (ticket `1000782`__).
+  * Scala IDE can be installed on Eclipse 3.7, but not all features are working perfectly. For example, discovery of unit tests is not working (ticket `1000782`__).
 
 __ https://www.assembla.com/spaces/scala-ide/tickets/1000782
 

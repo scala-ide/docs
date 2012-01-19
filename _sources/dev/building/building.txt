@@ -2,21 +2,30 @@ Building the Scala IDE
 ======================
 
 The Scala IDE for Eclipse can be built on the command line using Maven, as is 
-done, for example, during the Hudson-driven nightly builds on Amazon EC2. 
+done, for example, during the `Hudson-driven nightly builds on Amazon EC2 <https://jenkins.scala-ide.org:8496/jenkins/>`_. 
 
 
 Requirements
 ------------
 
+* `JDK 5 <http://www.oracle.com/technetwork/java/javasebusiness/downloads/java-archive-downloads-javase5-419410.html>`_
+  or `JDK 6 <http://www.oracle.com/technetwork/java/javasebusiness/downloads/java-archive-downloads-javase6-419409.html>`_
+  (JDK 7 is **not** supported. As a matter of fact, there have been issues reported when running Eclipse with a Java 7 JVM. For instance,
+  see https://bugs.eclipse.org/bugs/show_bug.cgi?id=364735).
+
+* `Maven 3 <http://maven.apache.org/download.html>`_.
+
 * You have cloned the Scala IDE project. Read :ref:`setup_fork-the-project` for 
   more information about this point.
-* Oracle `JDK 5 
-  <http://www.oracle.com/technetwork/java/javasebusiness/downloads/java-archive-downloads-javase5-419410.html#jdk-1.5.0_22-oth-JPR>`_ 
-  or `JDK 6 
-  <http://www.oracle.com/technetwork/java/javasebusiness/downloads/java-archive-downloads-javase6-419409.html#jdk-6u29-oth-JPR>`_ 
-  (JDK 7 is currently not supported because of `this Eclipse bug <https://bugs.eclipse.org/bugs/show_bug.cgi?id=317785>`_, which 
-  affects all Eclipse versions prior to 3.7.1).
-* `Maven 3 <http://maven.apache.org/download.html>`_
+
+You will also need a terminal to run some script. If you are on Windows, we
+suggest you to install Cygwin (how could you live without it on Windows
+anyway!?). It is not mandatory to use Cygwin, but in this documentation we
+assume you have a way to run bash scripts, or else, you have the time and
+motivation to look inside the existing scripts and convert them in Windows
+batch files, if needed (if you do so, make sure to send a pull request our
+way, and we will make the Windows scripts available to all contributors).
+
 
 .. _building_run-the-build:
 

@@ -89,18 +89,25 @@
         <div class="section" id="building-the-scala-ide">
 <h1>Building the Scala IDE<a class="headerlink" href="#building-the-scala-ide" title="Permalink to this headline">¶</a></h1>
 <p>The Scala IDE for Eclipse can be built on the command line using Maven, as is
-done, for example, during the Hudson-driven nightly builds on Amazon EC2.</p>
+done, for example, during the <a class="reference external" href="https://jenkins.scala-ide.org:8496/jenkins/">Hudson-driven nightly builds on Amazon EC2</a>.</p>
 <div class="section" id="requirements">
 <h2>Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
+<li><a class="reference external" href="http://www.oracle.com/technetwork/java/javasebusiness/downloads/java-archive-downloads-javase5-419410.html">JDK 5</a>
+or <a class="reference external" href="http://www.oracle.com/technetwork/java/javasebusiness/downloads/java-archive-downloads-javase6-419409.html">JDK 6</a>
+(JDK 7 is <strong>not</strong> supported. As a matter of fact, there have been issues reported when running Eclipse with a Java 7 JVM. For instance,
+see <a class="reference external" href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=364735">https://bugs.eclipse.org/bugs/show_bug.cgi?id=364735</a>).</li>
+<li><a class="reference external" href="http://maven.apache.org/download.html">Maven 3</a>.</li>
 <li>You have cloned the Scala IDE project. Read <a class="reference internal" href="../setup/setup.html#setup-fork-the-project"><em>Fork the project</em></a> for
 more information about this point.</li>
-<li>Oracle <a class="reference external" href="http://www.oracle.com/technetwork/java/javasebusiness/downloads/java-archive-downloads-javase5-419410.html#jdk-1.5.0_22-oth-JPR">JDK 5</a>
-or <a class="reference external" href="http://www.oracle.com/technetwork/java/javasebusiness/downloads/java-archive-downloads-javase6-419409.html#jdk-6u29-oth-JPR">JDK 6</a>
-(JDK 7 is currently not supported because of <a class="reference external" href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=317785">this Eclipse bug</a>, which
-affects all Eclipse versions prior to 3.7.1).</li>
-<li><a class="reference external" href="http://maven.apache.org/download.html">Maven 3</a></li>
 </ul>
+<p>You will also need a terminal to run some script. If you are on Windows, we
+suggest you to install Cygwin (how could you live without it on Windows
+anyway!?). It is not mandatory to use Cygwin, but in this documentation we
+assume you have a way to run bash scripts, or else, you have the time and
+motivation to look inside the existing scripts and convert them in Windows
+batch files, if needed (if you do so, make sure to send a pull request our
+way, and we will make the Windows scripts available to all contributors).</p>
 </div>
 <div class="section" id="run-the-build">
 <span id="building-run-the-build"></span><h2>Run the build<a class="headerlink" href="#run-the-build" title="Permalink to this headline">¶</a></h2>
