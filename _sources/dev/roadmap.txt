@@ -10,6 +10,7 @@ The targeted roadmap, *with is the name of the lead contributor(s) for each item
 
 **Milestone 1** - mid-March 2012
 
+* Implicit highlighting - *Jin Mingjian, David Bernard and Mirko Stocker* - `#1000628`__ |done|
 * Semantic highlighting - *Matt Russell* - `#1000591`__
 * Move to Eclipse Indigo - *Typesafe team* - `#1000852`__ |done|
 * Design and implement a Scala model - *Typesafe team* - `#1000861`__
@@ -20,6 +21,7 @@ The targeted roadmap, *with is the name of the lead contributor(s) for each item
 * Create a new JDT model builder, using the compiled classes - *Typesafe team* - `#1000866`__
 * Extract the presentation compiler in its own project - *Typesafe team* - `#1000867`__
 
+__ http://www.assembla.com/spaces/scala-ide/tickets/1000628
 __ http://www.assembla.com/spaces/scala-ide/tickets/1000591
 __ http://www.assembla.com/spaces/scala-ide/tickets/1000852
 __ http://www.assembla.com/spaces/scala-ide/tickets/1000861
@@ -56,7 +58,6 @@ __ http://www.assembla.com/spaces/scala-ide/tickets/1000873
 
 * Specs2 support - *Eric Torreborre?*
 * More refactoring support - *Mirko Stocker, Michael Holzer*
-* Implicit highlighting - 
 
 .. role:: raw-html(raw)
    :format: html
