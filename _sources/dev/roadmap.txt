@@ -12,7 +12,7 @@ The targeted roadmap, *with is the name of the lead contributor(s) for each item
 
 * Implicit highlighting - *Jin Mingjian, David Bernard and Mirko Stocker* - `#1000628`__ |done|
 * Semantic highlighting - *Matt Russell* - `#1000591`__
-* Move to Eclipse Indigo - *Typesafe team* - `#1000852`__ |done|
+* Move to Eclipse Indigo - *Eric Molitor* - `#1000852`__ |done|
 * Design and implement a Scala model - *Typesafe team* - `#1000861`__
 * Create an abstraction layer with the Scala compiler - *Typesafe team* - `#1000862`__
 * Use the Scala model for the Outline view - *Typesafe team* - `#1000863`__
@@ -42,7 +42,7 @@ __ http://www.assembla.com/spaces/scala-ide/tickets/1000868
 __ http://www.assembla.com/spaces/scala-ide/tickets/1000860
 __ http://www.assembla.com/spaces/scala-ide/tickets/1000869
 
-**Milestone 3** - mid-June 2012
+**Milestone 3** - mid-July 2012
 
 * Add support for Type Hierarchy (both in JDT and Scala specific) - *Typesafe team* - `#1000870`__
 * Scala Search (implicit use) - *Typesafe team* - `#1000871`__
@@ -56,8 +56,10 @@ __ http://www.assembla.com/spaces/scala-ide/tickets/1000873
 
 **Not aligned**
 
-* Specs2 support - *Eric Torreborre?*
 * More refactoring support - *Mirko Stocker, Michael Holzer*
+* Specs2 support - *Eric Torreborre?*
+* ScalaTest support - *Bill Venners?*
+
 
 .. role:: raw-html(raw)
    :format: html
