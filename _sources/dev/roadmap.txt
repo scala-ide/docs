@@ -11,7 +11,7 @@ The targeted roadmap, *with is the name of the lead contributor(s) for each item
 **Milestone 1** - mid-March 2012
 
 * Semantic highlighting - *Matt Russell* - `#1000591`__
-* Move to Eclipse Indigo - *Typesafe team* - `#1000852`__
+* Move to Eclipse Indigo - *Typesafe team* - `#1000852`__ |done|
 * Design and implement a Scala model - *Typesafe team* - `#1000861`__
 * Create an abstraction layer with the Scala compiler - *Typesafe team* - `#1000862`__
 * Use the Scala model for the Outline view - *Typesafe team* - `#1000863`__
@@ -58,3 +58,7 @@ __ http://www.assembla.com/spaces/scala-ide/tickets/1000873
 * More refactoring support - *Mirko Stocker, Michael Holzer*
 * Implicit highlighting - 
 
+.. role:: raw-html(raw)
+   :format: html
+
+.. |done| replace:: :raw-html:`<span class="label success">done</span>`
