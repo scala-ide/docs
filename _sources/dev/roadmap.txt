@@ -1,7 +1,7 @@
 Roadmap
 =======
 
-Scala IDE for Eclipse 2.1 (Helium)
+Scala IDE for Eclipse - Helium
 ----------------------------------
 
 It is an ambitious plan, specially for milestone 1. The idea being to work on the most complex change first, the Scala model, and start on other items, so they can be refined by the time of the final release.
