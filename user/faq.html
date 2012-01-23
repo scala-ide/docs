@@ -169,6 +169,31 @@ The prime suspect is Maven Dependencies, which can download and add an incompati
 <p>The diagnostic tool at <tt class="docutils literal"><span class="pre">Scala</span> <span class="pre">→</span> <span class="pre">Run</span> <span class="pre">Setup</span> <span class="pre">Diagnostic</span></tt> allows to fix this problem. Make sure that <tt class="docutils literal"><span class="pre">Use</span> <span class="pre">Scala-compatible</span> <span class="pre">JDT</span> <span class="pre">content</span> <span class="pre">assist</span> <span class="pre">proposals</span></tt> is enabled.</p>
 <img alt="../_images/setup-diagnostics-01.png" src="../_images/setup-diagnostics-01.png" />
 </div>
+<div class="section" id="bad-completion-when-using-companion-object-in-java">
+<h3>Bad completion when using companion object in Java<a class="headerlink" href="#bad-completion-when-using-companion-object-in-java" title="Permalink to this headline">¶</a></h3>
+<p>Using the Java code assist to access a Scala companion object generates invalid code.</p>
+<div class="highlight-scala"><div class="highlight"><pre><span class="k">package</span> <span class="nn">stest</span>
+
+<span class="k">class</span> <span class="nc">S3</span>
+
+<span class="k">object</span> <span class="nc">S3</span> <span class="o">{</span>
+  <span class="k">def</span> <span class="n">some</span> <span class="o">{</span> <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+<div class="highlight-java"><div class="highlight"><pre><span class="kn">package</span> <span class="n">jtest</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">stest.S3</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">J</span> <span class="o">{</span>
+  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">s</span><span class="o">()</span> <span class="o">{</span>
+    <span class="n">S3$</span><span class="o">.</span><span class="c1">// call code assist here, select MODULE$</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+<p>This a JDT problem. See <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1729">#1729</a>.</p>
+</div>
 <div class="section" id="eclipse-freezes-deadlock">
 <h3>Eclipse freezes (deadlock)<a class="headerlink" href="#eclipse-freezes-deadlock" title="Permalink to this headline">¶</a></h3>
 <p><strong>Symptoms</strong>:</p>

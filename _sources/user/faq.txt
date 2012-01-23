@@ -111,6 +111,37 @@ The diagnostic tool at ``Scala → Run Setup Diagnostic`` allows to fix this pro
 
 .. image:: images/setup-diagnostics-01.png
 
+Bad completion when using companion object in Java
+..................................................
+
+Using the Java code assist to access a Scala companion object generates invalid code.
+
+.. code-block:: scala
+
+   package stest
+
+   class S3
+
+   object S3 {
+     def some { }
+   }
+
+.. code-block:: java
+
+   package jtest;
+
+   import stest.S3;
+
+   public class J {
+     public void s() {
+       S3$.// call code assist here, select MODULE$
+     }
+   }
+
+This a JDT problem. See `#1729`__.
+
+__ http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1729
+
 Eclipse freezes (deadlock)
 ..........................
 
