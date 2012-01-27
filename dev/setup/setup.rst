@@ -117,7 +117,18 @@ Now click the "Order and Export" tab and make sure to export all JARs click the 
    :width: 100%
    :target: ../../_images/order-export.png
  
-Click OK. The build errors should go away. If they don't, try to refresh all the projects (in 
+ 
+Click OK. 
+
+Eclipse should automatically refresh the projects, but you will still see some build 
+errors in the ``org.scala-ide.sbt.core`` project. The problem is that we are missing a few 
+dependencies needed to compile the project's sources. To fix this, you will need to build the 
+project from the terminal. Follow the steps described in :ref:`building_run-the-build`. Then, 
+come back to finish the setup. 
+
+When running the build script, Maven will take care of copying the dependecies in the 
+``org.scala-ide.sbt.core`` project, inside the ``/lib`` folder. After the build completed, you should 
+no longer see errors inside Eclipse. If you do still see errors, try to refresh all projects (in 
 Eclipse, select all the imported Scala IDE projects and press F5) and do a full clean, 
 re-build (to do so, click on the "Project" menu item, and the "Clean...").
  
