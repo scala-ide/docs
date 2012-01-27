@@ -168,7 +168,15 @@ the &#8220;Add JARs...&#8221; button and browse to <tt class="docutils literal">
 folder and click OK.</p>
 <p>Now click the &#8220;Order and Export&#8221; tab and make sure to export all JARs click the &#8220;Select All&#8221; button.</p>
 <a class="reference external image-reference" href="../../_images/order-export.png"><img alt="../../_images/order-export.png" src="../../_images/order-export.png" style="width: 100%;" /></a>
-<p>Click OK. The build errors should go away. If they don&#8217;t, try to refresh all the projects (in
+<p>Click OK.</p>
+<p>Eclipse should automatically refresh the projects, but you will still see some build
+errors in the <tt class="docutils literal"><span class="pre">org.scala-ide.sbt.core</span></tt> project. The problem is that we are missing a few
+dependencies needed to compile the project&#8217;s sources. To fix this, you will need to build the
+project from the terminal. Follow the steps described in <a class="reference internal" href="../building/building.html#building-run-the-build"><em>Run the build</em></a>. Then,
+come back to finish the setup.</p>
+<p>When running the build script, Maven will take care of copying the dependecies in the
+<tt class="docutils literal"><span class="pre">org.scala-ide.sbt.core</span></tt> project, inside the <tt class="docutils literal"><span class="pre">/lib</span></tt> folder. After the build completed, you should
+no longer see errors inside Eclipse. If you do still see errors, try to refresh all projects (in
 Eclipse, select all the imported Scala IDE projects and press F5) and do a full clean,
 re-build (to do so, click on the &#8220;Project&#8221; menu item, and the &#8220;Clean...&#8221;).</p>
 <p>If after rebuilding you still see errors, drop us a note in the <a class="reference external" href="http://groups.google.com/group/scala-ide-dev?pli=1">Scala IDE Developer
