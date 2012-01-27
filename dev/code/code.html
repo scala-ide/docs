@@ -1,0 +1,194 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Codebase &mdash; Scala IDE v2.0.0 documentation</title>
+    <link rel="stylesheet" href="../../_static/resources/stylesheets/base.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/resources/stylesheets/bootstrap.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/resources/stylesheets/base.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/resources/stylesheets/doc.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/resources/stylesheets/sphinx.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '2.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="Scala IDE v2.0.0 documentation" href="../../index.html" />
+    <link rel="up" title="Welcome to the Scala IDE Developer Documentation" href="../index.html" />
+    <link rel="next" title="Regression Test Suite" href="../testing/testing.html" />
+    <link rel="prev" title="Architecture" href="../architecture/architecture.html" />
+<!-- jquery -->
+<script src="../../_static/resources/javascript/jquery.js" type="text/javascript" ></script>
+<script src="../../_static/resources/javascript/bootstrap-dropdown.js" type="text/javascript" ></script>
+<script src="../../_static/resources/javascript/bootstrap-dropdown-app.js" type="text/javascript" ></script>
+
+  </head>
+  <body>
+<div class="top-bar">
+  <div class="top-bar-inner">
+    <div class="container">
+      <a class="brand" href="/index.html"><img src="../../_static/resources/images/logo.png" height="70px"></a>
+      <ul class="nav">
+        <li><a href="/index.html#features">Features</a></li>
+        <li><a href="/docs/index.html">Documentation</a></li>
+		<li class="menu">
+	      	<a href="#" class="menu">Download</a>
+	      	<ul class="menu-dropdown">
+	        	<li><a href="/download/current.html">Current</a></li>
+	        	<li><a href="/download/nightly.html">Nightlies</a></li>
+	      	</ul>
+		</li>
+        <li><a href="/blog/index.html">Blog</a></li>
+        <li><a href="/team.html">Team</a></li>
+        <li><a href="/docs/dev/roadmap.html">Roadmap</a></li>
+      </ul>	
+    </div>
+  </div>
+</div>
+<div class="slider">
+  <div class="container">
+    <div class="row">
+      <div class="span16">        
+        <h1>Codebase</h1>
+	  </div>
+    </div>
+  </div>
+</div>
+<div class="bottom">
+  <div class="container">
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../testing/testing.html" title="Regression Test Suite"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../architecture/architecture.html" title="Architecture"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../index.html">Scala IDE v2.0.0 documentation</a> &raquo;</li>
+          <li><a href="../index.html" accesskey="U">Welcome to the Scala IDE Developer Documentation</a> &raquo;</li> 
+      </ul>
+    </div> 
+    <div class="row">
+      <div class="span11" style="margin-top:-45px">        
+        <div class="section" id="codebase">
+<h1>Codebase<a class="headerlink" href="#codebase" title="Permalink to this headline">¶</a></h1>
+<p>In this page you will learn about some specific aspect of the Scala IDE&#8217;s codebase, such as
+available components and some of the pattern in use (or that we&#8217;d like to foster usage).</p>
+<div class="section" id="logging">
+<h2>Logging<a class="headerlink" href="#logging" title="Permalink to this headline">¶</a></h2>
+<p>Logging is an important aspect of any application, and the Scala IDE is no exception. Logging the
+right information and provide the user with a way to report logs can go a long way in understanding
+the reason of a bug, and it can definitely save you some debug time!</p>
+<p>Now, you may know that the Eclipse environment already provides a logging component. As a matter of
+fact, a plugin can get a logger instance by simply calling <tt class="docutils literal"><span class="pre">getLog()</span></tt> on the <tt class="docutils literal"><span class="pre">plugin</span></tt>&#8216;s reference. The
+returned logger, of type <a class="reference external" href="http://help.eclipse.org/indigo/index.jsp?topic=%2Forg.eclipse.platform.doc.isv%2Freference%2Fapi%2Forg%2Feclipse%2Fcore%2Fruntime%2FILog.html">ILog</a>,
+can be used to communicate to the user any useful information. All log messages sent through
+the Eclipse logger are collected in <a class="reference external" href="http://help.eclipse.org/indigo/index.jsp?topic=/org.eclipse.pde.doc.user/guide/tools/views/error_log.htm">Eclipse Error Log view component</a>,
+hence they can be easily consulted by users.</p>
+<p>Though, we believe that the Eclipse logger is not flexible enough to accomodate all usage. One reason is
+that you don&#8217;t always want the user to see a log message. For instance, debug messages are often of no use
+for the user, but they can provide very helpful information when tracking down the source of an
+issue.</p>
+<p>Inside the Scala IDE we offer two different loggers. The first one, is a handle on the
+Eclipse logger described above. The second one, is a logger backed by Log4j (which we will refer to as
+the &#8220;default logger&#8221; from now on). Log messages sent to the default logger are stored in a file named
+<tt class="docutils literal"><span class="pre">scala-ide.log</span></tt>, located in the <tt class="docutils literal"><span class="pre">${workspace}\.metadata\.plugin\org.scala-ide.sdt.core\</span></tt> directory.
+Also, note that users can easily control the amount of logged information through Logging preference page
+(accessible under the Eclipse Preferences &gt; Scala &gt; Logging).</p>
+<p>To get a handle on the loggers, you only need to mix-in the <tt class="docutils literal"><span class="pre">HasLogger</span></tt> trait, which should be
+similar to the following:</p>
+<div class="highlight-scala"><div class="highlight"><pre><span class="k">trait</span> <span class="nc">HasLogger</span> <span class="o">{</span>
+
+  <span class="k">protected</span><span class="o">[</span><span class="kt">this</span><span class="o">]</span> <span class="k">lazy</span> <span class="k">val</span> <span class="n">logger</span><span class="k">:</span> <span class="kt">Logger</span> <span class="o">=</span> <span class="o">{</span>
+    <span class="k">val</span> <span class="n">clazz</span> <span class="k">=</span> <span class="k">this</span><span class="o">.</span><span class="n">getClass</span>
+    <span class="nc">LogManager</span><span class="o">.</span><span class="n">getLogger</span><span class="o">(</span><span class="n">clazz</span><span class="o">)</span>
+  <span class="o">}</span>
+
+  <span class="k">protected</span><span class="o">[</span><span class="kt">this</span><span class="o">]</span> <span class="k">def</span> <span class="n">eclipseLog</span><span class="k">:</span> <span class="kt">Logger</span> <span class="o">=</span> <span class="nc">EclipseLogger</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+<p>Deciding which logger you should use is simple. If you want to inform the user, use the
+<tt class="docutils literal"><span class="pre">eclipseLog</span></tt> instance. For instance, if a severe error occurred (i.e., an unexpected exception), it
+is a good idea to inform the user!
+In all other cases (or if you are unsure), prefer the default <tt class="docutils literal"><span class="pre">logger</span></tt>. Also, note that
+messages sent through the <tt class="docutils literal"><span class="pre">eclipseLog</span></tt> are also forwarded to the default <tt class="docutils literal"><span class="pre">logger</span></tt> (meaning that
+you never need to log the same message twice). Further, all printings in the Standard Output or the
+Standard Error are redirected to the default <tt class="docutils literal"><span class="pre">logger</span></tt>.</p>
+<p>In short, the <tt class="docutils literal"><span class="pre">scala-ide.log</span></tt> file always contain the complete list of log messages occurred within the Scala IDE!</p>
+</div>
+</div>
+
+	  </div>
+      <div class="span5">        
+	  </div>	
+    </div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../testing/testing.html" title="Regression Test Suite"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../architecture/architecture.html" title="Architecture"
+             >previous</a> |</li>
+        <li><a href="../../index.html">Scala IDE v2.0.0 documentation</a> &raquo;</li>
+          <li><a href="../index.html" >Welcome to the Scala IDE Developer Documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="footer">
+  <div class="container">
+    <ul>
+      <li><h5>Download</h5></li>
+      <li><a href="/download/current.html">Current</a></li>
+      <li><a href="/download/nightly.html">Nightlies</a></li>
+    </ul>
+    <ul>
+      <li><h5>Documentation</h5></li>
+      <li><a href="/docs/user/gettingstarted.html">Getting Started</a></li>
+      <li><a href="/docs/tutorials/index.html">Tutorials</a></li>
+      <li><a href="http://groups.google.com/group/scala-ide-user">User Mailing List</a></li>
+    </ul>
+    <ul>
+      <li><h5>Contribute</h5></li>
+      <li><a href="https://github.com/scala-ide/scala-ide">Source Code</a></li>
+      <li><a href="/docs/dev/index.html">Developer Documentation</a></li>
+      <li><a href="http://groups.google.com/group/scala-ide-dev">Developer Mailing List</a></li>      
+      <li><a href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/support/tickets">Report a Bug</a></li>      
+    </ul>
+    <ul>
+      <li><img src="../../_static/resources/images/watermark.png" align="center"/></li>
+    </ul>
+  </div>
+  <div class="container copyright">
+    <p>
+      <a href="http://creativecommons.org/licenses/by/2.0/uk/">Creative Commons</a>
+    </p>		
+  </div>
+</div>
+
+  </body>
+</html>
