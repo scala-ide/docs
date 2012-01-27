@@ -15,8 +15,9 @@ Contents:
    :maxdepth: 2
    
    setup/setup
-   architecture/architecture
    building/building
+   architecture/architecture
+   code/code
    testing/testing
    repository-organization/repository-organization
    workflow/workflow
