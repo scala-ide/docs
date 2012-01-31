@@ -30,6 +30,7 @@ Contents:
    user/index
    tutorials/index
    changelog
+   helium/index
    Developer Documentation <dev/index>
    
 .. include:: /contribute.rst.inc
