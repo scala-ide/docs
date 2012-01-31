@@ -1,7 +1,7 @@
 Scala IDE Helium
 ================
 
-Helium is the code name of the future Scala IDE release. This documentation is the starting point to discover all about the new features already available in the `latest Helium's nightly build`__.
+Helium is the code name of the future Scala IDE release. This documentation is the starting point to discover all about the new features already available in the latest `Helium's nightly`__.
 
 __ http://scala-ide.org/download/nightly.html
 
