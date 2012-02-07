@@ -9,3 +9,4 @@ __ http://scala-ide.org/download/nightly.html
    :maxdepth: 2
 
    features/logging
+   features/moverefactoring
