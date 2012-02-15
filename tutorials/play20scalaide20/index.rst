@@ -28,7 +28,7 @@ Setting up Play 2.0
 
 To be able to create a Play web application, the Play framework need to be installed. If you have not installed it already, follow this few steps, or use the `Play documentation`_.
 
-*   Download Play framework 2.0-beta from http://www.playframework.org/2.0.
+*   Download Play framework 2.0-RC1 from http://www.playframework.org/2.0.
 
 *   Unzip it in your preferred location. Let's say ``/path/to/play20`` for the purpose of this document.
 
@@ -81,7 +81,9 @@ Configuring the Play 2.0 web application for Scala IDE
 
 Now that the Play application is running, it needs to be configured so it can be imported into Scala IDE.
 
-The eclipsify support is not yet integrated it Play 2.0, so we are using `sbteclipse`_ to make it an Eclipse project.
+Play 2.0-RC1 integrates `eclipsify`_, unfortunally Scala IDE 2.0 doesn't fully support the configuration it generates (see `#1000907`_ for more details).
+
+In consequence, we are using `sbteclipse`_ to make an Eclipse project of the sbt project.
 
 *   First, exit Play using ``ctrl-d``, and then ``exit``.
 
@@ -173,7 +175,9 @@ Everything is setup, it is time to import the project in the IDE.
 Doing some development
 ----------------------
 
-Now that everything is setup, we can change the content. Let's add a way to have a quote on the main page.
+Now that everything is setup, we can start to do some real work.
+
+Let's change the main page to display a quote instead of the default page.
 
 *   First, create the ``models.Quote`` class using the new ``Scala Class`` wizard.
 
@@ -182,7 +186,7 @@ Now that everything is setup, we can change the content. Let's add a way to have
        :width: 100%
        :target: ../../_images/play20-scalaide20-19.png
 
-*   Add variables to ``models.Quote``.
+*   Add variables to ``models.Quote``, and make it a case class.
 
     .. code-block:: scala
 
@@ -200,8 +204,6 @@ Now that everything is setup, we can change the content. Let's add a way to have
        
        @main("Welcome to Play 2.0 beta") {
        
-           @play20.welcome(message)
-           
            <p>@quote.text<em> - @quote.author</em></p>
        
        }
@@ -215,7 +217,7 @@ Now that everything is setup, we can change the content. Let's add a way to have
        :width: 100%
        :target: ../../_images/play20-scalaide20-17.png
 
-*   Fix the application code, using a smart quote.
+*   Fix the application code, using a smart quote. And fix the imports as needed.
 
     .. code-block:: scala
 
@@ -237,7 +239,7 @@ Going further
 
 You now have all you need to create great web applications with Play 2.0 and Scala.
 
-For more information about Play 2.0, check out the `Play 2.0 wiki`_.
+For more information about Play 2.0, check out the `embedded documentation`_.
 
 For more information about Scala, go to the `documentation website`_ or get the downloadable `eBook`_.
 
@@ -245,17 +247,24 @@ Feedback
 --------
 
 This guide is managed through in the `Scala IDE documentation project`_ on github.
-Please use github ticket and pull request system for feedback.
+Please use github tickets and pull requests system for feedback.
 
 Luc Bourlier - `+Luc Bourlier`_ `@sky1uc`_
 
 
+.. toctree::
+   :hidden:
+
+   index-fr.rst
+
+.. _#1000907: http://www.assembla.com/spaces/scala-ide/tickets/1000907
 .. _Scala IDE: http://www.scala-ide.org
 .. _Scala IDE documentation project: https://github.com/scala-ide/docs
 .. _Eclipse: http://www.eclipse.org/
 .. _Play documentation: https://github.com/playframework/Play20/wiki/Installing
+.. _eclipsify: https://github.com/musk/SbtEclipsify
 .. _sbteclipse: https://github.com/typesafehub/sbteclipse
-.. _Play 2.0 wiki: https://github.com/playframework/play20/wiki
+.. _embedded documentation: http://localhost:9000/@documentation/Home
 .. _documentation website: http://docs.scala-lang.org/
 .. _eBook: http://typesafe.com/resources/scala-for-the-impatient
 .. _+Luc Bourlier: https://plus.google.com/106787944777810934000/posts
