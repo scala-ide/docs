@@ -10,7 +10,7 @@ Que contient ce guide?
 
 Ce guide vous montera comment configurer une application web Play pour pouvoir l'importer dans Scala IDE, comment configurer `Scala IDE`_ pour pouvoir utiliser correctement le Play framework et finalement comment développer un application web Play avec Scala IDE.
 
-*La version anglaise est la version de référence. J'essaierai de garder la version française à jour.*
+*La version anglaise est la version de référence. J'essaierai de garder à jour la version française.*
 
 Prérequis
 .........
@@ -30,7 +30,7 @@ Installer Play 2.0
 
 Pour pouvoir créer une web application Play, Play framework est nécessaire. Si vous ne l'avez pas encore installé, suivez ces quelques étapes, ou utilisez la `documentation de Play`__.
 
-*   Téléchargez Play framework 2.0-beta sur http://www.playframework.org/2.0.
+*   Téléchargez Play framework 2.0-RC1 sur http://www.playframework.org/2.0.
 
 *   Unzippez l'archive dans votre répertoire préféré. Nous utiliserons ``/path/to/play20`` dans ce document.
 
@@ -85,7 +85,9 @@ Configurer l'application web Play 2.0 pour Scala IDE
 
 Maintenant que l'application Play fonctionne, il faut la configurer pour pouvoir l'importer dans Scala IDE.
 
-Le support eclipsify n'est pas integrated dans Play 2.0 pour le moment. Donc nous utilisons `sbteclipse`_ pour faire de l'application web un projet Eclipse.
+`eclipsify`_ est intégré dans Play 2.0-RC1. Malheureusement, la configuration qu'il génère n'est pas entièrement supportée par Scala IDE 2.0 (voir `#1000907`_ pour plus de détails).
+
+Donc nous utilisons `sbteclipse`_ pour faire de l'application web un projet Eclipse.
 
 *   D'abord, sortez de Play, en utilisant ``ctrl-d``, puis ``exit``.
 
@@ -177,7 +179,9 @@ Tout est configuré, il est temps d'importer le projet dans Scala IDE.
 Faire un peu de développement
 -----------------------------
 
-Maintenant que tout est configuré, nous pouvons changer le contenu. Ajoutons le moyen d'avoir une citation sur la page principale.
+Maintenant que tout est configuré, le vrai développement peut commencer.
+
+Modifions la page principale pour afficher une citation à la place de la page de défaut.
 
 *   D'abord, créez la classe ``models.Quote`` en utilisant l'assistant nouvelle ``Scala Class``.
 
@@ -186,7 +190,7 @@ Maintenant que tout est configuré, nous pouvons changer le contenu. Ajoutons le
        :width: 100%
        :target: ../../_images/play20-scalaide20-19.png
 
-*   Ajoutez les variables à ``models.Quote``.
+*   Ajoutez les variables à ``models.Quote``, et faites en une case class.
 
     .. code-block:: scala
 
@@ -203,8 +207,6 @@ Maintenant que tout est configuré, nous pouvons changer le contenu. Ajoutons le
        @(message: String, quote: models.Quote)
        
        @main("Welcome to Play 2.0 beta") {
-       
-           @play20.welcome(message)
            
            <p>@quote.text<em> - @quote.author</em></p>
        
@@ -219,7 +221,7 @@ Maintenant que tout est configuré, nous pouvons changer le contenu. Ajoutons le
        :width: 100%
        :target: ../../_images/play20-scalaide20-17.png
 
-*   Corrigez le code de l'application, en utilisant une citation élégante.
+*   Corrigez le code de l'application, en utilisant une citation élégante. Et corrigez les imports au besoin.
 
     .. code-block:: scala
 
@@ -239,11 +241,11 @@ Maintenant que tout est configuré, nous pouvons changer le contenu. Ajoutons le
 Aller plus loin
 ----------------
 
-Vous avez maintenant tout ce dont vous besoin pour créer de belles applications web avec Play 2.0 et Scala.
+Vous avez maintenant tout ce dont vous besoin pour créer de grandes applications web avec Play 2.0 et Scala.
 
-Pour plus d'information sur Play 2.0, allez voir le `wiki Play 2.0`__.
+Pour plus d'information sur Play 2.0, utilisez la `documentation intégrée`__.
 
-__ `Play 2.0 wiki`_
+__ `embedded documentation`_
 
 Pour plus d'information sur Scala, allez sur le `site de documentation`__ ou récupérez le `eBook`_ téléchargeable.
 
@@ -260,12 +262,14 @@ __ `Scala IDE documentation project`__
 Luc Bourlier - `+Luc Bourlier`_ `@sky1uc`_
 
 
+.. _#1000907: http://www.assembla.com/spaces/scala-ide/tickets/1000907
 .. _Scala IDE: http://www.scala-ide.org
 .. _Scala IDE documentation project: https://github.com/scala-ide/docs
 .. _Eclipse: http://www.eclipse.org/
 .. _Play documentation: https://github.com/playframework/Play20/wiki/Installing
+.. _eclipsify: https://github.com/musk/SbtEclipsify
 .. _sbteclipse: https://github.com/typesafehub/sbteclipse
-.. _Play 2.0 wiki: https://github.com/playframework/play20/wiki
+.. _embedded documentation: http://localhost:9000/@documentation/Home
 .. _documentation website: http://docs.scala-lang.org/
 .. _eBook: http://typesafe.com/resources/scala-for-the-impatient
 .. _+Luc Bourlier: https://plus.google.com/106787944777810934000/posts

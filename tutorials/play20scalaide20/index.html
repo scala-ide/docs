@@ -27,7 +27,7 @@
     <script type="text/javascript" src="../../_static/doctools.js"></script>
     <link rel="top" title="Scala IDE v2.0.0 documentation" href="../../index.html" />
     <link rel="up" title="Tutorial" href="../index.html" />
-    <link rel="next" title="Changelog" href="../../changelog.html" />
+    <link rel="next" title="Configurer et utiliser Play framework 2.0 avec Scala IDE 2.0" href="index-fr.html" />
     <link rel="prev" title="Tutorial" href="../index.html" />
 <!-- jquery -->
 <script src="../../_static/resources/javascript/jquery.js" type="text/javascript" ></script>
@@ -76,7 +76,7 @@
           <a href="../../genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="../../changelog.html" title="Changelog"
+          <a href="index-fr.html" title="Configurer et utiliser Play framework 2.0 avec Scala IDE 2.0"
              accesskey="N">next</a> |</li>
         <li class="right" >
           <a href="../index.html" title="Tutorial"
@@ -112,7 +112,7 @@
 <h2>Setting up Play 2.0<a class="headerlink" href="#setting-up-play-2-0" title="Permalink to this headline">¶</a></h2>
 <p>To be able to create a Play web application, the Play framework need to be installed. If you have not installed it already, follow this few steps, or use the <a class="reference external" href="https://github.com/playframework/Play20/wiki/Installing">Play documentation</a>.</p>
 <ul>
-<li><p class="first">Download Play framework 2.0-beta from <a class="reference external" href="http://www.playframework.org/2.0">http://www.playframework.org/2.0</a>.</p>
+<li><p class="first">Download Play framework 2.0-RC1 from <a class="reference external" href="http://www.playframework.org/2.0">http://www.playframework.org/2.0</a>.</p>
 </li>
 <li><p class="first">Unzip it in your preferred location. Let&#8217;s say <tt class="docutils literal"><span class="pre">/path/to/play20</span></tt> for the purpose of this document.</p>
 </li>
@@ -146,7 +146,8 @@
 <div class="section" id="configuring-the-play-2-0-web-application-for-scala-ide">
 <h2>Configuring the Play 2.0 web application for Scala IDE<a class="headerlink" href="#configuring-the-play-2-0-web-application-for-scala-ide" title="Permalink to this headline">¶</a></h2>
 <p>Now that the Play application is running, it needs to be configured so it can be imported into Scala IDE.</p>
-<p>The eclipsify support is not yet integrated it Play 2.0, so we are using <a class="reference external" href="https://github.com/typesafehub/sbteclipse">sbteclipse</a> to make it an Eclipse project.</p>
+<p>Play 2.0-RC1 integrates <a class="reference external" href="https://github.com/musk/SbtEclipsify">eclipsify</a>, unfortunally Scala IDE 2.0 doesn&#8217;t fully support the configuration it generates (see <a class="reference external" href="http://www.assembla.com/spaces/scala-ide/tickets/1000907">#1000907</a> for more details).</p>
+<p>In consequence, we are using <a class="reference external" href="https://github.com/typesafehub/sbteclipse">sbteclipse</a> to make an Eclipse project of the sbt project.</p>
 <ul>
 <li><p class="first">First, exit Play using <tt class="docutils literal"><span class="pre">ctrl-d</span></tt>, and then <tt class="docutils literal"><span class="pre">exit</span></tt>.</p>
 <a class="reference external image-reference" href="../../_images/play20-scalaide20-06.png"><img alt="ctrl-d, exit" src="../../_images/play20-scalaide20-06.png" style="width: 100%;" /></a>
@@ -199,12 +200,13 @@
 </div>
 <div class="section" id="doing-some-development">
 <h2>Doing some development<a class="headerlink" href="#doing-some-development" title="Permalink to this headline">¶</a></h2>
-<p>Now that everything is setup, we can change the content. Let&#8217;s add a way to have a quote on the main page.</p>
+<p>Now that everything is setup, we can start to do some real work.</p>
+<p>Let&#8217;s change the main page to display a quote instead of the default page.</p>
 <ul>
 <li><p class="first">First, create the <tt class="docutils literal"><span class="pre">models.Quote</span></tt> class using the new <tt class="docutils literal"><span class="pre">Scala</span> <span class="pre">Class</span></tt> wizard.</p>
 <a class="reference external image-reference" href="../../_images/play20-scalaide20-19.png"><img alt="create model.Quote" src="../../_images/play20-scalaide20-19.png" style="width: 100%;" /></a>
 </li>
-<li><p class="first">Add variables to <tt class="docutils literal"><span class="pre">models.Quote</span></tt>.</p>
+<li><p class="first">Add variables to <tt class="docutils literal"><span class="pre">models.Quote</span></tt>, and make it a case class.</p>
 <div class="highlight-scala"><div class="highlight"><pre><span class="k">package</span> <span class="nn">models</span>
 
 <span class="k">case</span> <span class="k">class</span> <span class="nc">Quote</span><span class="o">(</span><span class="k">val</span> <span class="n">text</span><span class="k">:</span> <span class="kt">String</span><span class="o">,</span> <span class="k">val</span> <span class="n">author</span><span class="k">:</span> <span class="kt">String</span><span class="o">)</span> <span class="o">{</span>
@@ -218,8 +220,6 @@
 
 <span class="nd">@main</span><span class="o">(</span><span class="s">&quot;Welcome to Play 2.0 beta&quot;</span><span class="o">)</span> <span class="o">{</span>
 
-    <span class="nd">@play20</span><span class="o">.</span><span class="n">welcome</span><span class="o">(</span><span class="n">message</span><span class="o">)</span>
-
     <span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;@</span><span class="n">quote</span><span class="o">.</span><span class="n">text</span><span class="o">&lt;</span><span class="n">em</span><span class="o">&gt;</span> <span class="o">-</span> <span class="nd">@quote</span><span class="o">.</span><span class="n">author</span><span class="o">&lt;/</span><span class="n">em</span><span class="o">&gt;&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
 
 <span class="o">}</span>
@@ -230,7 +230,7 @@
 <p>Play returns a compilation error, the application is not using the template correctly. The error is also visible in the code of <tt class="docutils literal"><span class="pre">Application.scala</span></tt>.</p>
 <a class="reference external image-reference" href="../../_images/play20-scalaide20-17.png"><img alt="compilation error" src="../../_images/play20-scalaide20-17.png" style="width: 100%;" /></a>
 </li>
-<li><p class="first">Fix the application code, using a smart quote.</p>
+<li><p class="first">Fix the application code, using a smart quote. And fix the imports as needed.</p>
 <div class="highlight-scala"><div class="highlight"><pre><span class="k">def</span> <span class="n">index</span> <span class="k">=</span> <span class="nc">Action</span> <span class="o">{</span>
   <span class="nc">Ok</span><span class="o">(</span><span class="n">views</span><span class="o">.</span><span class="n">html</span><span class="o">.</span><span class="n">index</span><span class="o">(</span><span class="s">&quot;Your new application is ready.&quot;</span><span class="o">,</span>
       <span class="nc">Quote</span><span class="o">(</span><span class="s">&quot;Citer les pensees des autres, c&#39;est regretter de ne pas les avoir trouvees soi-meme.&quot;</span><span class="o">,</span>
@@ -247,14 +247,16 @@
 <div class="section" id="going-further">
 <h2>Going further<a class="headerlink" href="#going-further" title="Permalink to this headline">¶</a></h2>
 <p>You now have all you need to create great web applications with Play 2.0 and Scala.</p>
-<p>For more information about Play 2.0, check out the <a class="reference external" href="https://github.com/playframework/play20/wiki">Play 2.0 wiki</a>.</p>
+<p>For more information about Play 2.0, check out the <a class="reference external" href="http://localhost:9000/&#64;documentation/Home">embedded documentation</a>.</p>
 <p>For more information about Scala, go to the <a class="reference external" href="http://docs.scala-lang.org/">documentation website</a> or get the downloadable <a class="reference external" href="http://typesafe.com/resources/scala-for-the-impatient">eBook</a>.</p>
 </div>
 <div class="section" id="feedback">
 <h2>Feedback<a class="headerlink" href="#feedback" title="Permalink to this headline">¶</a></h2>
 <p>This guide is managed through in the <a class="reference external" href="https://github.com/scala-ide/docs">Scala IDE documentation project</a> on github.
-Please use github ticket and pull request system for feedback.</p>
+Please use github tickets and pull requests system for feedback.</p>
 <p>Luc Bourlier - <a class="reference external" href="https://plus.google.com/106787944777810934000/posts">+Luc Bourlier</a> <a class="reference external" href="https://twitter.com/sky1uc">&#64;sky1uc</a></p>
+<div class="toctree-wrapper compound">
+</div>
 </div>
 </div>
 
@@ -270,7 +272,7 @@ Please use github ticket and pull request system for feedback.</p>
           <a href="../../genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="../../changelog.html" title="Changelog"
+          <a href="index-fr.html" title="Configurer et utiliser Play framework 2.0 avec Scala IDE 2.0"
              >next</a> |</li>
         <li class="right" >
           <a href="../index.html" title="Tutorial"
