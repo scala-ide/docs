@@ -32,7 +32,7 @@ Pour pouvoir créer une web application Play, Play framework est nécessaire. Si
 
 *   Téléchargez Play framework 2.0-RC1 sur http://www.playframework.org/2.0.
 
-*   Unzippez l'archive dans votre répertoire préféré. Nous utiliserons ``/path/to/play20`` dans ce document.
+*   Un-zippez l'archive dans votre répertoire préféré. Nous utiliserons ``/path/to/play20`` dans ce document.
 
 *   Pour simplifier l'utilisation, ajoutez le répertoire de Play dans le PATH:
 
@@ -85,46 +85,23 @@ Configurer l'application web Play 2.0 pour Scala IDE
 
 Maintenant que l'application Play fonctionne, il faut la configurer pour pouvoir l'importer dans Scala IDE.
 
-`eclipsify`_ est intégré dans Play 2.0-RC1. Malheureusement, la configuration qu'il génère n'est pas entièrement supportée par Scala IDE 2.0 (voir `#1000907`_ pour plus de détails).
+Play 2.0-RC1 intègre `sbteclipse`_, qui permet de créer les fichiers de configuration d'un projet pour Eclipse.
 
-Donc nous utilisons `sbteclipse`_ pour faire de l'application web un projet Eclipse.
-
-*   D'abord, sortez de Play, en utilisant ``ctrl-d``, puis ``exit``.
+*   D'abord, sortez du mode 'run' de Play, en utilisant ``ctrl-d``.
 
     .. image:: images/play20-scalaide20-06.png
        :alt: ctrl-d, exit
        :width: 100%
        :target: ../../_images/play20-scalaide20-06.png
 
-*   Ajoutez sbteclipse à sbt en créant le fichier ``project/build.sbt`` avec le contenu suivant.
-
-    .. code-block:: scala
-
-       
-       resolvers += Classpaths.typesafeResolver
-       
-       addSbtPlugin("com.typesafe.sbteclipse" % "sbteclipse" % "1.5.0")
-
-    .. image:: images/play20-scalaide20-07.png
-       :alt: modify project/build.sbt
-       :width: 100%
-       :target: ../../_images/play20-scalaide20-07.png
-
-*   Retournez dans Play.
-
-    .. image:: images/play20-scalaide20-08.png
-       :alt: play
-       :width: 100%
-       :target: ../../_images/play20-scalaide20-08.png
-
-*   Générez la configuration du projet Eclipse.
+*   ``eclipsify`` est la commande à utiliser pour lancer sbteclipse depuis Play.
 
     .. image:: images/play20-scalaide20-09.png
        :alt: eclipse
        :width: 100%
        :target: ../../_images/play20-scalaide20-09.png
 
-*   Et relancez l'application web, de manière à ce qu'elle soit disponible plus tard.
+*   Relancez l'application web, en mode 'auto-reloading', en utilisant ``~ run``, de manière à ce qu'elle fonctionne en arrière plan.
 
     .. image:: images/play20-scalaide20-10.png
        :alt: run
@@ -169,6 +146,22 @@ Tout est configuré, il est temps d'importer le projet dans Scala IDE.
        :width: 100%
        :target: ../../_images/play20-scalaide20-15.png
 
+*   La configuration générée par sbteclipse permet l'utilisation du project dans Eclipse, mais elle n'est pas optimale avec Scala IDE.
+
+    Ajoutez le répertoire ``target/src_managed/main`` comme répertoire source.
+
+    .. image:: images/play20-scalaide20-20.png
+       :alt: add the managed sources folder
+       :width: 100%
+       :target: ../../_images/play20-scalaide20-20.png
+
+*   Et enlevez le répertoire ``classes_managed`` du build path.
+
+    .. image:: images/play20-scalaide20-21.png
+       :alt: remove managed classes folder
+       :width: 100%
+       :target: ../../_images/play20-scalaide20-21.png
+
 *   Tout est parfait, tout compile.
 
     .. image:: images/play20-scalaide20-16.png
@@ -190,7 +183,7 @@ Modifions la page principale pour afficher une citation à la place de la page d
        :width: 100%
        :target: ../../_images/play20-scalaide20-19.png
 
-*   Ajoutez les variables à ``models.Quote``, et faites en une case class.
+*   Ajoutez les variables à ``models.Quote``, et faites en une case classe.
 
     .. code-block:: scala
 
@@ -212,9 +205,9 @@ Modifions la page principale pour afficher une citation à la place de la page d
        
        }
 
-*   Les templates sont transformés en code Scala par le Play framework, donc utilisez le bouton ``refresh`` du navigateur interne pour l'effectuer.
+*   Les templates sont transformés en code Scala par le Play framework. Comme Play a été lancé en mode 'auto-reloading' en arrière plan, les templates sont recompilés dès que le fichier est sauvegardé.
 
-    Play répond avec une erreur compilation, l'application n'utilise pas le template correctement. L'erreur est aussi visible dans le code de ``Application.scala``.
+    Apres avoir sauvegardé le fichier, les changements sont chargés par Scala IDE, et une erreur est reporté dans le code de ``Application.scala``. L'application n'utilise pas le template correctement.
     
     .. image:: images/play20-scalaide20-17.png
        :alt: compilation error
