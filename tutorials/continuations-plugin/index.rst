@@ -1,5 +1,5 @@
-Enabling the Scala continuations in the Scala IDE
-=================================================
+Enabling Scala continuations plugin in the Scala IDE
+====================================================
 
 Prerequisites
 .............
