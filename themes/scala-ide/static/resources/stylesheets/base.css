@@ -38,6 +38,11 @@ body {background-color: #8d8d8d;}
 .top-bar div>ul .menu-dropdown .divider,.nav .menu-dropdown .divider,.top-bar div>ul .dropdown-menu .divider,.nav .dropdown-menu .divider{background-color:#222;border-color:#444;}
 .top-bar ul .menu-dropdown li a,.top-bar ul .dropdown-menu li a{padding:4px 15px;}
 
+.main-content > .section h1:first-of-type { visibility: hidden; height: 0px; margin: 0px; padding: 0px; }
+/*.main-content > .section { margin-top: -36px; }*/
+.main-content { min-height: 600px; top: 0px; margin-top: -52px; }
+.related { visibility: hidden; height: 0px; margin: 0px; padding: 0px; }
+
 .btn.large{font-size:26px;line-height:normal;padding:12px 20px 12px;-webkit-border-radius:6px;-moz-border-radius:6px;border-radius:6px;}
 .btn.success,.alert-message.success{
 	background-color:#82d84e;

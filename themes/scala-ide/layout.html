@@ -41,12 +41,12 @@
   </div>
 </div>
 <div class="bottom">
-  <div class="container">
+  <div class="container" style="position: relative;">
 {% endblock %}
 
 {% block content %} 
-    <div class="row">
-      <div class="span11" style="margin-top:-45px">        
+    <div class="row" style="position: relative; clear: both; ">
+      <div class="span11 main-content" >        
         {{ body }}
 	  </div>
       <div class="span5">        
@@ -57,7 +57,7 @@
 {% block footer %}
   </div>
 </div>
-<div class="footer">
+<div class="footer" style="position:relative; clear: both; ">
   <div class="container">
     <ul>
       <li><h5>Download</h5></li>
