@@ -84,7 +84,7 @@
      * Generate an anchor id from a string by replacing unwanted characters.
      */
     function generateId(text) {
-        return text.replace(/[ <#\/\\?&]/g, '_');
+        return text.replace(/[ <#\/\\?&.,():;]/g, '_');
     };
 
     /*
