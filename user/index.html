@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="../_static/resources/stylesheets/base.css" type="text/css" />
     <link rel="stylesheet" href="../_static/resources/stylesheets/doc.css" type="text/css" />
     <link rel="stylesheet" href="../_static/resources/stylesheets/sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/resources/stylesheets/prettify.css" type="text/css" />
     
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
@@ -28,14 +29,18 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/resources/javascript/jquery.js"></script>
+    <script type="text/javascript" src="../_static/resources/javascript/toc.js"></script>
+    <script type="text/javascript" src="../_static/resources/javascript/prettify.js"></script>
+    <script type="text/javascript" src="../_static/resources/javascript/highlightCode.js"></script>
+    <script type="text/javascript" src="../_static/resources/javascript/effects.core.js"></script>
+    <script type="text/javascript" src="../_static/resources/javascript/effects.highlight.js"></script>
+    <script type="text/javascript" src="../_static/resources/javascript/scrollTo.js"></script>
+    <script type="text/javascript" src="../_static/resources/javascript/bootstrap-dropdown.js"></script>
+    <script type="text/javascript" src="../_static/resources/javascript/bootstrap-dropdown-app.js"></script>
     <link rel="top" title="Scala IDE 2.0.0 documentation" href="../index.html" />
     <link rel="next" title="Getting Started" href="gettingstarted.html" />
-    <link rel="prev" title="Welcome to Scala IDE’s documentation!" href="../index.html" />
-<!-- jquery -->
-<script src="../_static/resources/javascript/jquery.js" type="text/javascript" ></script>
-<script src="../_static/resources/javascript/bootstrap-dropdown.js" type="text/javascript" ></script>
-<script src="../_static/resources/javascript/bootstrap-dropdown-app.js" type="text/javascript" ></script>
-
+    <link rel="prev" title="Welcome to Scala IDE’s documentation!" href="../index.html" /> 
   </head>
   <body>
 <div class="top-bar">
@@ -70,26 +75,27 @@
 </div>
 <div class="bottom">
   <div class="container" style="position: relative;">
+ 
+    <!--<div class="row" style="position: relative; clear: both; ">
+      <div class="span16 main-content">
+        <ul class="breadcrumb">
+          <li>
+            <a href="gettingstarted.html">Getting Started</a> <span class="divider">»</span>
+          </li>
+          <li>
+            <span class="divider">|</span>
+          </li>          
+          <li>
+            <span class="divider">«</span> <a href="../index.html">Welcome to Scala IDE&#8217;s documentation!</a> 
+          </li>       
+        </ul>
+      </div>
+    </div>-->
 
-    <div class="related">
-      <h3>Navigation</h3>
-      <ul>
-        <li class="right" style="margin-right: 10px">
-          <a href="../genindex.html" title="General Index"
-             accesskey="I">index</a></li>
-        <li class="right" >
-          <a href="gettingstarted.html" title="Getting Started"
-             accesskey="N">next</a> |</li>
-        <li class="right" >
-          <a href="../index.html" title="Welcome to Scala IDE’s documentation!"
-             accesskey="P">previous</a> |</li>
-        <li><a href="../index.html">Scala IDE 2.0.0 documentation</a> &raquo;</li> 
-      </ul>
-    </div> 
-    <div class="row" style="position: relative; clear: both; ">
-      <div class="span11 main-content" >        
+    <div class="row" style="position: relative; clear: both;">
+      <div class="span11 main-content">                 
         <div class="section" id="user-documentation">
-<h1>User Documentation<a class="headerlink" href="#user-documentation" title="Permalink to this headline">¶</a></h1>
+<h1>User Documentation</h1>
 <p>This documentation is the starting point for the installation guide and other information regarding the use of the Scala IDE for Eclipse.</p>
 <p>Contents:</p>
 <div class="toctree-wrapper compound">
@@ -151,26 +157,17 @@
 </div>
 </div>
 
-	  </div>
-      <div class="span5">        
-	  </div>	
+	    </div>
+      <div class="span5 sidebar">
+        <p class="contents-title">Contents</p>
+        <div id="scroller-anchor">
+          <div id="scroller">
+            <div id="toc"></div>
+          </div>
+        </div>            
+	    </div>	
     </div>
 
-    <div class="related">
-      <h3>Navigation</h3>
-      <ul>
-        <li class="right" style="margin-right: 10px">
-          <a href="../genindex.html" title="General Index"
-             >index</a></li>
-        <li class="right" >
-          <a href="gettingstarted.html" title="Getting Started"
-             >next</a> |</li>
-        <li class="right" >
-          <a href="../index.html" title="Welcome to Scala IDE’s documentation!"
-             >previous</a> |</li>
-        <li><a href="../index.html">Scala IDE 2.0.0 documentation</a> &raquo;</li> 
-      </ul>
-    </div>
   </div>
 </div>
 <div class="footer" style="position:relative; clear: both; ">
@@ -205,6 +202,9 @@
     </p>		
   </div>
 </div>
+<script type="text/javascript">
+  $('#toc').toc();
+</script>
 
   </body>
 </html>

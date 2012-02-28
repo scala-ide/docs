@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="../../_static/resources/stylesheets/base.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/resources/stylesheets/doc.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/resources/stylesheets/sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/resources/stylesheets/prettify.css" type="text/css" />
     
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
@@ -28,15 +29,19 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/resources/javascript/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/resources/javascript/toc.js"></script>
+    <script type="text/javascript" src="../../_static/resources/javascript/prettify.js"></script>
+    <script type="text/javascript" src="../../_static/resources/javascript/highlightCode.js"></script>
+    <script type="text/javascript" src="../../_static/resources/javascript/effects.core.js"></script>
+    <script type="text/javascript" src="../../_static/resources/javascript/effects.highlight.js"></script>
+    <script type="text/javascript" src="../../_static/resources/javascript/scrollTo.js"></script>
+    <script type="text/javascript" src="../../_static/resources/javascript/bootstrap-dropdown.js"></script>
+    <script type="text/javascript" src="../../_static/resources/javascript/bootstrap-dropdown-app.js"></script>
     <link rel="top" title="Scala IDE 2.0.0 documentation" href="../../index.html" />
     <link rel="up" title="Welcome to the Scala IDE Developer Documentation" href="../index.html" />
     <link rel="next" title="Appendix" href="../appendix/appendix.html" />
-    <link rel="prev" title="Repository organization" href="../repository-organization/repository-organization.html" />
-<!-- jquery -->
-<script src="../../_static/resources/javascript/jquery.js" type="text/javascript" ></script>
-<script src="../../_static/resources/javascript/bootstrap-dropdown.js" type="text/javascript" ></script>
-<script src="../../_static/resources/javascript/bootstrap-dropdown-app.js" type="text/javascript" ></script>
-
+    <link rel="prev" title="Repository organization" href="../repository-organization/repository-organization.html" /> 
   </head>
   <body>
 <div class="top-bar">
@@ -71,34 +76,34 @@
 </div>
 <div class="bottom">
   <div class="container" style="position: relative;">
+ 
+    <!--<div class="row" style="position: relative; clear: both; ">
+      <div class="span16 main-content">
+        <ul class="breadcrumb">
+          <li>
+            <a href="../appendix/appendix.html">Appendix</a> <span class="divider">»</span>
+          </li>
+          <li>
+            <span class="divider">|</span>
+          </li>          
+          <li>
+            <span class="divider">«</span> <a href="../repository-organization/repository-organization.html">Repository organization</a> 
+          </li>       
+        </ul>
+      </div>
+    </div>-->
 
-    <div class="related">
-      <h3>Navigation</h3>
-      <ul>
-        <li class="right" style="margin-right: 10px">
-          <a href="../../genindex.html" title="General Index"
-             accesskey="I">index</a></li>
-        <li class="right" >
-          <a href="../appendix/appendix.html" title="Appendix"
-             accesskey="N">next</a> |</li>
-        <li class="right" >
-          <a href="../repository-organization/repository-organization.html" title="Repository organization"
-             accesskey="P">previous</a> |</li>
-        <li><a href="../../index.html">Scala IDE 2.0.0 documentation</a> &raquo;</li>
-          <li><a href="../index.html" accesskey="U">Welcome to the Scala IDE Developer Documentation</a> &raquo;</li> 
-      </ul>
-    </div> 
-    <div class="row" style="position: relative; clear: both; ">
-      <div class="span11 main-content" >        
+    <div class="row" style="position: relative; clear: both;">
+      <div class="span11 main-content">                 
         <div class="section" id="workflow">
-<span id="workflow-page"></span><h1>Workflow<a class="headerlink" href="#workflow" title="Permalink to this headline">¶</a></h1>
+<span id="workflow-page"></span><h1>Workflow</h1>
 <p>In this page we discuss the workflow for both external contributors and committers. The difference
 between the two is very thin, and it boils down to having the rights for integrating patches (pull
 requests, in GitHub terminology) in the mainline.</p>
 <p>We assume you are comfortable with both Git and GitHub. If you need an introduction to these
 essential tools, we suggest you to start by reading <a class="reference internal" href="../appendix/git-github.html#git-github-page"><em>Git &amp; GitHub</em></a>.</p>
 <div class="section" id="external-contributors">
-<h2>External contributors<a class="headerlink" href="#external-contributors" title="Permalink to this headline">¶</a></h2>
+<h2>External contributors</h2>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">If you are an external contributor, the first thing you want to do is <a class="reference internal" href="../setup/setup.html#setup-fork-the-project"><em>forking the Scala IDE
@@ -124,13 +129,13 @@ help us keeping track of changes between each release.</li>
 </ul>
 <p>Alright, now it&#8217;s time to create a new branch (standard git workflow).</p>
 <div class="section" id="branch-name-convention">
-<span id="workflow-branch-name-convention"></span><h3>Branch name convention<a class="headerlink" href="#branch-name-convention" title="Permalink to this headline">¶</a></h3>
+<span id="workflow-branch-name-convention"></span><h3>Branch name convention</h3>
 <p>The convention for naming a branch is straightforward, the name should convey what the branch is
 about (i.e., a short description) and the ticket number should be suffixed. Words are separated by
 dashes (<tt class="docutils literal"><span class="pre">-</span></tt>). For instance, <tt class="docutils literal"><span class="pre">scala-java-interop-1000508</span></tt> is a perfectly valid name.</p>
 </div>
 <div class="section" id="ready-to-push-your-changes">
-<h3>Ready to push your changes?<a class="headerlink" href="#ready-to-push-your-changes" title="Permalink to this headline">¶</a></h3>
+<h3>Ready to push your changes?</h3>
 <p>When you are done working on a ticket, make sure that:</p>
 <ul class="simple">
 <li>Your code is clean and documented. And you have made your best effort to decouple UI elements from
@@ -147,7 +152,7 @@ sure you can integrate your awesome work back in the project&#8217;s mainline, s
 to help you fix any of the above points.</p>
 </div>
 <div class="section" id="send-us-a-pull-request">
-<h3>Send us a pull request<a class="headerlink" href="#send-us-a-pull-request" title="Permalink to this headline">¶</a></h3>
+<h3>Send us a pull request</h3>
 <p>Once you think your work is ready to be integrated, send us a pull request (read <a class="reference external" href="http://help.github.com/send-pull-requests/">here</a> for how
 to do this). When sending a pull request, contributors will review your code. There might be a few
 iterations (code review, update code) before your pull request is merged in the mainline. Don&#8217;t get
@@ -170,7 +175,7 @@ codebase, so that we can make it as simple as possible for new contributors to e
 </div>
 </div>
 <div class="section" id="committers">
-<h2>Committers<a class="headerlink" href="#committers" title="Permalink to this headline">¶</a></h2>
+<h2>Committers</h2>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">This section assumes that you know how the <a class="reference internal" href="../repository-organization/repository-organization.html#repository-organization-page"><em>repository is organized</em></a>.</p>
@@ -219,27 +224,17 @@ mainline:</p>
 </div>
 </div>
 
-	  </div>
-      <div class="span5">        
-	  </div>	
+	    </div>
+      <div class="span5 sidebar">
+        <p class="contents-title">Contents</p>
+        <div id="scroller-anchor">
+          <div id="scroller">
+            <div id="toc"></div>
+          </div>
+        </div>            
+	    </div>	
     </div>
 
-    <div class="related">
-      <h3>Navigation</h3>
-      <ul>
-        <li class="right" style="margin-right: 10px">
-          <a href="../../genindex.html" title="General Index"
-             >index</a></li>
-        <li class="right" >
-          <a href="../appendix/appendix.html" title="Appendix"
-             >next</a> |</li>
-        <li class="right" >
-          <a href="../repository-organization/repository-organization.html" title="Repository organization"
-             >previous</a> |</li>
-        <li><a href="../../index.html">Scala IDE 2.0.0 documentation</a> &raquo;</li>
-          <li><a href="../index.html" >Welcome to the Scala IDE Developer Documentation</a> &raquo;</li> 
-      </ul>
-    </div>
   </div>
 </div>
 <div class="footer" style="position:relative; clear: both; ">
@@ -274,6 +269,9 @@ mainline:</p>
     </p>		
   </div>
 </div>
+<script type="text/javascript">
+  $('#toc').toc();
+</script>
 
   </body>
 </html>

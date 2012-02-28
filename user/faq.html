@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="../_static/resources/stylesheets/base.css" type="text/css" />
     <link rel="stylesheet" href="../_static/resources/stylesheets/doc.css" type="text/css" />
     <link rel="stylesheet" href="../_static/resources/stylesheets/sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/resources/stylesheets/prettify.css" type="text/css" />
     
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
@@ -28,15 +29,19 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/resources/javascript/jquery.js"></script>
+    <script type="text/javascript" src="../_static/resources/javascript/toc.js"></script>
+    <script type="text/javascript" src="../_static/resources/javascript/prettify.js"></script>
+    <script type="text/javascript" src="../_static/resources/javascript/highlightCode.js"></script>
+    <script type="text/javascript" src="../_static/resources/javascript/effects.core.js"></script>
+    <script type="text/javascript" src="../_static/resources/javascript/effects.highlight.js"></script>
+    <script type="text/javascript" src="../_static/resources/javascript/scrollTo.js"></script>
+    <script type="text/javascript" src="../_static/resources/javascript/bootstrap-dropdown.js"></script>
+    <script type="text/javascript" src="../_static/resources/javascript/bootstrap-dropdown-app.js"></script>
     <link rel="top" title="Scala IDE 2.0.0 documentation" href="../index.html" />
     <link rel="up" title="User Documentation" href="index.html" />
     <link rel="next" title="Community" href="community.html" />
-    <link rel="prev" title="Enabling Scala continuations plugin in the Scala IDE" href="../tutorials/continuations-plugin/index.html" />
-<!-- jquery -->
-<script src="../_static/resources/javascript/jquery.js" type="text/javascript" ></script>
-<script src="../_static/resources/javascript/bootstrap-dropdown.js" type="text/javascript" ></script>
-<script src="../_static/resources/javascript/bootstrap-dropdown-app.js" type="text/javascript" ></script>
-
+    <link rel="prev" title="Enabling Scala continuations plugin in the Scala IDE" href="../tutorials/continuations-plugin/index.html" /> 
   </head>
   <body>
 <div class="top-bar">
@@ -71,35 +76,35 @@
 </div>
 <div class="bottom">
   <div class="container" style="position: relative;">
+ 
+    <!--<div class="row" style="position: relative; clear: both; ">
+      <div class="span16 main-content">
+        <ul class="breadcrumb">
+          <li>
+            <a href="community.html">Community</a> <span class="divider">»</span>
+          </li>
+          <li>
+            <span class="divider">|</span>
+          </li>          
+          <li>
+            <span class="divider">«</span> <a href="../tutorials/continuations-plugin/index.html">Enabling Scala continuations plugin in the Scala IDE</a> 
+          </li>       
+        </ul>
+      </div>
+    </div>-->
 
-    <div class="related">
-      <h3>Navigation</h3>
-      <ul>
-        <li class="right" style="margin-right: 10px">
-          <a href="../genindex.html" title="General Index"
-             accesskey="I">index</a></li>
-        <li class="right" >
-          <a href="community.html" title="Community"
-             accesskey="N">next</a> |</li>
-        <li class="right" >
-          <a href="../tutorials/continuations-plugin/index.html" title="Enabling Scala continuations plugin in the Scala IDE"
-             accesskey="P">previous</a> |</li>
-        <li><a href="../index.html">Scala IDE 2.0.0 documentation</a> &raquo;</li>
-          <li><a href="index.html" accesskey="U">User Documentation</a> &raquo;</li> 
-      </ul>
-    </div> 
-    <div class="row" style="position: relative; clear: both; ">
-      <div class="span11 main-content" >        
+    <div class="row" style="position: relative; clear: both;">
+      <div class="span11 main-content">                 
         <div class="section" id="frequently-asked-questions">
-<h1>Frequently Asked Questions<a class="headerlink" href="#frequently-asked-questions" title="Permalink to this headline">¶</a></h1>
+<h1>Frequently Asked Questions</h1>
 <div class="section" id="general">
-<h2>General<a class="headerlink" href="#general" title="Permalink to this headline">¶</a></h2>
+<h2>General</h2>
 <div class="section" id="i-have-an-existing-java-project-and-i-wish-to-add-scala-files-how-do-i-convince-eclipse-to-work-with-scala">
-<h3>I have an existing Java project and I wish to add Scala files. How do I convince Eclipse to work with Scala?<a class="headerlink" href="#i-have-an-existing-java-project-and-i-wish-to-add-scala-files-how-do-i-convince-eclipse-to-work-with-scala" title="Permalink to this headline">¶</a></h3>
+<h3>I have an existing Java project and I wish to add Scala files. How do I convince Eclipse to work with Scala?</h3>
 <p>Right click on the project in the Package Explorer view, and in the context menu select <tt class="docutils literal"><span class="pre">Configure</span> <span class="pre">→</span> <span class="pre">Add</span> <span class="pre">Scala</span> <span class="pre">Nature</span></tt>.</p>
 </div>
 <div class="section" id="i-am-running-out-of-stack-space-in-eclipse-how-do-i-increase-the-stack-size">
-<h3>I am running out of stack space in Eclipse.  How do I increase the stack size?<a class="headerlink" href="#i-am-running-out-of-stack-space-in-eclipse-how-do-i-increase-the-stack-size" title="Permalink to this headline">¶</a></h3>
+<h3>I am running out of stack space in Eclipse.  How do I increase the stack size?</h3>
 <p>If you are starting Eclipse from the command line, you can supply virtual machine arguments, including stack size, like this:</p>
 <div class="highlight-bash"><div class="highlight"><pre>eclipse <span class="o">[</span>normal arguments<span class="o">]</span> -vmargs -Xss8M <span class="o">[</span>more VM args<span class="o">]</span>
 </pre></div>
@@ -119,10 +124,10 @@
 </div>
 </div>
 <div class="section" id="scala-ide-complains-about-no-scala-library-or-more-than-one-scala-library">
-<h3>Scala IDE complains about &#8216;no Scala library...&#8217; or &#8216;More than one Scala library...&#8217;<a class="headerlink" href="#scala-ide-complains-about-no-scala-library-or-more-than-one-scala-library" title="Permalink to this headline">¶</a></h3>
+<h3>Scala IDE complains about &#8216;no Scala library...&#8217; or &#8216;More than one Scala library...&#8217;</h3>
 <p>In Scala IDE 2.0.0, a classpath validator has been added to check that the Scala library has been correctly setup. It is checking two points: that the project build path contains only one Scala libraries, and that its version is compatible with the installed version of Scala IDE.</p>
 <div class="section" id="not-using-m2eclipse">
-<h4>Not using m2eclipse<a class="headerlink" href="#not-using-m2eclipse" title="Permalink to this headline">¶</a></h4>
+<h4>Not using m2eclipse</h4>
 <p>It needs to be fixed manually.</p>
 <ul class="simple">
 <li>If the error is &#8216;no Scala library...&#8217;, one Scala library needs to be added to the build path. The simplest thing is to add the Scala library container: right-click on the project in the Package Explorer view, then in the context menu select <tt class="docutils literal"><span class="pre">Build</span> <span class="pre">Path</span> <span class="pre">→</span> <span class="pre">Add</span> <span class="pre">Libraries...</span></tt>, and add the <tt class="docutils literal"><span class="pre">Scala</span> <span class="pre">Library</span></tt>.</li>
@@ -130,7 +135,7 @@
 </ul>
 </div>
 <div class="section" id="using-m2eclipse">
-<h4>Using m2eclipse<a class="headerlink" href="#using-m2eclipse" title="Permalink to this headline">¶</a></h4>
+<h4>Using m2eclipse</h4>
 <p>With projects imported using m2eclipse, the classpath validator can report an error because the Scala library is visible more than once in the build path. The <a class="reference external" href="https://github.com/sonatype/m2eclipse-scala">m2eclipse-scala</a> project was created to, among other things, fix these classpath problems.</p>
 <p>Use this <a class="reference external" href="http://alchim31.free.fr/m2e-scala/update-site/">update site</a> to get the latest version.</p>
 <p>After installation, re-importing your projects should get them configured correctly.</p>
@@ -138,9 +143,9 @@
 </div>
 </div>
 <div class="section" id="scala-interpreter">
-<h2>Scala Interpreter<a class="headerlink" href="#scala-interpreter" title="Permalink to this headline">¶</a></h2>
+<h2>Scala Interpreter</h2>
 <div class="section" id="what-are-the-limitations">
-<h3>What are the limitations?<a class="headerlink" href="#what-are-the-limitations" title="Permalink to this headline">¶</a></h3>
+<h3>What are the limitations?</h3>
 <ul class="simple">
 <li>The colon commands available in the terminal REPL are not supported.</li>
 <li>Commands cannot be forcibly killed. For example, if an infinite loop is launched, it will continue in the background until Eclipse is shutdown.</li>
@@ -148,9 +153,9 @@
 </div>
 </div>
 <div class="section" id="know-issues">
-<span id="faq-known-issues"></span><h2>Know Issues<a class="headerlink" href="#know-issues" title="Permalink to this headline">¶</a></h2>
+<span id="faq-known-issues"></span><h2>Know Issues</h2>
 <div class="section" id="scala-errors-on-all-unicode-arrows">
-<h3>Scala errors on all Unicode arrows<a class="headerlink" href="#scala-errors-on-all-unicode-arrows" title="Permalink to this headline">¶</a></h3>
+<h3>Scala errors on all Unicode arrows</h3>
 <p><strong>Symptoms</strong>:</p>
 <p>The code contains Unicode niceties like <tt class="docutils literal"><span class="pre">←</span></tt> and <tt class="docutils literal"><span class="pre">⇒</span></tt>, but the editor doesn&#8217;t seem to be able to display them, and errors are reported at their location.</p>
 <p><strong>Solution</strong>:</p>
@@ -158,13 +163,13 @@
 <p>The encoding used to open files can be configured at different levels. Most of the time, setting Eclipse default encoding to UTF-8 in <tt class="docutils literal"><span class="pre">General</span> <span class="pre">→</span> <span class="pre">Workspace</span></tt> in the preferences <a class="footnote-reference" href="#preferences" id="id2">[1]</a> is enough. But in some case, the wrong encoding might also have been set in the project properties, or even the file properties.</p>
 </div>
 <div class="section" id="red-screen-of-death-red-squiggles-everywhere">
-<h3>Red screen of death (red squiggles everywhere)<a class="headerlink" href="#red-screen-of-death-red-squiggles-everywhere" title="Permalink to this headline">¶</a></h3>
+<h3>Red screen of death (red squiggles everywhere)</h3>
 <p>The number one cause of <em>nothing works</em> is a mismatch between the Scala version of the Eclipse plug-in and your project&#8217;s. Make sure there is only one version of the Scala library on your classpath, and that it matches the version provided by Scala IDE.
 The prime suspect is Maven Dependencies, which can download and add an incompatible scala-library.jar.</p>
 <p>The classpath validator added in Scala IDE 2.0.0 should detect this problem and provide meaningful problem markers.</p>
 </div>
 <div class="section" id="no-completions-available">
-<h3>No completions available<a class="headerlink" href="#no-completions-available" title="Permalink to this headline">¶</a></h3>
+<h3>No completions available</h3>
 <p><strong>Symptoms</strong>:</p>
 <p>When pressing Ctrl-Space, the list doesn&#8217;t contain code completion proposals, only templates, but other semantic actions (such as hyperlinking) work fine.</p>
 <p><strong>Solution</strong>:</p>
@@ -173,7 +178,7 @@ The prime suspect is Maven Dependencies, which can download and add an incompati
 <img alt="../_images/setup-diagnostics-01.png" src="../_images/setup-diagnostics-01.png" />
 </div>
 <div class="section" id="bad-completion-when-using-companion-object-in-java">
-<h3>Bad completion when using companion object in Java<a class="headerlink" href="#bad-completion-when-using-companion-object-in-java" title="Permalink to this headline">¶</a></h3>
+<h3>Bad completion when using companion object in Java</h3>
 <p>Using the Java code assist to access a Scala companion object generates invalid code.</p>
 <div class="highlight-scala"><div class="highlight"><pre><span class="k">package</span> <span class="nn">stest</span>
 
@@ -198,7 +203,7 @@ The prime suspect is Maven Dependencies, which can download and add an incompati
 <p>This a JDT problem. See <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1729">#1729</a>.</p>
 </div>
 <div class="section" id="eclipse-freezes-deadlock">
-<h3>Eclipse freezes (deadlock)<a class="headerlink" href="#eclipse-freezes-deadlock" title="Permalink to this headline">¶</a></h3>
+<h3>Eclipse freezes (deadlock)</h3>
 <p><strong>Symptoms</strong>:</p>
 <p>The IDE is completely frozen.</p>
 <p><strong>Workaround</strong>:</p>
@@ -223,7 +228,7 @@ The prime suspect is Maven Dependencies, which can download and add an incompati
 <p>If the thread dump doesn&#8217;t match the one in <a class="reference external" href="https://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000317">#1000317</a>, please open a new ticket with your thread dump attached.</p>
 </div>
 <div class="section" id="noclassdeffounderror-scala-tools-nsc-settings-mutablesettings-settingvalue">
-<h3>NoClassDefFoundError (scala/tools/nsc/settings/MutableSettings$SettingValue)<a class="headerlink" href="#noclassdeffounderror-scala-tools-nsc-settings-mutablesettings-settingvalue" title="Permalink to this headline">¶</a></h3>
+<h3>NoClassDefFoundError (scala/tools/nsc/settings/MutableSettings$SettingValue)</h3>
 <p><strong>Symptoms</strong>:</p>
 <p>After upgrading the Scala plug-in, <tt class="docutils literal"><span class="pre">java.lang.NoClassDefFoundError:</span> <span class="pre">scala/tools/nsc/settings/MutableSettings$SettingValue</span></tt> exception is reported for all Scala projects in the workspace. Scala IDE is then unusable.</p>
 <p><strong>Solution</strong>:</p>
@@ -238,27 +243,17 @@ The prime suspect is Maven Dependencies, which can download and add an incompati
 </div>
 </div>
 
-	  </div>
-      <div class="span5">        
-	  </div>	
+	    </div>
+      <div class="span5 sidebar">
+        <p class="contents-title">Contents</p>
+        <div id="scroller-anchor">
+          <div id="scroller">
+            <div id="toc"></div>
+          </div>
+        </div>            
+	    </div>	
     </div>
 
-    <div class="related">
-      <h3>Navigation</h3>
-      <ul>
-        <li class="right" style="margin-right: 10px">
-          <a href="../genindex.html" title="General Index"
-             >index</a></li>
-        <li class="right" >
-          <a href="community.html" title="Community"
-             >next</a> |</li>
-        <li class="right" >
-          <a href="../tutorials/continuations-plugin/index.html" title="Enabling Scala continuations plugin in the Scala IDE"
-             >previous</a> |</li>
-        <li><a href="../index.html">Scala IDE 2.0.0 documentation</a> &raquo;</li>
-          <li><a href="index.html" >User Documentation</a> &raquo;</li> 
-      </ul>
-    </div>
   </div>
 </div>
 <div class="footer" style="position:relative; clear: both; ">
@@ -293,6 +288,9 @@ The prime suspect is Maven Dependencies, which can download and add an incompati
     </p>		
   </div>
 </div>
+<script type="text/javascript">
+  $('#toc').toc();
+</script>
 
   </body>
 </html>

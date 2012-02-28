@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="../../_static/resources/stylesheets/base.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/resources/stylesheets/doc.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/resources/stylesheets/sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/resources/stylesheets/prettify.css" type="text/css" />
     
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
@@ -28,15 +29,19 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/resources/javascript/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/resources/javascript/toc.js"></script>
+    <script type="text/javascript" src="../../_static/resources/javascript/prettify.js"></script>
+    <script type="text/javascript" src="../../_static/resources/javascript/highlightCode.js"></script>
+    <script type="text/javascript" src="../../_static/resources/javascript/effects.core.js"></script>
+    <script type="text/javascript" src="../../_static/resources/javascript/effects.highlight.js"></script>
+    <script type="text/javascript" src="../../_static/resources/javascript/scrollTo.js"></script>
+    <script type="text/javascript" src="../../_static/resources/javascript/bootstrap-dropdown.js"></script>
+    <script type="text/javascript" src="../../_static/resources/javascript/bootstrap-dropdown-app.js"></script>
     <link rel="top" title="Scala IDE 2.0.0 documentation" href="../../index.html" />
     <link rel="up" title="New Features" href="../features.html" />
     <link rel="next" title="Move Class, Object or Trait Refactoring" href="moverefactoring.html" />
-    <link rel="prev" title="New Features" href="../features.html" />
-<!-- jquery -->
-<script src="../../_static/resources/javascript/jquery.js" type="text/javascript" ></script>
-<script src="../../_static/resources/javascript/bootstrap-dropdown.js" type="text/javascript" ></script>
-<script src="../../_static/resources/javascript/bootstrap-dropdown-app.js" type="text/javascript" ></script>
-
+    <link rel="prev" title="New Features" href="../features.html" /> 
   </head>
   <body>
 <div class="top-bar">
@@ -71,34 +76,33 @@
 </div>
 <div class="bottom">
   <div class="container" style="position: relative;">
+ 
+    <!--<div class="row" style="position: relative; clear: both; ">
+      <div class="span16 main-content">
+        <ul class="breadcrumb">
+          <li>
+            <a href="moverefactoring.html">Move Class, Object or Trait Refactoring</a> <span class="divider">»</span>
+          </li>
+          <li>
+            <span class="divider">|</span>
+          </li>          
+          <li>
+            <span class="divider">«</span> <a href="../features.html">New Features</a> 
+          </li>       
+        </ul>
+      </div>
+    </div>-->
 
-    <div class="related">
-      <h3>Navigation</h3>
-      <ul>
-        <li class="right" style="margin-right: 10px">
-          <a href="../../genindex.html" title="General Index"
-             accesskey="I">index</a></li>
-        <li class="right" >
-          <a href="moverefactoring.html" title="Move Class, Object or Trait Refactoring"
-             accesskey="N">next</a> |</li>
-        <li class="right" >
-          <a href="../features.html" title="New Features"
-             accesskey="P">previous</a> |</li>
-        <li><a href="../../index.html">Scala IDE 2.0.0 documentation</a> &raquo;</li>
-          <li><a href="../index.html" >Scala IDE Helium</a> &raquo;</li>
-          <li><a href="../features.html" accesskey="U">New Features</a> &raquo;</li> 
-      </ul>
-    </div> 
-    <div class="row" style="position: relative; clear: both; ">
-      <div class="span11 main-content" >        
+    <div class="row" style="position: relative; clear: both;">
+      <div class="span11 main-content">                 
         <div class="section" id="logging">
-<h1>Logging<a class="headerlink" href="#logging" title="Permalink to this headline">¶</a></h1>
+<h1>Logging</h1>
 <p>Logging isn&#8217;t likely to be the most wanted feature, and we actually hope you won&#8217;t even need to know about it.
 Though, software can crash, and decent logging can go a long way into understanding the reasons behind a failure.
 Thus, we have improved the logging infrastructure so that it can be easily controlled by you. In this page we
 discuss how you can manage logging in the Scala IDE.</p>
 <div class="section" id="settings">
-<h2>Settings<a class="headerlink" href="#settings" title="Permalink to this headline">¶</a></h2>
+<h2>Settings</h2>
 <p>You can access the logging settings in the Eclipse Preferences, click on the <tt class="docutils literal"><span class="pre">Scala</span></tt> item and select <tt class="docutils literal"><span class="pre">Logging</span></tt>.
 You should see the following page:</p>
 <img alt="../../_images/logging-preferences.jpg" src="../../_images/logging-preferences.jpg" />
@@ -117,28 +121,17 @@ command line to be able to see the log&#8217;s output. For instance, I can start
 </div>
 </div>
 
-	  </div>
-      <div class="span5">        
-	  </div>	
+	    </div>
+      <div class="span5 sidebar">
+        <p class="contents-title">Contents</p>
+        <div id="scroller-anchor">
+          <div id="scroller">
+            <div id="toc"></div>
+          </div>
+        </div>            
+	    </div>	
     </div>
 
-    <div class="related">
-      <h3>Navigation</h3>
-      <ul>
-        <li class="right" style="margin-right: 10px">
-          <a href="../../genindex.html" title="General Index"
-             >index</a></li>
-        <li class="right" >
-          <a href="moverefactoring.html" title="Move Class, Object or Trait Refactoring"
-             >next</a> |</li>
-        <li class="right" >
-          <a href="../features.html" title="New Features"
-             >previous</a> |</li>
-        <li><a href="../../index.html">Scala IDE 2.0.0 documentation</a> &raquo;</li>
-          <li><a href="../index.html" >Scala IDE Helium</a> &raquo;</li>
-          <li><a href="../features.html" >New Features</a> &raquo;</li> 
-      </ul>
-    </div>
   </div>
 </div>
 <div class="footer" style="position:relative; clear: both; ">
@@ -173,6 +166,9 @@ command line to be able to see the log&#8217;s output. For instance, I can start
     </p>		
   </div>
 </div>
+<script type="text/javascript">
+  $('#toc').toc();
+</script>
 
   </body>
 </html>

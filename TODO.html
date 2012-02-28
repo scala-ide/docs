@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="_static/resources/stylesheets/base.css" type="text/css" />
     <link rel="stylesheet" href="_static/resources/stylesheets/doc.css" type="text/css" />
     <link rel="stylesheet" href="_static/resources/stylesheets/sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="_static/resources/stylesheets/prettify.css" type="text/css" />
     
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
@@ -28,14 +29,18 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/resources/javascript/jquery.js"></script>
+    <script type="text/javascript" src="_static/resources/javascript/toc.js"></script>
+    <script type="text/javascript" src="_static/resources/javascript/prettify.js"></script>
+    <script type="text/javascript" src="_static/resources/javascript/highlightCode.js"></script>
+    <script type="text/javascript" src="_static/resources/javascript/effects.core.js"></script>
+    <script type="text/javascript" src="_static/resources/javascript/effects.highlight.js"></script>
+    <script type="text/javascript" src="_static/resources/javascript/scrollTo.js"></script>
+    <script type="text/javascript" src="_static/resources/javascript/bootstrap-dropdown.js"></script>
+    <script type="text/javascript" src="_static/resources/javascript/bootstrap-dropdown-app.js"></script>
     <link rel="top" title="Scala IDE 2.0.0 documentation" href="index.html" />
     <link rel="next" title="Sources folder" href="sources/README.html" />
-    <link rel="prev" title="Documentation for Scala IDE" href="README.html" />
-<!-- jquery -->
-<script src="_static/resources/javascript/jquery.js" type="text/javascript" ></script>
-<script src="_static/resources/javascript/bootstrap-dropdown.js" type="text/javascript" ></script>
-<script src="_static/resources/javascript/bootstrap-dropdown-app.js" type="text/javascript" ></script>
-
+    <link rel="prev" title="Documentation for Scala IDE" href="README.html" /> 
   </head>
   <body>
 <div class="top-bar">
@@ -70,34 +75,35 @@
 </div>
 <div class="bottom">
   <div class="container" style="position: relative;">
+ 
+    <!--<div class="row" style="position: relative; clear: both; ">
+      <div class="span16 main-content">
+        <ul class="breadcrumb">
+          <li>
+            <a href="sources/README.html">Sources folder</a> <span class="divider">»</span>
+          </li>
+          <li>
+            <span class="divider">|</span>
+          </li>          
+          <li>
+            <span class="divider">«</span> <a href="README.html">Documentation for Scala IDE</a> 
+          </li>       
+        </ul>
+      </div>
+    </div>-->
 
-    <div class="related">
-      <h3>Navigation</h3>
-      <ul>
-        <li class="right" style="margin-right: 10px">
-          <a href="genindex.html" title="General Index"
-             accesskey="I">index</a></li>
-        <li class="right" >
-          <a href="sources/README.html" title="Sources folder"
-             accesskey="N">next</a> |</li>
-        <li class="right" >
-          <a href="README.html" title="Documentation for Scala IDE"
-             accesskey="P">previous</a> |</li>
-        <li><a href="index.html">Scala IDE 2.0.0 documentation</a> &raquo;</li> 
-      </ul>
-    </div> 
-    <div class="row" style="position: relative; clear: both; ">
-      <div class="span11 main-content" >        
+    <div class="row" style="position: relative; clear: both;">
+      <div class="span11 main-content">                 
         <div class="section" id="list-of-tasks-to-be-done">
-<h1>List of tasks to be done<a class="headerlink" href="#list-of-tasks-to-be-done" title="Permalink to this headline">¶</a></h1>
+<h1>List of tasks to be done</h1>
 <div class="section" id="needed">
-<h2>Needed<a class="headerlink" href="#needed" title="Permalink to this headline">¶</a></h2>
+<h2>Needed</h2>
 <ul class="simple">
 <li>A list of the main (current?) contributor to the project</li>
 </ul>
 </div>
 <div class="section" id="nice-to-have">
-<h2>Nice to Have<a class="headerlink" href="#nice-to-have" title="Permalink to this headline">¶</a></h2>
+<h2>Nice to Have</h2>
 <ul class="simple">
 <li>An history page like <a class="reference external" href="https://scala-ide-portfolio.assembla.com/spaces/scala-ide/wiki/About_this_Project">https://scala-ide-portfolio.assembla.com/spaces/scala-ide/wiki/About_this_Project</a></li>
 <li>A media page like <a class="reference external" href="https://scala-ide-portfolio.assembla.com/spaces/scala-ide/wiki/Media">https://scala-ide-portfolio.assembla.com/spaces/scala-ide/wiki/Media</a></li>
@@ -107,26 +113,17 @@
 </div>
 </div>
 
-	  </div>
-      <div class="span5">        
-	  </div>	
+	    </div>
+      <div class="span5 sidebar">
+        <p class="contents-title">Contents</p>
+        <div id="scroller-anchor">
+          <div id="scroller">
+            <div id="toc"></div>
+          </div>
+        </div>            
+	    </div>	
     </div>
 
-    <div class="related">
-      <h3>Navigation</h3>
-      <ul>
-        <li class="right" style="margin-right: 10px">
-          <a href="genindex.html" title="General Index"
-             >index</a></li>
-        <li class="right" >
-          <a href="sources/README.html" title="Sources folder"
-             >next</a> |</li>
-        <li class="right" >
-          <a href="README.html" title="Documentation for Scala IDE"
-             >previous</a> |</li>
-        <li><a href="index.html">Scala IDE 2.0.0 documentation</a> &raquo;</li> 
-      </ul>
-    </div>
   </div>
 </div>
 <div class="footer" style="position:relative; clear: both; ">
@@ -161,6 +158,9 @@
     </p>		
   </div>
 </div>
+<script type="text/javascript">
+  $('#toc').toc();
+</script>
 
   </body>
 </html>

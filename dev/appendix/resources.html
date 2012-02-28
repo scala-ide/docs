@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="../../_static/resources/stylesheets/base.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/resources/stylesheets/doc.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/resources/stylesheets/sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/resources/stylesheets/prettify.css" type="text/css" />
     
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
@@ -28,15 +29,19 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/resources/javascript/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/resources/javascript/toc.js"></script>
+    <script type="text/javascript" src="../../_static/resources/javascript/prettify.js"></script>
+    <script type="text/javascript" src="../../_static/resources/javascript/highlightCode.js"></script>
+    <script type="text/javascript" src="../../_static/resources/javascript/effects.core.js"></script>
+    <script type="text/javascript" src="../../_static/resources/javascript/effects.highlight.js"></script>
+    <script type="text/javascript" src="../../_static/resources/javascript/scrollTo.js"></script>
+    <script type="text/javascript" src="../../_static/resources/javascript/bootstrap-dropdown.js"></script>
+    <script type="text/javascript" src="../../_static/resources/javascript/bootstrap-dropdown-app.js"></script>
     <link rel="top" title="Scala IDE 2.0.0 documentation" href="../../index.html" />
     <link rel="up" title="Appendix" href="appendix.html" />
     <link rel="next" title="Roadmap" href="../roadmap.html" />
-    <link rel="prev" title="Git &amp; GitHub" href="git-github.html" />
-<!-- jquery -->
-<script src="../../_static/resources/javascript/jquery.js" type="text/javascript" ></script>
-<script src="../../_static/resources/javascript/bootstrap-dropdown.js" type="text/javascript" ></script>
-<script src="../../_static/resources/javascript/bootstrap-dropdown-app.js" type="text/javascript" ></script>
-
+    <link rel="prev" title="Git &amp; GitHub" href="git-github.html" /> 
   </head>
   <body>
 <div class="top-bar">
@@ -71,40 +76,39 @@
 </div>
 <div class="bottom">
   <div class="container" style="position: relative;">
+ 
+    <!--<div class="row" style="position: relative; clear: both; ">
+      <div class="span16 main-content">
+        <ul class="breadcrumb">
+          <li>
+            <a href="../roadmap.html">Roadmap</a> <span class="divider">»</span>
+          </li>
+          <li>
+            <span class="divider">|</span>
+          </li>          
+          <li>
+            <span class="divider">«</span> <a href="git-github.html">Git &amp; GitHub</a> 
+          </li>       
+        </ul>
+      </div>
+    </div>-->
 
-    <div class="related">
-      <h3>Navigation</h3>
-      <ul>
-        <li class="right" style="margin-right: 10px">
-          <a href="../../genindex.html" title="General Index"
-             accesskey="I">index</a></li>
-        <li class="right" >
-          <a href="../roadmap.html" title="Roadmap"
-             accesskey="N">next</a> |</li>
-        <li class="right" >
-          <a href="git-github.html" title="Git &amp; GitHub"
-             accesskey="P">previous</a> |</li>
-        <li><a href="../../index.html">Scala IDE 2.0.0 documentation</a> &raquo;</li>
-          <li><a href="../index.html" >Welcome to the Scala IDE Developer Documentation</a> &raquo;</li>
-          <li><a href="appendix.html" accesskey="U">Appendix</a> &raquo;</li> 
-      </ul>
-    </div> 
-    <div class="row" style="position: relative; clear: both; ">
-      <div class="span11 main-content" >        
+    <div class="row" style="position: relative; clear: both;">
+      <div class="span11 main-content">                 
         <div class="section" id="external-resources">
-<h1>External Resources<a class="headerlink" href="#external-resources" title="Permalink to this headline">¶</a></h1>
+<h1>External Resources</h1>
 <p>Here you can find a collection of documents that you may find useful for the development of the
 Scala IDE plug-in.</p>
 <div class="section" id="jdt-resources">
-<h2>JDT Resources<a class="headerlink" href="#jdt-resources" title="Permalink to this headline">¶</a></h2>
+<h2>JDT Resources</h2>
 <p>The Scala IDE for Eclipse extends Eclipse&#8217;s Java tooling in various Scala-specific ways, so an understanding of the structure of the JDT is an important part of getting to grips with the structure of the Scala tooling.</p>
 </div>
 <div class="section" id="editors-documents-partitioning">
-<h2>Editors/documents/partitioning<a class="headerlink" href="#editors-documents-partitioning" title="Permalink to this headline">¶</a></h2>
+<h2>Editors/documents/partitioning</h2>
 <p><a class="reference external" href="http://www.realsolve.co.uk/site/tech/jface-text.php">Building an Eclipse Text Editor with JFace Text</a> - An excellent introduction to document partitioning, content types, content assist and highlighting.</p>
 </div>
 <div class="section" id="general-jdt-documentation">
-<h2>General JDT documentation<a class="headerlink" href="#general-jdt-documentation" title="Permalink to this headline">¶</a></h2>
+<h2>General JDT documentation</h2>
 <ul class="simple">
 <li><a class="reference external" href="http://www.slideshare.net/oliviert/jdt-fundamentals-2010">A useful overview of JDT fundamentals</a>.</li>
 <li><a class="reference external" href="http://www.eclipsecon.org/2005/presentations/EclipseCON2005_Tutorial29.pdf">Fantastic API and Services presentation - Eclipsecon 2005</a>.</li>
@@ -112,14 +116,14 @@ Scala IDE plug-in.</p>
 </ul>
 </div>
 <div class="section" id="jdt-indexer">
-<h2>JDT Indexer<a class="headerlink" href="#jdt-indexer" title="Permalink to this headline">¶</a></h2>
+<h2>JDT Indexer</h2>
 <ul class="simple">
 <li><a class="reference external" href="http://dev.eclipse.org/newslists/news.eclipse.tools.jdt/msg18055.html">Mailing list discussion &#8220;Incremental Parsing in JDT&#8221;</a>.</li>
 <li><a class="reference external" href="http://dev.eclipse.org/newslists/news.eclipse.tools.jdt/msg14524.html">Mailing list discussion &#8220;Index contents/format&#8221;</a>.</li>
 </ul>
 </div>
 <div class="section" id="aspectj-resources">
-<h2>AspectJ Resources<a class="headerlink" href="#aspectj-resources" title="Permalink to this headline">¶</a></h2>
+<h2>AspectJ Resources</h2>
 <p>The Scala IDE for Eclipse uses <a class="reference external" href="http://eclipse.org/aspectj/">AspectJ</a>, an aspect-oriented programming extension of Java, to modify the behavior of the JDT. The following are useful references</p>
 <ul class="simple">
 <li><a class="reference external" href="http://www.eclipse.org/aspectj/doc/released/progguide/index.html">The AspectJ Programming Guide</a></li>
@@ -127,33 +131,22 @@ Scala IDE plug-in.</p>
 </ul>
 </div>
 <div class="section" id="pde-resources">
-<h2>PDE Resources<a class="headerlink" href="#pde-resources" title="Permalink to this headline">¶</a></h2>
+<h2>PDE Resources</h2>
 <p>The PDE (Plug-in Development Environment) is a set of eclipse plug-ins for developing eclipse plug-ins. There is some helpful introductory information <a class="reference external" href="http://wiki.eclipse.org/The_Official_Eclipse_FAQs#Plug-In_Development_Environment">here</a>.</p>
 </div>
 </div>
 
-	  </div>
-      <div class="span5">        
-	  </div>	
+	    </div>
+      <div class="span5 sidebar">
+        <p class="contents-title">Contents</p>
+        <div id="scroller-anchor">
+          <div id="scroller">
+            <div id="toc"></div>
+          </div>
+        </div>            
+	    </div>	
     </div>
 
-    <div class="related">
-      <h3>Navigation</h3>
-      <ul>
-        <li class="right" style="margin-right: 10px">
-          <a href="../../genindex.html" title="General Index"
-             >index</a></li>
-        <li class="right" >
-          <a href="../roadmap.html" title="Roadmap"
-             >next</a> |</li>
-        <li class="right" >
-          <a href="git-github.html" title="Git &amp; GitHub"
-             >previous</a> |</li>
-        <li><a href="../../index.html">Scala IDE 2.0.0 documentation</a> &raquo;</li>
-          <li><a href="../index.html" >Welcome to the Scala IDE Developer Documentation</a> &raquo;</li>
-          <li><a href="appendix.html" >Appendix</a> &raquo;</li> 
-      </ul>
-    </div>
   </div>
 </div>
 <div class="footer" style="position:relative; clear: both; ">
@@ -188,6 +181,9 @@ Scala IDE plug-in.</p>
     </p>		
   </div>
 </div>
+<script type="text/javascript">
+  $('#toc').toc();
+</script>
 
   </body>
 </html>

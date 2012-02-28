@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="../_static/resources/stylesheets/base.css" type="text/css" />
     <link rel="stylesheet" href="../_static/resources/stylesheets/doc.css" type="text/css" />
     <link rel="stylesheet" href="../_static/resources/stylesheets/sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/resources/stylesheets/prettify.css" type="text/css" />
     
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
@@ -28,15 +29,19 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/resources/javascript/jquery.js"></script>
+    <script type="text/javascript" src="../_static/resources/javascript/toc.js"></script>
+    <script type="text/javascript" src="../_static/resources/javascript/prettify.js"></script>
+    <script type="text/javascript" src="../_static/resources/javascript/highlightCode.js"></script>
+    <script type="text/javascript" src="../_static/resources/javascript/effects.core.js"></script>
+    <script type="text/javascript" src="../_static/resources/javascript/effects.highlight.js"></script>
+    <script type="text/javascript" src="../_static/resources/javascript/scrollTo.js"></script>
+    <script type="text/javascript" src="../_static/resources/javascript/bootstrap-dropdown.js"></script>
+    <script type="text/javascript" src="../_static/resources/javascript/bootstrap-dropdown-app.js"></script>
     <link rel="top" title="Scala IDE 2.0.0 documentation" href="../index.html" />
     <link rel="up" title="User Documentation" href="index.html" />
     <link rel="next" title="Advanced Setup" href="advancedsetup.html" />
-    <link rel="prev" title="User Documentation" href="index.html" />
-<!-- jquery -->
-<script src="../_static/resources/javascript/jquery.js" type="text/javascript" ></script>
-<script src="../_static/resources/javascript/bootstrap-dropdown.js" type="text/javascript" ></script>
-<script src="../_static/resources/javascript/bootstrap-dropdown-app.js" type="text/javascript" ></script>
-
+    <link rel="prev" title="User Documentation" href="index.html" /> 
   </head>
   <body>
 <div class="top-bar">
@@ -71,29 +76,29 @@
 </div>
 <div class="bottom">
   <div class="container" style="position: relative;">
+ 
+    <!--<div class="row" style="position: relative; clear: both; ">
+      <div class="span16 main-content">
+        <ul class="breadcrumb">
+          <li>
+            <a href="advancedsetup.html">Advanced Setup</a> <span class="divider">»</span>
+          </li>
+          <li>
+            <span class="divider">|</span>
+          </li>          
+          <li>
+            <span class="divider">«</span> <a href="index.html">User Documentation</a> 
+          </li>       
+        </ul>
+      </div>
+    </div>-->
 
-    <div class="related">
-      <h3>Navigation</h3>
-      <ul>
-        <li class="right" style="margin-right: 10px">
-          <a href="../genindex.html" title="General Index"
-             accesskey="I">index</a></li>
-        <li class="right" >
-          <a href="advancedsetup.html" title="Advanced Setup"
-             accesskey="N">next</a> |</li>
-        <li class="right" >
-          <a href="index.html" title="User Documentation"
-             accesskey="P">previous</a> |</li>
-        <li><a href="../index.html">Scala IDE 2.0.0 documentation</a> &raquo;</li>
-          <li><a href="index.html" accesskey="U">User Documentation</a> &raquo;</li> 
-      </ul>
-    </div> 
-    <div class="row" style="position: relative; clear: both; ">
-      <div class="span11 main-content" >        
+    <div class="row" style="position: relative; clear: both;">
+      <div class="span11 main-content">                 
         <div class="section" id="getting-started">
-<span id="gettingstarted-getting-started"></span><h1>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h1>
+<span id="gettingstarted-getting-started"></span><h1>Getting Started</h1>
 <div class="section" id="requirements">
-<h2>Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline">¶</a></h2>
+<h2>Requirements</h2>
 <ul class="simple">
 <li>the Java Development Kit, version 1.5.0 or newer. We recommend the latest 1.6.x version, there have been issues reported when using Eclipse and Java 7.</li>
 <li>Eclipse, including the JDT. Either the &#8220;Classic&#8221; or &#8220;Eclipse for Java Developers&#8221; is sufficient.<ul>
@@ -104,16 +109,16 @@
 </ul>
 </div>
 <div class="section" id="screencast">
-<h2>Screencast<a class="headerlink" href="#screencast" title="Permalink to this headline">¶</a></h2>
+<h2>Screencast</h2>
 <p>The getting started screencast provides a more visual explanation on the installation and the first steps with Scala IDE.</p>
 <iframe src="http://player.vimeo.com/video/33860742" width="490" height="306" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe></div>
 <div class="section" id="installation">
-<h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
+<h2>Installation</h2>
 <p>Scala IDE for Eclipse is best installed (and updated) directly from within Eclipse.</p>
 <p>This is done by using <tt class="docutils literal"><span class="pre">Help</span> <span class="pre">→</span> <span class="pre">Install</span> <span class="pre">New</span> <span class="pre">Software...</span></tt>, add the <tt class="docutils literal"><span class="pre">Add...</span></tt> button in the dialog.</p>
 <p>Choose a name for the update site (<cite>Scala IDE</cite> is an obvious choice). Then read the next section to select which version you will install.</p>
 <div class="section" id="choosing-what-version-to-install">
-<h3>Choosing what version to install<a class="headerlink" href="#choosing-what-version-to-install" title="Permalink to this headline">¶</a></h3>
+<h3>Choosing what version to install</h3>
 <p><a class="reference external" href="http://download.scala-ide.org">download.scala-ide.org</a> provides the URLs of all available update sites. The release ones are in the first section. Scala IDE is linked to specific version of Scala, so you have to decide which one you are going to use:</p>
 <ul class="simple">
 <li><strong>release-29</strong> provides support for projects using Scala 2.9.x (2.9.0-1 or 2.9.1). <em>This is the current version of Scala. Pick this one if you are unsure</em>.</li>
@@ -123,7 +128,7 @@
 <p>The version of Scala used inside Scala IDE cannot be chosen per project. So if you want to work with a project using different version of Scala (like 2.8.2 and 2.9.1), you need different installation of Scala IDE.</p>
 </div>
 <div class="section" id="finishing-installation">
-<h3>Finishing installation<a class="headerlink" href="#finishing-installation" title="Permalink to this headline">¶</a></h3>
+<h3>Finishing installation</h3>
 <p>Copy the URL as location and hit <tt class="docutils literal"><span class="pre">OK</span></tt> to validate.</p>
 <p>Select <tt class="docutils literal"><span class="pre">Scala</span> <span class="pre">IDE</span> <span class="pre">for</span> <span class="pre">Eclipse</span></tt> from the list of available features.</p>
 <p>Go through the next screens to validate the list of plug-ins to install, the <a class="reference internal" href="../license.html"><em>License</em></a> and start the installation.</p>
@@ -132,7 +137,7 @@
 </div>
 </div>
 <div class="section" id="using-scala-ide-with-an-existing-project">
-<h2>Using Scala IDE with an existing project<a class="headerlink" href="#using-scala-ide-with-an-existing-project" title="Permalink to this headline">¶</a></h2>
+<h2>Using Scala IDE with an existing project</h2>
 <p>You have successfully installed the Scala plug-in, and you can now import your favorite project.</p>
 <div class="admonition important">
 <p class="first admonition-title">Important</p>
@@ -140,7 +145,7 @@
 Each package should appear in its own directory with the same name. Eclipse expects this convention to be followed when it looks for classes.</p>
 </div>
 <div class="section" id="start-from-an-existing-sbt-project">
-<h3>Start from an existing SBT project<a class="headerlink" href="#start-from-an-existing-sbt-project" title="Permalink to this headline">¶</a></h3>
+<h3>Start from an existing SBT project</h3>
 <p><a class="reference external" href="http://www.scala-sbt.org/">sbt</a> is the standard build tool for Scala projects. There are two versions in wide use today: 0.7.x and 0.10+. Both have plug-ins that can generate Eclipse project files out of the sbt project definition.</p>
 <ul class="simple">
 <li>If you are using <strong>sbt 0.7.x</strong>, use <a class="reference external" href="https://github.com/musk/SbtEclipsify/tree/0.8.0">eclipsify</a>. Follow this <a class="reference external" href="https://github.com/musk/SbtEclipsify/tree/0.8.0">instructions</a> to install the plug-in. You may want to check out the update-sources plug-in, which can download attached sources for your dependencies. This allows you to navigate through the libraries source in the IDE.</li>
@@ -153,39 +158,29 @@ Each package should appear in its own directory with the same name. Eclipse expe
 </div>
 </div>
 <div class="section" id="start-from-an-existing-maven-project">
-<h3>Start from an existing maven project<a class="headerlink" href="#start-from-an-existing-maven-project" title="Permalink to this headline">¶</a></h3>
+<h3>Start from an existing maven project</h3>
 <p><a class="reference external" href="http://maven.apache.org/">maven</a> support on the Eclipse platform is provided by the <a class="reference external" href="http://www.eclipse.org/m2e/">m2eclipse</a> plug-in. Because of some specificities of Scala, <a class="reference external" href="https://github.com/sonatype/m2eclipse-scala">m2eclipse-scala</a> has been created as an extension to m2eclipse to provide better Scala support.</p>
 <p>To install the latest version of m2eclipse-scala, use the update site at this location: <a class="reference external" href="http://alchim31.free.fr/m2e-scala/update-site/">http://alchim31.free.fr/m2e-scala/update-site/</a>.</p>
 <p>After installation, maven projects can be imported using <tt class="docutils literal"><span class="pre">File</span> <span class="pre">→</span> <span class="pre">Import</span> <span class="pre">→</span> <span class="pre">Maven</span> <span class="pre">→</span> <span class="pre">Existing</span> <span class="pre">Maven</span> <span class="pre">Projects</span></tt>.</p>
 </div>
 </div>
 <div class="section" id="troubleshooting">
-<h2>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permalink to this headline">¶</a></h2>
+<h2>Troubleshooting</h2>
 <p>Check the <a class="reference internal" href="faq.html#faq-known-issues"><em>Know Issues</em></a> section.</p>
 </div>
 </div>
 
-	  </div>
-      <div class="span5">        
-	  </div>	
+	    </div>
+      <div class="span5 sidebar">
+        <p class="contents-title">Contents</p>
+        <div id="scroller-anchor">
+          <div id="scroller">
+            <div id="toc"></div>
+          </div>
+        </div>            
+	    </div>	
     </div>
 
-    <div class="related">
-      <h3>Navigation</h3>
-      <ul>
-        <li class="right" style="margin-right: 10px">
-          <a href="../genindex.html" title="General Index"
-             >index</a></li>
-        <li class="right" >
-          <a href="advancedsetup.html" title="Advanced Setup"
-             >next</a> |</li>
-        <li class="right" >
-          <a href="index.html" title="User Documentation"
-             >previous</a> |</li>
-        <li><a href="../index.html">Scala IDE 2.0.0 documentation</a> &raquo;</li>
-          <li><a href="index.html" >User Documentation</a> &raquo;</li> 
-      </ul>
-    </div>
   </div>
 </div>
 <div class="footer" style="position:relative; clear: both; ">
@@ -220,6 +215,9 @@ Each package should appear in its own directory with the same name. Eclipse expe
     </p>		
   </div>
 </div>
+<script type="text/javascript">
+  $('#toc').toc();
+</script>
 
   </body>
 </html>

@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="_static/resources/stylesheets/base.css" type="text/css" />
     <link rel="stylesheet" href="_static/resources/stylesheets/doc.css" type="text/css" />
     <link rel="stylesheet" href="_static/resources/stylesheets/sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="_static/resources/stylesheets/prettify.css" type="text/css" />
     
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
@@ -28,14 +29,18 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/resources/javascript/jquery.js"></script>
+    <script type="text/javascript" src="_static/resources/javascript/toc.js"></script>
+    <script type="text/javascript" src="_static/resources/javascript/prettify.js"></script>
+    <script type="text/javascript" src="_static/resources/javascript/highlightCode.js"></script>
+    <script type="text/javascript" src="_static/resources/javascript/effects.core.js"></script>
+    <script type="text/javascript" src="_static/resources/javascript/effects.highlight.js"></script>
+    <script type="text/javascript" src="_static/resources/javascript/scrollTo.js"></script>
+    <script type="text/javascript" src="_static/resources/javascript/bootstrap-dropdown.js"></script>
+    <script type="text/javascript" src="_static/resources/javascript/bootstrap-dropdown-app.js"></script>
     <link rel="top" title="Scala IDE 2.0.0 documentation" href="index.html" />
     <link rel="next" title="Scala IDE Helium" href="helium/index.html" />
-    <link rel="prev" title="Enabling Scala continuations plugin in the Scala IDE" href="tutorials/continuations-plugin/index.html" />
-<!-- jquery -->
-<script src="_static/resources/javascript/jquery.js" type="text/javascript" ></script>
-<script src="_static/resources/javascript/bootstrap-dropdown.js" type="text/javascript" ></script>
-<script src="_static/resources/javascript/bootstrap-dropdown-app.js" type="text/javascript" ></script>
-
+    <link rel="prev" title="Enabling Scala continuations plugin in the Scala IDE" href="tutorials/continuations-plugin/index.html" /> 
   </head>
   <body>
 <div class="top-bar">
@@ -70,42 +75,43 @@
 </div>
 <div class="bottom">
   <div class="container" style="position: relative;">
+ 
+    <!--<div class="row" style="position: relative; clear: both; ">
+      <div class="span16 main-content">
+        <ul class="breadcrumb">
+          <li>
+            <a href="helium/index.html">Scala IDE Helium</a> <span class="divider">»</span>
+          </li>
+          <li>
+            <span class="divider">|</span>
+          </li>          
+          <li>
+            <span class="divider">«</span> <a href="tutorials/continuations-plugin/index.html">Enabling Scala continuations plugin in the Scala IDE</a> 
+          </li>       
+        </ul>
+      </div>
+    </div>-->
 
-    <div class="related">
-      <h3>Navigation</h3>
-      <ul>
-        <li class="right" style="margin-right: 10px">
-          <a href="genindex.html" title="General Index"
-             accesskey="I">index</a></li>
-        <li class="right" >
-          <a href="helium/index.html" title="Scala IDE Helium"
-             accesskey="N">next</a> |</li>
-        <li class="right" >
-          <a href="tutorials/continuations-plugin/index.html" title="Enabling Scala continuations plugin in the Scala IDE"
-             accesskey="P">previous</a> |</li>
-        <li><a href="index.html">Scala IDE 2.0.0 documentation</a> &raquo;</li> 
-      </ul>
-    </div> 
-    <div class="row" style="position: relative; clear: both; ">
-      <div class="span11 main-content" >        
+    <div class="row" style="position: relative; clear: both;">
+      <div class="span11 main-content">                 
         <div class="section" id="changelog">
-<h1>Changelog<a class="headerlink" href="#changelog" title="Permalink to this headline">¶</a></h1>
+<h1>Changelog</h1>
 <div class="section" id="release-scala-ide-2-0-0">
-<h2>2.0.0 (release/scala-ide-2.0.0)<a class="headerlink" href="#release-scala-ide-2-0-0" title="Permalink to this headline">¶</a></h2>
+<h2>2.0.0 (release/scala-ide-2.0.0)</h2>
 <div class="section" id="final-released-2011-12-21">
-<h3>2.0.0-final (released: 2011-12-21)<a class="headerlink" href="#final-released-2011-12-21" title="Permalink to this headline">¶</a></h3>
+<h3>2.0.0-final (released: 2011-12-21)</h3>
 <ul class="simple">
 <li>Scala IDE plugin now signed (no more warning dialog displayed when installing the Scala IDE). <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000719">#1000719</a></li>
 </ul>
 </div>
 <div class="section" id="rc04-released-2011-12-13">
-<h3>2.0.0-rc04 (released: 2011-12-13)<a class="headerlink" href="#rc04-released-2011-12-13" title="Permalink to this headline">¶</a></h3>
+<h3>2.0.0-rc04 (released: 2011-12-13)</h3>
 <ul class="simple">
 <li>Scala IDE now again compatible with Groovy IDE. <a class="reference external" href="https://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000798">#1000798</a></li>
 </ul>
 </div>
 <div class="section" id="rc03-released-2011-12-09">
-<h3>2.0.0-rc03 (released: 2011-12-09)<a class="headerlink" href="#rc03-released-2011-12-09" title="Permalink to this headline">¶</a></h3>
+<h3>2.0.0-rc03 (released: 2011-12-09)</h3>
 <ul class="simple">
 <li>compatible with Spring IDE. <a class="reference external" href="https://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000780">#1000780</a></li>
 <li>Incremental compilation of Java files that depend on Scala files is now correctly handled. <a class="reference external" href="https://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000607">#1000607</a></li>
@@ -115,7 +121,7 @@
 </ul>
 </div>
 <div class="section" id="rc02-released-2011-11-24">
-<h3>2.0.0-rc02 (released: 2011-11-24)<a class="headerlink" href="#rc02-released-2011-11-24" title="Permalink to this headline">¶</a></h3>
+<h3>2.0.0-rc02 (released: 2011-11-24)</h3>
 <ul class="simple">
 <li>Better error reporting. <a class="reference external" href="https://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000757">#1000757</a></li>
 <li>Fixed crash in the Eclipse Outline. <a class="reference external" href="https://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000748">#1000748</a></li>
@@ -125,7 +131,7 @@
 </ul>
 </div>
 <div class="section" id="rc01-released-2011-11-09">
-<h3>2.0.0-rc01 (released: 2011-11-09)<a class="headerlink" href="#rc01-released-2011-11-09" title="Permalink to this headline">¶</a></h3>
+<h3>2.0.0-rc01 (released: 2011-11-09)</h3>
 <ul class="simple">
 <li>Updated the Classpath Validator to play nice with Maven project. <a class="reference external" href="https://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000631">#1000631</a>, <a class="reference external" href="https://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000728">#1000728</a></li>
 <li>TODO comments are now displayed in Eclipse Task section. <a class="reference external" href="https://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000634">#1000634</a></li>
@@ -139,7 +145,7 @@
 </ul>
 </div>
 <div class="section" id="beta12-released-2011-10-31">
-<h3>2.0.0-beta12 (released: 2011-10-31)<a class="headerlink" href="#beta12-released-2011-10-31" title="Permalink to this headline">¶</a></h3>
+<h3>2.0.0-beta12 (released: 2011-10-31)</h3>
 <ul class="simple">
 <li>Hyperlinking on definitions between dependent projects works correctly.</li>
 <li>For mixed Scala/Java project, allow to change sources&#8217; compilation order (i.e., first Java and then Scala, or the other way around).</li>
@@ -153,7 +159,7 @@
 </ul>
 </div>
 <div class="section" id="beta11-released-2011-10-03">
-<h3>2.0.0-beta11 (released: 2011-10-03)<a class="headerlink" href="#beta11-released-2011-10-03" title="Permalink to this headline">¶</a></h3>
+<h3>2.0.0-beta11 (released: 2011-10-03)</h3>
 <ul class="simple">
 <li>Added completion proposals for any type from the classpath in the Scala editor, with automatic imports.</li>
 <li>Several fixes to improve interoperability of mixed Scala/Java project. <a class="reference external" href="https://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000594">#1000594</a>, <a class="reference external" href="https://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000568">#1000568</a>, <a class="reference external" href="https://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000524">#1000524</a>, <a class="reference external" href="https://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000586">#1000586</a></li>
@@ -164,7 +170,7 @@
 </ul>
 </div>
 <div class="section" id="beta10-released-2011-09-13">
-<h3>2.0.0-beta10 (released: 2011-09-13)<a class="headerlink" href="#beta10-released-2011-09-13" title="Permalink to this headline">¶</a></h3>
+<h3>2.0.0-beta10 (released: 2011-09-13)</h3>
 <ul class="simple">
 <li>new SBT-based builder with inter-project dependencies. The default builder remains &#8216;refined&#8217;, but you can enable the SBT builder in Eclipse -&gt; Preferences -&gt; Scala  -&gt; Compiler -&gt; Build manager.</li>
 <li>better integration of mixed Scala/Java project (no more spurious errors when Java classes call Scala classes that contain annotations).</li>
@@ -179,7 +185,7 @@
 </ul>
 </div>
 <div class="section" id="beta09-released-2011-07-21">
-<h3>2.0.0-beta09 (released: 2011-07-21)<a class="headerlink" href="#beta09-released-2011-07-21" title="Permalink to this headline">¶</a></h3>
+<h3>2.0.0-beta09 (released: 2011-07-21)</h3>
 <ul class="simple">
 <li>better breakpoint support (fixes errors when setting breakpoints in traits coming from external libraries).</li>
 <li>better completions (works in many more situations, such as partially typed method names).</li>
@@ -190,7 +196,7 @@
 </ul>
 </div>
 <div class="section" id="beta08-released-2011-07-12">
-<h3>2.0.0-beta08 (released: 2011-07-12)<a class="headerlink" href="#beta08-released-2011-07-12" title="Permalink to this headline">¶</a></h3>
+<h3>2.0.0-beta08 (released: 2011-07-12)</h3>
 <ul class="simple">
 <li>fixed large memory leak in mark occurrences.</li>
 <li>new Run Selection REPL: edit window for commands (with history). Try it by pressing Ctrl-Shift-X inside a Scala editor to run the selected expression (or the current line). <a class="reference internal" href="user/features/scalainterpreter.html#scalainterpreter-scala-interpreter"><em>Read more</em></a>.</li>
@@ -200,7 +206,7 @@
 </ul>
 </div>
 <div class="section" id="beta6">
-<h3>2.0.0-beta6<a class="headerlink" href="#beta6" title="Permalink to this headline">¶</a></h3>
+<h3>2.0.0-beta6</h3>
 <ul>
 <li><p class="first">Improved stability (correct use of &#8216;ask&#8217; calls)</p>
 </li>
@@ -227,7 +233,7 @@
 </ul>
 </div>
 <div class="section" id="beta2">
-<h3>2.0.0-beta2<a class="headerlink" href="#beta2" title="Permalink to this headline">¶</a></h3>
+<h3>2.0.0-beta2</h3>
 <ul class="simple">
 <li>Fixes various crashes in the structure builder, leading to un-editable files in Eclipse.</li>
 <li>Correctly saves preferences for the diagnostics window.</li>
@@ -243,9 +249,9 @@
 </div>
 </div>
 <div class="section" id="x-backport-releases">
-<h2>1.x (backport releases)<a class="headerlink" href="#x-backport-releases" title="Permalink to this headline">¶</a></h2>
+<h2>1.x (backport releases)</h2>
 <div class="section" id="m01">
-<h3>1.0.0.20110226-M01<a class="headerlink" href="#m01" title="Permalink to this headline">¶</a></h3>
+<h3>1.0.0.20110226-M01</h3>
 <ul class="simple">
 <li>fix    : reduce freeze in editor on typing</li>
 <li>add    : display of implicits (result of GSoC 2010)</li>
@@ -263,7 +269,7 @@
 </ul>
 </div>
 <div class="section" id="id40">
-<h3>1.0.0.20100804<a class="headerlink" href="#id40" title="Permalink to this headline">¶</a></h3>
+<h3>1.0.0.20100804</h3>
 <ul class="simple">
 <li>Refactoring Support</li>
 <li>Formatting</li>
@@ -279,26 +285,17 @@
 </div>
 </div>
 
-	  </div>
-      <div class="span5">        
-	  </div>	
+	    </div>
+      <div class="span5 sidebar">
+        <p class="contents-title">Contents</p>
+        <div id="scroller-anchor">
+          <div id="scroller">
+            <div id="toc"></div>
+          </div>
+        </div>            
+	    </div>	
     </div>
 
-    <div class="related">
-      <h3>Navigation</h3>
-      <ul>
-        <li class="right" style="margin-right: 10px">
-          <a href="genindex.html" title="General Index"
-             >index</a></li>
-        <li class="right" >
-          <a href="helium/index.html" title="Scala IDE Helium"
-             >next</a> |</li>
-        <li class="right" >
-          <a href="tutorials/continuations-plugin/index.html" title="Enabling Scala continuations plugin in the Scala IDE"
-             >previous</a> |</li>
-        <li><a href="index.html">Scala IDE 2.0.0 documentation</a> &raquo;</li> 
-      </ul>
-    </div>
   </div>
 </div>
 <div class="footer" style="position:relative; clear: both; ">
@@ -333,6 +330,9 @@
     </p>		
   </div>
 </div>
+<script type="text/javascript">
+  $('#toc').toc();
+</script>
 
   </body>
 </html>

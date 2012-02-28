@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="../_static/resources/stylesheets/base.css" type="text/css" />
     <link rel="stylesheet" href="../_static/resources/stylesheets/doc.css" type="text/css" />
     <link rel="stylesheet" href="../_static/resources/stylesheets/sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/resources/stylesheets/prettify.css" type="text/css" />
     
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
@@ -28,14 +29,18 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/resources/javascript/jquery.js"></script>
+    <script type="text/javascript" src="../_static/resources/javascript/toc.js"></script>
+    <script type="text/javascript" src="../_static/resources/javascript/prettify.js"></script>
+    <script type="text/javascript" src="../_static/resources/javascript/highlightCode.js"></script>
+    <script type="text/javascript" src="../_static/resources/javascript/effects.core.js"></script>
+    <script type="text/javascript" src="../_static/resources/javascript/effects.highlight.js"></script>
+    <script type="text/javascript" src="../_static/resources/javascript/scrollTo.js"></script>
+    <script type="text/javascript" src="../_static/resources/javascript/bootstrap-dropdown.js"></script>
+    <script type="text/javascript" src="../_static/resources/javascript/bootstrap-dropdown-app.js"></script>
     <link rel="top" title="Scala IDE 2.0.0 documentation" href="../index.html" />
     <link rel="next" title="Setup" href="setup/setup.html" />
-    <link rel="prev" title="Move Class, Object or Trait Refactoring" href="../helium/features/moverefactoring.html" />
-<!-- jquery -->
-<script src="../_static/resources/javascript/jquery.js" type="text/javascript" ></script>
-<script src="../_static/resources/javascript/bootstrap-dropdown.js" type="text/javascript" ></script>
-<script src="../_static/resources/javascript/bootstrap-dropdown-app.js" type="text/javascript" ></script>
-
+    <link rel="prev" title="Move Class, Object or Trait Refactoring" href="../helium/features/moverefactoring.html" /> 
   </head>
   <body>
 <div class="top-bar">
@@ -70,26 +75,27 @@
 </div>
 <div class="bottom">
   <div class="container" style="position: relative;">
+ 
+    <!--<div class="row" style="position: relative; clear: both; ">
+      <div class="span16 main-content">
+        <ul class="breadcrumb">
+          <li>
+            <a href="setup/setup.html">Setup</a> <span class="divider">»</span>
+          </li>
+          <li>
+            <span class="divider">|</span>
+          </li>          
+          <li>
+            <span class="divider">«</span> <a href="../helium/features/moverefactoring.html">Move Class, Object or Trait Refactoring</a> 
+          </li>       
+        </ul>
+      </div>
+    </div>-->
 
-    <div class="related">
-      <h3>Navigation</h3>
-      <ul>
-        <li class="right" style="margin-right: 10px">
-          <a href="../genindex.html" title="General Index"
-             accesskey="I">index</a></li>
-        <li class="right" >
-          <a href="setup/setup.html" title="Setup"
-             accesskey="N">next</a> |</li>
-        <li class="right" >
-          <a href="../helium/features/moverefactoring.html" title="Move Class, Object or Trait Refactoring"
-             accesskey="P">previous</a> |</li>
-        <li><a href="../index.html">Scala IDE 2.0.0 documentation</a> &raquo;</li> 
-      </ul>
-    </div> 
-    <div class="row" style="position: relative; clear: both; ">
-      <div class="span11 main-content" >        
+    <div class="row" style="position: relative; clear: both;">
+      <div class="span11 main-content">                 
         <div class="section" id="welcome-to-the-scala-ide-developer-documentation">
-<h1>Welcome to the Scala IDE Developer Documentation<a class="headerlink" href="#welcome-to-the-scala-ide-developer-documentation" title="Permalink to this headline">¶</a></h1>
+<h1>Welcome to the Scala IDE Developer Documentation</h1>
 <p>This document is intended for developers interested in exploring with the Scala IDE sources to
 contribute to the project.</p>
 <p>Feel free to ask questions related to the Scala IDE internals and discuss ideas for enhancements
@@ -155,26 +161,17 @@ and bug fixes on the <a class="reference external" href="http://groups.google.co
 </div>
 </div>
 
-	  </div>
-      <div class="span5">        
-	  </div>	
+	    </div>
+      <div class="span5 sidebar">
+        <p class="contents-title">Contents</p>
+        <div id="scroller-anchor">
+          <div id="scroller">
+            <div id="toc"></div>
+          </div>
+        </div>            
+	    </div>	
     </div>
 
-    <div class="related">
-      <h3>Navigation</h3>
-      <ul>
-        <li class="right" style="margin-right: 10px">
-          <a href="../genindex.html" title="General Index"
-             >index</a></li>
-        <li class="right" >
-          <a href="setup/setup.html" title="Setup"
-             >next</a> |</li>
-        <li class="right" >
-          <a href="../helium/features/moverefactoring.html" title="Move Class, Object or Trait Refactoring"
-             >previous</a> |</li>
-        <li><a href="../index.html">Scala IDE 2.0.0 documentation</a> &raquo;</li> 
-      </ul>
-    </div>
   </div>
 </div>
 <div class="footer" style="position:relative; clear: both; ">
@@ -209,6 +206,9 @@ and bug fixes on the <a class="reference external" href="http://groups.google.co
     </p>		
   </div>
 </div>
+<script type="text/javascript">
+  $('#toc').toc();
+</script>
 
   </body>
 </html>

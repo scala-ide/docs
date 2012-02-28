@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="../../_static/resources/stylesheets/base.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/resources/stylesheets/doc.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/resources/stylesheets/sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/resources/stylesheets/prettify.css" type="text/css" />
     
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
@@ -28,15 +29,19 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/resources/javascript/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/resources/javascript/toc.js"></script>
+    <script type="text/javascript" src="../../_static/resources/javascript/prettify.js"></script>
+    <script type="text/javascript" src="../../_static/resources/javascript/highlightCode.js"></script>
+    <script type="text/javascript" src="../../_static/resources/javascript/effects.core.js"></script>
+    <script type="text/javascript" src="../../_static/resources/javascript/effects.highlight.js"></script>
+    <script type="text/javascript" src="../../_static/resources/javascript/scrollTo.js"></script>
+    <script type="text/javascript" src="../../_static/resources/javascript/bootstrap-dropdown.js"></script>
+    <script type="text/javascript" src="../../_static/resources/javascript/bootstrap-dropdown-app.js"></script>
     <link rel="top" title="Scala IDE 2.0.0 documentation" href="../../index.html" />
     <link rel="up" title="Regression Test Suite" href="testing.html" />
     <link rel="next" title="Testing the Scala Presentation Compiler in isolation" href="presentation-compiler-tests.html" />
-    <link rel="prev" title="Regression Test Suite" href="testing.html" />
-<!-- jquery -->
-<script src="../../_static/resources/javascript/jquery.js" type="text/javascript" ></script>
-<script src="../../_static/resources/javascript/bootstrap-dropdown.js" type="text/javascript" ></script>
-<script src="../../_static/resources/javascript/bootstrap-dropdown-app.js" type="text/javascript" ></script>
-
+    <link rel="prev" title="Regression Test Suite" href="testing.html" /> 
   </head>
   <body>
 <div class="top-bar">
@@ -71,28 +76,27 @@
 </div>
 <div class="bottom">
   <div class="container" style="position: relative;">
+ 
+    <!--<div class="row" style="position: relative; clear: both; ">
+      <div class="span16 main-content">
+        <ul class="breadcrumb">
+          <li>
+            <a href="presentation-compiler-tests.html">Testing the Scala Presentation Compiler in isolation</a> <span class="divider">»</span>
+          </li>
+          <li>
+            <span class="divider">|</span>
+          </li>          
+          <li>
+            <span class="divider">«</span> <a href="testing.html">Regression Test Suite</a> 
+          </li>       
+        </ul>
+      </div>
+    </div>-->
 
-    <div class="related">
-      <h3>Navigation</h3>
-      <ul>
-        <li class="right" style="margin-right: 10px">
-          <a href="../../genindex.html" title="General Index"
-             accesskey="I">index</a></li>
-        <li class="right" >
-          <a href="presentation-compiler-tests.html" title="Testing the Scala Presentation Compiler in isolation"
-             accesskey="N">next</a> |</li>
-        <li class="right" >
-          <a href="testing.html" title="Regression Test Suite"
-             accesskey="P">previous</a> |</li>
-        <li><a href="../../index.html">Scala IDE 2.0.0 documentation</a> &raquo;</li>
-          <li><a href="../index.html" >Welcome to the Scala IDE Developer Documentation</a> &raquo;</li>
-          <li><a href="testing.html" accesskey="U">Regression Test Suite</a> &raquo;</li> 
-      </ul>
-    </div> 
-    <div class="row" style="position: relative; clear: both; ">
-      <div class="span11 main-content" >        
+    <div class="row" style="position: relative; clear: both;">
+      <div class="span11 main-content">                 
         <div class="section" id="testing-eclipse-integration">
-<h1>Testing Eclipse integration<a class="headerlink" href="#testing-eclipse-integration" title="Permalink to this headline">¶</a></h1>
+<h1>Testing Eclipse integration</h1>
 <p>All tests are grouped under the <tt class="docutils literal"><span class="pre">org.scala-ide.sdt.core.tests</span></tt> project, following standard
 practice for Eclipse plug-in tests (in OSGi terms, this module is a ‘bundle fragment’ of
 <tt class="docutils literal"><span class="pre">org.scala-ide.sdt.core</span></tt>, but this means only that it has access to all packages defined by
@@ -112,7 +116,7 @@ provided differently:</p>
 <li>using the declared dependencies in META-INF/MANIFEST.MF. Tycho will download them using the configured p2 repositories, in the same way that maven resolves library dependencies</li>
 </ul>
 <div class="section" id="individual-tests">
-<h2>Individual tests<a class="headerlink" href="#individual-tests" title="Permalink to this headline">¶</a></h2>
+<h2>Individual tests</h2>
 <p>An integration test is usually set up by copying an existing project from
 <tt class="docutils literal"><span class="pre">org.scala-ide.sdt.core.tests/test-workspace</span></tt> to the target (clean) workspace, then running a
 number of <tt class="docutils literal"><span class="pre">&#64;Test</span></tt> methods on it. The setup step is taken care of by subclassing
@@ -155,7 +159,7 @@ use of the JDT API again. Equivalently, one could use the convenience method
 <tt class="docutils literal"><span class="pre">compilationUnit(&quot;annots/ScalaTestSuite.scala&quot;)</span></tt>.</p>
 </div>
 <div class="section" id="resolving-positions">
-<h2>Resolving positions<a class="headerlink" href="#resolving-positions" title="Permalink to this headline">¶</a></h2>
+<h2>Resolving positions</h2>
 <p>What you’ve seen so far works well for tests that operate on whole compilation units. However, many
 times an operation needs to be performed on a certain element, at a certain position in the source
 file. Positions are integer offsets in a source file, and one way would be to hard code them in the
@@ -164,7 +168,7 @@ use markers in the source that is subject to testing, and convert them automatic
 corresponding offset.</p>
 </div>
 <div class="section" id="markers">
-<h2>Markers<a class="headerlink" href="#markers" title="Permalink to this headline">¶</a></h2>
+<h2>Markers</h2>
 <p>A marker is any string, but we use block comments with a character in between: <tt class="docutils literal"><span class="pre">/*!*/</span></tt>. Such a
 marker has the advantage that it keeps the source compilable. Have a look at the hyperlink test
 project:</p>
@@ -197,7 +201,7 @@ and pass them to the hyperlink detector:</p>
 </div>
 </div>
 <div class="section" id="advanced-markers">
-<h2>Advanced markers<a class="headerlink" href="#advanced-markers" title="Permalink to this headline">¶</a></h2>
+<h2>Advanced markers</h2>
 <p>Sometimes a simple marker does not carry enough information. Consider testing the mark occurrences
 functionality: each word that is highlighted may appear a different number of times in the source.
 One can associate a number with a marker by using <a class="reference external" href="https://github.com/scala-ide/scala-ide/blob/master/org.scala-ide.sdt.core.tests/src/scala/tools/eclipse/testsetup/SDTTestUtils.scala">SDTTestUtils.markersOf</a>.</p>
@@ -236,7 +240,7 @@ test method will use the parsed integer to assert the correct number of matches 
 </div>
 </div>
 <div class="section" id="running-tests-within-eclipse">
-<h2>Running tests within Eclipse<a class="headerlink" href="#running-tests-within-eclipse" title="Permalink to this headline">¶</a></h2>
+<h2>Running tests within Eclipse</h2>
 <p>To run the tests inside Eclipse you need to <a class="reference internal" href="../setup/setup.html#setup-install-equinox-weaving-launcher"><em>install the Equinox Weaving Launcher</em></a> plug-in for Eclipse.
 Once you have installed the plug-in, running a test in headless mode boils down to the following
 steps:</p>
@@ -251,28 +255,17 @@ steps:</p>
 </div>
 </div>
 
-	  </div>
-      <div class="span5">        
-	  </div>	
+	    </div>
+      <div class="span5 sidebar">
+        <p class="contents-title">Contents</p>
+        <div id="scroller-anchor">
+          <div id="scroller">
+            <div id="toc"></div>
+          </div>
+        </div>            
+	    </div>	
     </div>
 
-    <div class="related">
-      <h3>Navigation</h3>
-      <ul>
-        <li class="right" style="margin-right: 10px">
-          <a href="../../genindex.html" title="General Index"
-             >index</a></li>
-        <li class="right" >
-          <a href="presentation-compiler-tests.html" title="Testing the Scala Presentation Compiler in isolation"
-             >next</a> |</li>
-        <li class="right" >
-          <a href="testing.html" title="Regression Test Suite"
-             >previous</a> |</li>
-        <li><a href="../../index.html">Scala IDE 2.0.0 documentation</a> &raquo;</li>
-          <li><a href="../index.html" >Welcome to the Scala IDE Developer Documentation</a> &raquo;</li>
-          <li><a href="testing.html" >Regression Test Suite</a> &raquo;</li> 
-      </ul>
-    </div>
   </div>
 </div>
 <div class="footer" style="position:relative; clear: both; ">
@@ -307,6 +300,9 @@ steps:</p>
     </p>		
   </div>
 </div>
+<script type="text/javascript">
+  $('#toc').toc();
+</script>
 
   </body>
 </html>

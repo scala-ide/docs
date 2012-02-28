@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="../../_static/resources/stylesheets/base.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/resources/stylesheets/doc.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/resources/stylesheets/sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/resources/stylesheets/prettify.css" type="text/css" />
     
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
@@ -28,15 +29,19 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/resources/javascript/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/resources/javascript/toc.js"></script>
+    <script type="text/javascript" src="../../_static/resources/javascript/prettify.js"></script>
+    <script type="text/javascript" src="../../_static/resources/javascript/highlightCode.js"></script>
+    <script type="text/javascript" src="../../_static/resources/javascript/effects.core.js"></script>
+    <script type="text/javascript" src="../../_static/resources/javascript/effects.highlight.js"></script>
+    <script type="text/javascript" src="../../_static/resources/javascript/scrollTo.js"></script>
+    <script type="text/javascript" src="../../_static/resources/javascript/bootstrap-dropdown.js"></script>
+    <script type="text/javascript" src="../../_static/resources/javascript/bootstrap-dropdown-app.js"></script>
     <link rel="top" title="Scala IDE 2.0.0 documentation" href="../../index.html" />
     <link rel="up" title="Features" href="../features.html" />
     <link rel="next" title="Navigating" href="navigating.html" />
-    <link rel="prev" title="Features" href="../features.html" />
-<!-- jquery -->
-<script src="../../_static/resources/javascript/jquery.js" type="text/javascript" ></script>
-<script src="../../_static/resources/javascript/bootstrap-dropdown.js" type="text/javascript" ></script>
-<script src="../../_static/resources/javascript/bootstrap-dropdown-app.js" type="text/javascript" ></script>
-
+    <link rel="prev" title="Features" href="../features.html" /> 
   </head>
   <body>
 <div class="top-bar">
@@ -71,35 +76,34 @@
 </div>
 <div class="bottom">
   <div class="container" style="position: relative;">
+ 
+    <!--<div class="row" style="position: relative; clear: both; ">
+      <div class="span16 main-content">
+        <ul class="breadcrumb">
+          <li>
+            <a href="navigating.html">Navigating</a> <span class="divider">»</span>
+          </li>
+          <li>
+            <span class="divider">|</span>
+          </li>          
+          <li>
+            <span class="divider">«</span> <a href="../features.html">Features</a> 
+          </li>       
+        </ul>
+      </div>
+    </div>-->
 
-    <div class="related">
-      <h3>Navigation</h3>
-      <ul>
-        <li class="right" style="margin-right: 10px">
-          <a href="../../genindex.html" title="General Index"
-             accesskey="I">index</a></li>
-        <li class="right" >
-          <a href="navigating.html" title="Navigating"
-             accesskey="N">next</a> |</li>
-        <li class="right" >
-          <a href="../features.html" title="Features"
-             accesskey="P">previous</a> |</li>
-        <li><a href="../../index.html">Scala IDE 2.0.0 documentation</a> &raquo;</li>
-          <li><a href="../index.html" >User Documentation</a> &raquo;</li>
-          <li><a href="../features.html" accesskey="U">Features</a> &raquo;</li> 
-      </ul>
-    </div> 
-    <div class="row" style="position: relative; clear: both; ">
-      <div class="span11 main-content" >        
+    <div class="row" style="position: relative; clear: both;">
+      <div class="span11 main-content">                 
         <div class="section" id="typing-and-viewing">
-<h1>Typing and Viewing<a class="headerlink" href="#typing-and-viewing" title="Permalink to this headline">¶</a></h1>
+<h1>Typing and Viewing</h1>
 <div class="section" id="as-you-type-error-reporting">
-<h2>As You Type Error Reporting<a class="headerlink" href="#as-you-type-error-reporting" title="Permalink to this headline">¶</a></h2>
+<h2>As You Type Error Reporting</h2>
 <p>The Scala code is check as it is entered. It allows to see small or more complex compilation error as the code is type. No more endless cycle <em>code → code → code → compile → error reported → fix error → compile → error reported → fix error →...</em>.</p>
 <a class="reference external image-reference" href="../../_images/feature-typing-error-01.png"><img alt="../../_images/feature-typing-error-01.png" src="../../_images/feature-typing-error-01.png" style="width: 100%;" /></a>
 </div>
 <div class="section" id="code-completion">
-<h2>Code Completion<a class="headerlink" href="#code-completion" title="Permalink to this headline">¶</a></h2>
+<h2>Code Completion</h2>
 <p>Scala IDE provides full code completion support, returning the entities available in the current context. Code completion is enable by using <tt class="docutils literal"><span class="pre">Ctrl+Space</span></tt> in the Scala Editor.</p>
 <p>In <strong>Scala source files</strong>, code completion returns the valid Scala and Java proposals.</p>
 <a class="reference external image-reference" href="../../_images/feature-code-completion-01.png"><img alt="../../_images/feature-code-completion-01.png" src="../../_images/feature-code-completion-01.png" style="width: 100%;" /></a>
@@ -107,60 +111,49 @@
 <a class="reference external image-reference" href="../../_images/feature-code-completion-02.png"><img alt="../../_images/feature-code-completion-02.png" src="../../_images/feature-code-completion-02.png" style="width: 100%;" /></a>
 </div>
 <div class="section" id="code-templates">
-<h2>Code Templates<a class="headerlink" href="#code-templates" title="Permalink to this headline">¶</a></h2>
+<h2>Code Templates</h2>
 <p>Code templates are available in the completion proposals in code assist. They provide shortcuts for boilerplate code like main method definition and asInstanceOf invocation.</p>
 <a class="reference external image-reference" href="../../_images/feature-template-01.png"><img alt="../../_images/feature-template-01.png" src="../../_images/feature-template-01.png" style="width: 100%;" /></a>
 <p>The list of available templates can be viewed and modified in the <tt class="docutils literal"><span class="pre">Scala</span> <span class="pre">→</span> <span class="pre">Templates</span></tt> preference page.</p>
 </div>
 <div class="section" id="mark-occurrences">
-<h2>Mark Occurrences<a class="headerlink" href="#mark-occurrences" title="Permalink to this headline">¶</a></h2>
+<h2>Mark Occurrences</h2>
 <p>As in the Java tooling, Mark Occurrences highlights within a file where a type, variable or method is referenced.</p>
 <img alt="../../_images/feature-occurences-01.png" src="../../_images/feature-occurences-01.png" />
 </div>
 <div class="section" id="quick-fix-imports">
-<h2>Quick Fix Imports<a class="headerlink" href="#quick-fix-imports" title="Permalink to this headline">¶</a></h2>
+<h2>Quick Fix Imports</h2>
 <p><a class="reference external" href="http://wiki.eclipse.org/FAQ_What_is_a_Quick_Fix%3F">Quick Fix</a> can be used to easily add a required import statement.</p>
 <a class="reference external image-reference" href="../../_images/feature-quickfix-import-01.png"><img alt="../../_images/feature-quickfix-import-01.png" src="../../_images/feature-quickfix-import-01.png" style="width: 100%;" /></a>
 </div>
 <div class="section" id="show-inferred-semicolons">
-<span id="typingviewing-show-inferred-semicolons"></span><h2>Show Inferred Semicolons<a class="headerlink" href="#show-inferred-semicolons" title="Permalink to this headline">¶</a></h2>
+<span id="typingviewing-show-inferred-semicolons"></span><h2>Show Inferred Semicolons</h2>
 <p>Use the <img alt="icon" src="../../_images/show_inferred_semicolons.png" /> toggle button in the to enable <em>infer semicolons</em>. It will display the inferred semicolons in gray as an overlay on the code.</p>
 <p>Without: <img alt="without" src="../../_images/feature-inferredsemicolons-01.png" /> With: <img alt="with" src="../../_images/feature-inferredsemicolons-02.png" /></p>
 </div>
 <div class="section" id="structured-selection">
-<h2>Structured Selection<a class="headerlink" href="#structured-selection" title="Permalink to this headline">¶</a></h2>
+<h2>Structured Selection</h2>
 <p>Using <tt class="docutils literal"><span class="pre">alt+shift+up</span></tt> and <tt class="docutils literal"><span class="pre">alt+shift+down</span></tt> selects larger or smaller portion of the AST. It allows for quick selection of sub-expressions or statements.</p>
 <img alt="../../_images/feature-structured-selection-01.png" src="../../_images/feature-structured-selection-01.png" />
 </div>
 <div class="section" id="syntax-highlighting">
-<h2>Syntax Highlighting<a class="headerlink" href="#syntax-highlighting" title="Permalink to this headline">¶</a></h2>
+<h2>Syntax Highlighting</h2>
 <p>The Scala editor has full syntax highlighting support, including comments, control structures and embedded XML.</p>
 <a class="reference external image-reference" href="../../_images/feature-syntax-highlighting-01.png"><img alt="../../_images/feature-syntax-highlighting-01.png" src="../../_images/feature-syntax-highlighting-01.png" style="width: 100%;" /></a>
 </div>
 </div>
 
-	  </div>
-      <div class="span5">        
-	  </div>	
+	    </div>
+      <div class="span5 sidebar">
+        <p class="contents-title">Contents</p>
+        <div id="scroller-anchor">
+          <div id="scroller">
+            <div id="toc"></div>
+          </div>
+        </div>            
+	    </div>	
     </div>
 
-    <div class="related">
-      <h3>Navigation</h3>
-      <ul>
-        <li class="right" style="margin-right: 10px">
-          <a href="../../genindex.html" title="General Index"
-             >index</a></li>
-        <li class="right" >
-          <a href="navigating.html" title="Navigating"
-             >next</a> |</li>
-        <li class="right" >
-          <a href="../features.html" title="Features"
-             >previous</a> |</li>
-        <li><a href="../../index.html">Scala IDE 2.0.0 documentation</a> &raquo;</li>
-          <li><a href="../index.html" >User Documentation</a> &raquo;</li>
-          <li><a href="../features.html" >Features</a> &raquo;</li> 
-      </ul>
-    </div>
   </div>
 </div>
 <div class="footer" style="position:relative; clear: both; ">
@@ -195,6 +188,9 @@
     </p>		
   </div>
 </div>
+<script type="text/javascript">
+  $('#toc').toc();
+</script>
 
   </body>
 </html>

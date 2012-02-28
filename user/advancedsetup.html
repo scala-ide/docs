@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="../_static/resources/stylesheets/base.css" type="text/css" />
     <link rel="stylesheet" href="../_static/resources/stylesheets/doc.css" type="text/css" />
     <link rel="stylesheet" href="../_static/resources/stylesheets/sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/resources/stylesheets/prettify.css" type="text/css" />
     
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
@@ -28,15 +29,19 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/resources/javascript/jquery.js"></script>
+    <script type="text/javascript" src="../_static/resources/javascript/toc.js"></script>
+    <script type="text/javascript" src="../_static/resources/javascript/prettify.js"></script>
+    <script type="text/javascript" src="../_static/resources/javascript/highlightCode.js"></script>
+    <script type="text/javascript" src="../_static/resources/javascript/effects.core.js"></script>
+    <script type="text/javascript" src="../_static/resources/javascript/effects.highlight.js"></script>
+    <script type="text/javascript" src="../_static/resources/javascript/scrollTo.js"></script>
+    <script type="text/javascript" src="../_static/resources/javascript/bootstrap-dropdown.js"></script>
+    <script type="text/javascript" src="../_static/resources/javascript/bootstrap-dropdown-app.js"></script>
     <link rel="top" title="Scala IDE 2.0.0 documentation" href="../index.html" />
     <link rel="up" title="User Documentation" href="index.html" />
     <link rel="next" title="Features" href="features.html" />
-    <link rel="prev" title="Getting Started" href="gettingstarted.html" />
-<!-- jquery -->
-<script src="../_static/resources/javascript/jquery.js" type="text/javascript" ></script>
-<script src="../_static/resources/javascript/bootstrap-dropdown.js" type="text/javascript" ></script>
-<script src="../_static/resources/javascript/bootstrap-dropdown-app.js" type="text/javascript" ></script>
-
+    <link rel="prev" title="Getting Started" href="gettingstarted.html" /> 
   </head>
   <body>
 <div class="top-bar">
@@ -71,30 +76,30 @@
 </div>
 <div class="bottom">
   <div class="container" style="position: relative;">
+ 
+    <!--<div class="row" style="position: relative; clear: both; ">
+      <div class="span16 main-content">
+        <ul class="breadcrumb">
+          <li>
+            <a href="features.html">Features</a> <span class="divider">»</span>
+          </li>
+          <li>
+            <span class="divider">|</span>
+          </li>          
+          <li>
+            <span class="divider">«</span> <a href="gettingstarted.html">Getting Started</a> 
+          </li>       
+        </ul>
+      </div>
+    </div>-->
 
-    <div class="related">
-      <h3>Navigation</h3>
-      <ul>
-        <li class="right" style="margin-right: 10px">
-          <a href="../genindex.html" title="General Index"
-             accesskey="I">index</a></li>
-        <li class="right" >
-          <a href="features.html" title="Features"
-             accesskey="N">next</a> |</li>
-        <li class="right" >
-          <a href="gettingstarted.html" title="Getting Started"
-             accesskey="P">previous</a> |</li>
-        <li><a href="../index.html">Scala IDE 2.0.0 documentation</a> &raquo;</li>
-          <li><a href="index.html" accesskey="U">User Documentation</a> &raquo;</li> 
-      </ul>
-    </div> 
-    <div class="row" style="position: relative; clear: both; ">
-      <div class="span11 main-content" >        
+    <div class="row" style="position: relative; clear: both;">
+      <div class="span11 main-content">                 
         <div class="section" id="advanced-setup">
-<h1>Advanced Setup<a class="headerlink" href="#advanced-setup" title="Permalink to this headline">¶</a></h1>
+<h1>Advanced Setup</h1>
 <p>This page contains information to help you configure Eclipse and Scala IDE, to increase performances and ease-of-use.</p>
 <div class="section" id="eclipse-configuration">
-<h2>Eclipse Configuration<a class="headerlink" href="#eclipse-configuration" title="Permalink to this headline">¶</a></h2>
+<h2>Eclipse Configuration</h2>
 <p>The default Eclipse heap configuration is often inadequate for the Scala IDE. It is strongly recommended to edit the <tt class="docutils literal"><span class="pre">eclipse/eclipse.ini</span></tt> (<tt class="docutils literal"><span class="pre">eclipse/Eclipse.app/Contents/MacOS/eclipse.ini</span></tt> on Mac osX) file and add the following lines to increase various heap limits and virtual machine options:</p>
 <div class="highlight-bash"><div class="highlight"><pre>--launcher.XXMaxPermSize
 256m
@@ -117,7 +122,7 @@
 </div>
 </div>
 <div class="section" id="required-preferences">
-<h2>Required Preferences<a class="headerlink" href="#required-preferences" title="Permalink to this headline">¶</a></h2>
+<h2>Required Preferences</h2>
 <ul>
 <li><p class="first"><strong>JDT Weaving</strong></p>
 <p>Scala IDE uses AOP to tweak the Eclipse JDT, so JDT weaving has to be enable. Otherwise, Scala files would be managed as Java files.</p>
@@ -127,7 +132,7 @@
 </ul>
 </div>
 <div class="section" id="optional-preferences">
-<h2>Optional Preferences<a class="headerlink" href="#optional-preferences" title="Permalink to this headline">¶</a></h2>
+<h2>Optional Preferences</h2>
 <ul>
 <li><p class="first"><strong>Heap Status</strong></p>
 <p>When the memory usage nears the limit, the Garbage Collector activity increases (when the compiler runs, ...) and system slows down. It is good to keep a eye on the heap status. It is possible by enabling <tt class="docutils literal"><span class="pre">Show</span> <span class="pre">heap</span> <span class="pre">status</span></tt> in the <tt class="docutils literal"><span class="pre">General</span></tt> section <a class="footnote-reference" href="#preferences" id="id2">[1]</a>.</p>
@@ -136,7 +141,7 @@
 </ul>
 </div>
 <div class="section" id="performance">
-<h2>Performance<a class="headerlink" href="#performance" title="Permalink to this headline">¶</a></h2>
+<h2>Performance</h2>
 <p>Garbage Collection activity and swap can be really bad for performance. It can trigger Eclipse freezes and general system slow down.</p>
 <p>Monitoring what is happening is the best option to keep a healthy system:</p>
 <ul class="simple">
@@ -146,7 +151,7 @@
 <p>Depending of the problem, the memory allocated to the JVM can be increased, or some of the other application closed (like the web browser, or some flash application, ...).</p>
 </div>
 <div class="section" id="additional-links">
-<h2>Additional Links<a class="headerlink" href="#additional-links" title="Permalink to this headline">¶</a></h2>
+<h2>Additional Links</h2>
 <ul class="simple">
 <li><a class="reference external" href="http://blog.normation.com/2010/05/24/optimizing-eclipse-performances/">Optimizing Eclipse performances</a> from <a class="reference external" href="http://blog.normation.com/">Normation</a>.</li>
 <li><a class="reference external" href="http://stackoverflow.com/questions/142357/what-are-the-best-jvm-settings-for-eclipse">What are the best JVM settings for Eclipse?</a> from <a class="reference external" href="http://blog.normation.com/">Stack Overflow</a> forum</li>
@@ -168,27 +173,17 @@
 </div>
 </div>
 
-	  </div>
-      <div class="span5">        
-	  </div>	
+	    </div>
+      <div class="span5 sidebar">
+        <p class="contents-title">Contents</p>
+        <div id="scroller-anchor">
+          <div id="scroller">
+            <div id="toc"></div>
+          </div>
+        </div>            
+	    </div>	
     </div>
 
-    <div class="related">
-      <h3>Navigation</h3>
-      <ul>
-        <li class="right" style="margin-right: 10px">
-          <a href="../genindex.html" title="General Index"
-             >index</a></li>
-        <li class="right" >
-          <a href="features.html" title="Features"
-             >next</a> |</li>
-        <li class="right" >
-          <a href="gettingstarted.html" title="Getting Started"
-             >previous</a> |</li>
-        <li><a href="../index.html">Scala IDE 2.0.0 documentation</a> &raquo;</li>
-          <li><a href="index.html" >User Documentation</a> &raquo;</li> 
-      </ul>
-    </div>
   </div>
 </div>
 <div class="footer" style="position:relative; clear: both; ">
@@ -223,6 +218,9 @@
     </p>		
   </div>
 </div>
+<script type="text/javascript">
+  $('#toc').toc();
+</script>
 
   </body>
 </html>

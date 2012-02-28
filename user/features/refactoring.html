@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="../../_static/resources/stylesheets/base.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/resources/stylesheets/doc.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/resources/stylesheets/sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/resources/stylesheets/prettify.css" type="text/css" />
     
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
@@ -28,15 +29,19 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/resources/javascript/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/resources/javascript/toc.js"></script>
+    <script type="text/javascript" src="../../_static/resources/javascript/prettify.js"></script>
+    <script type="text/javascript" src="../../_static/resources/javascript/highlightCode.js"></script>
+    <script type="text/javascript" src="../../_static/resources/javascript/effects.core.js"></script>
+    <script type="text/javascript" src="../../_static/resources/javascript/effects.highlight.js"></script>
+    <script type="text/javascript" src="../../_static/resources/javascript/scrollTo.js"></script>
+    <script type="text/javascript" src="../../_static/resources/javascript/bootstrap-dropdown.js"></script>
+    <script type="text/javascript" src="../../_static/resources/javascript/bootstrap-dropdown-app.js"></script>
     <link rel="top" title="Scala IDE 2.0.0 documentation" href="../../index.html" />
     <link rel="up" title="Features" href="../features.html" />
     <link rel="next" title="Formatting" href="formatting.html" />
-    <link rel="prev" title="Navigating" href="navigating.html" />
-<!-- jquery -->
-<script src="../../_static/resources/javascript/jquery.js" type="text/javascript" ></script>
-<script src="../../_static/resources/javascript/bootstrap-dropdown.js" type="text/javascript" ></script>
-<script src="../../_static/resources/javascript/bootstrap-dropdown-app.js" type="text/javascript" ></script>
-
+    <link rel="prev" title="Navigating" href="navigating.html" /> 
   </head>
   <body>
 <div class="top-bar">
@@ -71,31 +76,30 @@
 </div>
 <div class="bottom">
   <div class="container" style="position: relative;">
+ 
+    <!--<div class="row" style="position: relative; clear: both; ">
+      <div class="span16 main-content">
+        <ul class="breadcrumb">
+          <li>
+            <a href="formatting.html">Formatting</a> <span class="divider">»</span>
+          </li>
+          <li>
+            <span class="divider">|</span>
+          </li>          
+          <li>
+            <span class="divider">«</span> <a href="navigating.html">Navigating</a> 
+          </li>       
+        </ul>
+      </div>
+    </div>-->
 
-    <div class="related">
-      <h3>Navigation</h3>
-      <ul>
-        <li class="right" style="margin-right: 10px">
-          <a href="../../genindex.html" title="General Index"
-             accesskey="I">index</a></li>
-        <li class="right" >
-          <a href="formatting.html" title="Formatting"
-             accesskey="N">next</a> |</li>
-        <li class="right" >
-          <a href="navigating.html" title="Navigating"
-             accesskey="P">previous</a> |</li>
-        <li><a href="../../index.html">Scala IDE 2.0.0 documentation</a> &raquo;</li>
-          <li><a href="../index.html" >User Documentation</a> &raquo;</li>
-          <li><a href="../features.html" accesskey="U">Features</a> &raquo;</li> 
-      </ul>
-    </div> 
-    <div class="row" style="position: relative; clear: both; ">
-      <div class="span11 main-content" >        
+    <div class="row" style="position: relative; clear: both;">
+      <div class="span11 main-content">                 
         <div class="section" id="refactoring">
-<h1>Refactoring<a class="headerlink" href="#refactoring" title="Permalink to this headline">¶</a></h1>
+<h1>Refactoring</h1>
 <p><a class="reference external" href="http://scala-refactoring.org/">Scala Refactoring</a> is integrated in Scala IDE. It offers a broad range of refactoring actions.</p>
 <div class="section" id="extracting-local-values">
-<h2>Extracting Local Values<a class="headerlink" href="#extracting-local-values" title="Permalink to this headline">¶</a></h2>
+<h2>Extracting Local Values</h2>
 <p>The <a class="reference external" href="http://scala-refactoring.org/extract-local/">Extract Local</a> action does the opposite work of Inline Local. It creates a value of an expression. It is a must use to make code more readable.</p>
 <p>Select an expression to extract.</p>
 <img alt="../../_images/feature-refactoring-extract-local-01.png" src="../../_images/feature-refactoring-extract-local-01.png" />
@@ -103,24 +107,24 @@
 <img alt="../../_images/feature-refactoring-extract-local-02.png" src="../../_images/feature-refactoring-extract-local-02.png" />
 </div>
 <div class="section" id="extracting-methods">
-<h2>Extracting Methods<a class="headerlink" href="#extracting-methods" title="Permalink to this headline">¶</a></h2>
+<h2>Extracting Methods</h2>
 <p>The <a class="reference external" href="http://scala-refactoring.org/extract-method/">Extract Method</a> action extract the set of selected statements into a new method. The original code is replaced by the equivalent method call.</p>
 <a class="reference external image-reference" href="../../_images/feature-refactoring-extract-method-01.png"><img alt="../../_images/feature-refactoring-extract-method-01.png" src="../../_images/feature-refactoring-extract-method-01.png" style="width: 100%;" /></a>
 </div>
 <div class="section" id="inlining-local-values">
-<h2>Inlining Local Values<a class="headerlink" href="#inlining-local-values" title="Permalink to this headline">¶</a></h2>
+<h2>Inlining Local Values</h2>
 <p>The <a class="reference external" href="http://scala-refactoring.org/inline-local/">Inline Local</a> action helps removing unneeded values.</p>
 <p>The action is performed on the currently selected value.</p>
 <a class="reference external image-reference" href="../../_images/feature-refactoring-inline-local-01.png"><img alt="../../_images/feature-refactoring-inline-local-01.png" src="../../_images/feature-refactoring-inline-local-01.png" style="width: 100%;" /></a>
 </div>
 <div class="section" id="organizing-imports">
-<h2>Organizing Imports<a class="headerlink" href="#organizing-imports" title="Permalink to this headline">¶</a></h2>
+<h2>Organizing Imports</h2>
 <p>The <a class="reference external" href="http://scala-refactoring.org/organize-imports/">Organize Imports</a> action allows to do some automated cleanup on the list of imports. It removes the unused or unneeded imports and organizes the remainder.</p>
 <a class="reference external image-reference" href="../../_images/feature-refactoring-organize-import-01.png"><img alt="../../_images/feature-refactoring-organize-import-01.png" src="../../_images/feature-refactoring-organize-import-01.png" style="width: 100%;" /></a>
 <p>This action can be configure in the <tt class="docutils literal"><span class="pre">Scala</span> <span class="pre">→</span> <span class="pre">Organize</span> <span class="pre">Import</span></tt> preference page.</p>
 </div>
 <div class="section" id="renaming">
-<h2>Renaming<a class="headerlink" href="#renaming" title="Permalink to this headline">¶</a></h2>
+<h2>Renaming</h2>
 <p>The <a class="reference external" href="http://scala-refactoring.org/rename/">Rename</a> action allows to change any name, and update its reference.</p>
 <p>The action is performed in in-line mode if the name as only a local scope.</p>
 <a class="reference external image-reference" href="../../_images/feature-refactoring-rename-01.png"><img alt="../../_images/feature-refactoring-rename-01.png" src="../../_images/feature-refactoring-rename-01.png" style="width: 100%;" /></a>
@@ -129,28 +133,17 @@
 </div>
 </div>
 
-	  </div>
-      <div class="span5">        
-	  </div>	
+	    </div>
+      <div class="span5 sidebar">
+        <p class="contents-title">Contents</p>
+        <div id="scroller-anchor">
+          <div id="scroller">
+            <div id="toc"></div>
+          </div>
+        </div>            
+	    </div>	
     </div>
 
-    <div class="related">
-      <h3>Navigation</h3>
-      <ul>
-        <li class="right" style="margin-right: 10px">
-          <a href="../../genindex.html" title="General Index"
-             >index</a></li>
-        <li class="right" >
-          <a href="formatting.html" title="Formatting"
-             >next</a> |</li>
-        <li class="right" >
-          <a href="navigating.html" title="Navigating"
-             >previous</a> |</li>
-        <li><a href="../../index.html">Scala IDE 2.0.0 documentation</a> &raquo;</li>
-          <li><a href="../index.html" >User Documentation</a> &raquo;</li>
-          <li><a href="../features.html" >Features</a> &raquo;</li> 
-      </ul>
-    </div>
   </div>
 </div>
 <div class="footer" style="position:relative; clear: both; ">
@@ -185,6 +178,9 @@
     </p>		
   </div>
 </div>
+<script type="text/javascript">
+  $('#toc').toc();
+</script>
 
   </body>
 </html>

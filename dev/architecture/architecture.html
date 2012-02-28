@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="../../_static/resources/stylesheets/base.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/resources/stylesheets/doc.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/resources/stylesheets/sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/resources/stylesheets/prettify.css" type="text/css" />
     
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
@@ -28,15 +29,19 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/resources/javascript/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/resources/javascript/toc.js"></script>
+    <script type="text/javascript" src="../../_static/resources/javascript/prettify.js"></script>
+    <script type="text/javascript" src="../../_static/resources/javascript/highlightCode.js"></script>
+    <script type="text/javascript" src="../../_static/resources/javascript/effects.core.js"></script>
+    <script type="text/javascript" src="../../_static/resources/javascript/effects.highlight.js"></script>
+    <script type="text/javascript" src="../../_static/resources/javascript/scrollTo.js"></script>
+    <script type="text/javascript" src="../../_static/resources/javascript/bootstrap-dropdown.js"></script>
+    <script type="text/javascript" src="../../_static/resources/javascript/bootstrap-dropdown-app.js"></script>
     <link rel="top" title="Scala IDE 2.0.0 documentation" href="../../index.html" />
     <link rel="up" title="Welcome to the Scala IDE Developer Documentation" href="../index.html" />
     <link rel="next" title="Codebase" href="../code/code.html" />
-    <link rel="prev" title="Building the Scala IDE" href="../building/building.html" />
-<!-- jquery -->
-<script src="../../_static/resources/javascript/jquery.js" type="text/javascript" ></script>
-<script src="../../_static/resources/javascript/bootstrap-dropdown.js" type="text/javascript" ></script>
-<script src="../../_static/resources/javascript/bootstrap-dropdown-app.js" type="text/javascript" ></script>
-
+    <link rel="prev" title="Building the Scala IDE" href="../building/building.html" /> 
   </head>
   <body>
 <div class="top-bar">
@@ -71,32 +76,32 @@
 </div>
 <div class="bottom">
   <div class="container" style="position: relative;">
+ 
+    <!--<div class="row" style="position: relative; clear: both; ">
+      <div class="span16 main-content">
+        <ul class="breadcrumb">
+          <li>
+            <a href="../code/code.html">Codebase</a> <span class="divider">»</span>
+          </li>
+          <li>
+            <span class="divider">|</span>
+          </li>          
+          <li>
+            <span class="divider">«</span> <a href="../building/building.html">Building the Scala IDE</a> 
+          </li>       
+        </ul>
+      </div>
+    </div>-->
 
-    <div class="related">
-      <h3>Navigation</h3>
-      <ul>
-        <li class="right" style="margin-right: 10px">
-          <a href="../../genindex.html" title="General Index"
-             accesskey="I">index</a></li>
-        <li class="right" >
-          <a href="../code/code.html" title="Codebase"
-             accesskey="N">next</a> |</li>
-        <li class="right" >
-          <a href="../building/building.html" title="Building the Scala IDE"
-             accesskey="P">previous</a> |</li>
-        <li><a href="../../index.html">Scala IDE 2.0.0 documentation</a> &raquo;</li>
-          <li><a href="../index.html" accesskey="U">Welcome to the Scala IDE Developer Documentation</a> &raquo;</li> 
-      </ul>
-    </div> 
-    <div class="row" style="position: relative; clear: both; ">
-      <div class="span11 main-content" >        
+    <div class="row" style="position: relative; clear: both;">
+      <div class="span11 main-content">                 
         <div class="section" id="architecture">
-<h1>Architecture<a class="headerlink" href="#architecture" title="Permalink to this headline">¶</a></h1>
+<h1>Architecture</h1>
 <p>In this page you will learn about the Scala IDE&#8217;s architecture. First, an overview of the
 different existing modules is provided. Then, a few specific aspects of the Scala IDE&#8217;s architecture
 and its components are discussed.</p>
 <div class="section" id="overview">
-<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<h2>Overview</h2>
 <p>The Scala IDE project is composed of several modules. Here is a generic description of what each module contains:</p>
 <ul class="simple">
 <li><tt class="docutils literal"><span class="pre">org.scala-ide.build</span></tt>: Contains the scripts for building the Scala IDE from the command line.</li>
@@ -114,7 +119,7 @@ and its components are discussed.</p>
 </ul>
 </div>
 <div class="section" id="scala-ide-eclipse-jdt">
-<h2>Scala IDE &amp; Eclipse JDT<a class="headerlink" href="#scala-ide-eclipse-jdt" title="Permalink to this headline">¶</a></h2>
+<h2>Scala IDE &amp; Eclipse JDT</h2>
 <p>The Scala IDE uses the <a class="reference external" href="http://eclipse.org/jdt/">Eclipse Java Development Tools (JDT)</a> weaving
 in order to inherit as much as possible of the existing Eclipse Java functionality. AspectJ
 and the weaving service of Eclipse (in fact, its OSGi container, called Equinox) allow us to
@@ -142,7 +147,7 @@ are using Java models to expose Scala entities).</p>
 functionality. Whenever possible, we prefer to use the regular, supported mechanism for extension,
 instead of weaving. This is the case for both code completion and hyperlinking.</p>
 <div class="section" id="jdt-weaving-and-java-integration">
-<h3>JDT Weaving and Java integration<a class="headerlink" href="#jdt-weaving-and-java-integration" title="Permalink to this headline">¶</a></h3>
+<h3>JDT Weaving and Java integration</h3>
 <p>All Scala aspect code is found in <tt class="docutils literal"><span class="pre">org.scala-ide.sdt.aspects</span></tt> project. This module defines:</p>
 <ul class="simple">
 <li>pointcuts and aspects to intercept JDT method calls,</li>
@@ -164,7 +169,7 @@ mitigate incompatibilities with newer version of the JDT.</p>
 </div>
 </div>
 <div class="section" id="the-scala-structure-builder">
-<h2>The Scala Structure Builder<a class="headerlink" href="#the-scala-structure-builder" title="Permalink to this headline">¶</a></h2>
+<h2>The Scala Structure Builder</h2>
 <p>The workhorse of Java-Scala integration is the <a class="reference external" href="http://github.com/scala-ide/scala-ide/blob/master/org.scala-ide.sdt.core/src/scala/tools/eclipse/javaelements/ScalaStructureBuilder.scala">ScalaStructureBuilder</a>
 class. This class translates Scala sources (using the Abstract Syntax Trees - AST) to the JDT model elements (using the
 <a class="reference external" href="http://github.com/scala-ide/scala-ide/blob/master/org.scala-ide.sdt.core/src/scala/tools/eclipse/javaelements/ScalaElements.scala">Scala specific subclasses</a>,
@@ -188,46 +193,36 @@ may not be acceptable.</p>
 </div>
 </div>
 <div class="section" id="the-scala-presentation-compiler">
-<h2>The Scala Presentation Compiler<a class="headerlink" href="#the-scala-presentation-compiler" title="Permalink to this headline">¶</a></h2>
+<h2>The Scala Presentation Compiler</h2>
 <p>In order to provide semantic actions, the IDE needs to <em>understand</em> the edited Scala code. That
 means parsing and type-checking. The <a class="reference external" href="https://github.com/scala-ide/scala-ide/blob/master/org.scala-ide.sdt.core/src/scala/tools/eclipse/ScalaPresentationCompiler.scala">Scala Presentation Compiler</a>
 is an asynchronous front-end compiler for Scala, part of the standard Scala compiler.</p>
 </div>
 <div class="section" id="code-formatting">
-<h2>Code formatting<a class="headerlink" href="#code-formatting" title="Permalink to this headline">¶</a></h2>
+<h2>Code formatting</h2>
 <p>Code formatting is delegated to <a class="reference external" href="https://github.com/mdr/scalariform/">Scalariform</a>, a library for
 automated Scala formatting written by Matt Russell. <a class="reference external" href="https://github.com/scala-ide/scala-ide/blob/master/org.scala-ide.sdt.core/src/scala/tools/eclipse/ScalaStructureSelectEnclosingAction.scala">Structured selection</a>
 and <a class="reference external" href="https://github.com/mdr/Scala-IDE/blob/f1a02cd3455aead4582a1652beddcc0b3dbd0f10/org.scala-ide.sdt.core/src/scala/tools/eclipse/lexical/ScalaCodeScanner.scala">tokenising</a>
 for syntax coloring are also backed by Scalariform.</p>
 </div>
 <div class="section" id="refactoring">
-<h2>Refactoring<a class="headerlink" href="#refactoring" title="Permalink to this headline">¶</a></h2>
+<h2>Refactoring</h2>
 <p>Refactoring is delegated to the <a class="reference external" href="http://scala-refactoring.org/">scala-refactoring</a> library written
 by Mirko Stocker.</p>
 </div>
 </div>
 
-	  </div>
-      <div class="span5">        
-	  </div>	
+	    </div>
+      <div class="span5 sidebar">
+        <p class="contents-title">Contents</p>
+        <div id="scroller-anchor">
+          <div id="scroller">
+            <div id="toc"></div>
+          </div>
+        </div>            
+	    </div>	
     </div>
 
-    <div class="related">
-      <h3>Navigation</h3>
-      <ul>
-        <li class="right" style="margin-right: 10px">
-          <a href="../../genindex.html" title="General Index"
-             >index</a></li>
-        <li class="right" >
-          <a href="../code/code.html" title="Codebase"
-             >next</a> |</li>
-        <li class="right" >
-          <a href="../building/building.html" title="Building the Scala IDE"
-             >previous</a> |</li>
-        <li><a href="../../index.html">Scala IDE 2.0.0 documentation</a> &raquo;</li>
-          <li><a href="../index.html" >Welcome to the Scala IDE Developer Documentation</a> &raquo;</li> 
-      </ul>
-    </div>
   </div>
 </div>
 <div class="footer" style="position:relative; clear: both; ">
@@ -262,6 +257,9 @@ by Mirko Stocker.</p>
     </p>		
   </div>
 </div>
+<script type="text/javascript">
+  $('#toc').toc();
+</script>
 
   </body>
 </html>

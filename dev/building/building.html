@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="../../_static/resources/stylesheets/base.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/resources/stylesheets/doc.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/resources/stylesheets/sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/resources/stylesheets/prettify.css" type="text/css" />
     
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
@@ -28,15 +29,19 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/resources/javascript/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/resources/javascript/toc.js"></script>
+    <script type="text/javascript" src="../../_static/resources/javascript/prettify.js"></script>
+    <script type="text/javascript" src="../../_static/resources/javascript/highlightCode.js"></script>
+    <script type="text/javascript" src="../../_static/resources/javascript/effects.core.js"></script>
+    <script type="text/javascript" src="../../_static/resources/javascript/effects.highlight.js"></script>
+    <script type="text/javascript" src="../../_static/resources/javascript/scrollTo.js"></script>
+    <script type="text/javascript" src="../../_static/resources/javascript/bootstrap-dropdown.js"></script>
+    <script type="text/javascript" src="../../_static/resources/javascript/bootstrap-dropdown-app.js"></script>
     <link rel="top" title="Scala IDE 2.0.0 documentation" href="../../index.html" />
     <link rel="up" title="Welcome to the Scala IDE Developer Documentation" href="../index.html" />
     <link rel="next" title="Architecture" href="../architecture/architecture.html" />
-    <link rel="prev" title="Setup" href="../setup/setup.html" />
-<!-- jquery -->
-<script src="../../_static/resources/javascript/jquery.js" type="text/javascript" ></script>
-<script src="../../_static/resources/javascript/bootstrap-dropdown.js" type="text/javascript" ></script>
-<script src="../../_static/resources/javascript/bootstrap-dropdown-app.js" type="text/javascript" ></script>
-
+    <link rel="prev" title="Setup" href="../setup/setup.html" /> 
   </head>
   <body>
 <div class="top-bar">
@@ -71,31 +76,31 @@
 </div>
 <div class="bottom">
   <div class="container" style="position: relative;">
+ 
+    <!--<div class="row" style="position: relative; clear: both; ">
+      <div class="span16 main-content">
+        <ul class="breadcrumb">
+          <li>
+            <a href="../architecture/architecture.html">Architecture</a> <span class="divider">»</span>
+          </li>
+          <li>
+            <span class="divider">|</span>
+          </li>          
+          <li>
+            <span class="divider">«</span> <a href="../setup/setup.html">Setup</a> 
+          </li>       
+        </ul>
+      </div>
+    </div>-->
 
-    <div class="related">
-      <h3>Navigation</h3>
-      <ul>
-        <li class="right" style="margin-right: 10px">
-          <a href="../../genindex.html" title="General Index"
-             accesskey="I">index</a></li>
-        <li class="right" >
-          <a href="../architecture/architecture.html" title="Architecture"
-             accesskey="N">next</a> |</li>
-        <li class="right" >
-          <a href="../setup/setup.html" title="Setup"
-             accesskey="P">previous</a> |</li>
-        <li><a href="../../index.html">Scala IDE 2.0.0 documentation</a> &raquo;</li>
-          <li><a href="../index.html" accesskey="U">Welcome to the Scala IDE Developer Documentation</a> &raquo;</li> 
-      </ul>
-    </div> 
-    <div class="row" style="position: relative; clear: both; ">
-      <div class="span11 main-content" >        
+    <div class="row" style="position: relative; clear: both;">
+      <div class="span11 main-content">                 
         <div class="section" id="building-the-scala-ide">
-<h1>Building the Scala IDE<a class="headerlink" href="#building-the-scala-ide" title="Permalink to this headline">¶</a></h1>
+<h1>Building the Scala IDE</h1>
 <p>The Scala IDE for Eclipse can be built on the command line using Maven, as is
 done, for example, during the <a class="reference external" href="https://jenkins.scala-ide.org:8496/jenkins/">Hudson-driven nightly builds on Amazon EC2</a>.</p>
 <div class="section" id="requirements">
-<h2>Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline">¶</a></h2>
+<h2>Requirements</h2>
 <ul class="simple">
 <li><a class="reference external" href="http://www.oracle.com/technetwork/java/javasebusiness/downloads/java-archive-downloads-javase5-419410.html">JDK 5</a>
 or <a class="reference external" href="http://www.oracle.com/technetwork/java/javasebusiness/downloads/java-archive-downloads-javase6-419409.html">JDK 6</a>
@@ -114,7 +119,7 @@ batch files, if needed (if you do so, make sure to send a pull request our
 way, and we will make the Windows scripts available to all contributors).</p>
 </div>
 <div class="section" id="run-the-build">
-<span id="building-run-the-build"></span><h2>Run the build<a class="headerlink" href="#run-the-build" title="Permalink to this headline">¶</a></h2>
+<span id="building-run-the-build"></span><h2>Run the build</h2>
 <p>Open your terminal, navigate to the project&#8217;s root, and then:</p>
 <div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span><span class="nb">cd </span>org.scala-ide.build
 </pre></div>
@@ -140,7 +145,7 @@ from this update site by adding it as a local update site via the Eclipse
 server, then the HTTP URL of its root directory is acceptable as an ordinary Eclipse update site URL.</p>
 </div>
 <div class="section" id="build-the-scala-ide-with-a-local-version-of-the-scala-compiler">
-<h2>Build the Scala IDE with a local version of the Scala Compiler<a class="headerlink" href="#build-the-scala-ide-with-a-local-version-of-the-scala-compiler" title="Permalink to this headline">¶</a></h2>
+<h2>Build the Scala IDE with a local version of the Scala Compiler</h2>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">Chances are that most of you will not need to read this section. You need to build a local
@@ -177,27 +182,17 @@ Scala plug-in) make sure that no errors occurred.</p>
 </div>
 </div>
 
-	  </div>
-      <div class="span5">        
-	  </div>	
+	    </div>
+      <div class="span5 sidebar">
+        <p class="contents-title">Contents</p>
+        <div id="scroller-anchor">
+          <div id="scroller">
+            <div id="toc"></div>
+          </div>
+        </div>            
+	    </div>	
     </div>
 
-    <div class="related">
-      <h3>Navigation</h3>
-      <ul>
-        <li class="right" style="margin-right: 10px">
-          <a href="../../genindex.html" title="General Index"
-             >index</a></li>
-        <li class="right" >
-          <a href="../architecture/architecture.html" title="Architecture"
-             >next</a> |</li>
-        <li class="right" >
-          <a href="../setup/setup.html" title="Setup"
-             >previous</a> |</li>
-        <li><a href="../../index.html">Scala IDE 2.0.0 documentation</a> &raquo;</li>
-          <li><a href="../index.html" >Welcome to the Scala IDE Developer Documentation</a> &raquo;</li> 
-      </ul>
-    </div>
   </div>
 </div>
 <div class="footer" style="position:relative; clear: both; ">
@@ -232,6 +227,9 @@ Scala plug-in) make sure that no errors occurred.</p>
     </p>		
   </div>
 </div>
+<script type="text/javascript">
+  $('#toc').toc();
+</script>
 
   </body>
 </html>
