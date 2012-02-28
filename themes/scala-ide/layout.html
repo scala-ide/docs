@@ -52,28 +52,21 @@
 {% endblock %}
 
 {% block content %} 
-    <!--<div class="row" style="position: relative; clear: both; ">
-      <div class="span16 main-content">
-        <ul class="breadcrumb">           
-          {%- if next %}
-          <li>
-            <a href="{{ next.link|e }}">{{ next.title }}</a> <span class="divider">»</span>
-          </li>
-          {%- endif %}
-          <li>
-            <span class="divider">|</span>
-          </li>
-          {%- if prev %}          
-          <li>
-            <span class="divider">«</span> <a href="{{ prev.link|e }}">{{ prev.title }}</a> 
-          </li>
-          {%- endif %}       
-        </ul>
+    <div class="row" style="position: relative; clear: both;">
+      <div class="span16">
+        {%- if parents %}
+          <ul class="breadcrumb">
+            <li><a href="{{ pathto('index.html', 1) }}">ScalaIDE Documentation</a> » </li>
+            {%- for crumb in parents %}
+              <li><a href="{{ crumb.link }}">{{ crumb.title }}</a> » </li>
+            {%- endfor %}
+          </ul>
+        {%- endif %}        
       </div>
-    </div>-->
+    </div>
 
     <div class="row" style="position: relative; clear: both;">
-      <div class="span11 main-content">                 
+      <div class="span11 main-content">
         {{ body }}
 	    </div>
       <div class="span5 sidebar">
