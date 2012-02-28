@@ -40,7 +40,8 @@ body {background-color: #8d8d8d;}
 
 .main-content > .section h1:first-of-type { visibility: hidden; height: 0px; margin: 0px; padding: 0px; }
 /*.main-content > .section { margin-top: -36px; }*/
-.main-content { min-height: 600px; top: 0px; margin-top: -52px; }
+.main-content { min-height: 600px; top: 0px; }
+.sidebar { top: 0px; }
 .related { visibility: hidden; height: 0px; margin: 0px; padding: 0px; }
 
 .btn.large{font-size:26px;line-height:normal;padding:12px 20px 12px;-webkit-border-radius:6px;-moz-border-radius:6px;border-radius:6px;}

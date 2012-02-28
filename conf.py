@@ -166,6 +166,7 @@ html_show_copyright = False
 # Output file base name for HTML help builder.
 htmlhelp_basename = 'ScalaIDEdoc'
 
+html_add_permalinks = ''
 
 # -- Options for LaTeX output --------------------------------------------------
 

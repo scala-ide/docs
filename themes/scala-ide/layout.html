@@ -1,13 +1,19 @@
 {% extends "basic/layout.html" %}
 
-{% set css_files = [ "_static/resources/stylesheets/bootstrap.css","_static/resources/stylesheets/base.css","_static/resources/stylesheets/doc.css","_static/resources/stylesheets/sphinx.css" ] %}
+{% set script_files = script_files + ['_static/resources/javascript/jquery.js'] %}
+{% set script_files = script_files + ['_static/resources/javascript/toc.js'] %}
+{% set script_files = script_files + ['_static/resources/javascript/prettify.js'] %}
+{% set script_files = script_files + ['_static/resources/javascript/highlightCode.js'] %}
+{% set script_files = script_files + ['_static/resources/javascript/effects.core.js'] %}
+{% set script_files = script_files + ['_static/resources/javascript/effects.highlight.js'] %}
+{% set script_files = script_files + ['_static/resources/javascript/scrollTo.js'] %}
+{% set script_files = script_files + ['_static/resources/javascript/bootstrap-dropdown.js'] %}
+{% set script_files = script_files + ['_static/resources/javascript/bootstrap-dropdown-app.js'] %}
+{% set css_files = [ "_static/resources/stylesheets/bootstrap.css","_static/resources/stylesheets/base.css","_static/resources/stylesheets/doc.css","_static/resources/stylesheets/sphinx.css","_static/resources/stylesheets/prettify.css" ] %}
 
-{% block extrahead %}
-<!-- jquery -->
-<script src="{{ pathto('_static/resources/javascript/jquery.js', 1) }}" type="text/javascript" ></script>
-<script src="{{ pathto('_static/resources/javascript/bootstrap-dropdown.js', 1) }}" type="text/javascript" ></script>
-<script src="{{ pathto('_static/resources/javascript/bootstrap-dropdown-app.js', 1) }}" type="text/javascript" ></script>
-{% endblock %}
+{# do not display relbars #}
+{% block relbar1 %}{% endblock %}
+{% block relbar2 %}{% endblock %}
 
 {% block header %}
 <div class="top-bar">
@@ -45,12 +51,38 @@
 {% endblock %}
 
 {% block content %} 
-    <div class="row" style="position: relative; clear: both; ">
-      <div class="span11 main-content" >        
+    <!--<div class="row" style="position: relative; clear: both; ">
+      <div class="span16 main-content">
+        <ul class="breadcrumb">           
+          {%- if next %}
+          <li>
+            <a href="{{ next.link|e }}">{{ next.title }}</a> <span class="divider">»</span>
+          </li>
+          {%- endif %}
+          <li>
+            <span class="divider">|</span>
+          </li>
+          {%- if prev %}          
+          <li>
+            <span class="divider">«</span> <a href="{{ prev.link|e }}">{{ prev.title }}</a> 
+          </li>
+          {%- endif %}       
+        </ul>
+      </div>
+    </div>-->
+
+    <div class="row" style="position: relative; clear: both;">
+      <div class="span11 main-content">                 
         {{ body }}
-	  </div>
-      <div class="span5">        
-	  </div>	
+	    </div>
+      <div class="span5 sidebar">
+        <p class="contents-title">Contents</p>
+        <div id="scroller-anchor">
+          <div id="scroller">
+            <div id="toc"></div>
+          </div>
+        </div>            
+	    </div>	
     </div>
 {% endblock %}
 
@@ -89,5 +121,7 @@
     </p>		
   </div>
 </div>
+<script type="text/javascript">
+  $('#toc').toc();
+</script>
 {% endblock %}
-
