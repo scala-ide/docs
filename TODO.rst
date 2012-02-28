@@ -1,3 +1,5 @@
+:orphan:
+
 List of tasks to be done
 ========================
 

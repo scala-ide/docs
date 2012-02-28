@@ -245,11 +245,6 @@ Please use github tickets and pull requests system for feedback.
 Luc Bourlier - `+Luc Bourlier`_ `@sky1uc`_
 
 
-.. toctree::
-   :hidden:
-
-   index-fr.rst
-
 .. _#1000907: http://www.assembla.com/spaces/scala-ide/tickets/1000907
 .. _Scala IDE: http://www.scala-ide.org
 .. _Scala IDE documentation project: https://github.com/scala-ide/docs

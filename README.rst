@@ -1,3 +1,5 @@
+:orphan:
+
 Documentation for Scala IDE
 ---------------------------
 
