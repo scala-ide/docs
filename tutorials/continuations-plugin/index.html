@@ -41,8 +41,8 @@
     <script type="text/javascript" src="../../_static/resources/javascript/contentsFix.js"></script>
     <link rel="top" title="Scala IDE 2.0.0 documentation" href="../../index.html" />
     <link rel="up" title="Tutorial" href="../index.html" />
-    <link rel="next" title="Changelog" href="../../changelog.html" />
-    <link rel="prev" title="Configurer et utiliser Play framework 2.0 avec Scala IDE 2.0" href="../play20scalaide20/index-fr.html" /> 
+    <link rel="next" title="Setup and use the Scalac project with the Scala IDE" href="../scalac-trunk/index.html" />
+    <link rel="prev" title="Setup and use Play framework 2.0 in Scala IDE 2.0" href="../play20scalaide20/index.html" /> 
   </head>
   <body>
 <div class="top-bar">
@@ -78,22 +78,6 @@
 <div class="bottom">
   <div class="container" style="position: relative;">
  
-    <!--<div class="row" style="position: relative; clear: both; ">
-      <div class="span16 main-content">
-        <ul class="breadcrumb">
-          <li>
-            <a href="../../changelog.html">Changelog</a> <span class="divider">»</span>
-          </li>
-          <li>
-            <span class="divider">|</span>
-          </li>          
-          <li>
-            <span class="divider">«</span> <a href="../play20scalaide20/index-fr.html">Configurer et utiliser Play framework 2.0 avec Scala IDE 2.0</a> 
-          </li>       
-        </ul>
-      </div>
-    </div>-->
-
     <div class="row" style="position: relative; clear: both;">
       <div class="span16">
           <ul class="breadcrumb">
@@ -110,8 +94,8 @@
 <div class="section" id="prerequisites">
 <h2>Prerequisites</h2>
 <ul>
-<li><p class="first"><a class="reference external" href="http://www.eclipse.org/">Eclipse</a> 3.6 (Helios) with <a class="reference external" href="http://scala-ide.org/download/current.html">Scala IDE 2.0</a> installed, or
-<a class="reference external" href="http://www.eclipse.org/">Eclipse</a> 3.7 (Indigo) with a <a class="reference external" href="http://scala-ide.org/download/nightly.html">Scala IDE nightly</a> installed.</p>
+<li><p class="first"><a class="reference external" href="http://www.eclipse.org/">Eclipse</a> 3.6 (Helios) with a <a class="reference external" href="http://scala-ide.org/download/current.html">Scala IDE 2.0</a> installed, or
+<a class="reference external" href="http://www.eclipse.org/">Eclipse</a> 3.7 (Indigo) with a <a class="reference external" href="http://scala-ide.org/download/nightly.html">Scala IDE Helium nightly</a> installed.</p>
 <p>Check the <a class="reference internal" href="../../user/gettingstarted.html#gettingstarted-getting-started"><em>getting started</em></a> page for instructions on how to install Scala IDE.</p>
 </li>
 <li><p class="first">A basic knowledge of the Eclipse user interface is required.</p>
@@ -123,10 +107,13 @@
 <h3>Introduction</h3>
 <p>In this tutorial you will learn how to enable continuations in the Scala IDE. Scala provides
 support for <a class="reference external" href="http://en.wikipedia.org/wiki/Continuation-passing_style">continuation-passing style</a> through a compiler plugin, which is shipped together with
-the main Scala distribution. Enabling continuations in Scala is really simple, you only need to
-pass <tt class="docutils literal"><span class="pre">-P:continuations:enable</span></tt> to the Scala compiler, and the continuations plugin will be loaded
-and used to compile your sources. The good news is that enabling continuations in the Scala IDE is
-exactly the same!</p>
+the main Scala distribution.</p>
+<p>Enabling continuations in Scala 2.9 is really simple, you only need to pass
+<tt class="docutils literal"><span class="pre">-P:continuations:enable</span></tt> to the Scala compiler, and the continuations plugin will be loaded and
+used to compile your sources.</p>
+<p>Note that in Scala 2.10 (trunk) the continuations plugin is enabled by default. Meaning that
+no configuration is needed to use continuations in the Scala IDE with Scala 2.10!</p>
+<p>In this tutorial we will learn how to enable the continuations plugin with the Scala IDE for Scala 2.9.</p>
 </div>
 <div class="section" id="enabling-continuations-plugin">
 <h3>Enabling continuations plugin</h3>
@@ -145,6 +132,26 @@ Right click on your project folder and select Properties.</p>
 case, rebuild your sources).</p>
 <a class="reference external image-reference" href="../../_images/5-no-errors.png"><img alt="No more errors in the project" src="../../_images/5-no-errors.png" style="width: 100%;" /></a>
 <p>That&#8217;s it! You have successfully enabled continuations in your project.</p>
+</div>
+<div class="section" id="known-problems">
+<h3>Known Problems</h3>
+<p>Unfortunately, we found out that plugin settings in the Scala IDE 2.0.0 are not always correctly
+handled. The good news is that the issue has been fixed, and the patch is already available in both
+the <cite>Scala IDE 2.0.x</cite> nightly and the <cite>Scala IDE Helium</cite> nightly.</p>
+<p>If you are using the Scala IDE 2.0.0 and the above step-by-step description does not work in your
+case, we suggest you to do the following:</p>
+<ol class="arabic">
+<li><p class="first">Pass to <tt class="docutils literal"><span class="pre">-Xplugin</span></tt> the path to the <tt class="docutils literal"><span class="pre">continuations.jar</span></tt>.</p>
+<blockquote>
+<div><ul class="simple">
+<li><strong>Important:</strong> Make sure that the path contains <strong>no whitespaces</strong>.</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first">Pass <tt class="docutils literal"><span class="pre">continuations:enable</span></tt> to the <tt class="docutils literal"><span class="pre">P</span></tt> compiler setting.</p>
+</li>
+</ol>
+<p>But the best suggestion we have is to use the <a class="reference external" href="http://scala-ide.org/download/nightly.html">Scala IDE 2.0.x nightly</a>, if you can do so.</p>
 </div>
 <div class="section" id="feedback">
 <h3>Feedback</h3>

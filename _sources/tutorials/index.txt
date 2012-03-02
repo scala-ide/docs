@@ -6,3 +6,4 @@ Tutorial
 
    play20scalaide20/index.rst
    continuations-plugin/index.rst
+   scalac-trunk/index.rst
