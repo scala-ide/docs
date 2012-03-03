@@ -18,7 +18,7 @@ Prerequisites
 Setting up Eclipse
 -------------------
 
-In order to be able to use and build the Scala compiler inside Eclipse, you need to make sure Eclipse runs with enough heap. We recommend at least 2GB, but be generous if you can. The detailed instructions on how to do that can be found in :ref:`advanced setup <advancedsetup_advanced-setup>`
+In order to build the Scala compiler inside Eclipse, you need to make sure Eclipse runs with enough heap. We recommend at least 2GB, but be generous if you can. The detailed instructions on how to do that can be found in :ref:`advanced setup <advancedsetup_advanced-setup>`
 
 .. note:: 
 
@@ -55,7 +55,7 @@ The sample project file configures only the scala *compiler* sources as part of 
 Adding the Scala library *sources* to your project (optional)
 ---------------------------------------------------
 
-If you need to develop the Scala library, you need to add the library source folder to the ``Java Build Path``. Since the default output directory is ``build/quick/classes/compiler``, we need to change that so that library classes go instead do ``build/quick/classes/library``. 
+If you need to develop the Scala library, you need to add the library source folder to the ``Java Build Path``. Since the default output directory is ``build/quick/classes/compiler``, you need to change that as well, so that library classes go instead to ``build/quick/classes/library``. 
 
 *  Open Project Properties and go to the ``Java Build Path`` page
 
@@ -140,7 +140,7 @@ If you're still here, go ahead and use the `update-scala.sh`_ script. Point it t
 
 .. code-block:: bash
 
-  $ update-scala.sh --eclipse-dir /Applications/eclipse build/pack
+  $ update-scala.sh --eclipse-dir /Applications/eclipse update build/pack
 
 If you run into trouble, the safest way out is to uninstall the plugin and re-install it. You can do that on the command line using the `update-director.sh`_ script.
 

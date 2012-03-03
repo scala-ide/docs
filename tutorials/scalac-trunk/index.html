@@ -107,7 +107,7 @@
 </div>
 <div class="section" id="setting-up-eclipse">
 <h2>Setting up Eclipse</h2>
-<p>In order to be able to use and build the Scala compiler inside Eclipse, you need to make sure Eclipse runs with enough heap. We recommend at least 2GB, but be generous if you can. The detailed instructions on how to do that can be found in <a class="reference internal" href="../../user/advancedsetup.html#advancedsetup-advanced-setup"><em>advanced setup</em></a></p>
+<p>In order to build the Scala compiler inside Eclipse, you need to make sure Eclipse runs with enough heap. We recommend at least 2GB, but be generous if you can. The detailed instructions on how to do that can be found in <a class="reference internal" href="../../user/advancedsetup.html#advancedsetup-advanced-setup"><em>advanced setup</em></a></p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">If you have an older version of the Scala IDE plugin, you may run into trouble when updating to the latest nightly. Frequent changes in the compiler version numbering scheme may confuse Eclipse, and keep an older version of the compiler bundle that doesn&#8217;t match the IDE. To make sure things run smoothly, you can uninstall the previous version. There is <a class="reference external" href="http://scala-ide.org/blog/director-script.html">command line tool</a> for doing that without firing up Eclipse.</p>
@@ -142,7 +142,7 @@ cp classpath.SAMPLE .classpath
 </div>
 <div class="section" id="adding-the-scala-library-sources-to-your-project-optional">
 <h2>Adding the Scala library <em>sources</em> to your project (optional)</h2>
-<p>If you need to develop the Scala library, you need to add the library source folder to the <tt class="docutils literal"><span class="pre">Java</span> <span class="pre">Build</span> <span class="pre">Path</span></tt>. Since the default output directory is <tt class="docutils literal"><span class="pre">build/quick/classes/compiler</span></tt>, we need to change that so that library classes go instead do <tt class="docutils literal"><span class="pre">build/quick/classes/library</span></tt>.</p>
+<p>If you need to develop the Scala library, you need to add the library source folder to the <tt class="docutils literal"><span class="pre">Java</span> <span class="pre">Build</span> <span class="pre">Path</span></tt>. Since the default output directory is <tt class="docutils literal"><span class="pre">build/quick/classes/compiler</span></tt>, you need to change that as well, so that library classes go instead to <tt class="docutils literal"><span class="pre">build/quick/classes/library</span></tt>.</p>
 <ul class="simple">
 <li>Open Project Properties and go to the <tt class="docutils literal"><span class="pre">Java</span> <span class="pre">Build</span> <span class="pre">Path</span></tt> page</li>
 <li>Make sure <tt class="docutils literal"><span class="pre">Allow</span> <span class="pre">output</span> <span class="pre">folders</span> <span class="pre">for</span> <span class="pre">source</span> <span class="pre">folders</span></tt> is checked</li>
@@ -199,7 +199,7 @@ cp classpath.SAMPLE .classpath
 <p class="last">This is a risky operation. Given the tight dependency between the IDE and the compiler, you must be sure you are swapping two binary-compatible versions of the compiler. This may not work if the plugin was built against a much older version of <tt class="docutils literal"><span class="pre">scalac</span></tt> than the one you are replacing it with.</p>
 </div>
 <p>If you&#8217;re still here, go ahead and use the <a class="reference external" href="https://github.com/scala-ide/scala-ide/blob/master/update-scala.sh">update-scala.sh</a> script. Point it to your locally built scala, for instance <tt class="docutils literal"><span class="pre">build/pack</span></tt>.</p>
-<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>update-scala.sh --eclipse-dir /Applications/eclipse build/pack
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>update-scala.sh --eclipse-dir /Applications/eclipse update build/pack
 </pre></div>
 </div>
 <p>If you run into trouble, the safest way out is to uninstall the plugin and re-install it. You can do that on the command line using the <a class="reference external" href="https://github.com/scala-ide/scala-ide/blob/master/update-director.sh">update-director.sh</a> script.</p>
