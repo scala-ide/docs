@@ -27,7 +27,7 @@ Status
 Development setup
 -----------------
 
-This feature is developped in the branch `feature/scala-debugger-1000864`__ on scala IDE's github.
+This feature is developed in the branch `feature/scala-debugger-1000864`__ on Scala IDE's github.
 
 __ https://github.com/scala-ide/scala-ide/tree/feature/scala-debugger-1000864
 
