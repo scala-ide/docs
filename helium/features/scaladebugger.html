@@ -7,7 +7,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Move Class, Object or Trait Refactoring &mdash; Scala IDE 2.0.0 documentation</title>
+    <title>Scala Debugger &mdash; Scala IDE 2.0.0 documentation</title>
     
     <link rel="stylesheet" href="../../_static/resources/stylesheets/base.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
@@ -41,8 +41,8 @@
     <script type="text/javascript" src="../../_static/resources/javascript/contentsFix.js"></script>
     <link rel="top" title="Scala IDE 2.0.0 documentation" href="../../index.html" />
     <link rel="up" title="New Features" href="../features.html" />
-    <link rel="next" title="Scala Debugger" href="scaladebugger.html" />
-    <link rel="prev" title="Logging" href="logging.html" /> 
+    <link rel="next" title="Welcome to the Scala IDE Developer Documentation" href="../../dev/index.html" />
+    <link rel="prev" title="Move Class, Object or Trait Refactoring" href="moverefactoring.html" /> 
   </head>
   <body>
 <div class="top-bar">
@@ -70,7 +70,7 @@
   <div class="container">
     <div class="row">
       <div class="span16">        
-        <h1>Move Class, Object or Trait Refactoring</h1>
+        <h1>Scala Debugger</h1>
 	  </div>
     </div>
   </div>
@@ -90,32 +90,51 @@
 
     <div class="row" style="position: relative; clear: both;">
       <div class="span11 main-content">
-        <div class="section" id="move-class-object-or-trait-refactoring">
-<h1>Move Class, Object or Trait Refactoring</h1>
-<p>Move Class was an often requested feature in the Scala IDE bugtracker, so we
-implemented it for the upcoming 2.1 release. The refactoring can either be
-invoked from the Refactoring menu, or indirectly by drag-and-dropping a file
-in the Package Explorer.</p>
-<p>If there exists more than one top-level declaration in the file, you can choose to
-split-off one of the declarations or to move them all. The refactoring will move
-all the necessary imports along, and also update all the references (other
-imports, or qualified names) in the project.</p>
-<p>Here is a screenshot of the refactoring configuration dialog:</p>
-<img alt="../../_images/move-class-configuration.png" src="../../_images/move-class-configuration.png" />
-<p>You can also create a new package directly in the wizard, and choose to move the
-complete file or only the selected definition (the option is not present if no
-definition was selected or if the file contains only a single one).</p>
-<p>The resulting changes can then be previewed in the usual fashion:</p>
-<img alt="../../_images/move-class-preview.png" src="../../_images/move-class-preview.png" />
-<p>A new file is created with the name of the moved class. In this preview, we can
-see that the class is removed in the file and an import to its new location is
-added because the class is referenced somewhere in this file.</p>
-<div class="section" id="limitations">
-<h2>Limitations</h2>
-<p>There currently are some limitations: the refactoring works only on Scala code,
-and it simply ignores visibility issues, so moving might result in compilation
-errors. This being the initial implementation, it is certainly not free of bugs,
-so please <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/support/tickets">report any bug you encounter</a>.</p>
+        <div class="section" id="scala-debugger">
+<h1>Scala Debugger</h1>
+<div class="section" id="goals">
+<h2>Goals</h2>
+<p>The idea is to provide a debugger inside Scala IDE more targeted to Scala code.</p>
+<p>The main goals are:</p>
+<ul class="simple">
+<li>Hide the artifacts created by the Scala compiler</li>
+<li>Have an intuitive stepping through Scala code</li>
+<li>Identify elements as Scala</li>
+</ul>
+</div>
+<div class="section" id="status">
+<h2>Status</h2>
+<ul class="simple">
+<li>Smart stepping over anonymous functions (for comprehension, collection methods, ...).</li>
+<li>Terminate launch action</li>
+<li>The structure of the Scala implementation of the Eclipse debug model.</li>
+<li>No good labels, icons, names, values for the model elements.</li>
+<li>No caching of any data -&gt; likely creating the ObjectCollectedExceptions</li>
+<li>No stepping in/out</li>
+<li>No drop to frame</li>
+<li>No source locator support for files not in the source folders.</li>
+</ul>
+</div>
+<div class="section" id="development-setup">
+<h2>Development setup</h2>
+<p>This feature is developped in the branch <a class="reference external" href="https://github.com/scala-ide/scala-ide/tree/feature/scala-debugger-1000864">feature/scala-debugger-1000864</a> on scala IDE&#8217;s github.</p>
+<p>The setup is the same as for master. It contains 2 new plugins: org.scala-ide.sdt.debug and org.scala-ide.sdt.debug.tests.</p>
+<div class="section" id="in-eclipse">
+<h3>In Eclipse</h3>
+<p>The Scala debugger makes use of the <a class="reference external" href="http://docs.oracle.com/javase/6/docs/jdk/api/jpda/jdi/index.html">JDI</a> to communicate with the VM. For some valid reasons, the jdt.debug plug-in provides a non-generic version of it. The Scala debugger uses the newer generic version, so some tweaking is needed inside Eclipse.</p>
+<div class="section" id="on-mac-os-x">
+<h4>On Mac OS X</h4>
+<p>The generic version of the JDI is included by default in the VM libraries, just remove the <tt class="docutils literal"><span class="pre">JAVA_HOME/lib/tools.jar</span></tt> entry from the Java build path to have the project to compile.</p>
+</div>
+<div class="section" id="on-the-other-oses">
+<h4>On the other OSes</h4>
+<p>On non-Mac OS X systems, JDI is not part of the VM default libraries. To steps are needed to have the project to compile correctly:</p>
+<ul class="simple">
+<li>create a <tt class="docutils literal"><span class="pre">Classpath</span> <span class="pre">Variable</span></tt> in <tt class="docutils literal"><span class="pre">Window</span> <span class="pre">→</span> <span class="pre">Preferences</span> <span class="pre">→</span> <span class="pre">Java</span> <span class="pre">→</span> <span class="pre">Build</span> <span class="pre">Path</span> <span class="pre">→</span> <span class="pre">Classpath</span> <span class="pre">Variables</span></tt> named <tt class="docutils literal"><span class="pre">JAVA_HOME</span></tt>, which points to the root folder of your JDK installation.</li>
+<li>in <tt class="docutils literal"><span class="pre">Window</span> <span class="pre">→</span> <span class="pre">Preferences</span> <span class="pre">→</span> <span class="pre">Java</span> <span class="pre">→</span> <span class="pre">Installed</span> <span class="pre">JREs</span></tt>, edit your JDK, and use <tt class="docutils literal"><span class="pre">Add</span> <span class="pre">External</span> <span class="pre">JARs</span></tt> to add the <tt class="docutils literal"><span class="pre">JDK_HOME/lib/tools.jar</span></tt> library.</li>
+</ul>
+</div>
+</div>
 </div>
 </div>
 
