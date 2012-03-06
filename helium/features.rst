@@ -10,3 +10,4 @@ __ http://scala-ide.org/download/nightly.html
 
    features/logging
    features/moverefactoring
+   features/scaladebugger
