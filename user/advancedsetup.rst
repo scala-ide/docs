@@ -1,3 +1,5 @@
+.. _advancedsetup_advanced-setup:
+
 Advanced Setup
 ==============
 

@@ -38,10 +38,3 @@ Contents:
 .. _Scala: http://www.scala-lang.org/
 .. _Scala IDE: http://www.scala-ide.org/
 
-.. toctree::
-   :hidden:
-
-   README
-   TODO
-   sources/README
-

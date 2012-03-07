@@ -1,3 +1,5 @@
+:orphan:
+
 Configurer et utiliser Play framework 2.0 avec Scala IDE 2.0
 ============================================================
 
@@ -10,7 +12,7 @@ Que contient ce guide?
 
 Ce guide vous montera comment configurer une application web Play pour pouvoir l'importer dans Scala IDE, comment configurer `Scala IDE`_ pour pouvoir utiliser correctement le Play framework et finalement comment développer un application web Play avec Scala IDE.
 
-*La version anglaise est la version de référence. J'essaierai de garder la version française à jour.*
+*La version anglaise est la version de référence. J'essaierai de garder à jour la version française.*
 
 Prérequis
 .........
@@ -30,9 +32,9 @@ Installer Play 2.0
 
 Pour pouvoir créer une web application Play, Play framework est nécessaire. Si vous ne l'avez pas encore installé, suivez ces quelques étapes, ou utilisez la `documentation de Play`__.
 
-*   Téléchargez Play framework 2.0-beta sur http://www.playframework.org/2.0.
+*   Téléchargez Play framework 2.0-RC1 sur http://www.playframework.org/2.0.
 
-*   Unzippez l'archive dans votre répertoire préféré. Nous utiliserons ``/path/to/play20`` dans ce document.
+*   Un-zippez l'archive dans votre répertoire préféré. Nous utiliserons ``/path/to/play20`` dans ce document.
 
 *   Pour simplifier l'utilisation, ajoutez le répertoire de Play dans le PATH:
 
@@ -85,44 +87,23 @@ Configurer l'application web Play 2.0 pour Scala IDE
 
 Maintenant que l'application Play fonctionne, il faut la configurer pour pouvoir l'importer dans Scala IDE.
 
-Le support eclipsify n'est pas integrated dans Play 2.0 pour le moment. Donc nous utilisons `sbteclipse`_ pour faire de l'application web un projet Eclipse.
+Play 2.0-RC1 intègre `sbteclipse`_, qui permet de créer les fichiers de configuration d'un projet pour Eclipse.
 
-*   D'abord, sortez de Play, en utilisant ``ctrl-d``, puis ``exit``.
+*   D'abord, sortez du mode 'run' de Play, en utilisant ``ctrl-d``.
 
     .. image:: images/play20-scalaide20-06.png
        :alt: ctrl-d, exit
        :width: 100%
        :target: ../../_images/play20-scalaide20-06.png
 
-*   Ajoutez sbteclipse à sbt en créant le fichier ``project/build.sbt`` avec le contenu suivant.
-
-    .. code-block:: scala
-
-       
-       resolvers += Classpaths.typesafeResolver
-       
-       addSbtPlugin("com.typesafe.sbteclipse" % "sbteclipse" % "1.5.0")
-
-    .. image:: images/play20-scalaide20-07.png
-       :alt: modify project/build.sbt
-       :width: 100%
-       :target: ../../_images/play20-scalaide20-07.png
-
-*   Retournez dans Play.
-
-    .. image:: images/play20-scalaide20-08.png
-       :alt: play
-       :width: 100%
-       :target: ../../_images/play20-scalaide20-08.png
-
-*   Générez la configuration du projet Eclipse.
+*   ``eclipsify`` est la commande à utiliser pour lancer sbteclipse depuis Play.
 
     .. image:: images/play20-scalaide20-09.png
        :alt: eclipse
        :width: 100%
        :target: ../../_images/play20-scalaide20-09.png
 
-*   Et relancez l'application web, de manière à ce qu'elle soit disponible plus tard.
+*   Relancez l'application web, en mode 'auto-reloading', en utilisant ``~ run``, de manière à ce qu'elle fonctionne en arrière plan.
 
     .. image:: images/play20-scalaide20-10.png
        :alt: run
@@ -167,6 +148,22 @@ Tout est configuré, il est temps d'importer le projet dans Scala IDE.
        :width: 100%
        :target: ../../_images/play20-scalaide20-15.png
 
+*   La configuration générée par sbteclipse permet l'utilisation du project dans Eclipse, mais elle n'est pas optimale avec Scala IDE.
+
+    Ajoutez le répertoire ``target/src_managed/main`` comme répertoire source.
+
+    .. image:: images/play20-scalaide20-20.png
+       :alt: add the managed sources folder
+       :width: 100%
+       :target: ../../_images/play20-scalaide20-20.png
+
+*   Et enlevez le répertoire ``classes_managed`` du build path.
+
+    .. image:: images/play20-scalaide20-21.png
+       :alt: remove managed classes folder
+       :width: 100%
+       :target: ../../_images/play20-scalaide20-21.png
+
 *   Tout est parfait, tout compile.
 
     .. image:: images/play20-scalaide20-16.png
@@ -177,7 +174,9 @@ Tout est configuré, il est temps d'importer le projet dans Scala IDE.
 Faire un peu de développement
 -----------------------------
 
-Maintenant que tout est configuré, nous pouvons changer le contenu. Ajoutons le moyen d'avoir une citation sur la page principale.
+Maintenant que tout est configuré, le vrai développement peut commencer.
+
+Modifions la page principale pour afficher une citation à la place de la page de défaut.
 
 *   D'abord, créez la classe ``models.Quote`` en utilisant l'assistant nouvelle ``Scala Class``.
 
@@ -186,7 +185,7 @@ Maintenant que tout est configuré, nous pouvons changer le contenu. Ajoutons le
        :width: 100%
        :target: ../../_images/play20-scalaide20-19.png
 
-*   Ajoutez les variables à ``models.Quote``.
+*   Ajoutez les variables à ``models.Quote``, et faites en une case classe.
 
     .. code-block:: scala
 
@@ -203,23 +202,21 @@ Maintenant que tout est configuré, nous pouvons changer le contenu. Ajoutons le
        @(message: String, quote: models.Quote)
        
        @main("Welcome to Play 2.0 beta") {
-       
-           @play20.welcome(message)
            
            <p>@quote.text<em> - @quote.author</em></p>
        
        }
 
-*   Les templates sont transformés en code Scala par le Play framework, donc utilisez le bouton ``refresh`` du navigateur interne pour l'effectuer.
+*   Les templates sont transformés en code Scala par le Play framework. Comme Play a été lancé en mode 'auto-reloading' en arrière plan, les templates sont recompilés dès que le fichier est sauvegardé.
 
-    Play répond avec une erreur compilation, l'application n'utilise pas le template correctement. L'erreur est aussi visible dans le code de ``Application.scala``.
+    Apres avoir sauvegardé le fichier, les changements sont chargés par Scala IDE, et une erreur est reporté dans le code de ``Application.scala``. L'application n'utilise pas le template correctement.
     
     .. image:: images/play20-scalaide20-17.png
        :alt: compilation error
        :width: 100%
        :target: ../../_images/play20-scalaide20-17.png
 
-*   Corrigez le code de l'application, en utilisant une citation élégante.
+*   Corrigez le code de l'application, en utilisant une citation élégante. Et corrigez les imports au besoin.
 
     .. code-block:: scala
 
@@ -239,11 +236,11 @@ Maintenant que tout est configuré, nous pouvons changer le contenu. Ajoutons le
 Aller plus loin
 ----------------
 
-Vous avez maintenant tout ce dont vous besoin pour créer de belles applications web avec Play 2.0 et Scala.
+Vous avez maintenant tout ce dont vous besoin pour créer de grandes applications web avec Play 2.0 et Scala.
 
-Pour plus d'information sur Play 2.0, allez voir le `wiki Play 2.0`__.
+Pour plus d'information sur Play 2.0, utilisez la `documentation intégrée`__.
 
-__ `Play 2.0 wiki`_
+__ `embedded documentation`_
 
 Pour plus d'information sur Scala, allez sur le `site de documentation`__ ou récupérez le `eBook`_ téléchargeable.
 
@@ -260,12 +257,14 @@ __ `Scala IDE documentation project`__
 Luc Bourlier - `+Luc Bourlier`_ `@sky1uc`_
 
 
+.. _#1000907: http://www.assembla.com/spaces/scala-ide/tickets/1000907
 .. _Scala IDE: http://www.scala-ide.org
 .. _Scala IDE documentation project: https://github.com/scala-ide/docs
 .. _Eclipse: http://www.eclipse.org/
 .. _Play documentation: https://github.com/playframework/Play20/wiki/Installing
+.. _eclipsify: https://github.com/musk/SbtEclipsify
 .. _sbteclipse: https://github.com/typesafehub/sbteclipse
-.. _Play 2.0 wiki: https://github.com/playframework/play20/wiki
+.. _embedded documentation: http://localhost:9000/@documentation/Home
 .. _documentation website: http://docs.scala-lang.org/
 .. _eBook: http://typesafe.com/resources/scala-for-the-impatient
 .. _+Luc Bourlier: https://plus.google.com/106787944777810934000/posts

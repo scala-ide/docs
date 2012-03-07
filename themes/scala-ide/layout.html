@@ -1,13 +1,20 @@
 {% extends "basic/layout.html" %}
 
-{% set css_files = [ "_static/resources/stylesheets/bootstrap.css","_static/resources/stylesheets/base.css","_static/resources/stylesheets/doc.css","_static/resources/stylesheets/sphinx.css" ] %}
+{% set script_files = script_files + ['_static/resources/javascript/jquery.js'] %}
+{% set script_files = script_files + ['_static/resources/javascript/toc.js'] %}
+{% set script_files = script_files + ['_static/resources/javascript/prettify.js'] %}
+{% set script_files = script_files + ['_static/resources/javascript/highlightCode.js'] %}
+{% set script_files = script_files + ['_static/resources/javascript/effects.core.js'] %}
+{% set script_files = script_files + ['_static/resources/javascript/effects.highlight.js'] %}
+{% set script_files = script_files + ['_static/resources/javascript/scrollTo.js'] %}
+{% set script_files = script_files + ['_static/resources/javascript/bootstrap-dropdown.js'] %}
+{% set script_files = script_files + ['_static/resources/javascript/bootstrap-dropdown-app.js'] %}
+{% set script_files = script_files + ['_static/resources/javascript/contentsFix.js'] %}
+{% set css_files = [ "_static/resources/stylesheets/bootstrap.css","_static/resources/stylesheets/base.css","_static/resources/stylesheets/doc.css","_static/resources/stylesheets/sphinx.css","_static/resources/stylesheets/prettify.css" ] %}
 
-{% block extrahead %}
-<!-- jquery -->
-<script src="{{ pathto('_static/resources/javascript/jquery.js', 1) }}" type="text/javascript" ></script>
-<script src="{{ pathto('_static/resources/javascript/bootstrap-dropdown.js', 1) }}" type="text/javascript" ></script>
-<script src="{{ pathto('_static/resources/javascript/bootstrap-dropdown-app.js', 1) }}" type="text/javascript" ></script>
-{% endblock %}
+{# do not display relbars #}
+{% block relbar1 %}{% endblock %}
+{% block relbar2 %}{% endblock %}
 
 {% block header %}
 <div class="top-bar">
@@ -41,23 +48,42 @@
   </div>
 </div>
 <div class="bottom">
-  <div class="container">
+  <div class="container" style="position: relative;">
 {% endblock %}
 
 {% block content %} 
-    <div class="row">
-      <div class="span11" style="margin-top:-45px">        
+    <div class="row" style="position: relative; clear: both;">
+      <div class="span16">
+        {%- if parents %}
+          <ul class="breadcrumb">
+            <li><a href="{{ pathto('index.html', 1) }}">ScalaIDE Documentation</a> » </li>
+            {%- for crumb in parents %}
+              <li><a href="{{ crumb.link }}">{{ crumb.title }}</a> » </li>
+            {%- endfor %}
+          </ul>
+        {%- endif %}        
+      </div>
+    </div>
+
+    <div class="row" style="position: relative; clear: both;">
+      <div class="span11 main-content">
         {{ body }}
-	  </div>
-      <div class="span5">        
-	  </div>	
+	    </div>
+      <div class="span5 sidebar">
+        <p class="contents-title">Contents</p>
+        <div id="scroller-anchor">
+          <div id="scroller">
+            <div id="toc"></div>
+          </div>
+        </div>            
+	    </div>	
     </div>
 {% endblock %}
 
 {% block footer %}
   </div>
 </div>
-<div class="footer">
+<div class="footer" style="position:relative; clear: both; ">
   <div class="container">
     <ul>
       <li><h5>Download</h5></li>
@@ -75,7 +101,9 @@
       <li><a href="https://github.com/scala-ide/scala-ide">Source Code</a></li>
       <li><a href="{{ pathto('/docs/dev/index.html', 1) }}">Developer Documentation</a></li>
       <li><a href="http://groups.google.com/group/scala-ide-dev">Developer Mailing List</a></li>      
-      <li><a href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/support/tickets">Report a Bug</a></li>      
+      <li><a href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/support/tickets">Report a Bug</a></li>
+      <li><a href="{{ pathto('/resources/pdfs/cla-individual.pdf', 1) }}">Individual CLA</a></li>
+      <li><a href="{{ pathto('/resources/pdfs/cla-org.pdf', 1) }}">Organization CLA</a></li>
     </ul>
     <ul>
       <li><img src="{{ pathto('_static/resources/images/watermark.png', 1) }}" align="center"/></li>
@@ -87,5 +115,7 @@
     </p>		
   </div>
 </div>
+<script type="text/javascript">
+  $('#toc').toc();
+</script>
 {% endblock %}
-

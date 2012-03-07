@@ -10,7 +10,6 @@ requests, in GitHub terminology) in the mainline.
 We assume you are comfortable with both Git and GitHub. If you need an introduction to these 
 essential tools, we suggest you to start by reading :ref:`git-github_page`.
 
-
 External contributors
 ---------------------
 
@@ -91,6 +90,19 @@ codebase, so that we can make it as simple as possible for new contributors to e
 __ http://help.github.com/send-pull-requests/
 
 Of course, after sending a pull request, you can immediately start working on a new task ;)
+
+.. note::
+
+  Please don't forget to fill in and send your `contributor license agreement </resources/pdfs/cla-individual.pdf>`_ 
+  (`corporate CLA </resources/pdfs/cla-individual.pdf>`_) to
+
+  |  Typesafe/Scala Solutions Sàrl
+  |  PSE-D
+  |  1015 Lausanne
+  |  Switzerland
+
+  or scan and email to `info@scala-ide.org <mailto:info@scala-ide.org>`_.
+
 
 
 Committers
