@@ -106,9 +106,9 @@
 </div>
 <div class="section" id="installer-play-2-0">
 <h2>Installer Play 2.0</h2>
-<p>Pour pouvoir créer une web application Play, Play framework est nécessaire. Si vous ne l&#8217;avez pas encore installé, suivez ces quelques étapes, ou utilisez la <a class="reference external" href="https://github.com/playframework/Play20/wiki/Installing">documentation de Play</a>.</p>
+<p>Pour pouvoir créer une web application Play, Play framework est nécessaire. Si vous ne l&#8217;avez pas encore installé, suivez ces quelques étapes, ou utilisez la <a class="reference external" href="http://www.playframework.org/documentation/2.0/Installing">documentation de Play</a>.</p>
 <ul>
-<li><p class="first">Téléchargez Play framework 2.0-RC1 sur <a class="reference external" href="http://www.playframework.org/2.0">http://www.playframework.org/2.0</a>.</p>
+<li><p class="first">Téléchargez Play framework 2.0 sur <a class="reference external" href="http://www.playframework.org/2.0">http://www.playframework.org/2.0</a>.</p>
 </li>
 <li><p class="first">Un-zippez l&#8217;archive dans votre répertoire préféré. Nous utiliserons <tt class="docutils literal"><span class="pre">/path/to/play20</span></tt> dans ce document.</p>
 </li>
@@ -209,7 +209,7 @@
 <li><p class="first">Ajoutez un paramètre supplémentaire à la vue <tt class="docutils literal"><span class="pre">index.scala.html</span></tt> et modifiez la mise en page.</p>
 <div class="highlight-scala"><div class="highlight"><pre><span class="o">@(</span><span class="n">message</span><span class="k">:</span> <span class="kt">String</span><span class="o">,</span> <span class="n">quote</span><span class="k">:</span> <span class="kt">models.Quote</span><span class="o">)</span>
 
-<span class="nd">@main</span><span class="o">(</span><span class="s">&quot;Welcome to Play 2.0 beta&quot;</span><span class="o">)</span> <span class="o">{</span>
+<span class="nd">@main</span><span class="o">(</span><span class="s">&quot;Welcome to Play 2.0&quot;</span><span class="o">)</span> <span class="o">{</span>
 
     <span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;@</span><span class="n">quote</span><span class="o">.</span><span class="n">text</span><span class="o">&lt;</span><span class="n">em</span><span class="o">&gt;</span> <span class="o">-</span> <span class="nd">@quote</span><span class="o">.</span><span class="n">author</span><span class="o">&lt;/</span><span class="n">em</span><span class="o">&gt;&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
 
