@@ -28,7 +28,7 @@ Setting up Play 2.0
 
 To be able to create a Play web application, the Play framework need to be installed. If you have not installed it already, follow this few steps, or use the `Play documentation`_.
 
-*   Download Play framework 2.0-RC1 from http://www.playframework.org/2.0.
+*   Download Play framework 2.0 from http://www.playframework.org/.
 
 *   Unzip it in your preferred location. Let's say ``/path/to/play20`` for the purpose of this document.
 
@@ -195,7 +195,7 @@ Let's change the main page to display a quote instead of the default page.
 
        @(message: String, quote: models.Quote)
        
-       @main("Welcome to Play 2.0 beta") {
+       @main("Welcome to Play 2.0") {
        
            <p>@quote.text<em> - @quote.author</em></p>
        
@@ -249,8 +249,7 @@ Luc Bourlier - `+Luc Bourlier`_ `@sky1uc`_
 .. _Scala IDE: http://www.scala-ide.org
 .. _Scala IDE documentation project: https://github.com/scala-ide/docs
 .. _Eclipse: http://www.eclipse.org/
-.. _Play documentation: https://github.com/playframework/Play20/wiki/Installing
-.. _eclipsify: https://github.com/musk/SbtEclipsify
+.. _Play documentation: http://www.playframework.org/documentation/2.0/Installing
 .. _sbteclipse: https://github.com/typesafehub/sbteclipse
 .. _embedded documentation: http://localhost:9000/@documentation/Home
 .. _documentation website: http://docs.scala-lang.org/
