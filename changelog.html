@@ -86,6 +86,19 @@
       <div class="span11 main-content">
         <div class="section" id="changelog">
 <h1>Changelog</h1>
+<div class="section" id="release-scala-ide-2-0-x">
+<h2>2.0.1 (release/scala-ide-2.0.x)</h2>
+<div class="section" id="rc01-not-released-yet">
+<h3>2.0.1-rc01 (not released yet)</h3>
+<ul class="simple">
+<li>Fixed open declaration from context menu. <a class="reference external" href="https://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000920">#1000920</a></li>
+<li>Improved closing braces management. <a class="reference external" href="https://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000926">#1000926</a></li>
+<li>Propagate fine-grained build information to downstream projects <a class="reference external" href="https://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000894">#1000894</a></li>
+<li>Fixed occasional problem with auto-import on code completion. <a class="reference external" href="https://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000854">#1000854</a></li>
+<li>Fixed problem linked to use compiler plugins, in particular the continuation plugin. <a class="reference external" href="https://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000901">#1000901</a>, <a class="reference external" href="https://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000908">#1000908</a>, <a class="reference external" href="https://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000917">#1000917</a></li>
+</ul>
+</div>
+</div>
 <div class="section" id="release-scala-ide-2-0-0">
 <h2>2.0.0 (release/scala-ide-2.0.0)</h2>
 <div class="section" id="final-released-2011-12-21">
@@ -107,7 +120,7 @@
 <li>Incremental compilation of Java files that depend on Scala files is now correctly handled. <a class="reference external" href="https://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000607">#1000607</a></li>
 <li>Corrected completion suggestions for overloaded methods. <a class="reference external" href="https://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000654">#1000654</a></li>
 <li>Make Scala Interpreter view more visible. <a class="reference external" href="https://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000791">#1000791</a></li>
-<li>Corrected unnecessary warning generated at startup (<em>Couldnt find a match for 2.9.2.r26031-b20111119033233 in . Using default.</em>). <a class="reference external" href="https://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000793">#1000793</a></li>
+<li>Corrected unnecessary warning generated at start-up (<em>Couldn&#8217;t find a match for 2.9.2.r26031-b20111119033233 in . Using default.</em>). <a class="reference external" href="https://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000793">#1000793</a></li>
 </ul>
 </div>
 <div class="section" id="rc02-released-2011-11-24">
@@ -143,7 +156,7 @@
 <li>Fixed a deadlock when the presentation compiler was awaken during builds.</li>
 <li>Presentation compiler is notified of changes in dependent projects (no spurious errors after rebuild).</li>
 <li>Fixed issue in the presentation compiler that caused implicit conversions not to be applied. <a class="reference external" href="https://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000647">#1000647</a></li>
-<li>Added classpath validator. An error is reported if the scala library is missing or the version is wrong. <a class="reference external" href="https://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000631">#1000631</a></li>
+<li>Added classpath validator. An error is reported if the Scala library is missing or the version is wrong. <a class="reference external" href="https://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000631">#1000631</a></li>
 <li>Improved refactoring (better support for organize/add imports). [by Mirko Stocker]</li>
 <li>Wizard for creating Scala Application uses now trait _App_ instead of the deprecated _Application_ trait. [by Matt Russel]</li>
 </ul>
@@ -180,7 +193,7 @@
 <li>better breakpoint support (fixes errors when setting breakpoints in traits coming from external libraries).</li>
 <li>better completions (works in many more situations, such as partially typed method names).</li>
 <li>better diagnostics (&#8216;no completions at all syndrome&#8217;) and re-setting the Java completions flag.</li>
-<li>better integration with Eclipse. When clicking a scala classfile on a stack trace report, the scala file editor will be correctly opened and functionalities such as navigation and setting breakpoint just work.</li>
+<li>better integration with Eclipse. When clicking a Scala classfile on a stack trace report, the Scala file editor will be correctly opened and functionalities such as navigation and setting breakpoint just work.</li>
 <li>moved Scala completions to its own category (instead of Java Proposals). This eliminates a source of incompatibilities with the Mylyn plugin. Now you can enable/disable Scala completions from Preferences, Java/Editor/ContentAssist/Advanced Scala Completions and Scala Completions (Java sources).</li>
 <li>added package object wizard.</li>
 </ul>
@@ -258,7 +271,7 @@
 <li>delete : support of scala-2.8.0</li>
 </ul>
 </div>
-<div class="section" id="id40">
+<div class="section" id="id47">
 <h3>1.0.0.20100804</h3>
 <ul class="simple">
 <li>Refactoring Support</li>

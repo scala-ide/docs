@@ -1,6 +1,26 @@
 Changelog
 =========
 
+2.0.1 (release/scala-ide-2.0.x)
+-------------------------------
+
+2.0.1-rc01 (not released yet)
+.............................
+
+* Fixed open declaration from context menu. `#1000920`_
+* Improved closing braces management. `#1000926`_
+* Propagate fine-grained build information to downstream projects `#1000894`_
+* Fixed occasional problem with auto-import on code completion. `#1000854`_
+* Fixed problem linked to use compiler plugins, in particular the continuation plugin. `#1000901`_, `#1000908`_, `#1000917`_
+
+.. _#1000854: https://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000854
+.. _#1000894: https://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000894
+.. _#1000901: https://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000901
+.. _#1000908: https://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000908
+.. _#1000917: https://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000917
+.. _#1000920: https://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000920
+.. _#1000926: https://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000926
+
 2.0.0 (release/scala-ide-2.0.0)
 -------------------------------
 
@@ -25,7 +45,7 @@ Changelog
 * Incremental compilation of Java files that depend on Scala files is now correctly handled. `#1000607`_
 * Corrected completion suggestions for overloaded methods. `#1000654`_
 * Make Scala Interpreter view more visible. `#1000791`_
-* Corrected unnecessary warning generated at startup (*Couldnt find a match for 2.9.2.r26031-b20111119033233 in . Using default.*). `#1000793`_
+* Corrected unnecessary warning generated at start-up (*Couldn't find a match for 2.9.2.r26031-b20111119033233 in . Using default.*). `#1000793`_
 
 .. _#1000607: https://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000607
 .. _#1000654: https://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000654
@@ -82,7 +102,7 @@ Changelog
 * Fixed a deadlock when the presentation compiler was awaken during builds.
 * Presentation compiler is notified of changes in dependent projects (no spurious errors after rebuild).
 * Fixed issue in the presentation compiler that caused implicit conversions not to be applied. `#1000647`_
-* Added classpath validator. An error is reported if the scala library is missing or the version is wrong. `#1000631`_
+* Added classpath validator. An error is reported if the Scala library is missing or the version is wrong. `#1000631`_
 * Improved refactoring (better support for organize/add imports). [by Mirko Stocker]
 * Wizard for creating Scala Application uses now trait _App_ instead of the deprecated _Application_ trait. [by Matt Russel]
 
@@ -134,7 +154,7 @@ Changelog
 * better breakpoint support (fixes errors when setting breakpoints in traits coming from external libraries).
 * better completions (works in many more situations, such as partially typed method names).
 * better diagnostics ('no completions at all syndrome') and re-setting the Java completions flag.
-* better integration with Eclipse. When clicking a scala classfile on a stack trace report, the scala file editor will be correctly opened and functionalities such as navigation and setting breakpoint just work.
+* better integration with Eclipse. When clicking a Scala classfile on a stack trace report, the Scala file editor will be correctly opened and functionalities such as navigation and setting breakpoint just work.
 * moved Scala completions to its own category (instead of Java Proposals). This eliminates a source of incompatibilities with the Mylyn plugin. Now you can enable/disable Scala completions from Preferences, Java/Editor/ContentAssist/Advanced Scala Completions and Scala Completions (Java sources).
 * added package object wizard.
 
