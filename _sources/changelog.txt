@@ -7,12 +7,14 @@ Changelog
 2.0.1-rc01 (not released yet)
 .............................
 
+* Fixed 'invalid thread access' when creating first Java file. `#1000738`_
 * Fixed open declaration from context menu. `#1000920`_
 * Improved closing braces management. `#1000926`_
 * Propagate fine-grained build information to downstream projects `#1000894`_
 * Fixed occasional problem with auto-import on code completion. `#1000854`_
 * Fixed problem linked to use compiler plugins, in particular the continuation plugin. `#1000901`_, `#1000908`_, `#1000917`_
 
+.. _#1000738: https://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000738
 .. _#1000854: https://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000854
 .. _#1000894: https://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000894
 .. _#1000901: https://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000901
