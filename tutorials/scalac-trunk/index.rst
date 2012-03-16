@@ -42,7 +42,7 @@ Setting up the Eclipse project
   cp project.SAMPLE .project
   cp classpath.SAMPLE .classpath
 
-*  Pull the binary dependencies::
+*  Pull the binary dependencies:
 
 .. code-block:: bash
 
@@ -53,7 +53,7 @@ Setting up the Eclipse project
 The sample project file configures only the scala *compiler* sources as part of your project. The default output directory is ``build/quick/classes/compiler``.
 
 Adding the Scala library *sources* to your project (optional)
----------------------------------------------------
+-------------------------------------------------------------
 
 If you need to develop the Scala library, you need to add the library source folder to the ``Java Build Path``. Since the default output directory is ``build/quick/classes/compiler``, you need to change that as well, so that library classes go instead to ``build/quick/classes/library``. 
 
@@ -128,7 +128,7 @@ If you are new to Eclipse, you should have a look at the :ref:`getting started <
 
 
 Swapping the Scala compiler inside Eclipse (*risky*)
-------------------------------------------
+----------------------------------------------------
 
 The Scala plugin packages a Scala compiler and library (since you are reading this, it's most probably the nightly version of master). There may be times when you'd like to change it for your own version: say, you are developing a new feature that has not yet been included in Scala master, or you fixed a bug and can't wait until the next nightly.
 
