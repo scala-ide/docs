@@ -152,6 +152,36 @@ If you run into trouble, the safest way out is to uninstall the plugin and re-in
   !SESSION 2012-03-02 15:27:37.712 -----------------------------------------------
 
 
+Separating Eclipse installation from workspace
+------------------------------------------------------------
+
+In order to have an Eclipse installation more resilient to update/installation issues one can easily separate the main Eclipse installation from the specific configuration. We will make the main Eclipse installation read-only to be absolutely sure that nothing interferes with it. The whole configuration will be placed by Eclipse in ``${HOME}/eclipse-conf``
+
+.. code-block:: bash
+
+  $ mkdir /opt/eclipse-3.7.1
+  unzip the contents of the original eclipse installation to this directory
+  make the whole directory read-only
+  $ mkdir ${HOME}/eclipse-conf
+  $ mv /opt/eclipse-3.7.1/eclipse.ini ${HOME}/eclipse-conf/eclipse.ini
+  $ mkdir ${HOME}/eclipse-workspace
+  $ mkdir ${HOME}/eclipse-conf/configuration
+
+With that setup in place you can start eclipse with the following command (we recommend creating a shell script for it or putting it in ``.desktop`` under Linux):
+
+.. code-block:: bash
+
+  $ /opt/eclipse-3.7.1/eclipse
+      --launcher.ini ${HOME}/eclipse-conf/eclipse.ini
+      -data ${HOME}/eclipse-workspace
+      -configuration ${HOME}/eclipse-conf/configuration
+      -clean
+
+That will install all the plugins, features and specific configuration under the ``${HOME}/eclipse-conf`` directory, so if you encounter any errors after installation/update of the plugin, you can easilly purge the invalid data by simply cleaning up the directory (Eclipse sometimes caches installation details so it may not be so easy to clean things up in a standard setup).
+
+Remember to be consistent when changing the directories names in the above configuration.
+
+
 Feedback
 --------
 
