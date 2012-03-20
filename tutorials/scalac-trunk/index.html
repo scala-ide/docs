@@ -211,6 +211,29 @@ Uninstalling org.scala-ide.sdt.feature.feature.group 2.1.0.nightly-2_10-20120302
 </pre></div>
 </div>
 </div>
+<div class="section" id="separating-eclipse-installation-from-workspace">
+<h2>Separating Eclipse installation from workspace</h2>
+<p>In order to have an Eclipse installation more resilient to update/installation issues one can easily separate the main Eclipse installation from the specific configuration. We will make the main Eclipse installation read-only to be absolutely sure that nothing interferes with it. The whole configuration will be placed by Eclipse in <tt class="docutils literal"><span class="pre">${HOME}/eclipse-conf</span></tt></p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>mkdir /opt/eclipse-3.7.1
+unzip the contents of the original eclipse installation to this directory
+make the whole directory <span class="nb">read</span>-only
+<span class="nv">$ </span>mkdir <span class="k">${</span><span class="nv">HOME</span><span class="k">}</span>/eclipse-conf
+<span class="nv">$ </span>mv /opt/eclipse-3.7.1/eclipse.ini <span class="k">${</span><span class="nv">HOME</span><span class="k">}</span>/eclipse-conf/eclipse.ini
+<span class="nv">$ </span>mkdir <span class="k">${</span><span class="nv">HOME</span><span class="k">}</span>/eclipse-workspace
+<span class="nv">$ </span>mkdir <span class="k">${</span><span class="nv">HOME</span><span class="k">}</span>/eclipse-conf/configuration
+</pre></div>
+</div>
+<p>With that setup in place you can start eclipse with the following command (we recommend creating a shell script for it or putting it in <tt class="docutils literal"><span class="pre">.desktop</span></tt> under Linux):</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>/opt/eclipse-3.7.1/eclipse
+    --launcher.ini <span class="k">${</span><span class="nv">HOME</span><span class="k">}</span>/eclipse-conf/eclipse.ini
+    -data <span class="k">${</span><span class="nv">HOME</span><span class="k">}</span>/eclipse-workspace
+    -configuration <span class="k">${</span><span class="nv">HOME</span><span class="k">}</span>/eclipse-conf/configuration
+    -clean
+</pre></div>
+</div>
+<p>That will install all the plugins, features and specific configuration under the <tt class="docutils literal"><span class="pre">${HOME}/eclipse-conf</span></tt> directory, so if you encounter any errors after installation/update of the plugin, you can easilly purge the invalid data by simply cleaning up the directory (Eclipse sometimes caches installation details so it may not be so easy to clean things up in a standard setup).</p>
+<p>Remember to be consistent when changing the directories names in the above configuration.</p>
+</div>
 <div class="section" id="feedback">
 <h2>Feedback</h2>
 <p>This guide is managed through in the <a class="reference external" href="https://github.com/scala-ide/docs">Scala IDE documentation project</a> on github.
