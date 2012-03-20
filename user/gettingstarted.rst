@@ -8,11 +8,7 @@ Requirements
 
 * the Java Development Kit, version 1.5.0 or newer. We recommend the latest 1.6.x version, there have been issues reported when using Eclipse and Java 7.
 
-* Eclipse, including the JDT. Either the "Classic" or "Eclipse for Java Developers" is sufficient.
-
-  * Scala IDE is officially supporting Eclipse 3.6.2.
-
-  * Scala IDE can be installed on Eclipse 3.7, but not all features are working perfectly. For example, discovery of unit tests is not working (ticket `1000782`__).
+* Eclipse, including the JDT. Either the "Classic" or "Eclipse for Java Developers" is sufficient.  Scala IDE can be installed on both `Eclipse 3.6 (Helios)`_ and `Eclipse 3.7 (Indigo)`_. There is one known issue specific to using Scala IDE on Indigo, releated to tests discovery (ticket `10007821`__).
 
 __ https://www.assembla.com/spaces/scala-ide/tickets/1000782
 
@@ -100,6 +96,8 @@ Check the :ref:`faq_known-issues` section.
 
 .. _current section: http://scala-ide.org/download/current.html
 .. _eclipsify: https://github.com/musk/SbtEclipsify/tree/0.8.0
+.. _Eclipse 3.6 (Helios): http://www.eclipse.org/downloads/packages/release/helios/sr2
+.. _Eclipse 3.7 (Indigo): http://www.eclipse.org/downloads/
 .. _m2eclipse: http://www.eclipse.org/m2e/
 .. _m2eclipse-scala: https://github.com/sonatype/m2eclipse-scala
 .. _maven: http://maven.apache.org/
