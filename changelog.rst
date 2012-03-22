@@ -4,8 +4,8 @@ Changelog
 2.0.1 (release/scala-ide-2.0.x)
 -------------------------------
 
-2.0.1-rc01 (not released yet)
-.............................
+2.0.1-rc01 (released: 2012-03-22)
+.................................
 
 * Fixed 'invalid thread access' when creating first Java file. `#1000738`_
 * Fixed open declaration from context menu. `#1000920`_
