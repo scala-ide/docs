@@ -4,6 +4,11 @@ Changelog
 2.0.1 (release/scala-ide-2.0.x)
 -------------------------------
 
+2.0.1-rc02 (released: 2012-03-27)
+.................................
+
+* Bundled with Scala 2.9.2 RC2.
+
 2.0.1-rc01 (released: 2012-03-22)
 .................................
 
@@ -13,6 +18,7 @@ Changelog
 * Propagate fine-grained build information to downstream projects `#1000894`_
 * Fixed occasional problem with auto-import on code completion. `#1000854`_
 * Fixed problem linked to use compiler plugins, in particular the continuation plugin. `#1000901`_, `#1000908`_, `#1000917`_
+* Bundled with Scala 2.9.2 RC1.
 
 .. _#1000738: https://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000738
 .. _#1000854: https://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000854
