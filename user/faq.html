@@ -94,9 +94,34 @@
 <h1>Frequently Asked Questions</h1>
 <div class="section" id="general">
 <h2>General</h2>
+<div class="section" id="what-eclipse-platforms-are-supported">
+<h3>What Eclipse Platforms are supported?</h3>
+<p>The Scala IDE 2.0 officially supports both <a class="reference external" href="http://www.eclipse.org/downloads/packages/release/helios/sr2">Eclipse 3.6 (Helium)</a> and <a class="reference external" href="http://www.eclipse.org/downloads/">Eclipse 3.7 (Indigo)</a>.</p>
+</div>
+<div class="section" id="what-eclipse-package-should-i-use">
+<h3>What Eclipse package should I use?</h3>
+<p>The Scala IDE can be installed effortless on any of the below Eclipse packages:</p>
+<ul class="simple">
+<li>Eclipse Classic</li>
+<li>Eclipse IDE for Java EE Developers</li>
+<li>Eclipse IDE for Java Developers</li>
+<li>SpringSource Tool Suite</li>
+</ul>
+<p>If you are using one of the above Eclipse packages you are all set and ready to <a class="reference internal" href="gettingstarted.html#gettingstarted-getting-started"><em>install the Scala
+IDE</em></a>.</p>
+<p>In case you are using a different Eclipse package (e.g., Eclipse IDE for C/C++ Developers), don&#8217;t panic,
+the Scala IDE has only one dependency and it&#8217;s a two minutes job to update your Eclipse environment and
+be ready to start your Scala journey.</p>
+<p>Start by installing the Eclipse JDT (Eclipse Java Development Tools). To do so, open Eclipse and go
+to the <tt class="docutils literal"><span class="pre">Help</span> <span class="pre">&gt;</span> <span class="pre">Install</span> <span class="pre">New</span> <span class="pre">Software</span></tt> menu, select the eclipse update site (e.g. &#8220;Indigo -
+<a class="reference external" href="http://download.eclipse.org/releases/indigo">http://download.eclipse.org/releases/indigo</a>&#8221;) and, under the Programming Languages section, select
+Eclipse Java Development Tools. Install it.</p>
+<p>Now that the JDT is installed, go ahead and <a class="reference internal" href="gettingstarted.html#gettingstarted-getting-started"><em>install the Scala IDE</em></a>.</p>
+</div>
 <div class="section" id="i-have-an-existing-java-project-and-i-wish-to-add-scala-files-how-do-i-convince-eclipse-to-work-with-scala">
 <h3>I have an existing Java project and I wish to add Scala files. How do I convince Eclipse to work with Scala?</h3>
-<p>Right click on the project in the Package Explorer view, and in the context menu select <tt class="docutils literal"><span class="pre">Configure</span> <span class="pre">→</span> <span class="pre">Add</span> <span class="pre">Scala</span> <span class="pre">Nature</span></tt>.</p>
+<p>Right click on the project in the Package Explorer view, and in the context menu select
+<tt class="docutils literal"><span class="pre">Configure</span> <span class="pre">→</span> <span class="pre">Add</span> <span class="pre">Scala</span> <span class="pre">Nature</span></tt>.</p>
 </div>
 <div class="section" id="i-am-running-out-of-stack-space-in-eclipse-how-do-i-increase-the-stack-size">
 <h3>I am running out of stack space in Eclipse.  How do I increase the stack size?</h3>
@@ -155,7 +180,7 @@
 <p>The code contains Unicode niceties like <tt class="docutils literal"><span class="pre">←</span></tt> and <tt class="docutils literal"><span class="pre">⇒</span></tt>, but the editor doesn&#8217;t seem to be able to display them, and errors are reported at their location.</p>
 <p><strong>Solution</strong>:</p>
 <p>The operating system is not using UTF-8 by default, and its default encoding is used inside Eclipse.</p>
-<p>The encoding used to open files can be configured at different levels. Most of the time, setting Eclipse default encoding to UTF-8 in <tt class="docutils literal"><span class="pre">General</span> <span class="pre">→</span> <span class="pre">Workspace</span></tt> in the preferences <a class="footnote-reference" href="#preferences" id="id2">[1]</a> is enough. But in some case, the wrong encoding might also have been set in the project properties, or even the file properties.</p>
+<p>The encoding used to open files can be configured at different levels. Most of the time, setting Eclipse default encoding to UTF-8 in <tt class="docutils literal"><span class="pre">General</span> <span class="pre">→</span> <span class="pre">Workspace</span></tt> in the preferences <a class="footnote-reference" href="#preferences" id="id4">[1]</a> is enough. But in some case, the wrong encoding might also have been set in the project properties, or even the file properties.</p>
 </div>
 <div class="section" id="red-screen-of-death-red-squiggles-everywhere">
 <h3>Red screen of death (red squiggles everywhere)</h3>
@@ -231,7 +256,7 @@ The prime suspect is Maven Dependencies, which can download and add an incompati
 <table class="docutils footnote" frame="void" id="preferences" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id2">[1]</a></td><td>The Eclipse preferences are accessible using <tt class="docutils literal"><span class="pre">Windows</span> <span class="pre">→</span> <span class="pre">Preferences</span></tt> (or <tt class="docutils literal"><span class="pre">Eclipse</span> <span class="pre">→</span> <span class="pre">Preferences</span></tt> on Mac osX).</td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id4">[1]</a></td><td>The Eclipse preferences are accessible using <tt class="docutils literal"><span class="pre">Windows</span> <span class="pre">→</span> <span class="pre">Preferences</span></tt> (or <tt class="docutils literal"><span class="pre">Eclipse</span> <span class="pre">→</span> <span class="pre">Preferences</span></tt> on Mac osX).</td></tr>
 </tbody>
 </table>
 </div>

@@ -4,10 +4,44 @@ Frequently Asked Questions
 General
 -------
 
+What Eclipse Platforms are supported?
+.....................................
+
+The Scala IDE 2.0 officially supports both `Eclipse 3.6 (Helium)`__ and `Eclipse 3.7 (Indigo)`__. 
+
+__ http://www.eclipse.org/downloads/packages/release/helios/sr2
+__ http://www.eclipse.org/downloads/
+
+What Eclipse package should I use?
+..................................
+
+The Scala IDE can be installed effortless on any of the below Eclipse packages:
+
+* Eclipse Classic
+* Eclipse IDE for Java EE Developers
+* Eclipse IDE for Java Developers
+* SpringSource Tool Suite
+
+If you are using one of the above Eclipse packages you are all set and ready to :ref:`install the Scala 
+IDE <gettingstarted_getting-started>`.
+
+In case you are using a different Eclipse package (e.g., Eclipse IDE for C/C++ Developers), don't panic, 
+the Scala IDE has only one dependency and it's a two minutes job to update your Eclipse environment and 
+be ready to start your Scala journey. 
+
+Start by installing the Eclipse JDT (Eclipse Java Development Tools). To do so, open Eclipse and go 
+to the ``Help > Install New Software`` menu, select the eclipse update site (e.g. "Indigo - 
+http://download.eclipse.org/releases/indigo") and, under the Programming Languages section, select 
+Eclipse Java Development Tools. Install it.
+
+Now that the JDT is installed, go ahead and :ref:`install the Scala IDE <gettingstarted_getting-started>`.
+
+
 I have an existing Java project and I wish to add Scala files. How do I convince Eclipse to work with Scala?
 ............................................................................................................
 
-Right click on the project in the Package Explorer view, and in the context menu select ``Configure → Add Scala Nature``.
+Right click on the project in the Package Explorer view, and in the context menu select 
+``Configure → Add Scala Nature``.
 
 I am running out of stack space in Eclipse.  How do I increase the stack size?
 ..............................................................................
@@ -60,6 +94,7 @@ Use this `update site`__ to get the latest version.
 After installation, re-importing your projects should get them configured correctly.
 
 __ http://alchim31.free.fr/m2e-scala/update-site/
+
 
 Scala Interpreter
 -----------------
