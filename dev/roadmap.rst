@@ -15,8 +15,8 @@ The targeted roadmap, *with is the name of the lead contributor(s) for each item
 **Milestone 1** - :strikethrough:`mid-March` delayed to mid-April 2012
 
 * Move to Eclipse Indigo - *Eric Molitor* - `#1000852`__ |done|
-* Implicit highlighting - *Jin Mingjian, David Bernard and Mirko Stocker* - `#1000628`__ |progress|
-* Semantic highlighting - *Matt Russell* - `#1000591`__ |progress|
+* Implicit highlighting - *Jin Mingjian, David Bernard and Mirko Stocker* - `#1000628`__ |done| |testing|
+* Semantic highlighting - *Matt Russell* - `#1000591`__ |done| |testing|
 * `Move Refactoring`__ - *Mirko Stocker* - |done|
 * `Improved logging`__ - *Typesafe Team* - `#1000880`__ - |done| 
 * Design and implement a Scala model - *Typesafe team* - `#1000861`__ - |progress|
@@ -82,3 +82,5 @@ __ http://www.assembla.com/spaces/scala-ide/tickets/1000866
 .. |done| replace:: :raw-html:`<span class="label success">done</span>`
 
 .. |progress| replace:: :raw-html:`<span class="label warning">in progress</span>`
+
+.. |testing| replace:: :raw-html:`<span class="label info">testing</span>`
