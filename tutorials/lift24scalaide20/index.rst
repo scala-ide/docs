@@ -9,11 +9,11 @@ This guide will show you how to configure a Lift web application to import it in
 Prerequisites
 .............
 
-*   `Eclipse`_ 3.7.1 (Indigo) with Scala IDE for Scala 2.9 installed (update site: http://download.scala-ide.org/releases-29/stable/site).
+*   `Eclipse`_ 3.7.2 (Indigo) with Scala IDE for Scala 2.9 installed (update site: http://download.scala-ide.org/releases-29/stable/site).
 
     Check the :ref:`getting started <gettingstarted_getting-started>` page for instructions on how to install Scala IDE.
     
-*   `sbt`_ 0.11 installed.
+*   Simple Build Tool `sbt`_ 0.11.2 installed.
 
     Check the `sbt Getting Started Guide`_ for instructions on how to install sbt.
 
@@ -34,9 +34,36 @@ Start by creating a basic Lift project
 
 *	Unzip it and copy the folder ``scala_29/lift_basic`` to your preferred location. Let’s say ``/path/to/lift_basic`` for the purpose of this document.
 
-*	The lift example projects still use sbt 0.7.5 but we will use the sbteclipse plugin to configure our project for Eclipse. As this plugin only works with sbt 0.10 and above we will replace the sbt configuration files coming with the ``lift_basic`` project with one compatible with sbt 0.11. To do so go to ``/path/to/lift_basic`` and delete the ``project`` folder as well as the files ``sbt-launcher.jar``, ``sbt`` and ``sbt.bat``
+*	The lift example projects still use sbt 0.7.5 but we will use the sbteclipse plugin to configure our project for Eclipse. As this plugin only works with sbt 0.10 and above we will replace the sbt configuration files in the ``lift_basic`` project with one compatible with sbt 0.11.2. To do so go to ``/path/to/lift_basic`` and delete the ``project`` folder as well as the files ``sbt-launcher.jar``, ``sbt`` and ``sbt.bat``. Your ``/path/to/lift_basic`` folder should now look like this:
 
-*	Create a file ``build.sbt`` with the following contents.
+    .. image:: images/01-lift_basic_folder_structure.png
+       :alt: lift-basic folder structure
+       :target: ../../_images/01-lift_basic_folder_structure.png
+
+*	Create a file ``build.sbt`` with the following contents:
+	
+    .. code-block:: scala
+
+         name := "lift-basic"
+         
+         organization := "my.company"
+         
+         version := "0.1-SNAPSHOT"
+         
+         scalaVersion := "2.9.1"
+         
+         libraryDependencies ++= {
+         	val liftVersion = "2.4"
+         	Seq(
+         		"net.liftweb" %% "lift-webkit" % liftVersion % "compile",
+         		"net.liftweb" %% "lift-mapper" % liftVersion % "compile",
+         		"org.mortbay.jetty" % "jetty" % "6.1.26" % "test",
+         		"junit" % "junit" % "4.7" % "test",
+         		"ch.qos.logback" % "logback-classic" % "0.9.26",
+         		"org.scala-tools.testing" %% "specs" % "1.6.9" % "test",
+         		"com.h2database" % "h2" % "1.2.147"
+         	)
+         }
 
 *	In a console go to ``/path/to/lift_basic`` and run ``sbt``.
 
@@ -45,13 +72,52 @@ Start by creating a basic Lift project
 Configuring the Lift project for Scala IDE
 ------------------------------------------
 
-To be able to import the project into Eclipse we are going to use the `sbteclipse`_ plugin for sbt to generate the Eclipse project files (.project, .classpath and optionally files in the .settings/ folder).
+To be able to import the project into Eclipse we are going to use the `sbteclipse`_ plugin for sbt to generate the Eclipse project files (.project, .classpath, etc.).
 
-*	In your home folder create the folder structure ``.sbt/plugins``. In it create a file ``build.sbt`` with the following contents. For sbt version 0.11.2 (and higher) use the following. This will make the sbteclipse plugin globally available in all your sbt projects. You can also install the sbteclipse plugin only for this particular project; see the `sbteclipse wiki`_ for more information on how to install sbteclipse as a global vs a project local plugin.
+*	In your home folder create the ``.sbt/plugins/build.sbt`` with the following contents:
+
+	.. code-block:: scala
+	
+		addSbtPlugin("com.typesafe.sbteclipse" % "sbteclipse-plugin" % "2.0.0")
+		
+	This will make the sbteclipse plugin globally available in all your sbt projects. You can also install the sbteclipse plugin only for a particular project; see the `sbteclipse wiki`_ for more information on how to install sbteclipse as a global vs. a project local plugin.
+
+* 	Open ``/path/to/lift_basic/build.sbt`` and add the following line after ``scalaVersion := 2.9.1``:
+
+	.. code-block:: scala
+	
+		EclipseKeys.createSrc := EclipseCreateSrc.Default + EclipseCreateSrc.Resource
+	
+	Your ``/path/to/lift_basic/build.sbt`` should now look like this:
+	
+    .. code-block:: scala
+
+         name := "lift-basic"
+         
+         organization := "my.company"
+         
+         version := "0.1-SNAPSHOT"
+         
+         scalaVersion := "2.9.1"
+         
+         EclipseKeys.createSrc := EclipseCreateSrc.Default + EclipseCreateSrc.Resource
+         
+         libraryDependencies ++= {
+         	val liftVersion = "2.4"
+         	Seq(
+         		"net.liftweb" %% "lift-webkit" % liftVersion % "compile",
+         		"net.liftweb" %% "lift-mapper" % liftVersion % "compile",
+         		"org.mortbay.jetty" % "jetty" % "6.1.26" % "test",
+         		"junit" % "junit" % "4.7" % "test",
+         		"ch.qos.logback" % "logback-classic" % "0.9.26",
+         		"org.scala-tools.testing" %% "specs" % "1.6.9" % "test",
+         		"com.h2database" % "h2" % "1.2.147"
+         	)
+         }
 
 *	In a console go to ``/path/to/lift_basic`` and run ``sbt``.
 
-*	Once sbt has successfully started run the ``eclipse with-sources`` task to generate the Eclipse project files.
+*	Once sbt has successfully started run the ``eclipse`` task to generate the Eclipse project files. Optionally you can run ``eclipse with-source=true`` to tell sbteclipse to try to download source and doc artifacts and create Eclipse source and doc attachments for library dependencies.
 
 Importing the Lift project into Scala IDE
 -----------------------------------------
@@ -59,6 +125,16 @@ Importing the Lift project into Scala IDE
 Everything is setup, it is time to import the project into the IDE.
 
 *	Import the Lift project as an ``Existing Project`` into your Workspace (``File --> Import --> Existing Projects into Workspace``).
+
+    .. image:: images/02-import_project_dialog.png
+       :alt: eclipes import project dialog
+       :target: ../../_images/02-import_project_dialog.png
+
+*	Your Eclipse project structure should now look like this:
+
+    .. image:: images/03-eclipse_project_structure.png
+       :alt: eclipes project structure
+       :target: ../../_images/03-eclipse_project_structure.png
 
 Running and Debugging the Lift project in Scala IDE
 ---------------------------------------------------
@@ -74,14 +150,18 @@ Optional: enabling JRebel support for the Lift project in Scala IDE
 
 To enable JRebel support for your Lift project in Scala IDE you have to install the `JRebel Eclipse Plugin`_. For more information on JRebel see `JRebel website`_.
 
-*	Once the JRebel plugin is installed and configured open the Run Configuration for ``RunWebApp.scala``, switch to the ``JRebel`` tab and activate JRebel.
+*	Once the JRebel plugin is installed and configured open the Run Configuration for ``RunWebApp.scala`` (Right click ``RunWebApp.scala`` in Eclipse and select ``Run As --> Run Configurations...``). Switch to the ``JRebel`` tab and activate JRebel:
 
-*	Now when running or debugging ``RunWebApp.scala`` JRebel will pick up your code changes and automatically replace them in the running application without the need for redeploying or restarting.
+    .. image:: images/04-eclipse_run_configuration_jrebel.png
+       :alt: eclipse run configuration jrebel tab
+       :target: ../../_images/04-eclipse_run_configuration_jrebel.png
+
+*	Now when debugging ``RunWebApp.scala`` JRebel will pick up your code changes and automatically replace them in the running application without the need for redeploying or restarting.
 
 Going further
 -------------
 
-You now have all you need to create great web applications with Lift 2.4 and Scala.
+You now have all you need to create web applications with Lift 2.4 and Scala.
 
 For more information about Lift, check out the `Lift wiki`_.
 
