@@ -82,7 +82,7 @@ To be able to import the project into Eclipse we are going to use the `sbteclips
 		
 	This will make the sbteclipse plugin globally available in all your sbt projects. You can also install the sbteclipse plugin only for a particular project; see the `sbteclipse wiki`_ for more information on how to install sbteclipse as a global vs. a project local plugin.
 
-* 	Open ``/path/to/lift_basic/build.sbt`` and add the following line after ``scalaVersion := 2.9.1``:
+* 	Open ``/path/to/lift_basic/build.sbt`` and add the following line:
 
 	.. code-block:: scala
 	
