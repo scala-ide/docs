@@ -42,7 +42,7 @@ Setting up the Eclipse project
   cp project.SAMPLE .project
   cp classpath.SAMPLE .classpath
 
-*  Pull the binary dependencies::
+*  Pull the binary dependencies:
 
 .. code-block:: bash
 
@@ -53,7 +53,7 @@ Setting up the Eclipse project
 The sample project file configures only the scala *compiler* sources as part of your project. The default output directory is ``build/quick/classes/compiler``.
 
 Adding the Scala library *sources* to your project (optional)
----------------------------------------------------
+-------------------------------------------------------------
 
 If you need to develop the Scala library, you need to add the library source folder to the ``Java Build Path``. Since the default output directory is ``build/quick/classes/compiler``, you need to change that as well, so that library classes go instead to ``build/quick/classes/library``. 
 
@@ -128,7 +128,7 @@ If you are new to Eclipse, you should have a look at the :ref:`getting started <
 
 
 Swapping the Scala compiler inside Eclipse (*risky*)
-------------------------------------------
+----------------------------------------------------
 
 The Scala plugin packages a Scala compiler and library (since you are reading this, it's most probably the nightly version of master). There may be times when you'd like to change it for your own version: say, you are developing a new feature that has not yet been included in Scala master, or you fixed a bug and can't wait until the next nightly.
 
@@ -150,6 +150,36 @@ If you run into trouble, the safest way out is to uninstall the plugin and re-in
   Unnstalling..
   Uninstalling org.scala-ide.sdt.feature.feature.group 2.1.0.nightly-2_10-201203020544-24a4734.
   !SESSION 2012-03-02 15:27:37.712 -----------------------------------------------
+
+
+Separating Eclipse installation from workspace
+------------------------------------------------------------
+
+In order to have an Eclipse installation more resilient to update/installation issues one can easily separate the main Eclipse installation from the specific configuration. We will make the main Eclipse installation read-only to be absolutely sure that nothing interferes with it. The whole configuration will be placed by Eclipse in ``${HOME}/eclipse-conf``
+
+.. code-block:: bash
+
+  $ mkdir /opt/eclipse-3.7.1
+  unzip the contents of the original eclipse installation to this directory
+  make the whole directory read-only
+  $ mkdir ${HOME}/eclipse-conf
+  $ mv /opt/eclipse-3.7.1/eclipse.ini ${HOME}/eclipse-conf/eclipse.ini
+  $ mkdir ${HOME}/eclipse-workspace
+  $ mkdir ${HOME}/eclipse-conf/configuration
+
+With that setup in place you can start eclipse with the following command (we recommend creating a shell script for it or putting it in ``.desktop`` under Linux):
+
+.. code-block:: bash
+
+  $ /opt/eclipse-3.7.1/eclipse
+      --launcher.ini ${HOME}/eclipse-conf/eclipse.ini
+      -data ${HOME}/eclipse-workspace
+      -configuration ${HOME}/eclipse-conf/configuration
+      -clean
+
+That will install all the plugins, features and specific configuration under the ``${HOME}/eclipse-conf`` directory, so if you encounter any errors after installation/update of the plugin, you can easilly purge the invalid data by simply cleaning up the directory (Eclipse sometimes caches installation details so it may not be so easy to clean things up in a standard setup).
+
+Remember to be consistent when changing the directories names in the above configuration.
 
 
 Feedback

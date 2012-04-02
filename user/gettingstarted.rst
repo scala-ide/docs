@@ -8,11 +8,7 @@ Requirements
 
 * the Java Development Kit, version 1.5.0 or newer. We recommend the latest 1.6.x version, there have been issues reported when using Eclipse and Java 7.
 
-* Eclipse, including the JDT. Either the "Classic" or "Eclipse for Java Developers" is sufficient.
-
-  * Scala IDE is officially supporting Eclipse 3.6.2.
-
-  * Scala IDE can be installed on Eclipse 3.7, but not all features are working perfectly. For example, discovery of unit tests is not working (ticket `1000782`__).
+* Eclipse, including the JDT. Either the "Classic" or "Eclipse for Java Developers" is sufficient.  Scala IDE can be installed on both `Eclipse 3.6 (Helios)`_ and `Eclipse 3.7 (Indigo)`_. There is one known issue specific to using Scala IDE on Indigo, releated to tests discovery (ticket `10007821`__).
 
 __ https://www.assembla.com/spaces/scala-ide/tickets/1000782
 
@@ -37,7 +33,7 @@ Choose a name for the update site (`Scala IDE` is an obvious choice). Then read 
 Choosing what version to install
 ................................
 
-`download.scala-ide.org`__ provides the URLs of all available update sites. The release ones are in the first section. Scala IDE is linked to specific version of Scala, so you have to decide which one you are going to use:
+The list of URLs of the different update sites are available in the download area. The release ones are in the `current section`_. Scala IDE is linked to specific version of Scala, so you have to decide which one you are going to use:
 
 * **release-29** provides support for projects using Scala 2.9.x (2.9.0-1 or 2.9.1). *This is the current version of Scala. Pick this one if you are unsure*.
 
@@ -46,8 +42,6 @@ Choosing what version to install
 If you want to live on the bleeding edge (like using Scala 2.10.x or Scala IDE master), check the description of each update site to find the one that fits your needs.
 
 The version of Scala used inside Scala IDE cannot be chosen per project. So if you want to work with a project using different version of Scala (like 2.8.2 and 2.9.1), you need different installation of Scala IDE.
-
-__ http://download.scala-ide.org
 
 Finishing installation
 ......................
@@ -100,7 +94,10 @@ Troubleshooting
 Check the :ref:`faq_known-issues` section.
 
 
+.. _current section: http://scala-ide.org/download/current.html
 .. _eclipsify: https://github.com/musk/SbtEclipsify/tree/0.8.0
+.. _Eclipse 3.6 (Helios): http://www.eclipse.org/downloads/packages/release/helios/sr2
+.. _Eclipse 3.7 (Indigo): http://www.eclipse.org/downloads/
 .. _m2eclipse: http://www.eclipse.org/m2e/
 .. _m2eclipse-scala: https://github.com/sonatype/m2eclipse-scala
 .. _maven: http://maven.apache.org/
