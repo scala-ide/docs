@@ -10,9 +10,9 @@ Scala IDE for Eclipse - Helium
 
 It is an ambitious plan, specially for milestone 1. The idea being to work on the most complex change first, the Scala model, and start on other items, so they can be refined by the time of the final release.
 
-The targeted roadmap, *with is the name of the lead contributor(s) for each item*:
+The targeted roadmap, *with the name of the lead contributor(s) for each item*:
 
-**Milestone 1** - :strikethrough:`mid-March` delayed to mid-April 2012
+**Milestone 1** - :strikethrough:`mid-March` delayed to April 2012
 
 * Move to Eclipse Indigo - *Eric Molitor* - `#1000852`__ |done|
 * Implicit highlighting - *Jin Mingjian, David Bernard and Mirko Stocker* - `#1000628`__ |done| |testing|
@@ -20,7 +20,7 @@ The targeted roadmap, *with is the name of the lead contributor(s) for each item
 * `Move Refactoring`__ - *Mirko Stocker* - |done|
 * `Improved logging`__ - *Typesafe Team* - `#1000880`__ - |done| 
 * Design and implement a Scala model - *Typesafe team* - `#1000861`__ - |progress|
-* Create an abstraction layer with the Scala compiler - *Typesafe team* - `#1000862`__
+* Create an abstraction layer with the Scala compiler - *Typesafe team* - `#1000862`__ - |progress|
 * `Smoother step over/in in the debugger`__ - *Typesafe team* - `#1000864`__ - |progress|
 * :strikethrough:`Extract the presentation compiler in its own project` - *Typesafe team* - `#1000867`__ (Reconsidered: The Presentation Compiler is too coupled to the compiler.)
 
