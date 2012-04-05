@@ -11,13 +11,13 @@ M1 (not released)
 
 .. _#1000855: https://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000855
 
+2.0.1 (release/scala-ide-2.0.x)
+-------------------------------
+
 2.0.1-rc03 (released: 2012-04-05)
 .................................
 
 * Bundled with Scala 2.9.2 RC3.
-
-2.0.1 (release/scala-ide-2.0.x)
--------------------------------
 
 2.0.1-rc02 (released: 2012-03-27)
 .................................
