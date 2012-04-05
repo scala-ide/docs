@@ -1,6 +1,16 @@
 Changelog
 =========
 
+Helium (master)
+---------------
+
+M1 (not released)
+.................
+
+* Fixed incomplete package problem with auto-import on code completion. `#1000855`_
+
+.. _#1000855: https://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000855
+
 2.0.1 (release/scala-ide-2.0.x)
 -------------------------------
 
