@@ -175,6 +175,8 @@ Feedback
 This guide is managed through in the `Scala IDE documentation project`_ on github.
 Please use github ticket and pull request system for feedback.
 
+heapifyman
+
 
 .. _Scala IDE: http://www.scala-ide.org
 .. _Scala IDE documentation project: https://github.com/scala-ide/docs
