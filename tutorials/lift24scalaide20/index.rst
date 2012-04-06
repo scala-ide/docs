@@ -34,7 +34,7 @@ Start by creating a basic Lift project
 
 *	Unzip it and copy the folder ``scala_29/lift_basic`` to your preferred location. Let’s say ``/path/to/lift_basic`` for the purpose of this document.
 
-*	The lift example projects still use sbt 0.7.5 but we will use the sbteclipse plugin to configure our project for Eclipse. As this plugin only works with sbt 0.10 and above we will replace the sbt configuration files in the ``lift_basic`` project with one compatible with sbt 0.11.2. To do so go to ``/path/to/lift_basic`` and delete the ``project`` folder as well as the files ``sbt-launcher.jar``, ``sbt`` and ``sbt.bat``. Your ``/path/to/lift_basic`` folder should now look like this:
+*	The lift example projects still use sbt 0.7.5 but we will use the sbteclipse plugin to configure our project for Eclipse. As this plugin only works with sbt 0.10 and above we will replace the sbt configuration files in the ``lift_basic`` project with one compatible with sbt 0.11.2. To do so go to ``/path/to/lift_basic`` and delete everything except the ``src`` folder. Your ``/path/to/lift_basic`` folder should now look like this:
 
     .. image:: images/01-lift_basic_folder_structure.png
        :alt: lift-basic folder structure
@@ -74,7 +74,7 @@ Configuring the Lift project for Scala IDE
 
 To be able to import the project into Eclipse we are going to use the `sbteclipse`_ plugin for sbt to generate the Eclipse project files (.project, .classpath, etc.).
 
-*	In your home folder create the ``.sbt/plugins/build.sbt`` with the following contents:
+*	In your home folder create the file ``.sbt/plugins/build.sbt`` with the following contents:
 
 	.. code-block:: scala
 	
@@ -117,14 +117,14 @@ To be able to import the project into Eclipse we are going to use the `sbteclips
 
 *	In a console go to ``/path/to/lift_basic`` and run ``sbt``.
 
-*	Once sbt has successfully started run the ``eclipse`` task to generate the Eclipse project files. Optionally you can run ``eclipse with-source=true`` to tell sbteclipse to try to download source and doc artifacts and create Eclipse source and doc attachments for library dependencies.
+*	Once sbt has successfully started run the ``eclipse`` task to generate Eclipse project files. Optionally you can run ``eclipse with-source=true`` to tell sbteclipse to try to download source and doc artifacts and create Eclipse source and doc attachments for library dependencies.
 
 Importing the Lift project into Scala IDE
 -----------------------------------------
 
-Everything is setup, it is time to import the project into the IDE.
+Everything is setup, it is time to import the project into Eclipse.
 
-*	Import the Lift project as an ``Existing Project`` into your Workspace (``File --> Import --> Existing Projects into Workspace``).
+*	Import the Lift project as an ``Existing Project`` into your Workspace (``File --> Import --> Existing Projects into Workspace``). Set ``/path/to/lift_basic`` as the root directory and click ``Finish``.
 
     .. image:: images/02-import_project_dialog.png
        :alt: eclipes import project dialog
@@ -161,7 +161,7 @@ To enable JRebel support for your Lift project in Scala IDE you have to install 
 Going further
 -------------
 
-You now have all you need to create web applications with Lift 2.4 and Scala.
+You now have all you need to create web applications with Lift 2.4 and Scala in Eclipse.
 
 For more information about Lift, check out the `Lift wiki`_.
 
