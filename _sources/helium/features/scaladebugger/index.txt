@@ -106,6 +106,13 @@ Smart stepping 'hides' the internal details of collections and closure. This inf
 
 *Not in the preview version*
 
+Display the value returned by the last executed method
+......................................................
+
+To know the return value of a method without having to add an extra local variable.
+
+*A proof of concept is working. Need to define the exact behavior and devise a way to present the value*
+
 Status
 ------
 
@@ -117,6 +124,7 @@ Status
 * No caching of any data.
 * No drop to frame.
 * Weak source locator support, might not work in all cases.
+* Need to define and spec the exact behavior of the smart step in/over/out.
 
 known issues
 ............
