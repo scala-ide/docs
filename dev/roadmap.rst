@@ -32,7 +32,7 @@ __ http://scala-ide.org/docs/helium/features/logging.html
 __ http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000880
 __ http://www.assembla.com/spaces/scala-ide/tickets/1000861
 __ http://www.assembla.com/spaces/scala-ide/tickets/1000862
-__ http://scala-ide.org/docs/helium/features/scaladebugger.html
+__ http://scala-ide.org/docs/helium/features/scaladebugger/index.html
 __ http://www.assembla.com/spaces/scala-ide/tickets/1000864
 __ http://www.assembla.com/spaces/scala-ide/tickets/1000867
 
