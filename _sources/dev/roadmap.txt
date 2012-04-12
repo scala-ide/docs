@@ -15,12 +15,12 @@ The targeted roadmap, *with the name of the lead contributor(s) for each item*:
 **Milestone 1** - :strikethrough:`mid-March` delayed to April 2012
 
 * Move to Eclipse Indigo - *Eric Molitor* - `#1000852`__ |done|
-* Implicit highlighting - *Jin Mingjian, David Bernard and Mirko Stocker* - `#1000628`__ |done| |testing|
-* Semantic highlighting - *Matt Russell* - `#1000591`__ |done| |testing|
+* Implicit highlighting - *Jin Mingjian, David Bernard and Mirko Stocker* - `#1000628`__ |done|
+* Semantic highlighting - *Matt Russell* - `#1000591`__ |done|
 * `Move Refactoring`__ - *Mirko Stocker* - |done|
 * `Improved logging`__ - *Typesafe Team* - `#1000880`__ - |done| 
-* Design and implement a Scala model - *Typesafe team* - `#1000861`__ - |progress|
-* Create an abstraction layer with the Scala compiler - *Typesafe team* - `#1000862`__ - |progress|
+* Design and implement a Scala model - *Typesafe team* - `#1000861`__ - |done|
+* :strikethrough:`Create an abstraction layer with the Scala compiler` - *Typesafe team* - `#1000862`__ - (Moved to Milestone 2 because backporting to 2.9 is harder than expected.)
 * `Smoother step over/in in the debugger`__ - *Typesafe team* - `#1000864`__ - |progress|
 * :strikethrough:`Extract the presentation compiler in its own project` - *Typesafe team* - `#1000867`__ (Reconsidered: The Presentation Compiler is too coupled to the compiler.)
 
@@ -38,6 +38,7 @@ __ http://www.assembla.com/spaces/scala-ide/tickets/1000867
 
 **Milestone 2** - :strikethrough:`mid-May` delayed to July 2012
 
+* Create an abstraction layer with the Scala compiler - *Typesafe team* - `#1000862`__ - |progress|
 * Use the Scala model for the Outline view - *Typesafe team* - `#1000863`__
 * Create a worksheet (like a REPL but in an editor) - *Typesafe team* - `#1000865`__
 * Add support for Find References - *Typesafe team* - `#1000868`__
@@ -45,6 +46,7 @@ __ http://www.assembla.com/spaces/scala-ide/tickets/1000867
 * Scala 2.10 support (e.g., macros) -  *Typesafe team*
 * Code Analysis - *Mirko Stocker* - `#1000629`__
 
+__ http://www.assembla.com/spaces/scala-ide/tickets/1000862
 __ http://www.assembla.com/spaces/scala-ide/tickets/1000863
 __ http://www.assembla.com/spaces/scala-ide/tickets/1000865
 __ http://www.assembla.com/spaces/scala-ide/tickets/1000868
