@@ -12,11 +12,12 @@ The main goals are:
 * Have an intuitive stepping through Scala code
 * Identify elements as Scala
 
-Preview update sites
---------------------
+Where to get it?
+----------------
 
-* Scala IDE Helium, Scala 2.10: http://www.skyluc.org/scalaIDE/debugger/2.10/site/site.xml
-* Scala IDE Helium, Scala 2.9: http://www.skyluc.org/scalaIDE/debugger/2.09/site/site.xml
+The Scala debugger has been merged into trunk, so the latest version is available in the `nightly builds`__
+
+__ /download/nightly.html
 
 Using the Scala debugger
 ------------------------
