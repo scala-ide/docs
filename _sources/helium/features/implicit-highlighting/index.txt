@@ -9,8 +9,6 @@ Implicit highlighting
 ---------------------
 
 .. image:: images/implicit-format.png
-	:width: 100%
-	:target: ../../_images/implicit-format.png
 
 Notice that the string is underlined, and a marker is added to the left
 gutter. This signals that the method ``format`` was added through an implicit
@@ -18,15 +16,11 @@ conversion. If you move your mouse on the gutter, you will see the actual
 conversion (``augmentString``). 
 
 .. image:: images/hover.png
-	:width: 100%
-	:target: ../../_images/hover.png
 
 There is also a QuickFix available (``CMD-1``)
 that makes the call the implicit conversion explicit!
 
 .. image:: images/quick-fix.png
-	:width: 100%
-	:target: ../../_images/quick-fix.png
 
 Configuration
 -------------
@@ -37,6 +31,8 @@ costly, nor interesting. However, if you'd like to show those as well, you can
 enable them from the ``Implicits`` preferences page.
 
 .. image:: images/prefs.png
+	:width: 100%
+	:target: ../../../_images/prefs.png
 
 Thank you
 ---------
