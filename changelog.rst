@@ -4,7 +4,7 @@ Changelog
 2.1 (master) - codename Helium 
 ------------------------------
 
-M1 (not released)
+M1 (released: 2012-04-13)
 .................
 
 * Linked refactoring actions to quickfix proposals. `pr-86`_
