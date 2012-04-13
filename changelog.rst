@@ -7,9 +7,42 @@ Helium (master)
 M1 (not released)
 .................
 
+* Linked refactoring actions to quickfix proposals. `pr-86`_
 * Fixed incomplete package problem with auto-import on code completion. `#1000855`_
+* Fixed 'invalid thread access' when creating first Java file. `#1000738`_
+* Improve reference of selected elements. `pr-76`_
+* Semantic highlighting support. `#1000591`_
+* Fixed open declaration from context menu. `#1000920`_
+* Improved closing braces management. `#1000926`_
+* In development Scala Debugger. `#1000864`_
+* Removed some duplicated errors. `#1000735`_
+* Propagate fine-grained build information to downstream projects. `#1000894`_
+* Added memory leaks test.
+* Fixed problem linked to using compiler plugins, in particular the continuation plugin. `#1000901`_, `#1000908`_, `#1000917`_
+* Rewritting of the REPL integration. `#1000883`_
+* Move Class, Trait and Object refactorting. `#1000422`_, `#1000839`_, `#1000842`_
+* Improved logging infrastructure. `#1000880`_
+* Extracted external libraries from source code.
+* Improved 'package.scala' support. `#1000859`_
+* Implicit highlighting support. `#1000628`_
+* Eclipse 3.7 Indigo support. `#1000852`_
+* Fixed occasional problem with auto-import on code completion. `#1000854`_
+* Improved UI for Scala completion (context information and caret position).
 
+.. _#1000422: https://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000422
+.. _#1000591: https://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000591
+.. _#1000628: https://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000628
+.. _#1000735: https://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000735
+.. _#1000839: https://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000839
+.. _#1000842: https://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000842
+.. _#1000852: https://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000852
 .. _#1000855: https://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000855
+.. _#1000859: https://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000859
+.. _#1000864: https://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000864
+.. _#1000880: https://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000880
+.. _#1000883: https://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000883
+.. _pr-76: https://github.com/scala-ide/scala-ide/pull/76
+.. _pr-86: https://github.com/scala-ide/scala-ide/pull/86
 
 2.0.1 (release/scala-ide-2.0.x)
 -------------------------------
@@ -32,7 +65,7 @@ M1 (not released)
 * Improved closing braces management. `#1000926`_
 * Propagate fine-grained build information to downstream projects `#1000894`_
 * Fixed occasional problem with auto-import on code completion. `#1000854`_
-* Fixed problem linked to use compiler plugins, in particular the continuation plugin. `#1000901`_, `#1000908`_, `#1000917`_
+* Fixed problem linked to using compiler plugins, in particular the continuation plugin. `#1000901`_, `#1000908`_, `#1000917`_
 * Bundled with Scala 2.9.2 RC1.
 
 .. _#1000738: https://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000738
