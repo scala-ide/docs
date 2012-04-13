@@ -1,8 +1,8 @@
 Changelog
 =========
 
-Helium (master)
----------------
+2.1 (master) - codename Helium 
+------------------------------
 
 M1 (not released)
 .................
