@@ -19,8 +19,8 @@ M1 (not released)
 * Propagate fine-grained build information to downstream projects. `#1000894`_
 * Added memory leaks test.
 * Fixed problem linked to using compiler plugins, in particular the continuation plugin. `#1000901`_, `#1000908`_, `#1000917`_
-* Rewritting of the REPL integration. `#1000883`_
-* Move Class, Trait and Object refactorting. `#1000422`_, `#1000839`_, `#1000842`_
+* Rewriting of the REPL integration. `#1000883`_
+* Move Class, Trait and Object refactoring. `#1000422`_, `#1000839`_, `#1000842`_
 * Improved logging infrastructure. `#1000880`_
 * Extracted external libraries from source code.
 * Improved 'package.scala' support. `#1000859`_
