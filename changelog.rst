@@ -7,6 +7,7 @@ Changelog
 M1 (released: 2012-04-13)
 .................
 
+* Bundled with Scala 2.9.2.
 * Linked refactoring actions to quickfix proposals. `pr-86`_
 * Fixed incomplete package problem with auto-import on code completion. `#1000855`_
 * Fixed 'invalid thread access' when creating first Java file. `#1000738`_
@@ -46,6 +47,11 @@ M1 (released: 2012-04-13)
 
 2.0.1 (release/scala-ide-2.0.x)
 -------------------------------
+
+2.0.1-final (ureleased)
+.................................
+
+* Bundled with Scala 2.9.2.
 
 2.0.1-rc03 (released: 2012-04-05)
 .................................
