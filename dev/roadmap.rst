@@ -15,8 +15,8 @@ The targeted roadmap, *with the name of the lead contributor(s) for each item*:
 **Milestone 1** - :strikethrough:`mid-March` delayed to April 2012
 
 * Move to Eclipse Indigo - *Eric Molitor* - `#1000852`__ |done|
-* Implicit highlighting - *Jin Mingjian, David Bernard and Mirko Stocker* - `#1000628`__ |done|
-* Semantic highlighting - *Matt Russell* - `#1000591`__ |done|
+* `Implicit highlighting`__ - *Jin Mingjian, David Bernard and Mirko Stocker* - `#1000628`__ |done|
+* `Semantic highlighting`__ - *Matt Russell* - `#1000591`__ |done|
 * `Move Refactoring`__ - *Mirko Stocker* - |done|
 * `Improved logging`__ - *Typesafe Team* - `#1000880`__ - |done| 
 * Design and implement a Scala model - *Typesafe team* - `#1000861`__ - |done|
@@ -25,7 +25,9 @@ The targeted roadmap, *with the name of the lead contributor(s) for each item*:
 * :strikethrough:`Extract the presentation compiler in its own project` - *Typesafe team* - `#1000867`__ (Reconsidered: The Presentation Compiler is too coupled to the compiler.)
 
 __ http://www.assembla.com/spaces/scala-ide/tickets/1000852
+__ http://scala-ide.org/docs/helium/features/implicit-highlighting/index.html
 __ http://www.assembla.com/spaces/scala-ide/tickets/1000628
+__ http://scala-ide.org/docs/helium/features/semantic-highlighting/index.html
 __ http://www.assembla.com/spaces/scala-ide/tickets/1000591
 __ http://scala-ide.org/docs/helium/features/moverefactoring.html
 __ http://scala-ide.org/docs/helium/features/logging.html
