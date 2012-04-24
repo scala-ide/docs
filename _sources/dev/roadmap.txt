@@ -40,6 +40,7 @@ __ http://www.assembla.com/spaces/scala-ide/tickets/1000867
 
 **Milestone 2** - :strikethrough:`mid-May` delayed to July 2012
 
+* ScalaTest support - *Chee Seng Chua, Bill Venners* - |progress|
 * Create an abstraction layer with the Scala compiler - *Typesafe team* - `#1000862`__ - |progress|
 * Use the Scala model for the Outline view - *Typesafe team* - `#1000863`__
 * Create a worksheet (like a REPL but in an editor) - *Typesafe team* - `#1000865`__
@@ -72,11 +73,10 @@ __ http://www.assembla.com/spaces/scala-ide/tickets/1000873
 **Not aligned**
 
 * More refactoring support - *Mirko Stocker, Michael Holzer* - Milestone 2?
-* ScalaTest support - *Chee Seng Chua, Bill Venners*
 * Eclipse Juno (4.2) support - *Eric Molitor, Typesafe Team* - Milestone 2?
 * Create a new JDT model builder, using the compiled classes - *Typesafe team* - `#1000866`__
 * Specs2 support - *Richard Oliver Legendi* (GSoC)
-* Integrate a SBT-console - *Sandro Gržičić* (GSoC)
+* Integrate a SBT-console - *Sandro Grzicić* (GSoC)
 * Smart Quick Fixes - *Ivan Kuraj* (GSoC)
 
 __ http://www.assembla.com/spaces/scala-ide/tickets/1000866
