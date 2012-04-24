@@ -19,7 +19,9 @@ The Scala IDE project is composed of several modules. Here is a generic descript
 * ``org.scala-ide.sdt.aspects``: Contains the AspectJ classes used to weave into Eclipse and hook in JDT internals.
 * ``org.scala-ide.sdt.core``: Contains the Scala IDE plug-in's source code.
 * ``org.scala-ide.sdt.core.tests``: Contains the functional tests used to exercise the Scala IDE in headless mode (with no User Interface).
-* ``org.scala-ide.sdt.feature``: Packages the ``org.scala-ide.sdt.core`` project binaries into the "Scala IDE for Eclipse" component, which is then made available through the Scala IDE update site.
+* ``org.scala-ide.sdt.debug``: Contains the Scala IDE debugger plug-in's source code.
+* ``org.scala-ide.sdt.debug.tests``: Contains the functional tests used to exercise the Scala IDE debugger in headless mode (with no User Interface).
+* ``org.scala-ide.sdt.feature``: Packages the ``org.scala-ide.sdt.core`` and ``org.scala-ide.sdt.debug`` project binaries into the "Scala IDE for Eclipse" component, which is then made available through the Scala IDE update site.
 * ``org.scala-ide.sdt.source.feature``: Packages both the ``org.scala-ide.sdt.core`` and ``org.scala-ide.sdt.aspects`` project sources into the "Scala IDE for Eclipse Source Feature" component, which is then made available through the Scala IDE update site.
 * ``org.scala-ide.sdt.weaving.feature``: Packages the ``org.scala-ide.sdt.aspects`` project binaries into the "JDT Weaving for Scala" component, which is included within the "Scala IDE for Eclipse" component.
 * ``org.scala-ide.sdt.update-site``: Contains the result of a successful compilation of the Scala IDE project, packaged in the form expected by the Eclipse Update Manager.
@@ -80,6 +82,11 @@ casts such interfaces to their concrete, internal, implementations.
 	As mentioned in the previous section, we plan to create our own models for representing Scala 
 	entities. That will help us better representing Scala entities in the editor and it will 
 	mitigate incompatibilities with newer version of the JDT.
+
+Scala IDE debugger
+------------------
+
+The Scala IDE debugger is using the standard Java debugging chain (JVMDI, JDWP and JDI) to provide a Scala specific debugger. The elements are displayed the Scala way, the names are decoded, and the actions are behaving the way a Scala developer would expect.
 
 The Scala Structure Builder
 ---------------------------
