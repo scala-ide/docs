@@ -36,7 +36,7 @@ Eclipse Java Development Tools. Install it.
 
 Now that the JDT is installed, go ahead and :ref:`install the Scala IDE <gettingstarted_getting-started>`.
 
-How can I install more than one Scala IDE plugin?
+Can I install more than one Scala IDE plugin?
 .............................................
 
 Currently, it is not possible to install more than one Scala IDE plugin within the same 
