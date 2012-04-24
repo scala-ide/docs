@@ -75,7 +75,7 @@ __ http://www.assembla.com/spaces/scala-ide/tickets/1000873
 * More refactoring support - *Mirko Stocker, Michael Holzer* - Milestone 2?
 * Eclipse Juno (4.2) support - *Eric Molitor, Typesafe Team* - Milestone 2?
 * Create a new JDT model builder, using the compiled classes - *Typesafe team* - `#1000866`__
-* Specs2 support - *Richard Oliver Legendi* (GSoC)
+* Specs2 support - *Richard Oliver Legendi, Eric Toreborre* (GSoC)
 * Integrate a SBT-console - *Sandro Grzicić* (GSoC)
 * Smart Quick Fixes - *Ivan Kuraj* (GSoC)
 
