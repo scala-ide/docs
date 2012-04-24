@@ -93,17 +93,10 @@ Of course, after sending a pull request, you can immediately start working on a 
 
 .. note::
 
-  Please don't forget to fill in and send your `contributor license agreement </resources/pdfs/cla-individual.pdf>`_ 
-  (`corporate CLA </resources/pdfs/cla-individual.pdf>`_) to
-
-  |  Typesafe/Scala Solutions Sàrl
-  |  PSE-D
-  |  1015 Lausanne
-  |  Switzerland
-
-  or scan and email to `info@scala-ide.org <mailto:info@scala-ide.org>`_.
-
-
+  All contributors are requested to read and sign the online 
+  `Contributor License Agreement <http://www.typesafe.com/contribute/cla>`_ (CLA). Please, 
+  make sure to do so before sending a pull request, or we won't be able to accept your 
+  contribution.
 
 Committers
 ----------
