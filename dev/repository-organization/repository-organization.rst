@@ -8,7 +8,7 @@ Ideally, the project's directory structure should be close to the following:
 .. code-block:: text
 
   | - master
-  | - experimental
+  | - feature
             | - gwt-support
   | - issue
             | - scala-java-interop-1000508
@@ -21,7 +21,7 @@ Ideally, the project's directory structure should be close to the following:
             | - scala-ide-2.0.x
 
 * ``master``: The main development branch.
-* ``experimental``: Hosts branches for trying out ideas.
+* ``feature``: Hosts branches for trying out ideas.
 * ``issue``: All branches under `issue` are related to an Assembla ticket. The ticket's number must 
   be suffixed to the name of the branch.
 * ``platform``: Branches for experimental support of future Eclipse platforms (with different JDT). 

@@ -98,7 +98,7 @@ Of course, after sending a pull request, you can immediately start working on a 
   make sure to sign the CLA before sending a pull request, or we won't be able to accept 
   your contribution.
   
-  Organizations are requested to sign the `Corporate CLA <http://scala-ide.org/resources/pdfs/cla-org.pdf>`_ 
+  Organizations can sign the `Corporate CLA <http://scala-ide.org/resources/pdfs/cla-org.pdf>`_ 
   and send it to
 
   |  Typesafe/Scala Solutions Sàrl
@@ -125,12 +125,12 @@ and you can push your branches directly in the main Scala IDE git repository.
 
 It is easy to decide where your branch should live:
 
-* If you are experimenting a new idea, create it under ``experimental``.
+* If you are experimenting a new idea, create it under ``feature``.
 * If you want to work on a defect/enhancement/feature, create it under ``issue``. If you can't find 
   a ticket describing what you want to work on, create a new one before starting to do any work. For 
   each branch created under issue it is mandatory to have a ticket linked to it.
 
-Overall, we expect to have very few (possibly none at all) branches living in ``experimental``, as we 
+Overall, we expect to have very few (possibly none at all) branches living in ``feature``, as we 
 would like defect/enhancement/feature to be driven by tickets as much as possible.
 
 Branches should be named using the same convention described in :ref:`workflow_branch-name-convention`.
