@@ -188,11 +188,23 @@ Eclipse freezes (deadlock)
 
 **Symptoms**:
 
-The IDE is completely frozen.
+The IDE is completely frozen. 
+
+A known manifestation of this problem occurs when the ``SmartIndenter`` kicks in (for 
+instance when a return carriage is inserted in the Eclipse Editor), which is particularly 
+annoying since all unsaved work will be lost.
+
+**Solution**:
+
+Apparently, this problem is due to a bug in the Oracle JVM, and it is fixed in the JRE 7 (`read 
+more... <https://bugs.eclipse.org/bugs/show_bug.cgi?id=377609>`_). Hence, you should not experience 
+this problem if you upgrade to JRE 7 or newer.
+
+If you cannot use the JRE 7, then you can try the workaround described below.
 
 **Workaround**:
 
-If the deadlock is an instance of `#1000317`_ (deadlock in the JDT weaving code) you can edit your eclipse.ini file using the recommended settings:
+If the deadlock is an instance of `#1000317`_ (deadlock in the JDT weaving code) or `#1000996`_ (deadlock during indentation) you can edit your eclipse.ini file using the recommended settings:
 
 .. code-block:: bash
 
@@ -216,7 +228,9 @@ If you encounter this problem, the best thing is to take a thread dump:
 
       $ jstack <pid>
 
-If the thread dump doesn't match the one in `#1000317`_, please open a new ticket with your thread dump attached.
+If the thread dump doesn't match the one in `#1000317`_ or `#1000996`_, please open a new ticket with your thread dump attached.
+
+
 
 NoClassDefFoundError (scala/tools/nsc/settings/MutableSettings$SettingValue)
 ............................................................................
@@ -229,7 +243,9 @@ After upgrading the Scala plug-in, ``java.lang.NoClassDefFoundError: scala/tools
 
 If you have several update sites providing different version of Scala IDE, Eclipse may have decided that a newest Scala library should be used instead of the one provided by the plug-in to be installed. To avoid this problem, make sure to uncheck the ``Contact all update sites during install to find required software`` option. It is situated at the bottom of the ``Help → Install New Software...`` dialog.
 
-.. _#1000317: https://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000317
+.. _#1000317: http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000317
+.. _#1000996: http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000996
+
 .. _m2eclipse-scala: https://github.com/sonatype/m2eclipse-scala
 
 .. [#preferences] The Eclipse preferences are accessible using ``Windows → Preferences`` (or ``Eclipse → Preferences`` on Mac osX).

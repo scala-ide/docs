@@ -233,8 +233,16 @@ The prime suspect is Maven Dependencies, which can download and add an incompati
 <h3>Eclipse freezes (deadlock)</h3>
 <p><strong>Symptoms</strong>:</p>
 <p>The IDE is completely frozen.</p>
+<p>A known manifestation of this problem occurs when the <tt class="docutils literal"><span class="pre">SmartIndenter</span></tt> kicks in (for
+instance when a return carriage is inserted in the Eclipse Editor), which is particularly
+annoying since all unsaved work will be lost.</p>
+<p><strong>Solution</strong>:</p>
+<p>Apparently, this problem is due to a bug in the Oracle JVM, and it is fixed in the JRE 7 (<a class="reference external" href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=377609">read
+more...</a>). Hence, you should not experience
+this problem if you upgrade to JRE 7 or newer.</p>
+<p>If you cannot use the JRE 7, then you can try the workaround described below.</p>
 <p><strong>Workaround</strong>:</p>
-<p>If the deadlock is an instance of <a class="reference external" href="https://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000317">#1000317</a> (deadlock in the JDT weaving code) you can edit your eclipse.ini file using the recommended settings:</p>
+<p>If the deadlock is an instance of <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000317">#1000317</a> (deadlock in the JDT weaving code) or <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000996">#1000996</a> (deadlock during indentation) you can edit your eclipse.ini file using the recommended settings:</p>
 <div class="highlight-bash"><div class="highlight"><pre>-XX:+UnlockDiagnosticVMOptions
 -XX:+UnsyncloadClass
 -Dosgi.classloader.lock<span class="o">=</span>classname
@@ -252,7 +260,7 @@ The prime suspect is Maven Dependencies, which can download and add an incompati
 </pre></div>
 </div>
 </div></blockquote>
-<p>If the thread dump doesn&#8217;t match the one in <a class="reference external" href="https://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000317">#1000317</a>, please open a new ticket with your thread dump attached.</p>
+<p>If the thread dump doesn&#8217;t match the one in <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000317">#1000317</a> or <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000996">#1000996</a>, please open a new ticket with your thread dump attached.</p>
 </div>
 <div class="section" id="noclassdeffounderror-scala-tools-nsc-settings-mutablesettings-settingvalue">
 <h3>NoClassDefFoundError (scala/tools/nsc/settings/MutableSettings$SettingValue)</h3>
