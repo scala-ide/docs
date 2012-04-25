@@ -40,7 +40,7 @@ __ http://www.assembla.com/spaces/scala-ide/tickets/1000867
 
 **Milestone 2** - :strikethrough:`mid-May` delayed to July 2012
 
-* ScalaTest support - *Chee Seng Chua, Bill Venners* - |progress|
+* ScalaTest support - *Chee Seng Chua, Bill Venners* - |progress| `(watch the demo!)`__
 * Create an abstraction layer with the Scala compiler - *Typesafe team* - `#1000862`__ - |progress|
 * Use the Scala model for the Outline view - *Typesafe team* - `#1000863`__
 * Create a worksheet (like a REPL but in an editor) - *Typesafe team* - `#1000865`__
@@ -49,6 +49,7 @@ __ http://www.assembla.com/spaces/scala-ide/tickets/1000867
 * Scala 2.10 support (e.g., macros) -  *Typesafe team*
 * Code Analysis - *Mirko Stocker* - `#1000629`__
 
+__ http://skillsmatter.com/podcast/scala/scalatest-scalamock-subcut
 __ http://www.assembla.com/spaces/scala-ide/tickets/1000862
 __ http://www.assembla.com/spaces/scala-ide/tickets/1000863
 __ http://www.assembla.com/spaces/scala-ide/tickets/1000865
