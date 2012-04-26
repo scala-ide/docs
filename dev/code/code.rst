@@ -26,7 +26,7 @@ issue.
 Inside the Scala IDE we offer two different loggers. The first one, is a handle on the 
 Eclipse logger described above. The second one, is a logger backed by Log4j (which we will refer to as 
 the "default logger" from now on). Log messages sent to the default logger are stored in a file named 
-``scala-ide.log``, located in the ``${workspace}\.metadata\.plugin\org.scala-ide.sdt.core\`` directory. 
+``scala-ide.log``, located in the ``${workspace}\.metadata\.plugins\org.scala-ide.sdt.core\`` directory. 
 Also, note that users can easily control the amount of logged information through Logging preference page 
 (accessible under the Eclipse Preferences > Scala > Logging).
 
