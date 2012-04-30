@@ -19,7 +19,7 @@ By default, the log level is set to ``WARN``. That should be enough for the gene
 some useful information in the event of an error. Naturally, you are free to change the log level at any time (though, 
 remember that increasing logging may have an observable performance penalty).
 
-All logging information are stored in a ``scala-ide.log`` file located in the ``${workspace}\.metadata\.plugin\org.scala-ide.sdt.core\`` 
+All logging information are stored in a ``scala-ide.log`` file located in the ``${workspace}\.metadata\.plugins\org.scala-ide.sdt.core\`` 
 directory, where ``${workspace}`` is the directory provided when starting up Eclipse, i.e., your Eclipse workspace. This file can grow up 
 to 10MB and it automatically rolls over once the limit is reached. At any time, you can easily check the log's content by clicking on the link located 
 at the bottom of the page.
