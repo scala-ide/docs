@@ -30,8 +30,8 @@ the "default logger" from now on). Log messages sent to the default logger are s
 Also, note that users can easily control the amount of logged information through Logging preference page 
 (accessible under the Eclipse Preferences > Scala > Logging).
 
-To get a handle on the loggers, you only need to mix-in the ``HasLogger`` trait, which should be 
-similar to the following:
+To get a handle on the loggers, you only need to mix-in the ``HasLogger`` trait defined in package 
+``scala.tools.eclipse.logging``. The implementation should be somewhat similar to the following:
 
 .. code-block:: scala
 
