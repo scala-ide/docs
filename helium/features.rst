@@ -12,4 +12,5 @@ __ http://scala-ide.org/download/nightly.html
    features/moverefactoring
    features/scaladebugger/index.rst
    features/implicit-highlighting/index.rst
+   features/implicit-hyperlinking/index.rst
    features/semantic-highlighting/index.rst
