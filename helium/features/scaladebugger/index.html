@@ -41,7 +41,7 @@
     <script type="text/javascript" src="../../../_static/resources/javascript/contentsFix.js"></script>
     <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
     <link rel="top" title="Scala IDE 2.0.0 documentation" href="../../../index.html" />
-    <link rel="up" title="New Features" href="../../features.html" />
+    <link rel="up" title="Scala IDE Helium" href="../../index.html" />
     <link rel="next" title="Implicit Highlighting" href="../implicit-highlighting/index.html" />
     <link rel="prev" title="Move Class, Object or Trait Refactoring" href="../moverefactoring.html" /> 
   </head>
@@ -85,7 +85,6 @@
           <ul class="breadcrumb">
             <li><a href="../../../index.html">ScalaIDE Documentation</a> » </li>
               <li><a href="../../index.html">Scala IDE Helium</a> » </li>
-              <li><a href="../../features.html">New Features</a> » </li>
           </ul>        
       </div>
     </div>
@@ -174,21 +173,76 @@
 <li>No good icons for the model elements.</li>
 <li>No caching of any data.</li>
 <li>No drop to frame.</li>
-<li>Weak source locator support, might not work in all cases.</li>
 <li>Need to define and spec the exact behavior of the smart step in/over/out.</li>
 </ul>
 <div class="section" id="known-issues">
 <h3>known issues</h3>
 <ul class="simple">
 <li>Disabled breakpoints are not working (the application still stops if the breakpoint is hit).</li>
-<li>Errors logged (usually when an debug session ends) related to ScalaThreads.</li>
+</ul>
+</div>
+<div class="section" id="todo">
+<h3>TODO</h3>
+<p><em>may not be exhaustive or up-to-date, not really ordered</em></p>
+<p>updated 2012-05-03</p>
+<ul class="simple">
+<li>Good scheme to activate the Scala Debugger<ul>
+<li>Remote Scala application launcher</li>
+<li>Scala application launcher use Scala Debugger</li>
+<li>option to launch Eclipse application with the Scala Debugger</li>
+</ul>
+</li>
+<li>Take care of breakpoints in Scala Debugger, currently still done by JDT debugger</li>
+<li>Use own jdi event dispatcher, instead of using the JDT debugger one</li>
+<li>Set the right icon according to the element type and state</li>
+<li>Improve the labels<ul>
+<li><em>Running</em>, <em>Suspended</em>, <em>Terminated</em> suffix on debug target and thread</li>
+<li>option to display simple or fully qualified types</li>
+<li>clean way to display object name, without the <tt class="docutils literal"><span class="pre">$</span></tt></li>
+</ul>
+</li>
+<li>filtered stack frames option<ul>
+<li>to hide some Scala internals, like collections</li>
+<li>configurable list in preferences</li>
+</ul>
+</li>
+<li>filter elements in the variable view<ul>
+<li>static fields</li>
+<li>synthetics</li>
+</ul>
+</li>
+<li>logical structures<ul>
+<li>map support</li>
+<li>extension point for additional support</li>
+</ul>
+</li>
+<li>use IIndexedValue for arrays</li>
+<li>better smart step into support<ul>
+<li>collection of primitive type elements</li>
+</ul>
+</li>
+<li>enabling/disabling breakpoints doesn&#8217;t work</li>
+<li>drop to frame support</li>
+<li>step over and step out relative to the currently selected stackframe</li>
+<li>cache data used for smart stepping<ul>
+<li>result of findAnonFunction</li>
+<li>keep enabled ClassPreparedRequests to avoid requesting <em>allClasses</em> every time</li>
+</ul>
+</li>
+<li>better Scala breakpoints<ul>
+<li>may still need to be based on Java breakpoints</li>
+<li>smarter <em>add breakpoint</em></li>
+<li>method breakpoint support</li>
+<li>watchpoint support</li>
+</ul>
+</li>
 </ul>
 </div>
 </div>
 <div class="section" id="development-setup">
 <h2>Development setup</h2>
-<p>This feature is developed in the branch <a class="reference external" href="https://github.com/scala-ide/scala-ide/tree/feature/scala-debugger-1000864">feature/scala-debugger-1000864</a> on Scala IDE&#8217;s github.</p>
-<p>The setup is the same as for master. It contains 2 new plugins: org.scala-ide.sdt.debug and org.scala-ide.sdt.debug.tests.</p>
+<p>The feature has been merged in <a class="reference external" href="https://github.com/scala-ide/scala-ide/tree/master">master</a>, on Scala IDE&#8217;s github.</p>
+<p>The Scala debugger adds 2 new plugins: org.scala-ide.sdt.debug and org.scala-ide.sdt.debug.tests.</p>
 <div class="section" id="in-eclipse">
 <h3>In Eclipse</h3>
 <p>The Scala debugger makes use of the <a class="reference external" href="http://docs.oracle.com/javase/6/docs/jdk/api/jpda/jdi/index.html">JDI</a> to communicate with the VM. For some valid reasons, the jdt.debug plug-in provides a non-generic version of it. The Scala debugger uses the newer generic version, so some tweaking is needed inside Eclipse.</p>

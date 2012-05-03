@@ -124,24 +124,78 @@ Status
 * No good icons for the model elements.
 * No caching of any data.
 * No drop to frame.
-* Weak source locator support, might not work in all cases.
 * Need to define and spec the exact behavior of the smart step in/over/out.
 
 known issues
 ............
 
 * Disabled breakpoints are not working (the application still stops if the breakpoint is hit).
-* Errors logged (usually when an debug session ends) related to ScalaThreads.
 
+TODO
+....
+
+*may not be exhaustive or up-to-date, not really ordered*
+
+updated 2012-05-03
+
+* Good scheme to activate the Scala Debugger
+
+  * Remote Scala application launcher
+  * Scala application launcher use Scala Debugger
+  * option to launch Eclipse application with the Scala Debugger
+
+* Take care of breakpoints in Scala Debugger, currently still done by JDT debugger
+* Use own jdi event dispatcher, instead of using the JDT debugger one
+* Set the right icon according to the element type and state
+* Improve the labels
+
+  * *Running*, *Suspended*, *Terminated* suffix on debug target and thread
+  * option to display simple or fully qualified types
+  * clean way to display object name, without the ``$`` 
+
+* filtered stack frames option
+
+  * to hide some Scala internals, like collections
+  * configurable list in preferences
+
+* filter elements in the variable view
+
+  * static fields
+  * synthetics
+
+* logical structures
+
+  * map support
+  * extension point for additional support
+
+* use IIndexedValue for arrays
+* better smart step into support
+
+  * collection of primitive type elements
+
+* enabling/disabling breakpoints doesn't work
+* drop to frame support
+* step over and step out relative to the currently selected stackframe
+* cache data used for smart stepping
+
+  * result of findAnonFunction
+  * keep enabled ClassPreparedRequests to avoid requesting *allClasses* every time
+
+* better Scala breakpoints
+
+  * may still need to be based on Java breakpoints
+  * smarter *add breakpoint*
+  * method breakpoint support
+  * watchpoint support
 
 Development setup
 -----------------
 
-This feature is developed in the branch `feature/scala-debugger-1000864`__ on Scala IDE's github.
+The feature has been merged in `master`__, on Scala IDE's github.
 
-__ https://github.com/scala-ide/scala-ide/tree/feature/scala-debugger-1000864
+__ https://github.com/scala-ide/scala-ide/tree/master
 
-The setup is the same as for master. It contains 2 new plugins: org.scala-ide.sdt.debug and org.scala-ide.sdt.debug.tests.
+The Scala debugger adds 2 new plugins: org.scala-ide.sdt.debug and org.scala-ide.sdt.debug.tests.
 
 In Eclipse
 ..........

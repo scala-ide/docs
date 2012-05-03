@@ -12,6 +12,11 @@ Contents:
 .. toctree::
    :maxdepth: 2
 
-   features
+   features/logging
+   features/moverefactoring
+   features/scaladebugger/index.rst
+   features/implicit-highlighting/index.rst
+   features/implicit-hyperlinking/index.rst
+   features/semantic-highlighting/index.rst
    
 .. include:: /contribute.rst.inc
