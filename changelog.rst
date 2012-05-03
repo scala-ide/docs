@@ -48,7 +48,7 @@ M1 (released: 2012-04-13)
 2.0.1 (release/scala-ide-2.0.x)
 -------------------------------
 
-2.0.1-final (ureleased)
+2.0.1-final (release: 2012-04-30)
 .................................
 
 * Bundled with Scala 2.9.2.
