@@ -7,7 +7,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Implicit Highlighting &mdash; Scala IDE 2.0.0 documentation</title>
+    <title>Implicit Hyperlinking &mdash; Scala IDE 2.0.0 documentation</title>
     
     <link rel="stylesheet" href="../../../_static/resources/stylesheets/base.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
@@ -42,8 +42,8 @@
     <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
     <link rel="top" title="Scala IDE 2.0.0 documentation" href="../../../index.html" />
     <link rel="up" title="New Features" href="../../features.html" />
-    <link rel="next" title="Implicit Hyperlinking" href="../implicit-hyperlinking/index.html" />
-    <link rel="prev" title="Scala Debugger" href="../scaladebugger/index.html" /> 
+    <link rel="next" title="Semantic Highlighting" href="../semantic-highlighting/index.html" />
+    <link rel="prev" title="Implicit Highlighting" href="../implicit-highlighting/index.html" /> 
   </head>
   <body>
 <div class="top-bar">
@@ -72,7 +72,7 @@
   <div class="container">
     <div class="row">
       <div class="span16">        
-        <h1>Implicit Highlighting</h1>
+        <h1>Implicit Hyperlinking</h1>
 	  </div>
     </div>
   </div>
@@ -92,36 +92,18 @@
 
     <div class="row" style="position: relative; clear: both;">
       <div class="span11 main-content">
-        <div class="section" id="implicit-highlighting">
-<h1>Implicit Highlighting</h1>
-<p>Implicit annotations are a very powerful feature in Scala. They allow for
-fluid DSLs, an amazing collection library, or enriching existing types. With
-great power comes great responsability, and a desire to control. Meet <em>Implicit Highlighting</em>!</p>
-<div class="section" id="id1">
-<h2>Implicit highlighting</h2>
-<img alt="../../../_images/implicit-format.png" src="../../../_images/implicit-format.png" />
-<p>Notice that the string is underlined, and a marker is added to the left
-gutter. This signals that the method <tt class="docutils literal"><span class="pre">format</span></tt> was added through an implicit
-conversion. If you move your mouse on the gutter, you will see the actual
-conversion (<tt class="docutils literal"><span class="pre">augmentString</span></tt>).</p>
-<img alt="../../../_images/hover.png" src="../../../_images/hover.png" />
-<p>There is also a QuickFix available (<tt class="docutils literal"><span class="pre">CMD-1</span></tt>)
-that makes the call the implicit conversion explicit!</p>
-<img alt="../../../_images/quick-fix.png" src="../../../_images/quick-fix.png" />
+        <div class="section" id="implicit-hyperlinking">
+<h1>Implicit Hyperlinking</h1>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last"><a class="reference external" href="http://scala-ide.org/docs/user/features/navigating.html#hyperlinking">Implicit Highlighting</a> needs to be enabled.</p>
 </div>
-<div class="section" id="configuration">
-<h2>Configuration</h2>
-<p>By default, only <em>implicit conversions</em> are highlighted. This makes sense,
-since most of the times implicit values that are passed around are not too
-costly, nor interesting. However, if you&#8217;d like to show those as well, you can
-enable them from the <tt class="docutils literal"><span class="pre">Implicits</span></tt> preferences page.</p>
-<a class="reference external image-reference" href="../../../_images/prefs.png"><img alt="../../../_images/prefs.png" src="../../../_images/prefs.png" style="width: 100%;" /></a>
-</div>
-<div class="section" id="thank-you">
-<h2>Thank you</h2>
-<p>This feature was contributed by Jin Mingjian and improved by David Bernard and
-Mirko Stocker. Thank you!</p>
-</div>
+<p>With <em>Implicit Hyperlinking</em> you can hyperlink to an implicit definition.</p>
+<p>Hold down <span class="raw-html"><span class="keystroke">Ctrl/Cmd</span></span> and hover over a binding. If an implicit conversion
+has been applied to the hovered binding, a contextual menu will open, giving you a chance
+to navigate to either the binding&#8217;s declaration (a.k.a.
+<a class="reference external" href="http://scala-ide.org/docs/helium/features/implicit-highlighting/index.html#configuration">definition hyperlinking</a>) or to the implicit definition!</p>
+<img alt="../../../_images/implicit-hyperlink.png" src="../../../_images/implicit-hyperlink.png" />
 </div>
 
 	    </div>

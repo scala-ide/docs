@@ -226,3 +226,17 @@ body {background-color: #8d8d8d;}
 
 a { color: #0198ba; }
 a:hover { color: #79c176; }
+
+.code {
+  font-family: courier;
+  font-style: normal;
+}
+
+.keystroke {
+  font-family: courier;
+  font-style: normal;
+}
+
+.inline {
+  display: inline;
+}
