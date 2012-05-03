@@ -5,7 +5,7 @@ Changelog
 ------------------------------
 
 M1 (released: 2012-04-13)
-.................
+.........................
 
 * Bundled with Scala 2.9.2.
 * Linked refactoring actions to quickfix proposals. `pr-86`_

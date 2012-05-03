@@ -3,13 +3,13 @@
 Documentation for Scala IDE
 ---------------------------
 
-This documentation web site is using `Sphinx`_ to generate HTML pages from `reStructuredText`_ files.
+This documentation web site is using `Sphinx`_ (version 1.1.2) to generate HTML pages from `reStructuredText`_ files.
 
 To setup Sphinx locally, use ``easy_install``:
 
 ::
 
-    $ sudo easy_install sphinx
+    $ sudo easy_install "sphinx==1.1.2"
     $ sudo easy_install pygments # required on some systems
 
 Then simply use ``make clean html`` from the repository root to generate the files.
