@@ -142,7 +142,7 @@ If you're still here, go ahead and use the `update-scala.sh`_ script. Point it t
 
   $ update-scala.sh --eclipse-dir /Applications/eclipse update build/pack
 
-If you run into trouble, the safest way out is to uninstall the plugin and re-install it. You can do that on the command line using the `update-director.sh`_ script.
+If you run into trouble, the safest way out is to uninstall the plugin and re-install it. You can do that on the command line using the `eclipse-director.sh`_ script.
 
 .. code-block:: bash
 
@@ -206,4 +206,4 @@ based on the document created by Grzegorz Kossakowski - `@gkossakowski`_ and imp
 .. _Sbt: https://github.com/harrah/xsbt
 .. _Vlad Ureche: http://people.epfl.ch/vlad.ureche
 .. _update-scala.sh: https://github.com/scala-ide/scala-ide/blob/master/update-scala.sh
-.. _update-director.sh: https://github.com/scala-ide/scala-ide/blob/master/update-director.sh
+.. _eclipse-director.sh: https://github.com/scala-ide/scala-ide/blob/master/eclipse-director.sh
