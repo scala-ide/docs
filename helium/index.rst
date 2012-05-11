@@ -14,6 +14,7 @@ Contents:
 
    features/logging
    features/moverefactoring
+   features/show-type
    features/scaladebugger/index.rst
    features/implicit-highlighting/index.rst
    features/implicit-hyperlinking/index.rst
