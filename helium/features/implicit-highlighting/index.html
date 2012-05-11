@@ -99,10 +99,13 @@ great power comes great responsability, and a desire to control. Meet <em>Implic
 <div class="section" id="id1">
 <h2>Implicit highlighting</h2>
 <img alt="../../../_images/implicit-format.png" src="../../../_images/implicit-format.png" />
-<p>Notice that the string is underlined, and a marker is added to the left
-gutter. This signals that the method <tt class="docutils literal"><span class="pre">format</span></tt> was added through an implicit
-conversion. If you move your mouse on the gutter, you will see the actual
-conversion (<tt class="docutils literal"><span class="pre">augmentString</span></tt>).</p>
+<p>We have defined a class for rational numbers, and defined an implicit for integers
+to the rationals. This way we can seamlessly mix integers and rationals in arithmetic
+expressions, for instance by adding 42 with a rational number.</p>
+<p>Notice that the number <tt class="docutils literal"><span class="pre">42</span></tt> is underlined, and a marker is added to the left
+gutter. This signals that the method <tt class="docutils literal"><span class="pre">plus</span></tt> was added through an implicit
+conversion. If you move your mouse over the gutter, you will see the actual
+conversion (<tt class="docutils literal"><span class="pre">intToRational</span></tt>).</p>
 <img alt="../../../_images/hover.png" src="../../../_images/hover.png" />
 <p>There is also a QuickFix available (<tt class="docutils literal"><span class="pre">CMD-1</span></tt>)
 that makes the call the implicit conversion explicit!</p>

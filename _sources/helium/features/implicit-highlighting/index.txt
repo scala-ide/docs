@@ -10,10 +10,14 @@ Implicit highlighting
 
 .. image:: images/implicit-format.png
 
-Notice that the string is underlined, and a marker is added to the left
-gutter. This signals that the method ``format`` was added through an implicit
-conversion. If you move your mouse on the gutter, you will see the actual
-conversion (``augmentString``). 
+We have defined a class for rational numbers, and defined an implicit for integers
+to the rationals. This way we can seamlessly mix integers and rationals in arithmetic 
+expressions, for instance by adding 42 with a rational number.
+
+Notice that the number ``42`` is underlined, and a marker is added to the left
+gutter. This signals that the method ``plus`` was added through an implicit
+conversion. If you move your mouse over the gutter, you will see the actual
+conversion (``intToRational``). 
 
 .. image:: images/hover.png
 
