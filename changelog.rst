@@ -5,7 +5,7 @@ Changelog
 ------------------------------
 
 M2 (unreleased)
-.........................
+...............
 
 * `Implicit hyperlinking`__ - `#1001002`_
 * `Infer Type of Structured Selection`__
@@ -63,7 +63,7 @@ M1 (released: 2012-04-13)
 -------------------------------
 
 2.0.2-rc01 (unreleased)
-......................
+.......................
 
 * Removed code generation groups from editor's context menu - `#1000972`_
 * Correctly expose Scala @throw annotation to Java - `#1000800`_
