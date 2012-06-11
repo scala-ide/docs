@@ -20,13 +20,7 @@ Requirements
 
 * The `Scala IDE Helium for Scala 2.9 <http://scala-ide.org/download/nightly.html>`_.
 
-
-You will also need a terminal to run some script. If you are on Windows, we suggest you to 
-install `Cygwin <http://www.cygwin.com/>`_ (how could you live without it on Windows anyway!?). 
-It is not mandatory to use Cygwin, but in this documentation we assume you have a way to run 
-bash scripts, or else, you have the time and motivation to look inside the existing scripts and 
-convert them in Windows batch files, if needed (if you do so, make sure to send a pull request our way, 
-and we will make the Windows scripts available to all contributors).
+This document uses a script to build Scala IDE. If you are on Windows, we suggest you to install Cygwin (how could you live without it on Windows anyway!?). Otherwise, the :ref:`building_run-the-build` section of the documentation describes the different steps to execute for a full build.
 
 .. _setup_fork-the-project:
 
@@ -52,64 +46,53 @@ Make sure to `add an Upstream <http://help.github.com/fork-a-repo/#Set-Up-Your-L
 to the original Scala IDE git remote repository, so that you can keep fetching the latest changes 
 made in the project, and easily integrate them back in your fork.
 
-Now, fire up Eclipse and import the Scala IDE project. In a few moment you will be all set to start 
-hacking on the Scala IDE!
+Pull the libraries
+------------------
 
+The Scala IDE projects uses libraries which are pulled during the build process and copied in the ``target/lib`` folders.
+So let's run the build.
+
+From the project root, run the following command if you are using Scala IDE with Scala 2.9:
+
+.. code-block:: bash
+
+   $ ./build-all.sh clean install
+
+or the following if you are using Scala IDE with Scala 2.10:
+
+.. code-block:: bash
+
+   $ ./build-all.sh -P scala-2.10.x clean install
+
+If you want more information concerning the build, check out :ref:`building_run-the-build`.
 
 Import the projects into Eclipse
 --------------------------------
 
 The Scala IDE project already contains the metadata files needed by Eclipse to setup the project. 
-To import the Scala IDE in your workspace simply click on File > Import. The Eclipse Import dialog 
-will open. There, select General > Existing Projects into Workspace and click Next. A new dialog 
+To import the Scala IDE in your workspace simply click on ``File > Import``. The Eclipse Import dialog 
+will open. There, select ``General > Existing Projects into Workspace`` and click Next. A new dialog 
 will open. Browse to the folder that points to your cloned Scala IDE project's and select it. 
 
 A list of projects should then be loaded in the below white area. The only projects that you absolutely 
 need to import in Eclipse are ``org.scala-ide.sbt.full.library``, ``org.scala-ide.sdt.core`` and 
 ``org.scala-ide.sdt.core.tests``. Select only those and click Finish. 
  
-There is only one more thing you need to do to get ready to hack the Scala IDE project. You will 
+There is only one more thing to check to get ready to hack the Scala IDE project. You may 
 notice that the ``org.scala-ide.sbt.full.library`` project has build path errors. This project is 
-grouping together a bunch of SBT jars into one OSGI bundle. In order to retrieve them from 
-different SBT/Ivy repositories, you need to run a script from the command line. 
- 
-Open a terminal, go in your (local) Scala IDE project's root folder, and then 
- 
-.. code-block:: bash
- 
-	$ cd org.scala-ide.build-toolchain
- 
-The script to run is different depending on the Scala version packaged with the Scala IDE plug-in 
-you have installed.
- 
-If you are using the Scala IDE with Scala 2.9
- 
-.. code-block:: bash
-	
-	$ ./build-toolchain-2.9.x.sh
-	
-or, if you are using Scala IDE with Scala 2.10 (trunk)
- 
-.. code-block:: bash
-	
-	$ ./build-toolchain-trunk.sh
- 
-After the script completes, refresh the ``org.scala-ide.sbt.full.library`` project in Eclipse. Then, 
-expand the ``org.scala-ide.sbt.full.library`` project and expand the ``lib`` folder. You should 
-see a number of JARs with a Scala version appended.
- 
-Now, right click on the ``org.scala-ide.sbt.full.library`` project and then click "Properties". A 
-dialog will open. Click on "Java Build Path" and select the Libraries tab. You should see something 
+grouping together a bunch of SBT jars into one OSGI bundle. The project build path is configured by default to
+reference the 2.9 version of the jars, so the configuration will be wrong if you are working with Scala 2.10.
+
+To fix this, right click on the ``org.scala-ide.sbt.full.library`` project and then click "Properties". A 
+dialog will open. Click on "Java Build Path" and select the "Libraries" tab. You should see something 
 on the lines of:
  
 .. image:: images/sbt-full-jars.png
    :width: 100%
    :target: ../../_images/sbt-full-jars.png
  
-If you are seeing errors it means that the imported JARs do not match the ones existing in 
-``org.scala-ide.sbt.full.library/lib`` folder. To fix this, first remove all JARs, and then click 
-the "Add JARs..." button and browse to ``org.scala-ide.sbt.full.library/lib``. Select all JARs in the 
-folder and click OK.
+First remove all JARs, and then click the "Add JARs..." button and browse to ``org.scala-ide.sbt.full.library/target/classes/lib``.
+Select all JARs in the folder and click OK.
  
 Now click the "Order and Export" tab and make sure to export all JARs click the "Select All" button. 
  
@@ -119,22 +102,9 @@ Now click the "Order and Export" tab and make sure to export all JARs click the 
  
  
 Click OK. 
-
-Eclipse should automatically refresh the projects, but you will still see some build 
-errors in the ``org.scala-ide.sbt.core`` project. The problem is that we are missing a few 
-dependencies needed to compile the project's sources. To fix this, you will need to build the 
-project from the terminal. Follow the steps described in :ref:`building_run-the-build`. Then, 
-come back to finish the setup. 
-
-When running the build script, Maven will take care of copying the dependecies in the 
-``org.scala-ide.sbt.core`` project, inside the ``/lib`` folder. After the build completed, you should 
-no longer see errors inside Eclipse. If you do still see errors, try to refresh all projects (in 
-Eclipse, select all the imported Scala IDE projects and press F5) and do a full clean, 
-re-build (to do so, click on the "Project" menu item, and the "Clean...").
  
-If after rebuilding you still see errors, drop us a note in the `Scala IDE Developer 
+If after rebuilding you see any errors, drop us a note in the `Scala IDE Developer 
 Mailing List <http://groups.google.com/group/scala-ide-dev?pli=1>`_.
-
 
 Run the Scala IDE within Eclipse
 --------------------------------
