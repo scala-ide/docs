@@ -86,6 +86,19 @@ or for Scala 2.10.x:
    $ cd ../org.scala-ide.sdt.build
    $ mvn -P scala-2.10.x clean install
 
+Running the memory leak test
+----------------------------
+
+Scala IDE has a memory leak test. This test compiles 50 times the Scala compiler as a Scala IDE project, checking the memory consumption between each run.
+
+This test is not run by default in a normal build. org.scala-ide.sdt.core.test contains a special profile to run the test.
+
+Use the following command to run it after having build the toolchain.
+
+.. code-block:: bash
+
+   # from org.scala-ide.sdt.build
+   $ mvn --projects ../org.scala-ide.sdt.core,../org.scala-ide.sdt.core.tests -P scala-2.10.x,memory-test clean integration-test
 
 Build the Scala IDE with a local version of the Scala Compiler
 --------------------------------------------------------------
