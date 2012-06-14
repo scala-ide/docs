@@ -51,6 +51,7 @@ __ http://www.assembla.com/spaces/scala-ide/tickets/1000867
 * Scala 2.10 support (e.g., macros) -  *Typesafe team*
 * New Scala debugger - *Typesafe team* - `documentation`__ - |progress|
 * Code Analysis - *Mirko Stocker* - `#1000629`__
+* More refactoring support - *Michael Holzer* - `#1000960`__ - |progress|
 
 __ http://skillsmatter.com/podcast/scala/scalatest-scalamock-subcut
 __ http://scala-ide.org/docs/helium/features/implicit-hyperlinking/index.html
@@ -62,6 +63,7 @@ __ http://www.assembla.com/spaces/scala-ide/tickets/1000868
 __ http://www.assembla.com/spaces/scala-ide/tickets/1000869
 __ http://scala-ide.org/docs/helium/features/scaladebugger/index.html
 __ http://www.assembla.com/spaces/scala-ide/tickets/1000629
+__ http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000960
 
 **Milestone 3** - :strikethrough:`mid-July` delayed to October 2012
 
@@ -79,7 +81,6 @@ __ http://www.assembla.com/spaces/scala-ide/tickets/1000873
 
 **Not aligned**
 
-* More refactoring support - *Mirko Stocker, Michael Holzer* - Milestone 2?
 * Eclipse Juno (4.2) support - *Eric Molitor, Typesafe Team* - Milestone 2?
 * Create a new JDT model builder, using the compiled classes - *Typesafe team* - `#1000866`__
 * Specs2 support - *Richard Oliver Legendi, Eric Toreborre* (GSoC)

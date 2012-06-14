@@ -1,5 +1,5 @@
 Show Type of Selection
-=======
+======================
 
 It often happens that during development you'd like to know what is the type of a Scala expression. This can
 be very handy when 'debugging' a type error, for instance inside a for comprehension, or a pattern match.

@@ -10,8 +10,8 @@ Implicit highlighting
 
 .. image:: images/implicit-format.png
 
-We have defined a class for rational numbers, and defined an implicit for integers
-to the rationals. This way we can seamlessly mix integers and rationals in arithmetic 
+We have defined a class for rational numbers, and defined an implicit comversion from integers
+to rationals. This way we can easily mix integers and rationals in arithmetic 
 expressions, for instance by adding 42 with a rational number.
 
 Notice that the number ``42`` is underlined, and a marker is added to the left
