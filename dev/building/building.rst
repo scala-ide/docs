@@ -2,7 +2,7 @@ Building the Scala IDE
 ======================
 
 The Scala IDE for Eclipse can be built on the command line using Maven, as is 
-done, for example, during the `Hudson-driven nightly builds on Amazon EC2 <https://jenkins.scala-ide.org:8496/jenkins/>`_. 
+done, for example, during the `Jenkins-driven nightly builds <https://jenkins.scala-ide.org:8496/jenkins/>`_. 
 
 
 Requirements
@@ -18,35 +18,25 @@ Requirements
 * You have cloned the Scala IDE project. Read :ref:`setup_fork-the-project` for 
   more information about this point.
 
-You will also need a terminal to run some script. If you are on Windows, we
-suggest you to install Cygwin (how could you live without it on Windows
-anyway!?). It is not mandatory to use Cygwin, but in this documentation we
-assume you have a way to run bash scripts, or else, you have the time and
-motivation to look inside the existing scripts and convert them in Windows
-batch files, if needed (if you do so, make sure to send a pull request our
-way, and we will make the Windows scripts available to all contributors).
-
-
 .. _building_run-the-build:
 
 Run the build
 -------------
 
-Open your terminal, navigate to the project's root, and then:
+If you just want to build Scala IDE, a script triggers the different step needed to generate Scala IDE.
+
+
+From the project root, run the following command to build Scala IDE for Scala 2.9:
 
 .. code-block:: bash
 
-	$ cd org.scala-ide.build
+   $ ./build-all.sh clean install
 
-Build using the provided scripts,
+or the following to build Scala IDE for Scala 2.10:
 
 .. code-block:: bash
 
-      # For builds relative to Scala 2.9.x
-      $ ./build-ide-2.9.x.sh
-      #
-      # For builds relative to Scala trunk
-      $ ./build-ide-trunk.sh
+   $ ./build-all.sh -P scala-2.10.x clean install
 
 .. note:: 
 
@@ -60,7 +50,57 @@ from this update site by adding it as a local update site via the Eclipse
 "Install New Software ..." action. Alternatively, if you make the unpacked site available via a web 
 server, then the HTTP URL of its root directory is acceptable as an ordinary Eclipse update site URL.
 
+The build in details
+--------------------
 
+The build relies only on maven and maven profile.
+
+There are 4 parts:
+
+* the *root* pom is the parent pom. It contains version numbers, default configurations and the profiles
+* *org.scala-ide.build-toolchain* creates the osgi bundles for the Scala library, compiler and sbt
+* *org.scala-ide.toolchain.update-site* creates an update site containing the bundles created by the build-toolchain (needed for the nightly builds)
+* *org.scala-ide.sdt.build* compiles, tests and creates the update site for Scala IDE
+
+The toolchain update site and the SDT build depend on the fact that the root pom and toolchain have been compiled and installed in the local maven repository using ``mvn install``.
+
+After an initial complete build, maven can be used from any subproject.
+
+``build-all.sh`` is simply a helper script that calls maven on the different parts. Running it is equivalent to:
+
+.. code-block:: bash
+
+   $ mvn clean install
+   $ cd org.scala-ide.build-toolchain
+   $ mvn clean install
+   $ cd ../org.scala-ide.sdt.build
+   $ mvn clean install
+
+or for Scala 2.10.x:
+
+.. code-block:: bash
+
+   $ mvn -P scala-2.10.x clean install
+   $ cd org.scala-ide.build-toolchain
+   $ mvn -P scala-2.10.x clean install
+   $ cd ../org.scala-ide.sdt.build
+   $ mvn -P scala-2.10.x clean install
+
+Running the memory leak test
+----------------------------
+
+Scala IDE has a memory leak test. This test compiles 50 times the Scala compiler as a Scala IDE project, checking the memory consumption between each run.
+
+This test is not run by default in a normal build. org.scala-ide.sdt.core.test contains a special profile to run the test.
+
+Use the following command to run it after having build the toolchain.
+
+.. code-block:: bash
+
+   # from org.scala-ide.sdt.build
+   $ mvn --projects ../org.scala-ide.sdt.aspects,../org.scala-ide.sdt.core,../org.scala-ide.sdt.core.tests -P scala-2.10.x,memory-test clean integration-test
+
+The ``--projects`` option tells maven which modules to build, as we don't need to build all of them in this case. The ``memory-test`` profile contains a sightly modified configuration for ``sdt.core.test``. It pulls and extracts the Scala compiler source needed for the test, and sets the MemoryLeaksTest test to be run.
 
 Build the Scala IDE with a local version of the Scala Compiler
 --------------------------------------------------------------
@@ -72,32 +112,23 @@ Build the Scala IDE with a local version of the Scala Compiler
 	Scala IDE plug-in reacts to the changes. If that is exactly what you want to do, keep reading.
 	Otherwise, you can safely skip this section.
 
-First, build the Scala compiler, package into maven format and deploy locally,
+Build the Scala compiler, package into maven format and deploy locally,
 
 .. code-block:: bash
 
-    # You are in the main Scala directory
+    # From the main Scala directory
     $ ant distpack-opt
-    $ (cd dists/maven/latest; ant -Dlocal.snapshot.repository=${LOCAL_REPO} -Dlocal.release.repository=${LOCAL_REPO} deploy.snapshot.local)
-    
-    # If you use the standard .m2 location for maven, then the last command reduces to
     $ (cd dists/maven/latest; ant deploy.snapshot.local)
 
-Go to directory where you cloned your Scala IDE and run the necessary scripts that use your local 
-trunk version
+Then rebuild Scala IDE, the build will automatically pickup the compiler which was installed locally.
 
 .. code-block:: bash
 
-    # Packages the Scala compiler and library into OSGI bundles
-    $ org.scala-ide.build-toolchain/build-toolchain-local-trunk.sh
-    
-    # Uses the above bundled compiler and library to build the Scala IDE
-    $ org.scala-ide.build/build-ide-local-trunk.sh
+    # From the main Scala IDE directory
+    $ ./build-all.sh -P scala-2.10.x clean install
 
-
-If the build was successful you will end up with a right update-site - it contains the local changes 
-you made in the Scala compiler. 
-
+When the build is successful, a complete update-site, with the local changes 
+you made in the Scala compiler, is available in ``org.scala-ide.sdt.update-site/target/site``.
 
 .. note::
 
