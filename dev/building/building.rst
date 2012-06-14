@@ -98,7 +98,9 @@ Use the following command to run it after having build the toolchain.
 .. code-block:: bash
 
    # from org.scala-ide.sdt.build
-   $ mvn --projects ../org.scala-ide.sdt.core,../org.scala-ide.sdt.core.tests -P scala-2.10.x,memory-test clean integration-test
+   $ mvn --projects ../org.scala-ide.sdt.aspects,../org.scala-ide.sdt.core,../org.scala-ide.sdt.core.tests -P scala-2.10.x,memory-test clean integration-test
+
+The ``--projects`` option tells maven which modules to build, as we don't need to build all of them in this case. The ``memory-test`` profile contains a sightly modified configuration for ``sdt.core.test``. It pulls and extracts the Scala compiler source needed for the test, and sets the MemoryLeaksTest test to be run.
 
 Build the Scala IDE with a local version of the Scala Compiler
 --------------------------------------------------------------
