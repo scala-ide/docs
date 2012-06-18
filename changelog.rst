@@ -11,7 +11,7 @@ M2 (unreleased)
 * `Infer Type of Structured Selection`__
 * Removed code generation groups from editor's context menu - `#1000972`_
 * Correctly expose Scala @throw annotation to Java - `#1000800`_
-* Support nested projects (Maven style) - `#1000881`_, `#`1000734`_, `#1000621`_
+* Support nested projects (Maven style) - `#1000881`_, `#1000734`_, `#1000621`_
 * Fixed crash in tooltip launch button - `#1000951`_
 
 __ http://scala-ide.org/docs/helium/features/implicit-hyperlinking/index.html
