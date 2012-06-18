@@ -11,12 +11,18 @@ M2 (unreleased)
 * `Infer Type of Structured Selection`__
 * Removed code generation groups from editor's context menu - `#1000972`_
 * Correctly expose Scala @throw annotation to Java - `#1000800`_
+* Support nested projects (Maven style) - `#1000881`_, `#`1000734`_, `#1000621`_
+* Fixed crash in tooltip launch button - `#1000951`_
 
 __ http://scala-ide.org/docs/helium/features/implicit-hyperlinking/index.html
 .. _#1001002: http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001002
 __ http://scala-ide.org/docs/helium/features/show-type.html
 .. _#1000972: http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000972
 .. _#1000800: http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000800
+.. _#1000881: http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000881
+.. _#1000734: http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000734
+.. _#1000621: http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000621
+.. _#1000951: http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000951
 
 M1 (released: 2012-04-13)
 .........................
@@ -67,6 +73,8 @@ M1 (released: 2012-04-13)
 
 * Removed code generation groups from editor's context menu - `#1000972`_
 * Correctly expose Scala @throw annotation to Java - `#1000800`_
+* Support nested projects (Maven style) - `#1000881`_, `#`1000734`_, `#1000621`_
+* Fixed crash in tooltip launch button - `#1000951`_
 
 2.0.1 (release/scala-ide-2.0.x)
 -------------------------------
