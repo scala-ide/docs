@@ -14,6 +14,7 @@ M2 (unreleased)
 * Support nested projects (Maven style) - `#1000881`_, `#1000734`_, `#1000621`_
 * Fixed crash in tooltip launch button - `#1000951`_
 * Made ``Run As Scala Application`` more robust - `#1000911`_
+* Use the configured JDK when instantiating the presentation compiler. - `#1000820`_
 
 __ http://scala-ide.org/docs/helium/features/implicit-hyperlinking/index.html
 .. _#1001002: http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001002
@@ -25,6 +26,7 @@ __ http://scala-ide.org/docs/helium/features/show-type.html
 .. _#1000621: http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000621
 .. _#1000951: http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000951
 .. _#1000911: https://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000911
+.. _#1000820: https://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000820
 
 M1 (released: 2012-04-13)
 .........................
@@ -78,6 +80,7 @@ M1 (released: 2012-04-13)
 * Support nested projects (Maven style) - `#1000881`_, `#1000734`_, `#1000621`_
 * Fixed crash in tooltip launch button - `#1000951`_
 * Made ``Run As Scala Application`` more robust - `#1000911`_
+* Use the configured JDK when instantiating the presentation compiler. - `#1000820`_
 
 2.0.1 (release/scala-ide-2.0.x)
 -------------------------------
