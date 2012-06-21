@@ -9,11 +9,14 @@ M2 (unreleased)
 
 * `Implicit hyperlinking`__ - `#1001002`_
 * `Infer Type of Structured Selection`__
+* Missing Scala library in run classpath - `#1000786`_, `#1000919`_, `#1001022`_
+* Problem deleting files on Windows - `#1000909`_, `#1000923`_
 * Removed code generation groups from editor's context menu - `#1000972`_
-* Correctly expose Scala @throw annotation to Java - `#1000800`_
+* Correctly expose Scala @throw annotation to Java - `#1000707`_, `#1000800`_, `#1001005`_
 * Support nested projects (Maven style) - `#1000881`_, `#1000734`_, `#1000621`_
 * Fixed crash in tooltip launch button - `#1000951`_
 * Made ``Run As Scala Application`` more robust - `#1000911`_
+* Use the configured JDK when instantiating the presentation compiler. - `#1000820`_
 
 __ http://scala-ide.org/docs/helium/features/implicit-hyperlinking/index.html
 .. _#1001002: http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001002
@@ -21,10 +24,18 @@ __ http://scala-ide.org/docs/helium/features/show-type.html
 .. _#1000972: http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000972
 .. _#1000800: http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000800
 .. _#1000881: http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000881
+.. _#1000707: http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000707
 .. _#1000734: http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000734
+.. _#1000786: http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000786
 .. _#1000621: http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000621
 .. _#1000951: http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000951
-.. _#1000911: https://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000911
+.. _#1000909: http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000909
+.. _#1000911: http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000911
+.. _#1000919: http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000919
+.. _#1000923: http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000923
+.. _#1000820: http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000820
+.. _#1001005: http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001005
+.. _#1001022: http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001022
 
 M1 (released: 2012-04-13)
 .........................
@@ -73,11 +84,17 @@ M1 (released: 2012-04-13)
 2.0.2-rc01 (unreleased)
 .......................
 
+* Missing Scala library in run classpath - `#1000786`_, `#1000919`_, `#1001022`_
+* Provide reusable sdt.core.tests bundle - `#1001080`_
+* Problem deleting files on Windows - `#1000909`_, `#1000923`_
 * Removed code generation groups from editor's context menu - `#1000972`_
-* Correctly expose Scala @throw annotation to Java - `#1000800`_
+* Correctly expose Scala @throw annotation to Java - `#1000707`_, `#1000800`_, `#1001005`_
 * Support nested projects (Maven style) - `#1000881`_, `#1000734`_, `#1000621`_
 * Fixed crash in tooltip launch button - `#1000951`_
 * Made ``Run As Scala Application`` more robust - `#1000911`_
+* Use the configured JDK when instantiating the presentation compiler. - `#1000820`_
+
+.. _#1001080: http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001080
 
 2.0.1 (release/scala-ide-2.0.x)
 -------------------------------
