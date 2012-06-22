@@ -10,6 +10,7 @@ M2 (unreleased)
 * `Implicit hyperlinking`__ - `#1001002`_
 * `Infer Type of Structured Selection`__
 * Missing Scala library in run classpath - `#1000786`_, `#1000919`_, `#1001022`_
+* Provide reusable sdt.core.tests bundle - `#1001080`_
 * Problem deleting files on Windows - `#1000909`_, `#1000923`_
 * Removed code generation groups from editor's context menu - `#1000972`_
 * Correctly expose Scala @throw annotation to Java - `#1000707`_, `#1000800`_, `#1001005`_
@@ -36,6 +37,7 @@ __ http://scala-ide.org/docs/helium/features/show-type.html
 .. _#1000820: http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000820
 .. _#1001005: http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001005
 .. _#1001022: http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001022
+.. _#1001080: http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001080
 
 M1 (released: 2012-04-13)
 .........................
@@ -81,8 +83,8 @@ M1 (released: 2012-04-13)
 2.0.2 (release/scala-ide-2.0.x)
 -------------------------------
 
-2.0.2-rc01 (unreleased)
-.......................
+2.0.2-rc01 (release: 2012-06-22)
+................................
 
 * Missing Scala library in run classpath - `#1000786`_, `#1000919`_, `#1001022`_
 * Provide reusable sdt.core.tests bundle - `#1001080`_
@@ -94,7 +96,6 @@ M1 (released: 2012-04-13)
 * Made ``Run As Scala Application`` more robust - `#1000911`_
 * Use the configured JDK when instantiating the presentation compiler. - `#1000820`_
 
-.. _#1001080: http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001080
 
 2.0.1 (release/scala-ide-2.0.x)
 -------------------------------
