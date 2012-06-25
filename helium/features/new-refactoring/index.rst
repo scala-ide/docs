@@ -79,6 +79,10 @@ Selecting both class parameters and inserting calls to ``super`` results in this
 
 .. image:: images/hashcode-and-equals-after.png
 
+If the original class already has existing implementations for ``canEqual``, ``equals`` or ``hashCode``, the refactoring dialog offers the option to keep those or let them be replaced by newly generated implementations:
+
+.. image:: images/generate-existing-dialog.png
+
 Introduce ProductN trait
 ------------------------
 Asked for by the community, *Introduce ProductN trait* is an extension of *Generate hashCode and equals*. In addition to *Generate hashCode and equals* this generator creates the methods ``_1`` to ``_n`` for the selected class parameters and mixes in the trait ``ProductN``, where *n* stands for the number of selected class parameters. 
