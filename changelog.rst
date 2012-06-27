@@ -83,14 +83,14 @@ M1 (released: 2012-04-13)
 2.0.2 (release/scala-ide-2.0.x)
 -------------------------------
 
-2.0.2-rc02 (release: 2012-06-27)
+2.0.2-rc02 (unreleased)
 ................................
 
 * Fixed issue with ``Run As Scala Application`` - `#1001096`_
 
 .. _#1001096: https://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001096
 
-2.0.2-rc01 (release: 2012-06-22)
+2.0.2-rc01 (released: 2012-06-22)
 ................................
 
 * Missing Scala library in run classpath - `#1000786`_, `#1000919`_, `#1001022`_
@@ -107,7 +107,7 @@ M1 (released: 2012-04-13)
 2.0.1 (release/scala-ide-2.0.x)
 -------------------------------
 
-2.0.1-final (release: 2012-04-30)
+2.0.1-final (released: 2012-04-30)
 .................................
 
 * Bundled with Scala 2.9.2.
