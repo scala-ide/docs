@@ -16,8 +16,9 @@ M2 (unreleased)
 * Correctly expose Scala @throw annotation to Java - `#1000707`_, `#1000800`_, `#1001005`_
 * Support nested projects (Maven style) - `#1000881`_, `#1000734`_, `#1000621`_
 * Fixed crash in tooltip launch button - `#1000951`_
-* Made ``Run As Scala Application`` more robust - `#1000911`_
+* Made ``Run As Scala Application`` more robust - `#1000911`_, `#1001096`_
 * Use the configured JDK when instantiating the presentation compiler. - `#1000820`_
+* Warn the user if JDT Weaving is disabled - `#1001104`_
 
 __ http://scala-ide.org/docs/helium/features/implicit-hyperlinking/index.html
 .. _#1001002: http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001002
@@ -32,12 +33,14 @@ __ http://scala-ide.org/docs/helium/features/show-type.html
 .. _#1000951: http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000951
 .. _#1000909: http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000909
 .. _#1000911: http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000911
+.. _#1001096: https://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001096
 .. _#1000919: http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000919
 .. _#1000923: http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000923
 .. _#1000820: http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000820
 .. _#1001005: http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001005
 .. _#1001022: http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001022
 .. _#1001080: http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001080
+.. _#1001104: https://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001104
 
 M1 (released: 2012-04-13)
 .........................
@@ -83,12 +86,13 @@ M1 (released: 2012-04-13)
 2.0.2 (release/scala-ide-2.0.x)
 -------------------------------
 
-2.0.2-rc02 (unreleased)
+2.0.2-rc02 (released: 2012-06-28)
 ................................
 
 * Fixed issue with ``Run As Scala Application`` - `#1001096`_
+* Warn the user if JDT Weaving is disabled - `#1001104`_
 
-.. _#1001096: https://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001096
+
 
 2.0.2-rc01 (released: 2012-06-22)
 ................................
