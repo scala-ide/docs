@@ -13,11 +13,12 @@ Contents:
    :maxdepth: 2
 
    features/logging
-   features/moverefactoring
    features/show-type
    features/scaladebugger/index.rst
    features/implicit-highlighting/index.rst
    features/implicit-hyperlinking/index.rst
    features/semantic-highlighting/index.rst
+   features/new-refactoring/index.rst
+   features/source-generators/index.rst
    
 .. include:: /contribute.rst.inc
