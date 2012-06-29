@@ -97,7 +97,7 @@ Check the :ref:`faq_known-issues` section.
 .. _current section: http://scala-ide.org/download/current.html
 .. _eclipsify: https://github.com/musk/SbtEclipsify/tree/0.8.0
 .. _Eclipse 3.6 (Helios): http://www.eclipse.org/downloads/packages/release/helios/sr2
-.. _Eclipse 3.7 (Indigo): http://www.eclipse.org/downloads/
+.. _Eclipse 3.7 (Indigo): http://www.eclipse.org/downloads/packages/eclipse-classic-372/indigosr2
 .. _m2eclipse: http://www.eclipse.org/m2e/
 .. _m2eclipse-scala: https://github.com/sonatype/m2eclipse-scala
 .. _maven: http://maven.apache.org/
