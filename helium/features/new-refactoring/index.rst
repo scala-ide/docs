@@ -3,6 +3,45 @@ New Refactorings
 
 Are you used to a *lot* of refactorings provided by your Java IDE? Well, we're trying to close the gap, take a look at the new refactorings! All new refactorings are available using the usual refactoring menus.
 
+Move Class, Object or Trait Refactoring
+=======================================
+
+Move Class was an often requested feature in the Scala IDE bugtracker, so we
+implemented it for the upcoming 2.1 release. The refactoring can either be
+invoked from the Refactoring menu, or indirectly by drag-and-dropping a file
+in the Package Explorer.
+
+If there exists more than one top-level declaration in the file, you can choose to
+split-off one of the declarations or to move them all. The refactoring will move
+all the necessary imports along, and also update all the references (other
+imports, or qualified names) in the project.
+
+Here is a screenshot of the refactoring configuration dialog:
+
+.. image:: images/move-class-configuration.png
+
+You can also create a new package directly in the wizard, and choose to move the
+complete file or only the selected definition (the option is not present if no
+definition was selected or if the file contains only a single one).
+
+The resulting changes can then be previewed in the usual fashion:
+
+.. image:: images/move-class-preview.png
+
+A new file is created with the name of the moved class. In this preview, we can
+see that the class is removed in the file and an import to its new location is
+added because the class is referenced somewhere in this file.
+
+Limitations
+-----------
+
+There currently are some limitations: the refactoring works only on Scala code,
+and it simply ignores visibility issues, so moving might result in compilation
+errors. This being the initial implementation, it is certainly not free of bugs,
+so please `report any bug you encounter
+<http://scala-ide-portfolio.assembla.com/spaces/scala-ide/support/tickets>`_.
+
+
 Method signature refactorings
 =============================
 
@@ -23,6 +62,11 @@ In the refactoring dialog the parameters can be moved up and down in their param
 All changes are displayed in the preview dialog:
 
 .. image:: images/change-order-preview.png
+
+Limitations
+%%%%%%%%%%%
+Changing of parameter order currently doesn't play well together with default and named arguments. This will hopefully be improved soon.
+
 
 Split parameter lists
 ---------------------
@@ -55,46 +99,6 @@ Having merged the right parameter lists we get back our original method signatur
 Note that there are situations where parameter lists can't be merged because they are partially applied. As an example, we can't merge the remaining two parameter lists of the method ``reorder`` because of the partial application in the method ``partial``:
 
 .. image:: images/merge-not-possible.png
-
-Source generators
-=================
-
-Not exactly refactorings, but since they are implemented in the Scala refactoring library they are presented here nevertheless. The following source generators can be found under the *Source* context menu that appears after right-clicking in the editor.
-
-Generate hashCode and equals
-----------------------------
-*Generate hashCode and equals* generates implementations for the ``hashCode`` and ``equals`` methods based on selected class parameters. The implementations are based on the recommendations from `Programming in Scala`_. This includes a ``canEqual`` method, thus the ``Equals`` trait is mixed in as well.
-
-.. _`Programming in Scala`: http://www.artima.com/pins1ed/object-equality.html
-
-To start this refactoring simply select a class. As an example we will use the class ``Generate``:
-
-.. image:: images/generate-before.png
-
-In the refactoring dialog the class parameters that should be included in the equals comparison and the hashcode computation can be selected. Optionally calls to ``super`` can be inserted:
-
-.. image:: images/hashcode-and-equals-dialog.png
-
-Selecting both class parameters and inserting calls to ``super`` results in this:
-
-.. image:: images/hashcode-and-equals-after.png
-
-If the original class already has existing implementations for ``canEqual``, ``equals`` or ``hashCode``, the refactoring dialog offers the option to keep those or let them be replaced by newly generated implementations:
-
-.. image:: images/generate-existing-dialog.png
-
-Introduce ProductN trait
-------------------------
-Asked for by the community, *Introduce ProductN trait* is an extension of *Generate hashCode and equals*. In addition to *Generate hashCode and equals* this generator creates the methods ``_1`` to ``_n`` for the selected class parameters and mixes in the trait ``ProductN``, where *n* stands for the number of selected class parameters. 
-
-The refactoring dialog is almost the same as for *Generate hashCode and equals*:
-
-.. image:: images/productN-dialog.png
-
-Selecting only the first parameter ``a`` and omitting calls to ``super`` results in this:
-
-.. image:: images/productN-after.png
-
 
 Extract trait
 =============
