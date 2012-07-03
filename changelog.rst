@@ -19,6 +19,8 @@ M2 (unreleased)
 * Made ``Run As Scala Application`` more robust - `#1000911`_, `#1001096`_
 * Use the configured JDK when instantiating the presentation compiler. - `#1000820`_
 * Warn the user if JDT Weaving is disabled - `#1001104`_
+* Fixed NullPointerException occurring when using the ``New Application`` wizard - `#1000797`_, `#1001115`_
+* Fixed Assertion exception: ``Marker property value too long fails compilation`` - `#1001107`_
 
 __ http://scala-ide.org/docs/helium/features/implicit-hyperlinking/index.html
 .. _#1001002: http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001002
@@ -33,14 +35,17 @@ __ http://scala-ide.org/docs/helium/features/show-type.html
 .. _#1000951: http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000951
 .. _#1000909: http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000909
 .. _#1000911: http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000911
-.. _#1001096: https://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001096
+.. _#1001096: http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001096
 .. _#1000919: http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000919
 .. _#1000923: http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000923
 .. _#1000820: http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000820
 .. _#1001005: http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001005
 .. _#1001022: http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001022
 .. _#1001080: http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001080
-.. _#1001104: https://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001104
+.. _#1001104: http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001104
+.. _#1000797: http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000797
+.. _#1001115: http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001115
+.. _#1001107: http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001107
 
 M1 (released: 2012-04-13)
 .........................
@@ -86,13 +91,16 @@ M1 (released: 2012-04-13)
 2.0.2 (release/scala-ide-2.0.x)
 -------------------------------
 
+2.0.2-rc03 (unreleased)
+.......................
+* Fixed NullPointerException occurring when using the ``New Application`` wizard - `#1000797`_, `#1001115`_
+* Fixed Assertion exception: ``Marker property value too long fails compilation`` - `#1001107`_
+
 2.0.2-rc02 (released: 2012-06-28)
 ................................
 
 * Fixed issue with ``Run As Scala Application`` - `#1001096`_
 * Warn the user if JDT Weaving is disabled - `#1001104`_
-
-
 
 2.0.2-rc01 (released: 2012-06-22)
 ................................
