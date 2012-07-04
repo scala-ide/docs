@@ -49,9 +49,9 @@ __ http://www.assembla.com/spaces/scala-ide/tickets/1000867
 * Add support for Find References - *Typesafe team* - `#1000868`__ - |progress|
 * Improve dependency tracking - *Typesafe team* - `#1000869`__
 * Scala 2.10 support (e.g., macros) -  *Typesafe team*
-* New Scala debugger - *Typesafe team* - `documentation`__ - |progress|
+* `New Scala debugger`__ - *Typesafe team* - |progress|
 * Code Analysis - *Mirko Stocker* - `#1000629`__
-* More refactoring support - *Michael Holzer* - `#1000960`__ - |progress|
+* `New refactorings` - *Michael Holzer, Mirko Stocker* - `#1000960`__ - |done|
 
 __ http://skillsmatter.com/podcast/scala/scalatest-scalamock-subcut
 __ http://scala-ide.org/docs/helium/features/implicit-hyperlinking/index.html
@@ -63,6 +63,7 @@ __ http://www.assembla.com/spaces/scala-ide/tickets/1000868
 __ http://www.assembla.com/spaces/scala-ide/tickets/1000869
 __ http://scala-ide.org/docs/helium/features/scaladebugger/index.html
 __ http://www.assembla.com/spaces/scala-ide/tickets/1000629
+__ http://scala-ide.org/docs/helium/features/new-refactoring/index.html
 __ http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000960
 
 **Milestone 3** - :strikethrough:`mid-July` delayed to October 2012
