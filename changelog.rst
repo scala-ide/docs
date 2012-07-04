@@ -97,13 +97,13 @@ M1 (released: 2012-04-13)
 * Fixed Assertion exception: ``Marker property value too long`` - `#1001107`_
 
 2.0.2-rc02 (released: 2012-06-28)
-................................
+.................................
 
 * Fixed issue with ``Run As Scala Application`` - `#1001096`_
 * Warn the user if JDT Weaving is disabled - `#1001104`_
 
 2.0.2-rc01 (released: 2012-06-22)
-................................
+.................................
 
 * Missing Scala library in run classpath - `#1000786`_, `#1000919`_, `#1001022`_
 * Provide reusable sdt.core.tests bundle - `#1001080`_
@@ -120,7 +120,7 @@ M1 (released: 2012-04-13)
 -------------------------------
 
 2.0.1-final (released: 2012-04-30)
-.................................
+..................................
 
 * Bundled with Scala 2.9.2.
 
