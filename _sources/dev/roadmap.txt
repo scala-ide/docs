@@ -45,7 +45,7 @@ __ http://www.assembla.com/spaces/scala-ide/tickets/1000867
 * Infer Type of Structured Selection - *Typesafe Team* - |done|
 * Create an abstraction layer with the Scala compiler - *Typesafe team* - `#1000862`__ - |progress|
 * Use the Scala model for the Outline view - *Typesafe team* - `#1000863`__
-* Create a worksheet (like a REPL but in an editor) - *Typesafe team* - `#1000865`__
+* Create a worksheet (like a REPL but in an editor) - *Typesafe team* - `#1000865`__ |progress|
 * Add support for Find References - *Typesafe team* - `#1000868`__ - |progress|
 * Improve dependency tracking - *Typesafe team* - `#1000869`__
 * Scala 2.10 support (e.g., macros) -  *Typesafe team*
