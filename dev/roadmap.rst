@@ -51,7 +51,7 @@ __ http://www.assembla.com/spaces/scala-ide/tickets/1000867
 * Scala 2.10 support (e.g., macros) -  *Typesafe team*
 * `New Scala debugger`__ - *Typesafe team* - |progress|
 * Code Analysis - *Mirko Stocker* - `#1000629`__
-* `New refactorings` - *Michael Holzer, Mirko Stocker* - `#1000960`__ - |done|
+* `New refactorings`__ - *Michael Holzer, Mirko Stocker* - `#1000960`__ - |done|
 
 __ http://skillsmatter.com/podcast/scala/scalatest-scalamock-subcut
 __ http://scala-ide.org/docs/helium/features/implicit-hyperlinking/index.html
