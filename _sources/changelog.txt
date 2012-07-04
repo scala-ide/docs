@@ -91,8 +91,9 @@ M1 (released: 2012-04-13)
 2.0.2 (release/scala-ide-2.0.x)
 -------------------------------
 
-2.0.2-rc03 (unreleased)
-.......................
+2.0.2-rc03 (released: 2012-07-04)
+.................................
+
 * Fixed NullPointerException occurring when using the ``New Application`` wizard - `#1000797`_, `#1001115`_
 * Fixed Assertion exception: ``Marker property value too long`` - `#1001107`_
 
