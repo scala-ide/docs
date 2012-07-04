@@ -7,7 +7,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Semantic Highlighting &mdash; Scala IDE 2.0.0 documentation</title>
+    <title>Source generators &mdash; Scala IDE 2.0.0 documentation</title>
     
     <link rel="stylesheet" href="../../../_static/resources/stylesheets/base.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
@@ -42,8 +42,8 @@
     <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
     <link rel="top" title="Scala IDE 2.0.0 documentation" href="../../../index.html" />
     <link rel="up" title="Scala IDE Helium" href="../../index.html" />
-    <link rel="next" title="New Refactorings" href="../new-refactoring/index.html" />
-    <link rel="prev" title="Implicit Hyperlinking" href="../implicit-hyperlinking/index.html" /> 
+    <link rel="next" title="Welcome to the Scala IDE Developer Documentation" href="../../../dev/index.html" />
+    <link rel="prev" title="New Refactorings" href="../new-refactoring/index.html" /> 
   </head>
   <body>
 <div class="top-bar">
@@ -72,7 +72,7 @@
   <div class="container">
     <div class="row">
       <div class="span16">        
-        <h1>Semantic Highlighting</h1>
+        <h1>Source generators</h1>
 	  </div>
     </div>
   </div>
@@ -91,36 +91,28 @@
 
     <div class="row" style="position: relative; clear: both;">
       <div class="span11 main-content">
-        <div class="section" id="semantic-highlighting">
-<h1>Semantic Highlighting</h1>
-<p>Haven&#8217;t you always wanted to have more colors in your source code? Meet
-<em>semantic</em> highlighting!</p>
-<div class="section" id="introduction">
-<h2>Introduction</h2>
-<p>While syntax highlighting deals with keywords,
-strings and other low-level tokens in the language, semantic highlighting
-takes it a (big) step forward! Classes, traits, types, vals, vars, methods,
-etc. can each have their own assign color and text style. Our favorite is
-having deprecated symbols striked-through. The coloring is consistent between
-the use-site and definition site, so all occurrences of a symbol will be
-colored the same way.</p>
-<img alt="../../../_images/example.png" src="../../../_images/example.png" />
+        <div class="section" id="source-generators">
+<h1>Source generators</h1>
+<p>Tired of writing <tt class="docutils literal"><span class="pre">hashCode</span></tt> and <tt class="docutils literal"><span class="pre">equals</span></tt> implementations by hand? Now you can let the IDE take care of it! The following source generators can be found under the <em>Source</em> context menu that appears after right-clicking in the editor.</p>
+<div class="section" id="generate-hashcode-and-equals">
+<h2>Generate hashCode and equals</h2>
+<p><em>Generate hashCode and equals</em> generates implementations for the <tt class="docutils literal"><span class="pre">hashCode</span></tt> and <tt class="docutils literal"><span class="pre">equals</span></tt> methods based on selected class parameters. The implementations are based on the recommendations from <a class="reference external" href="http://www.artima.com/pins1ed/object-equality.html">Programming in Scala</a>. This includes a <tt class="docutils literal"><span class="pre">canEqual</span></tt> method, thus the <tt class="docutils literal"><span class="pre">Equals</span></tt> trait is mixed in as well.</p>
+<p>To start this refactoring simply select a class. As an example we will use the class <tt class="docutils literal"><span class="pre">Generate</span></tt>:</p>
+<img alt="../../../_images/generate-before.png" src="../../../_images/generate-before.png" />
+<p>In the refactoring dialog the class parameters that should be included in the equals comparison and the hashcode computation can be selected. Optionally calls to <tt class="docutils literal"><span class="pre">super</span></tt> can be inserted:</p>
+<img alt="../../../_images/hashcode-and-equals-dialog.png" src="../../../_images/hashcode-and-equals-dialog.png" />
+<p>Selecting both class parameters and inserting calls to <tt class="docutils literal"><span class="pre">super</span></tt> results in this:</p>
+<img alt="../../../_images/hashcode-and-equals-after.png" src="../../../_images/hashcode-and-equals-after.png" />
+<p>If the original class already has existing implementations for <tt class="docutils literal"><span class="pre">canEqual</span></tt>, <tt class="docutils literal"><span class="pre">equals</span></tt> or <tt class="docutils literal"><span class="pre">hashCode</span></tt>, the refactoring dialog offers the option to keep those or let them be replaced by newly generated implementations:</p>
+<img alt="../../../_images/generate-existing-dialog.png" src="../../../_images/generate-existing-dialog.png" />
 </div>
-<div class="section" id="configuration">
-<h2>Configuration</h2>
-<p>There is a slight performance penalty for using semantic highlighting.
-However, this is done in the background and we haven&#8217;t noticed any important
-slowdowns. Should you notice any, you can always jump to the preferences page
-and tweak or completely disable this feature.</p>
-<p>You can enable/disable and tweak your color scheme from the configuration
-page. The highlighter will use Java colors by default, but there are more
-semantic classes in Scala, so make sure you tweak them to your liking. We
-suggest the Java-based <a class="reference external" href="http://www.eclipsecolorthemes.org/?view=plugin">Color Theme</a> plugin as a starting point.</p>
-<img alt="../../../_images/prefs1.png" src="../../../_images/prefs1.png" />
-</div>
-<div class="section" id="thank-you">
-<h2>Thank you</h2>
-<p>Semantic highlighting was contributed by <a class="reference external" href="http://twitter.com/#!/mattrusselluk">Matt Russel</a>. Thank you!</p>
+<div class="section" id="introduce-productn-trait">
+<h2>Introduce ProductN trait</h2>
+<p>Asked for by the community, <em>Introduce ProductN trait</em> is an extension of <em>Generate hashCode and equals</em>. In addition to <em>Generate hashCode and equals</em> this generator creates the methods <tt class="docutils literal"><span class="pre">_1</span></tt> to <tt class="docutils literal"><span class="pre">_n</span></tt> for the selected class parameters and mixes in the trait <tt class="docutils literal"><span class="pre">ProductN</span></tt>, where <em>n</em> stands for the number of selected class parameters.</p>
+<p>The refactoring dialog is almost the same as for <em>Generate hashCode and equals</em>:</p>
+<img alt="../../../_images/productN-dialog.png" src="../../../_images/productN-dialog.png" />
+<p>Selecting only the first parameter <tt class="docutils literal"><span class="pre">a</span></tt> and omitting calls to <tt class="docutils literal"><span class="pre">super</span></tt> results in this:</p>
+<img alt="../../../_images/productN-after.png" src="../../../_images/productN-after.png" />
 </div>
 </div>
 
