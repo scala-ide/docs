@@ -52,6 +52,7 @@ __ http://www.assembla.com/spaces/scala-ide/tickets/1000867
 * `New Scala debugger`__ - *Typesafe team* - |progress|
 * Code Analysis - *Mirko Stocker* - `#1000629`__
 * `New refactorings`__ - *Michael Holzer, Mirko Stocker* - `#1000960`__ - |done|
+* `Source generators`__ - *Michael Holzer* - `#1001018`__ - |done|
 
 __ http://skillsmatter.com/podcast/scala/scalatest-scalamock-subcut
 __ http://scala-ide.org/docs/helium/features/implicit-hyperlinking/index.html
@@ -65,6 +66,8 @@ __ http://scala-ide.org/docs/helium/features/scaladebugger/index.html
 __ http://www.assembla.com/spaces/scala-ide/tickets/1000629
 __ http://scala-ide.org/docs/helium/features/new-refactoring/index.html
 __ http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000960
+__ http://scala-ide.org/docs/helium/features/source-generators/index.html
+__ http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001018
 
 **Milestone 3** - :strikethrough:`mid-July` delayed to October 2012
 
@@ -82,7 +85,7 @@ __ http://www.assembla.com/spaces/scala-ide/tickets/1000873
 
 **Not aligned**
 
-* Eclipse Juno (4.2) support - *Eric Molitor, Typesafe Team* - Milestone 2?
+* Eclipse Juno (4.2) support - *Eric Molitor* - Milestone 2?
 * Create a new JDT model builder, using the compiled classes - *Typesafe team* - `#1000866`__
 * Specs2 support - *Richard Oliver Legendi, Eric Toreborre* (GSoC)
 * Integrate a SBT-console - *Sandro Grzicić* (GSoC)
