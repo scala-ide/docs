@@ -42,7 +42,7 @@
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
     <link rel="top" title="Scala IDE 2.0.0 documentation" href="../../index.html" />
     <link rel="up" title="Scala IDE Helium" href="../index.html" />
-    <link rel="next" title="Move Class, Object or Trait Refactoring" href="moverefactoring.html" />
+    <link rel="next" title="New Refactorings" href="new-refactoring/index.html" />
     <link rel="prev" title="Scala IDE Helium" href="../index.html" /> 
   </head>
   <body>
@@ -101,7 +101,7 @@ Thus, we have improved the logging infrastructure so that it can be easily contr
 <h2>Settings</h2>
 <p>You can access the logging settings in the Eclipse Preferences. Click on the <tt class="docutils literal"><span class="pre">Scala</span></tt> item and select <tt class="docutils literal"><span class="pre">Logging</span></tt>.
 You should see the following page:</p>
-<img alt="../../_images/logging-preferences.jpg" src="../../_images/logging-preferences.jpg" />
+<img alt="../../_images/logging-preferences.png" src="../../_images/logging-preferences.png" />
 <p>By default, the log level is set to <tt class="docutils literal"><span class="pre">WARN</span></tt>. That should be enough for general use, and it should still provide
 some useful information in the event of an error. Naturally, you are free to change the log level at any time &#8211;
 remember, though, that increasing logging may noticeably decrease performance.</p>
@@ -109,6 +109,9 @@ remember, though, that increasing logging may noticeably decrease performance.</
 directory, where <tt class="docutils literal"><span class="pre">${workspace}</span></tt> is the directory provided when starting up Eclipse &#8211; i.e., your Eclipse workspace.
 This file can grow up to 10MB, at which point it automatically rolls over. You can easily check the log&#8217;s contents at
 any time by clicking on the link at the bottom of the <tt class="docutils literal"><span class="pre">Logging</span></tt> preferences page.</p>
+<p>By default, standard output and standard error are redirected to the log file. This makes it easy to gather all debugging
+output in one place. However, when debugging or working with other plugins you may want to keep stdout and stderr out
+of the logs, so make sure to uncheck the option.</p>
 <p>Should you so desire, you can also output all log messages directly to the terminal.  Be aware that in order to do so
 you must start Eclipse from the command line. For example, you can start Eclipse from the command line with the
 following on Mac OSX:</p>

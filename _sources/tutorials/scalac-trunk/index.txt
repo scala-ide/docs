@@ -18,7 +18,7 @@ This guide will show you how to configure Eclipse and your workspace for develop
 Prerequisites
 .............
 
-*   `Eclipse`_ 3.7.2 (Indigo) with the **very recent** Scala IDE for Scala 2.10 installed (update site: http://download.scala-ide.org/nightly-update-master-trunk).
+*   `Eclipse`_ 3.7.2 (Indigo) with a **very recent** Scala IDE for Scala 2.10 installed (update site: http://download.scala-ide.org/nightly-update-master-trunk).
 
     Check the :ref:`getting started <gettingstarted_getting-started>` page for instructions on how to install Scala IDE.
 
