@@ -93,13 +93,20 @@
       <div class="span11 main-content">
         <div class="section" id="setup-and-use-the-scalac-project-with-the-scala-ide">
 <h1>Setup and use the Scalac project with the Scala IDE</h1>
+<div class="admonition-disclaimer admonition">
+<p class="first admonition-title">Disclaimer</p>
+<p class="last">The Scala IDE is, as far as we know, the only project built every night on top of the lastest nightly build
+of the Scala compiler. As such, you are bound to be the first to step on compiler bugs. Overall, the experience
+may not be that of a production-ready IDE. Please report issues that you see, or even better, attempt a fix! The
+whole Scala community will benefit!</p>
+</div>
 <div class="section" id="what-is-in-this-guide">
 <h2>What is in this guide?</h2>
 <p>This guide will show you how to configure Eclipse and your workspace for development work on the <a class="reference external" href="https://github.com/scala/scala">Scala compiler</a>.</p>
 <div class="section" id="prerequisites">
 <h3>Prerequisites</h3>
 <ul>
-<li><p class="first"><a class="reference external" href="http://www.eclipse.org/">Eclipse</a> 3.7.2 (Indigo) with Scala IDE for Scala 2.10 installed (update site: <a class="reference external" href="http://download.scala-ide.org/nightly-update-master-trunk">http://download.scala-ide.org/nightly-update-master-trunk</a>).</p>
+<li><p class="first"><a class="reference external" href="http://www.eclipse.org/">Eclipse</a> 3.7.2 (Indigo) with the <strong>very recent</strong> Scala IDE for Scala 2.10 installed (update site: <a class="reference external" href="http://download.scala-ide.org/nightly-update-master-trunk">http://download.scala-ide.org/nightly-update-master-trunk</a>).</p>
 <p>Check the <a class="reference internal" href="../../user/gettingstarted.html#gettingstarted-getting-started"><em>getting started</em></a> page for instructions on how to install Scala IDE.</p>
 </li>
 <li><p class="first">A basic knowledge of the Eclipse user interface is required.</p>
@@ -124,38 +131,23 @@
 </pre></div>
 </div>
 <ul class="simple">
-<li>Rename the sample project and classpath file</li>
-</ul>
-<div class="highlight-bash"><div class="highlight"><pre><span class="nb">cd </span>scala
-cp project.SAMPLE .project
-cp classpath.SAMPLE .classpath
-</pre></div>
-</div>
-<ul class="simple">
 <li>Pull the binary dependencies:</li>
 </ul>
 <div class="highlight-bash"><div class="highlight"><pre>./pull-binary-libs.sh
 </pre></div>
 </div>
 <ul class="simple">
-<li>Import the project in Eclipse (<tt class="docutils literal"><span class="pre">File</span> <span class="pre">→</span> <span class="pre">Import</span> <span class="pre">Existing</span> <span class="pre">Projects</span> <span class="pre">into</span> <span class="pre">Workspace</span></tt>)</li>
+<li>Import the project in Eclipse (<tt class="docutils literal"><span class="pre">File</span> <span class="pre">→</span> <span class="pre">Import</span> <span class="pre">Existing</span> <span class="pre">Projects</span> <span class="pre">into</span> <span class="pre">Workspace</span></tt>) Navigate to src/eclipse. Check all projects and click ok.</li>
 </ul>
-<p>The sample project file configures only the scala <em>compiler</em> sources as part of your project. The default output directory is <tt class="docutils literal"><span class="pre">build/quick/classes/compiler</span></tt>.</p>
-</div>
-<div class="section" id="adding-the-scala-library-sources-to-your-project-optional">
-<h2>Adding the Scala library <em>sources</em> to your project (optional)</h2>
-<p>If you need to develop the Scala library, you need to add the library source folder to the <tt class="docutils literal"><span class="pre">Java</span> <span class="pre">Build</span> <span class="pre">Path</span></tt>. Since the default output directory is <tt class="docutils literal"><span class="pre">build/quick/classes/compiler</span></tt>, you need to change that as well, so that library classes go instead to <tt class="docutils literal"><span class="pre">build/quick/classes/library</span></tt>.</p>
+<p>You should see at least the following projects in your workspace:</p>
 <ul class="simple">
-<li>Open Project Properties and go to the <tt class="docutils literal"><span class="pre">Java</span> <span class="pre">Build</span> <span class="pre">Path</span></tt> page</li>
-<li>Make sure <tt class="docutils literal"><span class="pre">Allow</span> <span class="pre">output</span> <span class="pre">folders</span> <span class="pre">for</span> <span class="pre">source</span> <span class="pre">folders</span></tt> is checked</li>
-<li>Add a new source folder for <tt class="docutils literal"><span class="pre">src/library</span></tt></li>
-<li>Change the output folder for <tt class="docutils literal"><span class="pre">src/library</span></tt> to be <tt class="docutils literal"><span class="pre">build/quick/classes/library</span></tt></li>
-<li>Also Change the output folder for <tt class="docutils literal"><span class="pre">src/compiler</span></tt> to be <tt class="docutils literal"><span class="pre">build/quick/classes/compiler</span></tt>, instead of the default value</li>
+<li>asm</li>
+<li>fjbg</li>
+<li>reflect</li>
+<li>scala-library</li>
+<li>scala-compiler</li>
 </ul>
-<p>In the end, your project properties should look like this:</p>
-<blockquote>
-<div><img alt="../../_images/scalac-properties.png" src="../../_images/scalac-properties.png" />
-</div></blockquote>
+<p>Before you go on, you need to follow the steps described in the <a class="reference external" href="https://github.com/scala/scala/blob/master/src/eclipse/README.md">README.md</a> on the Scala website. Come back once you are done.</p>
 </div>
 <div class="section" id="using-eclipse-for-compiler-development">
 <h2>Using Eclipse for compiler development</h2>
@@ -170,7 +162,7 @@ cp classpath.SAMPLE .classpath
 <h2>Launching and Debugging scalac</h2>
 <p>Since the output directories are set to the default <tt class="docutils literal"><span class="pre">ant</span></tt> build directories, all the runner scripts work out of the box. If you built the project, you can run <tt class="docutils literal"><span class="pre">build/quick/bin/scalac</span></tt> on the command line, and it will pick your changes. However, the interesting part is being able to use the Eclipse debugger.</p>
 <p>To launch scalac from Eclipse you need to create a <tt class="docutils literal"><span class="pre">Run</span> <span class="pre">Configuration</span></tt>, from <tt class="docutils literal"><span class="pre">Run</span> <span class="pre">→</span> <span class="pre">Run</span> <span class="pre">Configurations</span></tt>. Choose <tt class="docutils literal"><span class="pre">Scala</span> <span class="pre">Application</span></tt> and set the main class to <tt class="docutils literal"><span class="pre">scala.tools.nsc.Main</span></tt>. On the <tt class="docutils literal"><span class="pre">Arguments</span></tt> page, you need to explicitly set the path to the Scala library (that is what the runner script does for you on the command line):</p>
-<div class="highlight-bash"><div class="highlight"><pre>-bootclasspath <span class="k">${</span><span class="nv">project_loc</span><span class="p">:/scala</span><span class="k">}</span>/build/quick/classes/library -d /tmp /Users/dragos/sandbox/bugs/ticket3429.scala
+<div class="highlight-bash"><div class="highlight"><pre>-bootclasspath <span class="k">${</span><span class="nv">SCALA_BASEDIR</span><span class="k">}</span>/build/quick/classes/library -d /tmp /Users/dragos/sandbox/bugs/ticket3429.scala
 </pre></div>
 </div>
 <p>The run configuration should look like this:</p>

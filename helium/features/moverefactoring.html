@@ -7,7 +7,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Logging &mdash; Scala IDE 2.0.0 documentation</title>
+    <title>Move Class, Object or Trait Refactoring &mdash; Scala IDE 2.0.0 documentation</title>
     
     <link rel="stylesheet" href="../../_static/resources/stylesheets/base.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
@@ -42,8 +42,8 @@
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
     <link rel="top" title="Scala IDE 2.0.0 documentation" href="../../index.html" />
     <link rel="up" title="Scala IDE Helium" href="../index.html" />
-    <link rel="next" title="Move Class, Object or Trait Refactoring" href="moverefactoring.html" />
-    <link rel="prev" title="Scala IDE Helium" href="../index.html" /> 
+    <link rel="next" title="Scala Debugger" href="scaladebugger/index.html" />
+    <link rel="prev" title="Logging" href="logging.html" /> 
   </head>
   <body>
 <div class="top-bar">
@@ -72,7 +72,7 @@
   <div class="container">
     <div class="row">
       <div class="span16">        
-        <h1>Logging</h1>
+        <h1>Move Class, Object or Trait Refactoring</h1>
 	  </div>
     </div>
   </div>
@@ -91,30 +91,32 @@
 
     <div class="row" style="position: relative; clear: both;">
       <div class="span11 main-content">
-        <div class="section" id="logging">
-<h1>Logging</h1>
-<p>Logging isn&#8217;t likely to be the most wanted feature, and we hope that you won&#8217;t ever need to know about it.
-But software can crash, and decent logging can go a long way into understanding the reasons behind a failure.
-Thus, we have improved the logging infrastructure so that it can be easily controlled by you.</p>
-<p>In this page we discuss how you can manage logging in the Scala IDE.</p>
-<div class="section" id="settings">
-<h2>Settings</h2>
-<p>You can access the logging settings in the Eclipse Preferences. Click on the <tt class="docutils literal"><span class="pre">Scala</span></tt> item and select <tt class="docutils literal"><span class="pre">Logging</span></tt>.
-You should see the following page:</p>
-<img alt="../../_images/logging-preferences.jpg" src="../../_images/logging-preferences.jpg" />
-<p>By default, the log level is set to <tt class="docutils literal"><span class="pre">WARN</span></tt>. That should be enough for general use, and it should still provide
-some useful information in the event of an error. Naturally, you are free to change the log level at any time &#8211;
-remember, though, that increasing logging may noticeably decrease performance.</p>
-<p>All logging information is stored in a <tt class="docutils literal"><span class="pre">scala-ide.log</span></tt> file located in the <tt class="docutils literal"><span class="pre">${workspace}/.metadata/.plugins/org.scala-ide.sdt.core/</span></tt>
-directory, where <tt class="docutils literal"><span class="pre">${workspace}</span></tt> is the directory provided when starting up Eclipse &#8211; i.e., your Eclipse workspace.
-This file can grow up to 10MB, at which point it automatically rolls over. You can easily check the log&#8217;s contents at
-any time by clicking on the link at the bottom of the <tt class="docutils literal"><span class="pre">Logging</span></tt> preferences page.</p>
-<p>Should you so desire, you can also output all log messages directly to the terminal.  Be aware that in order to do so
-you must start Eclipse from the command line. For example, you can start Eclipse from the command line with the
-following on Mac OSX:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>/Applications/eclipse/Eclipse.app/Contents/MacOS/eclipse
-</pre></div>
-</div>
+        <div class="section" id="move-class-object-or-trait-refactoring">
+<h1>Move Class, Object or Trait Refactoring</h1>
+<p>Move Class was an often requested feature in the Scala IDE bugtracker, so we
+implemented it for the upcoming 2.1 release. The refactoring can either be
+invoked from the Refactoring menu, or indirectly by drag-and-dropping a file
+in the Package Explorer.</p>
+<p>If there exists more than one top-level declaration in the file, you can choose to
+split-off one of the declarations or to move them all. The refactoring will move
+all the necessary imports along, and also update all the references (other
+imports, or qualified names) in the project.</p>
+<p>Here is a screenshot of the refactoring configuration dialog:</p>
+<img alt="../../_images/move-class-configuration.png" src="../../_images/move-class-configuration.png" />
+<p>You can also create a new package directly in the wizard, and choose to move the
+complete file or only the selected definition (the option is not present if no
+definition was selected or if the file contains only a single one).</p>
+<p>The resulting changes can then be previewed in the usual fashion:</p>
+<img alt="../../_images/move-class-preview.png" src="../../_images/move-class-preview.png" />
+<p>A new file is created with the name of the moved class. In this preview, we can
+see that the class is removed in the file and an import to its new location is
+added because the class is referenced somewhere in this file.</p>
+<div class="section" id="limitations">
+<h2>Limitations</h2>
+<p>There currently are some limitations: the refactoring works only on Scala code,
+and it simply ignores visibility issues, so moving might result in compilation
+errors. This being the initial implementation, it is certainly not free of bugs,
+so please <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/support/tickets">report any bug you encounter</a>.</p>
 </div>
 </div>
 

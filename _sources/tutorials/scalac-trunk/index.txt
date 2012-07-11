@@ -1,6 +1,15 @@
 Setup and use the Scalac project with the Scala IDE
 ===================================================
 
+
+.. admonition:: Disclaimer
+
+  The Scala IDE is, as far as we know, the only project built every night on top of the lastest nightly build
+  of the Scala compiler. As such, you are bound to be the first to step on compiler bugs. Overall, the experience
+  may not be that of a production-ready IDE. Please report issues that you see, or even better, attempt a fix! The
+  whole Scala community will benefit!
+
+
 What is in this guide?
 ----------------------
 
@@ -9,7 +18,7 @@ This guide will show you how to configure Eclipse and your workspace for develop
 Prerequisites
 .............
 
-*   `Eclipse`_ 3.7.2 (Indigo) with Scala IDE for Scala 2.10 installed (update site: http://download.scala-ide.org/nightly-update-master-trunk).
+*   `Eclipse`_ 3.7.2 (Indigo) with the **very recent** Scala IDE for Scala 2.10 installed (update site: http://download.scala-ide.org/nightly-update-master-trunk).
 
     Check the :ref:`getting started <gettingstarted_getting-started>` page for instructions on how to install Scala IDE.
 
@@ -24,7 +33,6 @@ In order to build the Scala compiler inside Eclipse, you need to make sure Eclip
 
   If you have an older version of the Scala IDE plugin, you may run into trouble when updating to the latest nightly. Frequent changes in the compiler version numbering scheme may confuse Eclipse, and keep an older version of the compiler bundle that doesn't match the IDE. To make sure things run smoothly, you can uninstall the previous version. There is `command line tool`_ for doing that without firing up Eclipse.
 
-
 Setting up the Eclipse project
 -------------------------------
 
@@ -34,43 +42,23 @@ Setting up the Eclipse project
 
   git clone git://github.com/scala/scala.git
 
-*  Rename the sample project and classpath file
-
-.. code-block:: bash
-
-  cd scala
-  cp project.SAMPLE .project
-  cp classpath.SAMPLE .classpath
-
 *  Pull the binary dependencies:
 
 .. code-block:: bash
 
   ./pull-binary-libs.sh 
 
-*  Import the project in Eclipse (``File → Import Existing Projects into Workspace``)
+*  Import the project in Eclipse (``File → Import Existing Projects into Workspace``) Navigate to src/eclipse. Check all projects and click ok.
 
-The sample project file configures only the scala *compiler* sources as part of your project. The default output directory is ``build/quick/classes/compiler``.
+You should see at least the following projects in your workspace:
 
-Adding the Scala library *sources* to your project (optional)
--------------------------------------------------------------
+* asm
+* fjbg
+* reflect
+* scala-library
+* scala-compiler
 
-If you need to develop the Scala library, you need to add the library source folder to the ``Java Build Path``. Since the default output directory is ``build/quick/classes/compiler``, you need to change that as well, so that library classes go instead to ``build/quick/classes/library``. 
-
-*  Open Project Properties and go to the ``Java Build Path`` page
-
-*  Make sure ``Allow output folders for source folders`` is checked
-
-*  Add a new source folder for ``src/library``
-
-*  Change the output folder for ``src/library`` to be ``build/quick/classes/library``
-
-*  Also Change the output folder for ``src/compiler`` to be ``build/quick/classes/compiler``, instead of the default value
-
-In the end, your project properties should look like this:
-
-    .. image:: images/scalac-properties.png
-
+Before you go on, you need to follow the steps described in the `README.md`_ on the Scala website. Come back once you are done.
 
 Using Eclipse for compiler development
 --------------------------------------
@@ -93,7 +81,7 @@ To launch scalac from Eclipse you need to create a ``Run Configuration``, from `
 
 .. code-block:: bash
 
-  -bootclasspath ${project_loc:/scala}/build/quick/classes/library -d /tmp /Users/dragos/sandbox/bugs/ticket3429.scala
+  -bootclasspath ${SCALA_BASEDIR}/build/quick/classes/library -d /tmp /Users/dragos/sandbox/bugs/ticket3429.scala
 
 The run configuration should look like this:
 
@@ -207,3 +195,4 @@ based on the document created by Grzegorz Kossakowski - `@gkossakowski`_ and imp
 .. _Vlad Ureche: http://people.epfl.ch/vlad.ureche
 .. _update-scala.sh: https://github.com/scala-ide/scala-ide/blob/master/update-scala.sh
 .. _eclipse-director.sh: https://github.com/scala-ide/scala-ide/blob/master/eclipse-director.sh
+.. _README.md: https://github.com/scala/scala/blob/master/src/eclipse/README.md
