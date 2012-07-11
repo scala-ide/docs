@@ -14,7 +14,7 @@ Settings
 You can access the logging settings in the Eclipse Preferences. Click on the ``Scala`` item and select ``Logging``.
 You should see the following page:
 
-.. image:: ../images/logging-preferences.jpg
+.. image:: ../images/logging-preferences.png
 
 By default, the log level is set to ``WARN``. That should be enough for general use, and it should still provide 
 some useful information in the event of an error. Naturally, you are free to change the log level at any time --
@@ -24,6 +24,10 @@ All logging information is stored in a ``scala-ide.log`` file located in the ``$
 directory, where ``${workspace}`` is the directory provided when starting up Eclipse -- i.e., your Eclipse workspace.
 This file can grow up to 10MB, at which point it automatically rolls over. You can easily check the log's contents at
 any time by clicking on the link at the bottom of the ``Logging`` preferences page.
+
+By default, standard output and standard error are redirected to the log file. This makes it easy to gather all debugging
+output in one place. However, when debugging or working with other plugins you may want to keep stdout and stderr out
+of the logs, so make sure to uncheck the option.
 
 Should you so desire, you can also output all log messages directly to the terminal.  Be aware that in order to do so
 you must start Eclipse from the command line. For example, you can start Eclipse from the command line with the
