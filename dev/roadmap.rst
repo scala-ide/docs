@@ -20,7 +20,7 @@ The targeted roadmap, *with the name of the lead contributor(s) for each item*:
 * `Move Refactoring`__ - *Mirko Stocker* - |done|
 * `Improved logging`__ - *Typesafe Team* - `#1000880`__ - |done| 
 * Design and implement a Scala model - *Typesafe team* - `#1000861`__ - |done|
-* :strikethrough:`Create an abstraction layer with the Scala compiler` - *Typesafe team* - `#1000862`__ - (Moved to Milestone 2 because backporting to 2.9 is harder than expected.)
+* :strikethrough:`Create an abstraction layer with the Scala compiler` - *Typesafe team* - `#1000862`__ - (Moved to Lithium)
 * `Smoother step over/in in the debugger`__ - *Typesafe team* - `#1000864`__ - |done|
 * :strikethrough:`Extract the presentation compiler in its own project` - *Typesafe team* - `#1000867`__ (Reconsidered: The Presentation Compiler is too coupled to the compiler.)
 
