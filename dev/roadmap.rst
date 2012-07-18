@@ -69,7 +69,7 @@ __ http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001018
 **Helium release**
 
 * Eclipse Juno (4.2) support - *Eric Molitor* - Milestone 2? |progress|
-* Switch to stock Sbt (0.13) - |progress|
+* Switch to vanilla Sbt (0.13) - |progress|
 * Common update site for Scala plugins - |progress|
 
 **Lithium** 
