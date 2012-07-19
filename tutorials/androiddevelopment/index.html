@@ -7,7 +7,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>External Resources &mdash; Scala IDE 2.0.0 documentation</title>
+    <title>Developing for Android &mdash; Scala IDE 2.0.0 documentation</title>
     
     <link rel="stylesheet" href="../../_static/resources/stylesheets/base.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
@@ -41,9 +41,9 @@
     <script type="text/javascript" src="../../_static/resources/javascript/contentsFix.js"></script>
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
     <link rel="top" title="Scala IDE 2.0.0 documentation" href="../../index.html" />
-    <link rel="up" title="Appendix" href="appendix.html" />
-    <link rel="next" title="Roadmap" href="../roadmap.html" />
-    <link rel="prev" title="Git &amp; GitHub" href="git-github.html" /> 
+    <link rel="up" title="Tutorials" href="../index.html" />
+    <link rel="next" title="Changelog" href="../../changelog.html" />
+    <link rel="prev" title="Setup and use the Scalac project with the Scala IDE" href="../scalac-trunk/index.html" /> 
   </head>
   <body>
 <div class="top-bar">
@@ -72,7 +72,7 @@
   <div class="container">
     <div class="row">
       <div class="span16">        
-        <h1>External Resources</h1>
+        <h1>Developing for Android</h1>
 	  </div>
     </div>
   </div>
@@ -84,61 +84,74 @@
       <div class="span16">
           <ul class="breadcrumb">
             <li><a href="../../index.html">ScalaIDE Documentation</a> » </li>
-              <li><a href="../index.html">Welcome to the Scala IDE Developer Documentation</a> » </li>
-              <li><a href="appendix.html">Appendix</a> » </li>
+              <li><a href="../index.html">Tutorials</a> » </li>
           </ul>        
       </div>
     </div>
 
     <div class="row" style="position: relative; clear: both;">
       <div class="span11 main-content">
-        <div class="section" id="external-resources">
-<h1>External Resources</h1>
-<p>Here you can find a collection of documents that you may find useful for the development of the
-Scala IDE plug-in.</p>
-<div class="section" id="jdt-resources">
-<h2>JDT Resources</h2>
-<p>The Scala IDE for Eclipse extends Eclipse&#8217;s Java tooling in various Scala-specific ways, so an understanding of the structure of the JDT is an important part of getting to grips with the structure of the Scala tooling.</p>
-</div>
-<div class="section" id="editors-documents-partitioning">
-<h2>Editors/documents/partitioning</h2>
-<p><a class="reference external" href="http://www.realsolve.co.uk/site/tech/jface-text.php">Building an Eclipse Text Editor with JFace Text</a> - An excellent introduction to document partitioning, content types, content assist and highlighting.</p>
-</div>
-<div class="section" id="general-jdt-documentation">
-<h2>General JDT documentation</h2>
+        <div class="section" id="developing-for-android">
+<h1>Developing for Android</h1>
+<div class="section" id="status-quo">
+<h2>Status Quo</h2>
 <ul class="simple">
-<li><a class="reference external" href="http://www.slideshare.net/oliviert/jdt-fundamentals-2010">A useful overview of JDT fundamentals</a>.</li>
-<li><a class="reference external" href="http://www.eclipsecon.org/2005/presentations/EclipseCON2005_Tutorial29.pdf">Fantastic API and Services presentation - Eclipsecon 2005</a>.</li>
-<li><a class="reference external" href="http://help.eclipse.org/helios/index.jsp?topic=/org.eclipse.jdt.doc.isv/guide/jdt_int.htm">Eclipse JDT plug-in developer guide</a>.</li>
+<li>Android applications are self-contained, there appears to be no way for users to deploy a shared library to a device.</li>
+<li>The Scala library therefore needs to be embedded in every Android application that uses it.</li>
+<li>The Scala nature can be successfully added to an ADT project.</li>
+<li>Using ProGuard is <em>highly</em> desirable, to keep these apps to a manageable size.</li>
 </ul>
 </div>
-<div class="section" id="jdt-indexer">
-<h2>JDT Indexer</h2>
+<div class="section" id="prerequisites">
+<h2>Prerequisites</h2>
 <ul class="simple">
-<li><a class="reference external" href="http://dev.eclipse.org/newslists/news.eclipse.tools.jdt/msg18055.html">Mailing list discussion &#8220;Incremental Parsing in JDT&#8221;</a>.</li>
-<li><a class="reference external" href="http://dev.eclipse.org/newslists/news.eclipse.tools.jdt/msg14524.html">Mailing list discussion &#8220;Index contents/format&#8221;</a>.</li>
+<li>You have installed Eclipse, the Android SDK, and ADT.</li>
+<li>You have been able to deploy a Java application to an Android device (physical or virtual).</li>
+<li>You have installed the Scala-IDE that matches your version of Eclipse.</li>
 </ul>
 </div>
-<div class="section" id="aspectj-resources">
-<h2>AspectJ Resources</h2>
-<p>The Scala IDE for Eclipse uses <a class="reference external" href="http://eclipse.org/aspectj/">AspectJ</a>, an aspect-oriented programming extension of Java, to modify the behavior of the JDT. The following are useful references</p>
-<ul class="simple">
-<li><a class="reference external" href="http://www.eclipse.org/aspectj/doc/released/progguide/index.html">The AspectJ Programming Guide</a></li>
-<li><a class="reference external" href="http://www.eclipse.org/ajdt/">The AspectJ Development Tools (AJDT)</a></li>
-</ul>
+<div class="section" id="step-1-install-androidproguardscala">
+<h2>Step 1: Install AndroidProguardScala</h2>
+<p>(Collect underpants.)</p>
+<p>AndroidProguardScala is an Eclipse plug-in that automates the process of determining the parts of the Scala library your application needs, creating a .jar, and including that in your .apk file.  It is written by James Moore and maintained at <a class="reference external" href="https://github.com/banshee/AndroidProguardScala">https://github.com/banshee/AndroidProguardScala</a>.  You should follow the directions in the README to add the plug-in to your Eclipse installation.</p>
 </div>
-<div class="section" id="pde-resources">
-<h2>PDE Resources</h2>
-<p>The PDE (Plug-in Development Environment) is a set of eclipse plug-ins for developing eclipse plug-ins. There is some helpful introductory information <a class="reference external" href="http://wiki.eclipse.org/The_Official_Eclipse_FAQs#Plug-In_Development_Environment">here</a>.</p>
+<div class="section" id="step-2-enable-scala-and-androidproguardscala">
+<h2>Step 2: Enable Scala and AndroidProguardScala</h2>
+<p>(???)</p>
+<ol class="arabic simple">
+<li>Open an Android project.</li>
+<li>Right-click the project and choose Add Scala Nature (may be under the Scala sub-menu).</li>
+<li>After a successful build, right-click the project and choose Add AndroidProguardScala Nature.</li>
+</ol>
 </div>
-<div class="section" id="miscellaneous">
-<h2>Miscellaneous</h2>
-<ul class="simple">
-<li><a class="reference external" href="http://stackoverflow.com/questions/654037/what-does-non-nls-1-mean">What does $NON-NLS-1$ mean?</a></li>
-<li><a class="reference external" href="http://www.eclipse.org/articles/Article-Resource-deltas/resource-deltas.html">Responding to resource changes in the Eclipse workspace</a> (also <a class="reference external" href="http://stackoverflow.com/questions/1027009/eclipse-change-content-on-save">this SO answer may be relevant</a>)</li>
-<li><a class="reference external" href="http://stackoverflow.com/questions/2763843/eclipse-plugins-vs-features-vs-dropins">Eclipse plugins vs features vs dropins</a></li>
-<li><a class="reference external" href="http://blog.darevay.com/2007/11/the-eclipse-reconciler/">The Eclipse Reconciler</a></li>
-</ul>
+<div class="section" id="step-3-develop-for-android-using-scala">
+<h2>Step 3: Develop for Android using Scala</h2>
+<p>(Profit!)</p>
+<p>You can now use Scala or a Scala/Java mix to develop your Android project.  Builds occur normally, either in the background or on-demand, through the normal Eclipse machinations.  You can use the Run menu to do testing and debugging just as you could before you enabled Scala.  As an example, here is the Android application generated by ADT rewritten in Scala:</p>
+<div class="highlight-python"><pre>package com.example.helloandroidscala
+
+import android.os.Bundle
+import android.app.Activity
+import android.view.Menu
+
+class MWTApp extends Activity {
+        override def onCreate(savedInstanceState : Bundle) : Unit = {
+                super.onCreate(savedInstanceState)
+                setContentView(R.layout.activity_main)
+        }
+
+        override def onCreateOptionsMenu(menu : Menu) : Boolean = {
+                getMenuInflater().inflate(R.menu.activity_main, menu)
+                return true
+        }
+}</pre>
+</div>
+</div>
+<div class="section" id="feedback">
+<h2>Feedback</h2>
+<p>This guide is managed through in the <a class="reference external" href="https://github.com/scala-ide/docs">Scala IDE documentation project</a> on github.
+Please use github tickets and pull requests system for feedback.</p>
+<p>Updated to use AdroidProguardScala by Boyd Stephen Smith Jr. - <a class="reference external" href="https://plus.google.com/117121643780343410072/about">+Boyd Smith</a> <a class="reference external" href="https://twitter.com/DaTwinkDaddy">&#64;DaTwinkDaddy</a>; based on documentation written by kev.lee.wright and other wiki contributors.</p>
 </div>
 </div>
 

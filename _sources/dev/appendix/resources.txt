@@ -39,3 +39,12 @@ PDE Resources
 -------------
 
 The PDE (Plug-in Development Environment) is a set of eclipse plug-ins for developing eclipse plug-ins. There is some helpful introductory information `here <http://wiki.eclipse.org/The_Official_Eclipse_FAQs#Plug-In_Development_Environment>`_.
+
+Miscellaneous
+-------------
+
+* `What does $NON-NLS-1$ mean? <http://stackoverflow.com/questions/654037/what-does-non-nls-1-mean>`_
+* `Responding to resource changes in the Eclipse workspace <http://www.eclipse.org/articles/Article-Resource-deltas/resource-deltas.html>`_ (also `this SO answer may be relevant <http://stackoverflow.com/questions/1027009/eclipse-change-content-on-save>`_)
+* `Eclipse plugins vs features vs dropins <http://stackoverflow.com/questions/2763843/eclipse-plugins-vs-features-vs-dropins>`_
+* `The Eclipse Reconciler <http://blog.darevay.com/2007/11/the-eclipse-reconciler/>`_
+
