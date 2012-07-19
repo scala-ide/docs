@@ -11,7 +11,7 @@ Overview
 
 The Scala IDE project is composed of several modules. Here is a generic description of what each module contains:
 
-* ``org.scala-ide.build``: Contains the scripts for building the Scala IDE from the command line.
+* ``org.scala-ide.build``: Contains the scripts for building the Scala IDE from the command line. (2.0.x branch)
 * ``org.scala-ide.build-toolchain``: Contains the script for retrieving dependencies that are needed by the Scala IDE.
 * ``org.scala-ide.sbt.full.library``: Groups together a bunch of SBT jars into one OSGi bundle.
 * ``org.scala-ide.scala.compiler``: Wraps the Scala Compiler in a OSGi bundle (needed by the Eclipse runtime).
