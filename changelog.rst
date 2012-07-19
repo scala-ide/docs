@@ -91,6 +91,12 @@ M1 (released: 2012-04-13)
 2.0.2 (release/scala-ide-2.0.x)
 -------------------------------
 
+2.0.2-final (released: 2012-07-12)
+..................................
+
+* (no changes between RC3 and the final release)
+
+
 2.0.2-rc03 (released: 2012-07-04)
 .................................
 
