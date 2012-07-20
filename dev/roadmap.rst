@@ -5,7 +5,7 @@
 Roadmap
 =======
 
-Scala IDE for Eclipse
+Helium (upcoming major release)
 ----------------------------------
 
 It is an ambitious plan, specially for milestone 1. The idea being to work on the most complex change first, the Scala model, and start on other items, so they can be refined by the time of the final release.
@@ -72,7 +72,10 @@ __ http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001018
 * Switch to vanilla Sbt (0.13) - |progress|
 * Common update site for Scala plugins - |progress|
 
-**Lithium** 
+
+
+Lithium (next major release)
+-------------------------------
 
 * Create an abstraction layer with the Scala compiler - *Typesafe team* - `#1000862`__ 
 * Use the Scala model for the Outline view - *Typesafe team* - `#1000863`__
