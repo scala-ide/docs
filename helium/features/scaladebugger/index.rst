@@ -22,12 +22,17 @@ __ /download/nightly.html
 Using the Scala debugger
 ------------------------
 
-The Scala debugger is enabled in the ``Scala → Debug`` preferences. When it is enabled, the Scala debugger is substituted to the Java one.
+The Scala debugger is available as an alternate debug mode launcher for the Scala applications and Equinox Weaving Eclipse applications.
+
+It can be set as the default launcher from the ``Run\Debug → Launching → Default Launchers`` preferences:
 
 .. image:: images/preferences-01.png
    :alt: Scala debugger switch
 
-*This is a temporary solution. It will be linked to the Scala launchers later.*
+Or it can be selected in each launch configuration:
+
+.. image:: images/preferences-02.png
+   :alt: Scala debugger switch
 
 Features
 --------
