@@ -79,7 +79,7 @@ For Specs2, the annotation is the following:
 
 .. code-block:: scala
 
-   @RunWith(classOf[JUniRunner])
+   @RunWith(classOf[JUnitRunner])
 
 The `HelloWorldSpec`__ example becomes the following when run in the Scala IDE:
 
