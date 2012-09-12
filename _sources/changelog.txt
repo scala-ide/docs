@@ -7,6 +7,18 @@ Changelog
 M2 (unreleased)
 ...............
 
+* Add semantic highlighting for object members in type params - `#1001209`_
+* Added semantic highlighting in context bounds, tuple/function literals, structural types, path-dependent types, `etc`_
+* Fix hyperlinks to `classOf` and related - `#1001238`_
+* Improvements in the incremental builder. Switched to vanilla Sbt 0.13
+* Insert Java parameter names in method completions - `#1001183`_
+* Make standard output/error redirection optional - `#1001133`_
+* `New refactorings`
+* Editor improvements: surround selection - `#1001034`_
+* Support nested projects (Maven style) - `#1000881`_, `#1000734`_, `#1000621`_
+* Option for Organize Imports to keep groups written by the user - `#1000846`_
+* Support string interpolation literals and macro keywords in partitioner / syntax colouring. `#1001012`_
+* Only show accessible members in the completion lists - `#1000784`_
 * `Implicit hyperlinking`__ - `#1001002`_
 * `Infer Type of Structured Selection`__
 * Missing Scala library in run classpath - `#1000786`_, `#1000919`_, `#1001022`_
@@ -46,6 +58,16 @@ __ http://scala-ide.org/docs/helium/features/show-type.html
 .. _#1000797: http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000797
 .. _#1001115: http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001115
 .. _#1001107: http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001107
+.. _#1001238: http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001238
+.. _#1001209: http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001209
+.. _etc: https://github.com/scala-ide/scala-ide/pull/179
+.. _#1001183: http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001183
+.. _#1001133: http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001133
+.. _New refactorings: http://scala-ide.org/docs/helium/features/new-refactoring/index.html
+.. _#1001034: http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001034
+.. _#1000846: http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000846
+.. _#1001012: http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001012
+.. _#1000784: http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000784
 
 M1 (released: 2012-04-13)
 .........................
