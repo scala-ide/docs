@@ -4,7 +4,7 @@ Changelog
 2.1 (master) - codename Helium 
 ------------------------------
 
-M2 (unreleased)
+M2 (released: 2012-09-13)
 ...............
 
 * Add semantic highlighting for object members in type params - `#1001209`_
