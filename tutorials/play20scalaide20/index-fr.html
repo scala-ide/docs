@@ -89,15 +89,15 @@
 <p><img alt="usflag" src="../../_images/usflag.png" /> <a class="reference internal" href="index.html"><em>english version</em></a></p>
 <div class="section" id="que-contient-ce-guide">
 <h2>Que contient ce guide?</h2>
-<p>Ce guide vous montera comment configurer une application web Play pour pouvoir l&#8217;importer dans Scala IDE, comment configurer <a class="reference external" href="http://www.scala-ide.org">Scala IDE</a> pour pouvoir utiliser correctement le Play framework et finalement comment développer un application web Play avec Scala IDE.</p>
-<p><em>La version anglaise est la version de référence. J&#8217;essaierai de garder à jour la version française.</em></p>
+<p>Ce guide vous montera comment configurer une application web Play pour pouvoir l'importer dans Scala IDE, comment configurer <a class="reference external" href="http://www.scala-ide.org">Scala IDE</a> pour pouvoir utiliser correctement le Play framework et finalement comment développer un application web Play avec Scala IDE.</p>
+<p><em>La version anglaise est la version de référence. J'essaierai de garder à jour la version française.</em></p>
 <div class="section" id="prerequis">
 <h3>Prérequis</h3>
 <ul>
 <li><p class="first"><a class="reference external" href="http://www.eclipse.org/">Eclipse</a> 3.6.2 (Helios) avec Scala IDE pour Scala 2.9 installé (update site: <a class="reference external" href="http://download.scala-ide.org/releases-29/stable/site">http://download.scala-ide.org/releases-29/stable/site</a>).</p>
-<p>La page <a class="reference internal" href="../../user/gettingstarted.html#gettingstarted-getting-started"><em>getting started</em></a> (en anglais) contient les instructions pour l&#8217;installation de Scala IDE.</p>
+<p>La page <a class="reference internal" href="../../user/gettingstarted.html#gettingstarted-getting-started"><em>getting started</em></a> (en anglais) contient les instructions pour l'installation de Scala IDE.</p>
 </li>
-<li><p class="first">Une connaissance de base de l&#8217;interface utilisateur d&#8217;Eclipse est nécessaire.</p>
+<li><p class="first">Une connaissance de base de l'interface utilisateur d'Eclipse est nécessaire.</p>
 </li>
 <li><p class="first">Aucune connaissance du langage Scala est nécessaire (dans ce guide).</p>
 </li>
@@ -108,13 +108,13 @@
 </div>
 <div class="section" id="installer-play-2-0">
 <h2>Installer Play 2.0</h2>
-<p>Pour pouvoir créer une web application Play, Play framework est nécessaire. Si vous ne l&#8217;avez pas encore installé, suivez ces quelques étapes, ou utilisez la <a class="reference external" href="http://www.playframework.org/documentation/2.0/Installing">documentation de Play</a>.</p>
+<p>Pour pouvoir créer une web application Play, Play framework est nécessaire. Si vous ne l'avez pas encore installé, suivez ces quelques étapes, ou utilisez la <a class="reference external" href="http://www.playframework.org/documentation/2.0/Installing">documentation de Play</a>.</p>
 <ul>
 <li><p class="first">Téléchargez Play framework 2.0 sur <a class="reference external" href="http://www.playframework.org/2.0">http://www.playframework.org/2.0</a>.</p>
 </li>
-<li><p class="first">Un-zippez l&#8217;archive dans votre répertoire préféré. Nous utiliserons <tt class="docutils literal"><span class="pre">/path/to/play20</span></tt> dans ce document.</p>
+<li><p class="first">Un-zippez l'archive dans votre répertoire préféré. Nous utiliserons <tt class="docutils literal"><span class="pre">/path/to/play20</span></tt> dans ce document.</p>
 </li>
-<li><p class="first">Pour simplifier l&#8217;utilisation, ajoutez le répertoire de Play dans le PATH:</p>
+<li><p class="first">Pour simplifier l'utilisation, ajoutez le répertoire de Play dans le PATH:</p>
 <div class="highlight-bash"><div class="highlight"><pre><span class="nb">export </span><span class="nv">PATH</span><span class="o">=</span><span class="nv">$PATH</span>:/path/to/play20
 </pre></div>
 </div>
@@ -127,38 +127,38 @@
 <li><p class="first">Dans votre répertoire de développement, demandez à Play de créer une nouvelle application web, de type <tt class="docutils literal"><span class="pre">simple</span> <span class="pre">Scala</span> <span class="pre">application</span></tt>.</p>
 <a class="reference external image-reference" href="../../_images/play20-scalaide20-01.png"><img alt="play new testApp" src="../../_images/play20-scalaide20-01.png" style="width: 100%;" /></a>
 </li>
-<li><p class="first">Allez dans le répertoire de l&#8217;application.</p>
+<li><p class="first">Allez dans le répertoire de l'application.</p>
 <a class="reference external image-reference" href="../../_images/play20-scalaide20-02.png"><img alt="cd testApp" src="../../_images/play20-scalaide20-02.png" style="width: 100%;" /></a>
 </li>
 <li><p class="first">Et lancez Play.</p>
 <a class="reference external image-reference" href="../../_images/play20-scalaide20-03.png"><img alt="play" src="../../_images/play20-scalaide20-03.png" style="width: 100%;" /></a>
 </li>
-<li><p class="first">Dans Play, démarrez l&#8217;application web que vous venez de créer.</p>
+<li><p class="first">Dans Play, démarrez l'application web que vous venez de créer.</p>
 <a class="reference external image-reference" href="../../_images/play20-scalaide20-04.png"><img alt="run" src="../../_images/play20-scalaide20-04.png" style="width: 100%;" /></a>
 </li>
-<li><p class="first">Vérifiez que l&#8217;application fonctionne: <a class="reference external" href="http://localhost:9000/">http://localhost:9000/</a>.</p>
+<li><p class="first">Vérifiez que l'application fonctionne: <a class="reference external" href="http://localhost:9000/">http://localhost:9000/</a>.</p>
 <a class="reference external image-reference" href="../../_images/play20-scalaide20-05.png"><img alt="running" src="../../_images/play20-scalaide20-05.png" style="width: 100%;" /></a>
 </li>
 </ul>
 </div>
 <div class="section" id="configurer-l-application-web-play-2-0-pour-scala-ide">
-<h2>Configurer l&#8217;application web Play 2.0 pour Scala IDE</h2>
-<p>Maintenant que l&#8217;application Play fonctionne, il faut la configurer pour pouvoir l&#8217;importer dans Scala IDE.</p>
-<p>Play 2.0-RC1 intègre <a class="reference external" href="https://github.com/typesafehub/sbteclipse">sbteclipse</a>, qui permet de créer les fichiers de configuration d&#8217;un projet pour Eclipse.</p>
+<h2>Configurer l'application web Play 2.0 pour Scala IDE</h2>
+<p>Maintenant que l'application Play fonctionne, il faut la configurer pour pouvoir l'importer dans Scala IDE.</p>
+<p>Play 2.0-RC1 intègre <a class="reference external" href="https://github.com/typesafehub/sbteclipse">sbteclipse</a>, qui permet de créer les fichiers de configuration d'un projet pour Eclipse.</p>
 <ul>
-<li><p class="first">D&#8217;abord, sortez du mode &#8216;run&#8217; de Play, en utilisant <tt class="docutils literal"><span class="pre">ctrl-d</span></tt>.</p>
+<li><p class="first">D'abord, sortez du mode 'run' de Play, en utilisant <tt class="docutils literal"><span class="pre">ctrl-d</span></tt>.</p>
 <a class="reference external image-reference" href="../../_images/play20-scalaide20-06.png"><img alt="ctrl-d, exit" src="../../_images/play20-scalaide20-06.png" style="width: 100%;" /></a>
 </li>
 <li><p class="first"><tt class="docutils literal"><span class="pre">eclipsify</span></tt> est la commande à utiliser pour lancer sbteclipse depuis Play.</p>
 <a class="reference external image-reference" href="../../_images/play20-scalaide20-09.png"><img alt="eclipse" src="../../_images/play20-scalaide20-09.png" style="width: 100%;" /></a>
 </li>
-<li><p class="first">Relancez l&#8217;application web, en mode &#8216;auto-reloading&#8217;, en utilisant <tt class="docutils literal"><span class="pre">~</span> <span class="pre">run</span></tt>, de manière à ce qu&#8217;elle fonctionne en arrière plan.</p>
+<li><p class="first">Relancez l'application web, en mode 'auto-reloading', en utilisant <tt class="docutils literal"><span class="pre">~</span> <span class="pre">run</span></tt>, de manière à ce qu'elle fonctionne en arrière plan.</p>
 <a class="reference external image-reference" href="../../_images/play20-scalaide20-10.png"><img alt="run" src="../../_images/play20-scalaide20-10.png" style="width: 100%;" /></a>
 </li>
 </ul>
 </div>
 <div class="section" id="configurer-scala-ide-pour-l-application-web-play-2-0">
-<h2>Configurer Scala IDE pour l&#8217;application web Play 2.0</h2>
+<h2>Configurer Scala IDE pour l'application web Play 2.0</h2>
 <p>Changer quelques préférences dans Eclipse va permettre de rendre son utilisation plus simple.</p>
 <ul>
 <li><p class="first">Ouvrez la <em>internal web browser view</em> dans Eclipse, et vérifiez que vous pouvez accéder votre application web.</p>
@@ -167,19 +167,19 @@
 <li><p class="first">Configurez Eclipse pour que les changements dans le système de fichier soient charger automatiquement.</p>
 <a class="reference external image-reference" href="../../_images/play20-scalaide20-13.png"><img alt="refresh automatically" src="../../_images/play20-scalaide20-13.png" style="width: 100%;" /></a>
 </li>
-<li><p class="first">Si vous n&#8217;avez pas la version <em>Web Development Tools</em> d&#8217;Eclipse installée, Eclipse ouvre les fichiers <tt class="docutils literal"><span class="pre">.html</span></tt> dans un navigateur. Configurer Eclipse pour qu&#8217;il utilise le <tt class="docutils literal"><span class="pre">Scala</span> <span class="pre">Editor</span></tt> à la place.</p>
+<li><p class="first">Si vous n'avez pas la version <em>Web Development Tools</em> d'Eclipse installée, Eclipse ouvre les fichiers <tt class="docutils literal"><span class="pre">.html</span></tt> dans un navigateur. Configurer Eclipse pour qu'il utilise le <tt class="docutils literal"><span class="pre">Scala</span> <span class="pre">Editor</span></tt> à la place.</p>
 <a class="reference external image-reference" href="../../_images/play20-scalaide20-14.png"><img alt="HTML file in text editor" src="../../_images/play20-scalaide20-14.png" style="width: 100%;" /></a>
 </li>
 </ul>
 </div>
 <div class="section" id="importer-l-application-web-play-dans-scala-ide">
-<h2>Importer l&#8217;application web Play dans Scala IDE</h2>
-<p>Tout est configuré, il est temps d&#8217;importer le projet dans Scala IDE.</p>
+<h2>Importer l'application web Play dans Scala IDE</h2>
+<p>Tout est configuré, il est temps d'importer le projet dans Scala IDE.</p>
 <ul>
-<li><p class="first">Importez l&#8217;application Play 2.0 en tant que <tt class="docutils literal"><span class="pre">Existing</span> <span class="pre">Projects</span> <span class="pre">into</span> <span class="pre">Workspace</span></tt>.</p>
+<li><p class="first">Importez l'application Play 2.0 en tant que <tt class="docutils literal"><span class="pre">Existing</span> <span class="pre">Projects</span> <span class="pre">into</span> <span class="pre">Workspace</span></tt>.</p>
 <a class="reference external image-reference" href="../../_images/play20-scalaide20-15.png"><img alt="import project" src="../../_images/play20-scalaide20-15.png" style="width: 100%;" /></a>
 </li>
-<li><p class="first">La configuration générée par sbteclipse permet l&#8217;utilisation du project dans Eclipse, mais elle n&#8217;est pas optimale avec Scala IDE.</p>
+<li><p class="first">La configuration générée par sbteclipse permet l'utilisation du project dans Eclipse, mais elle n'est pas optimale avec Scala IDE.</p>
 <p>Ajoutez le répertoire <tt class="docutils literal"><span class="pre">target/src_managed/main</span></tt> comme répertoire source.</p>
 <a class="reference external image-reference" href="../../_images/play20-scalaide20-20.png"><img alt="add the managed sources folder" src="../../_images/play20-scalaide20-20.png" style="width: 100%;" /></a>
 </li>
@@ -196,7 +196,7 @@
 <p>Maintenant que tout est configuré, le vrai développement peut commencer.</p>
 <p>Modifions la page principale pour afficher une citation à la place de la page de défaut.</p>
 <ul>
-<li><p class="first">D&#8217;abord, créez la classe <tt class="docutils literal"><span class="pre">models.Quote</span></tt> en utilisant l&#8217;assistant nouvelle <tt class="docutils literal"><span class="pre">Scala</span> <span class="pre">Class</span></tt>.</p>
+<li><p class="first">D'abord, créez la classe <tt class="docutils literal"><span class="pre">models.Quote</span></tt> en utilisant l'assistant nouvelle <tt class="docutils literal"><span class="pre">Scala</span> <span class="pre">Class</span></tt>.</p>
 <a class="reference external image-reference" href="../../_images/play20-scalaide20-19.png"><img alt="create model.Quote" src="../../_images/play20-scalaide20-19.png" style="width: 100%;" /></a>
 </li>
 <li><p class="first">Ajoutez les variables à <tt class="docutils literal"><span class="pre">models.Quote</span></tt>, et faites en une case classe.</p>
@@ -219,11 +219,11 @@
 </pre></div>
 </div>
 </li>
-<li><p class="first">Les templates sont transformés en code Scala par le Play framework. Comme Play a été lancé en mode &#8216;auto-reloading&#8217; en arrière plan, les templates sont recompilés dès que le fichier est sauvegardé.</p>
-<p>Apres avoir sauvegardé le fichier, les changements sont chargés par Scala IDE, et une erreur est reporté dans le code de <tt class="docutils literal"><span class="pre">Application.scala</span></tt>. L&#8217;application n&#8217;utilise pas le template correctement.</p>
+<li><p class="first">Les templates sont transformés en code Scala par le Play framework. Comme Play a été lancé en mode 'auto-reloading' en arrière plan, les templates sont recompilés dès que le fichier est sauvegardé.</p>
+<p>Apres avoir sauvegardé le fichier, les changements sont chargés par Scala IDE, et une erreur est reporté dans le code de <tt class="docutils literal"><span class="pre">Application.scala</span></tt>. L'application n'utilise pas le template correctement.</p>
 <a class="reference external image-reference" href="../../_images/play20-scalaide20-17.png"><img alt="compilation error" src="../../_images/play20-scalaide20-17.png" style="width: 100%;" /></a>
 </li>
-<li><p class="first">Corrigez le code de l&#8217;application, en utilisant une citation élégante. Et corrigez les imports au besoin.</p>
+<li><p class="first">Corrigez le code de l'application, en utilisant une citation élégante. Et corrigez les imports au besoin.</p>
 <div class="highlight-scala"><div class="highlight"><pre><span class="k">def</span> <span class="n">index</span> <span class="k">=</span> <span class="nc">Action</span> <span class="o">{</span>
   <span class="nc">Ok</span><span class="o">(</span><span class="n">views</span><span class="o">.</span><span class="n">html</span><span class="o">.</span><span class="n">index</span><span class="o">(</span><span class="s">&quot;Your new application is ready.&quot;</span><span class="o">,</span>
       <span class="nc">Quote</span><span class="o">(</span><span class="s">&quot;Citer les pensees des autres, c&#39;est regretter de ne pas les avoir trouvees soi-meme.&quot;</span><span class="o">,</span>
@@ -240,8 +240,8 @@
 <div class="section" id="aller-plus-loin">
 <h2>Aller plus loin</h2>
 <p>Vous avez maintenant tout ce dont vous besoin pour créer de grandes applications web avec Play 2.0 et Scala.</p>
-<p>Pour plus d&#8217;information sur Play 2.0, utilisez la <a class="reference external" href="http://localhost:9000/&#64;documentation/Home">documentation intégrée</a>.</p>
-<p>Pour plus d&#8217;information sur Scala, allez sur le <a class="reference external" href="http://docs.scala-lang.org/">site de documentation</a> ou récupérez le <a class="reference external" href="http://typesafe.com/resources/scala-for-the-impatient">eBook</a> téléchargeable.</p>
+<p>Pour plus d'information sur Play 2.0, utilisez la <a class="reference external" href="http://localhost:9000/&#64;documentation/Home">documentation intégrée</a>.</p>
+<p>Pour plus d'information sur Scala, allez sur le <a class="reference external" href="http://docs.scala-lang.org/">site de documentation</a> ou récupérez le <a class="reference external" href="http://typesafe.com/resources/scala-for-the-impatient">eBook</a> téléchargeable.</p>
 </div>
 <div class="section" id="feedback">
 <h2>Feedback</h2>

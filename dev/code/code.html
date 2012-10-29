@@ -93,26 +93,26 @@
       <div class="span11 main-content">
         <div class="section" id="codebase">
 <h1>Codebase</h1>
-<p>In this page you will learn about some specific aspect of the Scala IDE&#8217;s codebase, such as
-available components and some of the pattern in use (or that we&#8217;d like to foster usage).</p>
+<p>In this page you will learn about some specific aspect of the Scala IDE's codebase, such as
+available components and some of the pattern in use (or that we'd like to foster usage).</p>
 <div class="section" id="logging">
 <h2>Logging</h2>
 <p>Logging is an important aspect of any application, and the Scala IDE is no exception. Logging the
 right information and provide the user with a way to report logs can go a long way in understanding
 the reason of a bug, and it can definitely save you some debug time!</p>
 <p>Now, you may know that the Eclipse environment already provides a logging component. As a matter of
-fact, a plugin can get a logger instance by simply calling <tt class="docutils literal"><span class="pre">getLog()</span></tt> on the <tt class="docutils literal"><span class="pre">plugin</span></tt>&#8216;s reference. The
+fact, a plugin can get a logger instance by simply calling <tt class="docutils literal"><span class="pre">getLog()</span></tt> on the <tt class="docutils literal"><span class="pre">plugin</span></tt>'s reference. The
 returned logger, of type <a class="reference external" href="http://help.eclipse.org/indigo/index.jsp?topic=%2Forg.eclipse.platform.doc.isv%2Freference%2Fapi%2Forg%2Feclipse%2Fcore%2Fruntime%2FILog.html">ILog</a>,
 can be used to communicate to the user any useful information. All log messages sent through
 the Eclipse logger are collected in <a class="reference external" href="http://help.eclipse.org/indigo/index.jsp?topic=/org.eclipse.pde.doc.user/guide/tools/views/error_log.htm">Eclipse Error Log view component</a>,
 hence they can be easily consulted by users.</p>
 <p>Though, we believe that the Eclipse logger is not flexible enough to accomodate all usage. One reason is
-that you don&#8217;t always want the user to see a log message. For instance, debug messages are often of no use
+that you don't always want the user to see a log message. For instance, debug messages are often of no use
 for the user, but they can provide very helpful information when tracking down the source of an
 issue.</p>
 <p>Inside the Scala IDE we offer two different loggers. The first one, is a handle on the
 Eclipse logger described above. The second one, is a logger backed by Log4j (which we will refer to as
-the &#8220;default logger&#8221; from now on). Log messages sent to the default logger are stored in a file named
+the &quot;default logger&quot; from now on). Log messages sent to the default logger are stored in a file named
 <tt class="docutils literal"><span class="pre">scala-ide.log</span></tt>, located in the <tt class="docutils literal"><span class="pre">${workspace}\.metadata\.plugins\org.scala-ide.sdt.core\</span></tt> directory.
 Also, note that users can easily control the amount of logged information through Logging preference page
 (accessible under the Eclipse Preferences &gt; Scala &gt; Logging).</p>

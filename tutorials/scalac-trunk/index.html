@@ -93,7 +93,7 @@
       <div class="span11 main-content">
         <div class="section" id="setup-and-use-the-scalac-project-with-the-scala-ide">
 <h1>Setup and use the Scalac project with the Scala IDE</h1>
-<div class="admonition-disclaimer admonition ">
+<div class="admonition-disclaimer admonition">
 <p class="first admonition-title">Disclaimer</p>
 <p class="last">The Scala IDE is, as far as we know, the only project built every night on top of the lastest nightly build
 of the Scala compiler. As such, you are bound to be the first to step on compiler bugs. Overall, the experience
@@ -119,7 +119,7 @@ whole Scala community will benefit!</p>
 <p>In order to build the Scala compiler inside Eclipse, you need to make sure Eclipse runs with enough heap. We recommend at least 2GB, but be generous if you can. The detailed instructions on how to do that can be found in <a class="reference internal" href="../../user/advancedsetup.html#advancedsetup-advanced-setup"><em>advanced setup</em></a></p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">If you have an older version of the Scala IDE plugin, you may run into trouble when updating to the latest nightly. Frequent changes in the compiler version numbering scheme may confuse Eclipse, and keep an older version of the compiler bundle that doesn&#8217;t match the IDE. To make sure things run smoothly, you can uninstall the previous version. There is <a class="reference external" href="http://scala-ide.org/blog/director-script.html">command line tool</a> for doing that without firing up Eclipse.</p>
+<p class="last">If you have an older version of the Scala IDE plugin, you may run into trouble when updating to the latest nightly. Frequent changes in the compiler version numbering scheme may confuse Eclipse, and keep an older version of the compiler bundle that doesn't match the IDE. To make sure things run smoothly, you can uninstall the previous version. There is <a class="reference external" href="http://scala-ide.org/blog/director-script.html">command line tool</a> for doing that without firing up Eclipse.</p>
 </div>
 </div>
 <div class="section" id="setting-up-the-eclipse-project">
@@ -167,18 +167,18 @@ whole Scala community will benefit!</p>
 </div>
 <p>The run configuration should look like this:</p>
 <img alt="../../_images/scalac-launch.png" src="../../_images/scalac-launch.png" />
-<p>Now you can launch the scala compiler, by choosing either <tt class="docutils literal"><span class="pre">Run</span></tt> or <tt class="docutils literal"><span class="pre">Debug</span></tt> from the menu. You can set breakpoints and step through Scala code just as you&#8217;d expect.</p>
+<p>Now you can launch the scala compiler, by choosing either <tt class="docutils literal"><span class="pre">Run</span></tt> or <tt class="docutils literal"><span class="pre">Debug</span></tt> from the menu. You can set breakpoints and step through Scala code just as you'd expect.</p>
 </div>
 <div class="section" id="cheat-sheet">
 <h2>Cheat sheet</h2>
-<p>Here&#8217;s a collection of the shortcuts I use the most in my daily development. Hopefully they will be helpful for others:</p>
+<p>Here's a collection of the shortcuts I use the most in my daily development. Hopefully they will be helpful for others:</p>
 <ul class="simple">
-<li><tt class="docutils literal"><span class="pre">CMD-3</span></tt> Quick Access &#8211; a huge time saver. Opens up a dialog with incremental search on all commands available on the platform</li>
-<li><tt class="docutils literal"><span class="pre">CMD-Shift-R</span></tt> Open Resource &#8211; opens up a dialog with incremental search on all files in the workspace</li>
+<li><tt class="docutils literal"><span class="pre">CMD-3</span></tt> Quick Access -- a huge time saver. Opens up a dialog with incremental search on all commands available on the platform</li>
+<li><tt class="docutils literal"><span class="pre">CMD-Shift-R</span></tt> Open Resource -- opens up a dialog with incremental search on all files in the workspace</li>
 <li><tt class="docutils literal"><span class="pre">CMD-.</span></tt> Go to the next error in the current editor</li>
 <li><tt class="docutils literal"><span class="pre">F2</span></tt> Show the error for the position under the cursor</li>
 <li><tt class="docutils literal"><span class="pre">F3</span></tt> Navigate to definition (same as <tt class="docutils literal"><span class="pre">CMD-click</span></tt> on an identifier)</li>
-<li><tt class="docutils literal"><span class="pre">CMD-O</span></tt> Quick Outline &#8211; opens up a dialog with incremental search on all definitions in the current editor</li>
+<li><tt class="docutils literal"><span class="pre">CMD-O</span></tt> Quick Outline -- opens up a dialog with incremental search on all definitions in the current editor</li>
 <li><tt class="docutils literal"><span class="pre">CMD-J</span></tt> Incremental search</li>
 <li><tt class="docutils literal"><span class="pre">CMD-F11</span></tt> Launch the debugger. By default it tries to launch the current file. I configure Eclipse to always launch the last application.</li>
 <li><tt class="docutils literal"><span class="pre">CMD-Shift-F11</span></tt> Launch the application (with no debugger attached)</li>
@@ -187,12 +187,12 @@ whole Scala community will benefit!</p>
 </div>
 <div class="section" id="swapping-the-scala-compiler-inside-eclipse-risky">
 <h2>Swapping the Scala compiler inside Eclipse (<em>risky</em>)</h2>
-<p>The Scala plugin packages a Scala compiler and library (since you are reading this, it&#8217;s most probably the nightly version of master). There may be times when you&#8217;d like to change it for your own version: say, you are developing a new feature that has not yet been included in Scala master, or you fixed a bug and can&#8217;t wait until the next nightly.</p>
+<p>The Scala plugin packages a Scala compiler and library (since you are reading this, it's most probably the nightly version of master). There may be times when you'd like to change it for your own version: say, you are developing a new feature that has not yet been included in Scala master, or you fixed a bug and can't wait until the next nightly.</p>
 <div class="admonition warning">
 <p class="first admonition-title">Warning</p>
 <p class="last">This is a risky operation. Given the tight dependency between the IDE and the compiler, you must be sure you are swapping two binary-compatible versions of the compiler. This may not work if the plugin was built against a much older version of <tt class="docutils literal"><span class="pre">scalac</span></tt> than the one you are replacing it with.</p>
 </div>
-<p>If you&#8217;re still here, go ahead and use the <a class="reference external" href="https://github.com/scala-ide/scala-ide/blob/master/update-scala.sh">update-scala.sh</a> script. Point it to your locally built scala, for instance <tt class="docutils literal"><span class="pre">build/pack</span></tt>.</p>
+<p>If you're still here, go ahead and use the <a class="reference external" href="https://github.com/scala-ide/scala-ide/blob/master/update-scala.sh">update-scala.sh</a> script. Point it to your locally built scala, for instance <tt class="docutils literal"><span class="pre">build/pack</span></tt>.</p>
 <div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>update-scala.sh --eclipse-dir /Applications/eclipse update build/pack
 </pre></div>
 </div>

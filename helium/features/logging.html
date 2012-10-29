@@ -93,7 +93,7 @@
       <div class="span11 main-content">
         <div class="section" id="logging">
 <h1>Logging</h1>
-<p>Logging isn&#8217;t likely to be the most wanted feature, and we hope that you won&#8217;t ever need to know about it.
+<p>Logging isn't likely to be the most wanted feature, and we hope that you won't ever need to know about it.
 But software can crash, and decent logging can go a long way into understanding the reasons behind a failure.
 Thus, we have improved the logging infrastructure so that it can be easily controlled by you.</p>
 <p>In this page we discuss how you can manage logging in the Scala IDE.</p>
@@ -103,11 +103,11 @@ Thus, we have improved the logging infrastructure so that it can be easily contr
 You should see the following page:</p>
 <img alt="../../_images/logging-preferences.png" src="../../_images/logging-preferences.png" />
 <p>By default, the log level is set to <tt class="docutils literal"><span class="pre">WARN</span></tt>. That should be enough for general use, and it should still provide
-some useful information in the event of an error. Naturally, you are free to change the log level at any time &#8211;
+some useful information in the event of an error. Naturally, you are free to change the log level at any time --
 remember, though, that increasing logging may noticeably decrease performance.</p>
 <p>All logging information is stored in a <tt class="docutils literal"><span class="pre">scala-ide.log</span></tt> file located in the <tt class="docutils literal"><span class="pre">${workspace}/.metadata/.plugins/org.scala-ide.sdt.core/</span></tt>
-directory, where <tt class="docutils literal"><span class="pre">${workspace}</span></tt> is the directory provided when starting up Eclipse &#8211; i.e., your Eclipse workspace.
-This file can grow up to 10MB, at which point it automatically rolls over. You can easily check the log&#8217;s contents at
+directory, where <tt class="docutils literal"><span class="pre">${workspace}</span></tt> is the directory provided when starting up Eclipse -- i.e., your Eclipse workspace.
+This file can grow up to 10MB, at which point it automatically rolls over. You can easily check the log's contents at
 any time by clicking on the link at the bottom of the <tt class="docutils literal"><span class="pre">Logging</span></tt> preferences page.</p>
 <p>By default, standard output and standard error are redirected to the log file. This makes it easy to gather all debugging
 output in one place. However, when debugging or working with other plugins you may want to keep stdout and stderr out

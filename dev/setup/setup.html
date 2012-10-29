@@ -104,7 +104,7 @@ or <a class="reference external" href="http://www.oracle.com/technetwork/java/ja
 see <a class="reference external" href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=364735">https://bugs.eclipse.org/bugs/show_bug.cgi?id=364735</a>).</li>
 <li><a class="reference external" href="http://maven.apache.org/download.html">Maven 3</a>.</li>
 <li><a class="reference external" href="http://git-scm.com/">Git</a> and a <a class="reference external" href="https://github.com/">GitHub</a> account.</li>
-<li><a class="reference external" href="http://www.eclipse.org/downloads/">Eclipse 3.7 (Indigo)</a>, including the JDT. Either &#8220;Eclipse Classic&#8221; or &#8220;Eclipse for Java Developers&#8221; is sufficient (Be aware, the plugin&#8217;s sources are no longer compatible with Eclipse 3.6).</li>
+<li><a class="reference external" href="http://www.eclipse.org/downloads/">Eclipse 3.7 (Indigo)</a>, including the JDT. Either &quot;Eclipse Classic&quot; or &quot;Eclipse for Java Developers&quot; is sufficient (Be aware, the plugin's sources are no longer compatible with Eclipse 3.6).</li>
 <li>The <a class="reference external" href="http://scala-ide.org/download/nightly.html">Scala IDE Helium for Scala 2.9</a>.</li>
 </ul>
 <p>This document uses a script to build Scala IDE. If you are on Windows, we suggest you to install Cygwin (how could you live without it on Windows anyway!?). Otherwise, the <a class="reference internal" href="../building/building.html#building-run-the-build"><em>Run the build</em></a> section of the documentation describes the different steps to execute for a full build.</p>
@@ -115,7 +115,7 @@ see <a class="reference external" href="https://bugs.eclipse.org/bugs/show_bug.c
 that will greatly simplify the process of sending us patches (remember to also read about the
 <a class="reference internal" href="../workflow/workflow.html#workflow-page"><em>Workflow</em></a> before creating pull requests).</p>
 <p>If you are new to GitHub, <a class="reference external" href="http://help.github.com/fork-a-repo/">read here to learn how to fork a project</a>.</p>
-<p>After forking the project, simply open a terminal and clone your own fork to download the project&#8217;s
+<p>After forking the project, simply open a terminal and clone your own fork to download the project's
 sources. The command for cloning the fork should be very close to the following one (mind that
 you will have to replace <em>&lt;username&gt;</em> with your actual Git username).</p>
 <div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>git clone git@github.com:&lt;username&gt;/scala-ide.git
@@ -128,7 +128,7 @@ made in the project, and easily integrate them back in your fork.</p>
 <div class="section" id="pull-the-libraries">
 <h2>Pull the libraries</h2>
 <p>The Scala IDE projects uses libraries which are pulled during the build process and copied in the <tt class="docutils literal"><span class="pre">target/lib</span></tt> folders.
-So let&#8217;s run the build.</p>
+So let's run the build.</p>
 <p>From the project root, run the following command if you are using Scala IDE with Scala 2.9:</p>
 <div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>./build-all.sh clean install
 </pre></div>
@@ -144,7 +144,7 @@ So let&#8217;s run the build.</p>
 <p>The Scala IDE project already contains the metadata files needed by Eclipse to setup the project.
 To import the Scala IDE in your workspace simply click on <tt class="docutils literal"><span class="pre">File</span> <span class="pre">&gt;</span> <span class="pre">Import</span></tt>. The Eclipse Import dialog
 will open. There, select <tt class="docutils literal"><span class="pre">General</span> <span class="pre">&gt;</span> <span class="pre">Existing</span> <span class="pre">Projects</span> <span class="pre">into</span> <span class="pre">Workspace</span></tt> and click Next. A new dialog
-will open. Browse to the folder that points to your cloned Scala IDE project&#8217;s and select it.</p>
+will open. Browse to the folder that points to your cloned Scala IDE project's and select it.</p>
 <p>A list of projects should then be loaded in the below white area. The only projects that you absolutely
 need to import in Eclipse are <tt class="docutils literal"><span class="pre">org.scala-ide.sbt.full.library</span></tt>, <tt class="docutils literal"><span class="pre">org.scala-ide.sdt.core</span></tt> and
 <tt class="docutils literal"><span class="pre">org.scala-ide.sdt.core.tests</span></tt>. Select only those and click Finish.</p>
@@ -152,13 +152,13 @@ need to import in Eclipse are <tt class="docutils literal"><span class="pre">org
 notice that the <tt class="docutils literal"><span class="pre">org.scala-ide.sbt.full.library</span></tt> project has build path errors. This project is
 grouping together a bunch of SBT jars into one OSGI bundle. The project build path is configured by default to
 reference the 2.9 version of the jars, so the configuration will be wrong if you are working with Scala 2.10.</p>
-<p>To fix this, right click on the <tt class="docutils literal"><span class="pre">org.scala-ide.sbt.full.library</span></tt> project and then click &#8220;Properties&#8221;. A
-dialog will open. Click on &#8220;Java Build Path&#8221; and select the &#8220;Libraries&#8221; tab. You should see something
+<p>To fix this, right click on the <tt class="docutils literal"><span class="pre">org.scala-ide.sbt.full.library</span></tt> project and then click &quot;Properties&quot;. A
+dialog will open. Click on &quot;Java Build Path&quot; and select the &quot;Libraries&quot; tab. You should see something
 on the lines of:</p>
 <a class="reference external image-reference" href="../../_images/sbt-full-jars.png"><img alt="../../_images/sbt-full-jars.png" src="../../_images/sbt-full-jars.png" style="width: 100%;" /></a>
-<p>First remove all JARs, and then click the &#8220;Add JARs...&#8221; button and browse to <tt class="docutils literal"><span class="pre">org.scala-ide.sbt.full.library/target/classes/lib</span></tt>.
+<p>First remove all JARs, and then click the &quot;Add JARs...&quot; button and browse to <tt class="docutils literal"><span class="pre">org.scala-ide.sbt.full.library/target/classes/lib</span></tt>.
 Select all JARs in the folder and click OK.</p>
-<p>Now click the &#8220;Order and Export&#8221; tab and make sure to export all JARs click the &#8220;Select All&#8221; button.</p>
+<p>Now click the &quot;Order and Export&quot; tab and make sure to export all JARs click the &quot;Select All&quot; button.</p>
 <a class="reference external image-reference" href="../../_images/order-export.png"><img alt="../../_images/order-export.png" src="../../_images/order-export.png" style="width: 100%;" /></a>
 <p>Click OK.</p>
 <p>If after rebuilding you see any errors, drop us a note in the <a class="reference external" href="http://groups.google.com/group/scala-ide-dev?pli=1">Scala IDE Developer
@@ -166,7 +166,7 @@ Mailing List</a>.</p>
 </div>
 <div class="section" id="run-the-scala-ide-within-eclipse">
 <h2>Run the Scala IDE within Eclipse</h2>
-<p>So, you managed to have the Scala IDE sources compiling, now it&#8217;s time to learn how to run the Scala
+<p>So, you managed to have the Scala IDE sources compiling, now it's time to learn how to run the Scala
 IDE within Eclipse.</p>
 <p>Doing this is especially useful if you need to do some manual debugging of the plug-in. Since the
 Scala IDE uses weaving, you need to launch the IDE with weaving enabled, which is not configurable
@@ -187,7 +187,7 @@ test with Equinox Weaving.</p>
 Run As &gt; Equinox Weaving enabled Eclipse Application.  That should fire up a second Eclipse instance.
 To quickly test that all is working fine, try to create a Scala project.</p>
 <p>You are now ready to hack on the Scala IDE. Start by looking around, do some change and observe what
-happens when you launch the second Eclipse&#8217;s instance.</p>
+happens when you launch the second Eclipse's instance.</p>
 <p>Read the rest of the developer documentation to get more insights about the overall architecture.</p>
 </div>
 </div>

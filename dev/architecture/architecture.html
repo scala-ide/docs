@@ -93,8 +93,8 @@
       <div class="span11 main-content">
         <div class="section" id="architecture">
 <h1>Architecture</h1>
-<p>In this page you will learn about the Scala IDE&#8217;s architecture. First, an overview of the
-different existing modules is provided. Then, a few specific aspects of the Scala IDE&#8217;s architecture
+<p>In this page you will learn about the Scala IDE's architecture. First, an overview of the
+different existing modules is provided. Then, a few specific aspects of the Scala IDE's architecture
 and its components are discussed.</p>
 <div class="section" id="overview">
 <h2>Overview</h2>
@@ -106,13 +106,13 @@ and its components are discussed.</p>
 <li><tt class="docutils literal"><span class="pre">org.scala-ide.scala.compiler</span></tt>: Wraps the Scala Compiler in a OSGi bundle (needed by the Eclipse runtime).</li>
 <li><tt class="docutils literal"><span class="pre">org.scala-ide.scala.library</span></tt>: Wraps the Scala Library in a OSGi bundle (needed by the Eclipse runtime).</li>
 <li><tt class="docutils literal"><span class="pre">org.scala-ide.sdt.aspects</span></tt>: Contains the AspectJ classes used to weave into Eclipse and hook in JDT internals.</li>
-<li><tt class="docutils literal"><span class="pre">org.scala-ide.sdt.core</span></tt>: Contains the Scala IDE plug-in&#8217;s source code.</li>
+<li><tt class="docutils literal"><span class="pre">org.scala-ide.sdt.core</span></tt>: Contains the Scala IDE plug-in's source code.</li>
 <li><tt class="docutils literal"><span class="pre">org.scala-ide.sdt.core.tests</span></tt>: Contains the functional tests used to exercise the Scala IDE in headless mode (with no User Interface).</li>
-<li><tt class="docutils literal"><span class="pre">org.scala-ide.sdt.debug</span></tt>: Contains the Scala IDE debugger plug-in&#8217;s source code.</li>
+<li><tt class="docutils literal"><span class="pre">org.scala-ide.sdt.debug</span></tt>: Contains the Scala IDE debugger plug-in's source code.</li>
 <li><tt class="docutils literal"><span class="pre">org.scala-ide.sdt.debug.tests</span></tt>: Contains the functional tests used to exercise the Scala IDE debugger in headless mode (with no User Interface).</li>
-<li><tt class="docutils literal"><span class="pre">org.scala-ide.sdt.feature</span></tt>: Packages the <tt class="docutils literal"><span class="pre">org.scala-ide.sdt.core</span></tt> and <tt class="docutils literal"><span class="pre">org.scala-ide.sdt.debug</span></tt> project binaries into the &#8220;Scala IDE for Eclipse&#8221; component, which is then made available through the Scala IDE update site.</li>
-<li><tt class="docutils literal"><span class="pre">org.scala-ide.sdt.source.feature</span></tt>: Packages both the <tt class="docutils literal"><span class="pre">org.scala-ide.sdt.core</span></tt> and <tt class="docutils literal"><span class="pre">org.scala-ide.sdt.aspects</span></tt> project sources into the &#8220;Scala IDE for Eclipse Source Feature&#8221; component, which is then made available through the Scala IDE update site.</li>
-<li><tt class="docutils literal"><span class="pre">org.scala-ide.sdt.weaving.feature</span></tt>: Packages the <tt class="docutils literal"><span class="pre">org.scala-ide.sdt.aspects</span></tt> project binaries into the &#8220;JDT Weaving for Scala&#8221; component, which is included within the &#8220;Scala IDE for Eclipse&#8221; component.</li>
+<li><tt class="docutils literal"><span class="pre">org.scala-ide.sdt.feature</span></tt>: Packages the <tt class="docutils literal"><span class="pre">org.scala-ide.sdt.core</span></tt> and <tt class="docutils literal"><span class="pre">org.scala-ide.sdt.debug</span></tt> project binaries into the &quot;Scala IDE for Eclipse&quot; component, which is then made available through the Scala IDE update site.</li>
+<li><tt class="docutils literal"><span class="pre">org.scala-ide.sdt.source.feature</span></tt>: Packages both the <tt class="docutils literal"><span class="pre">org.scala-ide.sdt.core</span></tt> and <tt class="docutils literal"><span class="pre">org.scala-ide.sdt.aspects</span></tt> project sources into the &quot;Scala IDE for Eclipse Source Feature&quot; component, which is then made available through the Scala IDE update site.</li>
+<li><tt class="docutils literal"><span class="pre">org.scala-ide.sdt.weaving.feature</span></tt>: Packages the <tt class="docutils literal"><span class="pre">org.scala-ide.sdt.aspects</span></tt> project binaries into the &quot;JDT Weaving for Scala&quot; component, which is included within the &quot;Scala IDE for Eclipse&quot; component.</li>
 <li><tt class="docutils literal"><span class="pre">org.scala-ide.sdt.update-site</span></tt>: Contains the result of a successful compilation of the Scala IDE project, packaged in the form expected by the Eclipse Update Manager.</li>
 </ul>
 </div>
@@ -189,7 +189,7 @@ provide correct interoperation between Scala and Java code. Doing this in genera
 </ul>
 <p class="last">In the future we would like to explore other roads. For instance, we have been thinking about
 using the binaries (instead of the sources), so that we would not need to duplicate the Scala
-compiler backend&#8217;s logic. Though, doing this would force users working on mixed Scala/Java projects
+compiler backend's logic. Though, doing this would force users working on mixed Scala/Java projects
 to enable continuous build (to make sure that the class binaries are actually produced), which
 may not be acceptable.</p>
 </div>

@@ -127,7 +127,7 @@ more information about this point.</li>
 <tt class="docutils literal"><span class="pre">org.scala-ide.sdt.update-site/target/site</span></tt> and a zipped version of the same at
 <tt class="docutils literal"><span class="pre">org.scala-ide.sdt.update-site/target/site_assembly.zip</span></tt>. You can install directly into Eclipse
 from this update site by adding it as a local update site via the Eclipse
-&#8220;Install New Software ...&#8221; action. Alternatively, if you make the unpacked site available via a web
+&quot;Install New Software ...&quot; action. Alternatively, if you make the unpacked site available via a web
 server, then the HTTP URL of its root directory is acceptable as an ordinary Eclipse update site URL.</p>
 </div>
 <div class="section" id="the-build-in-details">
@@ -168,7 +168,7 @@ server, then the HTTP URL of its root directory is acceptable as an ordinary Ecl
 <span class="nv">$ </span>mvn --projects ../org.scala-ide.sdt.aspects,../org.scala-ide.sdt.core,../org.scala-ide.sdt.core.tests -P scala-2.10.x,memory-test clean integration-test
 </pre></div>
 </div>
-<p>The <tt class="docutils literal"><span class="pre">--projects</span></tt> option tells maven which modules to build, as we don&#8217;t need to build all of them in this case. The <tt class="docutils literal"><span class="pre">memory-test</span></tt> profile contains a sightly modified configuration for <tt class="docutils literal"><span class="pre">sdt.core.test</span></tt>. It pulls and extracts the Scala compiler source needed for the test, and sets the MemoryLeaksTest test to be run.</p>
+<p>The <tt class="docutils literal"><span class="pre">--projects</span></tt> option tells maven which modules to build, as we don't need to build all of them in this case. The <tt class="docutils literal"><span class="pre">memory-test</span></tt> profile contains a sightly modified configuration for <tt class="docutils literal"><span class="pre">sdt.core.test</span></tt>. It pulls and extracts the Scala compiler source needed for the test, and sets the MemoryLeaksTest test to be run.</p>
 </div>
 <div class="section" id="build-the-scala-ide-with-a-local-version-of-the-scala-compiler">
 <h2>Build the Scala IDE with a local version of the Scala Compiler</h2>
