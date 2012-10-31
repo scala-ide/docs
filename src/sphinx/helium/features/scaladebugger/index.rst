@@ -119,6 +119,14 @@ To know the return value of a method without having to add an extra local variab
 
 *A proof of concept is working. Need to define the exact behavior and devise a way to present the value*
 
+Remote Debugging
+................
+
+Using the Scala debugger for a remote debugging session is done by selecting one of the Scala connector in a normal 'Remote Java Application' launch configuration. The remainder of the configuration is the same as for Java remote debugging.
+
+.. image:: images/remotedebugging-01.png
+   :alt: Scala remote debugging configuration
+
 Status
 ------
 
@@ -134,7 +142,6 @@ Status
 known issues
 ............
 
-* Disabled breakpoints are not working (the application still stops if the breakpoint is hit).
 
 TODO
 ....
@@ -142,12 +149,6 @@ TODO
 *may not be exhaustive or up-to-date, not really ordered*
 
 updated 2012-05-03
-
-* Good scheme to activate the Scala Debugger
-
-  * Remote Scala application launcher
-  * Scala application launcher use Scala Debugger
-  * option to launch Eclipse application with the Scala Debugger
 
 * Take care of breakpoints in Scala Debugger, currently still done by JDT debugger
 * Use own jdi event dispatcher, instead of using the JDT debugger one
@@ -178,7 +179,6 @@ updated 2012-05-03
 
   * collection of primitive type elements
 
-* enabling/disabling breakpoints doesn't work
 * drop to frame support
 * step over and step out relative to the currently selected stackframe
 * cache data used for smart stepping
