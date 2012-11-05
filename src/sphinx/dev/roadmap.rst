@@ -67,16 +67,17 @@ __ http://scala-ide.org/docs/helium/features/source-generators/index.html
 __ http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001018
 __ http://scala-ide.org/download/ecosystem.html
 
+**Milestone 3** - December 2012
+
+* Hardening the Scala debugger |progress|
+
 **Helium release**
 
 * Eclipse Juno (4.2) support - *Eric Molitor* - `#1000988`__ |progress|
-* Full support for Find References - *Typesafe team* - `#1000868`__
-* Improve dependency tracking - *Typesafe team* - `#1000869`__
+* Performance improvements in the editor (`#1001156`__)
 
 __ http://www.assembla.com/spaces/scala-ide/tickets/1000988
-__ http://www.assembla.com/spaces/scala-ide/tickets/1000868
-__ http://www.assembla.com/spaces/scala-ide/tickets/1000869
-
+__ https://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001156
 
 **Not aligned**
 
@@ -95,6 +96,7 @@ __ https://github.com/kaptoxic/scala-ide-insynth-integration/
 Lithium (next major release)
 -------------------------------
 
+* Full support for Find References - *Typesafe team* - `#1000868`__
 * Create an abstraction layer with the Scala compiler - *Typesafe team* - `#1000861`__, `#1000862`__
 * Use the Scala model for the Outline view - *Typesafe team* - `#1000863`__
 * Create a real Scala Editor (with all completion, indentation, formatting, ... support) - *Typesafe team* - `#1000860`__
@@ -103,6 +105,7 @@ Lithium (next major release)
 * Add support Call Hierarchy - *Typesafe team* - `#1000872`__
 * Finalize the API in Scala IDE - *Typesafe team* - `#1000873`__
 
+__ http://www.assembla.com/spaces/scala-ide/tickets/1000868
 __ http://www.assembla.com/spaces/scala-ide/tickets/1000861
 __ http://www.assembla.com/spaces/scala-ide/tickets/1000862
 __ http://www.assembla.com/spaces/scala-ide/tickets/1000863

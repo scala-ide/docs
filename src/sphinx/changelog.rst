@@ -5,7 +5,7 @@ Changelog
 ------------------------------
 
 M2 (released: 2012-09-13)
-...............
+.........................
 
 * Add semantic highlighting for object members in type params - `#1001209`_
 * Added semantic highlighting in context bounds, tuple/function literals, structural types, path-dependent types, `etc`_
