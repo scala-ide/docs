@@ -95,7 +95,21 @@ At the next 'step over', the debugger exits the map call, and stop at the assign
 
 The same way, the 'step into' action allows you to step right into the closure, and the 'step out' action to return to the original call.
 
-*In the preview version, 'step into' is not working fine with primitive types*
+Step filters
+............
+
+Often when stepping in and out of Scala methods you don't want to stop in all the artifacts produced by the Scala compiler. A few of the uninteresting methods are:
+
+* Scala getters and setters for `val`/`var` members
+* bridge methods
+* synthetic methods
+* box/unbox operations
+* forwarders for trait concrete methods (not yet implemented)
+
+You can enable/disable step filters on the debugger configuration page:
+
+.. image:: images/step-filters.png
+    :alt: step filters configuration
 
 Boxed primitive values
 ......................
@@ -141,16 +155,13 @@ TODO
 
 *may not be exhaustive or up-to-date, not really ordered*
 
-updated 2012-05-03
+updated 2012-12-23
 
 * Good scheme to activate the Scala Debugger
 
   * Remote Scala application launcher
   * Scala application launcher use Scala Debugger
-  * option to launch Eclipse application with the Scala Debugger
 
-* Take care of breakpoints in Scala Debugger, currently still done by JDT debugger
-* Use own jdi event dispatcher, instead of using the JDT debugger one
 * Set the right icon according to the element type and state
 * Improve the labels
 
@@ -175,8 +186,6 @@ updated 2012-05-03
 
 * use IIndexedValue for arrays
 * better smart step into support
-
-  * collection of primitive type elements
 
 * enabling/disabling breakpoints doesn't work
 * drop to frame support

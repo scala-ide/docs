@@ -101,7 +101,9 @@ Now click the "Order and Export" tab and make sure to export all JARs click the 
    :target: ../../_images/order-export.png
  
  
-Click OK. 
+Click OK.
+
+Additionally, if you're using scala 2.10, you need to right-click the 2.9 folder in the ``org.scala-ide.sdt.core`` project and select ``Build Path -> Remove from Build Path`` and add the 2.10 folder instead by right-clicking and selecting ``Build Path -> Use as Source Folder``.
  
 If after rebuilding you see any errors, drop us a note in the `Scala IDE Developer 
 Mailing List <http://groups.google.com/group/scala-ide-dev?pli=1>`_.
