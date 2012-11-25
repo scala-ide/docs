@@ -17,6 +17,7 @@ Contents:
    setup/setup
    building/building
    architecture/architecture
+   architecture/presentation-compiler
    code/code
    testing/testing
    repository-organization/repository-organization
