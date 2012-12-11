@@ -118,9 +118,7 @@ The Scala Presentation Compiler
 -------------------------------
 
 In order to provide semantic actions, the IDE needs to *understand* the edited Scala code. That 
-means parsing and type-checking. The `Scala Presentation Compiler 
-<https://github.com/scala-ide/scala-ide/blob/master/org.scala-ide.sdt.core/src/scala/tools/eclipse/ScalaPresentationCompiler.scala>`_ 
-is an asynchronous front-end compiler for Scala, part of the standard Scala compiler.
+means parsing and type-checking. :ref:`scalapresentationcompiler` is an asynchronous front-end compiler for Scala, part of the standard Scala compiler.
 
 Code formatting
 ---------------
