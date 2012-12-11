@@ -1,3 +1,6 @@
+
+.. _scalapresentationcompiler:
+
 The Scala Presentation Compiler
 ===============================
 
