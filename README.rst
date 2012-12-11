@@ -15,11 +15,13 @@ To setup Sphinx locally, use ``easy_install``:
 To generate the files, use the `make-site` task in sbt:
 
 ::
+
     $ sbt make-site
 
 To deploy the changes, use the `ghpages-push-site` task:
 
 ::
+
     $ sbt make-site ghpages-push-site
 
 .. _reStructuredText: http://docutils.sourceforge.net/rst.html
