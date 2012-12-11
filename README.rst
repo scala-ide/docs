@@ -12,7 +12,15 @@ To setup Sphinx locally, use ``easy_install``:
     $ sudo easy_install "sphinx==1.1.2"
     $ sudo easy_install pygments # required on some systems
 
-Then simply use ``sbt make-site`` from the repository root to generate the files.
+To generate the files, use the `make-site` task in sbt:
+
+::
+    $ sbt make-site
+
+To deploy the changes, use the `ghpages-push-site` task:
+
+::
+    $ sbt make-site ghpages-push-site
 
 .. _reStructuredText: http://docutils.sourceforge.net/rst.html
 .. _Sphinx: http://sphinx.pocoo.org/
