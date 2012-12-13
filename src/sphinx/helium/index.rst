@@ -20,5 +20,6 @@ Contents:
    features/semantic-highlighting/index.rst
    features/show-type
    features/source-generators/index.rst
-   
+   features/test-finder/index.rst
+
 .. include:: /contribute.rst.inc
