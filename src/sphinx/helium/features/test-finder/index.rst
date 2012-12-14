@@ -11,3 +11,15 @@ To enable the new test finder simply select **Scala JUnit 4** from the drop down
 The `Scala JUnit 4` runner is automatically selected when **right-clicking** on a file (package, project or source folders are also supported) if the project has the Scala nature.
 
 .. image:: images/right-click.png
+
+Limitations
+~~~~~~~~~~~
+
+The current Scala test finder does not find:
+
+* tests using the 3.8-style (extending ``TestCase``)
+* tests that have no ``@Test`` annotations, for instance a test that inherits all the test methods from a super class. This limitation can be worked around by adding `@Test` in a comment.
+
+The missing functionality depends on having a good *Scala Search* implementation, planned for Lithium_.
+
+.. _Lithium: http://scala-ide.org/docs/dev/roadmap.html
