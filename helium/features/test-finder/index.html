@@ -98,6 +98,15 @@
 <img alt="../../../_images/config.png" src="../../../_images/config.png" />
 <p>The <cite>Scala JUnit 4</cite> runner is automatically selected when <strong>right-clicking</strong> on a file (package, project or source folders are also supported) if the project has the Scala nature.</p>
 <img alt="../../../_images/right-click.png" src="../../../_images/right-click.png" />
+<div class="section" id="limitations">
+<h2>Limitations</h2>
+<p>The current Scala test finder does not find:</p>
+<ul class="simple">
+<li>tests using the 3.8-style (extending <tt class="docutils literal"><span class="pre">TestCase</span></tt>)</li>
+<li>tests that have no <tt class="docutils literal"><span class="pre">&#64;Test</span></tt> annotations, for instance a test that inherits all the test methods from a super class. This limitation can be worked around by adding <cite>&#64;Test</cite> in a comment.</li>
+</ul>
+<p>The missing functionality depends on having a good <em>Scala Search</em> implementation, planned for <a class="reference external" href="http://scala-ide.org/docs/dev/roadmap.html">Lithium</a>.</p>
+</div>
 </div>
 
 	    </div>
