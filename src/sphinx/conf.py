@@ -25,7 +25,7 @@ import sys, os
 
 # Add any Sphinx extension module names here, as strings. They can be extensions
 # coming with Sphinx (named 'sphinx.ext.*') or your custom ones.
-extensions = ['sphinx.ext.autodoc']
+extensions = ['sphinx.ext.autodoc', 'sphinx.ext.extlinks']
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
@@ -241,3 +241,9 @@ texinfo_documents = [
 
 # How to display URL addresses: 'footnote', 'no', or 'inline'.
 #texinfo_show_urls = 'footnote'
+
+# e.g. :issue:`36` :ticket:`8`
+extlinks = {
+  'ticket': ('http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/%s', '#'),
+  'pull': ('https://github.com/scala-ide/scala-ide/pull/%s', 'pull #')
+}

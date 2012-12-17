@@ -1,3 +1,5 @@
+.. _scala-junit-test-finder:
+
 Scala JUnit Test finder
 =======================
 
