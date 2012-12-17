@@ -25,7 +25,7 @@ M3 (not yet released)
 * Improved mark occurrences caching: less memory consumption, and always using the correct compiler - :ticket:`1001303`
 * Install breakpoints correctly for inner classes and objects deriving from ``App`` - :ticket:`1001197`, :ticket:`1001367` |debugger|
 * Implement enable/disable breakpoint - :ticket:`1001289` |debugger|
-* Better relevance metrics in completins - :ticket:`1000485`
+* Better relevance metrics in completions - :ticket:`1000485`
 * Semantic highlighting for scala 'symbols - :ticket:`1001364`
 * Fixed regression in the way project preferences are passed to the builder - :ticket:`1001241`, :ticket:`1001267`
 * Added remote debugging - :ticket:`1001129`  |debugger|
