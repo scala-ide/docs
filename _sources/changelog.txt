@@ -7,11 +7,11 @@ Changelog
 Helium release (not yet released)
 .................................................
 
-* Added a URL hyperlink detector - :ticket:`1001266`
 
 M3 (not yet released)
 .........................
 
+* Added a URL hyperlink detector - :ticket:`1001266`
 * Added a :ref:`scala-junit-test-finder` - :ticket:`1001275`, :ticket:`1000782`
 * Fixed missing implicit arguments in *implicit highlighting* - :ticket:`1001280`
 * Correctly find **JUnit** tests right-clicking on a Scala source - :ticket:`1001234`, :ticket:`1001379`, :ticket:`1001380`, :ticket:`1000731`.
