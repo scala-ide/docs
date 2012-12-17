@@ -4,6 +4,54 @@ Changelog
 2.1 (master) - codename Helium 
 ------------------------------
 
+Helium release (not yet released)
+.................................................
+
+* Added a URL hyperlink detector - :ticket:`1001266`
+
+M3 (not yet released)
+.........................
+
+* Added a :ref:`scala-junit-test-finder` - :ticket:`1001275`, :ticket:`1000782`
+* Fixed missing implicit arguments in *implicit highlighting* - :ticket:`1001280`
+* Correctly find **JUnit** tests right-clicking on a Scala source - :ticket:`1001234`, :ticket:`1001379`, :ticket:`1001380`, :ticket:`1000731`.
+* Fixed crash when hovering over ``Run As`` button - :ticket:`1001304`
+* Show Logical Structures working on 2.10 - :ticket:`1001315` |debugger|
+* Fixed race condition in refactoring 'rename' - :ticket:`1001381`
+* Fixed Juno build - :ticket:`1001374`
+* Fixed race condition in the indexer - :ticket:`1001376`
+* Updated the AspectJ weaving version, possibly fixing weaving crashes on startup - :ticket:`1001163`
+* Correctly set breakpoints in source attachments - :ticket:`1001202` |debugger|
+* Improved mark occurrences caching: less memory consumption, and always using the correct compiler - :ticket:`1001303`
+* Install breakpoints correctly for inner classes and objects deriving from ``App`` - :ticket:`1001197`, :ticket:`1001367` |debugger|
+* Implement enable/disable breakpoint - :ticket:`1001289` |debugger|
+* Better relevance metrics in completins - :ticket:`1000485`
+* Semantic highlighting for scala 'symbols - :ticket:`1001364`
+* Fixed regression in the way project preferences are passed to the builder - :ticket:`1001241`, :ticket:`1001267`
+* Added remote debugging - :ticket:`1001129`  |debugger|
+* Fixed race condition in hyperlink computer, possibly leading to spurious errors - :ticket:`1001330`
+* Properly check for build errors before launching - :ticket:`1000740`
+* Fixed infinite *updated occurrences dialog* - :ticket:`1001327`
+* Step filters for trait forwarders - :ticket:`1001288` |debugger|
+* Fixed spurious freezes - :ticket:`1001308` |debugger|
+* Graceful termination of debug actors, that fixes spurious zombie processes - :ticket:`1001233` |debugger|
+* Fixed race condition in semantic highlighting that might cause spurious errors - :ticket:`1001302` 
+* Terminate the remote VM on user request - :ticket:`1001291` |debugger|
+* Fixed Implementation Missing when viewing variables - :ticket:`1001246`  |debugger|
+* Configuration dialog for step filters - :ticket:`1001088`  |debugger|
+* Step filters for Scala getters/setters - :ticket:`1001137`, :ticket:`1001283`  |debugger|
+* Faster completions for Java symbols - :ticket:`1001287`
+* Removed dependency on Eclipse SDK - :ticket:`1001281`
+* Added ``-Dsdtcore.notimeouts`` to allow for long-running tests - :ticket:`1001269`
+* Fixed NPE in mark occurrences when a source is deleted - :ticket:`1001268`
+* Report errors when the Sbt builder crashes - :ticket:`1001274`
+* Faster scope-completions - :pull:`206`
+* Filter out completions that contain ``$`` - :ticket:`1001264`
+* Faster *scaladoc* auto-edit strategy - :ticket:`1001263`
+* Scala Plugin Spy included in the dev-tools plugin - :pull:`203`
+* Quick-fixes for type mismatches (suggest ``flatten`` or ``Option``) - :pull:`188`
+* Fixed deadlock and freezes due to presentation compiler resets - :ticket:`1001102`, :ticket:`1000945`, :ticket:`1001029`
+
 M2 (released: 2012-09-13)
 .........................
 
@@ -395,3 +443,8 @@ __ https://scala-ide-portfolio.assembla.com/spaces/ae55a-oWSr36hpeJe5avMc/ticket
 see `news`__
 
 __ http://www.scala-ide.org/2010/08/not-a-release-but-new-and-noteworthy-even-so/)
+
+.. role:: raw-html(raw)
+   :format: html
+
+.. |debugger| replace:: :raw-html:`<span class="label info">debugger</span>`

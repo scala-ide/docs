@@ -90,6 +90,56 @@
 <h1>Changelog</h1>
 <div class="section" id="master-codename-helium">
 <h2>2.1 (master) - codename Helium</h2>
+<div class="section" id="helium-release-not-yet-released">
+<h3>Helium release (not yet released)</h3>
+<ul class="simple">
+<li>Added a URL hyperlink detector - <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001266">#1001266</a></li>
+</ul>
+</div>
+<div class="section" id="m3-not-yet-released">
+<h3>M3 (not yet released)</h3>
+<ul class="simple">
+<li>Added a <a class="reference internal" href="helium/features/test-finder/index.html#scala-junit-test-finder"><em>Scala JUnit Test finder</em></a> - <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001275">#1001275</a>, <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000782">#1000782</a></li>
+<li>Fixed missing implicit arguments in <em>implicit highlighting</em> - <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001280">#1001280</a></li>
+<li>Correctly find <strong>JUnit</strong> tests right-clicking on a Scala source - <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001234">#1001234</a>, <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001379">#1001379</a>, <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001380">#1001380</a>, <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000731">#1000731</a>.</li>
+<li>Fixed crash when hovering over <tt class="docutils literal"><span class="pre">Run</span> <span class="pre">As</span></tt> button - <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001304">#1001304</a></li>
+<li>Show Logical Structures working on 2.10 - <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001315">#1001315</a> <span class="raw-html"><span class="label info">debugger</span></span></li>
+<li>Fixed race condition in refactoring 'rename' - <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001381">#1001381</a></li>
+<li>Fixed Juno build - <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001374">#1001374</a></li>
+<li>Fixed race condition in the indexer - <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001376">#1001376</a></li>
+<li>Updated the AspectJ weaving version, possibly fixing weaving crashes on startup - <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001163">#1001163</a></li>
+<li>Correctly set breakpoints in source attachments - <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001202">#1001202</a> <span class="raw-html"><span class="label info">debugger</span></span></li>
+<li>Improved mark occurrences caching: less memory consumption, and always using the correct compiler - <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001303">#1001303</a></li>
+<li>Install breakpoints correctly for inner classes and objects deriving from <tt class="docutils literal"><span class="pre">App</span></tt> - <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001197">#1001197</a>, <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001367">#1001367</a> <span class="raw-html"><span class="label info">debugger</span></span></li>
+<li>Implement enable/disable breakpoint - <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001289">#1001289</a> <span class="raw-html"><span class="label info">debugger</span></span></li>
+<li>Better relevance metrics in completins - <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000485">#1000485</a></li>
+<li>Semantic highlighting for scala 'symbols - <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001364">#1001364</a></li>
+<li>Fixed regression in the way project preferences are passed to the builder - <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001241">#1001241</a>, <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001267">#1001267</a></li>
+<li>Added remote debugging - <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001129">#1001129</a>  <span class="raw-html"><span class="label info">debugger</span></span></li>
+<li>Fixed race condition in hyperlink computer, possibly leading to spurious errors - <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001330">#1001330</a></li>
+<li>Properly check for build errors before launching - <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000740">#1000740</a></li>
+<li>Fixed infinite <em>updated occurrences dialog</em> - <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001327">#1001327</a></li>
+<li>Step filters for trait forwarders - <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001288">#1001288</a> <span class="raw-html"><span class="label info">debugger</span></span></li>
+<li>Fixed spurious freezes - <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001308">#1001308</a> <span class="raw-html"><span class="label info">debugger</span></span></li>
+<li>Graceful termination of debug actors, that fixes spurious zombie processes - <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001233">#1001233</a> <span class="raw-html"><span class="label info">debugger</span></span></li>
+<li>Fixed race condition in semantic highlighting that might cause spurious errors - <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001302">#1001302</a></li>
+<li>Terminate the remote VM on user request - <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001291">#1001291</a> <span class="raw-html"><span class="label info">debugger</span></span></li>
+<li>Fixed Implementation Missing when viewing variables - <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001246">#1001246</a>  <span class="raw-html"><span class="label info">debugger</span></span></li>
+<li>Configuration dialog for step filters - <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001088">#1001088</a>  <span class="raw-html"><span class="label info">debugger</span></span></li>
+<li>Step filters for Scala getters/setters - <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001137">#1001137</a>, <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001283">#1001283</a>  <span class="raw-html"><span class="label info">debugger</span></span></li>
+<li>Faster completions for Java symbols - <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001287">#1001287</a></li>
+<li>Removed dependency on Eclipse SDK - <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001281">#1001281</a></li>
+<li>Added <tt class="docutils literal"><span class="pre">-Dsdtcore.notimeouts</span></tt> to allow for long-running tests - <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001269">#1001269</a></li>
+<li>Fixed NPE in mark occurrences when a source is deleted - <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001268">#1001268</a></li>
+<li>Report errors when the Sbt builder crashes - <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001274">#1001274</a></li>
+<li>Faster scope-completions - <a class="reference external" href="https://github.com/scala-ide/scala-ide/pull/206">pull #206</a></li>
+<li>Filter out completions that contain <tt class="docutils literal"><span class="pre">$</span></tt> - <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001264">#1001264</a></li>
+<li>Faster <em>scaladoc</em> auto-edit strategy - <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001263">#1001263</a></li>
+<li>Scala Plugin Spy included in the dev-tools plugin - <a class="reference external" href="https://github.com/scala-ide/scala-ide/pull/203">pull #203</a></li>
+<li>Quick-fixes for type mismatches (suggest <tt class="docutils literal"><span class="pre">flatten</span></tt> or <tt class="docutils literal"><span class="pre">Option</span></tt>) - <a class="reference external" href="https://github.com/scala-ide/scala-ide/pull/188">pull #188</a></li>
+<li>Fixed deadlock and freezes due to presentation compiler resets - <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001102">#1001102</a>, <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000945">#1000945</a>, <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001029">#1001029</a></li>
+</ul>
+</div>
 <div class="section" id="m2-released-2012-09-13">
 <h3>M2 (released: 2012-09-13)</h3>
 <ul class="simple">
