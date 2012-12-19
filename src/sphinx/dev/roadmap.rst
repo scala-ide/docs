@@ -43,7 +43,7 @@ __ http://www.assembla.com/spaces/scala-ide/tickets/1000867
 * `ScalaTest support`__ - *Chee Seng Chua, Bill Venners* - |done| `(watch the demo!)`__
 * `Implicit hyperlinking`__ - *Typesafe Team* - `#10001002`__ - |done|
 * `Infer Type of Structured Selection`__ - *Typesafe Team* - |done|
-* `Create a worksheet (like a REPL but in an editor)`__ - *Typesafe team* - `#1000865`__ |progress|
+* `Create a worksheet (like a REPL but in an editor)`__ - *Typesafe team* - `#1000865`__ |done|
 * Initial support for Find References - *Typesafe team* - `#1000868`__ - |done|
 * Scala 2.10 support (e.g., macros, string interpolation) -  *Typesafe team* |done|
 * `New Scala debugger`__ - *Typesafe team* - |done|
@@ -70,6 +70,7 @@ __ http://scala-ide.org/download/ecosystem.html
 **Milestone 3** - December 2012
 
 * Hardening the Scala debugger |progress|
+* Scala Editor sluggishness
 
 **Helium release**
 

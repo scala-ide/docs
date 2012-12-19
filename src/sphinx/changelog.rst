@@ -8,7 +8,7 @@ Helium release (not yet released)
 .................................................
 
 
-M3 (not yet released)
+M3 (released: 2012-12-20)
 .........................
 
 * Added a URL hyperlink detector - :ticket:`1001266`
