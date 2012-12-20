@@ -70,7 +70,6 @@ __ http://scala-ide.org/download/ecosystem.html
 **Milestone 3** - December 2012
 
 * Hardening the Scala debugger |progress|
-* Scala Editor sluggishness
 
 **Helium release**
 
