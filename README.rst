@@ -9,7 +9,7 @@ To setup Sphinx locally, use ``easy_install``:
 
 ::
 
-    $ sudo easy_install "sphinx==1.1.2"
+    $ sudo easy_install "sphinx==1.1.3"
     $ sudo easy_install pygments # required on some systems
 
 To generate the files, use the ``make-site`` task in sbt:
