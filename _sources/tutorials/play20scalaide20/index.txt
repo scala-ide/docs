@@ -123,7 +123,7 @@ Setting a few preferences in Eclipse will make everything easier to use.
        :width: 100%
        :target: ../../_images/play20-scalaide20-13.png
 
-*   If you don't have the Web Development Tools for Eclipse installed, Eclipse opens ``.html`` files in a web browser. Configure it to use the ``Scala Editor`` instead.
+*   If you don't have the Web Development Tools for Eclipse installed, Eclipse opens ``.html`` files in a web browser. Configure it to use the ``Text Editor`` instead.
 
     .. image:: images/play20-scalaide20-14.png
        :alt: HTML file in text editor
