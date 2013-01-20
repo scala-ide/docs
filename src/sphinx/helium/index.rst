@@ -17,6 +17,7 @@ Contents:
    features/implicit-highlighting/index.rst
    features/implicit-hyperlinking/index.rst
    features/scaladebugger/index.rst
+   features/syntax-highlighting/index.rst
    features/semantic-highlighting/index.rst
    features/show-type
    features/source-generators/index.rst
