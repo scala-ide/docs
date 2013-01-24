@@ -21,7 +21,7 @@ This section describes the key classes that are responsible for the interaction 
     withPresentationCompiler[T](op: ScalaPresentationCompiler => T)
                                (orElse: => T = defaultOrElse): T
 
-Which will return the value of invoking the function op with the current presentation compiler or return the default value defined by ``orElse`` if it hasn’t been initialized properly. There is also a version where op doesn’t compute any value but simply performs side-effects. This is a general pattern that the with* methods also have a side-effecting alternative named ``doWith``. 
+Which will return the value of invoking the function op with the current presentation compiler or return the default value defined by ``orElse`` if it hasn’t been initialized properly. There is also a version where op doesn’t compute any value but simply performs side-effects. This is a general pattern that the with* methods also have a side-effecting alternative named ``doWith``.
 
 ::
 
@@ -81,14 +81,14 @@ So that was a quick tour of some of the most important classes when it comes to 
 ::
 
     val compilationUnit = ScalaSourceFile.createFromPath(“A.scala”)
-    compilationUnit.map { cu => 
-      cu.withSourceFile { (source, pcompiler) => 
-    	    pcompiler.withParseTree(source) { tree => 
+    compilationUnit.map { cu =>
+      cu.withSourceFile { (source, pcompiler) =>
+            pcompiler.withParseTree(source) { tree =>
           pcompiler.askOption { () =>
                   // Compute some value from the tree.
           }
         }
-    	  } (/* default value if the presentation compiler isn’t initialized */)
+          } (/* default value if the presentation compiler isn’t initialized */)
     }.getOrElse(/* default value if it couldn’t load the file */)
 
 First we get an ``Option[ScalaSourceFile]`` from the factory method ``createFromPath(path: String)``. ``ScalaSourceFile`` is a subclass of ``InteractiveCompilationUnit`` so we can invoke the method ``withSourceFile`` and hand it a closure that is given the current presentation compiler and the file associated with the compilation unit. We then hand the file to the presentation compiler and ask for the parsed tree and give it a closure that will be invoked once the tree has been generated. Once we have the tree we have to consider what we want to do with it: If we want to do anything that can cause side-effects to the tree we want to do it inside a call to ``askOption``, the reason for this is explained in the following section :ref:`risks`.
@@ -100,7 +100,7 @@ Risks Related to the Presentation Compiler
 
 The trees that the compiler works with have attributes that are lazy, that is, the initialization of some of the attributes of the trees is delayed until they're accessed. Furthermore some attributes of the nodes are mutated in the different phases of the compiler and the structure of the trees can be very different between the compiler phases. This means which phase to use depends on what information you want to retrieve. The trees are immutable but to avoid creating too many objects structural sharing is used when possible, that is, if a child of a node isn’t changed it will be reused in the newly created tree.
 
-Consider the following Scala code: 
+Consider the following Scala code:
 
 ::
 
@@ -120,7 +120,7 @@ Another way to avoid the concurrency issue is to use a parsed tree rather than a
 Examples of interactions between the IDE and the Presentation Compiler
 ----------------------------------------------------------------------
 
-One example of the interaction between the Sala IDE and the presentation compiler is the semantic highlight. 
+One example of the interaction between the Sala IDE and the presentation compiler is the semantic highlight.
 
 Each editor (``ScalaSourceFileEditor``) has an associated ``InteractiveCompilationUnit``. Additionally each editor has something called a reconciler (description in this `blog post <http://blog.darevay.com/2007/11/the-eclipse-reconciler/>`_) that runs jobs in the background when the user takes a break from typing into the editor. ``SemanticHighlightingReconciliationParticipant`` is run during the reconciliation process but on a separate thread (see ``SemanticHighlightingJob``). This class simply forwards to the ``SemanticHighlightingReconciliation`` object which in turn will create an instance of ``SemanticHighlightingAnnotationsManager`` that has an inner class ``SemanticHighlightingJob(scu: ScalaCompilationUnit)`` which has a run method that looks (slightly modified) like this:
 
@@ -137,15 +137,22 @@ Each editor (``ScalaSourceFileEditor``) has an associated ``InteractiveCompilati
            if (!cancelled) setAnnotations(symbolInfos)
          }
          Status.OK_STATUS
-  	}
+        }
 
-At some point the ``classifySymbols`` method invokes the ``compiler.loadedType(sourceFile)`` which will fully type check the tree, blocking until the presentation compiler has finished. When we have the type-checked tree it won’t change structure but we may still trigger side-effects by accessing some attribute of the tree, and as mentioned earlier any access to a attribute that can trigger side-effect in the compiler has to be executed inside an askOption call, or you may bring the Presentation Compiler in a corrupted state; if the presentation compiler is in a corrupted state, it may start to report errors that are incorrect (this is what we call ghost errors, they are false negative). 
+At some point the ``classifySymbols`` method invokes the ``compiler.loadedType(sourceFile)`` which will fully type check the tree, blocking until the presentation compiler has finished. When we have the type-checked tree it won’t change structure but we may still trigger side-effects by accessing some attribute of the tree, and as mentioned earlier any access to a attribute that can trigger side-effect in the compiler has to be executed inside an askOption call, or you may bring the Presentation Compiler in a corrupted state; if the presentation compiler is in a corrupted state, it may start to report errors that are incorrect (this is what we call ghost errors, they are false negative).
 
-Resources 
+Resources
 ---------
 
 * `Compiler internals videos <http://www.scala-lang.org/node/598>`_
 * `Scala IDE presentation by Iulian <http://skillsmatter.com/podcast/scala/scala-ide-2-1>`_
+* `Paul Philips' "Inside the Sausage Factory" at ScalaDays 2012 <http://skillsmatter.com/podcast/scala/scalac-internals>`_
+
+Older Resources
+---------------
+
+* `Martin Odersky's talk to the SF Scala user group <http://www.youtube.com/watch?v=qqQNqIy5LdM&t=22m0s>`_
+* `A general build walkthrough from the ENSIME blog <http://ensime.blogspot.ch/2010/08/building-ide-with-scala-presentation.html>`_
 
 .. rubric:: Footnotes
 
