@@ -1,8 +1,8 @@
 Building the Scala IDE
 ======================
 
-The Scala IDE for Eclipse can be built on the command line using Maven, as is 
-done, for example, during the `Jenkins-driven nightly builds <https://jenkins.scala-ide.org:8496/jenkins/>`_. 
+The Scala IDE for Eclipse can be built on the command line using Maven, as is
+done, for example, during the `Jenkins-driven nightly builds <https://jenkins.scala-ide.org:8496/jenkins/>`_.
 
 
 Requirements
@@ -15,7 +15,7 @@ Requirements
 
 * `Maven 3 <http://maven.apache.org/download.html>`_.
 
-* You have cloned the Scala IDE project. Read :ref:`setup_fork-the-project` for 
+* You have cloned the Scala IDE project. Read :ref:`setup_fork-the-project` for
   more information about this point.
 
 .. _building_run-the-build:
@@ -26,28 +26,35 @@ Run the build
 If you just want to build Scala IDE, a script triggers the different step needed to generate Scala IDE.
 
 
-From the project root, run the following command to build Scala IDE for Scala 2.9:
+From the project root, run the following command to build Scala IDE for Scala 2.10:
 
 .. code-block:: bash
 
    $ ./build-all.sh clean install
 
-or the following to build Scala IDE for Scala 2.10:
+or the following to build Scala IDE for Scala 2.9:
 
 .. code-block:: bash
 
-   $ ./build-all.sh -P scala-2.10.x clean install
+   $ ./build-all.sh -P scala-2.9.x clean install
 
-.. note:: 
 
-	When working on the Scala IDE you need to make sure that new code can be compiled with Scala 
-	2.9.x and 2.10 (trunk).
+or the following to build Scala IDE for Scala 2.11:
 
-Assuming your build is successful you should find an Eclipse update site has been built in 
-``org.scala-ide.sdt.update-site/target/site`` and a zipped version of the same at 
-``org.scala-ide.sdt.update-site/target/site_assembly.zip``. You can install directly into Eclipse 
-from this update site by adding it as a local update site via the Eclipse 
-"Install New Software ..." action. Alternatively, if you make the unpacked site available via a web 
+.. code-block:: bash
+
+   $ ./build-all.sh -P scala-2.11.x clean install
+
+.. note::
+
+        When working on the Scala IDE you need to make sure that new code can be compiled with Scala
+        2.9.x and 2.10, and 2.11 (trunk).
+
+Assuming your build is successful you should find an Eclipse update site has been built in
+``org.scala-ide.sdt.update-site/target/site`` and a zipped version of the same at
+``org.scala-ide.sdt.update-site/target/site_assembly.zip``. You can install directly into Eclipse
+from this update site by adding it as a local update site via the Eclipse
+"Install New Software ..." action. Alternatively, if you make the unpacked site available via a web
 server, then the HTTP URL of its root directory is acceptable as an ordinary Eclipse update site URL.
 
 The build in details
@@ -76,15 +83,15 @@ After an initial complete build, maven can be used from any subproject.
    $ cd ../org.scala-ide.sdt.build
    $ mvn clean install
 
-or for Scala 2.10.x:
+or for Scala 2.9.x:
 
 .. code-block:: bash
 
-   $ mvn -P scala-2.10.x clean install
+   $ mvn -P scala-2.9.x clean install
    $ cd org.scala-ide.build-toolchain
-   $ mvn -P scala-2.10.x clean install
+   $ mvn -P scala-2.9.x clean install
    $ cd ../org.scala-ide.sdt.build
-   $ mvn -P scala-2.10.x clean install
+   $ mvn -P scala-2.9.x clean install
 
 Running the memory leak test
 ----------------------------
@@ -107,10 +114,10 @@ Build the Scala IDE with a local version of the Scala Compiler
 
 .. note::
 
-	Chances are that most of you will not need to read this section. You need to build a local 
-	version of the Scala compiler only if you intend to modify the Scala compiler and check how the 
-	Scala IDE plug-in reacts to the changes. If that is exactly what you want to do, keep reading.
-	Otherwise, you can safely skip this section.
+        Chances are that most of you will not need to read this section. You need to build a local
+        version of the Scala compiler only if you intend to modify the Scala compiler and check how the
+        Scala IDE plug-in reacts to the changes. If that is exactly what you want to do, keep reading.
+        Otherwise, you can safely skip this section.
 
 Build the Scala compiler, package into maven format and deploy locally,
 
@@ -127,11 +134,11 @@ Then rebuild Scala IDE, the build will automatically pickup the compiler which w
     # From the main Scala IDE directory
     $ ./build-all.sh -P scala-2.10.x clean install
 
-When the build is successful, a complete update-site, with the local changes 
+When the build is successful, a complete update-site, with the local changes
 you made in the Scala compiler, is available in ``org.scala-ide.sdt.update-site/target/site``.
 
 .. note::
 
-	If you get weird errors about missing methods, then you are probably mixing Scala versions in the 
-	scripts and the plug-in. Before starting the new instance of Eclipse (with your version of the 
-	Scala plug-in) make sure that no errors occurred.
+        If you get weird errors about missing methods, then you are probably mixing Scala versions in the
+        scripts and the plug-in. Before starting the new instance of Eclipse (with your version of the
+        Scala plug-in) make sure that no errors occurred.
