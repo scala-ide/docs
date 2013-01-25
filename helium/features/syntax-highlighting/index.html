@@ -7,7 +7,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Semantic Highlighting &mdash; Scala IDE 2.0.0 documentation</title>
+    <title>Syntax Highlighting &mdash; Scala IDE 2.0.0 documentation</title>
     
     <link rel="stylesheet" href="../../../_static/resources/stylesheets/base.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
@@ -42,8 +42,8 @@
     <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
     <link rel="top" title="Scala IDE 2.0.0 documentation" href="../../../index.html" />
     <link rel="up" title="Scala IDE Helium" href="../../index.html" />
-    <link rel="next" title="Show Type of Selection" href="../show-type.html" />
-    <link rel="prev" title="Syntax Highlighting" href="../syntax-highlighting/index.html" /> 
+    <link rel="next" title="Semantic Highlighting" href="../semantic-highlighting/index.html" />
+    <link rel="prev" title="Scala Debugger" href="../scaladebugger/index.html" /> 
   </head>
   <body>
 <div class="top-bar">
@@ -72,7 +72,7 @@
   <div class="container">
     <div class="row">
       <div class="span16">        
-        <h1>Semantic Highlighting</h1>
+        <h1>Syntax Highlighting</h1>
 	  </div>
     </div>
   </div>
@@ -91,36 +91,24 @@
 
     <div class="row" style="position: relative; clear: both;">
       <div class="span11 main-content">
-        <div class="section" id="semantic-highlighting">
-<h1>Semantic Highlighting</h1>
-<p>Haven't you always wanted to have more colors in your source code? Meet
-<em>semantic</em> highlighting!</p>
-<div class="section" id="introduction">
-<h2>Introduction</h2>
-<p>While syntax highlighting deals with keywords,
-strings and other low-level tokens in the language, semantic highlighting
-takes it a (big) step forward! Classes, traits, types, vals, vars, methods,
-etc. can each have their own assign color and text style. Our favorite is
-having deprecated symbols striked-through. The coloring is consistent between
-the use-site and definition site, so all occurrences of a symbol will be
-colored the same way.</p>
-<img alt="../../../_images/example.png" src="../../../_images/example.png" />
+        <div class="section" id="syntax-highlighting">
+<h1>Syntax Highlighting</h1>
+<p>Syntax highlighting is one of the most important features of an editor wherefore Scala IDE provides this feature in a way that it can highlight the complete grammar of Scala.</p>
+<div class="section" id="overview">
+<h2>Overview</h2>
+<p>As one can see in the following preview, syntax highlighting works not only for Scala code, but also for Scaladoc and for string interpolation:</p>
+<img alt="../../../_images/example1.png" src="../../../_images/example1.png" />
+<p>In the following picture there are all literals shown that are available in Scala. Note that escape sequences are shown in string and char literals as well as Unicode and octal sequences.</p>
+<img alt="../../../_images/literals.png" src="../../../_images/literals.png" />
 </div>
 <div class="section" id="configuration">
 <h2>Configuration</h2>
-<p>There is a slight performance penalty for using semantic highlighting.
-However, this is done in the background and we haven't noticed any important
-slowdowns. Should you notice any, you can always jump to the preferences page
-and tweak or completely disable this feature.</p>
-<p>You can enable/disable and tweak your color scheme from the configuration
-page. The highlighter will use Java colors by default, but there are more
-semantic classes in Scala, so make sure you tweak them to your liking. We
-suggest the Java-based <a class="reference external" href="http://www.eclipsecolorthemes.org/?view=plugin">Color Theme</a> plugin as a starting point.</p>
-<img alt="../../../_images/prefs1.png" src="../../../_images/prefs1.png" />
+<p>There are several options available how syntax highlighting can be configured. Beside the possibility to set fore- and background color it is possible to paint the text in bold and italic or to underline it.</p>
+<img alt="../../../_images/preferences.png" src="../../../_images/preferences.png" />
 </div>
-<div class="section" id="thank-you">
-<h2>Thank you</h2>
-<p>Semantic highlighting was contributed by <a class="reference external" href="http://twitter.com/#!/mattrusselluk">Matt Russel</a>. Thank you!</p>
+<div class="section" id="summary">
+<h2>Summary</h2>
+<p>Even though syntax highlighting is indispensable for code readability it is nothing compared to a full-fledged <a class="reference external" href="../semantic-highlighting/index.html">semantic highlighting</a>, which Scala IDE of course doesn't lack either.</p>
 </div>
 </div>
 
