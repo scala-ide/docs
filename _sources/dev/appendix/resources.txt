@@ -47,4 +47,5 @@ Miscellaneous
 * `Responding to resource changes in the Eclipse workspace <http://www.eclipse.org/articles/Article-Resource-deltas/resource-deltas.html>`_ (also `this SO answer may be relevant <http://stackoverflow.com/questions/1027009/eclipse-change-content-on-save>`_)
 * `Eclipse plugins vs features vs dropins <http://stackoverflow.com/questions/2763843/eclipse-plugins-vs-features-vs-dropins>`_
 * `The Eclipse Reconciler <http://blog.darevay.com/2007/11/the-eclipse-reconciler/>`_
+* `Tycho tutorials <http://codeandme.blogspot.ch/2012/12/tycho-build-1-building-plug-ins.html>`_
 

@@ -22,5 +22,6 @@ Contents:
    features/show-type
    features/source-generators/index.rst
    features/test-finder/index.rst
+   features/updated-doc.rst
 
 .. include:: /contribute.rst.inc
