@@ -99,7 +99,7 @@
 <p><strong>Images! Links!</strong></p>
 <p class="last">When the elements in this page are merged in the main doc, double check the path of the images and relative links, as they may be different.</p>
 </div>
-<p>(from user/features/typing and viewing)</p>
+<p><strong>(from user/features/typing and viewing)</strong></p>
 <div class="section" id="mark-occurrences">
 <h2>Mark Occurrences</h2>
 <p>As in the Java tooling, Mark Occurrences highlights within a file where a type, variable or method is referenced.</p>
@@ -107,6 +107,12 @@
 <p>This feature is disabled by default, as it can have an impact on the editor performance, but it is really useful when exploring code.</p>
 <p>It can be enabled in the <tt class="docutils literal"><span class="pre">Scala</span> <span class="pre">-&gt;</span> <span class="pre">Editor</span></tt> preference page, or using the button in the main toolbar.</p>
 <img alt="../../_images/mark-occurrences-toolbar.png" src="../../_images/mark-occurrences-toolbar.png" />
+<p><strong>(from user/faq, to be added after 'no Scala library')</strong></p>
+<div class="section" id="scala-ide-complains-about-is-cross-compiled-with-an-incompatible-version-of-scala">
+<h3>Scala IDE complains about '... is cross-compiled with an incompatible version of Scala ...'</h3>
+<p>In Scala IDE 3.0.0, the classpath validator has been extended to check the additional libraries. It checks in the name of the jar, which version of Scala it has been compiled against. If this version doesn't match the version of Scala used by the project, a problem is reported.</p>
+<p>If this check returns a false-negative, it can be disabled at the workspace level, or at the project level. The setting is <tt class="docutils literal"><span class="pre">withVersionClasspathValidator</span></tt> in the <tt class="docutils literal"><span class="pre">Scala</span> <span class="pre">→</span> <span class="pre">Compiler</span> <span class="pre">→</span> <span class="pre">Build</span> <span class="pre">Manager</span></tt> preference section.</p>
+</div>
 </div>
 </div>
 
