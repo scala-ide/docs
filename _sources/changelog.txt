@@ -9,13 +9,13 @@ Helium release (not yet released)
 
 - Fixed continuations plugin (:ticket:`1001030`)
 - Fixed "todo" items disappearing in the task list (:ticket:`1001401`)
-- More robust against VM exceptions. (:ticket:`1001328`)
-- Possible deadlock fix. (:ticket:`1001512`)
+- More robust against VM exceptions. (:ticket:`1001328`) |debugger|
+- Possible deadlock fix. (:ticket:`1001512`) |debugger|
 - Implement 'Search test methods' in the Scala JUnit4 test runner. (:ticket:`1001474`)
 - Revert "Merge pull request #269 from mads379/parsetree-1001326" 
 - Clean projects in a background job when project settings' change (:ticket:`1001527`)
 - Semantic highlighting done in background (:ticket:`1001156`, :ticket:`1001507`, :ticket:`1001508`, :ticket:`1001493`)
-- Make stepping as fast as in the JDT debugger.
+- Make stepping as fast as in the JDT debugger. |debugger|
 - Adds a preference for the classpath validator (:ticket:`1001482`)
 - Initialize symbols for primitive types on compiler startup. 
 - Mark occurrence preference (and off by default) (:ticket:`1001466`)
@@ -24,13 +24,13 @@ Helium release (not yet released)
 - Use a Job when reading classpath markers in test. 
 - Add checks if the underlying project closed/not exists (:ticket:`1001465`)
 - Rebuild Scala projects after a global compiler settings change. (:ticket:`1001460`)
-- Adds anon function and flags in cache (:ticket:`1001001`)
+- Adds anon function and flags in cache (:ticket:`1001001`) |debugger|
 - Remove `Xmigration28` setting. 
 - Correct regression error in ScalaCodeScanner (:ticket:`1001481`)
 - Properly initialize Scala editor (quick fix/interactive error reporting) (:ticket:`1001094`, :ticket:`1001337`)
 - Make the class path validator regexp stricter.
 - Add test class for ScalaCodeScanner (:ticket:`1001445`)
-- debugger performance improvement (part 1) 
+- debugger performance improvement (part 1)  |debugger|
 - Validate cross-compiled binaries on the classpath (:ticket:`1001441` :ticket:`1001249`)
 - Correct syntax highlighting for while-keyword (:ticket:`1000984`)
 - README now contains exhaustive developers guidelines 
