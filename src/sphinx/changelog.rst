@@ -1,10 +1,10 @@
 Changelog
 =========
 
-2.1 (master) - codename Helium 
+3.0 - codename Helium 
 ------------------------------
 
-Helium release (not yet released)
+Helium release 3.0.0-RC1 (2013-02-28)
 .................................................
 
 - Fixed continuations plugin (:ticket:`1001030`)
