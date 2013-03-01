@@ -90,7 +90,7 @@ Play 2.0-RC1 integrates `sbteclipse`_, which allow to create configuration files
        :width: 100%
        :target: ../../_images/play20-scalaide20-06.png
 
-*   ``eclipsify`` is the command to invoke sbteclipse in Play.
+*   ``eclipsify`` is the command to invoke sbteclipse in Play. (In Play 2.1, the command is ``eclipse``)
 
     .. image:: images/play20-scalaide20-09.png
        :alt: eclipse
