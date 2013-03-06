@@ -4,6 +4,12 @@ Changelog
 3.0 - codename Helium 
 ------------------------------
 
+Helium release 3.0.0-RC2 (2013-03-6)
+.................................................
+
+- Lazy retrieval of Java parameter names in completions.(:ticket:`1001560`, :ticket:`1001497`)
+- Comply to the debugger interfaces by wrapping JDI runtime exceptions (:ticket:`1001531`)
+
 Helium release 3.0.0-RC1 (2013-02-28)
 .................................................
 
