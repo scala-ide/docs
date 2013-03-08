@@ -5,7 +5,7 @@ Configurer et utiliser Play framework 2.0 avec Scala IDE 2.0
 
 |usflag| :doc:`english version<index>`
 
-.. |usflag| image:: ../../user/images/usflag.png
+.. |usflag| image:: /images/usflag.png
 
 Que contient ce guide?
 ----------------------

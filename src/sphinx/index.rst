@@ -27,10 +27,10 @@ Contents:
 .. toctree::
    :maxdepth: 2
 
-   user/index
+   2.0.x/index
    tutorials/index
    changelog
-   helium/index
+   3.0.x/index
    Developer Documentation <dev/index>
    
 .. include:: /contribute.rst.inc

@@ -1,0 +1,14 @@
+
+..  role:: strikethrough
+
+.. role:: raw-html(raw)
+   :format: html
+
+.. |done| replace:: :raw-html:`<span class="label success">done</span>`
+.. |progress| replace:: :raw-html:`<span class="label warning">in progress</span>`
+.. |testing| replace:: :raw-html:`<span class="label info">testing</span>`
+.. |new| replace:: :raw-html:`<span class="label info">new</span>`
+.. |updated| replace:: :raw-html:`<span class="label success">updated</span>`
+
+.. |keystroke-mouse| replace:: :raw-html:`<span class="keystroke">Ctrl/Cmd</span>`
+.. |keystroke-keyboard| replace:: :raw-html:`<span class="keystroke">ALT+F3</span>`
