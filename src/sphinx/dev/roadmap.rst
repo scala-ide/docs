@@ -1,4 +1,4 @@
-..  role:: strikethrough
+.. include:: /global_defs.hrst
 
 .. _roadmap:
 
@@ -114,12 +114,3 @@ __ http://www.assembla.com/spaces/scala-ide/tickets/1000870
 __ http://www.assembla.com/spaces/scala-ide/tickets/1000871
 __ http://www.assembla.com/spaces/scala-ide/tickets/1000872
 __ http://www.assembla.com/spaces/scala-ide/tickets/1000873
-
-.. role:: raw-html(raw)
-   :format: html
-
-.. |done| replace:: :raw-html:`<span class="label success">done</span>`
-
-.. |progress| replace:: :raw-html:`<span class="label warning">in progress</span>`
-
-.. |testing| replace:: :raw-html:`<span class="label info">testing</span>`
