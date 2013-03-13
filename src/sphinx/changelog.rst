@@ -1,11 +1,25 @@
 Changelog
 =========
 
-3.0 - codename Helium 
-------------------------------
+3.0.0 - codename Helium
+-----------------------
 
-Helium release 3.0.0-RC1 (2013-02-28)
-.................................................
+RC3 (2013-03-13)
+................
+
+- Workaround for NPE in debugger variable view when using Eclipse Juno (:ticket:`1001585`)
+- Don't add arguments templates for parameterless method's completion (:ticket:`1001591`)
+- Expanding variable in debugger resulted in NPE (:ticket:`1001586`)
+- Return `OK_STATUS` from the semantic highlighting job when the editor is dirty. (:ticket:`1001536`)
+
+RC2 (2013-03-06)
+................
+
+- Comply to the debugger interfaces by wrapping JDI runtime exceptions (:ticket:`1001531`)
+- Lazy retrieval of Java parameter names in completions. (:ticket:`1001560`)
+
+RC1 (2013-02-28)
+................
 
 - Fixed continuations plugin (:ticket:`1001030`)
 - Fixed "todo" items disappearing in the task list (:ticket:`1001401`)
@@ -50,7 +64,7 @@ M3 (released: 2012-12-20)
 .........................
 
 * Added a URL hyperlink detector - :ticket:`1001266`
-* Added a :ref:`scala-junit-test-finder` - :ticket:`1001275`, :ticket:`1000782`
+* Added a :doc:`Scala JUnit Test Finder </3.0.x/features/test-finder/index>` - :ticket:`1001275`, :ticket:`1000782`
 * Fixed missing implicit arguments in *implicit highlighting* - :ticket:`1001280`
 * Correctly find **JUnit** tests right-clicking on a Scala source - :ticket:`1001234`, :ticket:`1001379`, :ticket:`1001380`, :ticket:`1000731`.
 * Fixed crash when hovering over ``Run As`` button - :ticket:`1001304`
@@ -73,7 +87,7 @@ M3 (released: 2012-12-20)
 * Step filters for trait forwarders - :ticket:`1001288` |debugger|
 * Fixed spurious freezes - :ticket:`1001308` |debugger|
 * Graceful termination of debug actors, that fixes spurious zombie processes - :ticket:`1001233` |debugger|
-* Fixed race condition in semantic highlighting that might cause spurious errors - :ticket:`1001302` 
+* Fixed race condition in semantic highlighting that might cause spurious errors - :ticket:`1001302`
 * Terminate the remote VM on user request - :ticket:`1001291` |debugger|
 * Fixed Implementation Missing when viewing variables - :ticket:`1001246`  |debugger|
 * Configuration dialog for step filters - :ticket:`1001088`  |debugger|
@@ -284,7 +298,7 @@ M1 (released: 2012-04-13)
 
 * Scala IDE now again compatible with Groovy IDE. `#1000798`_
 
-.. _#1000798: https://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000798 
+.. _#1000798: https://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000798
 
 2.0.0-rc03 (released: 2011-12-09)
 ....................................
@@ -385,7 +399,7 @@ M1 (released: 2012-04-13)
 * new SBT-based builder with inter-project dependencies. The default builder remains 'refined', but you can enable the SBT builder in Eclipse -> Preferences -> Scala  -> Compiler -> Build manager.
 * better integration of mixed Scala/Java project (no more spurious errors when Java classes call Scala classes that contain annotations).
 * new field in Compiler preferences for additional command line parameters, cleanup of compiler options.
-* new "Show Inferred Semicolons" feature: :ref:`typingviewing_show-inferred-semicolons`.
+* new "Show Inferred Semicolons" feature: :ref:`2.0.2_typingviewing_show-inferred-semicolons`.
 * syntax colouring for new REPL view.
 * stop inappropriate Java save actions firing on Scala source. `#1534`_
 * corrected cursor's positioning after asking completion.
@@ -393,7 +407,7 @@ M1 (released: 2012-04-13)
 * Error Log is not in the default Scala perspective anymore.
 * fixed Toggle Comment action which was incorrectly commenting an additional line. `#1000462`_
 
-.. _#1534: https://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1534 
+.. _#1534: https://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1534
 .. _#1000462: https://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000462
 
 2.0.0-beta09 (released: 2011-07-21)
@@ -410,12 +424,12 @@ M1 (released: 2012-04-13)
 ......................................
 
 * fixed large memory leak in mark occurrences.
-* new Run Selection REPL: edit window for commands (with history). Try it by pressing Ctrl-Shift-X inside a Scala editor to run the selected expression (or the current line). :ref:`Read more <scalainterpreter_scala-interpreter>`.
+* new Run Selection REPL: edit window for commands (with history). Try it by pressing Ctrl-Shift-X inside a Scala editor to run the selected expression (or the current line). :doc:`Read more <2.0.x/features/scalainterpreter>`.
 * JUnit runner finds tests in Scala files reliably (even when files are not open).
 * Fixed errors shown in Java sources coming from the Scala compiler.
 * Fixed crash in Java completion for Scala classes in the default (empty) package.
 
-2.0.0-beta6 
+2.0.0-beta6
 ...............
 
 * Improved stability (correct use of 'ask' calls)
@@ -424,9 +438,9 @@ M1 (released: 2012-04-13)
 * Downgraded the JDT weaving plugin to the latest released version. We were using the development repository, and that caused conflicts on installation, when the user had AspectJ (or was using STS) installed -- requiring the user to unselect the JDT weaving plugin from our update site. Now the versions are the same, and no conflict is reported.
 * Organize Imports improvements: various configuration options and support for adding missing imports.
 * Eclipse 3.7.0 (Indigo) compatibility
-* New REPL view: Launch by selecting text and pressing Ctrl+Shift+X (Cmd+Shift+X on the Mac). 
-    * A different key combination can be set by going to General -> Keys, and redefining the key binding for "Send Selection to REPL." 
-    * The interpreter can be stopped and restarted, with optional replay. 
+* New REPL view: Launch by selecting text and pressing Ctrl+Shift+X (Cmd+Shift+X on the Mac).
+    * A different key combination can be set by going to General -> Keys, and redefining the key binding for "Send Selection to REPL."
+    * The interpreter can be stopped and restarted, with optional replay.
     * NOTE: the colon commands (e.g. ":implicits") that work in the terminal REPL do not yet work in this REPL view, but this will be fixed for the next beta.
 
 2.0.0-beta2

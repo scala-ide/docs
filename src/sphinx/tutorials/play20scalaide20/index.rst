@@ -3,7 +3,7 @@ Setup and use Play framework 2.0 in Scala IDE 2.0
 
 |frflag| :doc:`version française<index-fr>`
 
-.. |frflag| image:: ../../user/images/frflag.png
+.. |frflag| image:: /images/frflag.png
 
 What is in this guide?
 ----------------------
@@ -15,7 +15,7 @@ Prerequisites
 
 *   `Eclipse`_ 3.6.2 (Helios) with Scala IDE for Scala 2.9 installed (update site: http://download.scala-ide.org/releases-29/stable/site).
 
-    Check the :ref:`getting started <gettingstarted_getting-started>` page for instructions on how to install Scala IDE.
+    Check the :doc:`getting started </current-user-doc/gettingstarted/index>` page for instructions on how to install Scala IDE.
 
 *   A basic knowledge of the Eclipse user interface is required.
 
@@ -81,7 +81,7 @@ Configuring the Play 2.0 web application for Scala IDE
 
 Now that the Play application is running, it needs to be configured so it can be imported into Scala IDE.
 
-Play 2.0-RC1 integrates `sbteclipse`_, which allow to create configuration files of a project for Eclipse. 
+Play 2.0-RC1 integrates `sbteclipse`_, which allow to create configuration files of a project for Eclipse.
 
 *   First, exit the 'run' mode in Play using ``ctrl-d``.
 
@@ -184,9 +184,9 @@ Let's change the main page to display a quote instead of the default page.
     .. code-block:: scala
 
        package models
-       
+
        case class Quote(val text: String, val author: String) {
-       
+
        }
 
 *   Add an extra parameter to the ``index.scala.html`` view and update the layout.
@@ -194,17 +194,17 @@ Let's change the main page to display a quote instead of the default page.
     .. code-block:: scala
 
        @(message: String, quote: models.Quote)
-       
+
        @main("Welcome to Play 2.0") {
-       
+
            <p>@quote.text<em> - @quote.author</em></p>
-       
+
        }
 
 *   The templates are transformed into Scala code by the Play framework. As Play has been started in auto-reloading mode in the background, templates are recompiled as soon as the file is saved.
 
     After saving the file, the changes are picked up by Scala IDE, and it reports an error in the code of ``Application.scala``. The application is not using the template correctly.
-    
+
     .. image:: images/play20-scalaide20-17.png
        :alt: compilation error
        :width: 100%

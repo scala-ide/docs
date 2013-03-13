@@ -5,7 +5,7 @@ Configurer et utiliser Play framework 2.0 avec Scala IDE 2.0
 
 |usflag| :doc:`english version<index>`
 
-.. |usflag| image:: ../../user/images/usflag.png
+.. |usflag| image:: /images/usflag.png
 
 Que contient ce guide?
 ----------------------
@@ -19,7 +19,7 @@ Prérequis
 
 *   `Eclipse`_ 3.6.2 (Helios) avec Scala IDE pour Scala 2.9 installé (update site: http://download.scala-ide.org/releases-29/stable/site).
 
-    La page :ref:`getting started<gettingstarted_getting-started>` (en anglais) contient les instructions pour l'installation de Scala IDE.
+    La page :doc:`getting started </current-user-doc/gettingstarted/index>` (en anglais) contient les instructions pour l'installation de Scala IDE.
 
 *   Une connaissance de base de l'interface utilisateur d'Eclipse est nécessaire.
 
@@ -190,9 +190,9 @@ Modifions la page principale pour afficher une citation à la place de la page d
     .. code-block:: scala
 
        package models
-       
+
        case class Quote(val text: String, val author: String) {
-       
+
        }
 
 *   Ajoutez un paramètre supplémentaire à la vue ``index.scala.html`` et modifiez la mise en page.
@@ -200,17 +200,17 @@ Modifions la page principale pour afficher une citation à la place de la page d
     .. code-block:: scala
 
        @(message: String, quote: models.Quote)
-       
+
        @main("Welcome to Play 2.0") {
-           
+
            <p>@quote.text<em> - @quote.author</em></p>
-       
+
        }
 
 *   Les templates sont transformés en code Scala par le Play framework. Comme Play a été lancé en mode 'auto-reloading' en arrière plan, les templates sont recompilés dès que le fichier est sauvegardé.
 
     Apres avoir sauvegardé le fichier, les changements sont chargés par Scala IDE, et une erreur est reporté dans le code de ``Application.scala``. L'application n'utilise pas le template correctement.
-    
+
     .. image:: images/play20-scalaide20-17.png
        :alt: compilation error
        :width: 100%
