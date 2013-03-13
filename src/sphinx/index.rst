@@ -27,13 +27,18 @@ Contents:
 .. toctree::
    :maxdepth: 2
 
-   user/index
+   2.0.x/index
    tutorials/index
    changelog
-   helium/index
+   current-user-doc/index
    Developer Documentation <dev/index>
-   
+
 .. include:: /contribute.rst.inc
+
+.. toctree::
+   :hidden:
+
+   3.0.x/index
 
 .. _Scala: http://www.scala-lang.org/
 .. _Scala IDE: http://www.scala-ide.org/
