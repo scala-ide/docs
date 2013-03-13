@@ -1,11 +1,25 @@
 Changelog
 =========
 
-3.0 - codename Helium
-------------------------------
+3.0.0 - codename Helium
+-----------------------
 
-Helium release 3.0.0-RC1 (2013-02-28)
-.................................................
+RC3 (2013-03-13)
+................
+
+- Workaround for NPE in debugger variable view when using Eclipse Juno (:ticket:`1001585`)
+- Don't add arguments templates for parameterless method's completion (:ticket:`1001591`)
+- Expanding variable in debugger resulted in NPE (:ticket:`1001586`)
+- Return `OK_STATUS` from the semantic highlighting job when the editor is dirty. (:ticket:`1001536`)
+
+RC2 (2013-03-06)
+................
+
+- Comply to the debugger interfaces by wrapping JDI runtime exceptions (:ticket:`1001531`)
+- Lazy retrieval of Java parameter names in completions. (:ticket:`1001560`)
+
+RC1 (2013-02-28)
+................
 
 - Fixed continuations plugin (:ticket:`1001030`)
 - Fixed "todo" items disappearing in the task list (:ticket:`1001401`)
