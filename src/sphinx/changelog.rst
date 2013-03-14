@@ -399,7 +399,7 @@ M1 (released: 2012-04-13)
 * new SBT-based builder with inter-project dependencies. The default builder remains 'refined', but you can enable the SBT builder in Eclipse -> Preferences -> Scala  -> Compiler -> Build manager.
 * better integration of mixed Scala/Java project (no more spurious errors when Java classes call Scala classes that contain annotations).
 * new field in Compiler preferences for additional command line parameters, cleanup of compiler options.
-* new "Show Inferred Semicolons" feature: :ref:`2.0.2_typingviewing_show-inferred-semicolons`.
+* new "Show Inferred Semicolons" feature: :doc:`2.0.x/features/typingviewing`.
 * syntax colouring for new REPL view.
 * stop inappropriate Java save actions firing on Scala source. `#1534`_
 * corrected cursor's positioning after asking completion.

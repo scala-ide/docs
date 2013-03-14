@@ -54,8 +54,6 @@ Quick Fix Imports
    :width: 100%
    :target: ../../_images/feature-quickfix-import-01.png
 
-.. _2.0.2_typingviewing_show-inferred-semicolons:
-
 Show Inferred Semicolons
 ------------------------
 
