@@ -11,8 +11,8 @@ Prerequisites
 
 *   `Eclipse`_ 3.7.2 (Indigo) with Scala IDE for Scala 2.9 installed (update site: http://download.scala-ide.org/releases-29/stable/site).
 
-    Check the :ref:`getting started <gettingstarted_getting-started>` page for instructions on how to install Scala IDE.
-    
+    Check the :doc:`getting started </current-user-doc/gettingstarted/index>` page for instructions on how to install Scala IDE.
+
 *   Simple Build Tool `sbt`_ 0.11.2 installed.
 
     Check the `sbt Getting Started Guide`_ for instructions on how to install sbt.
@@ -41,17 +41,17 @@ Start by creating a basic Lift project
        :target: ../../_images/01-lift_basic_folder_structure.png
 
 *	Create a file ``build.sbt`` with the following contents:
-	
+
     .. code-block:: scala
 
          name := "lift-basic"
-         
+
          organization := "my.company"
-         
+
          version := "0.1-SNAPSHOT"
-         
+
          scalaVersion := "2.9.1"
-         
+
          libraryDependencies ++= {
          	val liftVersion = "2.4"
          	Seq(
@@ -77,31 +77,31 @@ To be able to import the project into Eclipse we are going to use the `sbteclips
 *	In your home folder create the file ``.sbt/plugins/build.sbt`` with the following contents:
 
 	.. code-block:: scala
-	
+
 		addSbtPlugin("com.typesafe.sbteclipse" % "sbteclipse-plugin" % "2.0.0")
-		
+
 	This will make the sbteclipse plugin globally available in all your sbt projects. You can also install the sbteclipse plugin only for a particular project; see the `sbteclipse wiki`_ for more information on how to install sbteclipse as a global vs. a project local plugin.
 
 * 	Open ``/path/to/lift_basic/build.sbt`` and add the following line:
 
 	.. code-block:: scala
-	
+
 		EclipseKeys.createSrc := EclipseCreateSrc.Default + EclipseCreateSrc.Resource
-	
+
 	Your ``/path/to/lift_basic/build.sbt`` should now look like this:
-	
+
     .. code-block:: scala
 
          name := "lift-basic"
-         
+
          organization := "my.company"
-         
+
          version := "0.1-SNAPSHOT"
-         
+
          scalaVersion := "2.9.1"
-         
+
          EclipseKeys.createSrc := EclipseCreateSrc.Default + EclipseCreateSrc.Resource
-         
+
          libraryDependencies ++= {
          	val liftVersion = "2.4"
          	Seq(

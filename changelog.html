@@ -41,7 +41,7 @@
     <script type="text/javascript" src="_static/resources/javascript/contentsFix.js"></script>
     <link rel="shortcut icon" href="_static/favicon.ico"/>
     <link rel="top" title="Scala IDE 2.0.0 documentation" href="index.html" />
-    <link rel="next" title="Scala IDE Helium" href="helium/index.html" />
+    <link rel="next" title="User Documentation for the Scala IDE 3.0.x" href="current-user-doc/index.html" />
     <link rel="prev" title="Developing for Android" href="tutorials/androiddevelopment/index.html" /> 
   </head>
   <body>
@@ -89,16 +89,25 @@
         <div class="section" id="changelog">
 <h1>Changelog</h1>
 <div class="section" id="codename-helium">
-<h2>3.0 - codename Helium</h2>
-<div class="section" id="helium-release-3-0-0-rc2-2013-03-6">
-<h3>Helium release 3.0.0-RC2 (2013-03-6)</h3>
+<h2>3.0.0 - codename Helium</h2>
+<div class="section" id="rc3-2013-03-13">
+<h3>RC3 (2013-03-13)</h3>
 <ul class="simple">
-<li>Lazy retrieval of Java parameter names in completions.(<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001560">#1001560</a>, <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001497">#1001497</a>)</li>
-<li>Comply to the debugger interfaces by wrapping JDI runtime exceptions (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001531">#1001531</a>)</li>
+<li>Workaround for NPE in debugger variable view when using Eclipse Juno (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001585">#1001585</a>)</li>
+<li>Don't add arguments templates for parameterless method's completion (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001591">#1001591</a>)</li>
+<li>Expanding variable in debugger resulted in NPE (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001586">#1001586</a>)</li>
+<li>Return <cite>OK_STATUS</cite> from the semantic highlighting job when the editor is dirty. (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001536">#1001536</a>)</li>
 </ul>
 </div>
-<div class="section" id="helium-release-3-0-0-rc1-2013-02-28">
-<h3>Helium release 3.0.0-RC1 (2013-02-28)</h3>
+<div class="section" id="rc2-2013-03-06">
+<h3>RC2 (2013-03-06)</h3>
+<ul class="simple">
+<li>Comply to the debugger interfaces by wrapping JDI runtime exceptions (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001531">#1001531</a>)</li>
+<li>Lazy retrieval of Java parameter names in completions. (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001560">#1001560</a>)</li>
+</ul>
+</div>
+<div class="section" id="rc1-2013-02-28">
+<h3>RC1 (2013-02-28)</h3>
 <ul class="simple">
 <li>Fixed continuations plugin (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001030">#1001030</a>)</li>
 <li>Fixed &quot;todo&quot; items disappearing in the task list (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001401">#1001401</a>)</li>
@@ -144,7 +153,7 @@
 <h3>M3 (released: 2012-12-20)</h3>
 <ul class="simple">
 <li>Added a URL hyperlink detector - <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001266">#1001266</a></li>
-<li>Added a <a class="reference internal" href="helium/features/test-finder/index.html#scala-junit-test-finder"><em>Scala JUnit Test finder</em></a> - <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001275">#1001275</a>, <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000782">#1000782</a></li>
+<li>Added a <a class="reference internal" href="3.0.x/features/test-finder/index.html"><em>Scala JUnit Test Finder</em></a> - <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001275">#1001275</a>, <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000782">#1000782</a></li>
 <li>Fixed missing implicit arguments in <em>implicit highlighting</em> - <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001280">#1001280</a></li>
 <li>Correctly find <strong>JUnit</strong> tests right-clicking on a Scala source - <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001234">#1001234</a>, <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001379">#1001379</a>, <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001380">#1001380</a>, <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000731">#1000731</a>.</li>
 <li>Fixed crash when hovering over <tt class="docutils literal"><span class="pre">Run</span> <span class="pre">As</span></tt> button - <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001304">#1001304</a></li>
@@ -393,7 +402,7 @@
 <li>new SBT-based builder with inter-project dependencies. The default builder remains 'refined', but you can enable the SBT builder in Eclipse -&gt; Preferences -&gt; Scala  -&gt; Compiler -&gt; Build manager.</li>
 <li>better integration of mixed Scala/Java project (no more spurious errors when Java classes call Scala classes that contain annotations).</li>
 <li>new field in Compiler preferences for additional command line parameters, cleanup of compiler options.</li>
-<li>new &quot;Show Inferred Semicolons&quot; feature: <a class="reference internal" href="user/features/typingviewing.html#typingviewing-show-inferred-semicolons"><em>Show Inferred Semicolons</em></a>.</li>
+<li>new &quot;Show Inferred Semicolons&quot; feature: <a class="reference internal" href="2.0.x/features/typingviewing.html"><em>Typing and Viewing</em></a>.</li>
 <li>syntax colouring for new REPL view.</li>
 <li>stop inappropriate Java save actions firing on Scala source. <a class="reference external" href="https://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1534">#1534</a></li>
 <li>corrected cursor's positioning after asking completion.</li>
@@ -417,7 +426,7 @@
 <h3>2.0.0-beta08 (released: 2011-07-12)</h3>
 <ul class="simple">
 <li>fixed large memory leak in mark occurrences.</li>
-<li>new Run Selection REPL: edit window for commands (with history). Try it by pressing Ctrl-Shift-X inside a Scala editor to run the selected expression (or the current line). <a class="reference internal" href="user/features/scalainterpreter.html#scalainterpreter-scala-interpreter"><em>Read more</em></a>.</li>
+<li>new Run Selection REPL: edit window for commands (with history). Try it by pressing Ctrl-Shift-X inside a Scala editor to run the selected expression (or the current line). <a class="reference internal" href="2.0.x/features/scalainterpreter.html"><em>Read more</em></a>.</li>
 <li>JUnit runner finds tests in Scala files reliably (even when files are not open).</li>
 <li>Fixed errors shown in Java sources coming from the Scala compiler.</li>
 <li>Fixed crash in Java completion for Scala classes in the default (empty) package.</li>

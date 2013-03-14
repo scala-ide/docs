@@ -1,0 +1,286 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Refactoring updated &mdash; Scala IDE 2.0.0 documentation</title>
+    
+    <link rel="stylesheet" href="../../../../_static/resources/stylesheets/base.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../_static/resources/stylesheets/bootstrap.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../_static/resources/stylesheets/base.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../_static/resources/stylesheets/doc.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../_static/resources/stylesheets/sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../_static/resources/stylesheets/prettify.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../../',
+        VERSION:     '2.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../../_static/resources/javascript/jquery.js"></script>
+    <script type="text/javascript" src="../../../../_static/resources/javascript/toc.js"></script>
+    <script type="text/javascript" src="../../../../_static/resources/javascript/prettify.js"></script>
+    <script type="text/javascript" src="../../../../_static/resources/javascript/highlightCode.js"></script>
+    <script type="text/javascript" src="../../../../_static/resources/javascript/effects.core.js"></script>
+    <script type="text/javascript" src="../../../../_static/resources/javascript/effects.highlight.js"></script>
+    <script type="text/javascript" src="../../../../_static/resources/javascript/scrollTo.js"></script>
+    <script type="text/javascript" src="../../../../_static/resources/javascript/bootstrap-dropdown.js"></script>
+    <script type="text/javascript" src="../../../../_static/resources/javascript/bootstrap-dropdown-app.js"></script>
+    <script type="text/javascript" src="../../../../_static/resources/javascript/contentsFix.js"></script>
+    <link rel="shortcut icon" href="../../../../_static/favicon.ico"/>
+    <link rel="top" title="Scala IDE 2.0.0 documentation" href="../../../../index.html" />
+    <link rel="up" title="Typing and Viewing" href="../index.html" />
+    <link rel="next" title="Semantic Highlighting new" href="../semantic-highlighting/index.html" />
+    <link rel="prev" title="Quick Fixes" href="../quick-fixes.html" /> 
+  </head>
+  <body>
+<div class="top-bar">
+  <div class="top-bar-inner">
+    <div class="container">
+      <a class="brand" href="/index.html"><img src="../../../../_static/resources/images/logo.png" height="70px"></a>
+      <ul class="nav">
+        <li><a href="/index.html#features">Features</a></li>
+        <li><a href="/documentation.html">Documentation</a></li>
+		<li class="menu">
+	      	<a href="#" class="menu">Download</a>
+	      	<ul class="menu-dropdown">
+	        	<li><a href="/download/current.html">Stable</a></li>
+	        	<li><a href="/download/milestone.html">Milestone</a></li>
+	        	<li><a href="/download/nightly.html">Nightlies</a></li>
+	      	</ul>
+		</li>
+        <li><a href="/blog/index.html">Blog</a></li>
+        <li><a href="/team.html">Team</a></li>
+        <li><a href="/docs/dev/roadmap.html">Roadmap</a></li>
+      </ul>	
+    </div>
+  </div>
+</div>
+<div class="slider">
+  <div class="container">
+    <div class="row">
+      <div class="span16">        
+        <h1>Refactoring <span class="raw-html"><span class="label success">updated</span></span></h1>
+	  </div>
+    </div>
+  </div>
+</div>
+<div class="bottom">
+  <div class="container" style="position: relative;">
+ 
+    <div class="row" style="position: relative; clear: both;">
+      <div class="span16">
+          <ul class="breadcrumb">
+            <li><a href="../../../../index.html">ScalaIDE Documentation</a> » </li>
+              <li><a href="../../../index.html">User Documentation for the Scala IDE 3.0.x</a> » </li>
+              <li><a href="../../../features.html">Features</a> » </li>
+              <li><a href="../index.html">Typing and Viewing</a> » </li>
+          </ul>        
+      </div>
+    </div>
+
+    <div class="row" style="position: relative; clear: both;">
+      <div class="span11 main-content">
+        <div class="section" id="refactoring-updated">
+<h1>Refactoring <span class="raw-html"><span class="label success">updated</span></span></h1>
+<p><a class="reference external" href="http://scala-refactoring.org/">Scala Refactoring</a> is integrated in Scala IDE. It offers a broad range of refactoring actions.</p>
+<div class="section" id="extracting-local-values">
+<h2>Extracting Local Values</h2>
+<p>The <a class="reference external" href="http://scala-refactoring.org/extract-local/">Extract Local</a> action does the opposite work of Inline Local. It creates a value of an expression. It is a must use to make code more readable.</p>
+<p>Select an expression to extract.</p>
+<img alt="../../../../_images/feature-refactoring-extract-local-012.png" src="../../../../_images/feature-refactoring-extract-local-012.png" />
+<p>Call the action, then set a name for the created value.</p>
+<img alt="../../../../_images/feature-refactoring-extract-local-022.png" src="../../../../_images/feature-refactoring-extract-local-022.png" />
+</div>
+<div class="section" id="extracting-methods">
+<h2>Extracting Methods</h2>
+<p>The <a class="reference external" href="http://scala-refactoring.org/extract-method/">Extract Method</a> action extract the set of selected statements into a new method. The original code is replaced by the equivalent method call.</p>
+<a class="reference external image-reference" href="../_images/feature-refactoring-extract-method-01.png"><img alt="../../../../_images/feature-refactoring-extract-method-012.png" src="../../../../_images/feature-refactoring-extract-method-012.png" style="width: 100%;" /></a>
+</div>
+<div class="section" id="inlining-local-values">
+<h2>Inlining Local Values</h2>
+<p>The <a class="reference external" href="http://scala-refactoring.org/inline-local/">Inline Local</a> action helps removing unneeded values.</p>
+<p>The action is performed on the currently selected value.</p>
+<a class="reference external image-reference" href="../_images/feature-refactoring-inline-local-01.png"><img alt="../../../../_images/feature-refactoring-inline-local-012.png" src="../../../../_images/feature-refactoring-inline-local-012.png" style="width: 100%;" /></a>
+</div>
+<div class="section" id="organizing-imports">
+<h2>Organizing Imports</h2>
+<p>The <a class="reference external" href="http://scala-refactoring.org/organize-imports/">Organize Imports</a> action allows to do some automated cleanup on the list of imports. It removes the unused or unneeded imports and organizes the remainder.</p>
+<a class="reference external image-reference" href="../_images/feature-refactoring-organize-import-01.png"><img alt="../../../../_images/feature-refactoring-organize-import-012.png" src="../../../../_images/feature-refactoring-organize-import-012.png" style="width: 100%;" /></a>
+<p>This action can be configure in the <tt class="docutils literal"><span class="pre">Scala</span> <span class="pre">→</span> <span class="pre">Organize</span> <span class="pre">Import</span></tt> preference page.</p>
+</div>
+<div class="section" id="renaming">
+<h2>Renaming</h2>
+<p>The <a class="reference external" href="http://scala-refactoring.org/rename/">Rename</a> action allows to change any name, and update its reference.</p>
+<p>The action is performed in in-line mode if the name as only a local scope.</p>
+<a class="reference external image-reference" href="../_images/feature-refactoring-rename-01.png"><img alt="../../../../_images/feature-refactoring-rename-012.png" src="../../../../_images/feature-refactoring-rename-012.png" style="width: 100%;" /></a>
+<p>The action is done through a wizard if the name can be referenced from different source files.</p>
+<a class="reference external image-reference" href="../_images/feature-refactoring-rename-02.png"><img alt="../../../../_images/feature-refactoring-rename-022.png" src="../../../../_images/feature-refactoring-rename-022.png" style="width: 100%;" /></a>
+</div>
+<div class="section" id="move-class-object-or-trait-refactoring-new">
+<h2>Move Class, Object or Trait Refactoring <span class="raw-html"><span class="label info">new</span></span></h2>
+<p>Move Class was an often requested feature in the Scala IDE bugtracker, so we
+implemented it for the upcoming 2.1 release. The refactoring can either be
+invoked from the Refactoring menu, or indirectly by drag-and-dropping a file
+in the Package Explorer.</p>
+<p>If there exists more than one top-level declaration in the file, you can choose to
+split-off one of the declarations or to move them all. The refactoring will move
+all the necessary imports along, and also update all the references (other
+imports, or qualified names) in the project.</p>
+<p>Here is a screenshot of the refactoring configuration dialog:</p>
+<img alt="../../../../_images/move-class-configuration1.png" src="../../../../_images/move-class-configuration1.png" />
+<p>You can also create a new package directly in the wizard, and choose to move the
+complete file or only the selected definition (the option is not present if no
+definition was selected or if the file contains only a single one).</p>
+<p>The resulting changes can then be previewed in the usual fashion:</p>
+<img alt="../../../../_images/move-class-preview1.png" src="../../../../_images/move-class-preview1.png" />
+<p>A new file is created with the name of the moved class. In this preview, we can
+see that the class is removed in the file and an import to its new location is
+added because the class is referenced somewhere in this file.</p>
+<p><em>Limitations</em></p>
+<p>There currently are some limitations: the refactoring works only on Scala code,
+and it simply ignores visibility issues, so moving might result in compilation
+errors. This being the initial implementation, it is certainly not free of bugs,
+so please <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/support/tickets">report any bug you encounter</a>.</p>
+</div>
+<div class="section" id="method-signature-refactoring-new">
+<h2>Method signature refactoring <span class="raw-html"><span class="label info">new</span></span></h2>
+<p>All three method signature refactoring not only apply the refactoring to all usages of a method throughout the inheritance hierarchy, they also track its partial applications.</p>
+<div class="section" id="change-parameter-order">
+<h3>Change parameter order</h3>
+<p>The order of the parameters in your method should be changed? <em>Change parameter order</em> allows you to reorder method parameters inside each parameter list.</p>
+<p>To reorder the parameters of a method select its definition:</p>
+<img alt="../../../../_images/change-order-before1.png" src="../../../../_images/change-order-before1.png" />
+<p>In the refactoring dialog the parameters can be moved up and down in their parameter lists. The preview of the refactored method signature is always updated accordingly:</p>
+<img alt="../../../../_images/change-order-dialog1.png" src="../../../../_images/change-order-dialog1.png" />
+<p>All changes are displayed in the preview dialog:</p>
+<img alt="../../../../_images/change-order-preview1.png" src="../../../../_images/change-order-preview1.png" />
+<p><em>Limitations</em></p>
+<p>Changing of parameter order currently doesn't play well together with default and named arguments. This will hopefully be improved soon.</p>
+</div>
+<div class="section" id="split-parameter-lists">
+<h3>Split parameter lists</h3>
+<p>You want to partially apply your method but it has not enough parameter lists? <em>Split parameter lists</em> allows you to split parameter lists between each two parameters.</p>
+<p>Again, just select the method to refactor:</p>
+<img alt="../../../../_images/split-before1.png" src="../../../../_images/split-before1.png" />
+<p>In the refactoring dialog parameter lists can be split between each parameter pair using the <em>Split</em> button. A split can be reverted by using the <em>Merge</em> button.</p>
+<img alt="../../../../_images/split-dialog1.png" src="../../../../_images/split-dialog1.png" />
+<p>And the resulting changes in the preview dialog:</p>
+<img alt="../../../../_images/split-preview1.png" src="../../../../_images/split-preview1.png" />
+</div>
+<div class="section" id="merge-parameter-lists">
+<h3>Merge parameter lists</h3>
+<p>Your method doesn't need multiple parameter lists? Being the inverse refactoring to <em>Split parameter lists</em>, <em>Merge parameter lists</em> merges parameter lists that don't need to be split.</p>
+<p>The refactoring dialog is very similar to <em>Split parameter lists</em>:</p>
+<img alt="../../../../_images/merge-dialog1.png" src="../../../../_images/merge-dialog1.png" />
+<p>Having merged the right parameter lists we get back our original method signature from the beginning, before we applied the <em>Split parameter lists</em> refactoring:</p>
+<img alt="../../../../_images/merge-preview1.png" src="../../../../_images/merge-preview1.png" />
+<p>Note that there are situations where parameter lists can't be merged because they are partially applied. As an example, we can't merge the remaining two parameter lists of the method <tt class="docutils literal"><span class="pre">reorder</span></tt> because of the partial application in the method <tt class="docutils literal"><span class="pre">partial</span></tt>:</p>
+<img alt="../../../../_images/merge-not-possible1.png" src="../../../../_images/merge-not-possible1.png" />
+</div>
+</div>
+<div class="section" id="extract-trait-new">
+<h2>Extract trait <span class="raw-html"><span class="label info">new</span></span></h2>
+<p><em>Extract trait</em> moves selected members from a class/object/trait to a new trait. If the new trait accesses non-private members of the original class/object/trait, a self type annotation is added to the new trait.</p>
+<p>We start with a simple <tt class="docutils literal"><span class="pre">Calculator</span></tt> class:</p>
+<img alt="../../../../_images/extract-trait-before1.png" src="../../../../_images/extract-trait-before1.png" />
+<p>We select the <tt class="docutils literal"><span class="pre">mul</span></tt> method for extraction in the dialog and give the new trait the name <tt class="docutils literal"><span class="pre">Multiplicator</span></tt>:</p>
+<img alt="../../../../_images/extract-trait-dialog1.png" src="../../../../_images/extract-trait-dialog1.png" />
+<p>The class <tt class="docutils literal"><span class="pre">Calculator</span></tt> is changed accordingly:</p>
+<img alt="../../../../_images/extract-trait-preview1.png" src="../../../../_images/extract-trait-preview1.png" />
+<p>The new trait <tt class="docutils literal"><span class="pre">Multiplicator</span></tt> uses the <tt class="docutils literal"><span class="pre">add</span></tt> method from <tt class="docutils literal"><span class="pre">Calculator</span></tt>, so a self type annotation needs to be added to <tt class="docutils literal"><span class="pre">Multiplicator</span></tt>:</p>
+<img alt="../../../../_images/extract-trait-extracted1.png" src="../../../../_images/extract-trait-extracted1.png" />
+<p>Import statements are also handled: In the original class/object/trait all import statements that are not used after the extraction of the trait are removed, and in the extracted trait all needed import statements are added.</p>
+<p><em>Limitations</em></p>
+<p>The currently supported member types are: def, val and var. Others, as e.g. nested classes, are not (yet) supported.</p>
+</div>
+<div class="section" id="move-constructor-to-companion-object-new">
+<h2>Move constructor to companion object <span class="raw-html"><span class="label info">new</span></span></h2>
+<p>You want to create a factory method such that the constructor of your class is not accessed directly, but tracking down and redirecting all constructor calls is cumbersome? Then <em>Move constructor to companion</em> object is here to help! It creates an <tt class="docutils literal"><span class="pre">apply</span></tt> method in the companion object (which is generated as well if necessary) that calls the constructor. All constructor calls get redirected to the new factory method.</p>
+<p>As a simple example we start with a <tt class="docutils literal"><span class="pre">Target</span></tt> class and a class <tt class="docutils literal"><span class="pre">User</span></tt> that calls <tt class="docutils literal"><span class="pre">Target</span></tt>'s constructor:</p>
+<img alt="../../../../_images/move-constructor-before1.png" src="../../../../_images/move-constructor-before1.png" />
+<p>Selecting the <tt class="docutils literal"><span class="pre">Target</span></tt> class and applying the <em>Move constructor to companion object</em> refactoring creates a companion object and an <tt class="docutils literal"><span class="pre">apply</span></tt> method that wraps the constructor call. The constructor call in the <tt class="docutils literal"><span class="pre">User</span></tt> class is redirected to the new factory method.</p>
+<img alt="../../../../_images/move-constructor-preview1.png" src="../../../../_images/move-constructor-preview1.png" />
+<p><em>Limitations</em></p>
+<p>Currently this is only supported for the primary constructor (thus no refactoring dialog is needed), moving auxiliary constructors is not (yet) possible.</p>
+</div>
+</div>
+
+	    </div>
+      <div class="span5 sidebar">
+        <p class="contents-title">Contents</p>
+        <div id="scroller-anchor">
+          <div id="scroller">
+            <div id="toc"></div>
+          </div>
+        </div>            
+	    </div>	
+    </div>
+
+  </div>
+</div>
+<div class="footer" style="position:relative; clear: both; ">
+  <div class="container">
+    <ul>
+      <li><h5>Download</h5></li>
+      <li><a href="/download/current.html">Stable</a></li>
+      <li><a href="/download/milestone.html">Milestone</a></li>
+      <li><a href="/download/nightly.html">Nightlies</a></li>
+    </ul>
+    <ul>
+      <li><h5>Documentation</h5></li>
+      <li><a href="/docs/user/gettingstarted.html">Getting Started</a></li>
+      <li><a href="/docs/tutorials/index.html">Tutorials</a></li>
+      <li><a href="http://groups.google.com/group/scala-ide-user">User Mailing List</a></li>
+    </ul>
+    <ul>
+      <li><h5>Contribute</h5></li>
+      <li><a href="https://github.com/scala-ide/scala-ide">Source Code</a></li>
+      <li><a href="/docs/dev/index.html">Developer Documentation</a></li>
+      <li><a href="http://groups.google.com/group/scala-ide-dev">Developer Mailing List</a></li>      
+      <li><a href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/support/tickets">Report a Bug</a></li>
+      <li><a href="http://www.typesafe.com/contribute/cla">Individual CLA</a></li>
+      <li><a href="/resources/pdfs/cla-org.pdf">Organization CLA</a></li>
+    </ul>
+    <ul>
+      <li><img src="../../../../_static/resources/images/watermark.png" align="center"/></li>
+    </ul>
+  </div>
+  <div class="container copyright">
+    <p>
+      <a href="http://creativecommons.org/licenses/by/2.0/uk/">Creative Commons</a>
+	  <a href="http://scala-ide.org/feed.rss"><img align="right" height="20px" width="20px" src="http://scala-ide.org/resources/images/rss.png" alt="RSS feed of updates to the Scala IDE blog"></a>
+    </p>		
+  </div>
+</div>
+<script type="text/javascript">
+  $('#toc').toc();
+</script>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-574683-7']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+  </body>
+</html>
