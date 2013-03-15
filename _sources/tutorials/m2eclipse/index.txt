@@ -48,7 +48,7 @@ and click ``Next``.
 
 .. image:: images/archetypes.png
 
-Follow the wizard and enter values for gropu ID, artifact, etc. Click
+Follow the wizard and enter values for group ID, artifact, etc. Click
 *Finish* and you should have a new Scala project in the workspace.
 
 .. image:: images/new-project.png
