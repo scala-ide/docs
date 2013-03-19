@@ -10,5 +10,6 @@ Using ``alt+shift+up`` and ``alt+shift+down`` selects larger or smaller portion 
 
 .. image:: images/feature-structured-selection-01.png
 
-This feature will also benefit from hover typing, just as when
-you place the cursor on a specific element.
+Hovering over the selection will also bring up a dialog dispaying
+the inferred type of the selected expression, just as it would if
+you put the cursor on a :doc:`specific element </current-user-doc/features/typingviewing/inferred-hover>`.

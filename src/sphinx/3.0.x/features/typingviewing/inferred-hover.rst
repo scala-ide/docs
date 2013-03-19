@@ -1,7 +1,7 @@
 .. include:: /global_defs.hrst
 
-Inferred Type Hover |new|
-=========================
+Inferred Type Hover
+===================
 
 If you click or hover on an element of the Editor, the IDE will display a tooltip with its definition and type declaration.
 

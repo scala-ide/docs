@@ -9,3 +9,4 @@ Contents:
    what-to-work-on
    git-github
    resources
+   shortcuts

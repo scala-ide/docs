@@ -94,25 +94,7 @@ Now you can launch the scala compiler, by choosing either ``Run`` or ``Debug`` f
 Cheat sheet
 -----------
 
-Here's a collection of the shortcuts I use the most in my daily development. Hopefully they will be helpful for others:
-
-*  ``CMD-3`` Quick Access -- a huge time saver. Opens up a dialog with incremental search on all commands available on the platform
-
-*  ``CMD-Shift-R`` Open Resource -- opens up a dialog with incremental search on all files in the workspace
-
-* ``CMD-.`` Go to the next error in the current editor
-
-* ``F2`` Show the error for the position under the cursor
-
-* ``F3`` Navigate to definition (same as ``CMD-click`` on an identifier)
-
-* ``CMD-O`` Quick Outline -- opens up a dialog with incremental search on all definitions in the current editor
-
-* ``CMD-J`` Incremental search
-
-* ``CMD-F11`` Launch the debugger. By default it tries to launch the current file. I configure Eclipse to always launch the last application.
-
-* ``CMD-Shift-F11`` Launch the application (with no debugger attached)
+On our :doc:`shortcuts </dev/appendix/shortcuts>` page, you will find a collection of the shortcuts used the most in daily development. Hopefully they will be helpful for others.
 
 If you are new to Eclipse, you should have a look at the :doc:`getting started </current-user-doc/gettingstarted/index>` guide and watch the screencast.
 
@@ -180,7 +162,7 @@ Please use github tickets and pull requests system for feedback.
 
 Iulian Dragos - `@jaguarul`_
 
-based on a document created by Grzegorz Kossakowski - `@gkossakowski`_ and improved by `Vlad Ureche`_, and input from `Hubert Plociniczak`_ and Nada Amin - `@nadamin`__.
+based on a document created by Grzegorz Kossakowski - `@gkossakowski`_ and improved by `Vlad Ureche`_, and input from `Hubert Plociniczak`_ and Nada Amin - `@nadamin`_.
 
 
 .. _#1000907: http://www.assembla.com/spaces/scala-ide/tickets/1000907
@@ -195,7 +177,7 @@ based on a document created by Grzegorz Kossakowski - `@gkossakowski`_ and impro
 .. _command line tool: http://scala-ide.org/blog/director-script.html
 .. _Sbt: https://github.com/harrah/xsbt
 .. _Vlad Ureche: http://people.epfl.ch/vlad.ureche
-.. _Hubert Plociniczal: http://people.epfl.ch/hubert.plociniczak
+.. _Hubert Plociniczak: http://people.epfl.ch/hubert.plociniczak
 .. _@nadamin: https://twitter.com/nadamin
 .. _update-scala.sh: https://github.com/scala-ide/scala-ide/blob/master/update-scala.sh
 .. _eclipse-director.sh: https://github.com/scala-ide/scala-ide/blob/master/eclipse-director.sh

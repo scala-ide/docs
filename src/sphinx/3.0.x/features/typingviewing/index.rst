@@ -10,6 +10,7 @@ Typing and Viewing
    code-completion
    code-templates
    formatting/index
+   inferred-hover
    implicit-highlighting/index
    javadoc
    mark-occurrences
