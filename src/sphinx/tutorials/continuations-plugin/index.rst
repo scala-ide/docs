@@ -24,9 +24,6 @@ Enabling continuations in Scala 2.9 is really simple, you only need to pass
 ``-P:continuations:enable`` to the Scala compiler, and the continuations plugin will be loaded and 
 used to compile your sources.
 
-Note that in Scala 2.10 (trunk) the continuations plugin is enabled by default. Meaning that 
-no configuration is needed to use continuations in the Scala IDE with Scala 2.10!
-
 In this tutorial we will learn how to enable the continuations plugin with the Scala IDE for Scala 2.9.
 
 Enabling continuations plugin
