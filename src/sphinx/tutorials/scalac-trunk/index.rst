@@ -13,7 +13,7 @@ Setup and use the Scalac project with the Scala IDE
 What is in this guide?
 ----------------------
 
-This guide will show you how to configure Eclipse and your workspace for development work on the `Scala compiler`_. 
+This guide will show you how to configure Eclipse and your workspace for development work on the `Scala compiler`_.
 
 Prerequisites
 .............
@@ -29,9 +29,9 @@ Setting up Eclipse
 
 In order to build the Scala compiler inside Eclipse, you need to make sure Eclipse runs with enough heap. We recommend at least 2GB, but be generous if you can. The detailed instructions on how to do that can be found in :ref:`advanced setup <advancedsetup_advanced-setup>`
 
-.. note:: 
+.. note::
 
-  If you have an older version of the Scala IDE plugin, you may run into trouble when updating to the latest nightly. Frequent changes in the compiler version numbering scheme may confuse Eclipse, and keep an older version of the compiler bundle that doesn't match the IDE. To make sure things run smoothly, you can uninstall the previous version. There is `command line tool`_ for doing that without firing up Eclipse.
+  If you have an older version of the Scala IDE plugin, you may run into trouble when updating to the latest nightly. Frequent changes in the compiler version numbering scheme may confuse Eclipse, and keep an older version of the compiler bundle that doesn't match the IDE. To make sure things run smoothly, you can uninstall the previous version. There is a `command line tool`_ for doing that without firing up Eclipse.
 
 Setting up the Eclipse project
 -------------------------------
@@ -46,17 +46,19 @@ Setting up the Eclipse project
 
 .. code-block:: bash
 
-  ./pull-binary-libs.sh 
+  ./pull-binary-libs.sh
 
 *  Import the project in Eclipse (``File → Import Existing Projects into Workspace``) Navigate to src/eclipse. Check all projects and click ok.
 
 You should see at least the following projects in your workspace:
 
 * asm
-* fjbg
+* continuations-library
 * reflect
 * scala-library
 * scala-compiler
+
+If you work on a version of the scala compiler older than 2.10.0, you may also find here the old ``fjbg`` project (an older bytecode generator backend).
 
 Before you go on, you need to follow the steps described in the `README.md`_ on the Scala website. Come back once you are done.
 
@@ -176,9 +178,9 @@ Feedback
 This guide is managed through in the `Scala IDE documentation project`_ on github.
 Please use github tickets and pull requests system for feedback.
 
-Iulian Dragos - `@jaguarul`_ 
+Iulian Dragos - `@jaguarul`_
 
-based on the document created by Grzegorz Kossakowski - `@gkossakowski`_ and improved by `Vlad Ureche`_.
+based on a document created by Grzegorz Kossakowski - `@gkossakowski`_ and improved by `Vlad Ureche`_, and input from `Hubert Plociniczak`_ and Nada Amin - `@nadamin`__.
 
 
 .. _#1000907: http://www.assembla.com/spaces/scala-ide/tickets/1000907
@@ -193,6 +195,8 @@ based on the document created by Grzegorz Kossakowski - `@gkossakowski`_ and imp
 .. _command line tool: http://scala-ide.org/blog/director-script.html
 .. _Sbt: https://github.com/harrah/xsbt
 .. _Vlad Ureche: http://people.epfl.ch/vlad.ureche
+.. _Hubert Plociniczal: http://people.epfl.ch/hubert.plociniczak
+.. _@nadamin: https://twitter.com/nadamin
 .. _update-scala.sh: https://github.com/scala-ide/scala-ide/blob/master/update-scala.sh
 .. _eclipse-director.sh: https://github.com/scala-ide/scala-ide/blob/master/eclipse-director.sh
 .. _README.md: https://github.com/scala/scala/blob/master/src/eclipse/README.md
