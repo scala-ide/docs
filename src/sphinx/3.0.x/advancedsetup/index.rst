@@ -54,10 +54,35 @@ Optional Preferences
      :width: 100%
      :target: ../_images/advancedsetup-heapstatus-01.png
 
+
+* **Limit Simultaneously Open Editors**
+
+  Having too many editors open can claim a lot of memory. Unless you are an exceptional multi-tasker or you use a task-focused interface such as `Mylyn <http://www.eclipse.org/mylyn/>`_, you may want to limit the number of simultaneously opened editors in the ``General`` section [#preferences]_..
+
+    .. image:: images/limit-editors.png
+     :width: 100%
+     :target: ../_images/limit-editors.png
+
+* **Deactivate Automatic Java Content Assist**
+
+  Since Scala-IDE is built over JDT, the Java Content Assist is enabled by default for Scala files, even though it is not relevant for Scala language files development. You can safely deactivate ti if most of your edition is done in Scala files.
+
+    .. image:: images/content-assist-deactivation.png
+     :width: 100%
+     :target: ../_images/content-assist-deactivation.png
+
+* **Activate Completion**
+
+  You should enable completion however — and you may even want to activate word proposals, if you don't want to have to hit several shortcuts to complete what you type.
+
+    .. image:: images/completion.png
+     :width: 100%
+     :target: ../_images/completion.png
+
 Performance
 -----------
 
-Garbage Collection activity and swap can be really bad for performance. It can trigger Eclipse freezes and general system slow down. 
+Garbage Collection activity and swap can be really bad for performance. It can trigger Eclipse freezes and cuase a general system slow down.
 
 Monitoring what is happening is the best option to keep a healthy system:
 
@@ -65,6 +90,15 @@ Monitoring what is happening is the best option to keep a healthy system:
 * to monitor Garbage Collector activity, use *visualvm* on the eclipse instance. It is a profiling tool provided with jdk 1.6.x. It is possible also to get a feel of the memory usage with the heap status bar `Optional Preferences`_ in Eclipse.
 
 Depending of the problem, the memory allocated to the JVM can be increased, or some of the other application closed (like the web browser, or some flash application, ...).
+
+Suggested interesting keyboard shortcuts
+----------------------------
+
+* ``Alt+Shift+X S`` : Run As Scala Application. It is quicker than the popup menu because it does not need to scan every Launcher to see what type of Launches can be acted upon.
+* ``Alt+Shift+X T`` : Run As JUnit. Also quicker than a popup menu for the same reasons.
+* ``Ctrl+Space``    : completion (using code, templates,...)
+* ``Alt + /``       : complete word (unless you have chosen to integrate word completion in completion proposals above)
+* ``Ctrl``+/        : toggle comment of a block (the selected line(s) or current line)
 
 Additional Links
 ----------------
