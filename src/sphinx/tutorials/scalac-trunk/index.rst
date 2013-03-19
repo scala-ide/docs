@@ -94,25 +94,7 @@ Now you can launch the scala compiler, by choosing either ``Run`` or ``Debug`` f
 Cheat sheet
 -----------
 
-Here's a collection of the shortcuts I use the most in my daily development. Hopefully they will be helpful for others:
-
-*  ``CMD-3`` Quick Access -- a huge time saver. Opens up a dialog with incremental search on all commands available on the platform
-
-*  ``CMD-Shift-R`` Open Resource -- opens up a dialog with incremental search on all files in the workspace
-
-* ``CMD-.`` Go to the next error in the current editor
-
-* ``F2`` Show the error for the position under the cursor
-
-* ``F3`` Navigate to definition (same as ``CMD-click`` on an identifier)
-
-* ``CMD-O`` Quick Outline -- opens up a dialog with incremental search on all definitions in the current editor
-
-* ``CMD-J`` Incremental search
-
-* ``CMD-F11`` Launch the debugger. By default it tries to launch the current file. I configure Eclipse to always launch the last application.
-
-* ``CMD-Shift-F11`` Launch the application (with no debugger attached)
+On our :ref:`shortcuts` page, you will find a collection of the shortcuts used the most in daily development. Hopefully they will be helpful for others.
 
 If you are new to Eclipse, you should have a look at the :ref:`getting started <gettingstarted_getting-started>` guide and watch the screencast.
 

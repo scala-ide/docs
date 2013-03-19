@@ -67,7 +67,7 @@ Optional Preferences
 
 * **Deactivate Automatic Java Content Assist**
 
-  Since Scala-IDE is built over JDT, the Java Content Assist is enabled by default for Scala files, even though it is not relevant for Scala language files development. You can safely deactivate ti if most of your edition is done in Scala files.
+  Since Scala-IDE is built over JDT, the Java Content Assist is enabled by default for Scala files, even though it is not relevant for Scala language files development. You can safely deactivate it if most of your edition is done in Scala files.
 
     .. image:: images/content-assist-deactivation.png
      :width: 100%
@@ -96,11 +96,8 @@ Depending of the problem, the memory allocated to the JVM can be increased, or s
 Suggested interesting keyboard shortcuts
 ----------------------------
 
-* ``Alt+Shift+X S`` : Run As Scala Application. It is quicker than the popup menu because it does not need to scan every Launcher to see what type of Launches can be acted upon.
-* ``Alt+Shift+X T`` : Run As JUnit. Also quicker than a popup menu for the same reasons.
-* ``Ctrl+Space``    : completion (using code, templates,...)
-* ``Alt + /``       : complete word (unless you have chosen to integrate word completion in completion proposals above)
-* ``Ctrl``+/        : toggle comment of a block (the selected line(s) or current line)
+You may want to head out to our :ref:`shortcuts` page to get a list of shortcuts that will speed up your Scala development.
+
 
 Additional Links
 ----------------
