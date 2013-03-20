@@ -1,7 +1,7 @@
 .. include:: /global_defs.hrst
 
 URL Hyperlinking in Comments |new|
-===========================
+==================================
 
 .. note::
 
