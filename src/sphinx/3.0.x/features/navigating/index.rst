@@ -8,5 +8,6 @@ Navigating
 
    declaration-hyperlinking
    implicit-hyperlinking
+   comment-hyperlinking
    open-type
    open-declaration
