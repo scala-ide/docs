@@ -27,10 +27,10 @@ Contents:
 .. toctree::
    :maxdepth: 2
 
-   2.0.x/index
+   current-user-doc/index
    tutorials/index
    changelog
-   current-user-doc/index
+   2.0.x/index
    Developer Documentation <dev/index>
 
 .. include:: /contribute.rst.inc
@@ -39,7 +39,6 @@ Contents:
    :hidden:
 
    3.0.x/index
-   user/index
 
 .. _Scala: http://www.scala-lang.org/
 .. _Scala IDE: http://www.scala-ide.org/
