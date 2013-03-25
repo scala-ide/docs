@@ -28,6 +28,7 @@ Contents:
    :maxdepth: 2
 
    current-user-doc/index
+   videos
    tutorials/index
    changelog
    2.0.x/index
