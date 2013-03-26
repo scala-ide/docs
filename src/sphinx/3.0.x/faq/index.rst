@@ -7,10 +7,29 @@ General
 What Eclipse Platforms are supported?
 .....................................
 
-The Scala IDE 2.0 officially supports both `Eclipse 3.6 (Helium)`__ and `Eclipse 3.7 (Indigo)`__. 
+The Scala IDE 3.0 officially supports both `Eclipse 3.7 (Indigo)`__ and has experimental support for `Eclipse 4.2 (Juno)`__. 
 
-__ http://www.eclipse.org/downloads/packages/release/helios/sr2
+__ http://www.eclipse.org/downloads/packages/release/indigo/sr2
 __ http://www.eclipse.org/downloads/
+
+I have a Retina Display and Eclipse looks blurry. How can I fix it?
+...................................................................
+
+You need to tell Mac OS that Eclipse is high-resolution capable.
+
+* Right-click on the Eclipse.app and choose "Show package contents"
+* Open Contents/Info.plist in an editor
+* Add the following at the end of the file, just before the closing tags. It should look like this:
+
+.. code-block:: xml
+
+	<key>NSHighResolutionCapable</key>
+	<true/>
+	</dict>
+	</plist>
+
+* Move the Eclipse.app to a new folder (to clear OS X's cache of the Info.plist), then move it back to the old folder.
+* Launch Eclipse
 
 What Eclipse package should I use?
 ..................................
