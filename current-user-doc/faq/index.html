@@ -97,7 +97,26 @@
 <h2>General</h2>
 <div class="section" id="what-eclipse-platforms-are-supported">
 <h3>What Eclipse Platforms are supported?</h3>
-<p>The Scala IDE 2.0 officially supports both <a class="reference external" href="http://www.eclipse.org/downloads/packages/release/helios/sr2">Eclipse 3.6 (Helium)</a> and <a class="reference external" href="http://www.eclipse.org/downloads/">Eclipse 3.7 (Indigo)</a>.</p>
+<p>The Scala IDE 3.0 officially supports both <a class="reference external" href="http://www.eclipse.org/downloads/packages/release/indigo/sr2">Eclipse 3.7 (Indigo)</a> and has experimental support for <a class="reference external" href="http://www.eclipse.org/downloads/">Eclipse 4.2 (Juno)</a>.</p>
+</div>
+<div class="section" id="i-have-a-retina-display-and-eclipse-looks-blurry-how-can-i-fix-it">
+<h3>I have a Retina Display and Eclipse looks blurry. How can I fix it?</h3>
+<p>You need to tell Mac OS that Eclipse is high-resolution capable.</p>
+<ul class="simple">
+<li>Right-click on the Eclipse.app and choose &quot;Show package contents&quot;</li>
+<li>Open Contents/Info.plist in an editor</li>
+<li>Add the following at the end of the file, just before the closing tags. It should look like this:</li>
+</ul>
+<div class="highlight-xml"><div class="highlight"><pre><span class="nt">&lt;key&gt;</span>NSHighResolutionCapable<span class="nt">&lt;/key&gt;</span>
+<span class="nt">&lt;true/&gt;</span>
+<span class="nt">&lt;/dict&gt;</span>
+<span class="nt">&lt;/plist&gt;</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li>Move the Eclipse.app to a new folder (to clear OS X's cache of the Info.plist), then move it back to the old folder.</li>
+<li>Launch Eclipse</li>
+</ul>
 </div>
 <div class="section" id="what-eclipse-package-should-i-use">
 <h3>What Eclipse package should I use?</h3>
