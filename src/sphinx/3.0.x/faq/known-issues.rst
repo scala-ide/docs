@@ -2,6 +2,7 @@ Know Issues
 -----------
 
 Do Not Enter road sign when opening a Scala Editor
+..................................................
 
 **Symptoms**:
 
@@ -11,7 +12,12 @@ When opening a Scala editor, the error "Could not open the editor: org.eclipse.j
 
 The Scala IDE uses weaving to behave as (much) more than a Java editor on Scala files, and this is the message you get when it is not active.
 
-JDT weaving is activated by default. Moreover, Scala plugin checks it is activated at every launch. The easiest way to debug this is therefore to accept activation of JDT weaving at launch. Otherwise, you can look into `turning it on manually <http://wiki.eclipse.org/JDT_weaving_features>`_.
+JDT weaving is activated by default. Moreover, Scala plugin
+checks it is activated at every launch. The easiest way to debug
+this is therefore to accept activation of JDT weaving at
+launch. Otherwise, you can look into turning it on manually using
+the :doc:`Scala Diagnostics Dialog
+</current-user-doc/advancedsetup/index>`.
 
 Scala errors on all Unicode arrows
 ..................................
