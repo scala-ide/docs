@@ -11,6 +11,7 @@ Typing and Viewing
    code-templates
    formatting/index
    implicit-highlighting/index
+   javadoc
    mark-occurrences
    quick-fixes
    refactoring/index
