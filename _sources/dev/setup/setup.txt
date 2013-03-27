@@ -146,6 +146,33 @@ happens when you launch the second Eclipse's instance.
 
 Read the rest of the developer documentation to get more insights about the overall architecture.
 
+Run the test suite inside Eclipse
+---------------------------------
+
+You can use the built-in JUnit runner to run or debug the tests inside Eclipse. As for the normal run,
+you need to the *Equinox Weaving Launcher*. In the *Run Configuration* Dialog, create a new configuration
+using the **JUnit Plug-In test with Equinox Weaving**. Make sure you selected the *org.scala-ide.sdt.core.tests*
+project, and choose the test class you want to run (use ``scala.tools.eclipse.TestsSuite`` to run all tests).
+
+In the **Main** tab make the following adjustments:
+
+* Choose **Run an application: [No Application] - Headless Mode**.
+
+The window should look like this:
+
+.. image:: images/setup.png
+
+In the **Arguments** tab, make sure to add the following arguments to the VM arguments list:
+
+.. code-block:: bash
+
+   -Dsdtcore.headless -Dsdtcore.notimeouts
+
+The first one tells the IDE to not try to open any windows or dialogs, while the second one disables
+timeouts for certain actions (otherwise, on a slow or overloaded system, the tests might fail simply 
+because of a timeout).
+
+
 Additional information
 ----------------------
 

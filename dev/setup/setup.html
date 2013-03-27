@@ -192,6 +192,26 @@ happens when you launch the second Eclipse's instance.</p>
 <p>Read the rest of the developer documentation to get more insights about the overall architecture.</p>
 </div>
 </div>
+<div class="section" id="run-the-test-suite-inside-eclipse">
+<h2>Run the test suite inside Eclipse</h2>
+<p>You can use the built-in JUnit runner to run or debug the tests inside Eclipse. As for the normal run,
+you need to the <em>Equinox Weaving Launcher</em>. In the <em>Run Configuration</em> Dialog, create a new configuration
+using the <strong>JUnit Plug-In test with Equinox Weaving</strong>. Make sure you selected the <em>org.scala-ide.sdt.core.tests</em>
+project, and choose the test class you want to run (use <tt class="docutils literal"><span class="pre">scala.tools.eclipse.TestsSuite</span></tt> to run all tests).</p>
+<p>In the <strong>Main</strong> tab make the following adjustments:</p>
+<ul class="simple">
+<li>Choose <strong>Run an application: [No Application] - Headless Mode</strong>.</li>
+</ul>
+<p>The window should look like this:</p>
+<img alt="../../_images/setup.png" src="../../_images/setup.png" />
+<p>In the <strong>Arguments</strong> tab, make sure to add the following arguments to the VM arguments list:</p>
+<div class="highlight-bash"><div class="highlight"><pre>-Dsdtcore.headless -Dsdtcore.notimeouts
+</pre></div>
+</div>
+<p>The first one tells the IDE to not try to open any windows or dialogs, while the second one disables
+timeouts for certain actions (otherwise, on a slow or overloaded system, the tests might fail simply
+because of a timeout).</p>
+</div>
 <div class="section" id="additional-information">
 <h2>Additional information</h2>
 <div class="section" id="org-scala-ide-sdt-aspects-project">
