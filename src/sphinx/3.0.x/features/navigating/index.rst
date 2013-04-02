@@ -11,3 +11,5 @@ Navigating
    implicit-hyperlinking
    open-type
    open-declaration
+   outline-view
+   tasks-view
