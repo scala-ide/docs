@@ -173,6 +173,54 @@ and send it to</p>
 <p class="last">or scan and email to <a class="reference external" href="mailto:info&#37;&#52;&#48;scala-ide&#46;org">info<span>&#64;</span>scala-ide<span>&#46;</span>org</a>.</p>
 </div>
 </div>
+<div class="section" id="continuous-integration">
+<h3>Continuous Integration</h3>
+<p>Any pull request against the Scala-IDE repository will provide a
+set of changes. The Scala IDE formed by integrated your changes
+(i.e. the outcome of a pull request merge) will be built
+automatically, and have the test suite run on it as part of the
+build. This is accomplished using a <a class="reference external" href="http://jenkins-ci.org/">Jenkins</a> continuous integration server, hosted
+on <a class="reference external" href="https://jenkins.scala-ide.org:8496/jenkins/">scala-ide.org</a>. There are
+actually several pull request validation jobs, each built using a
+specific software stack (including IDE dependencies such as
+<a class="reference external" href="https://github.com/scala-ide/scala-refactoring">Scala Refactoring</a>) based on a
+distinct version of Scala — usually the latest stable Scala
+release and the upcoming one. The pull request validation jobs
+are named with strict conventions, and can be found listed with
+the prefix <tt class="docutils literal"><span class="pre">pr-validator-</span></tt> on the <a class="reference external" href="https://jenkins.scala-ide.org:8496/jenkins/">integration server</a>.</p>
+<p>Interacting with the Jenkins server, and reporting the results of
+builds from Jenkins back to Github, is the role of the Typesafe
+pull request validator, affectionately nicknamed &quot;the build
+kitteh&quot;. The source code for that piece of software is <a class="reference external" href="https://github.com/typesafehub/ghpullrequest-validator/">available
+on Github</a>. It
+draws its name from the internet meme of <a class="reference external" href="http://knowyourmeme.com/memes/lolcats">LOLcats</a>, started by the website
+<a class="reference external" href="http://icanhas.cheezburger.com/">icanhascheezeburger.com</a>, of
+which it borrows humorous messages featuring cats bedridden with
+poor grammar. We in the Scala-IDE community are cat lovers, and
+the humorous pictures help us deal with the temporary setbacks
+on the road to excellent, bug-free software&nbsp;!</p>
+<p>In order to be merged, your pull request will be expected to
+build against the tested versions of the IDE, or to have a
+spectacularly good reason not do so. You will be expected to
+investigate and fix any failure of the build kitteh to build and
+test your code, as all Scala IDE developers do.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If your pull request required further changes as a result
+of a failed build, please add more commits but do not
+<a class="reference external" href="https://help.github.com/articles/dealing-with-non-fast-forward-errors">force push</a>
+against the branch your pull request is issued from. From
+the moment your pull request is issued, you can consider
+it public and shared by reviewers (and the build kitteh),
+something that does not play well with trying to rewrite
+history. If it is absolutely necessary to rewrite what you
+submitted as a pull request, please consider closing your
+pull request and re-opening another. You can trigger
+another build from the kitteh (e.g. after making a few
+additions) by commenting against your pull request with
+the string <tt class="docutils literal"><span class="pre">PLS</span> <span class="pre">REBUILD</span> <span class="pre">ALL</span></tt>.</p>
+</div>
+</div>
 </div>
 <div class="section" id="committers">
 <h2>Committers</h2>

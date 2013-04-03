@@ -94,7 +94,7 @@
       <div class="span11 main-content">
         <div class="section" id="setup-and-use-the-scalac-project-with-the-scala-ide">
 <h1>Setup and use the Scalac project with the Scala IDE</h1>
-<div class="admonition-disclaimer admonition">
+<div class="admonition-disclaimer admonition ">
 <p class="first admonition-title">Disclaimer</p>
 <p class="last">The Scala IDE is, as far as we know, the only project built every night on top of the lastest nightly build
 of the Scala compiler. As such, you are bound to be the first to step on compiler bugs. Overall, the experience
@@ -120,7 +120,7 @@ whole Scala community will benefit!</p>
 <p>In order to build the Scala compiler inside Eclipse, you need to make sure Eclipse runs with enough heap. We recommend at least 2GB, but be generous if you can. The detailed instructions on how to do that can be found in <a class="reference internal" href="../../current-user-doc/advancedsetup/index.html"><em>advanced setup</em></a></p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">If you have an older version of the Scala IDE plugin, you may run into trouble when updating to the latest nightly. Frequent changes in the compiler version numbering scheme may confuse Eclipse, and keep an older version of the compiler bundle that doesn't match the IDE. To make sure things run smoothly, you can uninstall the previous version. There is <a class="reference external" href="http://scala-ide.org/blog/director-script.html">command line tool</a> for doing that without firing up Eclipse.</p>
+<p class="last">If you have an older version of the Scala IDE plugin, you may run into trouble when updating to the latest nightly. Frequent changes in the compiler version numbering scheme may confuse Eclipse, and keep an older version of the compiler bundle that doesn't match the IDE. To make sure things run smoothly, you can uninstall the previous version. There is a <a class="reference external" href="http://scala-ide.org/blog/director-script.html">command line tool</a> for doing that without firing up Eclipse.</p>
 </div>
 </div>
 <div class="section" id="setting-up-the-eclipse-project">
@@ -143,11 +143,12 @@ whole Scala community will benefit!</p>
 <p>You should see at least the following projects in your workspace:</p>
 <ul class="simple">
 <li>asm</li>
-<li>fjbg</li>
+<li>continuations-library</li>
 <li>reflect</li>
 <li>scala-library</li>
 <li>scala-compiler</li>
 </ul>
+<p>If you work on a version of the scala compiler older than 2.10.0, you may also find here the old <tt class="docutils literal"><span class="pre">fjbg</span></tt> project (an older bytecode generator backend).</p>
 <p>Before you go on, you need to follow the steps described in the <a class="reference external" href="https://github.com/scala/scala/blob/master/src/eclipse/README.md">README.md</a> on the Scala website. Come back once you are done.</p>
 </div>
 <div class="section" id="using-eclipse-for-compiler-development">
@@ -172,18 +173,7 @@ whole Scala community will benefit!</p>
 </div>
 <div class="section" id="cheat-sheet">
 <h2>Cheat sheet</h2>
-<p>Here's a collection of the shortcuts I use the most in my daily development. Hopefully they will be helpful for others:</p>
-<ul class="simple">
-<li><tt class="docutils literal"><span class="pre">CMD-3</span></tt> Quick Access -- a huge time saver. Opens up a dialog with incremental search on all commands available on the platform</li>
-<li><tt class="docutils literal"><span class="pre">CMD-Shift-R</span></tt> Open Resource -- opens up a dialog with incremental search on all files in the workspace</li>
-<li><tt class="docutils literal"><span class="pre">CMD-.</span></tt> Go to the next error in the current editor</li>
-<li><tt class="docutils literal"><span class="pre">F2</span></tt> Show the error for the position under the cursor</li>
-<li><tt class="docutils literal"><span class="pre">F3</span></tt> Navigate to definition (same as <tt class="docutils literal"><span class="pre">CMD-click</span></tt> on an identifier)</li>
-<li><tt class="docutils literal"><span class="pre">CMD-O</span></tt> Quick Outline -- opens up a dialog with incremental search on all definitions in the current editor</li>
-<li><tt class="docutils literal"><span class="pre">CMD-J</span></tt> Incremental search</li>
-<li><tt class="docutils literal"><span class="pre">CMD-F11</span></tt> Launch the debugger. By default it tries to launch the current file. I configure Eclipse to always launch the last application.</li>
-<li><tt class="docutils literal"><span class="pre">CMD-Shift-F11</span></tt> Launch the application (with no debugger attached)</li>
-</ul>
+<p>On our <a class="reference internal" href="../../dev/appendix/shortcuts.html"><em>shortcuts</em></a> page, you will find a collection of the shortcuts used the most in daily development. Hopefully they will be helpful for others.</p>
 <p>If you are new to Eclipse, you should have a look at the <a class="reference internal" href="../../current-user-doc/gettingstarted/index.html"><em>getting started</em></a> guide and watch the screencast.</p>
 </div>
 <div class="section" id="swapping-the-scala-compiler-inside-eclipse-risky">
@@ -233,7 +223,7 @@ make the whole directory <span class="nb">read</span>-only
 <p>This guide is managed through in the <a class="reference external" href="https://github.com/scala-ide/docs">Scala IDE documentation project</a> on github.
 Please use github tickets and pull requests system for feedback.</p>
 <p>Iulian Dragos - <a class="reference external" href="https://twitter.com/jaguarul">&#64;jaguarul</a></p>
-<p>based on the document created by Grzegorz Kossakowski - <a class="reference external" href="https://twitter.com/gkossakowski">&#64;gkossakowski</a> and improved by <a class="reference external" href="http://people.epfl.ch/vlad.ureche">Vlad Ureche</a>.</p>
+<p>based on a document created by Grzegorz Kossakowski - <a class="reference external" href="https://twitter.com/gkossakowski">&#64;gkossakowski</a> and improved by <a class="reference external" href="http://people.epfl.ch/vlad.ureche">Vlad Ureche</a>, and input from <a class="reference external" href="http://people.epfl.ch/hubert.plociniczak">Hubert Plociniczak</a> and Nada Amin - <a class="reference external" href="https://twitter.com/nadamin">&#64;nadamin</a>.</p>
 </div>
 </div>
 

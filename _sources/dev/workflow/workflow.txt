@@ -108,6 +108,63 @@ Of course, after sending a pull request, you can immediately start working on a 
 
   or scan and email to `info@scala-ide.org <mailto:info@scala-ide.org>`_.
 
+Continuous Integration
+......................
+
+Any pull request against the Scala-IDE repository will provide a
+set of changes. The Scala IDE formed by integrated your changes
+(i.e. the outcome of a pull request merge) will be built
+automatically, and have the test suite run on it as part of the
+build. This is accomplished using a `Jenkins
+<http://jenkins-ci.org/>`_ continuous integration server, hosted
+on `scala-ide.org
+<https://jenkins.scala-ide.org:8496/jenkins/>`_. There are
+actually several pull request validation jobs, each built using a
+specific software stack (including IDE dependencies such as
+`Scala Refactoring
+<https://github.com/scala-ide/scala-refactoring>`_) based on a
+distinct version of Scala — usually the latest stable Scala
+release and the upcoming one. The pull request validation jobs
+are named with strict conventions, and can be found listed with
+the prefix ``pr-validator-`` on the `integration server
+<https://jenkins.scala-ide.org:8496/jenkins/>`_.
+
+Interacting with the Jenkins server, and reporting the results of
+builds from Jenkins back to Github, is the role of the Typesafe
+pull request validator, affectionately nicknamed "the build
+kitteh". The source code for that piece of software is `available
+on Github
+<https://github.com/typesafehub/ghpullrequest-validator/>`_. It
+draws its name from the internet meme of `LOLcats
+<http://knowyourmeme.com/memes/lolcats>`_, started by the website
+`icanhascheezeburger.com <http://icanhas.cheezburger.com/>`_, of
+which it borrows humorous messages featuring cats bedridden with
+poor grammar. We in the Scala-IDE community are cat lovers, and
+the humorous pictures help us deal with the temporary setbacks
+on the road to excellent, bug-free software !
+
+In order to be merged, your pull request will be expected to
+build against the tested versions of the IDE, or to have a
+spectacularly good reason not do so. You will be expected to
+investigate and fix any failure of the build kitteh to build and
+test your code, as all Scala IDE developers do.
+
+.. note::
+
+       If your pull request required further changes as a result
+       of a failed build, please add more commits but do not
+       `force push
+       <https://help.github.com/articles/dealing-with-non-fast-forward-errors>`_
+       against the branch your pull request is issued from. From
+       the moment your pull request is issued, you can consider
+       it public and shared by reviewers (and the build kitteh),
+       something that does not play well with trying to rewrite
+       history. If it is absolutely necessary to rewrite what you
+       submitted as a pull request, please consider closing your
+       pull request and re-opening another. You can trigger
+       another build from the kitteh (e.g. after making a few
+       additions) by commenting against your pull request with
+       the string ``PLS REBUILD ALL``.
 
 Committers
 ----------

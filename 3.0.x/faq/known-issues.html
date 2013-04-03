@@ -92,6 +92,18 @@
       <div class="span11 main-content">
         <div class="section" id="know-issues">
 <h1>Know Issues</h1>
+<div class="section" id="do-not-enter-road-sign-when-opening-a-scala-editor">
+<h2>Do Not Enter road sign when opening a Scala Editor</h2>
+<p><strong>Symptoms</strong>:</p>
+<p>When opening a Scala editor, the error &quot;Could not open the editor: org.eclipse.jdt.internal.core.CompilationUnit cannot be cast to scala.tools.eclipse.InteractiveCompilationUnit&quot; (or something similar) appears.</p>
+<p><strong>Solution</strong>:</p>
+<p>The Scala IDE uses weaving to behave as (much) more than a Java editor on Scala files, and this is the message you get when it is not active.</p>
+<p>JDT weaving is activated by default. Moreover, Scala plugin
+checks it is activated at every launch. The easiest way to debug
+this is therefore to accept activation of JDT weaving at
+launch. Otherwise, you can look into turning it on manually using
+the <a class="reference internal" href="../../current-user-doc/advancedsetup/index.html"><em>Scala Diagnostics Dialog</em></a>.</p>
+</div>
 <div class="section" id="scala-errors-on-all-unicode-arrows">
 <h2>Scala errors on all Unicode arrows</h2>
 <p><strong>Symptoms</strong>:</p>
