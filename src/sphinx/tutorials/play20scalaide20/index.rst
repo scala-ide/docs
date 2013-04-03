@@ -1,10 +1,6 @@
 Setup and use Play framework 2.0 in Scala IDE 2.0
 =================================================
 
-|frflag| :doc:`version française<index-fr>`
-
-.. |frflag| image:: /images/frflag.png
-
 What is in this guide?
 ----------------------
 
