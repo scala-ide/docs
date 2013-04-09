@@ -9,9 +9,9 @@ This guide will show you how to configure a Play web application to import it in
 Prerequisites
 .............
 
-*   `Eclipse`_ 3.7 (Indigo) with `Scala IDE 3.0 for Scala 2.10 installed <http://scala-ide.org/download/current.html#eclipse_37_indigo>`_, or
+*   `Eclipse`_ 3.7 (Indigo) with `Scala IDE 3.0 for Scala 2.10 installed <http://scala-ide.org/download/current.html#eclipse_37_indigo>`__, or
 
-    `Eclipse`_ 4.2 (Juno) with `Scala IDE 3.0 for Scala 2.10 installed <http://scala-ide.org/download/current.html#eclipse_42_juno>`_.
+    `Eclipse`_ 4.2 (Juno) with `Scala IDE 3.0 for Scala 2.10 installed <http://scala-ide.org/download/current.html#eclipse_42_juno>`__.
 
     Read the :doc:`getting started </current-user-doc/gettingstarted/index>` for instructions on how to install Scala IDE.
 
@@ -33,10 +33,8 @@ completion, hyperlinking) are also available when editing Play2 files.
 The Play2 plug-in can be installed via **the same Eclipse update-site that you used to install
 the Scala IDE**. The Play2 plug-in is listed under the *Scala IDE plugins* group.
 
-    .. image:: images/install-play2-plugin.png
-       :alt: install Play2 plug-in
-       :width: 100%
-       :target: ../../_images/install-play2-plugin.png
+.. image:: images/install-play2-plugin.png
+   :alt: install Play2 plug-in
 
 For a comprehensive review of the main features available in the Play2 plug-in, please
 read the `here <https://github.com/scala-ide/scala-ide-play2/wiki>`_.
