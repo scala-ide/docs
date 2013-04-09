@@ -9,15 +9,35 @@ This guide will show you how to configure a Play web application to import it in
 Prerequisites
 .............
 
-*   `Eclipse`_ 3.7 (Indigo) with Scala IDE for `Scala 2.10 installed <http://scala-ide.org/download/current.html#for_scala_210x>`_.
+*   `Eclipse`_ 3.7 (Indigo) with `Scala IDE 3.0 for Scala 2.10 installed <http://scala-ide.org/download/current.html#eclipse_37_indigo>`__, or
 
-    Check the :doc:`getting started </current-user-doc/gettingstarted/index>` page for instructions on how to install Scala IDE.
+    `Eclipse`_ 4.2 (Juno) with `Scala IDE 3.0 for Scala 2.10 installed <http://scala-ide.org/download/current.html#eclipse_42_juno>`__.
+
+    Read the :doc:`getting started </current-user-doc/gettingstarted/index>` for instructions on how to install Scala IDE.
 
 *   A basic knowledge of the Eclipse user interface is required.
 
 *   No knowledge of the Scala language is required (in this guide).
 
 *   No knowledge of the Play framework is required (in this guide).
+
+Installing the Scala IDE Play2 plug-in
+--------------------------------------
+
+The `Scala IDE Play2 plug-in <https://github.com/scala-ide/scala-ide-play2>`_ provides
+first-class support for Play2 Route and Template files in Eclipse, for both Java and Scala
+projects. In practice, what this means is that many of the features your are used to having
+in the Scala or Java Editor (e.g., syntax highlighting, errors-as-you-type reporting, code
+completion, hyperlinking) are also available when editing Play2 files.
+
+The Play2 plug-in can be installed via **the same Eclipse update-site that you used to install
+the Scala IDE**. The Play2 plug-in is listed under the *Scala IDE plugins* group.
+
+.. image:: images/install-play2-plugin.png
+   :alt: install Play2 plug-in
+
+For a comprehensive review of the main features available in the Play2 plug-in, please
+read the `here <https://github.com/scala-ide/scala-ide-play2/wiki>`_.
 
 Setting up Play 2.1
 -------------------
@@ -118,13 +138,6 @@ Setting a few preferences in Eclipse will make everything easier to use.
        :alt: refresh automatically
        :width: 100%
        :target: ../../_images/refresh-on-access.png
-
-*   If you don't have the Web Development Tools for Eclipse installed, Eclipse opens ``.html`` files in a web browser. Configure it to use the ``Text Editor`` instead.
-
-    .. image:: images/play20-scalaide20-14.png
-       :alt: HTML file in text editor
-       :width: 100%
-       :target: ../../_images/play20-scalaide20-14.png
 
 Importing the Play web application into Scala IDE
 -------------------------------------------------

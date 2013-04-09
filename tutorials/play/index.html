@@ -100,8 +100,9 @@
 <div class="section" id="prerequisites">
 <h3>Prerequisites</h3>
 <ul>
-<li><p class="first"><a class="reference external" href="http://www.eclipse.org/">Eclipse</a> 3.7 (Indigo) with Scala IDE for <a class="reference external" href="http://scala-ide.org/download/current.html#for_scala_210x">Scala 2.10 installed</a>.</p>
-<p>Check the <a class="reference internal" href="../../current-user-doc/gettingstarted/index.html"><em>getting started</em></a> page for instructions on how to install Scala IDE.</p>
+<li><p class="first"><a class="reference external" href="http://www.eclipse.org/">Eclipse</a> 3.7 (Indigo) with <a class="reference external" href="http://scala-ide.org/download/current.html#eclipse_37_indigo">Scala IDE 3.0 for Scala 2.10 installed</a>, or</p>
+<p><a class="reference external" href="http://www.eclipse.org/">Eclipse</a> 4.2 (Juno) with <a class="reference external" href="http://scala-ide.org/download/current.html#eclipse_42_juno">Scala IDE 3.0 for Scala 2.10 installed</a>.</p>
+<p>Read the <a class="reference internal" href="../../current-user-doc/gettingstarted/index.html"><em>getting started</em></a> for instructions on how to install Scala IDE.</p>
 </li>
 <li><p class="first">A basic knowledge of the Eclipse user interface is required.</p>
 </li>
@@ -111,6 +112,19 @@
 </li>
 </ul>
 </div>
+</div>
+<div class="section" id="installing-the-scala-ide-play2-plug-in">
+<h2>Installing the Scala IDE Play2 plug-in</h2>
+<p>The <a class="reference external" href="https://github.com/scala-ide/scala-ide-play2">Scala IDE Play2 plug-in</a> provides
+first-class support for Play2 Route and Template files in Eclipse, for both Java and Scala
+projects. In practice, what this means is that many of the features your are used to having
+in the Scala or Java Editor (e.g., syntax highlighting, errors-as-you-type reporting, code
+completion, hyperlinking) are also available when editing Play2 files.</p>
+<p>The Play2 plug-in can be installed via <strong>the same Eclipse update-site that you used to install
+the Scala IDE</strong>. The Play2 plug-in is listed under the <em>Scala IDE plugins</em> group.</p>
+<img alt="install Play2 plug-in" src="../../_images/install-play2-plugin.png" />
+<p>For a comprehensive review of the main features available in the Play2 plug-in, please
+read the <a class="reference external" href="https://github.com/scala-ide/scala-ide-play2/wiki">here</a>.</p>
 </div>
 <div class="section" id="setting-up-play-2-1">
 <h2>Setting up Play 2.1</h2>
@@ -172,9 +186,6 @@
 </li>
 <li><p class="first">Configure Eclipse so changes on the file system are automatically picked up.</p>
 <a class="reference external image-reference" href="../../_images/refresh-on-access.png"><img alt="refresh automatically" src="../../_images/refresh-on-access.png" style="width: 100%;" /></a>
-</li>
-<li><p class="first">If you don't have the Web Development Tools for Eclipse installed, Eclipse opens <tt class="docutils literal"><span class="pre">.html</span></tt> files in a web browser. Configure it to use the <tt class="docutils literal"><span class="pre">Text</span> <span class="pre">Editor</span></tt> instead.</p>
-<a class="reference external image-reference" href="../../_images/play20-scalaide20-14.png"><img alt="HTML file in text editor" src="../../_images/play20-scalaide20-14.png" style="width: 100%;" /></a>
 </li>
 </ul>
 </div>
