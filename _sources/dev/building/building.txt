@@ -32,12 +32,6 @@ From the project root, run the following command to build Scala IDE for Scala 2.
 
    $ ./build-all.sh
 
-or the following to build Scala IDE for Scala 2.9:
-
-.. code-block:: bash
-
-   $ ./build-all.sh -P scala-2.9.x clean install
-
 
 or the following to build Scala IDE for Scala 2.11:
 
@@ -48,7 +42,7 @@ or the following to build Scala IDE for Scala 2.11:
 .. note::
 
         When working on the Scala IDE you need to make sure that new code can be compiled with Scala
-        2.9.x and 2.10, and 2.11 (trunk).
+        2.10 and 2.11 (trunk).
 
 Assuming your build is successful you should find an Eclipse update site has been built in
 ``org.scala-ide.sdt.update-site/target/site`` and a zipped version of the same at
