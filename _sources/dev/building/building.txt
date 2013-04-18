@@ -30,7 +30,7 @@ From the project root, run the following command to build Scala IDE for Scala 2.
 
 .. code-block:: bash
 
-   $ ./build-all.sh clean install
+   $ ./build-all.sh
 
 or the following to build Scala IDE for Scala 2.9:
 
