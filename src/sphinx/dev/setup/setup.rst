@@ -18,7 +18,7 @@ Requirements
 
 * `Eclipse 3.7 (Indigo) <http://www.eclipse.org/downloads/>`_, including the JDT. Either "Eclipse Classic" or "Eclipse for Java Developers" is sufficient (Be aware, the plugin's sources are no longer compatible with Eclipse 3.6).
 
-* The `Scala IDE Helium for Scala 2.10 <http://scala-ide.org/download/nightly.html>`_.
+* The `Scala IDE nightly for Scala 2.10 <http://scala-ide.org/download/nightly.html>`_.
 
 This document uses a script to build Scala IDE. If you are on Windows, we suggest you to install Cygwin (how could you live without it on Windows anyway!?). Otherwise, the :ref:`building_run-the-build` section of the documentation describes the different steps to execute for a full build.
 
@@ -56,13 +56,19 @@ From the project root, run the following command if you are using Scala IDE with
 
 .. code-block:: bash
 
-   $ ./build-all.sh clean install
+   $ ./build-all.sh
 
-or the following if you are using Scala IDE with Scala 2.9:
+The above command, is actually a shortcut for:
 
 .. code-block:: bash
 
-   $ ./build-all.sh -P scala-2.9.x clean install
+   $ ./build-all.sh -P scala-2.10.x clean install
+
+Or, you can pass a different profile for building the Scala IDE with Scala 2.11:
+
+.. code-block:: bash
+
+   $ ./build-all.sh -P scala-2.11.x clean install
 
 If you want more information concerning the build, check out :ref:`building_run-the-build`.
 
@@ -81,7 +87,8 @@ need to import in Eclipse are ``org.scala-ide.sbt.full.library``, ``org.scala-id
 There is **one more thing** to check to get ready to hack the Scala IDE project. You may
 notice that the ``org.scala-ide.sbt.full.library`` project has build path errors. This project is
 grouping together a bunch of SBT jars into one OSGI bundle. The project build path is configured by default to
-reference the 2.10 version of the jars, so the configuration will be wrong if you are working with Scala 2.9.
+reference the 2.10 version of the jars, so the configuration will be wrong if you are working with a different 
+Scala version.
 
 To fix this, right click on the ``org.scala-ide.sbt.full.library`` project and then click "Properties". A
 dialog will open. Click on "Java Build Path" and select the "Libraries" tab. You should see something
@@ -96,14 +103,7 @@ Select all JARs in the folder and click OK.
 
 Now click the "Order and Export" tab and make sure to export all JARs click the "Select All" button.
 
-.. image:: images/order-export.png
-   :width: 100%
-   :target: ../../_images/order-export.png
-
-
 Click OK.
-
-Additionally, if you're using scala 2.9, you need to right-click the 2.10 folder in the ``org.scala-ide.sdt.core`` project and select ``Build Path -> Remove from Build Path`` and add the 2.9 folder instead by right-clicking and selecting ``Build Path -> Use as Source Folder``.
 
 If after rebuilding you see any errors, drop us a note in the `Scala IDE Developer
 Mailing List <http://groups.google.com/group/scala-ide-dev?pli=1>`_.

@@ -71,21 +71,21 @@ After an initial complete build, maven can be used from any subproject.
 
 .. code-block:: bash
 
-   $ mvn clean install
+   $ mvn -P scala-2.10.x clean install
    $ cd org.scala-ide.build-toolchain
-   $ mvn clean install
+   $ mvn -P scala-2.10.x clean install
    $ cd ../org.scala-ide.sdt.build
-   $ mvn clean install
+   $ mvn -P scala-2.10.x clean install
 
-or for Scala 2.9.x:
+or for Scala 2.11.x:
 
 .. code-block:: bash
 
-   $ mvn -P scala-2.9.x clean install
+   $ mvn -P scala-2.11.x clean install
    $ cd org.scala-ide.build-toolchain
-   $ mvn -P scala-2.9.x clean install
+   $ mvn -P scala-2.11.x clean install
    $ cd ../org.scala-ide.sdt.build
-   $ mvn -P scala-2.9.x clean install
+   $ mvn -P scala-2.11.x clean install
 
 Running the memory leak test
 ----------------------------
@@ -126,7 +126,7 @@ Then rebuild Scala IDE, the build will automatically pickup the compiler which w
 .. code-block:: bash
 
     # From the main Scala IDE directory
-    $ ./build-all.sh -P scala-2.10.x clean install
+    $ ./build-all.sh
 
 When the build is successful, a complete update-site, with the local changes
 you made in the Scala compiler, is available in ``org.scala-ide.sdt.update-site/target/site``.
