@@ -105,7 +105,7 @@ see <a class="reference external" href="https://bugs.eclipse.org/bugs/show_bug.c
 <li><a class="reference external" href="http://maven.apache.org/download.html">Maven 3</a>.</li>
 <li><a class="reference external" href="http://git-scm.com/">Git</a> and a <a class="reference external" href="https://github.com/">GitHub</a> account.</li>
 <li><a class="reference external" href="http://www.eclipse.org/downloads/">Eclipse 3.7 (Indigo)</a>, including the JDT. Either &quot;Eclipse Classic&quot; or &quot;Eclipse for Java Developers&quot; is sufficient (Be aware, the plugin's sources are no longer compatible with Eclipse 3.6).</li>
-<li>The <a class="reference external" href="http://scala-ide.org/download/nightly.html">Scala IDE Helium for Scala 2.10</a>.</li>
+<li>The <a class="reference external" href="http://scala-ide.org/download/nightly.html">Scala IDE nightly for Scala 2.10</a>.</li>
 </ul>
 <p>This document uses a script to build Scala IDE. If you are on Windows, we suggest you to install Cygwin (how could you live without it on Windows anyway!?). Otherwise, the <a class="reference internal" href="../building/building.html#building-run-the-build"><em>Run the build</em></a> section of the documentation describes the different steps to execute for a full build.</p>
 </div>
@@ -130,11 +130,15 @@ made in the project, and easily integrate them back in your fork.</p>
 <p>The Scala IDE projects uses libraries which are pulled during the build process and copied in the <tt class="docutils literal"><span class="pre">target/lib</span></tt> folders.
 So let's run the build.</p>
 <p>From the project root, run the following command if you are using Scala IDE with Scala 2.10:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>./build-all.sh clean install
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>./build-all.sh
 </pre></div>
 </div>
-<p>or the following if you are using Scala IDE with Scala 2.9:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>./build-all.sh -P scala-2.9.x clean install
+<p>The above command, is actually a shortcut for:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>./build-all.sh -P scala-2.10.x clean install
+</pre></div>
+</div>
+<p>Or, you can pass a different profile for building the Scala IDE with Scala 2.11:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>./build-all.sh -P scala-2.11.x clean install
 </pre></div>
 </div>
 <p>If you want more information concerning the build, check out <a class="reference internal" href="../building/building.html#building-run-the-build"><em>Run the build</em></a>.</p>
@@ -151,7 +155,8 @@ need to import in Eclipse are <tt class="docutils literal"><span class="pre">org
 <p>There is <strong>one more thing</strong> to check to get ready to hack the Scala IDE project. You may
 notice that the <tt class="docutils literal"><span class="pre">org.scala-ide.sbt.full.library</span></tt> project has build path errors. This project is
 grouping together a bunch of SBT jars into one OSGI bundle. The project build path is configured by default to
-reference the 2.10 version of the jars, so the configuration will be wrong if you are working with Scala 2.9.</p>
+reference the 2.10 version of the jars, so the configuration will be wrong if you are working with a different
+Scala version.</p>
 <p>To fix this, right click on the <tt class="docutils literal"><span class="pre">org.scala-ide.sbt.full.library</span></tt> project and then click &quot;Properties&quot;. A
 dialog will open. Click on &quot;Java Build Path&quot; and select the &quot;Libraries&quot; tab. You should see something
 on the lines of:</p>
@@ -159,9 +164,7 @@ on the lines of:</p>
 <p>First remove all JARs, and then click the &quot;Add JARs...&quot; button and browse to <tt class="docutils literal"><span class="pre">org.scala-ide.sbt.full.library/lib</span></tt>.
 Select all JARs in the folder and click OK.</p>
 <p>Now click the &quot;Order and Export&quot; tab and make sure to export all JARs click the &quot;Select All&quot; button.</p>
-<a class="reference external image-reference" href="../../_images/order-export.png"><img alt="../../_images/order-export.png" src="../../_images/order-export.png" style="width: 100%;" /></a>
 <p>Click OK.</p>
-<p>Additionally, if you're using scala 2.9, you need to right-click the 2.10 folder in the <tt class="docutils literal"><span class="pre">org.scala-ide.sdt.core</span></tt> project and select <tt class="docutils literal"><span class="pre">Build</span> <span class="pre">Path</span> <span class="pre">-&gt;</span> <span class="pre">Remove</span> <span class="pre">from</span> <span class="pre">Build</span> <span class="pre">Path</span></tt> and add the 2.9 folder instead by right-clicking and selecting <tt class="docutils literal"><span class="pre">Build</span> <span class="pre">Path</span> <span class="pre">-&gt;</span> <span class="pre">Use</span> <span class="pre">as</span> <span class="pre">Source</span> <span class="pre">Folder</span></tt>.</p>
 <p>If after rebuilding you see any errors, drop us a note in the <a class="reference external" href="http://groups.google.com/group/scala-ide-dev?pli=1">Scala IDE Developer
 Mailing List</a>.</p>
 </div>

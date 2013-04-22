@@ -143,19 +143,19 @@ server, then the HTTP URL of its root directory is acceptable as an ordinary Ecl
 <p>The toolchain update site and the SDT build depend on the fact that the root pom and toolchain have been compiled and installed in the local maven repository using <tt class="docutils literal"><span class="pre">mvn</span> <span class="pre">install</span></tt>.</p>
 <p>After an initial complete build, maven can be used from any subproject.</p>
 <p><tt class="docutils literal"><span class="pre">build-all.sh</span></tt> is simply a helper script that calls maven on the different parts. Running it is equivalent to:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>mvn clean install
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>mvn -P scala-2.10.x clean install
 <span class="nv">$ </span><span class="nb">cd </span>org.scala-ide.build-toolchain
-<span class="nv">$ </span>mvn clean install
+<span class="nv">$ </span>mvn -P scala-2.10.x clean install
 <span class="nv">$ </span><span class="nb">cd</span> ../org.scala-ide.sdt.build
-<span class="nv">$ </span>mvn clean install
+<span class="nv">$ </span>mvn -P scala-2.10.x clean install
 </pre></div>
 </div>
-<p>or for Scala 2.9.x:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>mvn -P scala-2.9.x clean install
+<p>or for Scala 2.11.x:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>mvn -P scala-2.11.x clean install
 <span class="nv">$ </span><span class="nb">cd </span>org.scala-ide.build-toolchain
-<span class="nv">$ </span>mvn -P scala-2.9.x clean install
+<span class="nv">$ </span>mvn -P scala-2.11.x clean install
 <span class="nv">$ </span><span class="nb">cd</span> ../org.scala-ide.sdt.build
-<span class="nv">$ </span>mvn -P scala-2.9.x clean install
+<span class="nv">$ </span>mvn -P scala-2.11.x clean install
 </pre></div>
 </div>
 </div>
@@ -187,7 +187,7 @@ Otherwise, you can safely skip this section.</p>
 </div>
 <p>Then rebuild Scala IDE, the build will automatically pickup the compiler which was installed locally.</p>
 <div class="highlight-bash"><div class="highlight"><pre><span class="c"># From the main Scala IDE directory</span>
-<span class="nv">$ </span>./build-all.sh -P scala-2.10.x clean install
+<span class="nv">$ </span>./build-all.sh
 </pre></div>
 </div>
 <p>When the build is successful, a complete update-site, with the local changes

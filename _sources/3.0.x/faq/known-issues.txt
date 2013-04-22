@@ -53,7 +53,7 @@ During the development of version 2.0.0, the configuration of the Scala completi
 
 The diagnostic tool at ``Scala → Run Setup Diagnostic`` allows to fix this problem. Make sure that ``Use Scala-compatible JDT content assist proposals`` is enabled.
 
-.. image:: images/setup-diagnostics-01.png
+.. image:: /current-user-doc/faq/images/setup-diagnostics-01.png
 
 Bad completion when using companion object in Java
 ..................................................
