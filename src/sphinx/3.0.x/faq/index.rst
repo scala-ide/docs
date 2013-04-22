@@ -7,7 +7,7 @@ General
 What Eclipse Platforms are supported?
 .....................................
 
-The Scala IDE 3.0 officially supports both `Eclipse 3.7 (Indigo)`__ and has experimental support for `Eclipse 4.2 (Juno)`__. 
+The Scala IDE 3.0 officially supports both `Eclipse 3.7 (Indigo)`__ and has experimental support for `Eclipse 3.8/4.2 (Juno)`__.
 
 __ http://www.eclipse.org/downloads/packages/release/indigo/sr2
 __ http://www.eclipse.org/downloads/

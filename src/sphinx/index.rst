@@ -40,6 +40,7 @@ Contents:
    :hidden:
 
    3.0.x/index
+   user/faq
 
 .. _Scala: http://www.scala-lang.org/
 .. _Scala IDE: http://www.scala-ide.org/
