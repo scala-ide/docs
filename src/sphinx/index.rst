@@ -32,6 +32,7 @@ Contents:
    tutorials/index
    changelog
    2.0.x/index
+   4.0.x/index
    Developer Documentation <dev/index>
 
 .. include:: /contribute.rst.inc
@@ -40,6 +41,7 @@ Contents:
    :hidden:
 
    3.0.x/index
+   4.0.x/index
    user/faq
 
 .. _Scala: http://www.scala-lang.org/
