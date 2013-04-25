@@ -17,7 +17,7 @@ checks it is activated at every launch. The easiest way to debug
 this is therefore to accept activation of JDT weaving at
 launch. Otherwise, you can look into turning it on manually using
 the :doc:`Scala Diagnostics Dialog
-</current-user-doc/advancedsetup/index>`.
+<../advancedsetup/index>`.
 
 Scala errors on all Unicode arrows
 ..................................
@@ -53,7 +53,7 @@ During the development of version 2.0.0, the configuration of the Scala completi
 
 The diagnostic tool at ``Scala → Run Setup Diagnostic`` allows to fix this problem. Make sure that ``Use Scala-compatible JDT content assist proposals`` is enabled.
 
-.. image:: /current-user-doc/faq/images/setup-diagnostics-01.png
+.. image:: images/setup-diagnostics-01.png
 
 Bad completion when using companion object in Java
 ..................................................
