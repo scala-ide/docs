@@ -56,6 +56,7 @@
 		<li class="menu">
 	      	<a href="#" class="menu">Download</a>
 	      	<ul class="menu-dropdown">
+	        	<li><a href="/download/sdk.html">SDK</a></li>
 	        	<li><a href="/download/current.html">Stable</a></li>
 	        	<li><a href="/download/milestone.html">Milestone</a></li>
 	        	<li><a href="/download/nightly.html">Nightlies</a></li>
@@ -100,21 +101,21 @@
 <h2>Generate hashCode and equals</h2>
 <p><em>Generate hashCode and equals</em> generates implementations for the <tt class="docutils literal"><span class="pre">hashCode</span></tt> and <tt class="docutils literal"><span class="pre">equals</span></tt> methods based on selected class parameters. The implementations are based on the recommendations from <a class="reference external" href="http://www.artima.com/pins1ed/object-equality.html">Programming in Scala</a>. This includes a <tt class="docutils literal"><span class="pre">canEqual</span></tt> method, thus the <tt class="docutils literal"><span class="pre">Equals</span></tt> trait is mixed in as well.</p>
 <p>To start this refactoring simply select a class. As an example we will use the class <tt class="docutils literal"><span class="pre">Generate</span></tt>:</p>
-<img alt="../../../../_images/generate-before1.png" src="../../../../_images/generate-before1.png" />
+<img alt="../../../../_images/generate-before2.png" src="../../../../_images/generate-before2.png" />
 <p>In the refactoring dialog the class parameters that should be included in the equals comparison and the hashcode computation can be selected. Optionally calls to <tt class="docutils literal"><span class="pre">super</span></tt> can be inserted:</p>
-<img alt="../../../../_images/hashcode-and-equals-dialog1.png" src="../../../../_images/hashcode-and-equals-dialog1.png" />
+<img alt="../../../../_images/hashcode-and-equals-dialog2.png" src="../../../../_images/hashcode-and-equals-dialog2.png" />
 <p>Selecting both class parameters and inserting calls to <tt class="docutils literal"><span class="pre">super</span></tt> results in this:</p>
-<img alt="../../../../_images/hashcode-and-equals-after1.png" src="../../../../_images/hashcode-and-equals-after1.png" />
+<img alt="../../../../_images/hashcode-and-equals-after2.png" src="../../../../_images/hashcode-and-equals-after2.png" />
 <p>If the original class already has existing implementations for <tt class="docutils literal"><span class="pre">canEqual</span></tt>, <tt class="docutils literal"><span class="pre">equals</span></tt> or <tt class="docutils literal"><span class="pre">hashCode</span></tt>, the refactoring dialog offers the option to keep those or let them be replaced by newly generated implementations:</p>
-<img alt="../../../../_images/generate-existing-dialog1.png" src="../../../../_images/generate-existing-dialog1.png" />
+<img alt="../../../../_images/generate-existing-dialog2.png" src="../../../../_images/generate-existing-dialog2.png" />
 </div>
 <div class="section" id="introduce-productn-trait">
 <h2>Introduce ProductN trait</h2>
 <p>Asked for by the community, <em>Introduce ProductN trait</em> is an extension of <em>Generate hashCode and equals</em>. In addition to <em>Generate hashCode and equals</em> this generator creates the methods <tt class="docutils literal"><span class="pre">_1</span></tt> to <tt class="docutils literal"><span class="pre">_n</span></tt> for the selected class parameters and mixes in the trait <tt class="docutils literal"><span class="pre">ProductN</span></tt>, where <em>n</em> stands for the number of selected class parameters.</p>
 <p>The refactoring dialog is almost the same as for <em>Generate hashCode and equals</em>:</p>
-<img alt="../../../../_images/productN-dialog1.png" src="../../../../_images/productN-dialog1.png" />
+<img alt="../../../../_images/productN-dialog2.png" src="../../../../_images/productN-dialog2.png" />
 <p>Selecting only the first parameter <tt class="docutils literal"><span class="pre">a</span></tt> and omitting calls to <tt class="docutils literal"><span class="pre">super</span></tt> results in this:</p>
-<img alt="../../../../_images/productN-after1.png" src="../../../../_images/productN-after1.png" />
+<img alt="../../../../_images/productN-after2.png" src="../../../../_images/productN-after2.png" />
 </div>
 </div>
 
@@ -135,6 +136,7 @@
   <div class="container">
     <ul>
       <li><h5>Download</h5></li>
+      <li><a href="/download/sdk.html">SDK</a></li>
       <li><a href="/download/current.html">Stable</a></li>
       <li><a href="/download/milestone.html">Milestone</a></li>
       <li><a href="/download/nightly.html">Nightlies</a></li>
