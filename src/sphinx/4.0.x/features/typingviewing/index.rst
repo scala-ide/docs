@@ -7,6 +7,7 @@ Typing and Viewing
    errors-as-you-type
    code-completion
    code-templates
+   auto-edits
    formatting/index
    inferred-hover
    implicit-highlighting/index
