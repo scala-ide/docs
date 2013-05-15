@@ -14,6 +14,12 @@ When posting a message, please remember the suggestions from `How To Ask Questio
 
 __ http://www.catb.org/~esr/faqs/smart-questions.html
 
+IRC
+-------------
+
+You can also drop by the #scalaide IRC channel on freenode. If you don't have an
+IRC client installed you can use this `online client`_.
+
 Reporting Problems
 ------------------
 
@@ -36,3 +42,4 @@ If you're unsure if you have found an issue or not, please don't hesitate to ask
 .. _scala-ide-user: http://groups.google.com/group/scala-ide-user
 .. _scala-ide-dev: http://groups.google.com/group/scala-ide-dev
 .. _support page: http://scala-ide-portfolio.assembla.com/spaces/scala-ide/support/tickets
+.. _online client: http://webchat.freenode.net/
