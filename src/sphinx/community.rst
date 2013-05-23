@@ -38,7 +38,7 @@ Please, first explore the `existing tickets`_. If you cannot add your contributi
 If you're unsure if you have found an issue or not, please don't hesitate to ask on the `scala-ide-user`_ mailing list.
 
 
-.. _existing tickets: http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets
+.. _existing tickets: https://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets?tickets_report_id=0
 .. _scala-ide-user: http://groups.google.com/group/scala-ide-user
 .. _scala-ide-dev: http://groups.google.com/group/scala-ide-dev
 .. _support page: http://scala-ide-portfolio.assembla.com/spaces/scala-ide/support/tickets
