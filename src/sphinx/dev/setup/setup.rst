@@ -108,6 +108,23 @@ Click OK.
 If after rebuilding you see any errors, drop us a note in the `Scala IDE Developer
 Mailing List <http://groups.google.com/group/scala-ide-dev?pli=1>`_.
 
+Install the Scalastyle plugin
+-----------------------------
+
+The Scala IDE uses `Scalastyle <http://www.scalastyle.org/>`_ to ensure a clean code base. Thus, while it is not
+absolutely necessary, we recommend to install the Scalastyle plugin that will show errors whenever the style rules
+are violated. The update site for the plugin can be found on the homepage of Scalastyle.
+
+After installing the plugin one needs to add the Scalastyle configuration of the Scala IDE. This can easily be done
+in ``Window → Preferences → Scalastyle → Browse/Add``, where the configuration can be found at ``<path-to-scala-ide>/org.scala-ide.sdt.core/scala-ide-style-config.xml``.
+The Scalastyle builder is already added to all projects that should be checked, thus no further configuration is required.
+
+It is also possible to run Scalastyle on the shell. For this type
+
+    mvn scalastyle:check
+
+in the root directory of the Scala IDE to invoke Scalastyle.
+
 Run the Scala IDE within Eclipse
 --------------------------------
 
