@@ -42,7 +42,7 @@ The Scala IDE can be installed effortless on any of the below Eclipse packages:
 * SpringSource Tool Suite
 
 If you are using one of the above Eclipse packages you are all set and ready to :doc:`install the Scala
-IDE <../gettingstarted/index>`.
+IDE </current-user-doc/gettingstarted/index>`.
 
 In case you are using a different Eclipse package (e.g., Eclipse IDE for C/C++ Developers), don't panic,
 the Scala IDE has only one dependency and it's a two minutes job to update your Eclipse environment and
@@ -53,7 +53,7 @@ to the ``Help > Install New Software`` menu, select the eclipse update site (e.g
 http://download.eclipse.org/releases/indigo") and, under the Programming Languages section, select
 Eclipse Java Development Tools. Install it.
 
-Now that the JDT is installed, go ahead and :doc:`install the Scala IDE <../gettingstarted/index>`.
+Now that the JDT is installed, go ahead and :doc:`install the Scala IDE </current-user-doc/gettingstarted/index>`.
 
 Can I install more than one Scala IDE plugin?
 .............................................
@@ -136,4 +136,4 @@ What are the limitations?
 * The colon commands available in the terminal REPL are not supported.
 * Commands cannot be forcibly killed. For example, if an infinite loop is launched, it will continue in the background until Eclipse is shutdown.
 
-.. include:: known-issues.rst
+.. include:: /current-user-doc/faq/known-issues.rst

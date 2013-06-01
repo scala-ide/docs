@@ -17,7 +17,7 @@ checks it is activated at every launch. The easiest way to debug
 this is therefore to accept activation of JDT weaving at
 launch. Otherwise, you can look into turning it on manually using
 the :doc:`Scala Diagnostics Dialog
-<../advancedsetup/index>`.
+</current-user-doc/advancedsetup/index>`.
 
 Scala errors on all Unicode arrows
 ..................................

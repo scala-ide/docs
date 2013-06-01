@@ -60,7 +60,7 @@ Go through the next screens to validate the list of plug-ins to install, the :do
 
 After having restarted Eclipse, Scala IDE is installed.
 
-For a more fine-tuned setup, check the :doc:`Advanced Setup <../advancedsetup/index>` page.
+For a more fine-tuned setup, check the :doc:`Advanced Setup </current-user-doc/advancedsetup/index>` page.
 
 
 Using Scala IDE with an existing project
@@ -98,7 +98,7 @@ After installation, maven projects can be imported using ``File → Import → M
 Troubleshooting
 ---------------
 
-Check the :doc:`Known Issues <../faq/known-issues>` section.
+Check the :doc:`Known Issues </current-user-doc/faq/known-issues>` section.
 
 
 .. _current section: http://scala-ide.org/download/current.html
