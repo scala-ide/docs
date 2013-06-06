@@ -1,6 +1,6 @@
 .. include:: /global_defs.hrst
 
-Find Occurrences
+Find Occurrences |new| |plugin|
 ================
 
 .. note:: This feature requires the `Scala Search plugin`_. In the future this will be merged with the IDE
