@@ -89,6 +89,28 @@
       <div class="span11 main-content">
         <div class="section" id="changelog">
 <h1>Changelog</h1>
+<div class="section" id="rc1">
+<h2>3.0.1-RC1</h2>
+<ul class="simple">
+<li>StringIndexOutOfBounds exception in hyperlinking (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001526">#1001526</a>)</li>
+<li>Race condition when parsing XML literals (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001708">#1001708</a>)</li>
+<li>Hyperlinking to overloaded Java methods (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000421">#1000421</a>)</li>
+<li>Correct hyperlinking inside interpolated strings (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001408">#1001408</a>)</li>
+<li>Use the configured JDK when building a project (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001387">#1001387</a>)</li>
+<li>Fix race conditions in compiler names (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001607">#1001607</a>)</li>
+<li>Implemented <cite>skipAllBreakpoints</cite> for the Scala Debugger (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001437">#1001437</a>)</li>
+<li>Removed all calls to <cite>List.head</cite> in <cite>StructureBuilder</cite> (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001707">#1001707</a>)</li>
+<li>Correctly attach to a running VM (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001639">#1001639</a>)</li>
+<li>Don't force <cite>-Xprint-types</cite> (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001677">#1001677</a>)</li>
+<li>Deprecation warnings no longer accumulate (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001595">#1001595</a>)</li>
+<li>Only consider opened projects when computing a project's direct dependencies (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001714">#1001714</a>)</li>
+<li>Version bumping across the board, which should make our 3.0.x nightlies work better (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001713">#1001713</a>)</li>
+<li>Improve <cite>Open Type</cite> This is a backport of #384. (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000743">#1000743</a>, <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001035">#1001035</a>)</li>
+<li>Fix race condition during semantic highlighting (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001623">#1001623</a>)</li>
+<li>Avoid workspace locks when building (enabling future parallel builds) (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001631">#1001631</a>)</li>
+<li>Correctly search for threads, and don't use <cite>Option.get</cite> (fix JRebel compatibility) (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001599">#1001599</a>)</li>
+</ul>
+</div>
 <div class="section" id="codename-helium">
 <h2>3.0.0 - codename Helium</h2>
 <div class="section" id="rc3-2013-03-13">

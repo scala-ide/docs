@@ -1,6 +1,28 @@
 Changelog
 =========
 
+3.0.1-RC1
+-----------------------
+
+- StringIndexOutOfBounds exception in hyperlinking (:ticket:`1001526`)
+- Race condition when parsing XML literals (:ticket:`1001708`)
+- Hyperlinking to overloaded Java methods (:ticket:`1000421`)
+- Correct hyperlinking inside interpolated strings (:ticket:`1001408`)
+- Use the configured JDK when building a project (:ticket:`1001387`)
+- Fix race conditions in compiler names (:ticket:`1001607`)
+- Implemented `skipAllBreakpoints` for the Scala Debugger (:ticket:`1001437`)
+- Removed all calls to `List.head` in `StructureBuilder` (:ticket:`1001707`)
+- Correctly attach to a running VM (:ticket:`1001639`)
+- Don't force `-Xprint-types` (:ticket:`1001677`)
+- Deprecation warnings no longer accumulate (:ticket:`1001595`)
+- Only consider opened projects when computing a project's direct dependencies (:ticket:`1001714`)
+- Version bumping across the board, which should make our 3.0.x nightlies work better (:ticket:`1001713`)
+- Improve `Open Type` This is a backport of #384. (:ticket:`1000743`, :ticket:`1001035`)
+- Fix race condition during semantic highlighting (:ticket:`1001623`)
+- Avoid workspace locks when building (enabling future parallel builds) (:ticket:`1001631`)
+- Correctly search for threads, and don't use `Option.get` (fix JRebel compatibility) (:ticket:`1001599`)
+
+
 3.0.0 - codename Helium
 -----------------------
 
