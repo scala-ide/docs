@@ -1,8 +1,11 @@
 Changelog
 =========
 
-3.0.1-RC1
------------------------
+3.0.1
+-----
+
+RC1 (2013-06-07)
+................
 
 - StringIndexOutOfBounds exception in hyperlinking (:ticket:`1001526`)
 - Race condition when parsing XML literals (:ticket:`1001708`)
