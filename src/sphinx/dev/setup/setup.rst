@@ -20,6 +20,13 @@ Requirements
 
 * The `Scala IDE nightly for Scala 2.10 <http://scala-ide.org/download/nightly.html>`_.
 
+* The `Eclipse Plug-in Development Environment
+  <http://www.eclipse.org/pde/>`_, which ships with the Eclipse SDK but may
+  need to be installed manually.  Choose ``Help > Install New Software...``,
+  select the `Indigo Update Site
+  <http://download.eclipse.org/releases/indigo>`_, then install ``General
+  Purpose Tools > Eclipse Plug-in Development Environment``.
+
 This document uses a script to build Scala IDE. If you are on Windows, we suggest you to install Cygwin (how could you live without it on Windows anyway!?). Otherwise, the :ref:`building_run-the-build` section of the documentation describes the different steps to execute for a full build.
 
 .. _setup_fork-the-project:
