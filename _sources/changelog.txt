@@ -4,6 +4,12 @@ Changelog
 3.0.1
 -----
 
+RC2 (2013-06-27)
+................
+
+- Run As shouldn't display an error when a binary Main can be found (:ticket:`1001760`)
+
+
 RC1 (2013-06-07)
 ................
 
