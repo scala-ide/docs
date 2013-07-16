@@ -55,7 +55,7 @@
 		<li class="menu">
 	      	<a href="#" class="menu">Download</a>
 	      	<ul class="menu-dropdown">
-	        	<li><a href="/download/sdk.html">SDK</a></li>
+	        	<li><a href="/download/sdk.html">Bundle</a></li>
 	        	<li><a href="/download/current.html">Stable</a></li>
 	        	<li><a href="/download/milestone.html">Milestone</a></li>
 	        	<li><a href="/download/nightly.html">Nightlies</a></li>
@@ -93,7 +93,7 @@
 <h2>General</h2>
 <div class="section" id="what-eclipse-platforms-are-supported">
 <h3>What Eclipse Platforms are supported?</h3>
-<p>The Scala IDE 3.0 officially supports both <a class="reference external" href="http://www.eclipse.org/downloads/packages/release/indigo/sr2">Eclipse 3.7 (Indigo)</a> and has experimental support for <a class="reference external" href="http://www.eclipse.org/downloads/">Eclipse 3.8/4.2 (Juno)</a>.</p>
+<p>The Scala IDE 3.0 officially supports both <a class="reference external" href="http://www.eclipse.org/downloads/packages/release/indigo/sr2">Eclipse 3.7 (Indigo)</a> and has experimental support for <a class="reference external" href="http://www.eclipse.org/juno/">Eclipse 3.8/4.2 (Juno)</a> and <a class="reference external" href="http://www.eclipse.org/kepler/">Eclipse 4.3 (Kepler)</a>.</p>
 </div>
 <div class="section" id="i-have-a-retina-display-and-eclipse-looks-blurry-how-can-i-fix-it">
 <h3>I have a Retina Display and Eclipse looks blurry. How can I fix it?</h3>
@@ -118,7 +118,7 @@
 <h3>What Eclipse package should I use?</h3>
 <p>The Scala IDE can be installed effortless on any of the below Eclipse packages:</p>
 <ul class="simple">
-<li>Eclipse Classic</li>
+<li>Eclipse Classic / Eclipse Standard</li>
 <li>Eclipse IDE for Java EE Developers</li>
 <li>Eclipse IDE for Java Developers</li>
 <li>SpringSource Tool Suite</li>
@@ -219,7 +219,7 @@ the <a class="reference internal" href="../current-user-doc/advancedsetup/index.
 <p>The code contains Unicode niceties like <tt class="docutils literal"><span class="pre">←</span></tt> and <tt class="docutils literal"><span class="pre">⇒</span></tt>, but the editor doesn't seem to be able to display them, and errors are reported at their location.</p>
 <p><strong>Solution</strong>:</p>
 <p>The operating system is not using UTF-8 by default, and its default encoding is used inside Eclipse.</p>
-<p>The encoding used to open files can be configured at different levels. Most of the time, setting Eclipse default encoding to UTF-8 in <tt class="docutils literal"><span class="pre">General</span> <span class="pre">→</span> <span class="pre">Workspace</span></tt> in the preferences <a href="#id24"><span class="problematic" id="id25"><span id="id4"></span>[#preferences]_</span></a> is enough. But in some case, the wrong encoding might also have been set in the project properties, or even the file properties.</p>
+<p>The encoding used to open files can be configured at different levels. Most of the time, setting Eclipse default encoding to UTF-8 in <tt class="docutils literal"><span class="pre">General</span> <span class="pre">→</span> <span class="pre">Workspace</span></tt> in the preferences <a href="#id25"><span class="problematic" id="id26"><span id="id5"></span>[#preferences]_</span></a> is enough. But in some case, the wrong encoding might also have been set in the project properties, or even the file properties.</p>
 </div>
 <div class="section" id="red-screen-of-death-red-squiggles-everywhere">
 <h3>Red screen of death (red squiggles everywhere)</h3>
@@ -234,7 +234,7 @@ The prime suspect is Maven Dependencies, which can download and add an incompati
 <p><strong>Solution</strong>:</p>
 <p>During the development of version 2.0.0, the configuration of the Scala completion engines has been modified to make sure that no more disabled by mistake. If Scala IDE has been updated from an old beta version, it is possible that the Scala completion engines (<tt class="docutils literal"><span class="pre">Scala</span> <span class="pre">Completions</span></tt> and <tt class="docutils literal"><span class="pre">Scala</span> <span class="pre">Completion</span> <span class="pre">(Java</span> <span class="pre">sources)</span></tt>) need to be re-enabled.</p>
 <p>The diagnostic tool at <tt class="docutils literal"><span class="pre">Scala</span> <span class="pre">→</span> <span class="pre">Run</span> <span class="pre">Setup</span> <span class="pre">Diagnostic</span></tt> allows to fix this problem. Make sure that <tt class="docutils literal"><span class="pre">Use</span> <span class="pre">Scala-compatible</span> <span class="pre">JDT</span> <span class="pre">content</span> <span class="pre">assist</span> <span class="pre">proposals</span></tt> is enabled.</p>
-<img alt="../_images/setup-diagnostics-019.png" src="../_images/setup-diagnostics-019.png" />
+<img alt="../_images/setup-diagnostics-014.png" src="../_images/setup-diagnostics-014.png" />
 </div>
 <div class="section" id="bad-completion-when-using-companion-object-in-java">
 <h3>Bad completion when using companion object in Java</h3>
@@ -308,9 +308,9 @@ this problem if you upgrade to JRE 7 or newer.</p>
 </table>
 </div>
 </div>
-<div class="section" id="id8">
-<h2>Know Issues</h2>
 <div class="section" id="id9">
+<h2>Know Issues</h2>
+<div class="section" id="id10">
 <h3>Do Not Enter road sign when opening a Scala Editor</h3>
 <p><strong>Symptoms</strong>:</p>
 <p>When opening a Scala editor, the error &quot;Could not open the editor: org.eclipse.jdt.internal.core.CompilationUnit cannot be cast to scala.tools.eclipse.InteractiveCompilationUnit&quot; (or something similar) appears.</p>
@@ -322,30 +322,30 @@ this is therefore to accept activation of JDT weaving at
 launch. Otherwise, you can look into turning it on manually using
 the <a class="reference internal" href="../current-user-doc/advancedsetup/index.html"><em>Scala Diagnostics Dialog</em></a>.</p>
 </div>
-<div class="section" id="id10">
+<div class="section" id="id11">
 <h3>Scala errors on all Unicode arrows</h3>
 <p><strong>Symptoms</strong>:</p>
 <p>The code contains Unicode niceties like <tt class="docutils literal"><span class="pre">←</span></tt> and <tt class="docutils literal"><span class="pre">⇒</span></tt>, but the editor doesn't seem to be able to display them, and errors are reported at their location.</p>
 <p><strong>Solution</strong>:</p>
 <p>The operating system is not using UTF-8 by default, and its default encoding is used inside Eclipse.</p>
-<p>The encoding used to open files can be configured at different levels. Most of the time, setting Eclipse default encoding to UTF-8 in <tt class="docutils literal"><span class="pre">General</span> <span class="pre">→</span> <span class="pre">Workspace</span></tt> in the preferences <a href="#id26"><span class="problematic" id="id27"><span id="id11"></span>[#preferences]_</span></a> is enough. But in some case, the wrong encoding might also have been set in the project properties, or even the file properties.</p>
+<p>The encoding used to open files can be configured at different levels. Most of the time, setting Eclipse default encoding to UTF-8 in <tt class="docutils literal"><span class="pre">General</span> <span class="pre">→</span> <span class="pre">Workspace</span></tt> in the preferences <a href="#id27"><span class="problematic" id="id28"><span id="id12"></span>[#preferences]_</span></a> is enough. But in some case, the wrong encoding might also have been set in the project properties, or even the file properties.</p>
 </div>
-<div class="section" id="id12">
+<div class="section" id="id13">
 <h3>Red screen of death (red squiggles everywhere)</h3>
 <p>The number one cause of <em>nothing works</em> is a mismatch between the Scala version of the Eclipse plug-in and your project's. Make sure there is only one version of the Scala library on your classpath, and that it matches the version provided by Scala IDE.
 The prime suspect is Maven Dependencies, which can download and add an incompatible scala-library.jar.</p>
 <p>The classpath validator added in Scala IDE 2.0.0 should detect this problem and provide meaningful problem markers.</p>
 </div>
-<div class="section" id="id13">
+<div class="section" id="id14">
 <h3>No completions available</h3>
 <p><strong>Symptoms</strong>:</p>
 <p>When pressing Ctrl-Space, the list doesn't contain code completion proposals, only templates, but other semantic actions (such as hyperlinking) work fine.</p>
 <p><strong>Solution</strong>:</p>
 <p>During the development of version 2.0.0, the configuration of the Scala completion engines has been modified to make sure that no more disabled by mistake. If Scala IDE has been updated from an old beta version, it is possible that the Scala completion engines (<tt class="docutils literal"><span class="pre">Scala</span> <span class="pre">Completions</span></tt> and <tt class="docutils literal"><span class="pre">Scala</span> <span class="pre">Completion</span> <span class="pre">(Java</span> <span class="pre">sources)</span></tt>) need to be re-enabled.</p>
 <p>The diagnostic tool at <tt class="docutils literal"><span class="pre">Scala</span> <span class="pre">→</span> <span class="pre">Run</span> <span class="pre">Setup</span> <span class="pre">Diagnostic</span></tt> allows to fix this problem. Make sure that <tt class="docutils literal"><span class="pre">Use</span> <span class="pre">Scala-compatible</span> <span class="pre">JDT</span> <span class="pre">content</span> <span class="pre">assist</span> <span class="pre">proposals</span></tt> is enabled.</p>
-<img alt="../_images/setup-diagnostics-019.png" src="../_images/setup-diagnostics-019.png" />
+<img alt="../_images/setup-diagnostics-014.png" src="../_images/setup-diagnostics-014.png" />
 </div>
-<div class="section" id="id14">
+<div class="section" id="id15">
 <h3>Bad completion when using companion object in Java</h3>
 <p>Using the Java code assist to access a Scala companion object generates invalid code.</p>
 <div class="highlight-scala"><div class="highlight"><pre><span class="k">package</span> <span class="nn">stest</span>
@@ -370,7 +370,7 @@ The prime suspect is Maven Dependencies, which can download and add an incompati
 </div>
 <p>This a JDT problem. See <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1729">#1729</a>.</p>
 </div>
-<div class="section" id="id16">
+<div class="section" id="id17">
 <h3>Eclipse freezes (deadlock)</h3>
 <p><strong>Symptoms</strong>:</p>
 <p>The IDE is completely frozen.</p>
@@ -403,13 +403,13 @@ this problem if you upgrade to JRE 7 or newer.</p>
 </div></blockquote>
 <p>If the thread dump doesn't match the one in <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000317">#1000317</a> or <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000996">#1000996</a>, please open a new ticket with your thread dump attached.</p>
 </div>
-<div class="section" id="id18">
+<div class="section" id="id19">
 <h3>NoClassDefFoundError (scala/tools/nsc/settings/MutableSettings$SettingValue)</h3>
 <p><strong>Symptoms</strong>:</p>
 <p>After upgrading the Scala plug-in, <tt class="docutils literal"><span class="pre">java.lang.NoClassDefFoundError:</span> <span class="pre">scala/tools/nsc/settings/MutableSettings$SettingValue</span></tt> exception is reported for all Scala projects in the workspace. Scala IDE is then unusable.</p>
 <p><strong>Solution</strong>:</p>
 <p>If you have several update sites providing different version of Scala IDE, Eclipse may have decided that a newest Scala library should be used instead of the one provided by the plug-in to be installed. To avoid this problem, make sure to uncheck the <tt class="docutils literal"><span class="pre">Contact</span> <span class="pre">all</span> <span class="pre">update</span> <span class="pre">sites</span> <span class="pre">during</span> <span class="pre">install</span> <span class="pre">to</span> <span class="pre">find</span> <span class="pre">required</span> <span class="pre">software</span></tt> option. It is situated at the bottom of the <tt class="docutils literal"><span class="pre">Help</span> <span class="pre">→</span> <span class="pre">Install</span> <span class="pre">New</span> <span class="pre">Software...</span></tt> dialog.</p>
-<table class="docutils footnote" frame="void" id="id22" rules="none">
+<table class="docutils footnote" frame="void" id="id23" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
 <tr><td class="label">[2]</td><td>The Eclipse preferences are accessible using <tt class="docutils literal"><span class="pre">Windows</span> <span class="pre">→</span> <span class="pre">Preferences</span></tt> (or <tt class="docutils literal"><span class="pre">Eclipse</span> <span class="pre">→</span> <span class="pre">Preferences</span></tt> on Mac osX).</td></tr>
@@ -436,7 +436,7 @@ this problem if you upgrade to JRE 7 or newer.</p>
   <div class="container">
     <ul>
       <li><h5>Download</h5></li>
-      <li><a href="/download/sdk.html">SDK</a></li>
+      <li><a href="/download/sdk.html">Bundle</a></li>
       <li><a href="/download/current.html">Stable</a></li>
       <li><a href="/download/milestone.html">Milestone</a></li>
       <li><a href="/download/nightly.html">Nightlies</a></li>
