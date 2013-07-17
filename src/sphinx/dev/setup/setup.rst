@@ -7,27 +7,24 @@ You are literally instants away from being all set and ready to start hacking th
 Requirements
 ------------
 
-* `JDK 5 <http://www.oracle.com/technetwork/java/javasebusiness/downloads/java-archive-downloads-javase5-419410.html>`_
-  or `JDK 6 <http://www.oracle.com/technetwork/java/javasebusiness/downloads/java-archive-downloads-javase6-419409.html>`_
-  (JDK 7 is **not** supported. As a matter of fact, there have been issues reported when running Eclipse with a Java 7 JVM. For instance,
-  see https://bugs.eclipse.org/bugs/show_bug.cgi?id=364735).
-
-* `Maven 3 <http://maven.apache.org/download.html>`_.
-
-* `Git <http://git-scm.com/>`_ and a `GitHub <https://github.com/>`_ account.
-
-* `Eclipse 3.7 (Indigo) <http://www.eclipse.org/downloads/>`_, including the JDT. Either "Eclipse Classic" or "Eclipse for Java Developers" is sufficient (Be aware, the plugin's sources are no longer compatible with Eclipse 3.6).
-
-* The `Scala IDE nightly for Scala 2.10 <http://scala-ide.org/download/nightly.html>`_.
+* `Eclipse 4.3 (Kepler)  <http://www.eclipse.org/downloads/>`_, including PDT and JDT. (Be aware, the plugin's sources are no longer compatible with Eclipse 3.x).
 
 * The `Eclipse Plug-in Development Environment
   <http://www.eclipse.org/pde/>`_, which ships with the Eclipse SDK but may
   need to be installed manually.  Choose ``Help > Install New Software...``,
   select the `Indigo Update Site
-  <http://download.eclipse.org/releases/indigo>`_, then install ``General
+  <http://download.eclipse.org/releases/kepler>`_, then install ``General
   Purpose Tools > Eclipse Plug-in Development Environment``.
 
-This document uses a script to build Scala IDE. If you are on Windows, we suggest you to install Cygwin (how could you live without it on Windows anyway!?). Otherwise, the :ref:`building_run-the-build` section of the documentation describes the different steps to execute for a full build.
+* The `Scala IDE nightly for Scala 2.10 <http://scala-ide.org/download/nightly.html>`_.
+
+* `Java 6 is recommended for Eclipse 4.3 <http://wiki.eclipse.org/Eclipse/Installation#Install_a_JVM>`_. Java 7 can also be used.
+
+* `Maven 3 <http://maven.apache.org/download.html>`_.
+
+* `Git <http://git-scm.com/>`_ and a `GitHub <https://github.com/>`_ account.
+
+This document uses a script to build Scala IDE. If you are on Windows, you could try `Cygwin <http://www.cygwin.com/>`_. Otherwise, the :ref:`building_run-the-build` section of the documentation describes the different steps to execute for a full build.
 
 .. _setup_fork-the-project:
 
