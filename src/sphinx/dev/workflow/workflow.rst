@@ -166,6 +166,22 @@ test your code, as all Scala IDE developers do.
        additions) by commenting against your pull request with
        the string ``PLS REBUILD ALL``.
 
+
+.. note::
+
+       In regard to rewriting history, practicalities yield to
+       the letter of the law, though : adding to commit messages
+       is fine, since it creates no conflicts, adding commits is
+       also OK — no conflicts there either —, and there is
+       somewhat of a tolerance for squashing and reorganizing a
+       set of commits that was "splayed out" to ease review at
+       the last minute, provided it's clear that no resulting
+       commit will break the build.
+       However, any meaningful reorganization of your pull
+       request that should go again through examination should
+       not be force pushed, and should constitute a new pull
+       request.
+
 Committers
 ----------
 
