@@ -29,7 +29,7 @@ Step 2: Enable Scala and AndroidProguardScala
 (???)
 
 #. Open an Android project.
-#. Right-click the project and choose Add Scala Nature (may be under the Scala sub-menu).
+#. Right-click the project and choose Add Scala Nature (which may be under the 'Configure' sub-menu).
 #. After a successful build, right-click the project and choose Add AndroidProguardScala Nature.
 
 Step 3: Develop for Android using Scala
