@@ -146,6 +146,17 @@ After upgrading the Scala plug-in, ``java.lang.NoClassDefFoundError: scala/tools
 
 If you have several update sites providing different version of Scala IDE, Eclipse may have decided that a newest Scala library should be used instead of the one provided by the plug-in to be installed. To avoid this problem, make sure to uncheck the ``Contact all update sites during install to find required software`` option. It is situated at the bottom of the ``Help → Install New Software...`` dialog.
 
+Incorrect compiler error reported in the Scala Editor
+............................................................................
+
+**Symptoms**:
+
+A compiler error is reported in the Scala editor, when indeed the code is correct.
+
+**Solution**:
+
+In rare circumstances, the interactive typecheker (a.k.a., presentation compiler) can get in a state where it reports false, type-checking errors. As a workaround, we've provided a UI action that force restarts the presentation compiler. You can access it by right clicking on the project folder in the Package Explorer view, then ``Scala → Restart Presentation Compiler``. If the incorrect error is still reported after restarting the presentation compiler, please drop us a note in the scala-ide-user mailing list.
+
 .. _#1000317: http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000317
 .. _#1000996: http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000996
 
