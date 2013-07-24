@@ -305,6 +305,13 @@ this problem if you upgrade to JRE 7 or newer.</p>
 <p>After upgrading the Scala plug-in, <tt class="docutils literal"><span class="pre">java.lang.NoClassDefFoundError:</span> <span class="pre">scala/tools/nsc/settings/MutableSettings$SettingValue</span></tt> exception is reported for all Scala projects in the workspace. Scala IDE is then unusable.</p>
 <p><strong>Solution</strong>:</p>
 <p>If you have several update sites providing different version of Scala IDE, Eclipse may have decided that a newest Scala library should be used instead of the one provided by the plug-in to be installed. To avoid this problem, make sure to uncheck the <tt class="docutils literal"><span class="pre">Contact</span> <span class="pre">all</span> <span class="pre">update</span> <span class="pre">sites</span> <span class="pre">during</span> <span class="pre">install</span> <span class="pre">to</span> <span class="pre">find</span> <span class="pre">required</span> <span class="pre">software</span></tt> option. It is situated at the bottom of the <tt class="docutils literal"><span class="pre">Help</span> <span class="pre">→</span> <span class="pre">Install</span> <span class="pre">New</span> <span class="pre">Software...</span></tt> dialog.</p>
+</div>
+<div class="section" id="incorrect-compiler-error-reported-in-the-scala-editor">
+<h3>Incorrect compiler error reported in the Scala Editor</h3>
+<p><strong>Symptoms</strong>:</p>
+<p>A compiler error is reported in the Scala editor, when indeed the code is correct.</p>
+<p><strong>Solution</strong>:</p>
+<p>In rare circumstances, the interactive typecheker (a.k.a., presentation compiler) can get in a state where it reports false, type-checking errors. As a workaround, we've provided a UI action that force restarts the presentation compiler. You can access it by right clicking on the project folder in the Package Explorer view, then <tt class="docutils literal"><span class="pre">Scala</span> <span class="pre">→</span> <span class="pre">Restart</span> <span class="pre">Presentation</span> <span class="pre">Compiler</span></tt>. If the incorrect error is still reported after restarting the presentation compiler, please drop us a note in the scala-ide-user mailing list.</p>
 <table class="docutils footnote" frame="void" id="preferences" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
