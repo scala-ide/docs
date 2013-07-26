@@ -15,6 +15,12 @@ In the following picture there are all literals shown that are available in Scal
 
 .. image:: images/literals.png
 
+Inside of comments, the editor supports the feature to highlight so called task tags, also known as todo markers:
+
+.. image:: images/todo-markers.png
+
+Because this is a feature JDT supports too, they are not implemented as a complete separate feature. Instead, SDT uses the markers already defined by JDT, which can be found and configured in ``Preferences → Java → Compiler → Task Tags``. The task tags can also be shown on the right and left side of the editor as so called Annotations. These Annotations can be configured in ``Preferences → General → Editors → Text Editors → Annotations``. Furthermore it is possible to view the them in the Tasks View that can be found in ``Window → Show View → Other... → General → Other``.
+
 Configuration
 -------------
 

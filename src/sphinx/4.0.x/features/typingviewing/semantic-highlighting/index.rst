@@ -17,6 +17,8 @@ colored the same way.
 
 .. image:: images/example.png
 
+Semantic highlighting works for both, the Scala source files and the source attachments of compiled Scala files.
+
 Configuration
 -------------
 
