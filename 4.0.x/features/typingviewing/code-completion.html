@@ -101,6 +101,15 @@
 <a class="reference external image-reference" href="../_images/feature-code-completion-01.png"><img alt="../../../_images/feature-code-completion-012.png" src="../../../_images/feature-code-completion-012.png" style="width: 100%;" /></a>
 <p>The Scala elements compatible with Java are provided in <strong>Java source files</strong>.</p>
 <a class="reference external image-reference" href="../_images/feature-code-completion-02.png"><img alt="../../../_images/feature-code-completion-022.png" src="../../../_images/feature-code-completion-022.png" style="width: 100%;" /></a>
+<div class="section" id="completion-overwrites">
+<h2>Completion overwrites</h2>
+<p>Users can choose if identifiers inserted by the code completion mechanism should overwrite already existing ones. This is a very useful feauture if one decides to change already existing source code. For example, if we have the following</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">List</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">fl</span><span class="o">^</span><span class="nb">map</span><span class="p">(</span><span class="n">List</span><span class="p">(</span><span class="n">_</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>where <tt class="docutils literal"><span class="pre">^</span></tt> denotes the cursors position, it would not be that useful when as completion <tt class="docutils literal"><span class="pre">flatMap</span></tt> is chosen but the already existing <tt class="docutils literal"><span class="pre">map</span></tt> is not replaced. Completion overwrites allow exactly these sort of replacements. They need to be configured in <tt class="docutils literal"><span class="pre">Preferences</span> <span class="pre">→</span> <span class="pre">Java</span> <span class="pre">→</span> <span class="pre">Editor</span> <span class="pre">→</span> <span class="pre">Content</span> <span class="pre">Assist</span></tt> and then in the section <tt class="docutils literal"><span class="pre">Insertion</span></tt>.</p>
+<p>A small detail do mention here, is, that it is possible to toggle between the completion modes by holding <tt class="docutils literal"><span class="pre">Ctrl</span></tt> while applying the completion.</p>
+</div>
 </div>
 
 	    </div>

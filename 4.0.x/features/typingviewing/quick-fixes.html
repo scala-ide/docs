@@ -110,6 +110,29 @@
 <p><a class="reference external" href="http://wiki.eclipse.org/FAQ_What_is_a_Quick_Fix%3F">Quick Fix</a> can be used to expand an implicit conversion.</p>
 <img alt="../../../_images/quick-fix3.png" src="../../../_images/quick-fix3.png" />
 </div>
+<div class="section" id="create-method-and-class">
+<h2>Create Method and Class</h2>
+<p>For the following code snippet there exists a quick fix for the method call of <tt class="docutils literal"><span class="pre">g</span></tt>:</p>
+<img alt="../../../_images/create-method.png" src="../../../_images/create-method.png" />
+<p>The result of applying this quick fix is the following:</p>
+<div class="highlight-python"><pre>object Test extends App {
+
+  def f() {
+    val value = g("a string")
+  }
+
+  def g(arg: String) = {
+    ???
+  }
+}</pre>
+</div>
+<p>As one can see in the screenshot above it is also possible to create classes, not only methods.</p>
+</div>
+<div class="section" id="change-capitalization">
+<h2>Change Capitalization</h2>
+<p>If one did a type error in the name of a method, it is possible to correct this as long as the only type error is due to wrong capitalization:</p>
+<img alt="../../../_images/change-capitalization.png" src="../../../_images/change-capitalization.png" />
+</div>
 </div>
 
 	    </div>
