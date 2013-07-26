@@ -105,9 +105,9 @@ on the lines of:
 First remove all JARs, and then click the "Add JARs..." button and browse to ``org.scala-ide.sbt.full.library/lib``.
 Select all JARs in the folder and click OK.
 
-Now click the "Order and Export" tab and make sure to export all JARs click the "Select All" button.
+Now, before clicking OK to leave the properties dialog, select the "Order and Export" tab in order to make sure all JARs are exported which can achieved by simply clicking the "Select All" button.
 
-Click OK.
+.. note:: If you want to hack on the Debugger it may be necessary for Linux systems to add the ``tools.jar`` to the classpath. This can be achieved by navigating to ``Preferences → Java → Installed JREs`` and adding the JAR to the JRE that builds your sources. The JAR itself can be found at ``<path-to-JRE/lib/tools.jar>``.
 
 If after rebuilding you see any errors, drop us a note in the `Scala IDE Developer
 Mailing List <http://groups.google.com/group/scala-ide-dev?pli=1>`_.
