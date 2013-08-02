@@ -37,7 +37,7 @@ or the following to build Scala IDE for Scala 2.11:
 
 .. code-block:: bash
 
-   $ ./build-all.sh -P scala-2.11.x clean install
+   $ ./build-all.sh -P scala-2.11.x -P eclipse-juno clean install
 
 .. note::
 
