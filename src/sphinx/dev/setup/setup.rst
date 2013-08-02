@@ -62,17 +62,11 @@ From the project root, run the following command if you are using Scala IDE with
 
    $ ./build-all.sh
 
-The above command, is actually a shortcut for:
-
-.. code-block:: bash
-
-   $ ./build-all.sh -P scala-2.10.x clean install
-
 Or, you can pass a different profile for building the Scala IDE with Scala 2.11:
 
 .. code-block:: bash
 
-   $ ./build-all.sh -P scala-2.11.x clean install
+   $ ./build-all.sh -P scala-2.11.x -P eclipse-juno clean install
 
 If you want more information concerning the build, check out :ref:`building_run-the-build`.
 
@@ -91,7 +85,7 @@ need to import in Eclipse are ``org.scala-ide.sbt.full.library``, ``org.scala-id
 There is **one more thing** to check to get ready to hack the Scala IDE project. You may
 notice that the ``org.scala-ide.sbt.full.library`` project has build path errors. This project is
 grouping together a bunch of SBT jars into one OSGI bundle. The project build path is configured by default to
-reference the 2.10 version of the jars, so the configuration will be wrong if you are working with a different 
+reference the 2.10 version of the jars, so the configuration will be wrong if you are working with a different
 Scala version.
 
 To fix this, right click on the ``org.scala-ide.sbt.full.library`` project and then click "Properties". A
@@ -190,7 +184,7 @@ In the **Arguments** tab, make sure to add the following arguments to the VM arg
    -Dsdtcore.headless -Dsdtcore.notimeouts
 
 The first one tells the IDE to not try to open any windows or dialogs, while the second one disables
-timeouts for certain actions (otherwise, on a slow or overloaded system, the tests might fail simply 
+timeouts for certain actions (otherwise, on a slow or overloaded system, the tests might fail simply
 because of a timeout).
 
 
