@@ -23,7 +23,9 @@ The getting started screencast provides a more visual explanation on the install
 
 .. raw:: html
 
-   <iframe src="http://player.vimeo.com/video/33860742" width="490" height="306" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe>
+   <div id="getting_started_video" class="doc_video">
+     <img class="doc_video" src="../../_images/splash-getting-started-video.png" onclick="startVideo('getting_started_video', 'dGI04efb6hg')"/>
+   </div>
 
 Installation
 ------------

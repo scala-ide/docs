@@ -44,6 +44,7 @@ Contents:
    4.0.x/index
    user/faq
    user/gettingstarted
+   image_placeholder
 
 .. _Scala: http://www.scala-lang.org/
 .. _Scala IDE: http://www.scala-ide.org/

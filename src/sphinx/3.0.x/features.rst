@@ -7,7 +7,9 @@ The features overview screencast gives a quick tour of the new features is Scala
 
 .. raw:: html
 
-   <iframe src="http://player.vimeo.com/video/62605944?title=0&amp;byline=0&amp;portrait=0" width="490" height="306" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+   <div id="nn30_new_features_video" class="doc_video">
+     <img class="doc_video" src="../_images/splash-nn30-new-features-video.png" onclick="startVideo('nn30_new_features_video', '5Rze9eQP7o0')"/>
+   </div>
 
 The following pages provide a description of a list of selected features provided by Scala IDE:
 
