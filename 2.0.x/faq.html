@@ -343,6 +343,12 @@ this problem if you upgrade to JRE 7 or newer.</p>
     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
   })();
 
+  function startVideo(div_id, youtube_id) {
+    var video = '<iframe class="doc_video" src="http://www.youtube.com/embed/' + youtube_id + '?rel=0&autoplay=1&vq=hd720" frameborder="0" allowfullscreen></iframe>';
+    document.getElementById(div_id).innerHTML = video
+  }
+
+
 </script>
 
   </body>

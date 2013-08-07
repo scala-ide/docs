@@ -95,7 +95,7 @@
       <div class="span11 main-content">
         <div class="section" id="setup-and-use-the-scalac-project-with-the-scala-ide">
 <h1>Setup and use the Scalac project with the Scala IDE</h1>
-<div class="admonition-disclaimer admonition ">
+<div class="admonition-disclaimer admonition">
 <p class="first admonition-title">Disclaimer</p>
 <p class="last">The Scala IDE is, as far as we know, the only project built every night on top of the lastest nightly build
 of the Scala compiler. As such, you are bound to be the first to step on compiler bugs. Overall, the experience
@@ -291,6 +291,12 @@ Please use github tickets and pull requests system for feedback.</p>
     ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
   })();
+
+  function startVideo(div_id, youtube_id) {
+    var video = '<iframe class="doc_video" src="http://www.youtube.com/embed/' + youtube_id + '?rel=0&autoplay=1&vq=hd720" frameborder="0" allowfullscreen></iframe>';
+    document.getElementById(div_id).innerHTML = video
+  }
+
 
 </script>
 

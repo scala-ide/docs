@@ -96,7 +96,9 @@
 <h1>Features</h1>
 <p>The aim of Scala IDE is to provide a support for Scala development equivalent to the support provided by Eclipse for Java development.</p>
 <p>The features overview screencast gives a quick tour of the new features is Scala IDE 3.0. The other videos are about the <a class="reference internal" href="../videos.html#improved-features"><em>improved features</em></a> and the <a class="reference internal" href="../videos.html#scala-debugger"><em>Scala debugger</em></a>.</p>
-<iframe src="http://player.vimeo.com/video/62605944?title=0&amp;byline=0&amp;portrait=0" width="490" height="306" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe><p>The following pages provide a description of a list of selected features provided by Scala IDE:</p>
+<div id="nn30_new_features_video" class="doc_video">
+  <img class="doc_video" src="../_images/splash-nn30-new-features-video.png" onclick="startVideo('nn30_new_features_video', '5Rze9eQP7o0')"/>
+</div><p>The following pages provide a description of a list of selected features provided by Scala IDE:</p>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="features/typingviewing/index.html">Typing and Viewing</a><ul>
@@ -220,6 +222,12 @@
     ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
   })();
+
+  function startVideo(div_id, youtube_id) {
+    var video = '<iframe class="doc_video" src="http://www.youtube.com/embed/' + youtube_id + '?rel=0&autoplay=1&vq=hd720" frameborder="0" allowfullscreen></iframe>';
+    document.getElementById(div_id).innerHTML = video
+  }
+
 
 </script>
 

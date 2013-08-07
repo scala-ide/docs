@@ -41,6 +41,7 @@
     <script type="text/javascript" src="../_static/resources/javascript/contentsFix.js"></script>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="top" title="Scala IDE  documentation" href="../index.html" />
+    <link rel="next" title="Image placeholder" href="../image_placeholder.html" />
     <link rel="prev" title="Frequently Asked Questions" href="faq.html" /> 
   </head>
   <body>
@@ -106,7 +107,9 @@
 <div class="section" id="screencast">
 <h2>Screencast</h2>
 <p>The getting started screencast provides a more visual explanation on the installation and the first steps with Scala IDE.</p>
-<iframe src="http://player.vimeo.com/video/33860742" width="490" height="306" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe></div>
+<div id="getting_started_video" class="doc_video">
+  <img class="doc_video" src="../../_images/splash-getting-started-video.png" onclick="startVideo('getting_started_video', 'dGI04efb6hg')"/>
+</div></div>
 <div class="section" id="installation">
 <h2>Installation</h2>
 <p>Scala IDE for Eclipse is best installed (and updated) directly from within Eclipse.</p>
@@ -229,6 +232,12 @@ Each package should appear in its own directory with the same name. Eclipse expe
     ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
   })();
+
+  function startVideo(div_id, youtube_id) {
+    var video = '<iframe class="doc_video" src="http://www.youtube.com/embed/' + youtube_id + '?rel=0&autoplay=1&vq=hd720" frameborder="0" allowfullscreen></iframe>';
+    document.getElementById(div_id).innerHTML = video
+  }
+
 
 </script>
 

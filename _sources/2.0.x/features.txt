@@ -7,7 +7,9 @@ The features overview screencast gives a quick tour of the Scala IDE features.
 
 .. raw:: html
 
-   <iframe src="http://player.vimeo.com/video/33872960" width="490" height="306" frameborder="0" webkitAllowFullScreen="" mozallowfullscreen="" allowFullScreen=""></iframe>
+   <div id="features_video" class="doc_video">
+     <img class="doc_video" src="../_images/splash-features-video.png" onclick="startVideo('features_video', 'v35IkOxLu1g')"/>
+   </div>
 
 The following pages provide a description of a list of selected features provided by Scala IDE:
 

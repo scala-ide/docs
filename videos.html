@@ -93,28 +93,40 @@
 <h2>General</h2>
 <div class="section" id="getting-started">
 <h3>Getting started</h3>
-<iframe src="http://player.vimeo.com/video/33860742" width="490" height="306" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe></div>
+<div id="getting_started_video" class="doc_video">
+  <img class="doc_video" src="_images/splash-getting-started-video.png" onclick="startVideo('getting_started_video', 'dGI04efb6hg')"/>
+</div></div>
 </div>
 <div class="section" id="scala-ide-3-0">
 <h2>Scala IDE 3.0</h2>
 <div class="section" id="quick-overview">
 <h3>Quick overview</h3>
-<iframe src="http://player.vimeo.com/video/62605940?title=0&amp;byline=0&amp;portrait=0" width="490" height="306" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
+<div id="nn30_overview_video" class="doc_video">
+  <img class="doc_video" src="_images/splash-nn30-overview-video.png" onclick="startVideo('nn30_overview_video', 'hmzgEUBwgSI')"/>
+</div></div>
 <div class="section" id="part-1-improved-features">
 <span id="improved-features"></span><h3>Part 1: Improved features</h3>
-<iframe src="http://player.vimeo.com/video/62605942?title=0&amp;byline=0&amp;portrait=0" width="490" height="306" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
+<div id="nn30_improved_features_video" class="doc_video">
+  <img class="doc_video" src="_images/splash-nn30-improved-features-video.png" onclick="startVideo('nn30_improved_features_video', 'JhdzLpOMQOQ')"/>
+</div></div>
 <div class="section" id="part-2-new-features">
 <span id="new-features"></span><h3>Part 2: New features</h3>
-<iframe src="http://player.vimeo.com/video/62605944?title=0&amp;byline=0&amp;portrait=0" width="490" height="306" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
+<div id="nn30_new_features_video" class="doc_video">
+  <img class="doc_video" src="_images/splash-nn30-new-features-video.png" onclick="startVideo('nn30_new_features_video', '5Rze9eQP7o0')"/>
+</div></div>
 <div class="section" id="part-3-scala-debugger">
 <span id="scala-debugger"></span><h3>Part 3: Scala debugger</h3>
-<iframe src="http://player.vimeo.com/video/62605945?title=0&amp;byline=0&amp;portrait=0" width="490" height="306" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
+<div id="nn30_scala_debugger_video" class="doc_video">
+  <img class="doc_video" src="_images/splash-nn30-scala-debugger-video.png" onclick="startVideo('nn30_scala_debugger_video', 'Gq5Vihtgl2c')"/>
+</div></div>
 </div>
 <div class="section" id="scala-ide-2-0">
 <h2>Scala IDE 2.0</h2>
 <div class="section" id="features-overview">
 <h3>Features overview</h3>
-<iframe src="http://player.vimeo.com/video/33872960" width="490" height="306" frameborder="0" webkitAllowFullScreen="" mozallowfullscreen="" allowFullScreen=""></iframe></div>
+<div id="features_video" class="doc_video">
+  <img class="doc_video" src="_images/splash-features-video.png" onclick="startVideo('features_video', 'v35IkOxLu1g')"/>
+</div></div>
 </div>
 </div>
 
@@ -181,6 +193,12 @@
     ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
   })();
+
+  function startVideo(div_id, youtube_id) {
+    var video = '<iframe class="doc_video" src="http://www.youtube.com/embed/' + youtube_id + '?rel=0&autoplay=1&vq=hd720" frameborder="0" allowfullscreen></iframe>';
+    document.getElementById(div_id).innerHTML = video
+  }
+
 
 </script>
 
