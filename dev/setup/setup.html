@@ -136,7 +136,7 @@ So let's run the build.</p>
 </pre></div>
 </div>
 <p>Or, you can pass a different profile for building the Scala IDE with Scala 2.11:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>./build-all.sh -P scala-2.11.x -P eclipse-juno clean install
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>./build-all.sh -P scala-2.11.x -P eclipse-juno -P sbt-new clean install
 </pre></div>
 </div>
 <p>If you want more information concerning the build, check out <a class="reference internal" href="../building/building.html#building-run-the-build"><em>Run the build</em></a>.</p>
@@ -148,20 +148,8 @@ To import the Scala IDE in your workspace simply click on <tt class="docutils li
 will open. There, select <tt class="docutils literal"><span class="pre">General</span> <span class="pre">&gt;</span> <span class="pre">Existing</span> <span class="pre">Projects</span> <span class="pre">into</span> <span class="pre">Workspace</span></tt> and click Next. A new dialog
 will open. Browse to the folder that points to your cloned Scala IDE project's and select it.</p>
 <p>A list of projects should then be loaded in the below white area. The only projects that you absolutely
-need to import in Eclipse are <tt class="docutils literal"><span class="pre">org.scala-ide.sbt.full.library</span></tt>, <tt class="docutils literal"><span class="pre">org.scala-ide.sdt.core</span></tt> and
-<tt class="docutils literal"><span class="pre">org.scala-ide.sdt.core.tests</span></tt>. Select only those and click Finish.</p>
-<p>There is <strong>one more thing</strong> to check to get ready to hack the Scala IDE project. You may
-notice that the <tt class="docutils literal"><span class="pre">org.scala-ide.sbt.full.library</span></tt> project has build path errors. This project is
-grouping together a bunch of SBT jars into one OSGI bundle. The project build path is configured by default to
-reference the 2.10 version of the jars, so the configuration will be wrong if you are working with a different
-Scala version.</p>
-<p>To fix this, right click on the <tt class="docutils literal"><span class="pre">org.scala-ide.sbt.full.library</span></tt> project and then click &quot;Properties&quot;. A
-dialog will open. Click on &quot;Java Build Path&quot; and select the &quot;Libraries&quot; tab. You should see something
-on the lines of:</p>
-<a class="reference external image-reference" href="../../_images/sbt-full-jars.png"><img alt="../../_images/sbt-full-jars.png" src="../../_images/sbt-full-jars.png" style="width: 100%;" /></a>
-<p>First remove all JARs, and then click the &quot;Add JARs...&quot; button and browse to <tt class="docutils literal"><span class="pre">org.scala-ide.sbt.full.library/lib</span></tt>.
-Select all JARs in the folder and click OK.</p>
-<p>Now, before clicking OK to leave the properties dialog, select the &quot;Order and Export&quot; tab in order to make sure all JARs are exported which can achieved by simply clicking the &quot;Select All&quot; button.</p>
+need to import in Eclipse are <tt class="docutils literal"><span class="pre">org.scala-ide.sdt.core</span></tt> and <tt class="docutils literal"><span class="pre">org.scala-ide.sdt.core.tests</span></tt>. Select
+only those and click Finish.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">If you want to hack on the Debugger it may be necessary for Linux systems to add the <tt class="docutils literal"><span class="pre">tools.jar</span></tt> to the classpath. This can be achieved by navigating to <tt class="docutils literal"><span class="pre">Preferences</span> <span class="pre">→</span> <span class="pre">Java</span> <span class="pre">→</span> <span class="pre">Installed</span> <span class="pre">JREs</span></tt> and adding the JAR to the JRE that builds your sources. The JAR itself can be found at <tt class="docutils literal"><span class="pre">&lt;path-to-JRE/lib/tools.jar&gt;</span></tt>.</p>
