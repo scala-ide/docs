@@ -37,7 +37,7 @@ or the following to build Scala IDE for Scala 2.11:
 
 .. code-block:: bash
 
-   $ ./build-all.sh -P scala-2.11.x -P eclipse-juno clean install
+   $ ./build-all.sh -P scala-2.11.x -P eclipse-juno -P sbt-new clean install
 
 .. note::
 
@@ -71,21 +71,21 @@ After an initial complete build, maven can be used from any subproject.
 
 .. code-block:: bash
 
-   $ mvn -P scala-2.10.x -P eclipse-juno clean install
+   $ mvn -P scala-2.10.x -P eclipse-juno -P sbt-new clean install
    $ cd org.scala-ide.build-toolchain
-   $ mvn -P scala-2.10.x -P eclipse-juno clean install
+   $ mvn -P scala-2.10.x -P eclipse-juno -P sbt-new clean install
    $ cd ../org.scala-ide.sdt.build
-   $ mvn -P scala-2.10.x -P eclipse-juno clean install
+   $ mvn -P scala-2.10.x -P eclipse-juno -P sbt-new clean install
 
 or for Scala 2.11.x:
 
 .. code-block:: bash
 
-   $ mvn -P scala-2.11.x -P eclipse-juno clean install
+   $ mvn -P scala-2.11.x -P eclipse-juno -P sbt-new clean install
    $ cd org.scala-ide.build-toolchain
-   $ mvn -P scala-2.11.x -P eclipse-juno clean install
+   $ mvn -P scala-2.11.x -P eclipse-juno -P sbt-new clean install
    $ cd ../org.scala-ide.sdt.build
-   $ mvn -P scala-2.11.x -P eclipse-juno clean install
+   $ mvn -P scala-2.11.x -P eclipse-juno -P sbt-new clean install
 
 Running the memory leak test
 ----------------------------
