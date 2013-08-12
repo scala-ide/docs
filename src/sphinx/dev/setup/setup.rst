@@ -79,27 +79,8 @@ will open. There, select ``General > Existing Projects into Workspace`` and clic
 will open. Browse to the folder that points to your cloned Scala IDE project's and select it.
 
 A list of projects should then be loaded in the below white area. The only projects that you absolutely
-need to import in Eclipse are ``org.scala-ide.sbt.full.library``, ``org.scala-ide.sdt.core`` and
-``org.scala-ide.sdt.core.tests``. Select only those and click Finish.
-
-There is **one more thing** to check to get ready to hack the Scala IDE project. You may
-notice that the ``org.scala-ide.sbt.full.library`` project has build path errors. This project is
-grouping together a bunch of SBT jars into one OSGI bundle. The project build path is configured by default to
-reference the 2.10 version of the jars, so the configuration will be wrong if you are working with a different
-Scala version.
-
-To fix this, right click on the ``org.scala-ide.sbt.full.library`` project and then click "Properties". A
-dialog will open. Click on "Java Build Path" and select the "Libraries" tab. You should see something
-on the lines of:
-
-.. image:: images/sbt-full-jars.png
-   :width: 100%
-   :target: ../../_images/sbt-full-jars.png
-
-First remove all JARs, and then click the "Add JARs..." button and browse to ``org.scala-ide.sbt.full.library/lib``.
-Select all JARs in the folder and click OK.
-
-Now, before clicking OK to leave the properties dialog, select the "Order and Export" tab in order to make sure all JARs are exported which can achieved by simply clicking the "Select All" button.
+need to import in Eclipse are ``org.scala-ide.sdt.core`` and ``org.scala-ide.sdt.core.tests``. Select
+only those and click Finish.
 
 .. note:: If you want to hack on the Debugger it may be necessary for Linux systems to add the ``tools.jar`` to the classpath. This can be achieved by navigating to ``Preferences → Java → Installed JREs`` and adding the JAR to the JRE that builds your sources. The JAR itself can be found at ``<path-to-JRE/lib/tools.jar>``.
 
