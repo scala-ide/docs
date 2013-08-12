@@ -71,21 +71,21 @@ After an initial complete build, maven can be used from any subproject.
 
 .. code-block:: bash
 
-   $ mvn -P scala-2.10.x clean install
+   $ mvn -P scala-2.10.x -P eclipse-juno clean install
    $ cd org.scala-ide.build-toolchain
-   $ mvn -P scala-2.10.x clean install
+   $ mvn -P scala-2.10.x -P eclipse-juno clean install
    $ cd ../org.scala-ide.sdt.build
-   $ mvn -P scala-2.10.x clean install
+   $ mvn -P scala-2.10.x -P eclipse-juno clean install
 
 or for Scala 2.11.x:
 
 .. code-block:: bash
 
-   $ mvn -P scala-2.11.x clean install
+   $ mvn -P scala-2.11.x -P eclipse-juno clean install
    $ cd org.scala-ide.build-toolchain
-   $ mvn -P scala-2.11.x clean install
+   $ mvn -P scala-2.11.x -P eclipse-juno clean install
    $ cd ../org.scala-ide.sdt.build
-   $ mvn -P scala-2.11.x clean install
+   $ mvn -P scala-2.11.x -P eclipse-juno clean install
 
 Running the memory leak test
 ----------------------------
