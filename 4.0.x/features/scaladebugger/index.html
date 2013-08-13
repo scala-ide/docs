@@ -151,6 +151,20 @@
 <p>The same way, the 'step into' action allows you to step right into the closure, and the 'step out' action to return to the original call.</p>
 <p><em>In the preview version, 'step into' is not working fine with primitive types</em></p>
 </div>
+<div class="section" id="step-filters">
+<h3>Step filters</h3>
+<p>Often when stepping in and out of Scala methods you don't want to stop in all the artifacts produced by the Scala compiler. A few of the uninteresting methods are:</p>
+<ul class="simple">
+<li>Scala getters and setters for <tt class="docutils literal"><span class="pre">val/var</span></tt> members</li>
+<li>forwarders for concrete trait methods</li>
+<li>getters for default argument (ending in <tt class="docutils literal"><span class="pre">$default$1,2,..</span></tt>)</li>
+<li>bridge methods</li>
+<li>synthetic methods</li>
+<li>box/unbox operations</li>
+</ul>
+<p>You can enable/disable step filters on the debugger configuration page:</p>
+<img alt="step filters configuration" src="../../../_images/step-filters.png" />
+</div>
 <div class="section" id="boxed-primitive-values">
 <h3>Boxed primitive values</h3>
 <p>The value of boxed primitives is extracted to be displayed.</p>
