@@ -1,6 +1,18 @@
 Changelog
 =========
 
+3.0.2
+-----
+
+RC1 (2013-09-06)
+................
+
+- Eclipse 4.x support (:ticket:`1001447` and :ticket:`1001585`)
+- `ScalaSourceFile.createFromPath` is not thread-safe (:ticket:`1001846`)
+- No semantic highlight on jar's attached sources (:ticket:`1000939`)
+- Updated the build compiler to use the recently released sbt 0.13.0.
+- Backport ScalaTokenizer.tokenize(String) (:ticket:`1001866`)
+
 3.0.1
 -----
 
