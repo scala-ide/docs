@@ -11,6 +11,7 @@ Navigating
    implicit-hyperlinking
    open-type
    open-declaration
-   find-occurrences
    outline-view
    tasks-view
+   find-occurrences
+   type-hierarchy
