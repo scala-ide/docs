@@ -129,12 +129,11 @@ the future. The currently available markers are:
 
 Each of them is very easy to use. Just look at the other tests if you have any doubt.
 
-Now, we can try running the test. Again in the opened terminal, go under ``<project-root>/test`` 
-and type
+Now, we can try running the test. Again in the opened terminal type:
 
 .. code-block:: bash
 
-	$ ./partest files/presentation/ide-bug-1000475
+	$ ./test/partest test/files/presentation/ide-bug-1000475
 
 You should see something like
 
