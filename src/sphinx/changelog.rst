@@ -4,7 +4,7 @@ Changelog
 3.0.2
 -----
 
-RC1 (2013-09-06)
+RC1 (to be released)
 ................
 
 - Eclipse 4.x support (:ticket:`1001447` and :ticket:`1001585`)
