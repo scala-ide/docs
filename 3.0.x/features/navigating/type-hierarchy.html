@@ -7,7 +7,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Find Occurrences new plug-in &mdash; Scala IDE  documentation</title>
+    <title>Type Hierarchy new plug-in &mdash; Scala IDE  documentation</title>
     
     <link rel="stylesheet" href="../../../_static/resources/stylesheets/base.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
@@ -42,8 +42,8 @@
     <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
     <link rel="top" title="Scala IDE  documentation" href="../../../index.html" />
     <link rel="up" title="Navigating" href="index.html" />
-    <link rel="next" title="Type Hierarchy new plug-in" href="type-hierarchy.html" />
-    <link rel="prev" title="Tasks View" href="tasks-view.html" /> 
+    <link rel="next" title="Scala JUnit Test Finder new" href="../test-finder/index.html" />
+    <link rel="prev" title="Find Occurrences new plug-in" href="find-occurrences.html" /> 
   </head>
   <body>
 <div class="top-bar">
@@ -73,7 +73,7 @@
   <div class="container">
     <div class="row">
       <div class="span16">        
-        <h1>Find Occurrences <span class="raw-html"><span class="label info">new</span></span> <span class="raw-html"><span class="label success">plug-in</span></span></h1>
+        <h1>Type Hierarchy <span class="raw-html"><span class="label info">new</span></span> <span class="raw-html"><span class="label success">plug-in</span></span></h1>
 	  </div>
     </div>
   </div>
@@ -94,15 +94,18 @@
 
     <div class="row" style="position: relative; clear: both;">
       <div class="span11 main-content">
-        <div class="section" id="find-occurrences-new-plugin">
-<h1>Find Occurrences <span class="raw-html"><span class="label info">new</span></span> <span class="raw-html"><span class="label success">plug-in</span></span></h1>
+        <div class="section" id="type-hierarchy-new-plugin">
+<h1>Type Hierarchy <span class="raw-html"><span class="label info">new</span></span> <span class="raw-html"><span class="label success">plug-in</span></span></h1>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">This feature requires the <a class="reference external" href="github.com/scala-ide/scala-search">Scala Search plugin</a>. In the future this will be merged with the IDE</p>
 </div>
-<p>It is possible to find all occurrences of a specific Scala entity by selecting the entity in the editor and press the shortcut <tt class="docutils literal"><span class="pre">Ctrl-Alt-Shift-R</span></tt> (or <tt class="docutils literal"><span class="pre">Cmd-Alt-Shift-R</span></tt> on Mac). Currently, find references only works for members, i.e., methods and fields.</p>
-<p><em>It currently only monitors file changes that happen inside of Eclipse, so if a file is changed outside of Eclipse (e.g. by switching git branch) it might not find the correct occurrence in that document. Refreshing the workspace should help, if not, delete the indices (&lt;workspace&gt;/.metadata/.plugins/org.scala.tools.eclipse.search/lucene-indices). This will be fixed in the next release, see the relevant</em> <a class="reference external" href="https://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001608#/activity/ticket:">ticket</a>. <em>for more information</em></p>
-<img alt="../../../_images/scala-search-find-occurrences-011.png" src="../../../_images/scala-search-find-occurrences-011.png" />
+<p>It is possible to visualize the type hierarchy of any Scala type by putting the cursor on the type in the editor and press the shortcut <tt class="docutils literal"><span class="pre">Ctrl-F4</span></tt> (or <tt class="docutils literal"><span class="pre">Cmd-F4</span></tt> on Mac).</p>
+<img alt="../../../_images/scala-search-type-hierarchy-01.png" src="../../../_images/scala-search-type-hierarchy-01.png" />
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Currently, type hierarchy cannot be started from source attachments. This is a known limitation, and will be fixed in a future release.</p>
+</div>
 </div>
 
 	    </div>

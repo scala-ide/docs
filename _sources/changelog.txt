@@ -1,6 +1,19 @@
 Changelog
 =========
 
+3.0.2
+-----
+
+RC1 (to be released)
+................
+
+- Eclipse 4.x support (:ticket:`1001447` and :ticket:`1001585`)
+- `ScalaSourceFile.createFromPath` is now thread-safe (:ticket:`1001846`)
+- Semantic highlighting for attached sources (:ticket:`1000939`)
+- Updated the build compiler to use the recently released sbt 0.13.0
+- Backport ScalaTokenizer.tokenize(String) (:ticket:`1001866`)
+- Scala Launcher can now run main classes from a library dependency (:ticket:`1001878`)
+
 3.0.1
 -----
 

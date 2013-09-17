@@ -42,8 +42,8 @@
     <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
     <link rel="top" title="Scala IDE  documentation" href="../../../index.html" />
     <link rel="up" title="Navigating" href="index.html" />
-    <link rel="next" title="Outline View" href="outline-view.html" />
-    <link rel="prev" title="Open declaration" href="open-declaration.html" /> 
+    <link rel="next" title="Type Hierarchy new plug-in" href="type-hierarchy.html" />
+    <link rel="prev" title="Tasks View" href="tasks-view.html" /> 
   </head>
   <body>
 <div class="top-bar">
@@ -100,9 +100,9 @@
 <p class="first admonition-title">Note</p>
 <p class="last">This feature requires the <a class="reference external" href="github.com/scala-ide/scala-search">Scala Search plugin</a>. In the future this will be merged with the IDE</p>
 </div>
-<p>It is possible to find all occurrences of a specific Scala entity by selecting the entity in the editor and press the shortcut <tt class="docutils literal"><span class="pre">Ctrl-Alt-Shift-R</span></tt> or <tt class="docutils literal"><span class="pre">Cmd-Alt-Shift-R</span></tt>. Version 0.1 only supports find references for members, i.e., methods and fields.</p>
+<p>It is possible to find all occurrences of a specific Scala entity by selecting the entity in the editor and press the shortcut <tt class="docutils literal"><span class="pre">Ctrl-Alt-Shift-R</span></tt> (or <tt class="docutils literal"><span class="pre">Cmd-Alt-Shift-R</span></tt> on Mac). Currently, find references only works for members, i.e., methods and fields.</p>
 <p><em>It currently only monitors file changes that happen inside of Eclipse, so if a file is changed outside of Eclipse (e.g. by switching git branch) it might not find the correct occurrence in that document. Refreshing the workspace should help, if not, delete the indices (&lt;workspace&gt;/.metadata/.plugins/org.scala.tools.eclipse.search/lucene-indices). This will be fixed in the next release, see the relevant</em> <a class="reference external" href="https://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001608#/activity/ticket:">ticket</a>. <em>for more information</em></p>
-<img alt="../../../_images/feature-find-occurrences-01.png" src="../../../_images/feature-find-occurrences-01.png" />
+<img alt="../../../_images/scala-search-find-occurrences-01.png" src="../../../_images/scala-search-find-occurrences-01.png" />
 </div>
 
 	    </div>
