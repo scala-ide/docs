@@ -66,7 +66,7 @@ Or, you can pass a different profile for building the Scala IDE with Scala 2.11:
 
 .. code-block:: bash
 
-   $ ./build-all.sh -P scala-2.11.x -P eclipse-juno -P sbt-new clean install
+   $ ./build-all.sh -P scala-2.11.x -P eclipse-juno clean install
 
 If you want more information concerning the build, check out :ref:`building_run-the-build`.
 
