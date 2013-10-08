@@ -4,7 +4,18 @@ Changelog
 3.0.2
 -----
 
-RC1 (to be released)
+RC2 (2013-10-09)
+................
+
+- Open Resource dialog no longer shows Scala classfiles (:ticket:`1000260`)
+- Fixed bug in build compiler to correctly track changes in dependent project (:ticket:`1001904`)
+
+RC1-rebuild (2013-09-24)
+........................
+
+- Update bundled Scala to 2.10.3 (final)
+
+RC1 (2013-09-06)
 ................
 
 - Eclipse 4.x support (:ticket:`1001447` and :ticket:`1001585`)
