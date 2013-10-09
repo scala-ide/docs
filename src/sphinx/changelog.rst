@@ -8,7 +8,7 @@ RC2 (2013-10-09)
 ................
 
 - Open Resource dialog no longer shows Scala classfiles (:ticket:`1000260`)
-- Fixed bug in build compiler to correctly track changes in dependent project (:ticket:`1001904`)
+- Build compiler correctly track changes in dependent project (:ticket:`1001904`)
 
 RC1-rebuild (2013-09-24)
 ........................
