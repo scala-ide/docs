@@ -136,3 +136,46 @@ you made in the Scala compiler, is available in ``org.scala-ide.sdt.update-site/
         If you get weird errors about missing methods, then you are probably mixing Scala versions in the
         scripts and the plug-in. Before starting the new instance of Eclipse (with your version of the
         Scala plug-in) make sure that no errors occurred.
+
+Building the Scala IDE with a Scala version from the Scala pull request system
+------------------------------------------------------------------------------
+
+The Scala team has setup a pull request validation system which, among other things, tries to compile Scala IDE on top of the versions of Scala containing the proposed changes. If this validation fails, it is useful to be able to reproduce the build locally. This can be done using the script created by François Garillot.
+
+The scripts are located at ``https://github.com/huitseeker/validator-script``.
+
+Assuming you want to build the Scala IDE on a version of Scala represented by the git hash ``aafd9ca124``, the scripts are used this way:
+
+.. code-block:: bash
+
+    # Fetch the right tree of Scala, Scala IDE and dependencies
+    ./prepare-repo.sh -h aafd9ca124 -b ~/tmp/prbuild
+
+    # Build Scala, Scala IDE and dependencies on the Scala git hash
+    ./validator.sh -s -h aafd9ca124 -b ~/tmp/prbuild
+
+.. note::
+
+    (Luc Bourlier) The configuration of Scalariform is fairly old, and doesn't work out of the box on my
+    systems. I need to tell it to use a newer version of Eclipse.
+
+    If you encounter the same problem, in the `pom.xml`, replace the following repository declaration
+
+    .. code-block:: xml
+    
+        <repository>
+          <id>galileo</id>
+          <layout>p2</layout>
+          <url>http://download.eclipse.org/releases/galileo</url>
+        </repository>
+
+    by
+
+    .. code-block:: xml
+    
+        <repository>
+          <id>kepler</id>
+          <layout>p2</layout>
+          <url>http://download.eclipse.org/releases/kepler</url>
+        </repository>
+        
