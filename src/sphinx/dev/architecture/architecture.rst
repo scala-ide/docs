@@ -12,19 +12,48 @@ Overview
 The Scala IDE project is composed of several modules. Here is a generic description of what each module contains:
 
 * ``org.scala-ide.build``: Contains the scripts for building the Scala IDE from the command line.
-* ``org.scala-ide.build-toolchain``: Contains the script for retrieving dependencies that are needed by the Scala IDE.
-* ``org.scala-ide.sbt.full.library``: Groups together a bunch of SBT jars into one OSGi bundle.
-* ``org.scala-ide.scala.compiler``: Wraps the Scala Compiler in a OSGi bundle (needed by the Eclipse runtime).
-* ``org.scala-ide.scala.library``: Wraps the Scala Library in a OSGi bundle (needed by the Eclipse runtime).
+* ``org.scala-ide.build-toolchain``: Contains the script for retrieving and repackaging dependencies that are needed by the Scala IDE.
+* ``org.scala-ide.sbt.full.library``: Packages the Sbt incremental compiler into one OSGi bundle.
+* ``org.scala-ide.sbt.compiler.interface`` Packages the Sbt compiler interface into an OSGi bundle
 * ``org.scala-ide.sdt.aspects``: Contains the AspectJ classes used to weave into Eclipse and hook in JDT internals.
 * ``org.scala-ide.sdt.core``: Contains the Scala IDE plug-in's source code.
 * ``org.scala-ide.sdt.core.tests``: Contains the functional tests used to exercise the Scala IDE in headless mode (with no User Interface).
 * ``org.scala-ide.sdt.debug``: Contains the Scala IDE debugger plug-in's source code.
 * ``org.scala-ide.sdt.debug.tests``: Contains the functional tests used to exercise the Scala IDE debugger in headless mode (with no User Interface).
+* ``org.scala-ide.sdt.spy``: A Scala Spy view, used to display position, tree and type information under the cursor.
 * ``org.scala-ide.sdt.feature``: Packages the ``org.scala-ide.sdt.core`` and ``org.scala-ide.sdt.debug`` project binaries into the "Scala IDE for Eclipse" component, which is then made available through the Scala IDE update site.
 * ``org.scala-ide.sdt.source.feature``: Packages both the ``org.scala-ide.sdt.core`` and ``org.scala-ide.sdt.aspects`` project sources into the "Scala IDE for Eclipse Source Feature" component, which is then made available through the Scala IDE update site.
 * ``org.scala-ide.sdt.weaving.feature``: Packages the ``org.scala-ide.sdt.aspects`` project binaries into the "JDT Weaving for Scala" component, which is included within the "Scala IDE for Eclipse" component.
 * ``org.scala-ide.sdt.update-site``: Contains the result of a successful compilation of the Scala IDE project, packaged in the form expected by the Eclipse Update Manager.
+
+The Build system
+----------------
+
+The Scala IDE build system is based on Maven and Tycho, but it has a few particularities. In most cases running the ``build-all.sh`` script should be sufficient, but in case you need to make changes or debug a failed nightly, the following information may prove useful.
+
+Tycho
+~~~~~
+
+Tycho brings Eclipse specific dependency management to Maven, essentially resolving *Require-Bundle* or *Import-Package* entries in ``MANIFEST.MF`` files. To this end it scans manifests early on in the build cycle and uses P2 repositories to locate the best match for each dependency. In other words, it builds a so-called *target-platform*, containing all the required bundles (jar files).
+
+POM-first
+~~~~~~~~~
+
+In the real world not all dependencies will be available in P2 repositories. Tycho considers plain Maven (pom) dependencies as well, as long as the jar files have a ``MANIFEST.MF`` file. This is the case for Scala: the standard library, compiler and Scala modules (from 2.11 onwards) have correct ``MANIFEST.MF`` files, and the Scala IDE build is using them directly in its build.
+
+Repackaging
+~~~~~~~~~~~
+
+In the worst case, the required dependency is only available as a plain jar, but no ``MANIFEST`` file is provided. The solution is to re-package them using the maven bundle plugin who generates a manifest. This is what the ``org.scala-ide.sbt.full.library`` and ``org.scala-ide.sbt.compiler.interface`` projects are doing for the Sbt incremental compiler.
+
+.. note::
+	Tycho requires pom-first dependencies to be available in a maven repository during the *initialize* maven lifecycle. This means that repackaged dependencies have to be built and published in a separate maven run. Listing them in the same parent pom as separate modules won't cut it. This is the reason why we need the toolchain build.
+
+The set-featues step
+--------------------
+
+Currently we cross-build against Scala 2.10 and 2.11. Due to modularization, the Scala bundles we have to ship differ between the two versions, leading to different ``features.xml`` files in the two cases. Unfortunately, due to Tycho building the target platform so early in the build lifecycle, we cannot produce these files in the same maven run, or even the same build. This is handled by using the ``set-features`` profile in the root ``pom.xml``, and called by ``build.sh`` before handing it over to the "main" build.
+
 
 Scala IDE & Eclipse JDT
 -----------------------
@@ -61,7 +90,7 @@ functionality. Whenever possible, we prefer to use the regular, supported mechan
 instead of weaving. This is the case for both code completion and hyperlinking.
 
 JDT Weaving and Java integration
-................................
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 All Scala aspect code is found in ``org.scala-ide.sdt.aspects`` project. This module defines:
 
