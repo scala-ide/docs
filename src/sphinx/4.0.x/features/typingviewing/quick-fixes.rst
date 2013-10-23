@@ -1,5 +1,7 @@
-Quick Fixes
-===========
+.. include:: /global_defs.hrst
+
+Quick Fixes |updated|
+=====================
 
 Quick Fix Import
 ----------------
@@ -27,8 +29,8 @@ Expand Implicit Conversion
 .. image:: images/quick-fix.png
 
 
-Create Method and Class
------------------------
+Create Method and Class |new|
+-----------------------------
 
 For the following code snippet there exists a quick fix for the method call of ``g``:
 
@@ -49,15 +51,15 @@ The result of applying this quick fix is the following::
 
 As one can see in the screenshot above it is also possible to create classes, not only methods.
 
-Change Capitalization
----------------------
+Change Capitalization |new|
+---------------------------
 
 If one did a type error in the name of a method, it is possible to correct this as long as the only type error is due to wrong capitalization:
 
 .. image:: images/change-capitalization.png
 
-Add Explicit Type
------------------
+Add Explicit Type |new|
+-----------------------
 
 If you want to add an explicit type to a method or a value definition, you can automatically add the inferred type. Position the cursor on the value or method definition and type ``Ctrl-1`` (or ``CMD`` for Macs). You should see a popup offering to add the explicit type, like the in the picture below:
 
