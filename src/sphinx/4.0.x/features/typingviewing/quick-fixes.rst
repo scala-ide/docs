@@ -55,3 +55,11 @@ Change Capitalization
 If one did a type error in the name of a method, it is possible to correct this as long as the only type error is due to wrong capitalization:
 
 .. image:: images/change-capitalization.png
+
+Add Explicit Type
+-----------------
+
+If you want to add an explicit type to a method or a value definition, you can automatically add the inferred type. Position the cursor on the value or method definition and type ``Ctrl-1`` (or ``CMD`` for Macs). You should see a popup offering to add the explicit type, like the in the picture below:
+
+.. image:: images/explicit-type.png
+
