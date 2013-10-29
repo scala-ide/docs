@@ -102,20 +102,44 @@ and its components are discussed.</p>
 <p>The Scala IDE project is composed of several modules. Here is a generic description of what each module contains:</p>
 <ul class="simple">
 <li><tt class="docutils literal"><span class="pre">org.scala-ide.build</span></tt>: Contains the scripts for building the Scala IDE from the command line.</li>
-<li><tt class="docutils literal"><span class="pre">org.scala-ide.build-toolchain</span></tt>: Contains the script for retrieving dependencies that are needed by the Scala IDE.</li>
-<li><tt class="docutils literal"><span class="pre">org.scala-ide.sbt.full.library</span></tt>: Groups together a bunch of SBT jars into one OSGi bundle.</li>
-<li><tt class="docutils literal"><span class="pre">org.scala-ide.scala.compiler</span></tt>: Wraps the Scala Compiler in a OSGi bundle (needed by the Eclipse runtime).</li>
-<li><tt class="docutils literal"><span class="pre">org.scala-ide.scala.library</span></tt>: Wraps the Scala Library in a OSGi bundle (needed by the Eclipse runtime).</li>
+<li><tt class="docutils literal"><span class="pre">org.scala-ide.build-toolchain</span></tt>: Contains the script for retrieving and repackaging dependencies that are needed by the Scala IDE.</li>
+<li><tt class="docutils literal"><span class="pre">org.scala-ide.sbt.full.library</span></tt>: Packages the Sbt incremental compiler into one OSGi bundle.</li>
+<li><tt class="docutils literal"><span class="pre">org.scala-ide.sbt.compiler.interface</span></tt> Packages the Sbt compiler interface into an OSGi bundle</li>
 <li><tt class="docutils literal"><span class="pre">org.scala-ide.sdt.aspects</span></tt>: Contains the AspectJ classes used to weave into Eclipse and hook in JDT internals.</li>
 <li><tt class="docutils literal"><span class="pre">org.scala-ide.sdt.core</span></tt>: Contains the Scala IDE plug-in's source code.</li>
 <li><tt class="docutils literal"><span class="pre">org.scala-ide.sdt.core.tests</span></tt>: Contains the functional tests used to exercise the Scala IDE in headless mode (with no User Interface).</li>
 <li><tt class="docutils literal"><span class="pre">org.scala-ide.sdt.debug</span></tt>: Contains the Scala IDE debugger plug-in's source code.</li>
 <li><tt class="docutils literal"><span class="pre">org.scala-ide.sdt.debug.tests</span></tt>: Contains the functional tests used to exercise the Scala IDE debugger in headless mode (with no User Interface).</li>
+<li><tt class="docutils literal"><span class="pre">org.scala-ide.sdt.spy</span></tt>: A Scala Spy view, used to display position, tree and type information under the cursor.</li>
 <li><tt class="docutils literal"><span class="pre">org.scala-ide.sdt.feature</span></tt>: Packages the <tt class="docutils literal"><span class="pre">org.scala-ide.sdt.core</span></tt> and <tt class="docutils literal"><span class="pre">org.scala-ide.sdt.debug</span></tt> project binaries into the &quot;Scala IDE for Eclipse&quot; component, which is then made available through the Scala IDE update site.</li>
 <li><tt class="docutils literal"><span class="pre">org.scala-ide.sdt.source.feature</span></tt>: Packages both the <tt class="docutils literal"><span class="pre">org.scala-ide.sdt.core</span></tt> and <tt class="docutils literal"><span class="pre">org.scala-ide.sdt.aspects</span></tt> project sources into the &quot;Scala IDE for Eclipse Source Feature&quot; component, which is then made available through the Scala IDE update site.</li>
 <li><tt class="docutils literal"><span class="pre">org.scala-ide.sdt.weaving.feature</span></tt>: Packages the <tt class="docutils literal"><span class="pre">org.scala-ide.sdt.aspects</span></tt> project binaries into the &quot;JDT Weaving for Scala&quot; component, which is included within the &quot;Scala IDE for Eclipse&quot; component.</li>
 <li><tt class="docutils literal"><span class="pre">org.scala-ide.sdt.update-site</span></tt>: Contains the result of a successful compilation of the Scala IDE project, packaged in the form expected by the Eclipse Update Manager.</li>
 </ul>
+</div>
+<div class="section" id="the-build-system">
+<h2>The Build system</h2>
+<p>The Scala IDE build system is based on Maven and Tycho, but it has a few particularities. In most cases running the <tt class="docutils literal"><span class="pre">build-all.sh</span></tt> script should be sufficient, but in case you need to make changes or debug a failed nightly, the following information may prove useful.</p>
+<div class="section" id="tycho">
+<h3>Tycho</h3>
+<p>Tycho brings Eclipse specific dependency management to Maven, essentially resolving <em>Require-Bundle</em> or <em>Import-Package</em> entries in <tt class="docutils literal"><span class="pre">MANIFEST.MF</span></tt> files. To this end it scans manifests early on in the build cycle and uses P2 repositories to locate the best match for each dependency. In other words, it builds a so-called <em>target-platform</em>, containing all the required bundles (jar files).</p>
+</div>
+<div class="section" id="pom-first">
+<h3>POM-first</h3>
+<p>In the real world not all dependencies will be available in P2 repositories. Tycho considers plain Maven (pom) dependencies as well, as long as the jar files have a <tt class="docutils literal"><span class="pre">MANIFEST.MF</span></tt> file. This is the case for Scala: the standard library, compiler and Scala modules (from 2.11 onwards) have correct <tt class="docutils literal"><span class="pre">MANIFEST.MF</span></tt> files, and the Scala IDE build is using them directly in its build.</p>
+</div>
+<div class="section" id="repackaging">
+<h3>Repackaging</h3>
+<p>In the worst case, the required dependency is only available as a plain jar, but no <tt class="docutils literal"><span class="pre">MANIFEST</span></tt> file is provided. The solution is to re-package them using the maven bundle plugin who generates a manifest. This is what the <tt class="docutils literal"><span class="pre">org.scala-ide.sbt.full.library</span></tt> and <tt class="docutils literal"><span class="pre">org.scala-ide.sbt.compiler.interface</span></tt> projects are doing for the Sbt incremental compiler.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Tycho requires pom-first dependencies to be available in a maven repository during the <em>initialize</em> maven lifecycle. This means that repackaged dependencies have to be built and published in a separate maven run. Listing them in the same parent pom as separate modules won't cut it. This is the reason why we need the toolchain build.</p>
+</div>
+</div>
+</div>
+<div class="section" id="the-set-featues-step">
+<h2>The set-featues step</h2>
+<p>Currently we cross-build against Scala 2.10 and 2.11. Due to modularization, the Scala bundles we have to ship differ between the two versions, leading to different <tt class="docutils literal"><span class="pre">features.xml</span></tt> files in the two cases. Unfortunately, due to Tycho building the target platform so early in the build lifecycle, we cannot produce these files in the same maven run, or even the same build. This is handled by using the <tt class="docutils literal"><span class="pre">set-features</span></tt> profile in the root <tt class="docutils literal"><span class="pre">pom.xml</span></tt>, and called by <tt class="docutils literal"><span class="pre">build.sh</span></tt> before handing it over to the &quot;main&quot; build.</p>
 </div>
 <div class="section" id="scala-ide-eclipse-jdt">
 <h2>Scala IDE &amp; Eclipse JDT</h2>

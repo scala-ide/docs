@@ -1,3 +1,5 @@
+.. include:: /global_defs.hrst
+
 Typing and Viewing
 ==================
 
