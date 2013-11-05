@@ -1,6 +1,45 @@
 Changelog
 =========
 
+4.0.0 - codename Lithium
+------------------------
+
+M1  (2013-11-05)
+................
+
+- 'Add explicit type' quick assist (:ticket:`1001951`)
+- Implemented completion overwrites (:ticket:`1000569`)
+- Corrected completion on import clause for module methods (:ticket:`1001125`)
+- Corrected completion inside method arugments (:ticket:`1001218`)
+- Corrected completion for no-args method (:ticket:`1001766`)
+- Quick fix to create a new class (:ticket:`1000809`)
+- Extract local available as quick fix (:ticket:`1001801`)
+- Quickfix to change the capitalization of a method/field invocation (:ticket:`1001778`)
+- Fix create method quickfix exception (:ticket:`1001740`)
+- Resolve exception when using type mismatch quick fix (:ticket:`1001809`)
+- Race condition in pc when hyperlinking between projects (:ticket:`1001880`)
+- Highlights Scaladoc macros that are wrapped in braces (:ticket:`1001836`)
+- Add highlighting for variables in interpolated strings (:ticket:`1001574`,:ticket:`1001593`)
+- Add semantic highlighting for singleton types (:ticket:`1001555`)
+- Highlight TODO markers in the editor (:ticket:`1001450`)
+- Multiline support in interpreter
+- Move authorship information to AUTHORS.
+- Export all packages in  MANIFEST of debug bundle
+- Fix caching of SourceFiles (:ticket:`1001859`)
+- source attachments for sbt dependencies (:ticket:`1001888`)
+- "Restart Presentation Compiler" action (:ticket:`1000555`)
+- Fixed NPE when completing a wizard  (:ticket:`1001784`)
+- New Class wizard injects stubs for inherited abstract methods (:ticket:`1001774`)
+- Do not close string and character literals before text (:ticket:`1001652`)
+- Corrected link in "Run Setup Diagnostics" Dialog (:ticket:`1001673`)
+- Issue/auto closing literals (:ticket:`1001583`,:ticket:`1001600`)
+- Fix rename refactoring selection/tab behavior (:ticket:`1001641`)
+- Issue/string auto edit strategy (:ticket:`1001498`,:ticket:`1001491`,:ticket:`1001403`,:ticket:`1001398`)
+- Use stock Scala compiler/library OSGi-fied JARs (:ticket:`1001889`)
+- Opening a classfile (located outside of the build path) with no associated source no longer results in a ClassCastException (:ticket:`1001925`)
+- Added source folder wizard in Scala perspective menu (:ticket:`1001577`)
+- Prevented MatchError to occur on Watch Expression View (in the debugger) (:ticket:`1001933`)
+
 3.0.2
 -----
 
