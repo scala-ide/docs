@@ -13,4 +13,4 @@ It is possible to visualize the type hierarchy of any Scala type by putting the 
 .. note:: Currently, type hierarchy cannot be started from source attachments. This is a known limitation, and will be fixed in a future release.
 
 
-.. _Scala Search plugin: github.com/scala-ide/scala-search
+.. _Scala Search plugin: http://github.com/scala-ide/scala-search

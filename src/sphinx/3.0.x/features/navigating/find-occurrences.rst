@@ -11,5 +11,5 @@ It is possible to find all occurrences of a specific Scala entity by selecting t
 
 .. image:: images/scala-search-find-occurrences-01.png
 
-.. _Scala Search plugin: github.com/scala-ide/scala-search
+.. _Scala Search plugin: http://github.com/scala-ide/scala-search
 .. _ticket: https://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001608#/activity/ticket:
