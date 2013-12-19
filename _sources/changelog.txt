@@ -40,6 +40,15 @@ M1  (2013-11-05)
 - Added source folder wizard in Scala perspective menu (:ticket:`1001577`)
 - Prevented MatchError to occur on Watch Expression View (in the debugger) (:ticket:`1001933`)
 
+3.0.3
+-----
+
+RC1 (2013-12-19)
+................
+
+- Cache info about jar files that might contain Scala classifies. (:ticket:`1001999`)
+- Fix builder problem that might cause deleting output folders after a successful build. (:ticket:`1001995`)
+
 3.0.2
 -----
 
