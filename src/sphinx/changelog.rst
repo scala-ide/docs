@@ -43,7 +43,7 @@ M1  (2013-11-05)
 3.0.3
 -----
 
-RC1 (2013-12-19)
+RC1 (2014-01-09)
 ................
 
 - Cache info about jar files that might contain Scala classifies. (:ticket:`1001999`)
