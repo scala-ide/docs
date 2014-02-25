@@ -47,6 +47,7 @@ To be able to create a Play web application, the Play framework need to be insta
 *   Download Play framework 2.1 from http://www.playframework.org/.
 
 *   Unzip it in your preferred location. Let's say ``/path/to/play21`` for the purpose of this document.
+    *(from the Play documentation: Running play writes some files to directories within the archive, so don’t install to* ``/opt`` *,* ``/usr/local`` *or anywhere else you’d need special permission to write to.)*
 
 *   For convenience, add the Play folder to your system PATH:
 
