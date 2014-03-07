@@ -113,13 +113,20 @@ Build the Scala IDE with a local version of the Scala Compiler
         Scala IDE plug-in reacts to the changes. If that is exactly what you want to do, keep reading.
         Otherwise, you can safely skip this section.
 
-Build the Scala compiler, package into maven format and deploy locally,
+Build the Scala compiler, package into maven format and deploy locally. If you are building Scala **2.10.x**, run
 
 .. code-block:: bash
 
     # From the main Scala directory
     $ ant distpack-opt
     $ (cd dists/maven/latest; ant deploy.snapshot.local)
+    
+In case you are building Scala **master**, run
+
+.. code-block:: bash
+
+    # From the main Scala directory
+    $ ant publish.local
 
 Then rebuild Scala IDE, the build will automatically pickup the compiler which was installed locally.
 
