@@ -3,28 +3,6 @@ Refactoring
 
 `Scala Refactoring`_ is integrated in Scala IDE. It offers a broad range of refactoring actions.
 
-Extracting Local Values
------------------------
-
-The `Extract Local`_ action does the opposite work of Inline Local. It creates a value of an expression. It is a must use to make code more readable.
-
-Select an expression to extract.
-
-.. image:: images/feature-refactoring-extract-local-01.png
-
-Call the action, then set a name for the created value.
-
-.. image:: images/feature-refactoring-extract-local-02.png
-
-Extracting Methods
-------------------
-
-The `Extract Method`_ action extract the set of selected statements into a new method. The original code is replaced by the equivalent method call.
-
-.. image:: images/feature-refactoring-extract-method-01.png
-   :width: 100%
-   :target: ../_images/feature-refactoring-extract-method-01.png
-
 Inlining Local Values
 ------------------------
 
@@ -209,8 +187,6 @@ Selecting the ``Target`` class and applying the *Move constructor to companion o
 Currently this is only supported for the primary constructor (thus no refactoring dialog is needed), moving auxiliary constructors is not (yet) possible.
 
 
-.. _Extract Local: http://scala-refactoring.org/extract-local/
-.. _Extract Method: http://scala-refactoring.org/extract-method/
 .. _Inline Local: http://scala-refactoring.org/inline-local/
 .. _Organize Imports: http://scala-refactoring.org/organize-imports/
 .. _Rename: http://scala-refactoring.org/rename/
