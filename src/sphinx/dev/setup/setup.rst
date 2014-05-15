@@ -79,8 +79,9 @@ will open. There, select ``General > Existing Projects into Workspace`` and clic
 will open. Browse to the folder that points to your cloned Scala IDE project's and select it.
 
 A list of projects should then be loaded in the below white area. The only projects that you absolutely
-need to import in Eclipse are ``org.scala-ide.sdt.core`` and ``org.scala-ide.sdt.core.tests``. Select
-only those and click Finish.
+need to import in Eclipse are ``org.scala-ide.sdt.core`` and ``org.scala-ide.sdt.core.tests``. If you want
+to work on Debugger select also ``org.scala-ide.sdt.debug(.tests)`` and for expression evaluator add
+``org.scala-ide.sdt.debug.expression(.tests)``. Select projects you want to work on and click Finish.
 
 .. note:: If you want to hack on the Debugger it may be necessary for Linux systems to add the ``tools.jar`` to the classpath. This can be achieved by navigating to ``Preferences → Java → Installed JREs`` and adding the JAR to the JRE that builds your sources. The JAR itself can be found at ``<path-to-JRE/lib/tools.jar>``.
 
