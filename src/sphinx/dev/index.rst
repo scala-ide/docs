@@ -18,6 +18,7 @@ Contents:
    building/building
    architecture/architecture
    architecture/presentation-compiler
+   architecture/expression-evaluator
    code/code
    testing/testing
    repository-organization/repository-organization
