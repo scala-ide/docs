@@ -63,13 +63,24 @@ Community
 
 In addition to the Typesafe team there is a very active community around the Scala IDE, who constantly donate their time and energy to build great features. If you are working on something and want to feature on the roadmap, please let us know!
 
-Simon Schäffer
+Simon Schäfer
 ~~~~~~~~~~~~~~
 
-- improve the user experience
-	- better wizards
-  	- hovers, error markers, dialogs
+For GSoC14 there are several improvements in work. They include inprovements to the user experience and the starting transition to an "user extensible IDE". User extensible means that functionality of the IDE can be extended by users with there own moduls, which are written entirely in Scala.
 
+Improvement to the user experience include:
+
+- Better wizards and dialogs
+- Cleaned up hovers, icons, menu bars, error markers etc.
+- Behavior of the Scala IDE follows Scala preferences and not Java preferences
+
+New features should be implemented or reimplemented in so far that it is possible to extend them by users. This include:
+
+- Save actions. At the moment there are only the save actions of the Java editor available, which mostly do not work and/or produce error messages when they are applied on Scala code.
+- Auto edits. They do automatic changes to a document while the user types and are used to do small minor code edits, which developers normally don't want to do by themselves. This includes features such as automatic indentation and auto expanding multi line comments.
+- Refactorings. They are the big brother of auto edits, need to be invoked explicitly and can do even the most powerful code changes. Giving users the possibility to write them on their own means that they can automate their repetitive code changes much more easily.
+
+The full GSoC proposal, can be found `here <http://www.google-melange.com/gsoc/proposal/public/google/gsoc2014/sschaef/5629499534213120>`_.
 
 
 
