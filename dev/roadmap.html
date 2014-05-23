@@ -1,4 +1,3 @@
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
@@ -94,9 +93,90 @@
       <div class="span11 main-content">
         <div class="section" id="roadmap">
 <span id="id1"></span><h1>Roadmap</h1>
+<div class="section" id="goal">
+<h2>Goal</h2>
+<p>The central goal until the end of 2014 is to improve Play experience in Eclipse. To that end, we need some infrastructure work: improve Scala IDE core to work with different versions of Scala (since Play does not switch at the same time a new Scala is released) and sbt server (for correctly building a Play project).</p>
+</div>
 <div class="section" id="codename-lithium">
 <h2>4.0.0 - codename Lithium</h2>
-<p>Coming soon.</p>
+<div class="section" id="milestone-2-end-of-may">
+<h3>Milestone 2 (end of May)</h3>
+<ul>
+<li><p class="first">Support multiple major Scala versions in the same Eclipse IDE (2.10 and 2.11). This feature allows people to have only one working installation of Eclipse, but mix 2.10 and 2.11 projects in the same workspace. It's been a long-requested feature, implemented based on the new source-flag added in the Scala compiler 2.11.0:</p>
+<blockquote>
+<div><ul class="simple">
+<li>use the newer type-checker (presentation compiler) in the compatibility mode (passing -Xsource:2.10)</li>
+<li>use the exact compiler for building (either 2.10 or 2.11), based on project configuration</li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</div>
+<div class="section" id="milestone-3-middle-of-july">
+<h3>Milestone 3 (middle of July)</h3>
+<ul class="simple">
+<li><a class="reference external" href="https://projects.eclipse.org/releases/luna">Eclipse Luna</a> support</li>
+<li>clean up sdt.core API. The core Scala IDE is already being used by plugins (such as ScalaTest, Play or Worksheet), but it does not have a stable API. This work item cleans up existing functionality and offers a semantically-versioned interface for plugin writers.</li>
+<li>community contributions</li>
+</ul>
+</div>
+<div class="section" id="rc1-middle-of-august">
+<h3>RC1 (middle of August)</h3>
+<ul class="simple">
+<li>bugfixes in new features, integrate community contributions</li>
+</ul>
+</div>
+</div>
+<div class="section" id="play-ide">
+<h2>Play IDE</h2>
+<p>The main missing piece in the Play IDE experience is the builder. Play projects have a relatively complex build, involving asset compilers (routes, templates, CoffeeScript, etc.) or source generators. Instead of replicating the sbt build, we will build an sbt-based builder that delegates to an out-of-process Sbt server.</p>
+<ul class="simple">
+<li>switch Play to Twirl (together with Lithium M3, middle of July )</li>
+</ul>
+<div class="section" id="middle-of-september">
+<h3>0.5.0 (middle of September)</h3>
+<ul>
+<li><dl class="first docutils">
+<dt>sbt server support</dt>
+<dd><ul class="first last simple">
+<li>Import Sbt project (done) - 0.1.0</li>
+<li>Builder by delegating to Sbt server - (0.2.0 Sept 8)</li>
+<li>getting errors/warnings, acting on changed files</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="end-of-the-year">
+<h3>1.0 (end of the year)</h3>
+<ul class="simple">
+<li>launching and debugging support for Play apps</li>
+<li>better completion in templates</li>
+<li>report errors as you type in routes</li>
+</ul>
+</div>
+</div>
+<div class="section" id="community">
+<h2>Community</h2>
+<p>In addition to the Typesafe team there is a very active community around the Scala IDE, who constantly donate their time and energy to build great features. If you are working on something and want to feature on the roadmap, please let us know!</p>
+<div class="section" id="simon-schafer">
+<h3>Simon Schäfer</h3>
+<p>For GSoC14 there are several improvements in work. They include inprovements to the user experience and the starting transition to an &quot;user extensible IDE&quot;. User extensible means that functionality of the IDE can be extended by users with there own moduls, which are written entirely in Scala.</p>
+<p>Improvement to the user experience include:</p>
+<ul class="simple">
+<li>Better wizards and dialogs</li>
+<li>Cleaned up hovers, icons, menu bars, error markers etc.</li>
+<li>Behavior of the Scala IDE follows Scala preferences and not Java preferences</li>
+</ul>
+<p>New features should be implemented or reimplemented in so far that it is possible to extend them by users. This include:</p>
+<ul class="simple">
+<li>Save actions. At the moment there are only the save actions of the Java editor available, which mostly do not work and/or produce error messages when they are applied on Scala code.</li>
+<li>Auto edits. They do automatic changes to a document while the user types and are used to do small minor code edits, which developers normally don't want to do by themselves. This includes features such as automatic indentation and auto expanding multi line comments.</li>
+<li>Refactorings. They are the big brother of auto edits, need to be invoked explicitly and can do even the most powerful code changes. Giving users the possibility to write them on their own means that they can automate their repetitive code changes much more easily.</li>
+</ul>
+<p>The full GSoC proposal, can be found <a class="reference external" href="http://www.google-melange.com/gsoc/proposal/public/google/gsoc2014/sschaef/5629499534213120">here</a>.</p>
+</div>
 </div>
 </div>
 

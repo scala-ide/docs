@@ -4,6 +4,85 @@ Changelog
 4.0.0 - codename Lithium
 ------------------------
 
+M2 (not yet released)
+.....................
+
+- Build support for several versions of Scala
+- Added the ability to compile the sbt compiler-interface on the fly
+- Increase test timeouts (possible source of flaky classpth tests).
+- Better support for auto-completion of identifiers that require backticks  (:ticket:`1001371`)
+- Auto generate stubs for abstract members (:ticket:`1000224`, :ticket:`1000538`)
+- auto breaking comments (:ticket:`1002101`)
+- Add `override` keyword to some methods (:ticket:`1001938`, :ticket:`1001937`, :ticket:`1001936`)
+- Fixes default for project specific compiler settings (:ticket:`1002083`)
+- Use Sbt transactional classfile writer (:ticket:`1001953`)
+- Disable MigrationPreferenceInitializer in UI less environment
+- Simplifies EclipseSbtBuildManager (:ticket:`1002070`)
+- Xsource internal support & ScalaVersion upheaval
+- Updated aspectj dependency to latest stable (1.7.4).
+- Cleanup templates
+- New refactoring menu (:ticket:`1002049`)
+- Re-enable and improved Scala Templates (indentation) (:ticket:`1000058`)
+- Replaces PropertyStore with a set of sparser platform calls.
+- new syntax coloring for Dynamic calls (:ticket:`1001656`)
+- Don't clean workspace unless compiler settings really changed (:ticket:`1002075`)
+- Remove preference store listener on deactivation
+- Disable javaextdirs setting in Scala projects. (:ticket:`1002072`)
+- More robust handling of virtual files. (:ticket:`1002073`)
+- Custom semantic highlighting extensions (:ticket:`1001989`)
+- Small improvements in indentation (if-else, literal in val/var) (:ticket:`1001306`, :ticket:`1000415`)
+- Enhance auto indent logic (:ticket:`1002037`, :ticket:`1001099`)
+- Touches up the feature.xml descriptions of the plugins. (:ticket:`1001605`)
+- Fix character encoding issue in about.ini
+- Make Organize Imports NOT save automatically after edit. (:ticket:`1001573`)
+- Add handler+icon for indent guide feature
+- Reorganize preference pages
+- Removes auto-generated feature.xml files from repo.
+- Combines toolbar menu structures (:ticket:`1002042`)
+- Make bump-version a simple(r) operation
+- Fix compilation error shown with Xlint
+- Rehaul of the package structure (using internal packages)
+- Presentation Compiler should not reload managed units while keeping the lock (:ticket:`1002003`, :ticket:`1002007`, :ticket:`1001943`, :ticket:`1001911`)
+- Show confirmation dialog before doing a workspace wide clean (:ticket:`1002043`)
+- Implementation of an indent guide + test suite (:ticket:`1000828`, :ticket:`1002033`)
+- Add 'Xlint' and 'feature' to the compiler preference site (:ticket:`1002039`)
+- Allow task tags to start with a special sign (:ticket:`1000991`)
+- Refactorings in wizard components
+- prevent NPE on classpath problems
+- Reinstate call to JDT reconciler for side-effects (:ticket:`1002016`)
+- Only ask for diagnostics at first install and if heap is not sufficient. (:ticket:`1001113`)
+- Updating the License to the latest Scala License.
+- Fix warning about adapted argument list
+- Fix New Class Wizard JavaModelExceptions (:ticket:`1002006`)
+- Removed FIXME in `ScalaSourceFile` (Refactoring)
+- SI-8151 Prepare for removal of -Yself-in-annots
+- Do not use system properties to configure incremental compiler.
+- Using the enclosed type to fix completion and imports for inner classes. (:ticket:`1002002`)
+- Fixed NPE on quick assist proposals (:ticket:`1002014`)
+- Add an option to show API diffs when building (sbt incremental compiler debugging) (:ticket:`1001952`)
+- Issue/remove continuations plugin support (:ticket:`1002012`, :ticket:`1002011`)
+- Adds decorator extension point to change icons for Scala files (:ticket:`1001975`)
+- Add synchronisation around map `getOrElse`.
+- Don't add local suffix (one space character) for field completions (:ticket:`1001973`)
+- Cache info about jar files that might contain Scala classifies. (:ticket:`1001999`)
+- Workaround for race condition during source indexing
+- Ignored completion test causing spurious failures on 2.11 build
+- Correct completion overwrite behavior when nothing is overwritten (:ticket:`1001791`)
+- Make pointcut pick up subclasses of ScalaJavaBuilder. (:ticket:`1001995`)
+- Don't skip trees with transparent positions when looking for references
+- Catch up with Scala Library Modularization.
+- Lets the sdt.core pom.xml copy scala-reflect from the m2repo to the target folder (:ticket:`1001987`)
+- Unused member warning doesn't highlight whole definition anymore (:ticket:`1001983`)
+- Fix syntax coloring window crash
+- Reverts logic for unloading units in askLoadedType
+- Fix race condition in local rename refactoring
+- Fix tests to run on Windows platform (:ticket:`1001981`)
+- Throw the exception return by the the presentation compiler
+- Make PC reloads start with quiescence (reloaded) - performance enhancement (:ticket:`1001388`, :ticket:`1001454`)
+- Enable editor preferences (:ticket:`1001965`)
+- adds constructor autocomplete. t1001272 (:ticket:`1001272`)
+- Remove rename proposal from quick assists. (:ticket:`1001947`)
+
 M1  (2013-11-05)
 ................
 
