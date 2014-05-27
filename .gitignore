@@ -1,4 +1,11 @@
 _build
-target
 .target
 .DS_Store
+
+# IntelliJ IDEA
+/.idea
+
+# sbt
+/target
+/project/target
+/project/project
