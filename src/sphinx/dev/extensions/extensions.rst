@@ -2,8 +2,10 @@
    are made available under the terms of the Scala License which accompanies this distribution, and
    is available at http://www.scala-lang.org/node/146
 
-Extending Scala IDE
-===================
+.. include:: /global_defs.hrst
+
+Extending Scala IDE |new|
+=========================
 
 Custom semantic annotations
 ---------------------------
