@@ -2,12 +2,14 @@
    are made available under the terms of the Scala License which accompanies this distribution, and
    is available at http://www.scala-lang.org/node/146
 
-.. _expression-evaluator:
+.. include:: /global_defs.hrst
 
-Expression evaluator
-====================
+Expression evaluator |new|
+==========================
 
 Scala debugger uses new expression evaluator, which translates user code into invocations of ``JDI`` remote calls. This allows evaluation of expression in context of some breakpoint, with access to local variables and methods.
+
+.. _expression-evaluator:
 
 Expression evaluation
 ---------------------
