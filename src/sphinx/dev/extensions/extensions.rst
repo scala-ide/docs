@@ -31,7 +31,7 @@ Example
 ~~~~~~~
 
 For example to highlight all method usages on Scala mutable collections one has to create
-a plugin with a single classes inside that define your traversers and highlihter::
+a plugin containing a single classes inside that defines your traversers and highlighter::
 
     package my.company.highlighers.mutable
 
