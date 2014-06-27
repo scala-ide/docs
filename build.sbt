@@ -1,3 +1,5 @@
+name := "scala-ide-docs"
+
 site.settings
 
 ghpages.settings
