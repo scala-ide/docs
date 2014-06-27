@@ -1,3 +1,4 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
@@ -6,7 +7,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Frequently Asked Questions &mdash; Scala IDE  documentation</title>
+    <title>Frequently Asked Questions &mdash; Scala IDE 0.1-SNAPSHOT documentation</title>
     
     <link rel="stylesheet" href="../../_static/resources/stylesheets/base.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
@@ -19,7 +20,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '',
+        VERSION:     '0.1-SNAPSHOT',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -39,7 +40,7 @@
     <script type="text/javascript" src="../../_static/resources/javascript/bootstrap-dropdown-app.js"></script>
     <script type="text/javascript" src="../../_static/resources/javascript/contentsFix.js"></script>
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
-    <link rel="top" title="Scala IDE  documentation" href="../../index.html" />
+    <link rel="top" title="Scala IDE 0.1-SNAPSHOT documentation" href="../../index.html" />
     <link rel="up" title="User Documentation for the Scala IDE 4.0.x - Lithium (unreleased)" href="../index.html" />
     <link rel="next" title="Community" href="../../community.html" />
     <link rel="prev" title="Developing for Android" href="../../tutorials/androiddevelopment/index.html" /> 
@@ -103,7 +104,7 @@
 <h3>I have a Retina Display and Eclipse looks blurry. How can I fix it?</h3>
 <p>You need to tell Mac OS that Eclipse is high-resolution capable.</p>
 <ul class="simple">
-<li>Right-click on the Eclipse.app and choose &quot;Show package contents&quot;</li>
+<li>Right-click on the Eclipse.app and choose &#8220;Show package contents&#8221;</li>
 <li>Open Contents/Info.plist in an editor</li>
 <li>Add the following at the end of the file, just before the closing tags. It should look like this:</li>
 </ul>
@@ -114,7 +115,7 @@
 </pre></div>
 </div>
 <ul class="simple">
-<li>Move the Eclipse.app to a new folder (to clear OS X's cache of the Info.plist), then move it back to the old folder.</li>
+<li>Move the Eclipse.app to a new folder (to clear OS X&#8217;s cache of the Info.plist), then move it back to the old folder.</li>
 <li>Launch Eclipse</li>
 </ul>
 </div>
@@ -129,12 +130,12 @@
 </ul>
 <p>If you are using one of the above Eclipse packages you are all set and ready to <a class="reference internal" href="../gettingstarted/index.html"><em>install the Scala
 IDE</em></a>.</p>
-<p>In case you are using a different Eclipse package (e.g., Eclipse IDE for C/C++ Developers), don't panic,
-the Scala IDE has only one dependency and it's a two minutes job to update your Eclipse environment and
+<p>In case you are using a different Eclipse package (e.g., Eclipse IDE for C/C++ Developers), don&#8217;t panic,
+the Scala IDE has only one dependency and it&#8217;s a two minutes job to update your Eclipse environment and
 be ready to start your Scala journey.</p>
 <p>Start by installing the Eclipse JDT (Eclipse Java Development Tools). To do so, open Eclipse and go
-to the <tt class="docutils literal"><span class="pre">Help</span> <span class="pre">&gt;</span> <span class="pre">Install</span> <span class="pre">New</span> <span class="pre">Software</span></tt> menu, select the eclipse update site (e.g. &quot;Indigo -
-<a class="reference external" href="http://download.eclipse.org/releases/indigo">http://download.eclipse.org/releases/indigo</a>&quot;) and, under the Programming Languages section, select
+to the <tt class="docutils literal"><span class="pre">Help</span> <span class="pre">&gt;</span> <span class="pre">Install</span> <span class="pre">New</span> <span class="pre">Software</span></tt> menu, select the eclipse update site (e.g. &#8220;Indigo -
+<a class="reference external" href="http://download.eclipse.org/releases/indigo">http://download.eclipse.org/releases/indigo</a>&#8221;) and, under the Programming Languages section, select
 Eclipse Java Development Tools. Install it.</p>
 <p>Now that the JDT is installed, go ahead and <a class="reference internal" href="../gettingstarted/index.html"><em>install the Scala IDE</em></a>.</p>
 </div>
@@ -170,14 +171,14 @@ then choose the appropriate update site.</p>
 </div>
 </div>
 <div class="section" id="scala-ide-complains-about-no-scala-library-or-more-than-one-scala-library">
-<h3>Scala IDE complains about 'no Scala library...' or 'More than one Scala library...'</h3>
-<p>The Scala IDE validates all Scala projects' classpaths to check that the Scala library has been correctly setup. It is checking two points: that the project build path contains only one Scala libraries, and that its version is compatible with the installed version of Scala IDE.</p>
+<h3>Scala IDE complains about &#8216;no Scala library...&#8217; or &#8216;More than one Scala library...&#8217;</h3>
+<p>The Scala IDE validates all Scala projects&#8217; classpaths to check that the Scala library has been correctly setup. It is checking two points: that the project build path contains only one Scala libraries, and that its version is compatible with the installed version of Scala IDE.</p>
 <div class="section" id="not-using-m2eclipse">
 <h4>Not using m2eclipse</h4>
 <p>It needs to be fixed manually.</p>
 <ul class="simple">
-<li>If the error is 'no Scala library...', one Scala library needs to be added to the build path. The simplest thing is to add the Scala library container: right-click on the project in the Package Explorer view, then in the context menu select <tt class="docutils literal"><span class="pre">Build</span> <span class="pre">Path</span> <span class="pre">→</span> <span class="pre">Add</span> <span class="pre">Libraries...</span></tt>, and add the <tt class="docutils literal"><span class="pre">Scala</span> <span class="pre">Library</span></tt>.</li>
-<li>If the error is 'more than one Scala library...', the number of Scala libraries needs to limited to one in the build path. If possible, make it being the Scala library container provided by Scala IDE.</li>
+<li>If the error is &#8216;no Scala library...&#8217;, one Scala library needs to be added to the build path. The simplest thing is to add the Scala library container: right-click on the project in the Package Explorer view, then in the context menu select <tt class="docutils literal"><span class="pre">Build</span> <span class="pre">Path</span> <span class="pre">→</span> <span class="pre">Add</span> <span class="pre">Libraries...</span></tt>, and add the <tt class="docutils literal"><span class="pre">Scala</span> <span class="pre">Library</span></tt>.</li>
+<li>If the error is &#8216;more than one Scala library...&#8217;, the number of Scala libraries needs to limited to one in the build path. If possible, make it being the Scala library container provided by Scala IDE.</li>
 </ul>
 </div>
 <div class="section" id="using-m2eclipse">
@@ -188,8 +189,8 @@ then choose the appropriate update site.</p>
 </div>
 </div>
 <div class="section" id="scala-ide-complains-about-is-cross-compiled-with-an-incompatible-version-of-scala">
-<h3>Scala IDE complains about '... is cross-compiled with an incompatible version of Scala ...'</h3>
-<p>The Scala IDE tries to check if binary incompatible Scala libraries have been inadvertently mixed in a project's classpath. It works by extracting, from the name of the jars, which major version of Scala it has been compiled against (assuming the Scala convention for publishing cross-compiled libraries, and further assuming that Scala minor releases are binary compatible). If the extracted Scala major version doesn't match the one bundled with the Scala IDE, a problem is reported. This ad-hoc validation prevents one of the most common reason for compiler crashes and lack of intelligent behavior in the Scala IDE.</p>
+<h3>Scala IDE complains about &#8216;... is cross-compiled with an incompatible version of Scala ...&#8217;</h3>
+<p>The Scala IDE tries to check if binary incompatible Scala libraries have been inadvertently mixed in a project&#8217;s classpath. It works by extracting, from the name of the jars, which major version of Scala it has been compiled against (assuming the Scala convention for publishing cross-compiled libraries, and further assuming that Scala minor releases are binary compatible). If the extracted Scala major version doesn&#8217;t match the one bundled with the Scala IDE, a problem is reported. This ad-hoc validation prevents one of the most common reason for compiler crashes and lack of intelligent behavior in the Scala IDE.</p>
 <p>If this check returns a false-negative, it can be disabled at the workspace level, or at the project level. The setting is <tt class="docutils literal"><span class="pre">withVersionClasspathValidator</span></tt> in the <tt class="docutils literal"><span class="pre">Scala</span> <span class="pre">→</span> <span class="pre">Compiler</span> <span class="pre">→</span> <span class="pre">Build</span> <span class="pre">Manager</span></tt> preference section.</p>
 </div>
 </div>
@@ -208,7 +209,7 @@ then choose the appropriate update site.</p>
 <div class="section" id="do-not-enter-road-sign-when-opening-a-scala-editor">
 <h3>Do Not Enter road sign when opening a Scala Editor</h3>
 <p><strong>Symptoms</strong>:</p>
-<p>When opening a Scala editor, the error &quot;Could not open the editor: org.eclipse.jdt.internal.core.CompilationUnit cannot be cast to scala.tools.eclipse.InteractiveCompilationUnit&quot; (or something similar) appears.</p>
+<p>When opening a Scala editor, the error &#8220;Could not open the editor: org.eclipse.jdt.internal.core.CompilationUnit cannot be cast to scala.tools.eclipse.InteractiveCompilationUnit&#8221; (or something similar) appears.</p>
 <p><strong>Solution</strong>:</p>
 <p>The Scala IDE uses weaving to behave as (much) more than a Java editor on Scala files, and this is the message you get when it is not active.</p>
 <p>JDT weaving is activated by default. Moreover, Scala plugin
@@ -220,21 +221,21 @@ the <a class="reference internal" href="../advancedsetup/index.html"><em>Scala D
 <div class="section" id="scala-errors-on-all-unicode-arrows">
 <h3>Scala errors on all Unicode arrows</h3>
 <p><strong>Symptoms</strong>:</p>
-<p>The code contains Unicode niceties like <tt class="docutils literal"><span class="pre">←</span></tt> and <tt class="docutils literal"><span class="pre">⇒</span></tt>, but the editor doesn't seem to be able to display them, and errors are reported at their location.</p>
+<p>The code contains Unicode niceties like <tt class="docutils literal"><span class="pre">←</span></tt> and <tt class="docutils literal"><span class="pre">⇒</span></tt>, but the editor doesn&#8217;t seem to be able to display them, and errors are reported at their location.</p>
 <p><strong>Solution</strong>:</p>
 <p>The operating system is not using UTF-8 by default, and its default encoding is used inside Eclipse.</p>
 <p>The encoding used to open files can be configured at different levels. Most of the time, setting Eclipse default encoding to UTF-8 in <tt class="docutils literal"><span class="pre">General</span> <span class="pre">→</span> <span class="pre">Workspace</span></tt> in the preferences <a class="footnote-reference" href="#preferences" id="id5">[1]</a> is enough. But in some case, the wrong encoding might also have been set in the project properties, or even the file properties.</p>
 </div>
 <div class="section" id="red-screen-of-death-red-squiggles-everywhere">
 <h3>Red screen of death (red squiggles everywhere)</h3>
-<p>The number one cause of <em>nothing works</em> is a mismatch between the Scala version of the Eclipse plug-in and your project's. Make sure there is only one version of the Scala library on your classpath, and that it matches the version provided by Scala IDE.
+<p>The number one cause of <em>nothing works</em> is a mismatch between the Scala version of the Eclipse plug-in and your project&#8217;s. Make sure there is only one version of the Scala library on your classpath, and that it matches the version provided by Scala IDE.
 The prime suspect is Maven Dependencies, which can download and add an incompatible scala-library.jar.</p>
 <p>The classpath validator added in Scala IDE 2.0.0 should detect this problem and provide meaningful problem markers.</p>
 </div>
 <div class="section" id="no-completions-available">
 <h3>No completions available</h3>
 <p><strong>Symptoms</strong>:</p>
-<p>When pressing Ctrl-Space, the list doesn't contain code completion proposals, only templates, but other semantic actions (such as hyperlinking) work fine.</p>
+<p>When pressing Ctrl-Space, the list doesn&#8217;t contain code completion proposals, only templates, but other semantic actions (such as hyperlinking) work fine.</p>
 <p><strong>Solution</strong>:</p>
 <p>During the development of version 2.0.0, the configuration of the Scala completion engines has been modified to make sure that no more disabled by mistake. If Scala IDE has been updated from an old beta version, it is possible that the Scala completion engines (<tt class="docutils literal"><span class="pre">Scala</span> <span class="pre">Completions</span></tt> and <tt class="docutils literal"><span class="pre">Scala</span> <span class="pre">Completion</span> <span class="pre">(Java</span> <span class="pre">sources)</span></tt>) need to be re-enabled.</p>
 <p>The diagnostic tool at <tt class="docutils literal"><span class="pre">Scala</span> <span class="pre">→</span> <span class="pre">Run</span> <span class="pre">Setup</span> <span class="pre">Diagnostic</span></tt> allows to fix this problem. Make sure that <tt class="docutils literal"><span class="pre">Use</span> <span class="pre">Scala-compatible</span> <span class="pre">JDT</span> <span class="pre">content</span> <span class="pre">assist</span> <span class="pre">proposals</span></tt> is enabled.</p>
@@ -296,7 +297,7 @@ this problem if you upgrade to JRE 7 or newer.</p>
 </pre></div>
 </div>
 </div></blockquote>
-<p>If the thread dump doesn't match the one in <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000317">#1000317</a> or <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000996">#1000996</a>, please open a new ticket with your thread dump attached.</p>
+<p>If the thread dump doesn&#8217;t match the one in <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000317">#1000317</a> or <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000996">#1000996</a>, please open a new ticket with your thread dump attached.</p>
 </div>
 <div class="section" id="noclassdeffounderror-scala-tools-nsc-settings-mutablesettings-settingvalue">
 <h3>NoClassDefFoundError (scala/tools/nsc/settings/MutableSettings$SettingValue)</h3>
@@ -310,7 +311,7 @@ this problem if you upgrade to JRE 7 or newer.</p>
 <p><strong>Symptoms</strong>:</p>
 <p>A compiler error is reported in the Scala editor, when indeed the code is correct.</p>
 <p><strong>Solution</strong>:</p>
-<p>In rare circumstances, the interactive typecheker (a.k.a., presentation compiler) can get in a state where it reports false, type-checking errors. As a workaround, we've provided a UI action that force restarts the presentation compiler. You can access it by right clicking on the project folder in the Package Explorer view, then <tt class="docutils literal"><span class="pre">Scala</span> <span class="pre">→</span> <span class="pre">Restart</span> <span class="pre">Presentation</span> <span class="pre">Compiler</span></tt>. If the incorrect error is still reported after restarting the presentation compiler, please drop us a note in the scala-ide-user mailing list.</p>
+<p>In rare circumstances, the interactive typecheker (a.k.a., presentation compiler) can get in a state where it reports false, type-checking errors. As a workaround, we&#8217;ve provided a UI action that force restarts the presentation compiler. You can access it by right clicking on the project folder in the Package Explorer view, then <tt class="docutils literal"><span class="pre">Scala</span> <span class="pre">→</span> <span class="pre">Restart</span> <span class="pre">Presentation</span> <span class="pre">Compiler</span></tt>. If the incorrect error is still reported after restarting the presentation compiler, please drop us a note in the scala-ide-user mailing list.</p>
 <table class="docutils footnote" frame="void" id="preferences" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">

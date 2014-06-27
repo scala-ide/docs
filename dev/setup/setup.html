@@ -1,3 +1,4 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
@@ -6,7 +7,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Setup &mdash; Scala IDE  documentation</title>
+    <title>Setup &mdash; Scala IDE 0.1-SNAPSHOT documentation</title>
     
     <link rel="stylesheet" href="../../_static/resources/stylesheets/base.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
@@ -19,7 +20,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '',
+        VERSION:     '0.1-SNAPSHOT',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -39,7 +40,7 @@
     <script type="text/javascript" src="../../_static/resources/javascript/bootstrap-dropdown-app.js"></script>
     <script type="text/javascript" src="../../_static/resources/javascript/contentsFix.js"></script>
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
-    <link rel="top" title="Scala IDE  documentation" href="../../index.html" />
+    <link rel="top" title="Scala IDE 0.1-SNAPSHOT documentation" href="../../index.html" />
     <link rel="up" title="Welcome to the Scala IDE Developer Documentation" href="../index.html" />
     <link rel="next" title="Building the Scala IDE" href="../building/building.html" />
     <link rel="prev" title="Welcome to the Scala IDE Developer Documentation" href="../index.html" /> 
@@ -98,7 +99,7 @@ You are literally instants away from being all set and ready to start hacking th
 <div class="section" id="requirements">
 <h2>Requirements</h2>
 <ul class="simple">
-<li><a class="reference external" href="http://www.eclipse.org/downloads/">Eclipse 4.3 (Kepler)</a>, including PDT and JDT. (Be aware, the plugin's sources are no longer compatible with Eclipse 3.x).</li>
+<li><a class="reference external" href="http://www.eclipse.org/downloads/">Eclipse 4.3 (Kepler)</a>, including PDT and JDT. (Be aware, the plugin&#8217;s sources are no longer compatible with Eclipse 3.x).</li>
 <li>The <a class="reference external" href="http://www.eclipse.org/pde/">Eclipse Plug-in Development Environment</a>, which ships with the Eclipse SDK but may
 need to be installed manually.  Choose <tt class="docutils literal"><span class="pre">Help</span> <span class="pre">&gt;</span> <span class="pre">Install</span> <span class="pre">New</span> <span class="pre">Software...</span></tt>,
 select the <a class="reference external" href="http://download.eclipse.org/releases/kepler">Indigo Update Site</a>, then install <tt class="docutils literal"><span class="pre">General</span>
@@ -116,7 +117,7 @@ select the <a class="reference external" href="http://download.eclipse.org/relea
 that will greatly simplify the process of sending us patches (remember to also read about the
 <a class="reference internal" href="../workflow/workflow.html#workflow-page"><em>Workflow</em></a> before creating pull requests).</p>
 <p>If you are new to GitHub, <a class="reference external" href="http://help.github.com/fork-a-repo/">read here to learn how to fork a project</a>.</p>
-<p>After forking the project, simply open a terminal and clone your own fork to download the project's
+<p>After forking the project, simply open a terminal and clone your own fork to download the project&#8217;s
 sources. The command for cloning the fork should be very close to the following one (mind that
 you will have to replace <em>&lt;username&gt;</em> with your actual Git username).</p>
 <div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>git clone git@github.com:&lt;username&gt;/scala-ide.git
@@ -129,7 +130,7 @@ made in the project, and easily integrate them back in your fork.</p>
 <div class="section" id="pull-the-libraries">
 <h2>Pull the libraries</h2>
 <p>The Scala IDE projects uses libraries which are pulled during the build process and copied in the <tt class="docutils literal"><span class="pre">target/lib</span></tt> folders.
-So let's run the build.</p>
+So let&#8217;s run the build.</p>
 <p>From the project root, run the following command if you are using Scala IDE with Scala 2.10:</p>
 <div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>./build-all.sh
 </pre></div>
@@ -145,7 +146,7 @@ So let's run the build.</p>
 <p>The Scala IDE project already contains the metadata files needed by Eclipse to setup the project.
 To import the Scala IDE in your workspace simply click on <tt class="docutils literal"><span class="pre">File</span> <span class="pre">&gt;</span> <span class="pre">Import</span></tt>. The Eclipse Import dialog
 will open. There, select <tt class="docutils literal"><span class="pre">General</span> <span class="pre">&gt;</span> <span class="pre">Existing</span> <span class="pre">Projects</span> <span class="pre">into</span> <span class="pre">Workspace</span></tt> and click Next. A new dialog
-will open. Browse to the folder that points to your cloned Scala IDE project's and select it.</p>
+will open. Browse to the folder that points to your cloned Scala IDE project&#8217;s and select it.</p>
 <p>A list of projects should then be loaded in the below white area. The only projects that you absolutely
 need to import in Eclipse are <tt class="docutils literal"><span class="pre">org.scala-ide.sdt.core</span></tt> and <tt class="docutils literal"><span class="pre">org.scala-ide.sdt.core.tests</span></tt>. Select
 only those and click Finish.</p>
@@ -171,7 +172,7 @@ The Scalastyle builder is already added to all projects that should be checked, 
 </div>
 <div class="section" id="run-the-scala-ide-within-eclipse">
 <h2>Run the Scala IDE within Eclipse</h2>
-<p>So, you managed to have the Scala IDE sources compiling, now it's time to learn how to run the Scala
+<p>So, you managed to have the Scala IDE sources compiling, now it&#8217;s time to learn how to run the Scala
 IDE within Eclipse.</p>
 <p>Doing this is especially useful if you need to do some manual debugging of the plug-in. Since the
 Scala IDE uses weaving, you need to launch the IDE with weaving enabled, which is not configurable
@@ -192,7 +193,7 @@ test with Equinox Weaving.</p>
 Run As &gt; Equinox Weaving enabled Eclipse Application.  That should fire up a second Eclipse instance.
 To quickly test that all is working fine, try to create a Scala project.</p>
 <p>You are now ready to hack on the Scala IDE. Start by looking around, do some change and observe what
-happens when you launch the second Eclipse's instance.</p>
+happens when you launch the second Eclipse&#8217;s instance.</p>
 <p>Read the rest of the developer documentation to get more insights about the overall architecture.</p>
 </div>
 </div>

@@ -1,3 +1,4 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
@@ -6,7 +7,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Refactoring updated &mdash; Scala IDE  documentation</title>
+    <title>Refactoring updated &mdash; Scala IDE 0.1-SNAPSHOT documentation</title>
     
     <link rel="stylesheet" href="../../../../_static/resources/stylesheets/base.css" type="text/css" />
     <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
@@ -19,7 +20,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../../../',
-        VERSION:     '',
+        VERSION:     '0.1-SNAPSHOT',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -39,7 +40,7 @@
     <script type="text/javascript" src="../../../../_static/resources/javascript/bootstrap-dropdown-app.js"></script>
     <script type="text/javascript" src="../../../../_static/resources/javascript/contentsFix.js"></script>
     <link rel="shortcut icon" href="../../../../_static/favicon.ico"/>
-    <link rel="top" title="Scala IDE  documentation" href="../../../../index.html" />
+    <link rel="top" title="Scala IDE 0.1-SNAPSHOT documentation" href="../../../../index.html" />
     <link rel="up" title="Typing and Viewing" href="../index.html" />
     <link rel="next" title="Semantic Highlighting new" href="../semantic-highlighting/index.html" />
     <link rel="prev" title="Quick Fixes" href="../quick-fixes.html" /> 
@@ -168,7 +169,7 @@ so please <a class="reference external" href="http://scala-ide-portfolio.assembl
 <p>All changes are displayed in the preview dialog:</p>
 <img alt="../../../../_images/change-order-preview2.png" src="../../../../_images/change-order-preview2.png" />
 <p><em>Limitations</em></p>
-<p>Changing of parameter order currently doesn't play well together with default and named arguments. This will hopefully be improved soon.</p>
+<p>Changing of parameter order currently doesn&#8217;t play well together with default and named arguments. This will hopefully be improved soon.</p>
 </div>
 <div class="section" id="split-parameter-lists">
 <h3>Split parameter lists</h3>
@@ -182,12 +183,12 @@ so please <a class="reference external" href="http://scala-ide-portfolio.assembl
 </div>
 <div class="section" id="merge-parameter-lists">
 <h3>Merge parameter lists</h3>
-<p>Your method doesn't need multiple parameter lists? Being the inverse refactoring to <em>Split parameter lists</em>, <em>Merge parameter lists</em> merges parameter lists that don't need to be split.</p>
+<p>Your method doesn&#8217;t need multiple parameter lists? Being the inverse refactoring to <em>Split parameter lists</em>, <em>Merge parameter lists</em> merges parameter lists that don&#8217;t need to be split.</p>
 <p>The refactoring dialog is very similar to <em>Split parameter lists</em>:</p>
 <img alt="../../../../_images/merge-dialog2.png" src="../../../../_images/merge-dialog2.png" />
 <p>Having merged the right parameter lists we get back our original method signature from the beginning, before we applied the <em>Split parameter lists</em> refactoring:</p>
 <img alt="../../../../_images/merge-preview2.png" src="../../../../_images/merge-preview2.png" />
-<p>Note that there are situations where parameter lists can't be merged because they are partially applied. As an example, we can't merge the remaining two parameter lists of the method <tt class="docutils literal"><span class="pre">reorder</span></tt> because of the partial application in the method <tt class="docutils literal"><span class="pre">partial</span></tt>:</p>
+<p>Note that there are situations where parameter lists can&#8217;t be merged because they are partially applied. As an example, we can&#8217;t merge the remaining two parameter lists of the method <tt class="docutils literal"><span class="pre">reorder</span></tt> because of the partial application in the method <tt class="docutils literal"><span class="pre">partial</span></tt>:</p>
 <img alt="../../../../_images/merge-not-possible2.png" src="../../../../_images/merge-not-possible2.png" />
 </div>
 </div>
@@ -209,7 +210,7 @@ so please <a class="reference external" href="http://scala-ide-portfolio.assembl
 <div class="section" id="move-constructor-to-companion-object-new">
 <h2>Move constructor to companion object <span class="raw-html"><span class="label info">new</span></span></h2>
 <p>You want to create a factory method such that the constructor of your class is not accessed directly, but tracking down and redirecting all constructor calls is cumbersome? Then <em>Move constructor to companion</em> object is here to help! It creates an <tt class="docutils literal"><span class="pre">apply</span></tt> method in the companion object (which is generated as well if necessary) that calls the constructor. All constructor calls get redirected to the new factory method.</p>
-<p>As a simple example we start with a <tt class="docutils literal"><span class="pre">Target</span></tt> class and a class <tt class="docutils literal"><span class="pre">User</span></tt> that calls <tt class="docutils literal"><span class="pre">Target</span></tt>'s constructor:</p>
+<p>As a simple example we start with a <tt class="docutils literal"><span class="pre">Target</span></tt> class and a class <tt class="docutils literal"><span class="pre">User</span></tt> that calls <tt class="docutils literal"><span class="pre">Target</span></tt>&#8216;s constructor:</p>
 <img alt="../../../../_images/move-constructor-before2.png" src="../../../../_images/move-constructor-before2.png" />
 <p>Selecting the <tt class="docutils literal"><span class="pre">Target</span></tt> class and applying the <em>Move constructor to companion object</em> refactoring creates a companion object and an <tt class="docutils literal"><span class="pre">apply</span></tt> method that wraps the constructor call. The constructor call in the <tt class="docutils literal"><span class="pre">User</span></tt> class is redirected to the new factory method.</p>
 <img alt="../../../../_images/move-constructor-preview2.png" src="../../../../_images/move-constructor-preview2.png" />

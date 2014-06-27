@@ -7,6 +7,7 @@ Changelog
 M2 (not yet released)
 .....................
 
+- Support for name hashing in the incremental builder (:ticket:`1002117`)
 - Build support for several versions of Scala
 - Added the ability to compile the sbt compiler-interface on the fly
 - Increase test timeouts (possible source of flaky classpth tests).

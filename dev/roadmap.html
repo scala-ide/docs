@@ -1,3 +1,4 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
@@ -6,7 +7,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Roadmap &mdash; Scala IDE  documentation</title>
+    <title>Roadmap &mdash; Scala IDE 0.1-SNAPSHOT documentation</title>
     
     <link rel="stylesheet" href="../_static/resources/stylesheets/base.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -19,7 +20,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '',
+        VERSION:     '0.1-SNAPSHOT',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -39,7 +40,7 @@
     <script type="text/javascript" src="../_static/resources/javascript/bootstrap-dropdown-app.js"></script>
     <script type="text/javascript" src="../_static/resources/javascript/contentsFix.js"></script>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
-    <link rel="top" title="Scala IDE  documentation" href="../index.html" />
+    <link rel="top" title="Scala IDE 0.1-SNAPSHOT documentation" href="../index.html" />
     <link rel="up" title="Welcome to the Scala IDE Developer Documentation" href="index.html" />
     <link rel="next" title="License" href="../license.html" />
     <link rel="prev" title="Suggested Shortcuts" href="appendix/shortcuts.html" /> 
@@ -102,7 +103,7 @@
 <div class="section" id="milestone-2-end-of-may">
 <h3>Milestone 2 (end of May)</h3>
 <ul>
-<li><p class="first">Support multiple major Scala versions in the same Eclipse IDE (2.10 and 2.11). This feature allows people to have only one working installation of Eclipse, but mix 2.10 and 2.11 projects in the same workspace. It's been a long-requested feature, implemented based on the new source-flag added in the Scala compiler 2.11.0:</p>
+<li><p class="first">Support multiple major Scala versions in the same Eclipse IDE (2.10 and 2.11). This feature allows people to have only one working installation of Eclipse, but mix 2.10 and 2.11 projects in the same workspace. It&#8217;s been a long-requested feature, implemented based on the new source-flag added in the Scala compiler 2.11.0:</p>
 <blockquote>
 <div><ul class="simple">
 <li>use the newer type-checker (presentation compiler) in the compatibility mode (passing -Xsource:2.10)</li>
@@ -162,7 +163,7 @@
 <p>In addition to the Typesafe team there is a very active community around the Scala IDE, who constantly donate their time and energy to build great features. If you are working on something and want to feature on the roadmap, please let us know!</p>
 <div class="section" id="simon-schafer">
 <h3>Simon Schäfer</h3>
-<p>For GSoC14 there are several improvements in work. They include inprovements to the user experience and the starting transition to an &quot;user extensible IDE&quot;. User extensible means that functionality of the IDE can be extended by users with there own moduls, which are written entirely in Scala.</p>
+<p>For GSoC14 there are several improvements in work. They include inprovements to the user experience and the starting transition to an &#8220;user extensible IDE&#8221;. User extensible means that functionality of the IDE can be extended by users with there own moduls, which are written entirely in Scala.</p>
 <p>Improvement to the user experience include:</p>
 <ul class="simple">
 <li>Better wizards and dialogs</li>
@@ -172,7 +173,7 @@
 <p>New features should be implemented or reimplemented in so far that it is possible to extend them by users. This include:</p>
 <ul class="simple">
 <li>Save actions. At the moment there are only the save actions of the Java editor available, which mostly do not work and/or produce error messages when they are applied on Scala code.</li>
-<li>Auto edits. They do automatic changes to a document while the user types and are used to do small minor code edits, which developers normally don't want to do by themselves. This includes features such as automatic indentation and auto expanding multi line comments.</li>
+<li>Auto edits. They do automatic changes to a document while the user types and are used to do small minor code edits, which developers normally don&#8217;t want to do by themselves. This includes features such as automatic indentation and auto expanding multi line comments.</li>
 <li>Refactorings. They are the big brother of auto edits, need to be invoked explicitly and can do even the most powerful code changes. Giving users the possibility to write them on their own means that they can automate their repetitive code changes much more easily.</li>
 </ul>
 <p>The full GSoC proposal, can be found <a class="reference external" href="http://www.google-melange.com/gsoc/proposal/public/google/gsoc2014/sschaef/5629499534213120">here</a>.</p>

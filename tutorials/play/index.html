@@ -1,3 +1,4 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
@@ -6,7 +7,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Setup and use Play framework 2.1 in Scala IDE 3.0 &mdash; Scala IDE  documentation</title>
+    <title>Setup and use Play framework 2.1 in Scala IDE 3.0 &mdash; Scala IDE 0.1-SNAPSHOT documentation</title>
     
     <link rel="stylesheet" href="../../_static/resources/stylesheets/base.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
@@ -19,7 +20,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '',
+        VERSION:     '0.1-SNAPSHOT',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -39,7 +40,7 @@
     <script type="text/javascript" src="../../_static/resources/javascript/bootstrap-dropdown-app.js"></script>
     <script type="text/javascript" src="../../_static/resources/javascript/contentsFix.js"></script>
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
-    <link rel="top" title="Scala IDE  documentation" href="../../index.html" />
+    <link rel="top" title="Scala IDE 0.1-SNAPSHOT documentation" href="../../index.html" />
     <link rel="up" title="Tutorials" href="../index.html" />
     <link rel="next" title="Setup and use Lift framework 2.4 in Scala IDE 2.0" href="../lift24scalaide20/index.html" />
     <link rel="prev" title="Using Scala IDE on Maven projects" href="../m2eclipse/index.html" /> 
@@ -132,7 +133,7 @@ read the <a class="reference external" href="https://github.com/scala-ide/scala-
 <ul>
 <li><p class="first">Download Play framework 2.1 from <a class="reference external" href="http://www.playframework.org/">http://www.playframework.org/</a>.</p>
 </li>
-<li><p class="first">Unzip it in your preferred location. Let's say <tt class="docutils literal"><span class="pre">/path/to/play21</span></tt> for the purpose of this document.
+<li><p class="first">Unzip it in your preferred location. Let&#8217;s say <tt class="docutils literal"><span class="pre">/path/to/play21</span></tt> for the purpose of this document.
 <em>(from the Play documentation: Running play writes some files to directories within the archive, so don’t install to</em> <tt class="docutils literal"><span class="pre">/opt</span></tt> <em>,</em> <tt class="docutils literal"><span class="pre">/usr/local</span></tt> <em>or anywhere else you’d need special permission to write to.)</em></p>
 </li>
 <li><p class="first">For convenience, add the Play folder to your system PATH:</p>
@@ -167,13 +168,13 @@ read the <a class="reference external" href="https://github.com/scala-ide/scala-
 <p>Now that the Play application is running, it needs to be configured so it can be imported into Scala IDE.</p>
 <p>Play 2.1 integrates <a class="reference external" href="https://github.com/typesafehub/sbteclipse">sbteclipse</a>, which allow to create configuration files of a project for Eclipse.</p>
 <ul>
-<li><p class="first">First, exit the 'run' mode in Play using <tt class="docutils literal"><span class="pre">ctrl-d</span></tt>.</p>
+<li><p class="first">First, exit the &#8216;run&#8217; mode in Play using <tt class="docutils literal"><span class="pre">ctrl-d</span></tt>.</p>
 <a class="reference external image-reference" href="../../_images/play20-scalaide20-06.png"><img alt="ctrl-d, exit" src="../../_images/play20-scalaide20-06.png" style="width: 100%;" /></a>
 </li>
 <li><p class="first"><tt class="docutils literal"><span class="pre">eclipse</span></tt> is the command to invoke sbteclipse in Play. (or <tt class="docutils literal"><span class="pre">eclipse</span> <span class="pre">with-source=true</span></tt> if you want to also download sources attachment of your dependencies)</p>
 <a class="reference external image-reference" href="../../_images/play20-scalaide20-09.png"><img alt="eclipse" src="../../_images/play20-scalaide20-09.png" style="width: 100%;" /></a>
 </li>
-<li><p class="first">Relaunch the web application, in 'auto-reloading' mode, using <tt class="docutils literal"><span class="pre">~</span> <span class="pre">run</span></tt>, so it is running in the background.</p>
+<li><p class="first">Relaunch the web application, in &#8216;auto-reloading&#8217; mode, using <tt class="docutils literal"><span class="pre">~</span> <span class="pre">run</span></tt>, so it is running in the background.</p>
 <a class="reference external image-reference" href="../../_images/play20-scalaide20-10.png"><img alt="run" src="../../_images/play20-scalaide20-10.png" style="width: 100%;" /></a>
 </li>
 </ul>
@@ -205,7 +206,7 @@ read the <a class="reference external" href="https://github.com/scala-ide/scala-
 <div class="section" id="doing-some-development">
 <h2>Doing some development</h2>
 <p>Now that everything is setup, we can start to do some real work.</p>
-<p>Let's change the main page to display a quote instead of the default page.</p>
+<p>Let&#8217;s change the main page to display a quote instead of the default page.</p>
 <ul>
 <li><p class="first">First, create the <tt class="docutils literal"><span class="pre">models.Quote</span></tt> class using the new <tt class="docutils literal"><span class="pre">Scala</span> <span class="pre">Class</span></tt> wizard.</p>
 <a class="reference external image-reference" href="../../_images/play20-scalaide20-19.png"><img alt="create model.Quote" src="../../_images/play20-scalaide20-19.png" style="width: 100%;" /></a>

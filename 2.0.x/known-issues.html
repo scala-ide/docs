@@ -1,3 +1,4 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
@@ -6,7 +7,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Know Issues &mdash; Scala IDE  documentation</title>
+    <title>Know Issues &mdash; Scala IDE 0.1-SNAPSHOT documentation</title>
     
     <link rel="stylesheet" href="../_static/resources/stylesheets/base.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -19,7 +20,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '',
+        VERSION:     '0.1-SNAPSHOT',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -39,7 +40,7 @@
     <script type="text/javascript" src="../_static/resources/javascript/bootstrap-dropdown-app.js"></script>
     <script type="text/javascript" src="../_static/resources/javascript/contentsFix.js"></script>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
-    <link rel="top" title="Scala IDE  documentation" href="../index.html" />
+    <link rel="top" title="Scala IDE 0.1-SNAPSHOT documentation" href="../index.html" />
     <link rel="up" title="User Documentation for the Scala IDE 2.0.x" href="index.html" />
     <link rel="next" title="User Documentation for the Scala IDE 4.0.x - Lithium (unreleased)" href="../4.0.x/index.html" />
     <link rel="prev" title="License" href="../license.html" /> 
@@ -96,21 +97,21 @@
 <div class="section" id="scala-errors-on-all-unicode-arrows">
 <h2>Scala errors on all Unicode arrows</h2>
 <p><strong>Symptoms</strong>:</p>
-<p>The code contains Unicode niceties like <tt class="docutils literal"><span class="pre">←</span></tt> and <tt class="docutils literal"><span class="pre">⇒</span></tt>, but the editor doesn't seem to be able to display them, and errors are reported at their location.</p>
+<p>The code contains Unicode niceties like <tt class="docutils literal"><span class="pre">←</span></tt> and <tt class="docutils literal"><span class="pre">⇒</span></tt>, but the editor doesn&#8217;t seem to be able to display them, and errors are reported at their location.</p>
 <p><strong>Solution</strong>:</p>
 <p>The operating system is not using UTF-8 by default, and its default encoding is used inside Eclipse.</p>
 <p>The encoding used to open files can be configured at different levels. Most of the time, setting Eclipse default encoding to UTF-8 in <tt class="docutils literal"><span class="pre">General</span> <span class="pre">→</span> <span class="pre">Workspace</span></tt> in the preferences <a class="footnote-reference" href="#preferences" id="id1">[1]</a> is enough. But in some case, the wrong encoding might also have been set in the project properties, or even the file properties.</p>
 </div>
 <div class="section" id="red-screen-of-death-red-squiggles-everywhere">
 <h2>Red screen of death (red squiggles everywhere)</h2>
-<p>The number one cause of <em>nothing works</em> is a mismatch between the Scala version of the Eclipse plug-in and your project's. Make sure there is only one version of the Scala library on your classpath, and that it matches the version provided by Scala IDE.
+<p>The number one cause of <em>nothing works</em> is a mismatch between the Scala version of the Eclipse plug-in and your project&#8217;s. Make sure there is only one version of the Scala library on your classpath, and that it matches the version provided by Scala IDE.
 The prime suspect is Maven Dependencies, which can download and add an incompatible scala-library.jar.</p>
 <p>The classpath validator added in Scala IDE 2.0.0 should detect this problem and provide meaningful problem markers.</p>
 </div>
 <div class="section" id="no-completions-available">
 <h2>No completions available</h2>
 <p><strong>Symptoms</strong>:</p>
-<p>When pressing Ctrl-Space, the list doesn't contain code completion proposals, only templates, but other semantic actions (such as hyperlinking) work fine.</p>
+<p>When pressing Ctrl-Space, the list doesn&#8217;t contain code completion proposals, only templates, but other semantic actions (such as hyperlinking) work fine.</p>
 <p><strong>Solution</strong>:</p>
 <p>During the development of version 2.0.0, the configuration of the Scala completion engines has been modified to make sure that no more disabled by mistake. If Scala IDE has been updated from an old beta version, it is possible that the Scala completion engines (<tt class="docutils literal"><span class="pre">Scala</span> <span class="pre">Completions</span></tt> and <tt class="docutils literal"><span class="pre">Scala</span> <span class="pre">Completion</span> <span class="pre">(Java</span> <span class="pre">sources)</span></tt>) need to be re-enabled.</p>
 <p>The diagnostic tool at <tt class="docutils literal"><span class="pre">Scala</span> <span class="pre">→</span> <span class="pre">Run</span> <span class="pre">Setup</span> <span class="pre">Diagnostic</span></tt> allows to fix this problem. Make sure that <tt class="docutils literal"><span class="pre">Use</span> <span class="pre">Scala-compatible</span> <span class="pre">JDT</span> <span class="pre">content</span> <span class="pre">assist</span> <span class="pre">proposals</span></tt> is enabled.</p>
@@ -172,7 +173,7 @@ this problem if you upgrade to JRE 7 or newer.</p>
 </pre></div>
 </div>
 </div></blockquote>
-<p>If the thread dump doesn't match the one in <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000317">#1000317</a> or <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000996">#1000996</a>, please open a new ticket with your thread dump attached.</p>
+<p>If the thread dump doesn&#8217;t match the one in <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000317">#1000317</a> or <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000996">#1000996</a>, please open a new ticket with your thread dump attached.</p>
 </div>
 <div class="section" id="noclassdeffounderror-scala-tools-nsc-settings-mutablesettings-settingvalue">
 <h2>NoClassDefFoundError (scala/tools/nsc/settings/MutableSettings$SettingValue)</h2>

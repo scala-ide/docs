@@ -1,3 +1,4 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
@@ -6,7 +7,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Setup and use the Scalac project with the Scala IDE &mdash; Scala IDE  documentation</title>
+    <title>Setup and use the Scalac project with the Scala IDE &mdash; Scala IDE 0.1-SNAPSHOT documentation</title>
     
     <link rel="stylesheet" href="../../_static/resources/stylesheets/base.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
@@ -19,7 +20,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '',
+        VERSION:     '0.1-SNAPSHOT',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -39,7 +40,7 @@
     <script type="text/javascript" src="../../_static/resources/javascript/bootstrap-dropdown-app.js"></script>
     <script type="text/javascript" src="../../_static/resources/javascript/contentsFix.js"></script>
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
-    <link rel="top" title="Scala IDE  documentation" href="../../index.html" />
+    <link rel="top" title="Scala IDE 0.1-SNAPSHOT documentation" href="../../index.html" />
     <link rel="up" title="Tutorials" href="../index.html" />
     <link rel="next" title="Developing for Android" href="../androiddevelopment/index.html" />
     <link rel="prev" title="Enabling Scala continuations plugin in the Scala IDE" href="../continuations-plugin/index.html" /> 
@@ -120,7 +121,7 @@ whole Scala community will benefit!</p>
 <p>In order to build the Scala compiler inside Eclipse, you need to make sure Eclipse runs with enough heap. We recommend at least 2GB, but be generous if you can. The detailed instructions on how to do that can be found in <a class="reference internal" href="../../current-user-doc/advancedsetup/index.html"><em>advanced setup</em></a></p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">If you have an older version of the Scala IDE plugin, you may run into trouble when updating to the latest nightly. Frequent changes in the compiler version numbering scheme may confuse Eclipse, and keep an older version of the compiler bundle that doesn't match the IDE. To make sure things run smoothly, you can uninstall the previous version. There is a <a class="reference external" href="http://scala-ide.org/blog/director-script.html">command line tool</a> for doing that without firing up Eclipse.</p>
+<p class="last">If you have an older version of the Scala IDE plugin, you may run into trouble when updating to the latest nightly. Frequent changes in the compiler version numbering scheme may confuse Eclipse, and keep an older version of the compiler bundle that doesn&#8217;t match the IDE. To make sure things run smoothly, you can uninstall the previous version. There is a <a class="reference external" href="http://scala-ide.org/blog/director-script.html">command line tool</a> for doing that without firing up Eclipse.</p>
 </div>
 </div>
 <div class="section" id="setting-up-the-eclipse-project">
@@ -169,7 +170,7 @@ whole Scala community will benefit!</p>
 </div>
 <p>The run configuration should look like this:</p>
 <img alt="../../_images/scalac-launch.png" src="../../_images/scalac-launch.png" />
-<p>Now you can launch the scala compiler, by choosing either <tt class="docutils literal"><span class="pre">Run</span></tt> or <tt class="docutils literal"><span class="pre">Debug</span></tt> from the menu. You can set breakpoints and step through Scala code just as you'd expect.</p>
+<p>Now you can launch the scala compiler, by choosing either <tt class="docutils literal"><span class="pre">Run</span></tt> or <tt class="docutils literal"><span class="pre">Debug</span></tt> from the menu. You can set breakpoints and step through Scala code just as you&#8217;d expect.</p>
 </div>
 <div class="section" id="cheat-sheet">
 <h2>Cheat sheet</h2>
@@ -178,12 +179,12 @@ whole Scala community will benefit!</p>
 </div>
 <div class="section" id="swapping-the-scala-compiler-inside-eclipse-risky">
 <h2>Swapping the Scala compiler inside Eclipse (<em>risky</em>)</h2>
-<p>The Scala plugin packages a Scala compiler and library (since you are reading this, it's most probably the nightly version of master). There may be times when you'd like to change it for your own version: say, you are developing a new feature that has not yet been included in Scala master, or you fixed a bug and can't wait until the next nightly.</p>
+<p>The Scala plugin packages a Scala compiler and library (since you are reading this, it&#8217;s most probably the nightly version of master). There may be times when you&#8217;d like to change it for your own version: say, you are developing a new feature that has not yet been included in Scala master, or you fixed a bug and can&#8217;t wait until the next nightly.</p>
 <div class="admonition warning">
 <p class="first admonition-title">Warning</p>
 <p class="last">This is a risky operation. Given the tight dependency between the IDE and the compiler, you must be sure you are swapping two binary-compatible versions of the compiler. This may not work if the plugin was built against a much older version of <tt class="docutils literal"><span class="pre">scalac</span></tt> than the one you are replacing it with.</p>
 </div>
-<p>If you're still here, go ahead and use the <a class="reference external" href="https://github.com/scala-ide/scala-ide/blob/master/update-scala.sh">update-scala.sh</a> script. Point it to your locally built scala, for instance <tt class="docutils literal"><span class="pre">build/pack</span></tt>.</p>
+<p>If you&#8217;re still here, go ahead and use the <a class="reference external" href="https://github.com/scala-ide/scala-ide/blob/master/update-scala.sh">update-scala.sh</a> script. Point it to your locally built scala, for instance <tt class="docutils literal"><span class="pre">build/pack</span></tt>.</p>
 <div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>update-scala.sh --eclipse-dir /Applications/eclipse update build/pack
 </pre></div>
 </div>
