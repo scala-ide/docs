@@ -4,7 +4,7 @@ Changelog
 4.0.0 - codename Lithium
 ------------------------
 
-M2 (not yet released)
+M2 (2014-05-27)
 .....................
 
 - Support for name hashing in the incremental builder (:ticket:`1002117`)
