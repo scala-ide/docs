@@ -57,7 +57,7 @@ Optional Preferences
 
 * **Limit Simultaneously Open Editors**
 
-  Having too many editors open can claim a lot of memory. Unless you are an exceptional multi-tasker or you use a task-focused interface such as `Mylyn <http://www.eclipse.org/mylyn/>`_, you may want to limit the number of simultaneously opened editors in the ``General`` section [#preferences]_..
+  Having too many editors open can claim a lot of memory. Unless you are an exceptional multi-tasker or you use a task-focused interface such as `Mylyn <http://www.eclipse.org/mylyn/>`_, you may want to limit the number of simultaneously opened editors in the ``General`` section [#preferences]_.
 
     .. image:: images/limit-editors.png
      :width: 100%
