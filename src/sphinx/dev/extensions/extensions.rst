@@ -23,7 +23,7 @@ Main classes provided for this are instances of ``TraverserDef`` which provides 
 * ``MethodTraverserDef`` - searches for all method calls of given method
 * ``AnnotationTrverserDef`` - searches for all usages of methods annotated with given annotation
 
-(all above by 'method' understands ``val``s, ``var``s, ``def``s and/or ``lazy val``s)
+(all above by 'method' understands ``val``\s, ``var``\s, ``def``\s and/or ``lazy val``\s)
 
 Those are then used to create ``CustomSemanticAction``, ``SemanticHighlightingReconciliation``, and ``SemanticHighlightingReconciliationParticipant`` (last one is plugged into Scala IDE).
 
@@ -35,6 +35,14 @@ a plugin containing a single classes inside that defines your traversers and hig
 
     package my.company.highlighers.mutable
 
+    import org.eclipse.jdt.internal.ui.javaeditor.JavaSourceViewer
+    import org.scalaide.ui.internal.editor.decorators.custom.AllMethodsTraverserDef
+    import org.scalaide.ui.internal.editor.decorators.custom.CustomSemanticAction
+    import org.scalaide.ui.internal.editor.decorators.custom.TraverserDef.TypeDefinition
+    import org.scalaide.ui.internal.editor.decorators.semantichighlighting.SemanticHighlightingReconciliation
+    import org.scalaide.ui.internal.editor.decorators.semantichighlighting.SemanticHighlightingReconciliationParticipant
+    import org.scalaide.ui.internal.editor.decorators.SemanticAction
+
     object MutableCollectionHighlighter {
 
       /** Id of annotation, used in plugin.xml */
@@ -42,7 +50,7 @@ a plugin containing a single classes inside that defines your traversers and hig
 
       /** Traverser that looks for all method calls on children of collection.mutable.Traversable */
       lazy val traversers = Seq(
-        AllMethodsTraverserDefinition(
+        AllMethodsTraverserDef(
           message = "Method call on a mutable collection.",
           typeDefinition = TypeDefinition("scala" :: "collection" :: "mutable" :: Nil, "Traversable")))
 
@@ -61,7 +69,9 @@ a plugin containing a single classes inside that defines your traversers and hig
       reconciler = new SemanticHighlightingReconciliation(actions))
 
 
-And plug them into Scala IDE (in ``plugin.xml``)::
+And plug them into Scala IDE
+
+in ``plugin.xml``::
 
     <?xml version="1.0" encoding="UTF-8"?>
     <?eclipse version="3.4"?>
@@ -101,3 +111,33 @@ And plug them into Scala IDE (in ``plugin.xml``)::
       </extension>
     </plugin>
 
+in ``MANIFEST.MF``::
+
+    Manifest-Version: 1.0
+    Bundle-ManifestVersion: 2
+    Bundle-Name: AnnotationsDemo
+    Bundle-SymbolicName: annotations.demo;singleton:=true
+    Bundle-Version: 1.0.0.qualifier
+    Bundle-Activator: annotations.demo.Activator
+    Require-Bundle: org.eclipse.core.resources,
+     org.eclipse.core.runtime,
+     org.eclipse.jdt.core,
+     org.eclipse.jdt.core.manipulation,
+     org.eclipse.jdt.ui,
+     org.eclipse.jface.text,
+     org.eclipse.ui,
+     org.eclipse.ui.browser,
+     org.eclipse.ui.editors,
+     org.eclipse.ui.workbench.texteditor,
+     org.scala-lang.scala-library,
+     org.scala-lang.scala-reflect,
+     org.scala-lang.scala-compiler,
+     org.scala-ide.sdt.core,
+     org.scala-ide.sbt.compiler.interface,
+     org.scala-ide.sbt.full.library
+    Import-Package:
+     scala.tools.eclipse.contribution.weaving.jdt;apply-aspects:=false
+    Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+    Bundle-ActivationPolicy: lazy
+
+For full example project see `Demo project <https://github.com/VirtusLab/scala-ide-annotations-demo>`_.
