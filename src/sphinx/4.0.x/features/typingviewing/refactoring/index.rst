@@ -1,29 +1,60 @@
-Refactoring
-===========
+.. include:: /global_defs.hrst
+
+Refactoring |updated|
+=====================
 
 `Scala Refactoring`_ is integrated in Scala IDE. It offers a broad range of refactoring actions.
 
-Extracting Local Values
------------------------
+Extracting Code
+---------------
 
-The `Extract Local`_ action does the opposite work of Inline Local. It creates a value of an expression. It is a must use to make code more readable.
+The extraction refactorings offer automated extraction of almost arbitrary code fragments into new methods, values or even extractor objects. All you have to remember is that when you want to extract something you have to select it, invoke the "Extract..." (``Alt + Shift/Cmd + E``) action and the assistant guides you through the available extractions. Furthermore, all extractions are also available in the quick assist menu (``Ctrl/Cmd + 1``)
 
-Select an expression to extract.
+An extraction creates a new abstraction (value, method etc.) with the identical behavior as the selected code and replaces the selection by an according call to this abstraction. Extractions are typically useful to make the code more readable and to allow the reuse of a code fragment in other places.
 
-.. image:: images/feature-refactoring-extract-local-01.png
+"Extract..." proposes based on the selected code several of the following extractions:
 
-Call the action, then set a name for the created value.
+Extract Value
+  Creates a new ``val`` definition from the selected code and replaces the selection by a reference to the new value
 
-.. image:: images/feature-refactoring-extract-local-02.png
+Extract Method
+  Creates a new method (``def``) from the selected code and replaces the selection by the according call
 
-Extracting Methods
-------------------
+Extract Parameter
+  Adds a new parameter to an enclosing method whose default value is the selected code and replaces the selection by a reference to the new parameter
 
-The `Extract Method`_ action extract the set of selected statements into a new method. The original code is replaced by the equivalent method call.
+Extract Extractor
+  Creates a new extractor object based on a selected pattern in a case statement and replaces the pattern by an according call to the new extractor
 
-.. image:: images/feature-refactoring-extract-method-01.png
-   :width: 100%
-   :target: ../_images/feature-refactoring-extract-method-01.png
+After invoking "Extract..." a drop-down opens that contains a list of available extractions. When you select one of the extractions with the ``Up`` and ``Down`` keys the scope in which the extraction creates the new abstraction is highlighted green. Additionally, if you select only a part of an expression that can be processed by "Extract..." the selection is automatically expanded such that you see what exactly will be extracted.
+
+.. image:: images/extract-code-scope-selection.png
+
+In most cases, "Extract..." proposes extractions to various extraction targets. An extraction target is either a local scope, a class, a trait or an object surrounding the selected code. In case you choose to extract a code snippet into a local scope, the refactoring inserts the extracted abstraction right before the statement in the scope that contains your selection. Otherwise, if you choose a member scope (class, trait or object) as the extraction target, the new abstraction is created as a new member right after your selection.
+
+When you found the extraction that you want to become applied you can choose it by hitting ``Enter`` and the extraction tool performs the according transformations to the source code. Finally, Eclipse enters the linked mode that allows you to rename the new abstraction right in the editor window. If you extracted a method with parameters you can also jump to the parameters by hitting ``Tab`` and rename them as well.
+
+.. image:: images/extract-code-inline-renaming.png
+
+The extraction refactorings offer many useful features:
+
+* Only one shortcut for all kinds of extraction refactorings
+* Lets you precisely choose the scope in which you want to create the new abstraction
+* All tools support idiomatic features of the Scala language
+    * Extraction of higher order functions
+    * The resulting code uses type inference when possible
+    * Extraction into local closure methods
+    * Multiple return values with tuples
+
+Limitations
+~~~~~~~~~~~
+
+* There are some cases where Extract Parameter can't correctly infer the type of the extracted expression. This issue occurs mostly when Extract Parameter is invoked on  variables that are part of expressions written in infix notation (e.g. ``a`` in ``100 * a``).
+* The extraction of reassignments into scopes that do not see the reassigned variable are not supported. E.g. extracting ``a += 1`` into a scope where ``a`` is not visible is not possible.
+* Pretty printing of the refactoring result is not always correct:
+    * The generated code may be misaligned
+    * In some cases the refactoring generates unbalanced parenthesis
+
 
 Inlining Local Values
 ------------------------
@@ -209,8 +240,6 @@ Selecting the ``Target`` class and applying the *Move constructor to companion o
 Currently this is only supported for the primary constructor (thus no refactoring dialog is needed), moving auxiliary constructors is not (yet) possible.
 
 
-.. _Extract Local: http://scala-refactoring.org/extract-local/
-.. _Extract Method: http://scala-refactoring.org/extract-method/
 .. _Inline Local: http://scala-refactoring.org/inline-local/
 .. _Organize Imports: http://scala-refactoring.org/organize-imports/
 .. _Rename: http://scala-refactoring.org/rename/
