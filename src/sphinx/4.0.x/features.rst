@@ -18,6 +18,7 @@ The following pages provide a description of a list of selected features provide
 
    features/typingviewing/index
    features/navigating/index
+   features/wizards/index
    features/test-finder/index
    features/scaladebugger/index
    features/scalainterpreter/index
