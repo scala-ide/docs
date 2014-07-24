@@ -19,6 +19,7 @@ Contents:
    architecture/architecture
    architecture/presentation-compiler
    code/code
+   ide-extensions/ide-extensions
    testing/testing
    repository-organization/repository-organization
    workflow/workflow
