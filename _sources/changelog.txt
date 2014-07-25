@@ -4,36 +4,36 @@ Changelog
 4.0.0 - codename Lithium
 ------------------------
 
- - A more sane error message about what profile is missing. 
- - Fix semicolon painter (:ticket:`1002170`,:ticket:`1002153`)
- - Reformat error messages from presentation compiler 
- - Some cleanup & 2.10 deprecation upheaval 
+ - A more sane error message about what profile is missing.
+ - Fix semicolon painter (:ticket:`1002170`, :ticket:`1002153`)
+ - Reformat error messages from presentation compiler
+ - Some cleanup & 2.10 deprecation upheaval
 
-M3 (unreleased)
+M3 (2014-07-25)
 .....................
 
- - Makes sdt depend on kepler jdt 
- - Sets the right name for the test source jar 
+ - Makes sdt depend on kepler jdt
+ - Sets the right name for the test source jar
  - New File Wizard (:ticket:`1002103`)
- - Scala Installations support stage II : choose your own installation 
- - Redesign of the bug report dialog 
- - Adds support for Scala 2.12 
- - Don’t reuse platform classloader when ScalaInstallation matches its version 
+ - Scala Installations support stage II : choose your own installation
+ - Redesign of the bug report dialog
+ - Adds support for Scala 2.12
+ - Don’t reuse platform classloader when ScalaInstallation matches its version
  - Disable tab to spaces converter in TextViewer (:ticket:`1002167`)
  - Don't use Scala reflection for asInstanceOfOpt (:ticket:`1002128`)
- - Show variable values in hovers when in suspended debug mode 
+ - Show variable values in hovers when in suspended debug mode
  - Scala Installations support (:ticket:`1001777`)
- - Finish cleanup of removed extraction refactorings 
+ - Finish cleanup of removed extraction refactorings
  - Restore Run Selection In Interpreter functionality (:ticket:`1002164`)
- - Integrate new extraction refactorings 
+ - Integrate new extraction refactorings
  - Highlight dynamic calls with type parameters (:ticket:`1002162`)
- - Revert wrong optimization in 1b83945. Always reset compilers on classpath change 
- - Cleanup/custom code removal 
+ - Revert wrong optimization in 1b83945. Always reset compilers on classpath change
+ - Cleanup/custom code removal
  - Prevent NoSuchElementException in Extract trait. (:ticket:`1001967`)
  - T1002151 wrong cursor position after completion (:ticket:`1002151`)
  - Fix race condition due to call of `Tree.symbol` (:ticket:`1002132`)
  - Pull loop invariant code outside of the loop (performance improvement in code completion)
- - Fixed auto-breaking comments (:ticket:`1002116`,:ticket:`1002119`,:ticket:`1002120`,:ticket:`1002115`)
+ - Fixed auto-breaking comments (:ticket:`1002116`, :ticket:`1002119`, :ticket:`1002120`, :ticket:`1002115`)
  - New test suite for code completion / text edits (:ticket:`1001912`)
 
 
@@ -132,7 +132,7 @@ M1  (2013-11-05)
 - Resolve exception when using type mismatch quick fix (:ticket:`1001809`)
 - Race condition in pc when hyperlinking between projects (:ticket:`1001880`)
 - Highlights Scaladoc macros that are wrapped in braces (:ticket:`1001836`)
-- Add highlighting for variables in interpolated strings (:ticket:`1001574`,:ticket:`1001593`)
+- Add highlighting for variables in interpolated strings (:ticket:`1001574`, :ticket:`1001593`)
 - Add semantic highlighting for singleton types (:ticket:`1001555`)
 - Highlight TODO markers in the editor (:ticket:`1001450`)
 - Multiline support in interpreter
@@ -145,9 +145,9 @@ M1  (2013-11-05)
 - New Class wizard injects stubs for inherited abstract methods (:ticket:`1001774`)
 - Do not close string and character literals before text (:ticket:`1001652`)
 - Corrected link in "Run Setup Diagnostics" Dialog (:ticket:`1001673`)
-- Issue/auto closing literals (:ticket:`1001583`,:ticket:`1001600`)
+- Issue/auto closing literals (:ticket:`1001583`, :ticket:`1001600`)
 - Fix rename refactoring selection/tab behavior (:ticket:`1001641`)
-- Issue/string auto edit strategy (:ticket:`1001498`,:ticket:`1001491`,:ticket:`1001403`,:ticket:`1001398`)
+- Issue/string auto edit strategy (:ticket:`1001498`, :ticket:`1001491`, :ticket:`1001403`, :ticket:`1001398`)
 - Use stock Scala compiler/library OSGi-fied JARs (:ticket:`1001889`)
 - Opening a classfile (located outside of the build path) with no associated source no longer results in a ClassCastException (:ticket:`1001925`)
 - Added source folder wizard in Scala perspective menu (:ticket:`1001577`)
