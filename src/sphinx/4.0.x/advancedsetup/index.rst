@@ -1,3 +1,5 @@
+.. include:: /global_defs.hrst
+
 Advanced Setup
 ==============
 
@@ -96,6 +98,25 @@ Monitoring what is happening is the best option to keep a healthy system:
 * to monitor Garbage Collector activity, use *visualvm* on the eclipse instance. It is a profiling tool provided with jdk 1.6.x. It is possible also to get a feel of the memory usage with the heap status bar `Optional Preferences`_ in Eclipse.
 
 Depending of the problem, the memory allocated to the JVM can be increased, or some of the other application closed (like the web browser, or some flash application, ...).
+
+Memory consumption |new|
+------------------------
+
+The Scala IDE for Eclipse uses the Scala Presentation Compiler which provides semantic features such as live error markers, inferred type hovers etc.
+
+Each project has its own presentation compiler instance working in separate thread. It is created after importing or opening previously closed project and also when you open .scala file or type something and a presentation compiler didn't exist in given moment.
+
+In the case of complex projects with many dependencies each presentation compiler can consume a lot of memory - like tens megabytes of RAM or even more.
+Therefore there's special mechanism which can close presentation compilers automatically, when a given project still exists in a workspace, but you didn't edit its code for a long time.
+
+You can specify a length of inactivity in seconds, after which presentation compiler can be closed. You can also decide whether presentation compilers for projects, for which there are open Scala Editors, should be also closed. Notice that, when you will open a file or start typing in existing file for such a project, presentation compiler will have to be recreated. This can cause small delay but in most of cases it shouldn't be significant - up to several seconds in the case of big projects. After that there's no other noticeable effects.
+
+.. image:: images/closing-presentation-compilers.png
+  :width: 80%
+  :target: ../_images/closing-presentation-compilers.png
+
+.. note::
+   When presentation compiler is closed despite open Scala Editors related to given project, it's possible that Garbage Collector won't be able to free used memory until you close them, because there are still some dependencies. Presentation compiler's thread will be always stopped.
 
 Suggested interesting keyboard shortcuts
 ----------------------------------------
