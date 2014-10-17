@@ -4,6 +4,86 @@ Changelog
 4.0.0 - codename Lithium
 ------------------------
 
+RC1 (unreleased)
+.....................
+
+ - Remove last calls to `JavaUI.getDocumentProvider`
+ - Update to next version of build-tools
+ - Add missing Export-Package declarations.
+ - Fix thread check failure in reporting string of Implicit Highlighter (:ticket:`1002295`)
+ - Don’t call `openWhenClosed` if the compilation unit is consistent.
+ - Narrow the return types to API types in tests.
+ - Save actions (:ticket:`1000900`, :ticket:`1000887`, :ticket:`1001138`, :ticket:`1002232`, :ticket:`1002240`, :ticket:`1002239`, :ticket:`1002234`, :ticket:`1002225`, :ticket:`1002227`) |new|
+ - Redesign of quick assists (:ticket:`1002286`, :ticket:`1002283`) |new|
+ - Fix regression in syntax color preference page (:ticket:`1002289`)
+ - Better use of compiler APIs.
+ - Correct selection after multi edit
+ - Add the proper dependency to Scala 2.11 (sources) form SDT (:ticket:`1002290`)
+ - New ScalaReconciler implementation that listens to activation events, like the Java one (:ticket:`1002215`)
+ - Export API for Scala completions
+ - Cleanup hyperlink code and APIify
+ - Ignore interrupts while waiting for presentation compiler.
+ - Scala Hover API and fixes
+ - Clear doc comments when fishing reloads.
+ - Show simple names instead of fully qualified names in quick fixes |new|
+ - Harden locate symbol. Sometimes there is no source provider.
+ - An API for Util methods (:ticket:`1002247`)
+ - Fix deadlock by moving `res.get` outside of synchronized block. (:ticket:`1002275`)
+ - Remove aspect hover
+ - Refactor the way compilation units work
+ - Open API for syntax coloring of Scala files
+ - Fix ScalaWordFinder AIOOBE (:ticket:`1002238`)
+ - Control persistence of PC doc comments.
+ - Basic ScalaDoc prettyfications  |new|
+ - Changes rich type method names to avoid conflicts
+ - Scaladoc display on completion & showToolTip (:ticket:`1000453`, :ticket:`1000210`) |new|
+ - Additionnal changes needed to remove sdt.editor from the play plugin
+ - Adds a test which checks sbt reorders libs on classpath
+ - Scala Installation Support Improvements
+ - Prevent Race Condition in mkImplicitConversionAnnotation (:ticket:`1002269`)
+ - Disentangle presentation compiler and Scala project
+ - Adds missing getOption() synchronization call
+ - Close ScalaPresentationCompilers which weren't used for specified time |new|
+ - Initial stab at a cleaner interface for Scala presentation compiler.
+ - Addditionnal changes for ScalaImage API
+ - Fixes problem build disabled after clean
+ - Completion improvements for higher-order-functions (:ticket:`1002250`) |new|
+ - Revert "Unused member warning doesn't highlight whole definition anymore... (:ticket:`1002209`)
+ - Set ScalaImages constants as API
+ - Temporary disables UI support for -Xlint
+ - A couple of simple improvements in completions (:ticket:`1002171`)
+ - Fixes a few issues linked to ClasspathTests
+ - Update entries of moved logging packages in Manifest files
+ - Moves non-API logging classes in internal packages
+ - Tab to space conversion
+ - Fixes switching between Scala Installations
+ - Fixed NPE on first start on Luna (:ticket:`1002242`)
+ - Remove `EclipseUserSimulator`
+ - Switches to package import for the dependency to osgi.service.location
+ - Moves content of core.api in core, and adds Ixxx prefix
+ - Faster implementation of `ScalaCommentScanner` (:ticket:`1002241`)
+ - Shut up noisy logger. (:ticket:`1002228`)
+ - Add *.tmpBin files to .gitignore
+ - Mark some completion tests as flaky.
+ - Creates an API for ScalaPlugin
+ - Fix Luna build by using the AJDT dev version of the weaving hook.
+ - Unify kepler and luna branches as different profiles under the same build (:ticket:`1002211`)
+ - T1002123 spell checker (:ticket:`1002123`)
+ - Shorten log message in SPCP regarding restarted compilation units
+ - Interrupt Scala builder on resource change (:ticket:`1002229`)
+ - Updates to scala 2.11.3-SNAPSHOT
+ - Hover improvements2 (:ticket:`1001567` :ticket:`1001534`, :ticket:`1001897`, :ticket:`1001667`)
+ - Fix NPE in `AllMethodsTraverserImpl` (:ticket:`1002217`)
+ - T1002191 enable new wizard elements (:ticket:`1002191`)
+ - Sbt builder fix and refactor (:ticket:`1002148`)
+ - Treat projects in subfolders correctly in `NewFileWizard` (:ticket:`1002188` :ticket:`1002185`)
+ - Use `Import-Package` instead of `Require-Bundle` for org.eclipse.core.runtime
+ - Revert "Merge pull request #742 from sschaef/remove-java-partitions"
+ - Remove java partitions
+ - Update build-all script to kepler.
+ - Use UTF-8 for tests.
+ - An API for ScalaProject
+ - adds space instead of comma in multi-ticket display
  - A more sane error message about what profile is missing.
  - Fix semicolon painter (:ticket:`1002170`, :ticket:`1002153`)
  - Reformat error messages from presentation compiler
@@ -14,15 +94,15 @@ M3 (2014-07-25)
 
  - Makes sdt depend on kepler jdt
  - Sets the right name for the test source jar
- - New File Wizard (:ticket:`1002103`)
- - Scala Installations support stage II : choose your own installation
+ - New File Wizard (:ticket:`1002103`) |new|
+ - Scala Installations support stage II : choose your own installation |new|
  - Redesign of the bug report dialog
  - Adds support for Scala 2.12
  - Don’t reuse platform classloader when ScalaInstallation matches its version
  - Disable tab to spaces converter in TextViewer (:ticket:`1002167`)
  - Don't use Scala reflection for asInstanceOfOpt (:ticket:`1002128`)
- - Show variable values in hovers when in suspended debug mode
- - Scala Installations support (:ticket:`1001777`)
+ - Show variable values in hovers when in suspended debug mode |new|
+ - Scala Installations support (:ticket:`1001777`) |new|
  - Finish cleanup of removed extraction refactorings
  - Restore Run Selection In Interpreter functionality (:ticket:`1002164`)
  - Integrate new extraction refactorings
@@ -45,7 +125,7 @@ M2 (2014-05-27)
 - Added the ability to compile the sbt compiler-interface on the fly
 - Increase test timeouts (possible source of flaky classpth tests).
 - Better support for auto-completion of identifiers that require backticks  (:ticket:`1001371`)
-- Auto generate stubs for abstract members (:ticket:`1000224`, :ticket:`1000538`)
+- Auto generate stubs for abstract members (:ticket:`1000224`, :ticket:`1000538`) |new|
 - auto breaking comments (:ticket:`1002101`)
 - Add `override` keyword to some methods (:ticket:`1001938`, :ticket:`1001937`, :ticket:`1001936`)
 - Fixes default for project specific compiler settings (:ticket:`1002083`)
@@ -78,7 +158,7 @@ M2 (2014-05-27)
 - Rehaul of the package structure (using internal packages)
 - Presentation Compiler should not reload managed units while keeping the lock (:ticket:`1002003`, :ticket:`1002007`, :ticket:`1001943`, :ticket:`1001911`)
 - Show confirmation dialog before doing a workspace wide clean (:ticket:`1002043`)
-- Implementation of an indent guide + test suite (:ticket:`1000828`, :ticket:`1002033`)
+- Implementation of an indent guide + test suite (:ticket:`1000828`, :ticket:`1002033`) |new|
 - Add 'Xlint' and 'feature' to the compiler preference site (:ticket:`1002039`)
 - Allow task tags to start with a special sign (:ticket:`1000991`)
 - Refactorings in wizard components
@@ -120,12 +200,12 @@ M2 (2014-05-27)
 M1  (2013-11-05)
 ................
 
-- 'Add explicit type' quick assist (:ticket:`1001951`)
-- Implemented completion overwrites (:ticket:`1000569`)
+- 'Add explicit type' quick assist (:ticket:`1001951`) |new|
+- Implemented completion overwrites (:ticket:`1000569`) |new|
 - Corrected completion on import clause for module methods (:ticket:`1001125`)
 - Corrected completion inside method arugments (:ticket:`1001218`)
 - Corrected completion for no-args method (:ticket:`1001766`)
-- Quick fix to create a new class (:ticket:`1000809`)
+- Quick fix to create a new class (:ticket:`1000809`) |new|
 - Extract local available as quick fix (:ticket:`1001801`)
 - Quickfix to change the capitalization of a method/field invocation (:ticket:`1001778`)
 - Fix create method quickfix exception (:ticket:`1001740`)
@@ -140,7 +220,7 @@ M1  (2013-11-05)
 - Export all packages in  MANIFEST of debug bundle
 - Fix caching of SourceFiles (:ticket:`1001859`)
 - source attachments for sbt dependencies (:ticket:`1001888`)
-- "Restart Presentation Compiler" action (:ticket:`1000555`)
+- "Restart Presentation Compiler" action (:ticket:`1000555`) |new|
 - Fixed NPE when completing a wizard  (:ticket:`1001784`)
 - New Class wizard injects stubs for inherited abstract methods (:ticket:`1001774`)
 - Do not close string and character literals before text (:ticket:`1001652`)
@@ -716,3 +796,4 @@ __ http://www.scala-ide.org/2010/08/not-a-release-but-new-and-noteworthy-even-so
    :format: html
 
 .. |debugger| replace:: :raw-html:`<span class="label info">debugger</span>`
+.. |new| replace:: :raw-html:`<span class="label success">new</span>`

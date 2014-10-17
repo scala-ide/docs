@@ -169,6 +169,19 @@ be a good idea : proceed at your own risk.</p>
 </ul>
 <p>Depending of the problem, the memory allocated to the JVM can be increased, or some of the other application closed (like the web browser, or some flash application, ...).</p>
 </div>
+<div class="section" id="memory-consumption-new">
+<h2>Memory consumption <span class="raw-html"><span class="label info">new</span></span></h2>
+<p>The Scala IDE for Eclipse uses the Scala Presentation Compiler which provides semantic features such as live error markers, inferred type hovers etc.</p>
+<p>Each project has its own presentation compiler instance working in a separate thread. It is created after importing or opening a previously closed project, as well as when you open .scala file or type something and a presentation compiler didn&#8217;t exist at a given moment.</p>
+<p>In the case of complex projects with many dependencies, each presentation compiler can consume a lot of memory.
+Therefore there&#8217;s a special mechanism which can close presentation compilers automatically, when a given project still exists in a workspace, but when the user hasn&#8217;t edited its code for a long time.</p>
+<p>You can specify a length of inactivity in seconds, after which the presentation compiler can be closed. You can also decide whether inactive presentation compilers should be closed even if there are opened Scala Editors for the files they manage. Note that the presentation compiler will have to be recreated, when you will open a file or start typing in an existing file for such a project. This can cause a small delay but in most of cases it shouldn&#8217;t be significant - up to several seconds in the case of big projects. After that there are no other noticeable effects.</p>
+<a class="reference external image-reference" href="../_images/closing-presentation-compilers.png"><img alt="../../_images/closing-presentation-compilers.png" src="../../_images/closing-presentation-compilers.png" style="width: 80%;" /></a>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">There&#8217;s known problem which may occur when a presentation compiler is closed despite open Scala Editors being attached to it. They may prevent freeing the memory associated with the presentation compiler until you close them. The presentation compiler&#8217;s thread will be always stopped.</p>
+</div>
+</div>
 <div class="section" id="suggested-interesting-keyboard-shortcuts">
 <h2>Suggested interesting keyboard shortcuts</h2>
 <p>You may want to head out to our <a class="reference internal" href="../../dev/appendix/shortcuts.html#shortcuts"><em>Suggested Shortcuts</em></a> page to get a list of shortcuts that will speed up your Scala development.</p>
