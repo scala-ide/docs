@@ -4,7 +4,7 @@ Changelog
 4.0.0 - codename Lithium
 ------------------------
 
-RC1
+RC1 (unreleased)
 .....................
 
  - Remove last calls to `JavaUI.getDocumentProvider`
