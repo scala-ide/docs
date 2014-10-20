@@ -8,10 +8,7 @@ done, for example, during the `Jenkins-driven nightly builds <https://jenkins.sc
 Requirements
 ------------
 
-* `JDK 5 <http://www.oracle.com/technetwork/java/javasebusiness/downloads/java-archive-downloads-javase5-419410.html>`_
-  or `JDK 6 <http://www.oracle.com/technetwork/java/javasebusiness/downloads/java-archive-downloads-javase6-419409.html>`_
-  (JDK 7 is **not** supported. As a matter of fact, there have been issues reported when running Eclipse with a Java 7 JVM. For instance,
-  see https://bugs.eclipse.org/bugs/show_bug.cgi?id=364735).
+* A working JDK
 
 * `Maven 3 <http://maven.apache.org/download.html>`_.
 
@@ -26,23 +23,19 @@ Run the build
 If you just want to build Scala IDE, a script triggers the different step needed to generate Scala IDE.
 
 
-From the project root, run the following command to build Scala IDE for Scala 2.10:
+From the project root, run the following command to build Scala IDE for Scala 2.11:
 
 .. code-block:: bash
 
    $ ./build-all.sh
 
 
-or the following to build Scala IDE for Scala 2.11:
+or the following to build Scala IDE for a given Scala version:
 
 .. code-block:: bash
 
-   $ ./build-all.sh -P scala-2.11.x -P eclipse-juno clean install
+   $ ./build-all.sh -P scala-2.11.x -P eclipse-luna clean install
 
-.. note::
-
-        When working on the Scala IDE you need to make sure that new code can be compiled with Scala
-        2.10 and 2.11 (trunk).
 
 Assuming your build is successful you should find an Eclipse update site has been built in
 ``org.scala-ide.sdt.update-site/target/site`` and a zipped version of the same at
@@ -71,21 +64,27 @@ After an initial complete build, maven can be used from any subproject.
 
 .. code-block:: bash
 
-   $ mvn -P scala-2.10.x -P eclipse-juno clean install
+   $ mvn -P scala-2.11.x -P eclipse-luna clean install
    $ cd org.scala-ide.build-toolchain
-   $ mvn -P scala-2.10.x -P eclipse-juno clean install
+   $ mvn -P scala-2.11.x -P eclipse-luna clean install
    $ cd ../org.scala-ide.sdt.build
-   $ mvn -P scala-2.10.x -P eclipse-juno clean install
+   $ mvn -P scala-2.11.x -P eclipse-luna clean install
 
-or for Scala 2.11.x:
+Build Profiles
+--------------
+
+The build is controlled through profiles, and there are several dimensions on which the build can be controlled:
+
+- Eclipse platform. Currently the build works with Eclipse Kepler and Luna. Profiles: ``eclipse-kepler``, ``eclipse-luna``. The two profiles use different
+  source folders for a couple of files. The additional sources are found in ``src-luna`` and ``src-kepler`` respectively. Make sure to add the right one
+  in your Eclipse project if not using the defaults (by default, ``src-luna`` is part of the project)
+- Scala major number. Currently the build works with Scala 2.11 and has support for 2.12. Profiles: ``scala-2.11.x``, ``scala-2.12.x``
+
+A specific Scala version can also be passed on the command line, *in addition to the Scala profile*:
 
 .. code-block:: bash
 
-   $ mvn -P scala-2.11.x -P eclipse-juno clean install
-   $ cd org.scala-ide.build-toolchain
-   $ mvn -P scala-2.11.x -P eclipse-juno clean install
-   $ cd ../org.scala-ide.sdt.build
-   $ mvn -P scala-2.11.x -P eclipse-juno clean install
+    $ mvn -P scala-2.11.x -P eclipse-luna -Dscala211.version=2.11.2 clean install
 
 Running the memory leak test
 ----------------------------
@@ -99,7 +98,7 @@ Use the following command to run it after having build the toolchain.
 .. code-block:: bash
 
    # from org.scala-ide.sdt.build
-   $ mvn --projects ../org.scala-ide.sdt.aspects,../org.scala-ide.sdt.core,../org.scala-ide.sdt.core.tests -P scala-2.10.x,memory-test clean integration-test
+   $ mvn --projects ../org.scala-ide.sdt.aspects,../org.scala-ide.sdt.core,../org.scala-ide.sdt.core.tests -P scala-2.11.x,memory-test clean integration-test
 
 The ``--projects`` option tells maven which modules to build, as we don't need to build all of them in this case. The ``memory-test`` profile contains a sightly modified configuration for ``sdt.core.test``. It pulls and extracts the Scala compiler source needed for the test, and sets the MemoryLeaksTest test to be run.
 
