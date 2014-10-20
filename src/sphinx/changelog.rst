@@ -63,7 +63,7 @@ RC1 (unreleased)
  - Moves content of core.api in core, and adds Ixxx prefix
  - Faster implementation of `ScalaCommentScanner` (:ticket:`1002241`)
  - Shut up noisy logger. (:ticket:`1002228`)
- - Add *.tmpBin files to .gitignore
+ - Add `*.tmpBin` files to .gitignore
  - Mark some completion tests as flaky.
  - Creates an API for ScalaPlugin
  - Fix Luna build by using the AJDT dev version of the weaving hook.
