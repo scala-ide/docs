@@ -346,11 +346,15 @@ the Scala Installation’, as below.
 .. [#]  We'll see why and how a classpath might *not* be
    expanded in a moment.
 
-.. [#] Note that this is also the way, in its default operating
-   mode, that `sbteclipse <https://github.com/typesafehub/sbteclipse>`__ generates ScalaIDE configurations. If you
-   want sbteclipse to generate an explicit classpath, preserving
-   the scala version sbt would have chosen for you, you can set the option
-   `withBundledScalaContainers` to false. More details on using it
+.. [#] Note that this is also the way, in its default operating mode, that
+   `sbteclipse <https://github.com/typesafehub/sbteclipse>`__ generates
+   ScalaIDE configurations. If you want sbteclipse to generate an explicit
+   classpath, preserving the scala version sbt would have chosen for you,
+   you can set the option `withBundledScalaContainers` to false. Scala-IDE
+   will then figure out wich version of scala your project is using from
+   its classpath, and configures itself correctly based on that.
+
+   More details on using it
    `here <http://scala-ide.org/blog/Xsource-compatibility.html#using-sbteclipse>`_.
 
 .. [#] If you need to know, the issue here is on refreshing the
