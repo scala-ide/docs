@@ -2,8 +2,8 @@
 Scala Multiple Installation Support
 ===================================
 
-Scala IDE now supports projects set up for multiple versions of the Scala
-compiler.
+Scala IDE now supports projects set up for several major versions of the
+Scala compiler.
 
 Why multiple versions ?
 -----------------------
@@ -19,13 +19,13 @@ specific version of the Scala Compiler. For editing 2.10
 projects, you had to have a version of the IDE compiled for
 Scala 2.10. For 2.11, you had to have a version compiled for
 Scala 2.11. This led to users working with both 2.11 and 2.10
-projects having two installations of Eclipse, with different
+projects to have two installations of Eclipse, with different
 flavors of the Scala IDE plugin installed.
 
 This also constrained us developers: since most of the IDE's
 source code had to pass compilation with both 2.10 and 2.11, it
 was impossible to remove some obsolete things, led to some
-regression headaches, and made use maintain two parallel branches
+regression headaches, and made us maintain two parallel branches
 for the source.
 
 With this multi-version support feature, we want to use a single
@@ -40,12 +40,13 @@ letting us deliver features to our users faster.
 Scala Multi Version Support
 ---------------------------
 
-The gist of it is the following: the milestone's IDE is a 2.11
-build. The Presentation Compiler it IDE ships with is a part of
-Scala 2.11. But its typechecker can run with a specific option,
-``-Xsource:2.10`` that lets it work on 2.10 source files. That's now
-a regular `scala compiler <http://www.scala-lang.org/news/2.11.1>`__ option, by the way — though please note
-it only affects up to the typechecker phase [#]_.
+The gist of it is the following: the IDE is, as of its 4.0.0 release, a
+2.11 build. The Presentation Compiler it ships with is a part of Scala
+2.11. But its typechecker can run with a specific option,
+``-Xsource:2.10`` that lets it work on 2.10 source files. That's now a
+standalone `scala compiler <http://www.scala-lang.org/news/2.11.1>`__ option,
+by the way — though please note it only affects up to the typechecker
+phase [#]_.
 
 So, if you are working on a 2.11 project, nothing changed — this
 is business as usual. If you are working on a 2.10 code base, a
@@ -53,11 +54,11 @@ few tweaks and settings may be needed, though the IDE will try
 to help you.
 
 All you may need to do, then, is to tell the IDE how to deal with
-your Scala 2.10 project. For that you need a few things:
+your Scala 2.10 project. For that you need to align a few things:
 
 -  a setting of compiler options
 -  a consistent classpath
--  in particular, a compatible Scala classpath container
+-  in particular, a compatible Scala classpath container within it
 -  and optionally, a custom Scala Installation
 
 All of this is brought to you by a single toggle, that we will
@@ -95,7 +96,7 @@ Eclipse `update sites <http://wiki.eclipse.org/FAQ_How_do_I_upgrade_Eclipse%253F
 a dynamic 2.11 version, what will be used is the latest
 available 2.11 installation the IDE ships with [#]_.
 
-\*\*That's it\*\* ! Now once you select one of these options
+**That's it** ! Now once you select one of these options
 (hopefully a
 2.10 installation, since this is what we're here to do), you
 will not see any changes to other compilation options. But if
@@ -113,7 +114,7 @@ equivalent to workspace settings, it will automatically revert the
 project-specific toggle. your project will again be ruled by
 current workspace-wide settings.
 
-Also, note this setting will not affect what your jct is built
+Also, note this setting will not affect what your projct is built
 with. What your project runs on is, as usual, the compiler it
 finds on classpath. But what is actually found on classpath may
 vary according to your project's specific settings [#]_.
@@ -138,32 +139,32 @@ If you try to quick-fix this error (by pressing Ctrl+1 or right-clicking and sel
 
 |img5|
 
-Opening Project Properties here (by clicking Finish) is equivalent to
-doing it through menus, It will toggle project-specific compiler settings
-if necessary, and set the correct compiler flags.
+Opening Project Properties here (by clicking *Finish*) is equivalent to
+doing it through menus, you can then toggle project-specific compiler
+settings if necessary, and set the correct compiler flags.
 
 A similar dialog will pop up if you have external 2.10 libraries
-popping up in your classpath.
+show up in your classpath.
 
 Now, if you have a project that was created in Eclipse, or if
 you are working on a project which Eclipse configuration has
-been generated in the past with `sbteclipse <https://encrypted.google.com/url?sa%3Dt&rct%3Dj&q%3D&esrc%3Ds&source%3Dweb&cd%3D1&cad%3Drja&uact%3D8&ved%3D0CB0QFjAA&url%3Dhttps%253A%252F%252Fgithub.com%252Ftypesafehub%252Fsbteclipse&ei%3DFWK-U4bDB-iAywPbyoGoBA&usg%3DAFQjCNFHHSpw_S9X6iklj7gElR7WhZ3Vhg&bvm%3Dbv.70138588,d.bGQ>`__, you may notice that
+been generated in the past with `sbteclipse <https://github.com/typesafehub/sbteclipse>`__, you may notice that
 those dialogs do not appear. This is because your project is
 using a Classpath Container.
 
 Basically, classpath containers are an indirection in your
 classpath that is elaborated by the platform Eclipse using
-settings.They're the technical notion behind the Eclipse feature
+settings. They're the technical notion behind the Eclipse feature
 named `user libraries. <http://help.eclipse.org/juno/index.jsp?topic%3D%252Forg.eclipse.jdt.doc.user%252Freference%252Fpreferences%252Fjava%252Fbuildpath%252Fref-preferences-user-libraries.htm>`__
 
-Your project's physical representation contains a string (a
-classpath container *path*) in its classpath, that Eclipse
-resolves depending on its own settings and context [#]_. This
-has been the way Scala projects in the IDE have been dealt with
-so far: your projects contained that indirection as a pointer to
-a Scala compiler, so that as you updated your ScalaIDE plugin
-over time, your projects were always built with the
-latest version of the scala compiler embedded with the IDE.
+Your project's physical representation contains a string (a classpath
+container *path*) in its classpath, that Eclipse resolves depending on its
+own settings and context [#]_. This has been the way Scala projects in the
+IDE have been dealt with so far: your projects contained that indirection
+as a pointer to a Scala compiler. That pointer was resolved to whichever
+version of Scala the current Scala Plugin had been bundled with, so that
+as you updated your ScalaIDE plugin over time, your projects were always
+built with the latest version of the scala compiler embedded with the IDE.
 
 As of now you have access to the content of the Scala Classpath
 Containers. First of all, choosing a project-specific scala
@@ -208,9 +209,9 @@ Scala installation and associated compiler settings. In fact, to
 make sure that the compiler and library container settings would
 not get out of sync, we had to make sure that classpath container
 edition should not fire if you have both Scala-library and
-Scala-compiler on classpath. In you do the best way to proceed is
+Scala-compiler on classpath. The best way to proceed is
 from a project's choice of Scala Installation, which cascades to
-classpath containers — and a dialog will guide you there if you
+classpath containers — and a link will guide you there if you
 try to modify such a classpath container directly anyway [#]_.
 
 This will let you have a project which classpath is managed the
@@ -232,18 +233,24 @@ there has always been the option of having a manually-managed
 classpath. You can either use the *Add External Jars* function
 for the *Java Build Path* preference page to set up your
 scala-compiler and/or scala-library (etc) jars, or you could use
-sbteclipse with the ``withBundledScalaContainers:=false``
+sbteclipse with the ``EclipseKeys.withBundledScalaContainers:=false``
 option, which copies exactly the settings resolved by sbt.
 
-But using this is tedious, and it's per-project. How about
-setting a custom, workspace-wide installation that your projects
-can then reuse ?
+But using this is tedious, and it's per-project. Or perhaps your project
+does not have an sbt build. How about setting a custom, workspace-wide
+installation that your projects can then reuse ?
 
 This is what you can do from the Scala Installations preference
 page. You will find it in the preference dialog for the
 workspace.
 
 |img9|
+
+Notice how there is no notion of dynamic or fixed represented here: those
+notions are relevant for a choice of Scala Installation when you configure
+a project (dictating how that choice will be realized accross
+upgrades). Those are just the installations that are available to your IDE
+at the moment.
 
 There you can add and remove an installation according to your
 needs. So far, the dialog prompts you for a directory, which
@@ -257,7 +264,7 @@ such as scala-reflect.
 It will try to do a best effort to understand the version of
 your installation given what we know of how such jars are
 produced by the compiler build [#]_, and try to check those
-jars version is consistent with each other.
+jars' versions are consistent with each other.
 
 Let's now try to add an installation from the ``~/.sbt/boot``
 directory, a place where sbt stores the scala jars it requires to
@@ -297,6 +304,17 @@ Finally, note that so far, we only support Scala Versions
 posterior to 2.10.0. Indeed, the ``-Xsource`` flag only knows so
 far how to run both in 2.11 (normal) and 2.10 (compatibility)
 modes. But it no longer knows about old typing ways of the past.
+
+Multiple Scala Installation Settings at once
+--------------------------------------------
+
+Many of you have multiple projects which version they want to switch
+quickly, without having to open project preferences for each project. So,
+choosing a Scala Installation is now a multi-select action: just choose
+your target projects, right-click, go to the Scala menu, and choose ‘Set
+the Scala Installation’, as below.
+
+|img13|
 
 .. [#] One important exception to this is building, which is a `batch-mode
    <https://en.wikipedia.org/wiki/Batch_processing>`__ task that can be
@@ -367,3 +385,5 @@ modes. But it no longer knows about old typing ways of the past.
                   :width: 100%
 .. |img12| image:: http://scala-ide.org/resources/images/xsource-screenshots/installations/custom-installation-visible.png
                   :width: 100%
+.. |img13| image:: http://scala-ide.org/resources/images/xsource-screenshots/new-support/multiselect-action.png
+                   :width: 100%
