@@ -10,6 +10,7 @@ Contents:
 
    gettingstarted/index
    advancedsetup/index
+   advancedsetup/scala-installations
    features
    /tutorials/index
    faq/index

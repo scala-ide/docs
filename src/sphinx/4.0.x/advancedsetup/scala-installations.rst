@@ -10,7 +10,7 @@ Why multiple versions ?
 
 The Scala IDE has a strong dependency on Scala : it comes deeply
 embedded with an interactive version of the compiler, called the
-`Presentation Compiler <http://scala-ide.org/docs/dev/architecture/presentation-compiler.html#scalapresentationcompiler>`__, that it uses to do all the interactive
+`Presentation Compiler <./dev/architecture/presentation-compiler.html#scalapresentationcompiler>`__, that it uses to do all the interactive
 work on your code: completions, errors as you type, semantic
 highlighting, etc [#]_.
 
@@ -118,6 +118,17 @@ Also, note this setting will not affect what your projct is built
 with. What your project runs on is, as usual, the compiler it
 finds on classpath. But what is actually found on classpath may
 vary according to your project's specific settings [#]_.
+
+Multiple Scala Installation Settings at once
+--------------------------------------------
+
+Many of you have multiple projects which version they want to switch
+quickly, without having to open project preferences for each project. So,
+choosing a Scala Installation is now a multi-select action: just choose
+your target projects, right-click, go to the Scala menu, and choose ‘Set
+the Scala Installation’, as below.
+
+|img13|
 
 Scala Installation detection
 ----------------------------
@@ -304,17 +315,6 @@ Finally, note that so far, we only support Scala Versions
 posterior to 2.10.0. Indeed, the ``-Xsource`` flag only knows so
 far how to run both in 2.11 (normal) and 2.10 (compatibility)
 modes. But it no longer knows about old typing ways of the past.
-
-Multiple Scala Installation Settings at once
---------------------------------------------
-
-Many of you have multiple projects which version they want to switch
-quickly, without having to open project preferences for each project. So,
-choosing a Scala Installation is now a multi-select action: just choose
-your target projects, right-click, go to the Scala menu, and choose ‘Set
-the Scala Installation’, as below.
-
-|img13|
 
 .. [#] One important exception to this is building, which is a `batch-mode
    <https://en.wikipedia.org/wiki/Batch_processing>`__ task that can be
