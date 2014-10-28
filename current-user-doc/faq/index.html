@@ -223,7 +223,7 @@ the <a class="reference internal" href="../advancedsetup/index.html"><em>Scala D
 <p>The code contains Unicode niceties like <tt class="docutils literal"><span class="pre">←</span></tt> and <tt class="docutils literal"><span class="pre">⇒</span></tt>, but the editor doesn&#8217;t seem to be able to display them, and errors are reported at their location.</p>
 <p><strong>Solution</strong>:</p>
 <p>The operating system is not using UTF-8 by default, and its default encoding is used inside Eclipse.</p>
-<p>The encoding used to open files can be configured at different levels. Most of the time, setting Eclipse default encoding to UTF-8 in <tt class="docutils literal"><span class="pre">General</span> <span class="pre">→</span> <span class="pre">Workspace</span></tt> in the preferences <a class="footnote-reference" href="#preferences" id="id5">[1]</a> is enough. But in some case, the wrong encoding might also have been set in the project properties, or even the file properties.</p>
+<p>The encoding used to open files can be configured at different levels. Most of the time, setting Eclipse default encoding to UTF-8 in <tt class="docutils literal"><span class="pre">General</span> <span class="pre">→</span> <span class="pre">Workspace</span></tt> preferences is enough. But in some case, the wrong encoding might also have been set in the project properties, or even the file properties.</p>
 </div>
 <div class="section" id="red-screen-of-death-red-squiggles-everywhere">
 <h3>Red screen of death (red squiggles everywhere)</h3>
@@ -304,12 +304,6 @@ this problem if you upgrade to JRE 7 or newer.</p>
 <p>After upgrading the Scala plug-in, <tt class="docutils literal"><span class="pre">java.lang.NoClassDefFoundError:</span> <span class="pre">scala/tools/nsc/settings/MutableSettings$SettingValue</span></tt> exception is reported for all Scala projects in the workspace. Scala IDE is then unusable.</p>
 <p><strong>Solution</strong>:</p>
 <p>If you have several update sites providing different version of Scala IDE, Eclipse may have decided that a newest Scala library should be used instead of the one provided by the plug-in to be installed. To avoid this problem, make sure to uncheck the <tt class="docutils literal"><span class="pre">Contact</span> <span class="pre">all</span> <span class="pre">update</span> <span class="pre">sites</span> <span class="pre">during</span> <span class="pre">install</span> <span class="pre">to</span> <span class="pre">find</span> <span class="pre">required</span> <span class="pre">software</span></tt> option. It is situated at the bottom of the <tt class="docutils literal"><span class="pre">Help</span> <span class="pre">→</span> <span class="pre">Install</span> <span class="pre">New</span> <span class="pre">Software...</span></tt> dialog.</p>
-<table class="docutils footnote" frame="void" id="preferences" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id5">[1]</a></td><td>The Eclipse preferences are accessible using <tt class="docutils literal"><span class="pre">Windows</span> <span class="pre">→</span> <span class="pre">Preferences</span></tt> (or <tt class="docutils literal"><span class="pre">Eclipse</span> <span class="pre">→</span> <span class="pre">Preferences</span></tt> on Mac osX).</td></tr>
-</tbody>
-</table>
 </div>
 </div>
 </div>

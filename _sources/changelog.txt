@@ -4,7 +4,16 @@ Changelog
 4.0.0 - codename Lithium
 ------------------------
 
-RC1 (unreleased)
+RC2 (2014-10-28)
+.....................
+
+ - Create a build marker when a project is not built due to upstream errors... (:ticket:`1002320`)
+ - Revert "Interrupt Scala builder on resource change" (:ticket:`1002319`)
+ - Show @return in scaladoc hovers (:ticket:`1002312`)
+ - Restore correct selection when region changed at end of selection (:ticket:`1002314`)
+ - Don’t catch `AssertionError` in `getOption`
+
+RC1 (2014-10-17)
 .....................
 
  - Remove last calls to `JavaUI.getDocumentProvider`
@@ -63,7 +72,7 @@ RC1 (unreleased)
  - Moves content of core.api in core, and adds Ixxx prefix
  - Faster implementation of `ScalaCommentScanner` (:ticket:`1002241`)
  - Shut up noisy logger. (:ticket:`1002228`)
- - Add *.tmpBin files to .gitignore
+ - Add `*.tmpBin` files to .gitignore
  - Mark some completion tests as flaky.
  - Creates an API for ScalaPlugin
  - Fix Luna build by using the AJDT dev version of the weaving hook.
