@@ -18,7 +18,7 @@ This guide will show you how to configure Eclipse and your workspace for develop
 Prerequisites
 .............
 
-*   `Eclipse`_ 3.7.2 (Indigo) with a **very recent** Scala IDE for Scala 2.10 installed (update site: http://download.scala-ide.org/nightly-update-master-trunk).
+*   `Eclipse`_ 4.4 (Luna) with a **very recent** Scala IDE for Scala 2.11 installed (update site: http://scala-ide.org/download/nightly.html).
 
     Check the :doc:`getting started </current-user-doc/gettingstarted/index>` page for instructions on how to install Scala IDE.
 
@@ -181,4 +181,4 @@ based on a document created by Grzegorz Kossakowski - `@gkossakowski`_ and impro
 .. _@nadamin: https://twitter.com/nadamin
 .. _update-scala.sh: https://github.com/scala-ide/scala-ide/blob/master/update-scala.sh
 .. _eclipse-director.sh: https://github.com/scala-ide/scala-ide/blob/master/eclipse-director.sh
-.. _README.md: https://github.com/scala/scala/blob/master/src/eclipse/README.md
+.. _README.md: https://github.com/scala/scala/blob/2.11.x/src/eclipse/README.md
