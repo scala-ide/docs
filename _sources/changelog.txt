@@ -4,14 +4,16 @@ Changelog
 4.0.0 - codename Lithium
 ------------------------
 
-RC2 (2014-10-28)
+RC2 (2014-10-30)
 .....................
 
+ - Avoid spurious typer cycles / "no progress completing" errors (:ticket:`1002325`)
  - Create a build marker when a project is not built due to upstream errors... (:ticket:`1002320`)
  - Revert "Interrupt Scala builder on resource change" (:ticket:`1002319`)
  - Show @return in scaladoc hovers (:ticket:`1002312`)
  - Restore correct selection when region changed at end of selection (:ticket:`1002314`)
  - Don’t catch `AssertionError` in `getOption`
+
 
 RC1 (2014-10-17)
 .....................
