@@ -98,13 +98,15 @@ You are literally instants away from being all set and ready to start hacking th
 <div class="section" id="requirements">
 <h2>Requirements</h2>
 <ul class="simple">
-<li><a class="reference external" href="http://www.eclipse.org/downloads/">Eclipse 4.3 (Kepler)</a>, including PDT and JDT. (Be aware, the plugin&#8217;s sources are no longer compatible with Eclipse 3.x).</li>
-<li>The <a class="reference external" href="http://www.eclipse.org/pde/">Eclipse Plug-in Development Environment</a>, which ships with the Eclipse SDK but may
-need to be installed manually.  Choose <tt class="docutils literal"><span class="pre">Help</span> <span class="pre">&gt;</span> <span class="pre">Install</span> <span class="pre">New</span> <span class="pre">Software...</span></tt>,
-select the <a class="reference external" href="http://download.eclipse.org/releases/kepler">Indigo Update Site</a>, then install <tt class="docutils literal"><span class="pre">General</span>
-<span class="pre">Purpose</span> <span class="pre">Tools</span> <span class="pre">&gt;</span> <span class="pre">Eclipse</span> <span class="pre">Plug-in</span> <span class="pre">Development</span> <span class="pre">Environment</span></tt>.</li>
-<li>The <a class="reference external" href="http://scala-ide.org/download/nightly.html">Scala IDE nightly for Scala 2.10</a>.</li>
-<li><a class="reference external" href="http://wiki.eclipse.org/Eclipse/Installation#Install_a_JVM">Java 6 is recommended for Eclipse 4.3</a>. Java 7 can also be used.</li>
+<li><a class="reference external" href="http://www.eclipse.org/downloads/">Eclipse 4.4 (Luna)</a>, including PDT and JDT. Look for
+<strong>Eclipse IDE for Eclipse Committers</strong>, which comes with <cite>Eclipse Plug-In Development Environment pre-installed</cite>.</li>
+<li>The <a class="reference external" href="http://www.eclipse.org/pde/">Eclipse Plug-in Development Environment</a>, which ships with the
+Eclipse SDK (<strong>Eclipse IDE for Eclipse Committers</strong>) but may need to be installed manually.  Choose <tt class="docutils literal"><span class="pre">Help</span> <span class="pre">&gt;</span> <span class="pre">Install</span> <span class="pre">New</span> <span class="pre">Software...</span></tt>,
+select the <a class="reference external" href="http://download.eclipse.org/releases/luna">Luna Update Site</a>, then install
+<tt class="docutils literal"><span class="pre">General</span> <span class="pre">Purpose</span> <span class="pre">Tools</span> <span class="pre">&gt;</span> <span class="pre">Eclipse</span> <span class="pre">Plug-in</span> <span class="pre">Development</span> <span class="pre">Environment</span></tt>.</li>
+<li>The <a class="reference external" href="http://scala-ide.org/download/nightly.html">Scala IDE nightly for Scala 2.11</a>. Make sure you are using the latest nightly</li>
+<li><a class="reference external" href="http://wiki.eclipse.org/Eclipse/Installation#Install_a_JVM">Java 7 is recommended for Eclipse 4.4</a>. Java 8 can also be used
+starting with <a class="reference external" href="https://github.com/scala-ide/scala-ide/pull/842">PR 842</a></li>
 <li><a class="reference external" href="http://maven.apache.org/download.html">Maven 3</a>.</li>
 <li><a class="reference external" href="http://git-scm.com/">Git</a> and a <a class="reference external" href="https://github.com/">GitHub</a> account.</li>
 </ul>
@@ -135,7 +137,7 @@ So let&#8217;s run the build.</p>
 </pre></div>
 </div>
 <p>Or, you can pass a different profile for building the Scala IDE with Scala 2.11:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>./build-all.sh -P scala-2.11.x -P eclipse-juno clean install
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>./build-all.sh -P scala-2.11.x -P eclipse-luna clean install
 </pre></div>
 </div>
 <p>If you want more information concerning the build, check out <a class="reference internal" href="../building/building.html#building-run-the-build"><em>Run the build</em></a>.</p>
@@ -182,7 +184,7 @@ in the vanilla launcher.</p>
 <span id="setup-install-equinox-weaving-launcher"></span><h3>Install the Equinox Weaving Launcher</h3>
 <p>To install the Equinox Weaving Launcher, use the following Eclipse update site:</p>
 <blockquote>
-<div><a class="reference external" href="http://www.chuusai.com/eclipse/equinox-weaving-launcher/">http://www.chuusai.com/eclipse/equinox-weaving-launcher/</a></div></blockquote>
+<div><a class="reference external" href="http://download.scala-ide.org/plugins/equinox-weaving-launcher/releases/site/">http://download.scala-ide.org/plugins/equinox-weaving-launcher/releases/site/</a></div></blockquote>
 <p>This adds two more launch configurations: Eclipse Application with Equinox Weaving, and JUnit plug-in
 test with Equinox Weaving.</p>
 </div>

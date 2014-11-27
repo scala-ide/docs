@@ -98,10 +98,7 @@ done, for example, during the <a class="reference external" href="https://jenkin
 <div class="section" id="requirements">
 <h2>Requirements</h2>
 <ul class="simple">
-<li><a class="reference external" href="http://www.oracle.com/technetwork/java/javasebusiness/downloads/java-archive-downloads-javase5-419410.html">JDK 5</a>
-or <a class="reference external" href="http://www.oracle.com/technetwork/java/javasebusiness/downloads/java-archive-downloads-javase6-419409.html">JDK 6</a>
-(JDK 7 is <strong>not</strong> supported. As a matter of fact, there have been issues reported when running Eclipse with a Java 7 JVM. For instance,
-see <a class="reference external" href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=364735">https://bugs.eclipse.org/bugs/show_bug.cgi?id=364735</a>).</li>
+<li>A working JDK</li>
 <li><a class="reference external" href="http://maven.apache.org/download.html">Maven 3</a>.</li>
 <li>You have cloned the Scala IDE project. Read <a class="reference internal" href="../setup/setup.html#setup-fork-the-project"><em>Fork the project</em></a> for
 more information about this point.</li>
@@ -110,18 +107,13 @@ more information about this point.</li>
 <div class="section" id="run-the-build">
 <span id="building-run-the-build"></span><h2>Run the build</h2>
 <p>If you just want to build Scala IDE, a script triggers the different step needed to generate Scala IDE.</p>
-<p>From the project root, run the following command to build Scala IDE for Scala 2.10:</p>
+<p>From the project root, run the following command to build Scala IDE for Scala 2.11:</p>
 <div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>./build-all.sh
 </pre></div>
 </div>
-<p>or the following to build Scala IDE for Scala 2.11:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>./build-all.sh -P scala-2.11.x -P eclipse-juno clean install
+<p>or the following to build Scala IDE for a given Scala version:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>./build-all.sh -P scala-2.11.x -P eclipse-luna clean install
 </pre></div>
-</div>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">When working on the Scala IDE you need to make sure that new code can be compiled with Scala
-2.10 and 2.11 (trunk).</p>
 </div>
 <p>Assuming your build is successful you should find an Eclipse update site has been built in
 <tt class="docutils literal"><span class="pre">org.scala-ide.sdt.update-site/target/site</span></tt> and a zipped version of the same at
@@ -143,19 +135,25 @@ server, then the HTTP URL of its root directory is acceptable as an ordinary Ecl
 <p>The toolchain update site and the SDT build depend on the fact that the root pom and toolchain have been compiled and installed in the local maven repository using <tt class="docutils literal"><span class="pre">mvn</span> <span class="pre">install</span></tt>.</p>
 <p>After an initial complete build, maven can be used from any subproject.</p>
 <p><tt class="docutils literal"><span class="pre">build-all.sh</span></tt> is simply a helper script that calls maven on the different parts. Running it is equivalent to:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>mvn -P scala-2.10.x -P eclipse-juno clean install
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>mvn -P scala-2.11.x -P eclipse-luna clean install
 <span class="nv">$ </span><span class="nb">cd </span>org.scala-ide.build-toolchain
-<span class="nv">$ </span>mvn -P scala-2.10.x -P eclipse-juno clean install
+<span class="nv">$ </span>mvn -P scala-2.11.x -P eclipse-luna clean install
 <span class="nv">$ </span><span class="nb">cd</span> ../org.scala-ide.sdt.build
-<span class="nv">$ </span>mvn -P scala-2.10.x -P eclipse-juno clean install
+<span class="nv">$ </span>mvn -P scala-2.11.x -P eclipse-luna clean install
 </pre></div>
 </div>
-<p>or for Scala 2.11.x:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>mvn -P scala-2.11.x -P eclipse-juno clean install
-<span class="nv">$ </span><span class="nb">cd </span>org.scala-ide.build-toolchain
-<span class="nv">$ </span>mvn -P scala-2.11.x -P eclipse-juno clean install
-<span class="nv">$ </span><span class="nb">cd</span> ../org.scala-ide.sdt.build
-<span class="nv">$ </span>mvn -P scala-2.11.x -P eclipse-juno clean install
+</div>
+<div class="section" id="build-profiles">
+<h2>Build Profiles</h2>
+<p>The build is controlled through profiles, and there are several dimensions on which the build can be controlled:</p>
+<ul class="simple">
+<li>Eclipse platform. Currently the build works with Eclipse Kepler and Luna. Profiles: <tt class="docutils literal"><span class="pre">eclipse-kepler</span></tt>, <tt class="docutils literal"><span class="pre">eclipse-luna</span></tt>. The two profiles use different
+source folders for a couple of files. The additional sources are found in <tt class="docutils literal"><span class="pre">src-luna</span></tt> and <tt class="docutils literal"><span class="pre">src-kepler</span></tt> respectively. Make sure to add the right one
+in your Eclipse project if not using the defaults (by default, <tt class="docutils literal"><span class="pre">src-luna</span></tt> is part of the project)</li>
+<li>Scala major number. Currently the build works with Scala 2.11 and has support for 2.12. Profiles: <tt class="docutils literal"><span class="pre">scala-2.11.x</span></tt>, <tt class="docutils literal"><span class="pre">scala-2.12.x</span></tt></li>
+</ul>
+<p>A specific Scala version can also be passed on the command line, <em>in addition to the Scala profile</em>:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>mvn -P scala-2.11.x -P eclipse-luna -Dscala211.version<span class="o">=</span>2.11.2 clean install
 </pre></div>
 </div>
 </div>
@@ -165,7 +163,7 @@ server, then the HTTP URL of its root directory is acceptable as an ordinary Ecl
 <p>This test is not run by default in a normal build. org.scala-ide.sdt.core.test contains a special profile to run the test.</p>
 <p>Use the following command to run it after having build the toolchain.</p>
 <div class="highlight-bash"><div class="highlight"><pre><span class="c"># from org.scala-ide.sdt.build</span>
-<span class="nv">$ </span>mvn --projects ../org.scala-ide.sdt.aspects,../org.scala-ide.sdt.core,../org.scala-ide.sdt.core.tests -P scala-2.10.x,memory-test clean integration-test
+<span class="nv">$ </span>mvn --projects ../org.scala-ide.sdt.aspects,../org.scala-ide.sdt.core,../org.scala-ide.sdt.core.tests -P scala-2.11.x,memory-test clean integration-test
 </pre></div>
 </div>
 <p>The <tt class="docutils literal"><span class="pre">--projects</span></tt> option tells maven which modules to build, as we don&#8217;t need to build all of them in this case. The <tt class="docutils literal"><span class="pre">memory-test</span></tt> profile contains a sightly modified configuration for <tt class="docutils literal"><span class="pre">sdt.core.test</span></tt>. It pulls and extracts the Scala compiler source needed for the test, and sets the MemoryLeaksTest test to be run.</p>

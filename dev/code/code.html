@@ -116,8 +116,8 @@ the &#8220;default logger&#8221; from now on). Log messages sent to the default 
 <tt class="docutils literal"><span class="pre">scala-ide.log</span></tt>, located in the <tt class="docutils literal"><span class="pre">${workspace}\.metadata\.plugins\org.scala-ide.sdt.core\</span></tt> directory.
 Also, note that users can easily control the amount of logged information through Logging preference page
 (accessible under the Eclipse Preferences &gt; Scala &gt; Logging).</p>
-<p>To get a handle on the loggers, you only need to mix-in the <tt class="docutils literal"><span class="pre">HasLogger</span></tt> trait defined in package
-<tt class="docutils literal"><span class="pre">scala.tools.eclipse.logging</span></tt>. The implementation should be somewhat similar to the following:</p>
+<p>To get a handle on the loggers, you only need to mix-in the <tt class="docutils literal"><span class="pre">HasLogger</span></tt> trait. The implementation should be
+somewhat similar to the following:</p>
 <div class="highlight-scala"><div class="highlight"><pre><span class="k">trait</span> <span class="nc">HasLogger</span> <span class="o">{</span>
 
   <span class="k">protected</span><span class="o">[</span><span class="kt">this</span><span class="o">]</span> <span class="k">lazy</span> <span class="k">val</span> <span class="n">logger</span><span class="k">:</span> <span class="kt">Logger</span> <span class="o">=</span> <span class="o">{</span>

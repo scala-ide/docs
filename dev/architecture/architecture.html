@@ -100,16 +100,16 @@ and its components are discussed.</p>
 <h2>Overview</h2>
 <p>The Scala IDE project is composed of several modules. Here is a generic description of what each module contains:</p>
 <ul class="simple">
-<li><tt class="docutils literal"><span class="pre">org.scala-ide.build</span></tt>: Contains the scripts for building the Scala IDE from the command line.</li>
-<li><tt class="docutils literal"><span class="pre">org.scala-ide.build-toolchain</span></tt>: Contains the script for retrieving and repackaging dependencies that are needed by the Scala IDE.</li>
-<li><tt class="docutils literal"><span class="pre">org.scala-ide.sbt.full.library</span></tt>: Packages the Sbt incremental compiler into one OSGi bundle.</li>
-<li><tt class="docutils literal"><span class="pre">org.scala-ide.sbt.compiler.interface</span></tt> Packages the Sbt compiler interface into an OSGi bundle</li>
-<li><tt class="docutils literal"><span class="pre">org.scala-ide.sdt.aspects</span></tt>: Contains the AspectJ classes used to weave into Eclipse and hook in JDT internals.</li>
 <li><tt class="docutils literal"><span class="pre">org.scala-ide.sdt.core</span></tt>: Contains the Scala IDE plug-in&#8217;s source code.</li>
 <li><tt class="docutils literal"><span class="pre">org.scala-ide.sdt.core.tests</span></tt>: Contains the functional tests used to exercise the Scala IDE in headless mode (with no User Interface).</li>
 <li><tt class="docutils literal"><span class="pre">org.scala-ide.sdt.debug</span></tt>: Contains the Scala IDE debugger plug-in&#8217;s source code.</li>
 <li><tt class="docutils literal"><span class="pre">org.scala-ide.sdt.debug.tests</span></tt>: Contains the functional tests used to exercise the Scala IDE debugger in headless mode (with no User Interface).</li>
 <li><tt class="docutils literal"><span class="pre">org.scala-ide.sdt.spy</span></tt>: A Scala Spy view, used to display position, tree and type information under the cursor.</li>
+<li><tt class="docutils literal"><span class="pre">org.scala-ide.sdt.aspects</span></tt>: Contains the AspectJ classes used to weave into Eclipse and hook in JDT internals.</li>
+<li><tt class="docutils literal"><span class="pre">org.scala-ide.build</span></tt>: Contains the scripts for building the Scala IDE from the command line.</li>
+<li><tt class="docutils literal"><span class="pre">org.scala-ide.build-toolchain</span></tt>: Contains the script for retrieving and repackaging dependencies that are needed by the Scala IDE.</li>
+<li><tt class="docutils literal"><span class="pre">org.scala-ide.sbt.*</span></tt>: Contain scripts for repackaging the Sbt incremental compiler as a Maven dependency.</li>
+<li><tt class="docutils literal"><span class="pre">org.scala-ide.scala*</span></tt>: Contain scripts for packaging Scala (2.10, 2.11) as features that can be installed in Eclipse</li>
 <li><tt class="docutils literal"><span class="pre">org.scala-ide.sdt.feature</span></tt>: Packages the <tt class="docutils literal"><span class="pre">org.scala-ide.sdt.core</span></tt> and <tt class="docutils literal"><span class="pre">org.scala-ide.sdt.debug</span></tt> project binaries into the &#8220;Scala IDE for Eclipse&#8221; component, which is then made available through the Scala IDE update site.</li>
 <li><tt class="docutils literal"><span class="pre">org.scala-ide.sdt.source.feature</span></tt>: Packages both the <tt class="docutils literal"><span class="pre">org.scala-ide.sdt.core</span></tt> and <tt class="docutils literal"><span class="pre">org.scala-ide.sdt.aspects</span></tt> project sources into the &#8220;Scala IDE for Eclipse Source Feature&#8221; component, which is then made available through the Scala IDE update site.</li>
 <li><tt class="docutils literal"><span class="pre">org.scala-ide.sdt.weaving.feature</span></tt>: Packages the <tt class="docutils literal"><span class="pre">org.scala-ide.sdt.aspects</span></tt> project binaries into the &#8220;JDT Weaving for Scala&#8221; component, which is included within the &#8220;Scala IDE for Eclipse&#8221; component.</li>
@@ -176,7 +176,7 @@ instead of weaving. This is the case for both code completion and hyperlinking.<
 <li>Java interfaces and classes that are used by these aspects. The main IDE module, <tt class="docutils literal"><span class="pre">org.scala-ide.sdt.core</span></tt> implements or inherits these classes. This way, there is a clean separation between the hooks, and the actual implementations.</li>
 </ul>
 <p>The other side of this coin is the actual Scala-specific implementation in
-<tt class="docutils literal"><span class="pre">org.scala-ide.sdt.core</span></tt>. The package <tt class="docutils literal"><span class="pre">scala.tools.eclipse.javaelements</span></tt> contains Scala
+<tt class="docutils literal"><span class="pre">org.scala-ide.sdt.core</span></tt>. The package <tt class="docutils literal"><span class="pre">org.scalaide.core.internal.jdt.model</span></tt> contains Scala
 subclasses of Java element classes, such as <tt class="docutils literal"><span class="pre">ScalaClassElement</span></tt> or <tt class="docutils literal"><span class="pre">ScalaDefElement</span></tt>.</p>
 <p>Although the JDT defines interfaces for these elements, we inherit from their internal
 implementations. This makes our code prone to breakage in newer releases of the JDT, but gives us
@@ -196,9 +196,9 @@ mitigate incompatibilities with newer version of the JDT.</p>
 </div>
 <div class="section" id="the-scala-structure-builder">
 <h2>The Scala Structure Builder</h2>
-<p>The workhorse of Java-Scala integration is the <a class="reference external" href="http://github.com/scala-ide/scala-ide/blob/master/org.scala-ide.sdt.core/src/scala/tools/eclipse/javaelements/ScalaStructureBuilder.scala">ScalaStructureBuilder</a>
+<p>The workhorse of Java-Scala integration is the <a class="reference external" href="http://github.com/scala-ide/scala-ide/blob/master/org.scala-ide.sdt.core/src/org/scalaide/core/internal/jdt/model/ScalaStructureBuilder.scala">ScalaStructureBuilder</a>
 class. This class translates Scala sources (using the Abstract Syntax Trees - AST) to the JDT model elements (using the
-<a class="reference external" href="http://github.com/scala-ide/scala-ide/blob/master/org.scala-ide.sdt.core/src/scala/tools/eclipse/javaelements/ScalaElements.scala">Scala specific subclasses</a>,
+<a class="reference external" href="http://github.com/scala-ide/scala-ide/blob/master/org.scala-ide.sdt.core/src/org/scalaide/core/internal/jdt/model/ScalaElements.scala">Scala specific subclasses</a>,
 of course), and it is fully responsible for the way the Eclipse Java compiler (and related JDT tools
 or UI elements) sees Scala code.</p>
 <div class="admonition note">
@@ -226,8 +226,8 @@ means parsing and type-checking. <a class="reference internal" href="presentatio
 <div class="section" id="code-formatting">
 <h2>Code formatting</h2>
 <p>Code formatting is delegated to <a class="reference external" href="https://github.com/mdr/scalariform/">Scalariform</a>, a library for
-automated Scala formatting written by Matt Russell. <a class="reference external" href="https://github.com/scala-ide/scala-ide/blob/master/org.scala-ide.sdt.core/src/scala/tools/eclipse/ScalaStructureSelectEnclosingAction.scala">Structured selection</a>
-and <a class="reference external" href="https://github.com/mdr/Scala-IDE/blob/f1a02cd3455aead4582a1652beddcc0b3dbd0f10/org.scala-ide.sdt.core/src/scala/tools/eclipse/lexical/ScalaCodeScanner.scala">tokenising</a>
+automated Scala formatting written by Matt Russell. <a class="reference external" href="https://github.com/scala-ide/scala-ide/blob/master/org.scala-ide.sdt.core/src/org/scalaide/ui/internal/actions/ScalaStructureSelectEnclosingAction.scala">Structured selection</a>
+and <a class="reference external" href="https://github.com/mdr/Scala-IDE/blob/f1a02cd3455aead4582a1652beddcc0b3dbd0f10/org.scala-ide.sdt.core/src/org/scalaide/core/internal/lexical/ScalaCodeScanner.scala">tokenising</a>
 for syntax coloring are also backed by Scalariform.</p>
 </div>
 <div class="section" id="refactoring">
