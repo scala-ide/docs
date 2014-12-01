@@ -1,3 +1,4 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
@@ -180,7 +181,7 @@ Otherwise, you can safely skip this section.</p>
 <p>Build the Scala compiler, package into maven format and deploy locally. If you are building Scala <strong>2.10.x</strong>, run</p>
 <div class="highlight-bash"><div class="highlight"><pre><span class="c"># From the main Scala directory</span>
 <span class="nv">$ </span>ant distpack-opt
-<span class="nv">$ </span><span class="o">(</span><span class="nb">cd </span>dists/maven/latest; ant deploy.snapshot.local<span class="o">)</span>
+<span class="nv">$ </span><span class="o">(</span><span class="nb">cd </span>dists/maven/latest<span class="p">;</span> ant deploy.snapshot.local<span class="o">)</span>
 </pre></div>
 </div>
 <p>In case you are building Scala <strong>master</strong>, run</p>

@@ -4,16 +4,27 @@ Changelog
 4.0.0 - codename Lithium
 ------------------------
 
-RC2 (2014-10-30)
+RC3 (2014-11-30)
+.................
+
+ - Revert "replaces CheckBoxSettingWithDefault with a by-name parameter and additional constructor" (:ticket:`1002335`)
+ - Adds back Scala notation in the outline labels (:ticket:`1002339`)
+ - Avoid logging twice the same stack trace
+ - Wraps the Java spelling API call
+ - Handle src/bin folders that are the same as project root folders (:ticket:`1002146`)
+ - Add quick assists for spelling mistakes (:ticket:`1002301`)
+ - Automatically select problem position on quick assist invocation (:ticket:`1002305`)
+ - Updates to Scala 2.11.5-SNAPSHOT as default version
+ - Upgrade AspectJ compiler to make it work with JDK8.
+
+RC2 (2014-10-28)
 .....................
 
- - Avoid spurious typer cycles / "no progress completing" errors (:ticket:`1002325`)
  - Create a build marker when a project is not built due to upstream errors... (:ticket:`1002320`)
  - Revert "Interrupt Scala builder on resource change" (:ticket:`1002319`)
  - Show @return in scaladoc hovers (:ticket:`1002312`)
  - Restore correct selection when region changed at end of selection (:ticket:`1002314`)
  - Don’t catch `AssertionError` in `getOption`
-
 
 RC1 (2014-10-17)
 .....................

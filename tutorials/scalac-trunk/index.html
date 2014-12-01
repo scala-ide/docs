@@ -1,3 +1,4 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
@@ -164,7 +165,7 @@ whole Scala community will benefit!</p>
 <h2>Launching and Debugging scalac</h2>
 <p>Since the output directories are set to the default <tt class="docutils literal"><span class="pre">ant</span></tt> build directories, all the runner scripts work out of the box. If you built the project, you can run <tt class="docutils literal"><span class="pre">build/quick/bin/scalac</span></tt> on the command line, and it will pick your changes. However, the interesting part is being able to use the Eclipse debugger.</p>
 <p>To launch scalac from Eclipse you need to create a <tt class="docutils literal"><span class="pre">Run</span> <span class="pre">Configuration</span></tt>, from <tt class="docutils literal"><span class="pre">Run</span> <span class="pre">→</span> <span class="pre">Run</span> <span class="pre">Configurations</span></tt>. Choose <tt class="docutils literal"><span class="pre">Scala</span> <span class="pre">Application</span></tt> and set the main class to <tt class="docutils literal"><span class="pre">scala.tools.nsc.Main</span></tt>. On the <tt class="docutils literal"><span class="pre">Arguments</span></tt> page, you need to explicitly set the path to the Scala library (that is what the runner script does for you on the command line):</p>
-<div class="highlight-bash"><div class="highlight"><pre>-bootclasspath <span class="k">${</span><span class="nv">SCALA_BASEDIR</span><span class="k">}</span>/build/quick/classes/library -d /tmp /Users/dragos/sandbox/bugs/ticket3429.scala
+<div class="highlight-bash"><div class="highlight"><pre>-bootclasspath <span class="si">${</span><span class="nv">SCALA_BASEDIR</span><span class="si">}</span>/build/quick/classes/library -d /tmp /Users/dragos/sandbox/bugs/ticket3429.scala
 </pre></div>
 </div>
 <p>The run configuration should look like this:</p>
@@ -201,17 +202,17 @@ Uninstalling org.scala-ide.sdt.feature.feature.group 2.1.0.nightly-2_10-20120302
 <div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>mkdir /opt/eclipse-3.7.1
 unzip the contents of the original eclipse installation to this directory
 make the whole directory <span class="nb">read</span>-only
-<span class="nv">$ </span>mkdir <span class="k">${</span><span class="nv">HOME</span><span class="k">}</span>/eclipse-conf
-<span class="nv">$ </span>mv /opt/eclipse-3.7.1/eclipse.ini <span class="k">${</span><span class="nv">HOME</span><span class="k">}</span>/eclipse-conf/eclipse.ini
-<span class="nv">$ </span>mkdir <span class="k">${</span><span class="nv">HOME</span><span class="k">}</span>/eclipse-workspace
-<span class="nv">$ </span>mkdir <span class="k">${</span><span class="nv">HOME</span><span class="k">}</span>/eclipse-conf/configuration
+<span class="nv">$ </span>mkdir <span class="si">${</span><span class="nv">HOME</span><span class="si">}</span>/eclipse-conf
+<span class="nv">$ </span>mv /opt/eclipse-3.7.1/eclipse.ini <span class="si">${</span><span class="nv">HOME</span><span class="si">}</span>/eclipse-conf/eclipse.ini
+<span class="nv">$ </span>mkdir <span class="si">${</span><span class="nv">HOME</span><span class="si">}</span>/eclipse-workspace
+<span class="nv">$ </span>mkdir <span class="si">${</span><span class="nv">HOME</span><span class="si">}</span>/eclipse-conf/configuration
 </pre></div>
 </div>
 <p>With that setup in place you can start eclipse with the following command (we recommend creating a shell script for it or putting it in <tt class="docutils literal"><span class="pre">.desktop</span></tt> under Linux):</p>
 <div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>/opt/eclipse-3.7.1/eclipse
-    --launcher.ini <span class="k">${</span><span class="nv">HOME</span><span class="k">}</span>/eclipse-conf/eclipse.ini
-    -data <span class="k">${</span><span class="nv">HOME</span><span class="k">}</span>/eclipse-workspace
-    -configuration <span class="k">${</span><span class="nv">HOME</span><span class="k">}</span>/eclipse-conf/configuration
+    --launcher.ini <span class="si">${</span><span class="nv">HOME</span><span class="si">}</span>/eclipse-conf/eclipse.ini
+    -data <span class="si">${</span><span class="nv">HOME</span><span class="si">}</span>/eclipse-workspace
+    -configuration <span class="si">${</span><span class="nv">HOME</span><span class="si">}</span>/eclipse-conf/configuration
     -clean
 </pre></div>
 </div>

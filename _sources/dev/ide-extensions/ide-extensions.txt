@@ -9,3 +9,4 @@ Contents:
 
 .. toctree::
    wizards/index
+   semantic-annotations/index
