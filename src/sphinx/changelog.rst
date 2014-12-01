@@ -4,6 +4,19 @@ Changelog
 4.0.0 - codename Lithium
 ------------------------
 
+RC3 (2014-11-30)
+.................
+
+ - Revert "replaces CheckBoxSettingWithDefault with a by-name parameter and additional constructor" (:ticket:`1002335`)
+ - Adds back Scala notation in the outline labels (:ticket:`1002339`)
+ - Avoid logging twice the same stack trace
+ - Wraps the Java spelling API call
+ - Handle src/bin folders that are the same as project root folders (:ticket:`1002146`)
+ - Add quick assists for spelling mistakes (:ticket:`1002301`)
+ - Automatically select problem position on quick assist invocation (:ticket:`1002305`)
+ - Updates to Scala 2.11.5-SNAPSHOT as default version
+ - Upgrade AspectJ compiler to make it work with JDK8.
+
 RC2 (2014-10-28)
 .....................
 
