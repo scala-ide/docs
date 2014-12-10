@@ -4,6 +4,11 @@ Changelog
 4.0.0 - codename Lithium
 ------------------------
 
+RC4 (2014-12-10)
+.................
+ - Backport of #876 - Partial revert of d9fbd270 (:ticket:`1002355`)
+ - Fixes race condition during hyperlinking (:ticket:`1002352`)
+
 RC3 (2014-11-30)
 .................
 
@@ -20,6 +25,7 @@ RC3 (2014-11-30)
 RC2 (2014-10-28)
 .....................
 
+ - Avoid spurious typer cycles / "no progress completing" errors (:ticket:`1002325`)
  - Create a build marker when a project is not built due to upstream errors... (:ticket:`1002320`)
  - Revert "Interrupt Scala builder on resource change" (:ticket:`1002319`)
  - Show @return in scaladoc hovers (:ticket:`1002312`)
