@@ -1,4 +1,3 @@
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
@@ -19,7 +18,7 @@
     
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '',
+        URL_ROOT:    './',
         VERSION:     '0.1-SNAPSHOT',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
@@ -91,6 +90,15 @@
 <h1>Changelog</h1>
 <div class="section" id="codename-lithium">
 <h2>4.0.0 - codename Lithium</h2>
+<div class="section" id="rc4-2014-12-10">
+<h3>RC4 (2014-12-10)</h3>
+<blockquote>
+<div><ul class="simple">
+<li>Backport of #876 - Partial revert of d9fbd270 (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002355">#1002355</a>)</li>
+<li>Fixes race condition during hyperlinking (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002352">#1002352</a>)</li>
+</ul>
+</div></blockquote>
+</div>
 <div class="section" id="rc3-2014-11-30">
 <h3>RC3 (2014-11-30)</h3>
 <blockquote>
@@ -111,6 +119,7 @@
 <h3>RC2 (2014-10-28)</h3>
 <blockquote>
 <div><ul class="simple">
+<li>Avoid spurious typer cycles / &#8220;no progress completing&#8221; errors (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002325">#1002325</a>)</li>
 <li>Create a build marker when a project is not built due to upstream errors... (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002320">#1002320</a>)</li>
 <li>Revert &#8220;Interrupt Scala builder on resource change&#8221; (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002319">#1002319</a>)</li>
 <li>Show &#64;return in scaladoc hovers (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002312">#1002312</a>)</li>
