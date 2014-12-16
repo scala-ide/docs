@@ -17,7 +17,7 @@ checks it is activated at every launch. The easiest way to debug
 this is therefore to accept activation of JDT weaving at
 launch. Otherwise, you can look into turning it on manually using
 the :doc:`Scala Diagnostics Dialog
-</current-user-doc/advancedsetup/index>`.
+<../advancedsetup/index>`.
 
 Scala errors on all Unicode arrows
 ..................................
@@ -30,7 +30,7 @@ The code contains Unicode niceties like ``←`` and ``⇒``, but the editor does
 
 The operating system is not using UTF-8 by default, and its default encoding is used inside Eclipse.
 
-The encoding used to open files can be configured at different levels. Most of the time, setting Eclipse default encoding to UTF-8 in ``General → Workspace`` preferences is enough. But in some case, the wrong encoding might also have been set in the project properties, or even the file properties.
+The encoding used to open files can be configured at different levels. Most of the time, setting Eclipse default encoding to UTF-8 in ``General → Workspace`` in the preferences [#preferences]_ is enough. But in some case, the wrong encoding might also have been set in the project properties, or even the file properties.
 
 Red screen of death (red squiggles everywhere)
 ...............................................
@@ -146,7 +146,20 @@ After upgrading the Scala plug-in, ``java.lang.NoClassDefFoundError: scala/tools
 
 If you have several update sites providing different version of Scala IDE, Eclipse may have decided that a newest Scala library should be used instead of the one provided by the plug-in to be installed. To avoid this problem, make sure to uncheck the ``Contact all update sites during install to find required software`` option. It is situated at the bottom of the ``Help → Install New Software...`` dialog.
 
+Incorrect compiler error reported in the Scala Editor
+............................................................................
+
+**Symptoms**:
+
+A compiler error is reported in the Scala editor, when indeed the code is correct.
+
+**Solution**:
+
+In rare circumstances, the interactive typecheker (a.k.a., presentation compiler) can get in a state where it reports false, type-checking errors. As a workaround, we've provided a UI action that force restarts the presentation compiler. You can access it by right clicking on the project folder in the Package Explorer view, then ``Scala → Restart Presentation Compiler``. If the incorrect error is still reported after restarting the presentation compiler, please drop us a note in the scala-ide-user mailing list.
+
 .. _#1000317: http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000317
 .. _#1000996: http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000996
 
 .. _m2eclipse-scala: https://github.com/sonatype/m2eclipse-scala
+
+.. [#preferences] The Eclipse preferences are accessible using ``Windows → Preferences`` (or ``Eclipse → Preferences`` on Mac osX).

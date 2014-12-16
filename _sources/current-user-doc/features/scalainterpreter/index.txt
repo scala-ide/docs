@@ -17,9 +17,9 @@ There are multiple ways to start it:
 Using the interpreter
 ---------------------
 
-1. Scala code can be entered directly in the interpreter view, in the ``Evaluate`` field.
+1. Scala code can be entered directly in the interpreter view, in the ``Evaluate`` field by pressing ``Ctrl+Enter``.
 
-   The previously entered commands are kept in a history. They can be browsed using the ``Up`` and ``Down`` arrow keys.
+   The previously entered commands are kept in a history. They can be browsed using the ``Ctrl+Up`` and ``Ctrl+Down`` key combinations.
 
    .. image:: images/feature-interpreter-01.png
       :width: 100%

@@ -23,3 +23,4 @@ Typing and Viewing
    source-generators/index
    structured-selection
    syntax-highlighting
+   indent-guide

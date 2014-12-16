@@ -1,7 +1,7 @@
 .. include:: /global_defs.hrst
 
-Auto Edits |new|
-================
+Auto Edits |updated|
+====================
 
 Auto Edits are nice little features that facilitate working with source code a lot. Normally, users don't notice them when they are working because they do their work while users type. This stands in contrast to code completion which normally requires user interaction for its activation and even more user interaction to choose one of the completions that should be applied. Auto Edits are so lightweight that users never need to think about them because they always work the way they should.
 

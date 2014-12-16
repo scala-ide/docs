@@ -13,5 +13,3 @@ Navigating
    open-declaration
    outline-view
    tasks-view
-   find-occurrences
-   type-hierarchy

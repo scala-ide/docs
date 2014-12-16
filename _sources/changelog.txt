@@ -1,8 +1,26 @@
 Changelog
 =========
 
-4.0.0 - codename Lithium
-------------------------
+4.1.0
+-----
+
+ - Bump development version to 4.1.0
+ - Support for drop to frame
+ - New File Wizard works with projects whose source dir is the root dir (:ticket:`1002332`)
+ - Faster project loading in classpath computation (:ticket:`1002179` :ticket:`1002311`)
+ - code completion: reduce relevance for non class fields and for java.*, scala.* packages (:ticket:`1002343`)
+ - Revert "Treat files as external dependencies."
+ - Treat files as external dependencies. (:ticket:`1002344`)
+ - Quick fix exceptions
+ - scaliform default preferences changed (:ticket:`1002321`)
+ - Highlight by name parameters at call site (#1000989) (:ticket:`1000989`)
+ - Remove `o.s.u.ui.SWTUtils` (:ticket:`1002288`)
+ - Consider project specific formatting settings for auto format (:ticket:`1002331`)
+ - Mark a recently flaky test as, erm, Flaky.
+ - Updates to Scala 2.11.5-SNAPSHOT as default version
+
+4.0.0 - codename Lithium (2014-12-16)
+-------------------------------------
 
 RC4 (2014-12-10)
 .................

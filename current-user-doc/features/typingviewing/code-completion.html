@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Code Completion &mdash; Scala IDE 0.1-SNAPSHOT documentation</title>
+    <title>Code Completion updated &mdash; Scala IDE 0.1-SNAPSHOT documentation</title>
     
     <link rel="stylesheet" href="../../../_static/resources/stylesheets/base.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
@@ -72,7 +72,7 @@
   <div class="container">
     <div class="row">
       <div class="span16">
-        <h1>Code Completion</h1>
+        <h1>Code Completion <span class="raw-html"><span class="label success">updated</span></span></h1>
 	  </div>
     </div>
   </div>
@@ -84,7 +84,7 @@
       <div class="span16">
           <ul class="breadcrumb">
             <li><a href="../../../index.html">ScalaIDE Documentation</a> » </li>
-              <li><a href="../../index.html">User Documentation for the Scala IDE 3.0.x</a> » </li>
+              <li><a href="../../index.html">User Documentation for the Scala IDE 4.0.x Lithium</a> » </li>
               <li><a href="../../features.html">Features</a> » </li>
               <li><a href="index.html">Typing and Viewing</a> » </li>
           </ul>
@@ -93,13 +93,22 @@
 
     <div class="row" style="position: relative; clear: both;">
       <div class="span11 main-content">
-        <div class="section" id="code-completion">
-<h1>Code Completion</h1>
+        <div class="section" id="code-completion-updated">
+<h1>Code Completion <span class="raw-html"><span class="label success">updated</span></span></h1>
 <p>Scala IDE provides full code completion support, returning the entities available in the current context. Code completion is enable by using <tt class="docutils literal"><span class="pre">Ctrl+Space</span></tt> in the Scala Editor.</p>
 <p>In <strong>Scala source files</strong>, code completion returns the valid Scala and Java proposals.</p>
 <a class="reference external image-reference" href="../_images/feature-code-completion-01.png"><img alt="../../../_images/feature-code-completion-013.png" src="../../../_images/feature-code-completion-013.png" style="width: 100%;" /></a>
 <p>The Scala elements compatible with Java are provided in <strong>Java source files</strong>.</p>
 <a class="reference external image-reference" href="../_images/feature-code-completion-02.png"><img alt="../../../_images/feature-code-completion-023.png" src="../../../_images/feature-code-completion-023.png" style="width: 100%;" /></a>
+<div class="section" id="completion-overwrites-new">
+<h2>Completion overwrites <span class="raw-html"><span class="label info">new</span></span></h2>
+<p>Users can choose if identifiers inserted by the code completion mechanism should overwrite already existing ones. This is a very useful feauture if one decides to change already existing source code. For example, if we have the following</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">List</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">fl</span><span class="o">^</span><span class="nb">map</span><span class="p">(</span><span class="n">List</span><span class="p">(</span><span class="n">_</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>where <tt class="docutils literal"><span class="pre">^</span></tt> denotes the cursors position, it would not be that useful when as completion <tt class="docutils literal"><span class="pre">flatMap</span></tt> is chosen but the already existing <tt class="docutils literal"><span class="pre">map</span></tt> is not replaced. Completion overwrites allow exactly these sort of replacements. They need to be configured in <tt class="docutils literal"><span class="pre">Preferences</span> <span class="pre">→</span> <span class="pre">Java</span> <span class="pre">→</span> <span class="pre">Editor</span> <span class="pre">→</span> <span class="pre">Content</span> <span class="pre">Assist</span></tt> and then in the section <tt class="docutils literal"><span class="pre">Insertion</span></tt>.</p>
+<p>A small detail do mention here, is, that it is possible to toggle between the completion modes by holding <tt class="docutils literal"><span class="pre">Ctrl</span></tt> while applying the completion.</p>
+</div>
 </div>
 
 	    </div>

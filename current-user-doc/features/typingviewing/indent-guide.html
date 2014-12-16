@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Find Occurrences new plug-in &mdash; Scala IDE 0.1-SNAPSHOT documentation</title>
+    <title>Indent Guide new &mdash; Scala IDE 0.1-SNAPSHOT documentation</title>
     
     <link rel="stylesheet" href="../../../_static/resources/stylesheets/base.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
@@ -40,9 +40,9 @@
     <script type="text/javascript" src="../../../_static/resources/javascript/contentsFix.js"></script>
     <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
     <link rel="top" title="Scala IDE 0.1-SNAPSHOT documentation" href="../../../index.html" />
-    <link rel="up" title="Navigating" href="index.html" />
-    <link rel="next" title="Type Hierarchy new plug-in" href="type-hierarchy.html" />
-    <link rel="prev" title="Tasks View" href="tasks-view.html" /> 
+    <link rel="up" title="Typing and Viewing" href="index.html" />
+    <link rel="next" title="Navigating" href="../navigating/index.html" />
+    <link rel="prev" title="Syntax Highlighting" href="syntax-highlighting.html" /> 
   </head>
   <body>
 <div class="top-bar">
@@ -72,7 +72,7 @@
   <div class="container">
     <div class="row">
       <div class="span16">
-        <h1>Find Occurrences <span class="raw-html"><span class="label info">new</span></span> <span class="raw-html"><span class="label success">plug-in</span></span></h1>
+        <h1>Indent Guide <span class="raw-html"><span class="label info">new</span></span></h1>
 	  </div>
     </div>
   </div>
@@ -84,24 +84,22 @@
       <div class="span16">
           <ul class="breadcrumb">
             <li><a href="../../../index.html">ScalaIDE Documentation</a> » </li>
-              <li><a href="../../index.html">User Documentation for the Scala IDE 3.0.x</a> » </li>
+              <li><a href="../../index.html">User Documentation for the Scala IDE 4.0.x Lithium</a> » </li>
               <li><a href="../../features.html">Features</a> » </li>
-              <li><a href="index.html">Navigating</a> » </li>
+              <li><a href="index.html">Typing and Viewing</a> » </li>
           </ul>
       </div>
     </div>
 
     <div class="row" style="position: relative; clear: both;">
       <div class="span11 main-content">
-        <div class="section" id="find-occurrences-new-plugin">
-<h1>Find Occurrences <span class="raw-html"><span class="label info">new</span></span> <span class="raw-html"><span class="label success">plug-in</span></span></h1>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">This feature requires the <a class="reference external" href="http://github.com/scala-ide/scala-search">Scala Search plugin</a>. In the future this will be merged with the IDE</p>
-</div>
-<p>It is possible to find all occurrences of a specific Scala entity by selecting the entity in the editor and press the shortcut <tt class="docutils literal"><span class="pre">Ctrl-Alt-Shift-R</span></tt> (or <tt class="docutils literal"><span class="pre">Cmd-Alt-Shift-R</span></tt> on Mac). Currently, find references only works for members, i.e., methods and fields.</p>
-<p><em>It currently only monitors file changes that happen inside of Eclipse, so if a file is changed outside of Eclipse (e.g. by switching git branch) it might not find the correct occurrence in that document. Refreshing the workspace should help, if not, delete the indices (&lt;workspace&gt;/.metadata/.plugins/org.scala.tools.eclipse.search/lucene-indices). This will be fixed in the next release, see the relevant</em> <a class="reference external" href="https://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001608#/activity/ticket:">ticket</a>. <em>for more information</em></p>
-<img alt="../../../_images/scala-search-find-occurrences-011.png" src="../../../_images/scala-search-find-occurrences-011.png" />
+        <div class="section" id="indent-guide-new">
+<h1>Indent Guide <span class="raw-html"><span class="label info">new</span></span></h1>
+<p>The Scala editor supports showing an Indent Guide, which is disabled by default:</p>
+<img alt="../../../_images/indent-guide1.png" src="../../../_images/indent-guide1.png" />
+<p>It can be enabled in <tt class="docutils literal"><span class="pre">Preferences</span> <span class="pre">→</span> <span class="pre">Scala</span> <span class="pre">→</span> <span class="pre">Editor</span></tt> where also its color can be chosen:</p>
+<img alt="../../../_images/indent-guide-pref1.png" src="../../../_images/indent-guide-pref1.png" />
+<p>Please note that the indentation span between two guides is specified by the <tt class="docutils literal"><span class="pre">Preferences</span> <span class="pre">→</span> <span class="pre">Scala</span> <span class="pre">→</span> <span class="pre">Formatter</span> <span class="pre">→</span> <span class="pre">Spaces</span> <span class="pre">to</span> <span class="pre">indent</span></tt> preference.</p>
 </div>
 
 	    </div>

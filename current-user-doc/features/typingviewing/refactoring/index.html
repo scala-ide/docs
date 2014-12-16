@@ -41,8 +41,8 @@
     <link rel="shortcut icon" href="../../../../_static/favicon.ico"/>
     <link rel="top" title="Scala IDE 0.1-SNAPSHOT documentation" href="../../../../index.html" />
     <link rel="up" title="Typing and Viewing" href="../index.html" />
-    <link rel="next" title="Semantic Highlighting new" href="../semantic-highlighting/index.html" />
-    <link rel="prev" title="Quick Fixes" href="../quick-fixes.html" /> 
+    <link rel="next" title="Semantic Highlighting" href="../semantic-highlighting/index.html" />
+    <link rel="prev" title="Quick Fixes updated" href="../quick-fixes.html" /> 
   </head>
   <body>
 <div class="top-bar">
@@ -84,7 +84,7 @@
       <div class="span16">
           <ul class="breadcrumb">
             <li><a href="../../../../index.html">ScalaIDE Documentation</a> » </li>
-              <li><a href="../../../index.html">User Documentation for the Scala IDE 3.0.x</a> » </li>
+              <li><a href="../../../index.html">User Documentation for the Scala IDE 4.0.x Lithium</a> » </li>
               <li><a href="../../../features.html">Features</a> » </li>
               <li><a href="../index.html">Typing and Viewing</a> » </li>
           </ul>
@@ -96,18 +96,62 @@
         <div class="section" id="refactoring-updated">
 <h1>Refactoring <span class="raw-html"><span class="label success">updated</span></span></h1>
 <p><a class="reference external" href="http://scala-refactoring.org/">Scala Refactoring</a> is integrated in Scala IDE. It offers a broad range of refactoring actions.</p>
-<div class="section" id="extracting-local-values">
-<h2>Extracting Local Values</h2>
-<p>The <a class="reference external" href="http://scala-refactoring.org/extract-local/">Extract Local</a> action does the opposite work of Inline Local. It creates a value of an expression. It is a must use to make code more readable.</p>
-<p>Select an expression to extract.</p>
-<img alt="../../../../_images/feature-refactoring-extract-local-012.png" src="../../../../_images/feature-refactoring-extract-local-012.png" />
-<p>Call the action, then set a name for the created value.</p>
-<img alt="../../../../_images/feature-refactoring-extract-local-022.png" src="../../../../_images/feature-refactoring-extract-local-022.png" />
+<div class="section" id="extracting-code">
+<h2>Extracting Code</h2>
+<p>The extraction refactorings offer automated extraction of almost arbitrary code fragments into new methods, values or even extractor objects. All you have to remember is that when you want to extract something you have to select it, invoke the &#8220;Extract...&#8221; (<tt class="docutils literal"><span class="pre">Alt</span> <span class="pre">+</span> <span class="pre">Shift/Cmd</span> <span class="pre">+</span> <span class="pre">E</span></tt>) action and the assistant guides you through the available extractions. Furthermore, all extractions are also available in the quick assist menu (<tt class="docutils literal"><span class="pre">Ctrl/Cmd</span> <span class="pre">+</span> <span class="pre">1</span></tt>)</p>
+<p>An extraction creates a new abstraction (value, method etc.) with the identical behavior as the selected code and replaces the selection by an according call to this abstraction. Extractions are typically useful to make the code more readable and to allow the reuse of a code fragment in other places.</p>
+<p>&#8220;Extract...&#8221; proposes based on the selected code several of the following extractions:</p>
+<dl class="docutils">
+<dt>Extract Value</dt>
+<dd>Creates a new <tt class="docutils literal"><span class="pre">val</span></tt> definition from the selected code and replaces the selection by a reference to the new value</dd>
+<dt>Extract Method</dt>
+<dd>Creates a new method (<tt class="docutils literal"><span class="pre">def</span></tt>) from the selected code and replaces the selection by the according call</dd>
+<dt>Extract Parameter</dt>
+<dd>Adds a new parameter to an enclosing method whose default value is the selected code and replaces the selection by a reference to the new parameter</dd>
+<dt>Extract Extractor</dt>
+<dd>Creates a new extractor object based on a selected pattern in a case statement and replaces the pattern by an according call to the new extractor</dd>
+</dl>
+<p>After invoking &#8220;Extract...&#8221; a drop-down opens that contains a list of available extractions. When you select one of the extractions with the <tt class="docutils literal"><span class="pre">Up</span></tt> and <tt class="docutils literal"><span class="pre">Down</span></tt> keys the scope in which the extraction creates the new abstraction is highlighted green. Additionally, if you select only a part of an expression that can be processed by &#8220;Extract...&#8221; the selection is automatically expanded such that you see what exactly will be extracted.</p>
+<img alt="../../../../_images/extract-code-scope-selection1.png" src="../../../../_images/extract-code-scope-selection1.png" />
+<p>In most cases, &#8220;Extract...&#8221; proposes extractions to various extraction targets. An extraction target is either a local scope, a class, a trait or an object surrounding the selected code. In case you choose to extract a code snippet into a local scope, the refactoring inserts the extracted abstraction right before the statement in the scope that contains your selection. Otherwise, if you choose a member scope (class, trait or object) as the extraction target, the new abstraction is created as a new member right after your selection.</p>
+<p>When you found the extraction that you want to become applied you can choose it by hitting <tt class="docutils literal"><span class="pre">Enter</span></tt> and the extraction tool performs the according transformations to the source code. Finally, Eclipse enters the linked mode that allows you to rename the new abstraction right in the editor window. If you extracted a method with parameters you can also jump to the parameters by hitting <tt class="docutils literal"><span class="pre">Tab</span></tt> and rename them as well.</p>
+<img alt="../../../../_images/extract-code-inline-renaming1.png" src="../../../../_images/extract-code-inline-renaming1.png" />
+<p>The extraction refactorings offer many useful features:</p>
+<ul>
+<li><p class="first">Only one shortcut for all kinds of extraction refactorings</p>
+</li>
+<li><p class="first">Lets you precisely choose the scope in which you want to create the new abstraction</p>
+</li>
+<li><dl class="first docutils">
+<dt>All tools support idiomatic features of the Scala language</dt>
+<dd><ul class="first last simple">
+<li>Extraction of higher order functions</li>
+<li>The resulting code uses type inference when possible</li>
+<li>Extraction into local closure methods</li>
+<li>Multiple return values with tuples</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<div class="section" id="limitations">
+<h3>Limitations</h3>
+<ul>
+<li><p class="first">There are some cases where Extract Parameter can&#8217;t correctly infer the type of the extracted expression. This issue occurs mostly when Extract Parameter is invoked on  variables that are part of expressions written in infix notation (e.g. <tt class="docutils literal"><span class="pre">a</span></tt> in <tt class="docutils literal"><span class="pre">100</span> <span class="pre">*</span> <span class="pre">a</span></tt>).</p>
+</li>
+<li><p class="first">The extraction of reassignments into scopes that do not see the reassigned variable are not supported. E.g. extracting <tt class="docutils literal"><span class="pre">a</span> <span class="pre">+=</span> <span class="pre">1</span></tt> into a scope where <tt class="docutils literal"><span class="pre">a</span></tt> is not visible is not possible.</p>
+</li>
+<li><dl class="first docutils">
+<dt>Pretty printing of the refactoring result is not always correct:</dt>
+<dd><ul class="first last simple">
+<li>The generated code may be misaligned</li>
+<li>In some cases the refactoring generates unbalanced parenthesis</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
 </div>
-<div class="section" id="extracting-methods">
-<h2>Extracting Methods</h2>
-<p>The <a class="reference external" href="http://scala-refactoring.org/extract-method/">Extract Method</a> action extract the set of selected statements into a new method. The original code is replaced by the equivalent method call.</p>
-<a class="reference external image-reference" href="../_images/feature-refactoring-extract-method-01.png"><img alt="../../../../_images/feature-refactoring-extract-method-012.png" src="../../../../_images/feature-refactoring-extract-method-012.png" style="width: 100%;" /></a>
 </div>
 <div class="section" id="inlining-local-values">
 <h2>Inlining Local Values</h2>
@@ -129,8 +173,8 @@
 <p>The action is done through a wizard if the name can be referenced from different source files.</p>
 <a class="reference external image-reference" href="../_images/feature-refactoring-rename-02.png"><img alt="../../../../_images/feature-refactoring-rename-023.png" src="../../../../_images/feature-refactoring-rename-023.png" style="width: 100%;" /></a>
 </div>
-<div class="section" id="move-class-object-or-trait-refactoring-new">
-<h2>Move Class, Object or Trait Refactoring <span class="raw-html"><span class="label info">new</span></span></h2>
+<div class="section" id="move-class-object-or-trait-refactoring">
+<h2>Move Class, Object or Trait Refactoring</h2>
 <p>Move Class was an often requested feature in the Scala IDE bugtracker, so we
 implemented it for the upcoming 2.1 release. The refactoring can either be
 invoked from the Refactoring menu, or indirectly by drag-and-dropping a file
@@ -155,8 +199,8 @@ and it simply ignores visibility issues, so moving might result in compilation
 errors. This being the initial implementation, it is certainly not free of bugs,
 so please <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/support/tickets">report any bug you encounter</a>.</p>
 </div>
-<div class="section" id="method-signature-refactoring-new">
-<h2>Method signature refactoring <span class="raw-html"><span class="label info">new</span></span></h2>
+<div class="section" id="method-signature-refactoring">
+<h2>Method signature refactoring</h2>
 <p>All three method signature refactoring not only apply the refactoring to all usages of a method throughout the inheritance hierarchy, they also track its partial applications.</p>
 <div class="section" id="change-parameter-order">
 <h3>Change parameter order</h3>
@@ -191,8 +235,8 @@ so please <a class="reference external" href="http://scala-ide-portfolio.assembl
 <img alt="../../../../_images/merge-not-possible2.png" src="../../../../_images/merge-not-possible2.png" />
 </div>
 </div>
-<div class="section" id="extract-trait-new">
-<h2>Extract trait <span class="raw-html"><span class="label info">new</span></span></h2>
+<div class="section" id="extract-trait">
+<h2>Extract trait</h2>
 <p><em>Extract trait</em> moves selected members from a class/object/trait to a new trait. If the new trait accesses non-private members of the original class/object/trait, a self type annotation is added to the new trait.</p>
 <p>We start with a simple <tt class="docutils literal"><span class="pre">Calculator</span></tt> class:</p>
 <img alt="../../../../_images/extract-trait-before2.png" src="../../../../_images/extract-trait-before2.png" />
@@ -206,8 +250,8 @@ so please <a class="reference external" href="http://scala-ide-portfolio.assembl
 <p><em>Limitations</em></p>
 <p>The currently supported member types are: def, val and var. Others, as e.g. nested classes, are not (yet) supported.</p>
 </div>
-<div class="section" id="move-constructor-to-companion-object-new">
-<h2>Move constructor to companion object <span class="raw-html"><span class="label info">new</span></span></h2>
+<div class="section" id="move-constructor-to-companion-object">
+<h2>Move constructor to companion object</h2>
 <p>You want to create a factory method such that the constructor of your class is not accessed directly, but tracking down and redirecting all constructor calls is cumbersome? Then <em>Move constructor to companion</em> object is here to help! It creates an <tt class="docutils literal"><span class="pre">apply</span></tt> method in the companion object (which is generated as well if necessary) that calls the constructor. All constructor calls get redirected to the new factory method.</p>
 <p>As a simple example we start with a <tt class="docutils literal"><span class="pre">Target</span></tt> class and a class <tt class="docutils literal"><span class="pre">User</span></tt> that calls <tt class="docutils literal"><span class="pre">Target</span></tt>&#8216;s constructor:</p>
 <img alt="../../../../_images/move-constructor-before2.png" src="../../../../_images/move-constructor-before2.png" />

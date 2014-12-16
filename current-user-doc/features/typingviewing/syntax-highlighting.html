@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Syntax Highlighting updated &mdash; Scala IDE 0.1-SNAPSHOT documentation</title>
+    <title>Syntax Highlighting &mdash; Scala IDE 0.1-SNAPSHOT documentation</title>
     
     <link rel="stylesheet" href="../../../_static/resources/stylesheets/base.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
@@ -41,7 +41,7 @@
     <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
     <link rel="top" title="Scala IDE 0.1-SNAPSHOT documentation" href="../../../index.html" />
     <link rel="up" title="Typing and Viewing" href="index.html" />
-    <link rel="next" title="Navigating" href="../navigating/index.html" />
+    <link rel="next" title="Indent Guide new" href="indent-guide.html" />
     <link rel="prev" title="Structured Selection" href="structured-selection.html" /> 
   </head>
   <body>
@@ -72,7 +72,7 @@
   <div class="container">
     <div class="row">
       <div class="span16">
-        <h1>Syntax Highlighting <span class="raw-html"><span class="label success">updated</span></span></h1>
+        <h1>Syntax Highlighting</h1>
 	  </div>
     </div>
   </div>
@@ -84,7 +84,7 @@
       <div class="span16">
           <ul class="breadcrumb">
             <li><a href="../../../index.html">ScalaIDE Documentation</a> » </li>
-              <li><a href="../../index.html">User Documentation for the Scala IDE 3.0.x</a> » </li>
+              <li><a href="../../index.html">User Documentation for the Scala IDE 4.0.x Lithium</a> » </li>
               <li><a href="../../features.html">Features</a> » </li>
               <li><a href="index.html">Typing and Viewing</a> » </li>
           </ul>
@@ -93,14 +93,17 @@
 
     <div class="row" style="position: relative; clear: both;">
       <div class="span11 main-content">
-        <div class="section" id="syntax-highlighting-updated">
-<h1>Syntax Highlighting <span class="raw-html"><span class="label success">updated</span></span></h1>
+        <div class="section" id="syntax-highlighting">
+<h1>Syntax Highlighting</h1>
 <p>The Scala editor has full syntax highlighting support, including comments, control structures and embedded XML.</p>
 <a class="reference external image-reference" href="../_images/feature-syntax-highlighting-01.png"><img alt="../../../_images/feature-syntax-highlighting-013.png" src="../../../_images/feature-syntax-highlighting-013.png" style="width: 100%;" /></a>
 <p>As one can see in the following preview, syntax highlighting works not only for Scala code, but also for Scaladoc and for string interpolation:</p>
 <img alt="../../../_images/example5.png" src="../../../_images/example5.png" />
 <p>In the following picture there are all literals shown that are available in Scala. Note that escape sequences are shown in string and char literals as well as Unicode and octal sequences.</p>
 <img alt="../../../_images/literals2.png" src="../../../_images/literals2.png" />
+<p>Inside of comments, the editor supports the feature to highlight so called task tags, also known as todo markers:</p>
+<img alt="../../../_images/todo-markers1.png" src="../../../_images/todo-markers1.png" />
+<p>Because this is a feature JDT supports too, they are not implemented as a complete separate feature. Instead, SDT uses the markers already defined by JDT, which can be found and configured in <tt class="docutils literal"><span class="pre">Preferences</span> <span class="pre">→</span> <span class="pre">Java</span> <span class="pre">→</span> <span class="pre">Compiler</span> <span class="pre">→</span> <span class="pre">Task</span> <span class="pre">Tags</span></tt>. The task tags can also be shown on the right and left side of the editor as so called Annotations. These Annotations can be configured in <tt class="docutils literal"><span class="pre">Preferences</span> <span class="pre">→</span> <span class="pre">General</span> <span class="pre">→</span> <span class="pre">Editors</span> <span class="pre">→</span> <span class="pre">Text</span> <span class="pre">Editors</span> <span class="pre">→</span> <span class="pre">Annotations</span></tt>. Furthermore it is possible to view the them in the Tasks View that can be found in <tt class="docutils literal"><span class="pre">Window</span> <span class="pre">→</span> <span class="pre">Show</span> <span class="pre">View</span> <span class="pre">→</span> <span class="pre">Other...</span> <span class="pre">→</span> <span class="pre">General</span> <span class="pre">→</span> <span class="pre">Other</span></tt>.</p>
 <div class="section" id="configuration">
 <h2>Configuration</h2>
 <p>There are several options available how syntax highlighting can be configured. Beside the possibility to set fore- and background color it is possible to paint the text in bold and italic or to underline it.</p>

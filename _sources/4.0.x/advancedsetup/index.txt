@@ -5,6 +5,14 @@ Advanced Setup
 
 This page contains information to help you configure Eclipse and Scala IDE, to increase performances and ease-of-use.
 
+.. include:: scala-installations.rst
+
+Multiple Scala Version Support
+------------------------------
+
+Do you have projects configured to use a legacy version of Scala ? Head
+over to the `Multiple Scala Version Support page <./scala-installations.html>`_.
+
 Eclipse Configuration
 ---------------------
 
