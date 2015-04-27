@@ -1,7 +1,7 @@
-User Documentation for the Scala IDE 4.0.x - Lithium (unreleased)
-=================================================================
+User Documentation for the Scala IDE 4.x - Lithium
+====================================================
 
-This documentation is the starting point for the installation guide and other information regarding the use of the Scala IDE for Eclipse V4.0.0.
+This documentation is the starting point for the installation guide and other information regarding the use of the Scala IDE 4.x
 
 Contents:
 
