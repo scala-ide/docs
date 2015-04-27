@@ -37,8 +37,8 @@ It will also let us retire the 2.10 branch of the IDE builds,
 focusing the efforts of our small team on one branch, and
 letting us deliver features to our users faster.
 
-Scala Multi Version Support |new|
----------------------------------
+Scala Multi Version Support
+---------------------------
 
 The gist of it is the following: the IDE is, as of its 4.0.0 release, a
 2.11 build. The Presentation Compiler it ships with is a part of Scala
@@ -65,8 +65,8 @@ All of this is brought to you by a single toggle, that we will
 deal with first, so that those of you in a hurry can start
 hacking.
 
-Source Level |new|
-------------------
+Source Level
+------------
 
 To configure a new, fresh project for 2.10 compatibility, you have to
 go to project-specific settings: the platform's default is still
@@ -119,8 +119,8 @@ with. What your project runs on is, as usual, the compiler it
 finds on classpath. But what is actually found on classpath may
 vary according to your project's specific settings [#]_.
 
-Multiple Scala Installation Settings at once |new|
---------------------------------------------------
+Multiple Scala Installation Settings at once
+--------------------------------------------
 
 Many of you have multiple projects which version they want to switch
 quickly, without having to open project preferences for each project. So,
@@ -130,8 +130,8 @@ the Scala Installation’, as below.
 
 |img13|
 
-Scala Installation detection |new|
-----------------------------------
+Scala Installation detection
+----------------------------
 
 The IDE will try to understand what version of Scala your project
 is designed to work with. It does this by looking at your

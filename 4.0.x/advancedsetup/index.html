@@ -40,7 +40,7 @@
     <script type="text/javascript" src="../../_static/resources/javascript/contentsFix.js"></script>
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
     <link rel="top" title="Scala IDE 0.1-SNAPSHOT documentation" href="../../index.html" />
-    <link rel="up" title="User Documentation for the Scala IDE 4.0.x Lithium" href="../index.html" />
+    <link rel="up" title="User Documentation for the Scala IDE 4.x - Lithium" href="../index.html" />
     <link rel="next" title="Scala Multiple Installation Support" href="scala-installations.html" />
     <link rel="prev" title="Getting Started" href="../gettingstarted/index.html" /> 
   </head>
@@ -84,7 +84,7 @@
       <div class="span16">
           <ul class="breadcrumb">
             <li><a href="../../index.html">ScalaIDE Documentation</a> » </li>
-              <li><a href="../index.html">User Documentation for the Scala IDE 4.0.x Lithium</a> » </li>
+              <li><a href="../index.html">User Documentation for the Scala IDE 4.x - Lithium</a> » </li>
           </ul>
       </div>
     </div>
@@ -125,8 +125,8 @@ projects built with 2.10.</p>
 focusing the efforts of our small team on one branch, and
 letting us deliver features to our users faster.</p>
 </div>
-<div class="section" id="scala-multi-version-support-new">
-<h3>Scala Multi Version Support <span class="raw-html"><span class="label info">new</span></span></h3>
+<div class="section" id="scala-multi-version-support">
+<h3>Scala Multi Version Support</h3>
 <p>The gist of it is the following: the IDE is, as of its 4.0.0 release, a
 2.11 build. The Presentation Compiler it ships with is a part of Scala
 2.11. But its typechecker can run with a specific option,
@@ -150,8 +150,8 @@ your Scala 2.10 project. For that you need to align a few things:</p>
 deal with first, so that those of you in a hurry can start
 hacking.</p>
 </div>
-<div class="section" id="source-level-new">
-<h3>Source Level <span class="raw-html"><span class="label info">new</span></span></h3>
+<div class="section" id="source-level">
+<h3>Source Level</h3>
 <p>To configure a new, fresh project for 2.10 compatibility, you have to
 go to project-specific settings: the platform&#8217;s default is still
 to consider that projects are based on Scala 2.11 <a class="footnote-reference" href="#id13" id="id3">[3]</a>.</p>
@@ -192,8 +192,8 @@ with. What your project runs on is, as usual, the compiler it
 finds on classpath. But what is actually found on classpath may
 vary according to your project&#8217;s specific settings <a class="footnote-reference" href="#id16" id="id6">[6]</a>.</p>
 </div>
-<div class="section" id="multiple-scala-installation-settings-at-once-new">
-<h3>Multiple Scala Installation Settings at once <span class="raw-html"><span class="label info">new</span></span></h3>
+<div class="section" id="multiple-scala-installation-settings-at-once">
+<h3>Multiple Scala Installation Settings at once</h3>
 <p>Many of you have multiple projects which version they want to switch
 quickly, without having to open project preferences for each project. So,
 choosing a Scala Installation is now a multi-select action: just choose
@@ -201,8 +201,8 @@ your target projects, right-click, go to the Scala menu, and choose ‘Set
 the Scala Installation’, as below.</p>
 <p><a class="reference internal" href="http://scala-ide.org/resources/images/xsource-screenshots/new-support/multiselect-action.png"><img alt="img13" src="http://scala-ide.org/resources/images/xsource-screenshots/new-support/multiselect-action.png" style="width: 100%;" /></a></p>
 </div>
-<div class="section" id="scala-installation-detection-new">
-<h3>Scala Installation detection <span class="raw-html"><span class="label info">new</span></span></h3>
+<div class="section" id="scala-installation-detection">
+<h3>Scala Installation detection</h3>
 <p>The IDE will try to understand what version of Scala your project
 is designed to work with. It does this by looking at your
 <em>resolved</em> classpath. A resolved classpath means &#8220;expanded until
@@ -521,14 +521,9 @@ be a good idea : proceed at your own risk.</p>
 <h3>Memory consumption <span class="raw-html"><span class="label info">new</span></span></h3>
 <p>The Scala IDE for Eclipse uses the Scala Presentation Compiler which provides semantic features such as live error markers, inferred type hovers etc.</p>
 <p>Each project has its own presentation compiler instance working in a separate thread. It is created after importing or opening a previously closed project, as well as when you open .scala file or type something and a presentation compiler didn&#8217;t exist at a given moment.</p>
-<p>In the case of complex projects with many dependencies, each presentation compiler can consume a lot of memory.
-Therefore there&#8217;s a special mechanism which can close presentation compilers automatically, when a given project still exists in a workspace, but when the user hasn&#8217;t edited its code for a long time.</p>
-<p>You can specify a length of inactivity in seconds, after which the presentation compiler can be closed. You can also decide whether inactive presentation compilers should be closed even if there are opened Scala Editors for the files they manage. Note that the presentation compiler will have to be recreated, when you will open a file or start typing in an existing file for such a project. This can cause a small delay but in most of cases it shouldn&#8217;t be significant - up to several seconds in the case of big projects. After that there are no other noticeable effects.</p>
+<p>In the case of complex projects with many dependencies, each presentation compiler can consume a lot of memory. Therefore, there&#8217;s a special mechanism which can close presentation compilers automatically. It can do that when a given project still exists in a workspace, but when the user hasn&#8217;t edited its code for a long time and there are no opened Scala Editors for the files managed by given presentation compilers.</p>
+<p>You can specify a length of inactivity in seconds, after which the presentation compiler can be closed. Note that the presentation compiler will have to be recreated, when you will open the first file for a project. This can cause a small delay but in most of cases it shouldn&#8217;t be significant - up to several seconds in the case of big projects. After that there are no other noticeable effects.</p>
 <a class="reference external image-reference" href="../_images/closing-presentation-compilers.png"><img alt="../../_images/closing-presentation-compilers.png" src="../../_images/closing-presentation-compilers.png" style="width: 80%;" /></a>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">There&#8217;s known problem which may occur when a presentation compiler is closed despite open Scala Editors being attached to it. They may prevent freeing the memory associated with the presentation compiler until you close them. The presentation compiler&#8217;s thread will be always stopped.</p>
-</div>
 </div>
 <div class="section" id="suggested-interesting-keyboard-shortcuts">
 <h3>Suggested interesting keyboard shortcuts</h3>
