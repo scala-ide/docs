@@ -15,6 +15,8 @@ The Scala IDE project is composed of several modules. Here is a generic descript
 * ``org.scala-ide.sdt.core.tests``: Contains the functional tests used to exercise the Scala IDE in headless mode (with no User Interface).
 * ``org.scala-ide.sdt.debug``: Contains the Scala IDE debugger plug-in's source code.
 * ``org.scala-ide.sdt.debug.tests``: Contains the functional tests used to exercise the Scala IDE debugger in headless mode (with no User Interface).
+* ``org.scala-ide.sdt.debug.expression``: Contains Scala IDE expression evaluator plug-in's source code.
+* ``org.scala-ide.sdt.debug.expression.tests``: Contains the functional tests used to exercise the Scala IDE expression evaluator in headless mode (with no User Interface).
 * ``org.scala-ide.sdt.spy``: A Scala Spy view, used to display position, tree and type information under the cursor.
 * ``org.scala-ide.sdt.aspects``: Contains the AspectJ classes used to weave into Eclipse and hook in JDT internals.
 * ``org.scala-ide.build``: Contains the scripts for building the Scala IDE from the command line.

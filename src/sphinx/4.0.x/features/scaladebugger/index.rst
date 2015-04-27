@@ -1,3 +1,5 @@
+.. include:: /global_defs.hrst
+
 Scala Debugger
 ==============
 
@@ -15,9 +17,7 @@ The main goals are:
 Where to get it?
 ----------------
 
-The Scala debugger has been merged into trunk, so the latest version is available in the `nightly builds`__
-
-__ /download/nightly.html
+The Scala debugger is a part of Scala IDE and is released as a whole.
 
 Using the Scala debugger
 ------------------------
@@ -100,14 +100,13 @@ The same way, the 'step into' action allows you to step right into the closure, 
 Step filters
 ............
 
-Often when stepping in and out of Scala methods you don't want to stop in all the artifacts produced by the Scala compiler. A few of the uninteresting methods are:
+Often when stepping in and out of Scala methods you don't want to stop in all the artifacts produced by the Scala compiler. Those includes:
 
-* Scala getters and setters for ``val/var`` members
-* forwarders for concrete trait methods
-* getters for default argument (ending in ``$default$1,2,..``)
-* bridge methods
 * synthetic methods
-* box/unbox operations
+* Scala getters for ``val`` members
+* Scala getters and setters for ``var`` members
+* getters for default argument (ending in ``$default$1,2,..``)
+* forwarders for concrete trait methods
 
 You can enable/disable step filters on the debugger configuration page:
 
@@ -127,15 +126,6 @@ Clean stack frame list
 
 Smart stepping 'hides' the internal details of collections and closure. This information is also hidden in the debug view, only the relevant stack frames are displayed.
 
-*Not in the preview version*
-
-Display the value returned by the last executed method
-......................................................
-
-To know the return value of a method without having to add an extra local variable.
-
-*A proof of concept is working. Need to define the exact behavior and devise a way to present the value*
-
 Remote Debugging
 ................
 
@@ -144,28 +134,26 @@ Using the Scala debugger for a remote debugging session is done by selecting one
 .. image:: images/remotedebugging-01.png
    :alt: Scala remote debugging configuration
 
-Status
-------
 
-* Smart stepping over/in/out anonymous functions (for comprehension, collection methods, ...).
-* Resume/terminate launch action.
-* The structure of the Scala implementation of the Eclipse debug model.
-* Improved label and value display.
-* No good icons for the model elements.
-* No caching of any data.
-* No drop to frame.
-* Need to define and spec the exact behavior of the smart step in/over/out.
+Drop to frame |new| (since 4.0)
+-------------------------------
 
-known issues
-............
+**To be described in next PR**
 
+Hot code replace |new| (since 4.1)
+----------------------------------
 
-TODO
-....
+**To be described in next PR**
 
-*may not be exhaustive or up-to-date, not really ordered*
+Expression evaluator |new| (since 4.1)
+--------------------------------------
 
-updated 2012-05-03
+**To be described in next PR**
+
+Further improvements and unsupported features
+---------------------------------------------
+
+*may not be exhaustive, not really ordered, updated 2015-04-27*
 
 * Take care of breakpoints in Scala Debugger, currently still done by JDT debugger
 * Use own jdi event dispatcher, instead of using the JDT debugger one
@@ -181,22 +169,13 @@ updated 2012-05-03
   * to hide some Scala internals, like collections
   * configurable list in preferences
 
-* filter elements in the variable view
-
-  * static fields
-  * synthetics
-
-* logical structures
-
-  * map support
-  * extension point for additional support
-
+* filter synthetic elements in the variable view
+* extension point for additional support of logical structures
 * use IIndexedValue for arrays
 * better smart step into support
 
   * collection of primitive type elements
 
-* drop to frame support
 * step over and step out relative to the currently selected stackframe
 * cache data used for smart stepping
 
@@ -210,14 +189,12 @@ updated 2012-05-03
   * method breakpoint support
   * watchpoint support
 
+* display the value returned by the last executed method (a proof of concept is working. Need to define the exact behavior and devise a way to present the value)
+
 Development setup
 -----------------
 
-The feature has been merged in `master`__, on Scala IDE's github.
-
-__ https://github.com/scala-ide/scala-ide/tree/master
-
-The Scala debugger adds 2 new plugins: org.scala-ide.sdt.debug and org.scala-ide.sdt.debug.tests.
+The Scala debugger adds 4 new plugins, 2 for debugger: ``org.scala-ide.sdt.debug``, ``org.scala-ide.sdt.debug.tests`` and 2 for expression evaluator: ``org.scala-ide.sdt.debug.expression``, ``org.scala-ide.sdt.debug.expression.tests``
 
 In Eclipse
 ..........
