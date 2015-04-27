@@ -53,6 +53,8 @@ In the variables view, the detail pane show the ``toString`` value, or its equiv
 .. image:: images/detailpane-01.png
    :alt: toString in detail pane
 
+.. _logical-structures-support:
+
 Logical structures support
 ..........................
 
@@ -176,7 +178,10 @@ Those allows to:
 Expression evaluator |new| (since 4.1)
 --------------------------------------
 
-**To be described in next PR**
+Scala debugger since 4.0 features new expression evaluator, which translates user code into invocations of ``JDI`` remote
+calls. This allows evaluation of expression in context of breakpoint, with access to local variables and methods.
+
+For more detailed documentation, with examples and limitations see :ref:`expression-evaluator-user-docs`.
 
 Further improvements and unsupported features
 ---------------------------------------------
