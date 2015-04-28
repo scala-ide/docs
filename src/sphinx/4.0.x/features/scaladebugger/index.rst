@@ -134,16 +134,44 @@ Using the Scala debugger for a remote debugging session is done by selecting one
 .. image:: images/remotedebugging-01.png
    :alt: Scala remote debugging configuration
 
-
 Drop to frame |new| (since 4.0)
--------------------------------
+...............................
 
-**To be described in next PR**
+Select the ``Drop to Frame`` command to re-enter the selected stack frame in the ``Debug`` View.
+
+.. image:: images/drop-to-frame.png
+   :alt: drop to frame option in menu
+
+.. note:: This command is only available if the current VM supports drop to frame and the selected stackframe is not in a native method.
 
 Hot code replace |new| (since 4.1)
 ----------------------------------
 
-**To be described in next PR**
+Hot code replace adds the possibility to modify and re-compile code in a debug mode and to have these changes visible
+and taken into account by the debugged VM without restarting the application.
+
+.. note:: HCR is limited by JVM's support for replacing classes. Its goal is to allow to experiments with the code
+ inside methods/blocks rather than to develop the whole application in the interactive mode. Changes of methods'
+ signatures etc. do not work - similarly to other HCR implementations in Eclipse or other IDEs.
+
+Configuration
+.............
+
+.. note:: This feature is turned off by default and can be turned on in preferences.
+
+Multiple parameters of HCR can be configured in menu:
+
+.. image:: images/hot-code-replace.png
+   :alt: hot code replace configuration menu
+   :width: 100%
+
+Those allows to:
+
+* enable or disable HCR,
+* configure whether error messages from HCR should be shown,
+* change whether files containing compilation errors should be skipped,
+* automatically drop (or not) obsolete frames on suspended threads,
+* and ignore obsolete frames when performing drop to frame - this one is only needed if you disable automatic drop to frame after HCR.
 
 Expression evaluator |new| (since 4.1)
 --------------------------------------
