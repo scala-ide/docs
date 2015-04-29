@@ -117,6 +117,8 @@ Scala IDE debugger
 
 The Scala IDE debugger is using the standard Java debugging chain (JVMDI, JDWP and JDI) to provide a Scala specific debugger. The elements are displayed the Scala way, the names are decoded, and the actions are behaving the way a Scala developer would expect.
 
+See also :ref:`expression-evaluator`.
+
 The Scala Structure Builder
 ---------------------------
 
@@ -161,7 +163,7 @@ for syntax coloring are also backed by Scalariform.
 
 
 Refactoring
-------------
+-----------
 
 Refactoring is delegated to the `scala-refactoring <http://scala-refactoring.org/>`_ library written 
 by Mirko Stocker.
