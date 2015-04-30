@@ -6,143 +6,144 @@ Changelog
 
 RC4 (2014-12-10)
 .................
- - Backport of #876 - Partial revert of d9fbd270 (:ticket:`1002355`)
- - Fixes race condition during hyperlinking (:ticket:`1002352`)
+
+- Backport of #876 - Partial revert of d9fbd270 (:ticket:`1002355`)
+- Fixes race condition during hyperlinking (:ticket:`1002352`)
 
 RC3 (2014-11-30)
 .................
 
- - Revert "replaces CheckBoxSettingWithDefault with a by-name parameter and additional constructor" (:ticket:`1002335`)
- - Adds back Scala notation in the outline labels (:ticket:`1002339`)
- - Avoid logging twice the same stack trace
- - Wraps the Java spelling API call
- - Handle src/bin folders that are the same as project root folders (:ticket:`1002146`)
- - Add quick assists for spelling mistakes (:ticket:`1002301`)
- - Automatically select problem position on quick assist invocation (:ticket:`1002305`)
- - Updates to Scala 2.11.5-SNAPSHOT as default version
- - Upgrade AspectJ compiler to make it work with JDK8.
+- Revert "replaces CheckBoxSettingWithDefault with a by-name parameter and additional constructor" (:ticket:`1002335`)
+- Adds back Scala notation in the outline labels (:ticket:`1002339`)
+- Avoid logging twice the same stack trace
+- Wraps the Java spelling API call
+- Handle src/bin folders that are the same as project root folders (:ticket:`1002146`)
+- Add quick assists for spelling mistakes (:ticket:`1002301`)
+- Automatically select problem position on quick assist invocation (:ticket:`1002305`)
+- Updates to Scala 2.11.5-SNAPSHOT as default version
+- Upgrade AspectJ compiler to make it work with JDK8.
 
 RC2 (2014-10-28)
 .....................
 
- - Avoid spurious typer cycles / "no progress completing" errors (:ticket:`1002325`)
- - Create a build marker when a project is not built due to upstream errors... (:ticket:`1002320`)
- - Revert "Interrupt Scala builder on resource change" (:ticket:`1002319`)
- - Show @return in scaladoc hovers (:ticket:`1002312`)
- - Restore correct selection when region changed at end of selection (:ticket:`1002314`)
- - Don’t catch `AssertionError` in `getOption`
+- Avoid spurious typer cycles / "no progress completing" errors (:ticket:`1002325`)
+- Create a build marker when a project is not built due to upstream errors... (:ticket:`1002320`)
+- Revert "Interrupt Scala builder on resource change" (:ticket:`1002319`)
+- Show @return in scaladoc hovers (:ticket:`1002312`)
+- Restore correct selection when region changed at end of selection (:ticket:`1002314`)
+- Don’t catch `AssertionError` in `getOption`
 
 RC1 (2014-10-17)
 .....................
 
- - Remove last calls to `JavaUI.getDocumentProvider`
- - Update to next version of build-tools
- - Add missing Export-Package declarations.
- - Fix thread check failure in reporting string of Implicit Highlighter (:ticket:`1002295`)
- - Don’t call `openWhenClosed` if the compilation unit is consistent.
- - Narrow the return types to API types in tests.
- - Save actions (:ticket:`1000900`, :ticket:`1000887`, :ticket:`1001138`, :ticket:`1002232`, :ticket:`1002240`, :ticket:`1002239`, :ticket:`1002234`, :ticket:`1002225`, :ticket:`1002227`) |new|
- - Redesign of quick assists (:ticket:`1002286`, :ticket:`1002283`) |new|
- - Fix regression in syntax color preference page (:ticket:`1002289`)
- - Better use of compiler APIs.
- - Correct selection after multi edit
- - Add the proper dependency to Scala 2.11 (sources) form SDT (:ticket:`1002290`)
- - New ScalaReconciler implementation that listens to activation events, like the Java one (:ticket:`1002215`)
- - Export API for Scala completions
- - Cleanup hyperlink code and APIify
- - Ignore interrupts while waiting for presentation compiler.
- - Scala Hover API and fixes
- - Clear doc comments when fishing reloads.
- - Show simple names instead of fully qualified names in quick fixes |new|
- - Harden locate symbol. Sometimes there is no source provider.
- - An API for Util methods (:ticket:`1002247`)
- - Fix deadlock by moving `res.get` outside of synchronized block. (:ticket:`1002275`)
- - Remove aspect hover
- - Refactor the way compilation units work
- - Open API for syntax coloring of Scala files
- - Fix ScalaWordFinder AIOOBE (:ticket:`1002238`)
- - Control persistence of PC doc comments.
- - Basic ScalaDoc prettyfications  |new|
- - Changes rich type method names to avoid conflicts
- - Scaladoc display on completion & showToolTip (:ticket:`1000453`, :ticket:`1000210`) |new|
- - Additionnal changes needed to remove sdt.editor from the play plugin
- - Adds a test which checks sbt reorders libs on classpath
- - Scala Installation Support Improvements
- - Prevent Race Condition in mkImplicitConversionAnnotation (:ticket:`1002269`)
- - Disentangle presentation compiler and Scala project
- - Adds missing getOption() synchronization call
- - Close ScalaPresentationCompilers which weren't used for specified time |new|
- - Initial stab at a cleaner interface for Scala presentation compiler.
- - Addditionnal changes for ScalaImage API
- - Fixes problem build disabled after clean
- - Completion improvements for higher-order-functions (:ticket:`1002250`) |new|
- - Revert "Unused member warning doesn't highlight whole definition anymore... (:ticket:`1002209`)
- - Set ScalaImages constants as API
- - Temporary disables UI support for -Xlint
- - A couple of simple improvements in completions (:ticket:`1002171`)
- - Fixes a few issues linked to ClasspathTests
- - Update entries of moved logging packages in Manifest files
- - Moves non-API logging classes in internal packages
- - Tab to space conversion
- - Fixes switching between Scala Installations
- - Fixed NPE on first start on Luna (:ticket:`1002242`)
- - Remove `EclipseUserSimulator`
- - Switches to package import for the dependency to osgi.service.location
- - Moves content of core.api in core, and adds Ixxx prefix
- - Faster implementation of `ScalaCommentScanner` (:ticket:`1002241`)
- - Shut up noisy logger. (:ticket:`1002228`)
- - Add `*.tmpBin` files to .gitignore
- - Mark some completion tests as flaky.
- - Creates an API for ScalaPlugin
- - Fix Luna build by using the AJDT dev version of the weaving hook.
- - Unify kepler and luna branches as different profiles under the same build (:ticket:`1002211`)
- - T1002123 spell checker (:ticket:`1002123`)
- - Shorten log message in SPCP regarding restarted compilation units
- - Interrupt Scala builder on resource change (:ticket:`1002229`)
- - Updates to scala 2.11.3-SNAPSHOT
- - Hover improvements2 (:ticket:`1001567` :ticket:`1001534`, :ticket:`1001897`, :ticket:`1001667`)
- - Fix NPE in `AllMethodsTraverserImpl` (:ticket:`1002217`)
- - T1002191 enable new wizard elements (:ticket:`1002191`)
- - Sbt builder fix and refactor (:ticket:`1002148`)
- - Treat projects in subfolders correctly in `NewFileWizard` (:ticket:`1002188` :ticket:`1002185`)
- - Use `Import-Package` instead of `Require-Bundle` for org.eclipse.core.runtime
- - Revert "Merge pull request #742 from sschaef/remove-java-partitions"
- - Remove java partitions
- - Update build-all script to kepler.
- - Use UTF-8 for tests.
- - An API for ScalaProject
- - adds space instead of comma in multi-ticket display
- - A more sane error message about what profile is missing.
- - Fix semicolon painter (:ticket:`1002170`, :ticket:`1002153`)
- - Reformat error messages from presentation compiler
- - Some cleanup & 2.10 deprecation upheaval
+- Remove last calls to `JavaUI.getDocumentProvider`
+- Update to next version of build-tools
+- Add missing Export-Package declarations.
+- Fix thread check failure in reporting string of Implicit Highlighter (:ticket:`1002295`)
+- Don’t call `openWhenClosed` if the compilation unit is consistent.
+- Narrow the return types to API types in tests.
+- Save actions (:ticket:`1000900`, :ticket:`1000887`, :ticket:`1001138`, :ticket:`1002232`, :ticket:`1002240`, :ticket:`1002239`, :ticket:`1002234`, :ticket:`1002225`, :ticket:`1002227`) |new|
+- Redesign of quick assists (:ticket:`1002286`, :ticket:`1002283`) |new|
+- Fix regression in syntax color preference page (:ticket:`1002289`)
+- Better use of compiler APIs.
+- Correct selection after multi edit
+- Add the proper dependency to Scala 2.11 (sources) form SDT (:ticket:`1002290`)
+- New ScalaReconciler implementation that listens to activation events, like the Java one (:ticket:`1002215`)
+- Export API for Scala completions
+- Cleanup hyperlink code and APIify
+- Ignore interrupts while waiting for presentation compiler.
+- Scala Hover API and fixes
+- Clear doc comments when fishing reloads.
+- Show simple names instead of fully qualified names in quick fixes |new|
+- Harden locate symbol. Sometimes there is no source provider.
+- An API for Util methods (:ticket:`1002247`)
+- Fix deadlock by moving `res.get` outside of synchronized block. (:ticket:`1002275`)
+- Remove aspect hover
+- Refactor the way compilation units work
+- Open API for syntax coloring of Scala files
+- Fix ScalaWordFinder AIOOBE (:ticket:`1002238`)
+- Control persistence of PC doc comments.
+- Basic ScalaDoc prettyfications  |new|
+- Changes rich type method names to avoid conflicts
+- Scaladoc display on completion & showToolTip (:ticket:`1000453`, :ticket:`1000210`) |new|
+- Additionnal changes needed to remove sdt.editor from the play plugin
+- Adds a test which checks sbt reorders libs on classpath
+- Scala Installation Support Improvements
+- Prevent Race Condition in mkImplicitConversionAnnotation (:ticket:`1002269`)
+- Disentangle presentation compiler and Scala project
+- Adds missing getOption() synchronization call
+- Close ScalaPresentationCompilers which weren't used for specified time |new|
+- Initial stab at a cleaner interface for Scala presentation compiler.
+- Addditionnal changes for ScalaImage API
+- Fixes problem build disabled after clean
+- Completion improvements for higher-order-functions (:ticket:`1002250`) |new|
+- Revert "Unused member warning doesn't highlight whole definition anymore... (:ticket:`1002209`)
+- Set ScalaImages constants as API
+- Temporary disables UI support for -Xlint
+- A couple of simple improvements in completions (:ticket:`1002171`)
+- Fixes a few issues linked to ClasspathTests
+- Update entries of moved logging packages in Manifest files
+- Moves non-API logging classes in internal packages
+- Tab to space conversion
+- Fixes switching between Scala Installations
+- Fixed NPE on first start on Luna (:ticket:`1002242`)
+- Remove `EclipseUserSimulator`
+- Switches to package import for the dependency to osgi.service.location
+- Moves content of core.api in core, and adds Ixxx prefix
+- Faster implementation of `ScalaCommentScanner` (:ticket:`1002241`)
+- Shut up noisy logger. (:ticket:`1002228`)
+- Add `*.tmpBin` files to .gitignore
+- Mark some completion tests as flaky.
+- Creates an API for ScalaPlugin
+- Fix Luna build by using the AJDT dev version of the weaving hook.
+- Unify kepler and luna branches as different profiles under the same build (:ticket:`1002211`)
+- T1002123 spell checker (:ticket:`1002123`)
+- Shorten log message in SPCP regarding restarted compilation units
+- Interrupt Scala builder on resource change (:ticket:`1002229`)
+- Updates to scala 2.11.3-SNAPSHOT
+- Hover improvements2 (:ticket:`1001567` :ticket:`1001534`, :ticket:`1001897`, :ticket:`1001667`)
+- Fix NPE in `AllMethodsTraverserImpl` (:ticket:`1002217`)
+- T1002191 enable new wizard elements (:ticket:`1002191`)
+- Sbt builder fix and refactor (:ticket:`1002148`)
+- Treat projects in subfolders correctly in `NewFileWizard` (:ticket:`1002188` :ticket:`1002185`)
+- Use `Import-Package` instead of `Require-Bundle` for org.eclipse.core.runtime
+- Revert "Merge pull request #742 from sschaef/remove-java-partitions"
+- Remove java partitions
+- Update build-all script to kepler.
+- Use UTF-8 for tests.
+- An API for ScalaProject
+- adds space instead of comma in multi-ticket display
+- A more sane error message about what profile is missing.
+- Fix semicolon painter (:ticket:`1002170`, :ticket:`1002153`)
+- Reformat error messages from presentation compiler
+- Some cleanup & 2.10 deprecation upheaval
 
 M3 (2014-07-25)
 .....................
 
- - Makes sdt depend on kepler jdt
- - Sets the right name for the test source jar
- - New File Wizard (:ticket:`1002103`) |new|
- - Scala Installations support stage II : choose your own installation |new|
- - Redesign of the bug report dialog
- - Adds support for Scala 2.12
- - Don’t reuse platform classloader when ScalaInstallation matches its version
- - Disable tab to spaces converter in TextViewer (:ticket:`1002167`)
- - Don't use Scala reflection for asInstanceOfOpt (:ticket:`1002128`)
- - Show variable values in hovers when in suspended debug mode |new|
- - Scala Installations support (:ticket:`1001777`) |new|
- - Finish cleanup of removed extraction refactorings
- - Restore Run Selection In Interpreter functionality (:ticket:`1002164`)
- - Integrate new extraction refactorings
- - Highlight dynamic calls with type parameters (:ticket:`1002162`)
- - Revert wrong optimization in 1b83945. Always reset compilers on classpath change
- - Cleanup/custom code removal
- - Prevent NoSuchElementException in Extract trait. (:ticket:`1001967`)
- - T1002151 wrong cursor position after completion (:ticket:`1002151`)
- - Fix race condition due to call of `Tree.symbol` (:ticket:`1002132`)
- - Pull loop invariant code outside of the loop (performance improvement in code completion)
- - Fixed auto-breaking comments (:ticket:`1002116`, :ticket:`1002119`, :ticket:`1002120`, :ticket:`1002115`)
- - New test suite for code completion / text edits (:ticket:`1001912`)
+- Makes sdt depend on kepler jdt
+- Sets the right name for the test source jar
+- New File Wizard (:ticket:`1002103`) |new|
+- Scala Installations support stage II : choose your own installation |new|
+- Redesign of the bug report dialog
+- Adds support for Scala 2.12
+- Don’t reuse platform classloader when ScalaInstallation matches its version
+- Disable tab to spaces converter in TextViewer (:ticket:`1002167`)
+- Don't use Scala reflection for asInstanceOfOpt (:ticket:`1002128`)
+- Show variable values in hovers when in suspended debug mode |new|
+- Scala Installations support (:ticket:`1001777`) |new|
+- Finish cleanup of removed extraction refactorings
+- Restore Run Selection In Interpreter functionality (:ticket:`1002164`)
+- Integrate new extraction refactorings
+- Highlight dynamic calls with type parameters (:ticket:`1002162`)
+- Revert wrong optimization in 1b83945. Always reset compilers on classpath change
+- Cleanup/custom code removal
+- Prevent NoSuchElementException in Extract trait. (:ticket:`1001967`)
+- T1002151 wrong cursor position after completion (:ticket:`1002151`)
+- Fix race condition due to call of `Tree.symbol` (:ticket:`1002132`)
+- Pull loop invariant code outside of the loop (performance improvement in code completion)
+- Fixed auto-breaking comments (:ticket:`1002116`, :ticket:`1002119`, :ticket:`1002120`, :ticket:`1002115`)
+- New test suite for code completion / text edits (:ticket:`1001912`)
 
 
 M2 (2014-05-27)
