@@ -1,6 +1,84 @@
 Changelog
 =========
 
+4.1
+---
+
+RC1 (2015-05-08)
+................
+
+- Macro compile first feature (:ticket:`1001633`)
+- Check compiler plugins for version conflicts and cleanup (:ticket:`1002358`, :ticket:`1002186`)
+- Fix compiler warning (:ticket:`1002444`)
+- Bugfix - encoding and closing streams
+- Update to the new repository for SBT builds.
+- Workaround for problems in conditional breakpoints
+- Handle `DocDef` trees in the JUnit test finder. (:ticket:`1002442`)
+- Fixes StackOverflowException in ScalaIndenter (:ticket:`1002433`)
+- Expression evaluator improvements (:ticket:`1002428`)
+- Update tasks after build (:ticket:`1002137`)
+- Disable flaky tests that often fail in Scala PR validation
+- Make interpreter background color configurable (:ticket:`1002394`)
+- Smarter HCR-related tests
+- Basic support for Hot Code Replacement in debugged JVM
+- Add Expression Evaluator to update site
+- Mark occurrences improvements (:ticket:`1002417`, :ticket:`1002418`)
+- Expression evaluator
+- Remove old wizards (:ticket:`1002180`)
+- Also apply refactoring to files not currently open in the editor (:ticket:`1002079`)
+- Make organize imports format consistent with scalariform
+- Handle single empty line in `RemoveDuplicatedEmptyLines` save action (:ticket:`1002400`)
+- Take care of file rename operations in `rename` refactorings (:ticket:`1001928`)
+- Fix NPE in Scala Reconciler (:ticket:`1002396`)
+- Improve wording in implicit preference page (:ticket:`1001003`)
+- Don't leak `ScalaSourceFileEditors`
+- Update URL of equinox weaving launcher
+- Remove an option to close SPCs when editors are open (:ticket:`1002387`)
+- Improvements for NamePrinter and NamePrinterTest
+- Prevent race condition in CallByNameParamAtCreationPresenter (:ticket:`1002388`)
+- Add command extension to restart presentation compiler with shortcut (:ticket:`1002391`)
+- Fix NPE in semantic highlighting job (:ticket:`1002386`)
+- No need to run `FreshRunReq`, this is normal operation for the PC.
+- Handle auto indent correctly after unicode representation of => (:ticket:`1002383`)
+- Handle partially applied functions properly (:ticket:`1002381`)
+- Highlight by-name parameters at their creation (:ticket:`1002340`)
+- Correct debug messages in ScalaPlugin
+- Add a Gitter chat badge to README.md
+- Check return value of getResource call to avoid NPE (:ticket:`1002375`)
+- Update editor only once after execution of save actions (:ticket:`1002309`)
+- Add strip margins in string interpolation  (:ticket:`1002145`)
+- Throwing OCE if build was interrupted (:ticket:`1002365`)
+- Better messages for custom annotations
+- Fix double-newline bug in Scala templates (:ticket:`1002303`)
+- Fixes StackOverflowError in `RegionUtils.subtract` (:ticket:`1002361`)
+- Fixes several warnings that occur during the build
+- Show svelto link in report bug dialog
+- Fix spelling mistake in constant in SdtConstants
+- Implementation for "Copy Qualified Name" (:ticket:`1001257`, :ticket:`1001257`)
+- Remove version numbers that made the plugin refuse to install in Kepler
+- Correctly handle NullaryMethodTypes in the Java type mapper (:ticket:`1001734`)
+- Create the right ElementInfo for package declaration (:ticket:`1000572`)
+- Partial revert of d9fbd270 (:ticket:`1002355`)
+- Fixes race condition during hyperlinking (:ticket:`1002352`)
+- Support for drop to frame
+- New File Wizard works with projects whose source dir is the root dir (:ticket:`1002332`)
+- Faster project loading in classpath computation (:ticket:`1002179`, :ticket:`1002311`)
+- Remove instance-creating implicit that shadowed BooleanSettingWithDefault
+- Code completion: reduce relevance for non class fields and for java.*, scala.* packages (:ticket:`1002343`)
+- Revert "Treat files as external dependencies."
+- Treat files as external dependencies. (:ticket:`1002344`)
+- Automatically select problem position on quick assist invocation (:ticket:`1002305`)
+- Adds back Scala notation in the outline labels (:ticket:`1002339`)
+- scalariform default preferences changed (:ticket:`1002321`)
+- Handle src/bin folders that are the same as project root folders (:ticket:`1002146`)
+- Highlight by name parameters at call site (:ticket:`1000989`)
+- Remove `o.s.u.ui.SWTUtils` (:ticket:`1002288`)
+- Add quick assists for spelling mistakes (:ticket:`1002301`)
+- Consider project specific formatting settings for auto format (:ticket:`1002331`)
+- Mark a recently flaky test as, erm, Flaky.
+- Make the build work on JDK 8
+- Updates to Scala 2.11.5-SNAPSHOT as default version
+
 4.0.0 - codename Lithium
 ------------------------
 
