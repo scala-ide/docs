@@ -7,10 +7,10 @@ You are literally instants away from being all set and ready to start hacking th
 Requirements
 ------------
 
-* `Eclipse 4.4 (Luna)  <http://www.eclipse.org/downloads/>`_, including PDT and JDT. Look for
+* `Eclipse 4.4 (Luna)  <http://www.eclipse.org/downloads/>`_, including JDT. Look for
   **Eclipse IDE for Eclipse Committers**, which comes with `Eclipse Plug-In Development Environment pre-installed`.
 
-* The `Eclipse Plug-in Development Environment <http://www.eclipse.org/pde/>`_, which ships with the
+* The `Eclipse Plug-in Development Environment (PDE) <http://www.eclipse.org/pde/>`_, which ships with the
   Eclipse SDK (**Eclipse IDE for Eclipse Committers**) but may need to be installed manually.  Choose ``Help > Install New Software...``,
   select the `Luna Update Site <http://download.eclipse.org/releases/luna>`_, then install
   ``General Purpose Tools > Eclipse Plug-in Development Environment``.
@@ -56,13 +56,13 @@ Pull the libraries
 The Scala IDE projects uses libraries which are pulled during the build process and copied in the ``target/lib`` folders.
 So let's run the build.
 
-From the project root, run the following command if you are using Scala IDE with Scala 2.10:
+From the project root, run the following command:
 
 .. code-block:: bash
 
    $ ./build-all.sh
 
-Or, you can pass a different profile for building the Scala IDE with Scala 2.11:
+In case you want to modify the default build you can pass different profiles:
 
 .. code-block:: bash
 
