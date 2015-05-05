@@ -144,7 +144,8 @@ Select the ``Drop to Frame`` command to re-enter the selected stack frame in the
 .. image:: images/drop-to-frame.png
    :alt: drop to frame option in menu
 
-.. note:: This command is only available if the current VM supports drop to frame and the selected stackframe is not in a native method.
+.. note:: This command is only available if the current VM supports dropping frames and the stack frames between the
+ one below selected stack frame and the top one are not in a native method.
 
 Hot code replace |new| (since 4.1)
 ----------------------------------
@@ -152,14 +153,22 @@ Hot code replace |new| (since 4.1)
 Hot code replace adds the possibility to modify and re-compile code in a debug mode and to have these changes visible
 and taken into account by the debugged VM without restarting the application.
 
-.. note:: HCR is limited by JVM's support for replacing classes. Its goal is to allow to experiments with the code
+.. note:: HCR is limited by JVM's support for replacing classes. Its goal is to allow to experiment with the code
  inside methods/blocks rather than to develop the whole application in the interactive mode. Changes of methods'
  signatures etc. do not work - similarly to other HCR implementations in Eclipse or other IDEs.
 
 Configuration
 .............
 
-.. note:: This feature is turned off by default and can be turned on in preferences.
+.. warning::
+ This feature is turned off by default and can be turned on in preferences.
+ The reason is that it's the initial implementation. It may be very helpful, but there are also known issues:
+
+ * JVM doesn't like obsolete frames. Therefore, there are situations when it may crash after HCR.
+ * Automatic dropping frames may not work when running two or more HCRs one after another without going further with the
+   execution (resume and hit another breakpoint, step into etc.).
+
+ These problems should disappear in the future after adding to HCR the missing feature which we are aware of.
 
 Multiple parameters of HCR can be configured in menu:
 
@@ -173,12 +182,13 @@ Those allows to:
 * configure whether error messages from HCR should be shown,
 * change whether files containing compilation errors should be skipped,
 * automatically drop (or not) obsolete frames on suspended threads,
-* and ignore obsolete frames when performing drop to frame - this one is only needed if you disable automatic drop to frame after HCR.
+* and ignore obsolete state of frames when performing drop to frame (in other words, allow to drop obsolete frames manually).
+  This one may be needed only if you disable automatic drop to frame after HCR.
 
 Expression evaluator |new| (since 4.1)
 --------------------------------------
 
-Scala debugger since 4.0 features new expression evaluator, which translates user code into invocations of ``JDI`` remote
+Scala debugger since 4.1 features new expression evaluator, which translates user code into invocations of ``JDI`` remote
 calls. This allows evaluation of expression in context of breakpoint, with access to local variables and methods.
 
 For more detailed documentation, with examples and limitations see :ref:`expression-evaluator-user-docs`.
