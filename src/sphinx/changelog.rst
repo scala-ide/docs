@@ -4,7 +4,7 @@ Changelog
 4.1
 ---
 
-RC1 (2015-05-08)
+RC1 (2015-05-11)
 ................
 
 - Macro compile first feature (:ticket:`1001633`)
