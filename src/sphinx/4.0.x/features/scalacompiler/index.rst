@@ -3,7 +3,7 @@
 Scala Scopes Building |new| (since 4.1)
 =======================================
 
-Scala IDE provides two different ways to build a project. The first and one takes all sources in a project and compiles them regardless where they are stored and what their output folders are. The second one breaks up th build process of a project into stages called scopes.
+Scala IDE provides two different ways to build a project. The first and one takes all sources in a project and compiles them regardless where they are stored and what their output folders are. The second one breaks up the build process of a project into stages called scopes.
 
 A Scope is a set of source files, which are compiled together and whose "product of compilation units" is stored in a specific output folder.
 
