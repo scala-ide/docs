@@ -42,7 +42,7 @@
     <link rel="top" title="Scala IDE 0.1-SNAPSHOT documentation" href="../../../index.html" />
     <link rel="up" title="Features" href="../../features.html" />
     <link rel="next" title="Scala Interpreter" href="../scalainterpreter/index.html" />
-    <link rel="prev" title="Scala JUnit Test Finder" href="../test-finder/index.html" /> 
+    <link rel="prev" title="Scala Scopes Building new (since 4.1)" href="../scalacompiler/index.html" /> 
   </head>
   <body>
 <div class="top-bar">
@@ -106,7 +106,7 @@
 </div>
 <div class="section" id="where-to-get-it">
 <h2>Where to get it?</h2>
-<p>The Scala debugger has been merged into trunk, so the latest version is available in the <a class="reference external" href="/download/nightly.html">nightly builds</a></p>
+<p>The Scala debugger is a part of Scala IDE and is released as a whole.</p>
 </div>
 <div class="section" id="using-the-scala-debugger">
 <h2>Using the Scala debugger</h2>
@@ -129,7 +129,7 @@
 <img alt="toString in detail pane" src="../../../_images/detailpane-012.png" />
 </div>
 <div class="section" id="logical-structures-support">
-<h3>Logical structures support</h3>
+<span id="id1"></span><h3>Logical structures support</h3>
 <p>By default, the variables view shows the internals of each entity.</p>
 <img alt="logical structure disabled" src="../../../_images/logicalstructure-012.png" />
 <p>But in a lot of cases, it is not the sought after information. Using the <tt class="docutils literal"><span class="pre">Show</span> <span class="pre">Logical</span> <span class="pre">Structure</span></tt> toolbar button, the data is shown is a more synthetic way.</p>
@@ -152,14 +152,13 @@
 </div>
 <div class="section" id="step-filters">
 <h3>Step filters</h3>
-<p>Often when stepping in and out of Scala methods you don&#8217;t want to stop in all the artifacts produced by the Scala compiler. A few of the uninteresting methods are:</p>
+<p>Often when stepping in and out of Scala methods you don&#8217;t want to stop in all the artifacts produced by the Scala compiler. Those includes:</p>
 <ul class="simple">
-<li>Scala getters and setters for <tt class="docutils literal"><span class="pre">val/var</span></tt> members</li>
-<li>forwarders for concrete trait methods</li>
-<li>getters for default argument (ending in <tt class="docutils literal"><span class="pre">$default$1,2,..</span></tt>)</li>
-<li>bridge methods</li>
 <li>synthetic methods</li>
-<li>box/unbox operations</li>
+<li>Scala getters for <tt class="docutils literal"><span class="pre">val</span></tt> members</li>
+<li>Scala getters and setters for <tt class="docutils literal"><span class="pre">var</span></tt> members</li>
+<li>getters for default argument (ending in <tt class="docutils literal"><span class="pre">$default$1,2,..</span></tt>)</li>
+<li>forwarders for concrete trait methods</li>
 </ul>
 <p>You can enable/disable step filters on the debugger configuration page:</p>
 <img alt="step filters configuration" src="../../../_images/step-filters1.png" />
@@ -172,38 +171,68 @@
 <div class="section" id="clean-stack-frame-list">
 <h3>Clean stack frame list</h3>
 <p>Smart stepping &#8216;hides&#8217; the internal details of collections and closure. This information is also hidden in the debug view, only the relevant stack frames are displayed.</p>
-<p><em>Not in the preview version</em></p>
-</div>
-<div class="section" id="display-the-value-returned-by-the-last-executed-method">
-<h3>Display the value returned by the last executed method</h3>
-<p>To know the return value of a method without having to add an extra local variable.</p>
-<p><em>A proof of concept is working. Need to define the exact behavior and devise a way to present the value</em></p>
 </div>
 <div class="section" id="remote-debugging">
 <h3>Remote Debugging</h3>
 <p>Using the Scala debugger for a remote debugging session is done by selecting one of the Scala connector in a normal &#8216;Remote Java Application&#8217; launch configuration. The remainder of the configuration is the same as for Java remote debugging.</p>
 <img alt="Scala remote debugging configuration" src="../../../_images/remotedebugging-012.png" />
 </div>
+<div class="section" id="drop-to-frame-new-since-4-0">
+<h3>Drop to frame <span class="raw-html"><span class="label info">new</span></span> (since 4.0)</h3>
+<p>Select the <tt class="docutils literal"><span class="pre">Drop</span> <span class="pre">to</span> <span class="pre">Frame</span></tt> command to re-enter the selected stack frame in the <tt class="docutils literal"><span class="pre">Debug</span></tt> View.</p>
+<img alt="drop to frame option in menu" src="../../../_images/drop-to-frame1.png" />
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">This command is only available if the current VM supports dropping frames and the stack frames between the
+one below selected stack frame and the top one are not in a native method.</p>
 </div>
-<div class="section" id="status">
-<h2>Status</h2>
+</div>
+</div>
+<div class="section" id="hot-code-replace-new-since-4-1">
+<h2>Hot code replace <span class="raw-html"><span class="label info">new</span></span> (since 4.1)</h2>
+<p>Hot code replace adds the possibility to modify and re-compile code in a debug mode and to have these changes visible
+and taken into account by the debugged VM without restarting the application.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">HCR is limited by JVM&#8217;s support for replacing classes. Its goal is to allow to experiment with the code
+inside methods/blocks rather than to develop the whole application in the interactive mode. Changes of methods&#8217;
+signatures etc. do not work - similarly to other HCR implementations in Eclipse or other IDEs.</p>
+</div>
+<div class="section" id="configuration">
+<h3>Configuration</h3>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p>This feature is turned off by default and can be turned on in preferences.
+The reason is that it&#8217;s the initial implementation. It may be very helpful, but there are also known issues:</p>
 <ul class="simple">
-<li>Smart stepping over/in/out anonymous functions (for comprehension, collection methods, ...).</li>
-<li>Resume/terminate launch action.</li>
-<li>The structure of the Scala implementation of the Eclipse debug model.</li>
-<li>Improved label and value display.</li>
-<li>No good icons for the model elements.</li>
-<li>No caching of any data.</li>
-<li>No drop to frame.</li>
-<li>Need to define and spec the exact behavior of the smart step in/over/out.</li>
+<li>JVM doesn&#8217;t like obsolete frames. Therefore, there are situations when it may crash after HCR.</li>
+<li>Automatic dropping frames may not work when running two or more HCRs one after another without going further with the
+execution (resume and hit another breakpoint, step into etc.).</li>
 </ul>
-<div class="section" id="known-issues">
-<h3>known issues</h3>
+<p class="last">These problems should disappear in the future after adding to HCR the missing feature which we are aware of.</p>
 </div>
-<div class="section" id="todo">
-<h3>TODO</h3>
-<p><em>may not be exhaustive or up-to-date, not really ordered</em></p>
-<p>updated 2012-05-03</p>
+<p>Multiple parameters of HCR can be configured in menu:</p>
+<a class="reference internal image-reference" href="../../../_images/hot-code-replace1.png"><img alt="hot code replace configuration menu" src="../../../_images/hot-code-replace1.png" style="width: 100%;" /></a>
+<p>Those allows to:</p>
+<ul class="simple">
+<li>enable or disable HCR,</li>
+<li>configure whether error messages from HCR should be shown,</li>
+<li>change whether files containing compilation errors should be skipped,</li>
+<li>automatically drop (or not) obsolete frames on suspended threads,</li>
+<li>and ignore obsolete state of frames when performing drop to frame (in other words, allow to drop obsolete frames manually).
+This one may be needed only if you disable automatic drop to frame after HCR.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="expression-evaluator-new-since-4-1">
+<h2>Expression evaluator <span class="raw-html"><span class="label info">new</span></span> (since 4.1)</h2>
+<p>Scala debugger since 4.1 features new expression evaluator, which translates user code into invocations of <tt class="docutils literal"><span class="pre">JDI</span></tt> remote
+calls. This allows evaluation of expression in context of breakpoint, with access to local variables and methods.</p>
+<p>For more detailed documentation, with examples and limitations see <a class="reference internal" href="expression-evaluator.html#expression-evaluator-user-docs"><em>Expression evaluator user documentation</em></a>.</p>
+</div>
+<div class="section" id="further-improvements-and-unsupported-features">
+<h2>Further improvements and unsupported features</h2>
+<p><em>may not be exhaustive, not really ordered, updated 2015-04-27</em></p>
 <ul class="simple">
 <li>Take care of breakpoints in Scala Debugger, currently still done by JDT debugger</li>
 <li>Use own jdi event dispatcher, instead of using the JDT debugger one</li>
@@ -219,22 +248,13 @@
 <li>configurable list in preferences</li>
 </ul>
 </li>
-<li>filter elements in the variable view<ul>
-<li>static fields</li>
-<li>synthetics</li>
-</ul>
-</li>
-<li>logical structures<ul>
-<li>map support</li>
-<li>extension point for additional support</li>
-</ul>
-</li>
+<li>filter synthetic elements in the variable view</li>
+<li>extension point for additional support of logical structures</li>
 <li>use IIndexedValue for arrays</li>
 <li>better smart step into support<ul>
 <li>collection of primitive type elements</li>
 </ul>
 </li>
-<li>drop to frame support</li>
 <li>step over and step out relative to the currently selected stackframe</li>
 <li>cache data used for smart stepping<ul>
 <li>result of findAnonFunction</li>
@@ -248,13 +268,12 @@
 <li>watchpoint support</li>
 </ul>
 </li>
+<li>display the value returned by the last executed method (a proof of concept is working. Need to define the exact behavior and devise a way to present the value)</li>
 </ul>
-</div>
 </div>
 <div class="section" id="development-setup">
 <h2>Development setup</h2>
-<p>The feature has been merged in <a class="reference external" href="https://github.com/scala-ide/scala-ide/tree/master">master</a>, on Scala IDE&#8217;s github.</p>
-<p>The Scala debugger adds 2 new plugins: org.scala-ide.sdt.debug and org.scala-ide.sdt.debug.tests.</p>
+<p>The Scala debugger adds 4 new plugins, 2 for debugger: <tt class="docutils literal"><span class="pre">org.scala-ide.sdt.debug</span></tt>, <tt class="docutils literal"><span class="pre">org.scala-ide.sdt.debug.tests</span></tt> and 2 for expression evaluator: <tt class="docutils literal"><span class="pre">org.scala-ide.sdt.debug.expression</span></tt>, <tt class="docutils literal"><span class="pre">org.scala-ide.sdt.debug.expression.tests</span></tt></p>
 <div class="section" id="in-eclipse">
 <h3>In Eclipse</h3>
 <p>The Scala debugger makes use of the <a class="reference external" href="http://docs.oracle.com/javase/6/docs/jdk/api/jpda/jdi/index.html">JDI</a> to communicate with the VM. For some valid reasons, the jdt.debug plug-in provides a non-generic version of it. The Scala debugger uses the newer generic version, so some tweaking is needed inside Eclipse.</p>

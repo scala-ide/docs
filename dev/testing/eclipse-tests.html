@@ -203,7 +203,7 @@ and pass them to the hyperlink detector:</p>
 functionality: each word that is highlighted may appear a different number of times in the source.
 One can associate a number with a marker by using <a class="reference external" href="https://github.com/scala-ide/scala-ide/blob/master/org.scala-ide.sdt.core.tests/src/scala/tools/eclipse/testsetup/SDTTestUtils.scala">SDTTestUtils.markersOf</a>.</p>
 <p>Consider this example:</p>
-<div class="highlight-scala"><pre>class DummyOccurrences(param: Int, func/*&lt;2*/: (Int/*&lt;5*/, Int) =&gt; Int) {
+<div class="highlight-scala"><div class="highlight"><pre>class DummyOccurrences(param: Int, func/*&lt;2*/: (Int/*&lt;5*/, Int) =&gt; Int) {
   type T/*&lt;2*/ = Int
 
   def sum(xs: List[T]) = {
@@ -212,7 +212,8 @@ One can associate a number with a marker by using <a class="reference external" 
       (param /: xs)(func)
     }
   }
-}</pre>
+}
+</pre></div>
 </div>
 <p>In this test file, we expect that <cite>func</cite> will be highlighted 2 times, <cite>Int</cite> 5 times, and so on. The
 test method will use the parsed integer to assert the correct number of matches is reported by the

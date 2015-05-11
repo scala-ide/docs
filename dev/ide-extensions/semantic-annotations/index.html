@@ -113,7 +113,7 @@ that allows easy plugin creation.</p>
 <h2>Example</h2>
 <p>For example to highlight all method usages on Scala mutable collections one has to create
 a plugin containing a single classes inside that defines your traversers and highlighter:</p>
-<div class="highlight-python"><pre>package annotations.demo
+<div class="highlight-python"><div class="highlight"><pre>package annotations.demo
 
 import org.eclipse.jface.text.source.ISourceViewer
 import org.scalaide.core.extensions.SemanticHighlightingParticipant
@@ -128,13 +128,13 @@ import org.scalaide.ui.internal.editor.decorators.custom.TraverserDef.TypeDefini
 object MutableCollectionCallHighlightingParticipant {
 
   /** Id of annotation, used in plugin.xml */
-  lazy val annotationId = "annotations.demo.mutable"
+  lazy val annotationId = &quot;annotations.demo.mutable&quot;
 
   /** Traverser that looks for all method calls on children of collection.mutable.Traversable */
   lazy val traversers = Seq(
     AllMethodsTraverserDef(
-      message = name =&gt; s"Method call on a mutable collection: '$name'",
-      typeDefinition = TypeDefinition("scala" :: "collection" :: "mutable" :: Nil, "Traversable")))
+      message = name =&gt; s&quot;Method call on a mutable collection: &#39;$name&#39;&quot;,
+      typeDefinition = TypeDefinition(&quot;scala&quot; :: &quot;collection&quot; :: &quot;mutable&quot; :: Nil, &quot;Traversable&quot;)))
 
   /** Highlighting actions */
   def action(viewer: ISourceViewer): SemanticAction =
@@ -144,51 +144,53 @@ object MutableCollectionCallHighlightingParticipant {
 /**
  * Custom highlighter for mutable collection methods.
  *
- * It's plugged to Scala IDE extension (see plugin.xml).
+ * It&#39;s plugged to Scala IDE extension (see plugin.xml).
  */
 class MutableCollectionCallHighlightingParticipant
-  extends SemanticHighlightingParticipant(MutableCollectionCallHighlightingParticipant.action)</pre>
+  extends SemanticHighlightingParticipant(MutableCollectionCallHighlightingParticipant.action)
+</pre></div>
 </div>
 <p>And plug them into Scala IDE</p>
 <p>in <tt class="docutils literal"><span class="pre">plugin.xml</span></tt>:</p>
-<div class="highlight-python"><pre>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
-&lt;?eclipse version="3.4"?&gt;
+<div class="highlight-python"><div class="highlight"><pre>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;?eclipse version=&quot;3.4&quot;?&gt;
 &lt;plugin&gt;
-    &lt;extension point="org.eclipse.ui.editors.annotationTypes"&gt;
-        &lt;type name="annotations.demo.mutable" /&gt;
+    &lt;extension point=&quot;org.eclipse.ui.editors.annotationTypes&quot;&gt;
+        &lt;type name=&quot;annotations.demo.mutable&quot; /&gt;
     &lt;/extension&gt;
 
-    &lt;extension point="org.eclipse.ui.editors.markerAnnotationSpecification"&gt;
+    &lt;extension point=&quot;org.eclipse.ui.editors.markerAnnotationSpecification&quot;&gt;
         &lt;specification
-            annotationType="annotations.demo.mutable"
-            colorPreferenceKey="scala.tools.eclipse.ui.preferences.mutable.color"
-            colorPreferenceValue="224,25,25"
-            contributesToHeader="false"
-            includeOnPreferencePage="true"
-            icon="icons/mutable.gif"
-            label="Mutable collection calls"
-            overviewRulerPreferenceKey="scala.tools.eclipse.ui.preferences.mutable.rulers.overview"
-            overviewRulerPreferenceValue="false"
-            presentationLayer="5"
-            symbolicIcon="info"
-            textPreferenceKey="scala.tools.eclipse.ui.preferences.mutable.text"
-            textPreferenceValue="true"
-            textStylePreferenceKey="scala.tools.eclipse.ui.preferences.mutable.textStylePreference"
-            textStylePreferenceValue="SQUIGGLES"
-            verticalRulerPreferenceKey="scala.tools.eclipse.ui.preferences.mutable.rulers.vertical"
-            verticalRulerPreferenceValue="true"&gt;
+            annotationType=&quot;annotations.demo.mutable&quot;
+            colorPreferenceKey=&quot;scala.tools.eclipse.ui.preferences.mutable.color&quot;
+            colorPreferenceValue=&quot;224,25,25&quot;
+            contributesToHeader=&quot;false&quot;
+            includeOnPreferencePage=&quot;true&quot;
+            icon=&quot;icons/mutable.gif&quot;
+            label=&quot;Mutable collection calls&quot;
+            overviewRulerPreferenceKey=&quot;scala.tools.eclipse.ui.preferences.mutable.rulers.overview&quot;
+            overviewRulerPreferenceValue=&quot;false&quot;
+            presentationLayer=&quot;5&quot;
+            symbolicIcon=&quot;info&quot;
+            textPreferenceKey=&quot;scala.tools.eclipse.ui.preferences.mutable.text&quot;
+            textPreferenceValue=&quot;true&quot;
+            textStylePreferenceKey=&quot;scala.tools.eclipse.ui.preferences.mutable.textStylePreference&quot;
+            textStylePreferenceValue=&quot;SQUIGGLES&quot;
+            verticalRulerPreferenceKey=&quot;scala.tools.eclipse.ui.preferences.mutable.rulers.vertical&quot;
+            verticalRulerPreferenceValue=&quot;true&quot;&gt;
         &lt;/specification&gt;
     &lt;/extension&gt;
 
-    &lt;extension point="org.scala-ide.sdt.core.semanticHighlightingParticipants"&gt;
+    &lt;extension point=&quot;org.scala-ide.sdt.core.semanticHighlightingParticipants&quot;&gt;
         &lt;participant
-            class="annotations.demo.MutableCollectionCallHighlightingParticipant"&gt;
+            class=&quot;annotations.demo.MutableCollectionCallHighlightingParticipant&quot;&gt;
         &lt;/participant&gt;
     &lt;/extension&gt;
-&lt;/plugin&gt;</pre>
+&lt;/plugin&gt;
+</pre></div>
 </div>
 <p>in <tt class="docutils literal"><span class="pre">MANIFEST.MF</span></tt>:</p>
-<div class="highlight-python"><pre>Manifest-Version: 1.0
+<div class="highlight-python"><div class="highlight"><pre>Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: AnnotationsDemo
 Bundle-SymbolicName: annotations.demo;singleton:=true
@@ -213,7 +215,8 @@ Require-Bundle: org.eclipse.core.resources,
 Import-Package:
  scala.tools.eclipse.contribution.weaving.jdt;apply-aspects:=false
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
-Bundle-ActivationPolicy: lazy</pre>
+Bundle-ActivationPolicy: lazy
+</pre></div>
 </div>
 <p>For full example project see <a class="reference external" href="https://github.com/VirtusLab/scala-ide-annotations-demo">Demo project</a>.</p>
 </div>

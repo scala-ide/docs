@@ -1,3 +1,5 @@
+.. include:: /global_defs.hrst
+
 Scala Debugger
 ==============
 
@@ -15,9 +17,7 @@ The main goals are:
 Where to get it?
 ----------------
 
-The Scala debugger has been merged into trunk, so the latest version is available in the `nightly builds`__
-
-__ /download/nightly.html
+The Scala debugger is a part of Scala IDE and is released as a whole.
 
 Using the Scala debugger
 ------------------------
@@ -52,6 +52,8 @@ In the variables view, the detail pane show the ``toString`` value, or its equiv
 
 .. image:: images/detailpane-01.png
    :alt: toString in detail pane
+
+.. _logical-structures-support:
 
 Logical structures support
 ..........................
@@ -100,14 +102,13 @@ The same way, the 'step into' action allows you to step right into the closure, 
 Step filters
 ............
 
-Often when stepping in and out of Scala methods you don't want to stop in all the artifacts produced by the Scala compiler. A few of the uninteresting methods are:
+Often when stepping in and out of Scala methods you don't want to stop in all the artifacts produced by the Scala compiler. Those includes:
 
-* Scala getters and setters for ``val/var`` members
-* forwarders for concrete trait methods
-* getters for default argument (ending in ``$default$1,2,..``)
-* bridge methods
 * synthetic methods
-* box/unbox operations
+* Scala getters for ``val`` members
+* Scala getters and setters for ``var`` members
+* getters for default argument (ending in ``$default$1,2,..``)
+* forwarders for concrete trait methods
 
 You can enable/disable step filters on the debugger configuration page:
 
@@ -127,15 +128,6 @@ Clean stack frame list
 
 Smart stepping 'hides' the internal details of collections and closure. This information is also hidden in the debug view, only the relevant stack frames are displayed.
 
-*Not in the preview version*
-
-Display the value returned by the last executed method
-......................................................
-
-To know the return value of a method without having to add an extra local variable.
-
-*A proof of concept is working. Need to define the exact behavior and devise a way to present the value*
-
 Remote Debugging
 ................
 
@@ -144,28 +136,67 @@ Using the Scala debugger for a remote debugging session is done by selecting one
 .. image:: images/remotedebugging-01.png
    :alt: Scala remote debugging configuration
 
-Status
-------
+Drop to frame |new| (since 4.0)
+...............................
 
-* Smart stepping over/in/out anonymous functions (for comprehension, collection methods, ...).
-* Resume/terminate launch action.
-* The structure of the Scala implementation of the Eclipse debug model.
-* Improved label and value display.
-* No good icons for the model elements.
-* No caching of any data.
-* No drop to frame.
-* Need to define and spec the exact behavior of the smart step in/over/out.
+Select the ``Drop to Frame`` command to re-enter the selected stack frame in the ``Debug`` View.
 
-known issues
-............
+.. image:: images/drop-to-frame.png
+   :alt: drop to frame option in menu
 
+.. note:: This command is only available if the current VM supports dropping frames and the stack frames between the
+ one below selected stack frame and the top one are not in a native method.
 
-TODO
-....
+Hot code replace |new| (since 4.1)
+----------------------------------
 
-*may not be exhaustive or up-to-date, not really ordered*
+Hot code replace adds the possibility to modify and re-compile code in a debug mode and to have these changes visible
+and taken into account by the debugged VM without restarting the application.
 
-updated 2012-05-03
+.. note:: HCR is limited by JVM's support for replacing classes. Its goal is to allow to experiment with the code
+ inside methods/blocks rather than to develop the whole application in the interactive mode. Changes of methods'
+ signatures etc. do not work - similarly to other HCR implementations in Eclipse or other IDEs.
+
+Configuration
+.............
+
+.. warning::
+ This feature is turned off by default and can be turned on in preferences.
+ The reason is that it's the initial implementation. It may be very helpful, but there are also known issues:
+
+ * JVM doesn't like obsolete frames. Therefore, there are situations when it may crash after HCR.
+ * Automatic dropping frames may not work when running two or more HCRs one after another without going further with the
+   execution (resume and hit another breakpoint, step into etc.).
+
+ These problems should disappear in the future after adding to HCR the missing feature which we are aware of.
+
+Multiple parameters of HCR can be configured in menu:
+
+.. image:: images/hot-code-replace.png
+   :alt: hot code replace configuration menu
+   :width: 100%
+
+Those allows to:
+
+* enable or disable HCR,
+* configure whether error messages from HCR should be shown,
+* change whether files containing compilation errors should be skipped,
+* automatically drop (or not) obsolete frames on suspended threads,
+* and ignore obsolete state of frames when performing drop to frame (in other words, allow to drop obsolete frames manually).
+  This one may be needed only if you disable automatic drop to frame after HCR.
+
+Expression evaluator |new| (since 4.1)
+--------------------------------------
+
+Scala debugger since 4.1 features new expression evaluator, which translates user code into invocations of ``JDI`` remote
+calls. This allows evaluation of expression in context of breakpoint, with access to local variables and methods.
+
+For more detailed documentation, with examples and limitations see :ref:`expression-evaluator-user-docs`.
+
+Further improvements and unsupported features
+---------------------------------------------
+
+*may not be exhaustive, not really ordered, updated 2015-04-27*
 
 * Take care of breakpoints in Scala Debugger, currently still done by JDT debugger
 * Use own jdi event dispatcher, instead of using the JDT debugger one
@@ -181,22 +212,13 @@ updated 2012-05-03
   * to hide some Scala internals, like collections
   * configurable list in preferences
 
-* filter elements in the variable view
-
-  * static fields
-  * synthetics
-
-* logical structures
-
-  * map support
-  * extension point for additional support
-
+* filter synthetic elements in the variable view
+* extension point for additional support of logical structures
 * use IIndexedValue for arrays
 * better smart step into support
 
   * collection of primitive type elements
 
-* drop to frame support
 * step over and step out relative to the currently selected stackframe
 * cache data used for smart stepping
 
@@ -210,14 +232,12 @@ updated 2012-05-03
   * method breakpoint support
   * watchpoint support
 
+* display the value returned by the last executed method (a proof of concept is working. Need to define the exact behavior and devise a way to present the value)
+
 Development setup
 -----------------
 
-The feature has been merged in `master`__, on Scala IDE's github.
-
-__ https://github.com/scala-ide/scala-ide/tree/master
-
-The Scala debugger adds 2 new plugins: org.scala-ide.sdt.debug and org.scala-ide.sdt.debug.tests.
+The Scala debugger adds 4 new plugins, 2 for debugger: ``org.scala-ide.sdt.debug``, ``org.scala-ide.sdt.debug.tests`` and 2 for expression evaluator: ``org.scala-ide.sdt.debug.expression``, ``org.scala-ide.sdt.debug.expression.tests``
 
 In Eclipse
 ..........

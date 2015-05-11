@@ -1,7 +1,5 @@
-.. include:: /global_defs.hrst
-
-Semantic Highlighting |new|
-===========================
+Semantic Highlighting
+=====================
 
 Haven't you always wanted to have more colors in your source code? Meet
 *semantic* highlighting! 
@@ -18,6 +16,8 @@ the use-site and definition site, so all occurrences of a symbol will be
 colored the same way.
 
 .. image:: images/example.png
+
+Semantic highlighting works for both, the Scala source files and the source attachments of compiled Scala files.
 
 Configuration
 -------------

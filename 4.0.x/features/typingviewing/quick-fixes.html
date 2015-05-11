@@ -114,16 +114,17 @@
 <p>For the following code snippet there exists a quick fix for the method call of <tt class="docutils literal"><span class="pre">g</span></tt>:</p>
 <img alt="../../../_images/create-method.png" src="../../../_images/create-method.png" />
 <p>The result of applying this quick fix is the following:</p>
-<div class="highlight-python"><pre>object Test extends App {
+<div class="highlight-python"><div class="highlight"><pre>object Test extends App {
 
   def f() {
-    val value = g("a string")
+    val value = g(&quot;a string&quot;)
   }
 
   def g(arg: String) = {
     ???
   }
-}</pre>
+}
+</pre></div>
 </div>
 <p>As one can see in the screenshot above it is also possible to create classes, not only methods.</p>
 </div>

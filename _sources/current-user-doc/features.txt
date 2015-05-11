@@ -20,6 +20,7 @@ The following pages provide a description of a list of selected features provide
    features/navigating/index
    features/wizards/index
    features/test-finder/index
+   features/scalacompiler/index
    features/scaladebugger/index
    features/scalainterpreter/index
    features/logging/index

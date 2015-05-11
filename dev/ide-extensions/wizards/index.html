@@ -108,45 +108,47 @@
 <p>You can now export a bundle and install it to your Eclipse installation. If you made everything correctly, the new wizard should show your template in the kind field.</p>
 <p>In the following we show you an example bundle manifest and plugin configuration:</p>
 <p><tt class="docutils literal"><span class="pre">plugin.xml</span></tt>:</p>
-<div class="highlight-python"><pre>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
-&lt;?eclipse version="3.4"?&gt;
+<div class="highlight-python"><div class="highlight"><pre>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;?eclipse version=&quot;3.4&quot;?&gt;
 &lt;plugin&gt;
    &lt;extension
-         point="org.scala-ide.sdt.core.fileCreator"&gt;
+         point=&quot;org.scala-ide.sdt.core.fileCreator&quot;&gt;
       &lt;fileCreator
-            class="org.scalaide.wizardextension.TestFileCreator"
-            description="test dcription"
-            id="org.scalaide.wizardextension.id"
-            name="test name"
-            templateId="org.scalaide.wizardextension.template"&gt;
+            class=&quot;org.scalaide.wizardextension.TestFileCreator&quot;
+            description=&quot;test dcription&quot;
+            id=&quot;org.scalaide.wizardextension.id&quot;
+            name=&quot;test name&quot;
+            templateId=&quot;org.scalaide.wizardextension.template&quot;&gt;
       &lt;/fileCreator&gt;
    &lt;/extension&gt;
    &lt;extension
-         point="org.eclipse.ui.editors.templates"&gt;
+         point=&quot;org.eclipse.ui.editors.templates&quot;&gt;
       &lt;template
-            autoinsert="true"
-            contextTypeId="org.scala-ide.sdt.core.templates"
-            id="org.scalaide.wizardextension.template"
-            name="wizard_test"&gt;
+            autoinsert=&quot;true&quot;
+            contextTypeId=&quot;org.scala-ide.sdt.core.templates&quot;
+            id=&quot;org.scalaide.wizardextension.template&quot;
+            name=&quot;wizard_test&quot;&gt;
          &lt;pattern&gt;
             My test content
          &lt;/pattern&gt;
       &lt;/template&gt;
    &lt;/extension&gt;
-&lt;/plugin&gt;</pre>
+&lt;/plugin&gt;
+</pre></div>
 </div>
 <p><tt class="docutils literal"><span class="pre">MANIFEST.MF</span></tt>:</p>
-<div class="highlight-python"><pre>Manifest-Version: 1.0
+<div class="highlight-python"><div class="highlight"><pre>Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Wizardextension
 Bundle-SymbolicName: org.scalaide.wizardextension;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
-Require-Bundle: org.scala-ide.sdt.core;bundle-version="4.0.0",
+Require-Bundle: org.scala-ide.sdt.core;bundle-version=&quot;4.0.0&quot;,
  org.scala-lang.scala-library,
- org.eclipse.core.resources;bundle-version="3.8.101",
- org.eclipse.core.runtime;bundle-version="3.9.100",
- org.eclipse.ui.editors;bundle-version="3.8.100"</pre>
+ org.eclipse.core.resources;bundle-version=&quot;3.8.101&quot;,
+ org.eclipse.core.runtime;bundle-version=&quot;3.9.100&quot;,
+ org.eclipse.ui.editors;bundle-version=&quot;3.8.100&quot;
+</pre></div>
 </div>
 </div>
 
