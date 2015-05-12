@@ -7,11 +7,11 @@ General
 What Eclipse Platforms are supported?
 .....................................
 
-The Scala IDE 3.0 officially supports both `Eclipse 3.7 (Indigo)`__ and has experimental support for `Eclipse 3.8/4.2 (Juno)`__ and `Eclipse 4.3 (Kepler)`__.
+The Scala IDE 4.1 officially supports `Eclipse 4.3 (Kepler)`__ and `Eclipse 4.4 (Luna)`__. Support for `Eclipse 4.5 (Mars)`__ is in the works.
 
-__ http://www.eclipse.org/downloads/packages/release/indigo/sr2
-__ http://www.eclipse.org/juno/
 __ http://www.eclipse.org/kepler/
+__ http://www.eclipse.org/luna/
+__ http://projects.eclipse.org/releases/mars/
 
 I have a Retina Display and Eclipse looks blurry. How can I fix it?
 ...................................................................
