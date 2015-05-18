@@ -31,6 +31,12 @@ triggered with ``CTRL+Space`` (enabled in properties).
 
 .. note:: Evaluator view works only when using Scala debugger and on ``SUSPENDED`` threads.
 
+It is also possible to immediately evaluate a selected text from the editor. One can do that using ``CTRL+SHIFT+K``
+shortcut or the dedicated button. If there's no selected text, a whole line containing a cursor will be sent to the evaluator.
+
+.. image:: images/expression-evaluator/run-selection-in-ee.png
+   :alt: Run Selection in Scala Expression Evaluator
+
 Configuring expression view
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -87,7 +93,7 @@ More settings can be configured in preferences view (``Window â†’ Preferences â†
 Choosing frame on which to evaluate expression
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Expressions can be evaluated on any (non-native) frame in current thread. Frames can be change by simply clicking on
+Expressions can be evaluated on any (non-native) frame in current thread. Frames can be changed by simply clicking on
 them in ``Debug`` view:
 
 .. image:: images/expression-evaluator/choosing-frames.png

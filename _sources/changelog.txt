@@ -4,6 +4,15 @@ Changelog
 4.1
 ---
 
+RC2 (2015-05-18)
+................
+
+- Compilation error regression in 4.1-RC1 (:ticket:`1002461` :ticket:`1002456`)
+- Another key binding change (:ticket:`1002459`)
+- Move key binding for expression evaluator to different key (:ticket:`1002459`)
+- Proper closing of scaladoc comments even with quotes (:ticket:`1001650`)
+- Fix migration preference initializer (:ticket:`1002441`)
+
 RC1 (2015-05-11)
 ................
 

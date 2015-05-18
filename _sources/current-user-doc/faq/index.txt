@@ -7,11 +7,11 @@ General
 What Eclipse Platforms are supported?
 .....................................
 
-The Scala IDE 3.0 officially supports both `Eclipse 3.7 (Indigo)`__ and has experimental support for `Eclipse 3.8/4.2 (Juno)`__ and `Eclipse 4.3 (Kepler)`__.
+The Scala IDE 4.1 officially supports `Eclipse 4.3 (Kepler)`__ and `Eclipse 4.4 (Luna)`__. Support for `Eclipse 4.5 (Mars)`__ is in the works.
 
-__ http://www.eclipse.org/downloads/packages/release/indigo/sr2
-__ http://www.eclipse.org/juno/
 __ http://www.eclipse.org/kepler/
+__ http://www.eclipse.org/luna/
+__ http://projects.eclipse.org/releases/mars/
 
 I have a Retina Display and Eclipse looks blurry. How can I fix it?
 ...................................................................
@@ -42,31 +42,31 @@ The Scala IDE can be installed effortless on any of the below Eclipse packages:
 * Eclipse IDE for Java Developers
 * SpringSource Tool Suite
 
-If you are using one of the above Eclipse packages you are all set and ready to :doc:`install the Scala
-IDE </current-user-doc/gettingstarted/index>`.
+If you are using one of the above Eclipse packages you are all set and ready to :doc:`install the Scala 
+IDE <../gettingstarted/index>`.
 
-In case you are using a different Eclipse package (e.g., Eclipse IDE for C/C++ Developers), don't panic,
-the Scala IDE has only one dependency and it's a two minutes job to update your Eclipse environment and
-be ready to start your Scala journey.
+In case you are using a different Eclipse package (e.g., Eclipse IDE for C/C++ Developers), don't panic, 
+the Scala IDE has only one dependency and it's a two minutes job to update your Eclipse environment and 
+be ready to start your Scala journey. 
 
-Start by installing the Eclipse JDT (Eclipse Java Development Tools). To do so, open Eclipse and go
-to the ``Help > Install New Software`` menu, select the eclipse update site (e.g. "Indigo -
-http://download.eclipse.org/releases/indigo") and, under the Programming Languages section, select
+Start by installing the Eclipse JDT (Eclipse Java Development Tools). To do so, open Eclipse and go 
+to the ``Help > Install New Software`` menu, select the eclipse update site (e.g. "Indigo - 
+http://download.eclipse.org/releases/indigo") and, under the Programming Languages section, select 
 Eclipse Java Development Tools. Install it.
 
-Now that the JDT is installed, go ahead and :doc:`install the Scala IDE </current-user-doc/gettingstarted/index>`.
+Now that the JDT is installed, go ahead and :doc:`install the Scala IDE <../gettingstarted/index>`.
 
 Can I install more than one Scala IDE plugin?
 .............................................
 
-Currently, it is not possible to install more than one Scala IDE plugin within the same
-Eclipse installation. You need to decide what version of Scala you want to be using and
+Currently, it is not possible to install more than one Scala IDE plugin within the same 
+Eclipse installation. You need to decide what version of Scala you want to be using and 
 then choose the appropriate update site.
 
 I have an existing Java project and I wish to add Scala files. How do I convince Eclipse to work with Scala?
 ............................................................................................................
 
-Right click on the project in the Package Explorer view, and in the context menu select
+Right click on the project in the Package Explorer view, and in the context menu select 
 ``Configure → Add Scala Nature``.
 
 I am running out of stack space in Eclipse.  How do I increase the stack size?
@@ -137,4 +137,4 @@ What are the limitations?
 * The colon commands available in the terminal REPL are not supported.
 * Commands cannot be forcibly killed. For example, if an infinite loop is launched, it will continue in the background until Eclipse is shutdown.
 
-.. include:: /current-user-doc/faq/known-issues.rst
+.. include:: known-issues.rst
