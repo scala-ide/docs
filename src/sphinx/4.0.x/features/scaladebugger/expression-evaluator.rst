@@ -56,12 +56,12 @@ Console and tree on bottom
    :width: 100%
    :alt: Console and tree on bottom
 
-Console and tree on right (defualt)
+Console and tree on right (default)
 ...................................
 
 .. image:: images/expression-evaluator/console-and-tree-on-right.png
    :width: 100%
-   :alt: Console and tree on right (defualt)
+   :alt: Console and tree on right (default)
 
 Input and tree on bottom
 ........................
