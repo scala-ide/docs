@@ -7,10 +7,10 @@ General
 What Eclipse Platforms are supported?
 .....................................
 
-The Scala IDE 4.1 officially supports `Eclipse 4.4 (Luna)`__. Support for `Eclipse 4.5 (Mars)`__ is in the works.
+The Scala IDE 4.1 officially supports `Eclipse 4.4 (Luna)`__ and `Eclipse 4.5 (Mars)`__.
 
 __ http://www.eclipse.org/luna/
-__ http://projects.eclipse.org/releases/mars/
+__ https://www.eclipse.org/mars/
 
 I have a Retina Display and Eclipse looks blurry. How can I fix it?
 ...................................................................
@@ -58,9 +58,8 @@ Now that the JDT is installed, go ahead and :doc:`install the Scala IDE <../gett
 Can I install more than one Scala IDE plugin?
 .............................................
 
-Currently, it is not possible to install more than one Scala IDE plugin within the same
-Eclipse installation. You need to decide what version of Scala you want to be using and
-then choose the appropriate update site.
+No, it is not possible to install more than one Scala IDE plugin within the same
+Eclipse installation. Luckily, there shouldn't be a need for that. The newest Scala IDE supports Scala 2.10+ all at once.
 
 I have an existing Java project and I wish to add Scala files. How do I convince Eclipse to work with Scala?
 ............................................................................................................
