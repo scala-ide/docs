@@ -44,7 +44,7 @@
     <link rel="next" title="Developing for Android" href="../androiddevelopment/index.html" />
     <link rel="prev" title="Enabling Scala continuations plugin in the Scala IDE" href="../continuations-plugin/index.html" /> 
   </head>
-  <body>
+  <body role="document">
 <div class="top-bar">
   <div class="top-bar-inner">
     <div class="container">
@@ -138,7 +138,7 @@ whole Scala community will benefit!</p>
 </pre></div>
 </div>
 <ul class="simple">
-<li>Import the project in Eclipse (<tt class="docutils literal"><span class="pre">File</span> <span class="pre">→</span> <span class="pre">Import</span> <span class="pre">Existing</span> <span class="pre">Projects</span> <span class="pre">into</span> <span class="pre">Workspace</span></tt>) Navigate to src/eclipse. Check all projects and click ok.</li>
+<li>Import the project in Eclipse (<code class="docutils literal"><span class="pre">File</span> <span class="pre">→</span> <span class="pre">Import</span> <span class="pre">Existing</span> <span class="pre">Projects</span> <span class="pre">into</span> <span class="pre">Workspace</span></code>) Navigate to src/eclipse. Check all projects and click ok.</li>
 </ul>
 <p>You should see at least the following projects in your workspace:</p>
 <ul class="simple">
@@ -148,28 +148,28 @@ whole Scala community will benefit!</p>
 <li>scala-library</li>
 <li>scala-compiler</li>
 </ul>
-<p>If you work on a version of the scala compiler older than 2.10.0, you may also find here the old <tt class="docutils literal"><span class="pre">fjbg</span></tt> project (an older bytecode generator backend).</p>
+<p>If you work on a version of the scala compiler older than 2.10.0, you may also find here the old <code class="docutils literal"><span class="pre">fjbg</span></code> project (an older bytecode generator backend).</p>
 <p>Before you go on, you need to follow the steps described in the <a class="reference external" href="https://github.com/scala/scala/blob/2.11.x/src/eclipse/README.md">README.md</a> on the Scala website. Come back once you are done.</p>
 </div>
 <div class="section" id="using-eclipse-for-compiler-development">
 <h2>Using Eclipse for compiler development</h2>
-<p>Now you are ready to start using Eclipse on the Scala compiler itself. Eclipse works by always keeping the binaries up to date, building each time you save a file. Since the compiler is such a large project, and has intricate dependencies, building may take a long time even for small changes. We suggest you switch off <tt class="docutils literal"><span class="pre">Project</span> <span class="pre">→</span> <span class="pre">Build</span> <span class="pre">Automatically</span></tt> and build explicitly (<tt class="docutils literal"><span class="pre">CMD-B</span></tt>).</p>
-<p>The builder inside Eclipse is based on <a class="reference external" href="https://github.com/harrah/xsbt">Sbt</a>, which is correct but conservative. The Scala IDE has a different builder that is much more aggressive in tracking dependencies, but which may sometimes be incorrect. You can enable it on the <tt class="docutils literal"><span class="pre">Build</span> <span class="pre">Manager</span></tt> page on Scala Compiler properties.</p>
+<p>Now you are ready to start using Eclipse on the Scala compiler itself. Eclipse works by always keeping the binaries up to date, building each time you save a file. Since the compiler is such a large project, and has intricate dependencies, building may take a long time even for small changes. We suggest you switch off <code class="docutils literal"><span class="pre">Project</span> <span class="pre">→</span> <span class="pre">Build</span> <span class="pre">Automatically</span></code> and build explicitly (<code class="docutils literal"><span class="pre">CMD-B</span></code>).</p>
+<p>The builder inside Eclipse is based on <a class="reference external" href="https://github.com/harrah/xsbt">Sbt</a>, which is correct but conservative. The Scala IDE has a different builder that is much more aggressive in tracking dependencies, but which may sometimes be incorrect. You can enable it on the <code class="docutils literal"><span class="pre">Build</span> <span class="pre">Manager</span></code> page on Scala Compiler properties.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">Mac OS Users: the default encoding for the JVM (and picked up by Eclipse) is <tt class="docutils literal"><span class="pre">MacRoman</span></tt>. To change the encoding to <tt class="docutils literal"><span class="pre">UTF-8</span></tt> you have to go to <tt class="docutils literal"><span class="pre">Eclipse</span> <span class="pre">Preferences</span> <span class="pre">→</span> <span class="pre">General</span> <span class="pre">→</span> <span class="pre">Workspace</span></tt> and choose the correct <tt class="docutils literal"><span class="pre">Text</span> <span class="pre">File</span> <span class="pre">Encoding</span></tt>.</p>
+<p class="last">Mac OS Users: the default encoding for the JVM (and picked up by Eclipse) is <code class="docutils literal"><span class="pre">MacRoman</span></code>. To change the encoding to <code class="docutils literal"><span class="pre">UTF-8</span></code> you have to go to <code class="docutils literal"><span class="pre">Eclipse</span> <span class="pre">Preferences</span> <span class="pre">→</span> <span class="pre">General</span> <span class="pre">→</span> <span class="pre">Workspace</span></code> and choose the correct <code class="docutils literal"><span class="pre">Text</span> <span class="pre">File</span> <span class="pre">Encoding</span></code>.</p>
 </div>
 </div>
 <div class="section" id="launching-and-debugging-scalac">
 <h2>Launching and Debugging scalac</h2>
-<p>Since the output directories are set to the default <tt class="docutils literal"><span class="pre">ant</span></tt> build directories, all the runner scripts work out of the box. If you built the project, you can run <tt class="docutils literal"><span class="pre">build/quick/bin/scalac</span></tt> on the command line, and it will pick your changes. However, the interesting part is being able to use the Eclipse debugger.</p>
-<p>To launch scalac from Eclipse you need to create a <tt class="docutils literal"><span class="pre">Run</span> <span class="pre">Configuration</span></tt>, from <tt class="docutils literal"><span class="pre">Run</span> <span class="pre">→</span> <span class="pre">Run</span> <span class="pre">Configurations</span></tt>. Choose <tt class="docutils literal"><span class="pre">Scala</span> <span class="pre">Application</span></tt> and set the main class to <tt class="docutils literal"><span class="pre">scala.tools.nsc.Main</span></tt>. On the <tt class="docutils literal"><span class="pre">Arguments</span></tt> page, you need to explicitly set the path to the Scala library (that is what the runner script does for you on the command line):</p>
+<p>Since the output directories are set to the default <code class="docutils literal"><span class="pre">ant</span></code> build directories, all the runner scripts work out of the box. If you built the project, you can run <code class="docutils literal"><span class="pre">build/quick/bin/scalac</span></code> on the command line, and it will pick your changes. However, the interesting part is being able to use the Eclipse debugger.</p>
+<p>To launch scalac from Eclipse you need to create a <code class="docutils literal"><span class="pre">Run</span> <span class="pre">Configuration</span></code>, from <code class="docutils literal"><span class="pre">Run</span> <span class="pre">→</span> <span class="pre">Run</span> <span class="pre">Configurations</span></code>. Choose <code class="docutils literal"><span class="pre">Scala</span> <span class="pre">Application</span></code> and set the main class to <code class="docutils literal"><span class="pre">scala.tools.nsc.Main</span></code>. On the <code class="docutils literal"><span class="pre">Arguments</span></code> page, you need to explicitly set the path to the Scala library (that is what the runner script does for you on the command line):</p>
 <div class="highlight-bash"><div class="highlight"><pre>-bootclasspath <span class="si">${</span><span class="nv">SCALA_BASEDIR</span><span class="si">}</span>/build/quick/classes/library -d /tmp /Users/dragos/sandbox/bugs/ticket3429.scala
 </pre></div>
 </div>
 <p>The run configuration should look like this:</p>
 <img alt="../../_images/scalac-launch.png" src="../../_images/scalac-launch.png" />
-<p>Now you can launch the scala compiler, by choosing either <tt class="docutils literal"><span class="pre">Run</span></tt> or <tt class="docutils literal"><span class="pre">Debug</span></tt> from the menu. You can set breakpoints and step through Scala code just as you&#8217;d expect.</p>
+<p>Now you can launch the scala compiler, by choosing either <code class="docutils literal"><span class="pre">Run</span></code> or <code class="docutils literal"><span class="pre">Debug</span></code> from the menu. You can set breakpoints and step through Scala code just as you&#8217;d expect.</p>
 </div>
 <div class="section" id="cheat-sheet">
 <h2>Cheat sheet</h2>
@@ -181,9 +181,9 @@ whole Scala community will benefit!</p>
 <p>The Scala plugin packages a Scala compiler and library (since you are reading this, it&#8217;s most probably the nightly version of master). There may be times when you&#8217;d like to change it for your own version: say, you are developing a new feature that has not yet been included in Scala master, or you fixed a bug and can&#8217;t wait until the next nightly.</p>
 <div class="admonition warning">
 <p class="first admonition-title">Warning</p>
-<p class="last">This is a risky operation. Given the tight dependency between the IDE and the compiler, you must be sure you are swapping two binary-compatible versions of the compiler. This may not work if the plugin was built against a much older version of <tt class="docutils literal"><span class="pre">scalac</span></tt> than the one you are replacing it with.</p>
+<p class="last">This is a risky operation. Given the tight dependency between the IDE and the compiler, you must be sure you are swapping two binary-compatible versions of the compiler. This may not work if the plugin was built against a much older version of <code class="docutils literal"><span class="pre">scalac</span></code> than the one you are replacing it with.</p>
 </div>
-<p>If you&#8217;re still here, go ahead and use the <a class="reference external" href="https://github.com/scala-ide/scala-ide/blob/master/update-scala.sh">update-scala.sh</a> script. Point it to your locally built scala, for instance <tt class="docutils literal"><span class="pre">build/pack</span></tt>.</p>
+<p>If you&#8217;re still here, go ahead and use the <a class="reference external" href="https://github.com/scala-ide/scala-ide/blob/master/update-scala.sh">update-scala.sh</a> script. Point it to your locally built scala, for instance <code class="docutils literal"><span class="pre">build/pack</span></code>.</p>
 <div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>update-scala.sh --eclipse-dir /Applications/eclipse update build/pack
 </pre></div>
 </div>
@@ -197,7 +197,7 @@ Uninstalling org.scala-ide.sdt.feature.feature.group 2.1.0.nightly-2_10-20120302
 </div>
 <div class="section" id="separating-eclipse-installation-from-workspace">
 <h2>Separating Eclipse installation from workspace</h2>
-<p>In order to have an Eclipse installation more resilient to update/installation issues one can easily separate the main Eclipse installation from the specific configuration. We will make the main Eclipse installation read-only to be absolutely sure that nothing interferes with it. The whole configuration will be placed by Eclipse in <tt class="docutils literal"><span class="pre">${HOME}/eclipse-conf</span></tt></p>
+<p>In order to have an Eclipse installation more resilient to update/installation issues one can easily separate the main Eclipse installation from the specific configuration. We will make the main Eclipse installation read-only to be absolutely sure that nothing interferes with it. The whole configuration will be placed by Eclipse in <code class="docutils literal"><span class="pre">${HOME}/eclipse-conf</span></code></p>
 <div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>mkdir /opt/eclipse-3.7.1
 unzip the contents of the original eclipse installation to this directory
 make the whole directory <span class="nb">read</span>-only
@@ -207,7 +207,7 @@ make the whole directory <span class="nb">read</span>-only
 <span class="nv">$ </span>mkdir <span class="si">${</span><span class="nv">HOME</span><span class="si">}</span>/eclipse-conf/configuration
 </pre></div>
 </div>
-<p>With that setup in place you can start eclipse with the following command (we recommend creating a shell script for it or putting it in <tt class="docutils literal"><span class="pre">.desktop</span></tt> under Linux):</p>
+<p>With that setup in place you can start eclipse with the following command (we recommend creating a shell script for it or putting it in <code class="docutils literal"><span class="pre">.desktop</span></code> under Linux):</p>
 <div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>/opt/eclipse-3.7.1/eclipse
     --launcher.ini <span class="si">${</span><span class="nv">HOME</span><span class="si">}</span>/eclipse-conf/eclipse.ini
     -data <span class="si">${</span><span class="nv">HOME</span><span class="si">}</span>/eclipse-workspace
@@ -215,7 +215,7 @@ make the whole directory <span class="nb">read</span>-only
     -clean
 </pre></div>
 </div>
-<p>That will install all the plugins, features and specific configuration under the <tt class="docutils literal"><span class="pre">${HOME}/eclipse-conf</span></tt> directory, so if you encounter any errors after installation/update of the plugin, you can easilly purge the invalid data by simply cleaning up the directory (Eclipse sometimes caches installation details so it may not be so easy to clean things up in a standard setup).</p>
+<p>That will install all the plugins, features and specific configuration under the <code class="docutils literal"><span class="pre">${HOME}/eclipse-conf</span></code> directory, so if you encounter any errors after installation/update of the plugin, you can easilly purge the invalid data by simply cleaning up the directory (Eclipse sometimes caches installation details so it may not be so easy to clean things up in a standard setup).</p>
 <p>Remember to be consistent when changing the directories names in the above configuration.</p>
 </div>
 <div class="section" id="feedback">

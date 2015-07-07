@@ -44,7 +44,7 @@
     <link rel="next" title="Tutorials" href="../../../tutorials/index.html" />
     <link rel="prev" title="Scala Interpreter" href="../scalainterpreter/index.html" /> 
   </head>
-  <body>
+  <body role="document">
 <div class="top-bar">
   <div class="top-bar-inner">
     <div class="container">
@@ -100,16 +100,16 @@ Thus, we have improved the logging infrastructure so that it can be easily contr
 <p>In this page we discuss how you can manage logging in the Scala IDE.</p>
 <div class="section" id="configuration">
 <h2>Configuration</h2>
-<p>You can access the logging settings in the Eclipse Preferences. Click on the <tt class="docutils literal"><span class="pre">Scala</span></tt> item and select <tt class="docutils literal"><span class="pre">Logging</span></tt>.
+<p>You can access the logging settings in the Eclipse Preferences. Click on the <code class="docutils literal"><span class="pre">Scala</span></code> item and select <code class="docutils literal"><span class="pre">Logging</span></code>.
 You should see the following page:</p>
 <img alt="../../../_images/logging-preferences1.png" src="../../../_images/logging-preferences1.png" />
-<p>By default, the log level is set to <tt class="docutils literal"><span class="pre">WARN</span></tt>. That should be enough for general use, and it should still provide
+<p>By default, the log level is set to <code class="docutils literal"><span class="pre">WARN</span></code>. That should be enough for general use, and it should still provide
 some useful information in the event of an error. Naturally, you are free to change the log level at any time &#8211;
 remember, though, that increasing logging may noticeably decrease performance.</p>
-<p>All logging information is stored in a <tt class="docutils literal"><span class="pre">scala-ide.log</span></tt> file located in the <tt class="docutils literal"><span class="pre">${workspace}/.metadata/.plugins/org.scala-ide.sdt.core/</span></tt>
-directory, where <tt class="docutils literal"><span class="pre">${workspace}</span></tt> is the directory provided when starting up Eclipse &#8211; i.e., your Eclipse workspace.
+<p>All logging information is stored in a <code class="docutils literal"><span class="pre">scala-ide.log</span></code> file located in the <code class="docutils literal"><span class="pre">${workspace}/.metadata/.plugins/org.scala-ide.sdt.core/</span></code>
+directory, where <code class="docutils literal"><span class="pre">${workspace}</span></code> is the directory provided when starting up Eclipse &#8211; i.e., your Eclipse workspace.
 This file can grow up to 10MB, at which point it automatically rolls over. You can easily check the log&#8217;s contents at
-any time by clicking on the link at the bottom of the <tt class="docutils literal"><span class="pre">Logging</span></tt> preferences page.</p>
+any time by clicking on the link at the bottom of the <code class="docutils literal"><span class="pre">Logging</span></code> preferences page.</p>
 <p>By default, standard output and standard error are redirected to the log file. This makes it easy to gather all debugging
 output in one place. However, when debugging or working with other plugins you may want to keep stdout and stderr out
 of the logs, so make sure to uncheck the option.</p>

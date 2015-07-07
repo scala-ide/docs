@@ -44,7 +44,7 @@
     <link rel="next" title="Formatting" href="formatting/index.html" />
     <link rel="prev" title="Code Templates" href="code-templates.html" /> 
   </head>
-  <body>
+  <body role="document">
 <div class="top-bar">
   <div class="top-bar-inner">
     <div class="container">
@@ -96,11 +96,11 @@
         <div class="section" id="auto-edits-updated">
 <h1>Auto Edits <span class="raw-html"><span class="label success">updated</span></span></h1>
 <p>Auto Edits are nice little features that facilitate working with source code a lot. Normally, users don&#8217;t notice them when they are working because they do their work while users type. This stands in contrast to code completion which normally requires user interaction for its activation and even more user interaction to choose one of the completions that should be applied. Auto Edits are so lightweight that users never need to think about them because they always work the way they should.</p>
-<p>All available Auto Edits can be found in <tt class="docutils literal"><span class="pre">Preferences</span> <span class="pre">→</span> <span class="pre">Scala</span> <span class="pre">→</span> <span class="pre">Editor</span></tt>. They can be set or unset on the fly which means that an open editor applies any changes in the preferences immediately.</p>
+<p>All available Auto Edits can be found in <code class="docutils literal"><span class="pre">Preferences</span> <span class="pre">→</span> <span class="pre">Scala</span> <span class="pre">→</span> <span class="pre">Editor</span></code>. They can be set or unset on the fly which means that an open editor applies any changes in the preferences immediately.</p>
 <div class="section" id="surround-selection">
 <h2>Surround selection</h2>
-<p>This group of Auto Edits are applied when some text inside of the editor is selected and one of the keys that insert a <tt class="docutils literal"><span class="pre">[</span></tt>, <tt class="docutils literal"><span class="pre">{</span></tt>, <tt class="docutils literal"><span class="pre">(</span></tt> or a <tt class="docutils literal"><span class="pre">&quot;</span></tt> is pressed. In that case the whole selection is surrounded in the way the user wants it.</p>
-<p><strong>Example:</strong> When the text <tt class="docutils literal"><span class="pre">Hello</span> <span class="pre">World</span></tt> is selected and the <tt class="docutils literal"><span class="pre">{</span></tt> key is pressed, the text <tt class="docutils literal"><span class="pre">{Hello</span> <span class="pre">World}</span></tt> is inserted into the editor.</p>
+<p>This group of Auto Edits are applied when some text inside of the editor is selected and one of the keys that insert a <code class="docutils literal"><span class="pre">[</span></code>, <code class="docutils literal"><span class="pre">{</span></code>, <code class="docutils literal"><span class="pre">(</span></code> or a <code class="docutils literal"><span class="pre">&quot;</span></code> is pressed. In that case the whole selection is surrounded in the way the user wants it.</p>
+<p><strong>Example:</strong> When the text <code class="docutils literal"><span class="pre">Hello</span> <span class="pre">World</span></code> is selected and the <code class="docutils literal"><span class="pre">{</span></code> key is pressed, the text <code class="docutils literal"><span class="pre">{Hello</span> <span class="pre">World}</span></code> is inserted into the editor.</p>
 </div>
 <div class="section" id="auto-closing-braces">
 <h2>Auto closing braces</h2>
@@ -142,7 +142,7 @@
 <div class="section" id="auto-indentations">
 <h2>Auto indentations</h2>
 <p>This is definitely one of the most useful features an editor can have. It is another Auto Edit nobody notices its existence but everybody immediately notices its absence when it does not work the way it should. The possibility to automatically indent the cursor to the right position saves a lot of time while coding. Thus, it is obvious that a lot of effort is spent in this feature to maximize usability of the IDE.</p>
-<p><strong>Example:</strong> If one hits enter at the caret position (<tt class="docutils literal"><span class="pre">^</span></tt>) in this code snippet</p>
+<p><strong>Example:</strong> If one hits enter at the caret position (<code class="docutils literal"><span class="pre">^</span></code>) in this code snippet</p>
 <div class="highlight-python"><div class="highlight"><pre>def f(i: Int) = {^}
 </pre></div>
 </div>
@@ -169,7 +169,7 @@
 </div>
 <div class="section" id="smart-semicolons">
 <h2>Smart semicolons</h2>
-<p>Smart semicolons allow to place an inserted semicolon at the end of a line instead of the position where the cursor is placed. This is useful to jump over closing parenthesis with one keystroke. For example if one enters the semicolon at the caret position (<tt class="docutils literal"><span class="pre">^</span></tt>) in this example</p>
+<p>Smart semicolons allow to place an inserted semicolon at the end of a line instead of the position where the cursor is placed. This is useful to jump over closing parenthesis with one keystroke. For example if one enters the semicolon at the caret position (<code class="docutils literal"><span class="pre">^</span></code>) in this example</p>
 <div class="highlight-python"><div class="highlight"><pre>a(b(c(d(e^))))
 </pre></div>
 </div>
@@ -178,7 +178,7 @@
 </pre></div>
 </div>
 <p>If it is intended to place a semicolon in the middle of a line one can hit backspace to move the semicolon back to its original position.</p>
-<p>This feature is inherited from the Java editor, thus at the moment it can only be configured under <tt class="docutils literal"><span class="pre">Java</span> <span class="pre">→</span> <span class="pre">Editor</span> <span class="pre">→</span> <span class="pre">Typing</span> <span class="pre">→</span> <span class="pre">Automatically</span> <span class="pre">insert</span> <span class="pre">at</span> <span class="pre">correct</span> <span class="pre">position</span></tt>.</p>
+<p>This feature is inherited from the Java editor, thus at the moment it can only be configured under <code class="docutils literal"><span class="pre">Java</span> <span class="pre">→</span> <span class="pre">Editor</span> <span class="pre">→</span> <span class="pre">Typing</span> <span class="pre">→</span> <span class="pre">Automatically</span> <span class="pre">insert</span> <span class="pre">at</span> <span class="pre">correct</span> <span class="pre">position</span></code>.</p>
 </div>
 <div class="section" id="automatic-escapes">
 <h2>Automatic escapes</h2>
@@ -206,7 +206,7 @@
  */
 </pre></div>
 </div>
-<p>If one hits enter at the caret position (<tt class="docutils literal"><span class="pre">^</span></tt>) the comment is expanded to:</p>
+<p>If one hits enter at the caret position (<code class="docutils literal"><span class="pre">^</span></code>) the comment is expanded to:</p>
 <div class="highlight-python"><div class="highlight"><pre>/*
  * a multi line comment
  * ^

@@ -44,7 +44,7 @@
     <link rel="next" title="Regression Test Suite" href="../../testing/testing.html" />
     <link rel="prev" title="Wizards new" href="../wizards/index.html" /> 
   </head>
-  <body>
+  <body role="document">
 <div class="top-bar">
   <div class="top-bar-inner">
     <div class="container">
@@ -99,14 +99,14 @@
 that allows easy plugin creation.</p>
 <div class="section" id="scaffolding">
 <h2>Scaffolding</h2>
-<p>Main classes provided for this are instances of <tt class="docutils literal"><span class="pre">TraverserDef</span></tt> which provides a way to search for certain pieces of code:</p>
+<p>Main classes provided for this are instances of <code class="docutils literal"><span class="pre">TraverserDef</span></code> which provides a way to search for certain pieces of code:</p>
 <ul class="simple">
-<li><tt class="docutils literal"><span class="pre">AllMethodsTraverserDef</span></tt> - searches for all method calls on given type (and it&#8217;s subtypes)</li>
-<li><tt class="docutils literal"><span class="pre">MethodTraverserDef</span></tt> - searches for all method calls of given method</li>
-<li><tt class="docutils literal"><span class="pre">AnnotationTrverserDef</span></tt> - searches for all usages of methods annotated with given annotation</li>
+<li><code class="docutils literal"><span class="pre">AllMethodsTraverserDef</span></code> - searches for all method calls on given type (and it&#8217;s subtypes)</li>
+<li><code class="docutils literal"><span class="pre">MethodTraverserDef</span></code> - searches for all method calls of given method</li>
+<li><code class="docutils literal"><span class="pre">AnnotationTrverserDef</span></code> - searches for all usages of methods annotated with given annotation</li>
 </ul>
-<p>(all above by &#8216;method&#8217; understands <tt class="docutils literal"><span class="pre">val</span></tt>s, <tt class="docutils literal"><span class="pre">var</span></tt>s, <tt class="docutils literal"><span class="pre">def</span></tt>s and/or <tt class="docutils literal"><span class="pre">lazy</span> <span class="pre">val</span></tt>s)</p>
-<p>Those are then used to create <tt class="docutils literal"><span class="pre">CustomSemanticAction</span></tt> and <tt class="docutils literal"><span class="pre">SemanticHighlightingParticipant</span></tt>
+<p>(all above by &#8216;method&#8217; understands <code class="docutils literal"><span class="pre">val</span></code>s, <code class="docutils literal"><span class="pre">var</span></code>s, <code class="docutils literal"><span class="pre">def</span></code>s and/or <code class="docutils literal"><span class="pre">lazy</span> <span class="pre">val</span></code>s)</p>
+<p>Those are then used to create <code class="docutils literal"><span class="pre">CustomSemanticAction</span></code> and <code class="docutils literal"><span class="pre">SemanticHighlightingParticipant</span></code>
 (last one is plugged into Scala IDE via extension).</p>
 </div>
 <div class="section" id="example">
@@ -151,7 +151,7 @@ class MutableCollectionCallHighlightingParticipant
 </pre></div>
 </div>
 <p>And plug them into Scala IDE</p>
-<p>in <tt class="docutils literal"><span class="pre">plugin.xml</span></tt>:</p>
+<p>in <code class="docutils literal"><span class="pre">plugin.xml</span></code>:</p>
 <div class="highlight-python"><div class="highlight"><pre>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;?eclipse version=&quot;3.4&quot;?&gt;
 &lt;plugin&gt;
@@ -189,7 +189,7 @@ class MutableCollectionCallHighlightingParticipant
 &lt;/plugin&gt;
 </pre></div>
 </div>
-<p>in <tt class="docutils literal"><span class="pre">MANIFEST.MF</span></tt>:</p>
+<p>in <code class="docutils literal"><span class="pre">MANIFEST.MF</span></code>:</p>
 <div class="highlight-python"><div class="highlight"><pre>Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: AnnotationsDemo

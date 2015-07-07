@@ -44,7 +44,7 @@
     <link rel="next" title="Community" href="../../community.html" />
     <link rel="prev" title="Developing for Android" href="../../tutorials/androiddevelopment/index.html" /> 
   </head>
-  <body>
+  <body role="document">
 <div class="top-bar">
   <div class="top-bar-inner">
     <div class="container">
@@ -133,7 +133,7 @@ IDE</em></a>.</p>
 the Scala IDE has only one dependency and it&#8217;s a two minutes job to update your Eclipse environment and
 be ready to start your Scala journey.</p>
 <p>Start by installing the Eclipse JDT (Eclipse Java Development Tools). To do so, open Eclipse and go
-to the <tt class="docutils literal"><span class="pre">Help</span> <span class="pre">&gt;</span> <span class="pre">Install</span> <span class="pre">New</span> <span class="pre">Software</span></tt> menu, select the eclipse update site (e.g. &#8220;Indigo -
+to the <code class="docutils literal"><span class="pre">Help</span> <span class="pre">&gt;</span> <span class="pre">Install</span> <span class="pre">New</span> <span class="pre">Software</span></code> menu, select the eclipse update site (e.g. &#8220;Indigo -
 <a class="reference external" href="http://download.eclipse.org/releases/indigo">http://download.eclipse.org/releases/indigo</a>&#8221;) and, under the Programming Languages section, select
 Eclipse Java Development Tools. Install it.</p>
 <p>Now that the JDT is installed, go ahead and <a class="reference internal" href="../gettingstarted/index.html"><em>install the Scala IDE</em></a>.</p>
@@ -146,7 +146,7 @@ Eclipse installation. Luckily, there shouldn&#8217;t be a need for that. The new
 <div class="section" id="i-have-an-existing-java-project-and-i-wish-to-add-scala-files-how-do-i-convince-eclipse-to-work-with-scala">
 <h3>I have an existing Java project and I wish to add Scala files. How do I convince Eclipse to work with Scala?</h3>
 <p>Right click on the project in the Package Explorer view, and in the context menu select
-<tt class="docutils literal"><span class="pre">Configure</span> <span class="pre">→</span> <span class="pre">Add</span> <span class="pre">Scala</span> <span class="pre">Nature</span></tt>.</p>
+<code class="docutils literal"><span class="pre">Configure</span> <span class="pre">→</span> <span class="pre">Add</span> <span class="pre">Scala</span> <span class="pre">Nature</span></code>.</p>
 </div>
 <div class="section" id="i-am-running-out-of-stack-space-in-eclipse-how-do-i-increase-the-stack-size">
 <h3>I am running out of stack space in Eclipse.  How do I increase the stack size?</h3>
@@ -175,7 +175,7 @@ Eclipse installation. Luckily, there shouldn&#8217;t be a need for that. The new
 <h4>Not using m2eclipse</h4>
 <p>It needs to be fixed manually.</p>
 <ul class="simple">
-<li>If the error is &#8216;no Scala library...&#8217;, one Scala library needs to be added to the build path. The simplest thing is to add the Scala library container: right-click on the project in the Package Explorer view, then in the context menu select <tt class="docutils literal"><span class="pre">Build</span> <span class="pre">Path</span> <span class="pre">→</span> <span class="pre">Add</span> <span class="pre">Libraries...</span></tt>, and add the <tt class="docutils literal"><span class="pre">Scala</span> <span class="pre">Library</span></tt>.</li>
+<li>If the error is &#8216;no Scala library...&#8217;, one Scala library needs to be added to the build path. The simplest thing is to add the Scala library container: right-click on the project in the Package Explorer view, then in the context menu select <code class="docutils literal"><span class="pre">Build</span> <span class="pre">Path</span> <span class="pre">→</span> <span class="pre">Add</span> <span class="pre">Libraries...</span></code>, and add the <code class="docutils literal"><span class="pre">Scala</span> <span class="pre">Library</span></code>.</li>
 <li>If the error is &#8216;more than one Scala library...&#8217;, the number of Scala libraries needs to limited to one in the build path. If possible, make it being the Scala library container provided by Scala IDE.</li>
 </ul>
 </div>
@@ -189,7 +189,7 @@ Eclipse installation. Luckily, there shouldn&#8217;t be a need for that. The new
 <div class="section" id="scala-ide-complains-about-is-cross-compiled-with-an-incompatible-version-of-scala">
 <h3>Scala IDE complains about &#8216;... is cross-compiled with an incompatible version of Scala ...&#8217;</h3>
 <p>The Scala IDE tries to check if binary incompatible Scala libraries have been inadvertently mixed in a project&#8217;s classpath. It works by extracting, from the name of the jars, which major version of Scala it has been compiled against (assuming the Scala convention for publishing cross-compiled libraries, and further assuming that Scala minor releases are binary compatible). If the extracted Scala major version doesn&#8217;t match the one bundled with the Scala IDE, a problem is reported. This ad-hoc validation prevents one of the most common reason for compiler crashes and lack of intelligent behavior in the Scala IDE.</p>
-<p>If this check returns a false-negative, it can be disabled at the workspace level, or at the project level. The setting is <tt class="docutils literal"><span class="pre">withVersionClasspathValidator</span></tt> in the <tt class="docutils literal"><span class="pre">Scala</span> <span class="pre">→</span> <span class="pre">Compiler</span> <span class="pre">→</span> <span class="pre">Build</span> <span class="pre">Manager</span></tt> preference section.</p>
+<p>If this check returns a false-negative, it can be disabled at the workspace level, or at the project level. The setting is <code class="docutils literal"><span class="pre">withVersionClasspathValidator</span></code> in the <code class="docutils literal"><span class="pre">Scala</span> <span class="pre">→</span> <span class="pre">Compiler</span> <span class="pre">→</span> <span class="pre">Build</span> <span class="pre">Manager</span></code> preference section.</p>
 </div>
 </div>
 <div class="section" id="scala-interpreter">
@@ -219,10 +219,10 @@ the <a class="reference internal" href="../advancedsetup/index.html"><em>Scala D
 <div class="section" id="scala-errors-on-all-unicode-arrows">
 <h3>Scala errors on all Unicode arrows</h3>
 <p><strong>Symptoms</strong>:</p>
-<p>The code contains Unicode niceties like <tt class="docutils literal"><span class="pre">←</span></tt> and <tt class="docutils literal"><span class="pre">⇒</span></tt>, but the editor doesn&#8217;t seem to be able to display them, and errors are reported at their location.</p>
+<p>The code contains Unicode niceties like <code class="docutils literal"><span class="pre">←</span></code> and <code class="docutils literal"><span class="pre">⇒</span></code>, but the editor doesn&#8217;t seem to be able to display them, and errors are reported at their location.</p>
 <p><strong>Solution</strong>:</p>
 <p>The operating system is not using UTF-8 by default, and its default encoding is used inside Eclipse.</p>
-<p>The encoding used to open files can be configured at different levels. Most of the time, setting Eclipse default encoding to UTF-8 in <tt class="docutils literal"><span class="pre">General</span> <span class="pre">→</span> <span class="pre">Workspace</span></tt> in the preferences <a class="footnote-reference" href="#preferences" id="id4">[1]</a> is enough. But in some case, the wrong encoding might also have been set in the project properties, or even the file properties.</p>
+<p>The encoding used to open files can be configured at different levels. Most of the time, setting Eclipse default encoding to UTF-8 in <code class="docutils literal"><span class="pre">General</span> <span class="pre">→</span> <span class="pre">Workspace</span></code> in the preferences <a class="footnote-reference" href="#preferences" id="id4">[1]</a> is enough. But in some case, the wrong encoding might also have been set in the project properties, or even the file properties.</p>
 </div>
 <div class="section" id="red-screen-of-death-red-squiggles-everywhere">
 <h3>Red screen of death (red squiggles everywhere)</h3>
@@ -235,8 +235,8 @@ The prime suspect is Maven Dependencies, which can download and add an incompati
 <p><strong>Symptoms</strong>:</p>
 <p>When pressing Ctrl-Space, the list doesn&#8217;t contain code completion proposals, only templates, but other semantic actions (such as hyperlinking) work fine.</p>
 <p><strong>Solution</strong>:</p>
-<p>During the development of version 2.0.0, the configuration of the Scala completion engines has been modified to make sure that no more disabled by mistake. If Scala IDE has been updated from an old beta version, it is possible that the Scala completion engines (<tt class="docutils literal"><span class="pre">Scala</span> <span class="pre">Completions</span></tt> and <tt class="docutils literal"><span class="pre">Scala</span> <span class="pre">Completion</span> <span class="pre">(Java</span> <span class="pre">sources)</span></tt>) need to be re-enabled.</p>
-<p>The diagnostic tool at <tt class="docutils literal"><span class="pre">Scala</span> <span class="pre">→</span> <span class="pre">Run</span> <span class="pre">Setup</span> <span class="pre">Diagnostic</span></tt> allows to fix this problem. Make sure that <tt class="docutils literal"><span class="pre">Use</span> <span class="pre">Scala-compatible</span> <span class="pre">JDT</span> <span class="pre">content</span> <span class="pre">assist</span> <span class="pre">proposals</span></tt> is enabled.</p>
+<p>During the development of version 2.0.0, the configuration of the Scala completion engines has been modified to make sure that no more disabled by mistake. If Scala IDE has been updated from an old beta version, it is possible that the Scala completion engines (<code class="docutils literal"><span class="pre">Scala</span> <span class="pre">Completions</span></code> and <code class="docutils literal"><span class="pre">Scala</span> <span class="pre">Completion</span> <span class="pre">(Java</span> <span class="pre">sources)</span></code>) need to be re-enabled.</p>
+<p>The diagnostic tool at <code class="docutils literal"><span class="pre">Scala</span> <span class="pre">→</span> <span class="pre">Run</span> <span class="pre">Setup</span> <span class="pre">Diagnostic</span></code> allows to fix this problem. Make sure that <code class="docutils literal"><span class="pre">Use</span> <span class="pre">Scala-compatible</span> <span class="pre">JDT</span> <span class="pre">content</span> <span class="pre">assist</span> <span class="pre">proposals</span></code> is enabled.</p>
 <img alt="../../_images/setup-diagnostics-012.png" src="../../_images/setup-diagnostics-012.png" />
 </div>
 <div class="section" id="bad-completion-when-using-companion-object-in-java">
@@ -268,7 +268,7 @@ The prime suspect is Maven Dependencies, which can download and add an incompati
 <h3>Eclipse freezes (deadlock)</h3>
 <p><strong>Symptoms</strong>:</p>
 <p>The IDE is completely frozen.</p>
-<p>A known manifestation of this problem occurs when the <tt class="docutils literal"><span class="pre">SmartIndenter</span></tt> kicks in (for
+<p>A known manifestation of this problem occurs when the <code class="docutils literal"><span class="pre">SmartIndenter</span></code> kicks in (for
 instance when a return carriage is inserted in the Eclipse Editor), which is particularly
 annoying since all unsaved work will be lost.</p>
 <p><strong>Solution</strong>:</p>
@@ -300,20 +300,20 @@ this problem if you upgrade to JRE 7 or newer.</p>
 <div class="section" id="noclassdeffounderror-scala-tools-nsc-settings-mutablesettings-settingvalue">
 <h3>NoClassDefFoundError (scala/tools/nsc/settings/MutableSettings$SettingValue)</h3>
 <p><strong>Symptoms</strong>:</p>
-<p>After upgrading the Scala plug-in, <tt class="docutils literal"><span class="pre">java.lang.NoClassDefFoundError:</span> <span class="pre">scala/tools/nsc/settings/MutableSettings$SettingValue</span></tt> exception is reported for all Scala projects in the workspace. Scala IDE is then unusable.</p>
+<p>After upgrading the Scala plug-in, <code class="docutils literal"><span class="pre">java.lang.NoClassDefFoundError:</span> <span class="pre">scala/tools/nsc/settings/MutableSettings$SettingValue</span></code> exception is reported for all Scala projects in the workspace. Scala IDE is then unusable.</p>
 <p><strong>Solution</strong>:</p>
-<p>If you have several update sites providing different version of Scala IDE, Eclipse may have decided that a newest Scala library should be used instead of the one provided by the plug-in to be installed. To avoid this problem, make sure to uncheck the <tt class="docutils literal"><span class="pre">Contact</span> <span class="pre">all</span> <span class="pre">update</span> <span class="pre">sites</span> <span class="pre">during</span> <span class="pre">install</span> <span class="pre">to</span> <span class="pre">find</span> <span class="pre">required</span> <span class="pre">software</span></tt> option. It is situated at the bottom of the <tt class="docutils literal"><span class="pre">Help</span> <span class="pre">→</span> <span class="pre">Install</span> <span class="pre">New</span> <span class="pre">Software...</span></tt> dialog.</p>
+<p>If you have several update sites providing different version of Scala IDE, Eclipse may have decided that a newest Scala library should be used instead of the one provided by the plug-in to be installed. To avoid this problem, make sure to uncheck the <code class="docutils literal"><span class="pre">Contact</span> <span class="pre">all</span> <span class="pre">update</span> <span class="pre">sites</span> <span class="pre">during</span> <span class="pre">install</span> <span class="pre">to</span> <span class="pre">find</span> <span class="pre">required</span> <span class="pre">software</span></code> option. It is situated at the bottom of the <code class="docutils literal"><span class="pre">Help</span> <span class="pre">→</span> <span class="pre">Install</span> <span class="pre">New</span> <span class="pre">Software...</span></code> dialog.</p>
 </div>
 <div class="section" id="incorrect-compiler-error-reported-in-the-scala-editor">
 <h3>Incorrect compiler error reported in the Scala Editor</h3>
 <p><strong>Symptoms</strong>:</p>
 <p>A compiler error is reported in the Scala editor, when indeed the code is correct.</p>
 <p><strong>Solution</strong>:</p>
-<p>In rare circumstances, the interactive typecheker (a.k.a., presentation compiler) can get in a state where it reports false, type-checking errors. As a workaround, we&#8217;ve provided a UI action that force restarts the presentation compiler. You can access it by right clicking on the project folder in the Package Explorer view, then <tt class="docutils literal"><span class="pre">Scala</span> <span class="pre">→</span> <span class="pre">Restart</span> <span class="pre">Presentation</span> <span class="pre">Compiler</span></tt>. If the incorrect error is still reported after restarting the presentation compiler, please drop us a note in the scala-ide-user mailing list.</p>
+<p>In rare circumstances, the interactive typecheker (a.k.a., presentation compiler) can get in a state where it reports false, type-checking errors. As a workaround, we&#8217;ve provided a UI action that force restarts the presentation compiler. You can access it by right clicking on the project folder in the Package Explorer view, then <code class="docutils literal"><span class="pre">Scala</span> <span class="pre">→</span> <span class="pre">Restart</span> <span class="pre">Presentation</span> <span class="pre">Compiler</span></code>. If the incorrect error is still reported after restarting the presentation compiler, please drop us a note in the scala-ide-user mailing list.</p>
 <table class="docutils footnote" frame="void" id="preferences" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id4">[1]</a></td><td>The Eclipse preferences are accessible using <tt class="docutils literal"><span class="pre">Windows</span> <span class="pre">→</span> <span class="pre">Preferences</span></tt> (or <tt class="docutils literal"><span class="pre">Eclipse</span> <span class="pre">→</span> <span class="pre">Preferences</span></tt> on Mac osX).</td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id4">[1]</a></td><td>The Eclipse preferences are accessible using <code class="docutils literal"><span class="pre">Windows</span> <span class="pre">→</span> <span class="pre">Preferences</span></code> (or <code class="docutils literal"><span class="pre">Eclipse</span> <span class="pre">→</span> <span class="pre">Preferences</span></code> on Mac osX).</td></tr>
 </tbody>
 </table>
 </div>

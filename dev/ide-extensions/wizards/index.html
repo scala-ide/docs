@@ -44,7 +44,7 @@
     <link rel="next" title="Custom semantic annotations new" href="../semantic-annotations/index.html" />
     <link rel="prev" title="IDE Extensions new" href="../ide-extensions.html" /> 
   </head>
-  <body>
+  <body role="document">
 <div class="top-bar">
   <div class="top-bar-inner">
     <div class="container">
@@ -98,16 +98,16 @@
 <p>In the following there is a description on how to create such an OSGi bundle:</p>
 <ol class="arabic simple">
 <li>Create a new Plug-in Project in Eclipse and add the Scala nature.</li>
-<li>Add the Scala IDE bundle as a dependency in the dependencies section of your manifest file. This bundle is called <tt class="docutils literal"><span class="pre">org.scala-ide.sdt.core</span></tt> and its minimum version needs to be 4.0.0. Because the public API of the wizard makes use of Eclipse based classes, you also have to add <tt class="docutils literal"><span class="pre">org.eclipse.core.resources</span></tt> and <tt class="docutils literal"><span class="pre">org.eclipse.core.runtime</span></tt> as dependencies.</li>
-<li>In the extensions section add the extension point <tt class="docutils literal"><span class="pre">org.scala-ide.sdt.core.fileCreator</span></tt>.</li>
-<li>Create a new <tt class="docutils literal"><span class="pre">fileCreator</span></tt>.</li>
-<li>In order to fill out all values of the <tt class="docutils literal"><span class="pre">fileCreator</span></tt> you have to provide a class that implements <tt class="docutils literal"><span class="pre">org.scalaide.ui.wizards.FileCreator</span></tt>. See the Scaladoc of this trait to find out how to implement it correctly.</li>
-<li>Once you are done with implementing the class, you have to provide a template, which is later used by the wizard to create the contents of a newly created file. To do so, first add a new dependency to <tt class="docutils literal"><span class="pre">org.eclipse.ui.editors</span></tt> and then add the extension point <tt class="docutils literal"><span class="pre">org.eclipse.ui.editors.templates</span></tt>.</li>
-<li>Create a <tt class="docutils literal"><span class="pre">template</span></tt>, whose <tt class="docutils literal"><span class="pre">contextTypeId</span></tt> must be <tt class="docutils literal"><span class="pre">org.scala-ide.sdt.core.templates</span></tt>. Fill in the template ID into the corresponding field in your <tt class="docutils literal"><span class="pre">fileCreator</span></tt>.</li>
+<li>Add the Scala IDE bundle as a dependency in the dependencies section of your manifest file. This bundle is called <code class="docutils literal"><span class="pre">org.scala-ide.sdt.core</span></code> and its minimum version needs to be 4.0.0. Because the public API of the wizard makes use of Eclipse based classes, you also have to add <code class="docutils literal"><span class="pre">org.eclipse.core.resources</span></code> and <code class="docutils literal"><span class="pre">org.eclipse.core.runtime</span></code> as dependencies.</li>
+<li>In the extensions section add the extension point <code class="docutils literal"><span class="pre">org.scala-ide.sdt.core.fileCreator</span></code>.</li>
+<li>Create a new <code class="docutils literal"><span class="pre">fileCreator</span></code>.</li>
+<li>In order to fill out all values of the <code class="docutils literal"><span class="pre">fileCreator</span></code> you have to provide a class that implements <code class="docutils literal"><span class="pre">org.scalaide.ui.wizards.FileCreator</span></code>. See the Scaladoc of this trait to find out how to implement it correctly.</li>
+<li>Once you are done with implementing the class, you have to provide a template, which is later used by the wizard to create the contents of a newly created file. To do so, first add a new dependency to <code class="docutils literal"><span class="pre">org.eclipse.ui.editors</span></code> and then add the extension point <code class="docutils literal"><span class="pre">org.eclipse.ui.editors.templates</span></code>.</li>
+<li>Create a <code class="docutils literal"><span class="pre">template</span></code>, whose <code class="docutils literal"><span class="pre">contextTypeId</span></code> must be <code class="docutils literal"><span class="pre">org.scala-ide.sdt.core.templates</span></code>. Fill in the template ID into the corresponding field in your <code class="docutils literal"><span class="pre">fileCreator</span></code>.</li>
 </ol>
 <p>You can now export a bundle and install it to your Eclipse installation. If you made everything correctly, the new wizard should show your template in the kind field.</p>
 <p>In the following we show you an example bundle manifest and plugin configuration:</p>
-<p><tt class="docutils literal"><span class="pre">plugin.xml</span></tt>:</p>
+<p><code class="docutils literal"><span class="pre">plugin.xml</span></code>:</p>
 <div class="highlight-python"><div class="highlight"><pre>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;?eclipse version=&quot;3.4&quot;?&gt;
 &lt;plugin&gt;
@@ -136,7 +136,7 @@
 &lt;/plugin&gt;
 </pre></div>
 </div>
-<p><tt class="docutils literal"><span class="pre">MANIFEST.MF</span></tt>:</p>
+<p><code class="docutils literal"><span class="pre">MANIFEST.MF</span></code>:</p>
 <div class="highlight-python"><div class="highlight"><pre>Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Wizardextension

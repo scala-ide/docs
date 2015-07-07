@@ -44,7 +44,7 @@
     <link rel="next" title="License" href="../license.html" />
     <link rel="prev" title="Community" href="../community.html" /> 
   </head>
-  <body>
+  <body role="document">
 <div class="top-bar">
   <div class="top-bar-inner">
     <div class="container">
@@ -98,11 +98,11 @@
 <h2>Setting up JUnit 4</h2>
 <div class="section" id="inside-eclipse">
 <h3>Inside Eclipse</h3>
-<p>To add JUnit to a project from inside Eclipse, right-click on the project in the package explorer view, select <tt class="docutils literal"><span class="pre">Build</span> <span class="pre">Path</span> <span class="pre">→</span> <span class="pre">Add</span> <span class="pre">Libraries...</span></tt>, select <tt class="docutils literal"><span class="pre">JUnit</span></tt>, and then <tt class="docutils literal"><span class="pre">JUnit</span> <span class="pre">4</span></tt> in the next wizard page.</p>
+<p>To add JUnit to a project from inside Eclipse, right-click on the project in the package explorer view, select <code class="docutils literal"><span class="pre">Build</span> <span class="pre">Path</span> <span class="pre">→</span> <span class="pre">Add</span> <span class="pre">Libraries...</span></code>, select <code class="docutils literal"><span class="pre">JUnit</span></code>, and then <code class="docutils literal"><span class="pre">JUnit</span> <span class="pre">4</span></code> in the next wizard page.</p>
 </div>
 <div class="section" id="in-sbt">
 <h3>In sbt</h3>
-<p>To add JUnit in the sbt configuration, add the following dependency in the <tt class="docutils literal"><span class="pre">build.sbt</span></tt> file:</p>
+<p>To add JUnit in the sbt configuration, add the following dependency in the <code class="docutils literal"><span class="pre">build.sbt</span></code> file:</p>
 <div class="highlight-scala"><div class="highlight"><pre><span class="n">libraryDependencies</span> <span class="o">++=</span> <span class="nc">Seq</span><span class="o">(</span>
    <span class="s">&quot;junit&quot;</span> <span class="o">%</span> <span class="s">&quot;junit&quot;</span> <span class="o">%</span> <span class="s">&quot;4.8.1&quot;</span> <span class="o">%</span> <span class="s">&quot;test&quot;</span>
 <span class="o">)</span>
@@ -111,7 +111,7 @@
 </div>
 <div class="section" id="in-maven">
 <h3>In maven</h3>
-<p>To add JUnit in the maven configuration, add the following dependency in the <tt class="docutils literal"><span class="pre">pom.xml</span></tt> file:</p>
+<p>To add JUnit in the maven configuration, add the following dependency in the <code class="docutils literal"><span class="pre">pom.xml</span></code> file:</p>
 <div class="highlight-xml"><div class="highlight"><pre><span class="nt">&lt;dependency&gt;</span>
      <span class="nt">&lt;groupId&gt;</span>junit<span class="nt">&lt;/groupId&gt;</span>
      <span class="nt">&lt;artifactId&gt;</span>junit<span class="nt">&lt;/artifactId&gt;</span>
@@ -124,12 +124,12 @@
 </div>
 <div class="section" id="using-junit-4">
 <h2>Using JUnit 4</h2>
-<p>To run a test suite using JUnit in Scala IDE, open the source file of the test, right-click in it, and select <tt class="docutils literal"><span class="pre">Run</span> <span class="pre">as</span> <span class="pre">→</span> <span class="pre">JUnit</span> <span class="pre">Test</span></tt>.</p>
+<p>To run a test suite using JUnit in Scala IDE, open the source file of the test, right-click in it, and select <code class="docutils literal"><span class="pre">Run</span> <span class="pre">as</span> <span class="pre">→</span> <span class="pre">JUnit</span> <span class="pre">Test</span></code>.</p>
 <p>You can re-run your test using the launch configuration which is automatically created. Check the <a class="reference external" href="http://help.eclipse.org/indigo/index.jsp?topic=%2Forg.eclipse.jdt.doc.user%2FgettingStarted%2Fqs-12.htm">Eclipse documentation</a> for more details.</p>
 </div>
 <div class="section" id="scalatest">
 <h2>ScalaTest</h2>
-<p>The <a class="reference external" href="http://scalatest.org">ScalaTest</a> framework provides a runner (<tt class="docutils literal"><span class="pre">org.scalatest.junit.JUnitRunner</span></tt>) allowing to use JUnit to run the test suites.</p>
+<p>The <a class="reference external" href="http://scalatest.org">ScalaTest</a> framework provides a runner (<code class="docutils literal"><span class="pre">org.scalatest.junit.JUnitRunner</span></code>) allowing to use JUnit to run the test suites.</p>
 <p>Adding this annotation makes a ScalaTest test suite runnable with JUnit4:</p>
 <div class="highlight-scala"><div class="highlight"><pre><span class="nd">@RunWith</span><span class="o">(</span><span class="n">classOf</span><span class="o">[</span><span class="kt">JUnitRunner</span><span class="o">])</span>
 </pre></div>
@@ -139,7 +139,7 @@
 </div>
 <div class="section" id="specs">
 <h2>Specs</h2>
-<p>The <a class="reference external" href="http://etorreborre.github.com/specs2/">Specs</a> framework provides a runner (<tt class="docutils literal"><span class="pre">org.specs.runner.JUnitSuiteRunner</span></tt>) allowing to use JUnit to run the suites.</p>
+<p>The <a class="reference external" href="http://etorreborre.github.com/specs2/">Specs</a> framework provides a runner (<code class="docutils literal"><span class="pre">org.specs.runner.JUnitSuiteRunner</span></code>) allowing to use JUnit to run the suites.</p>
 <p>Adding this annotation makes a Specs suite runnable with JUnit4:</p>
 <div class="highlight-scala"><div class="highlight"><pre><span class="nd">@RunWith</span><span class="o">(</span><span class="n">classOf</span><span class="o">[</span><span class="kt">JUnitSuiteRunner</span><span class="o">])</span>
 </pre></div>

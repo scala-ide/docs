@@ -44,7 +44,7 @@
     <link rel="next" title="Testing the Scala Presentation Compiler in isolation" href="presentation-compiler-tests.html" />
     <link rel="prev" title="Regression Test Suite" href="testing.html" /> 
   </head>
-  <body>
+  <body role="document">
 <div class="top-bar">
   <div class="top-bar-inner">
     <div class="container">
@@ -94,18 +94,18 @@
       <div class="span11 main-content">
         <div class="section" id="testing-eclipse-integration">
 <h1>Testing Eclipse integration</h1>
-<p>All tests are grouped under the <tt class="docutils literal"><span class="pre">org.scala-ide.sdt.core.tests</span></tt> project, following standard
+<p>All tests are grouped under the <code class="docutils literal"><span class="pre">org.scala-ide.sdt.core.tests</span></code> project, following standard
 practice for Eclipse plug-in tests (in OSGi terms, this module is a ‘bundle fragment’ of
-<tt class="docutils literal"><span class="pre">org.scala-ide.sdt.core</span></tt>, but this means only that it has access to all packages defined by
-<tt class="docutils literal"><span class="pre">org.scala-ide.sdt.core</span></tt>).</p>
+<code class="docutils literal"><span class="pre">org.scala-ide.sdt.core</span></code>, but this means only that it has access to all packages defined by
+<code class="docutils literal"><span class="pre">org.scala-ide.sdt.core</span></code>).</p>
 <p>One can run tests in two ways:</p>
 <ul class="simple">
 <li>using the Eclipse JUnit Plugin Test runner (with Equinox weaving, of course)</li>
 <li>using maven/tycho</li>
 </ul>
-<p>Both ways launch a new Eclipse instance, installs the <tt class="docutils literal"><span class="pre">sdt.core</span></tt> and <tt class="docutils literal"><span class="pre">sdt.core.tests</span></tt> bundles in
+<p>Both ways launch a new Eclipse instance, installs the <code class="docutils literal"><span class="pre">sdt.core</span></code> and <code class="docutils literal"><span class="pre">sdt.core.tests</span></code> bundles in
 the target instance, creates a clean (empty) workspace, and launches the test runner. Of course,
-<tt class="docutils literal"><span class="pre">sdt.core</span></tt> can not run by itself: it needs a lot of other bundles, such as the eclipse core
+<code class="docutils literal"><span class="pre">sdt.core</span></code> can not run by itself: it needs a lot of other bundles, such as the eclipse core
 bundles and the JDT bundles. Depending on the way the test is launched, these dependencies are
 provided differently:</p>
 <ul class="simple">
@@ -115,8 +115,8 @@ provided differently:</p>
 <div class="section" id="individual-tests">
 <h2>Individual tests</h2>
 <p>An integration test is usually set up by copying an existing project from
-<tt class="docutils literal"><span class="pre">org.scala-ide.sdt.core.tests/test-workspace</span></tt> to the target (clean) workspace, then running a
-number of <tt class="docutils literal"><span class="pre">&#64;Test</span></tt> methods on it. The setup step is taken care of by subclassing
+<code class="docutils literal"><span class="pre">org.scala-ide.sdt.core.tests/test-workspace</span></code> to the target (clean) workspace, then running a
+number of <code class="docutils literal"><span class="pre">&#64;Test</span></code> methods on it. The setup step is taken care of by subclassing
 <a class="reference external" href="https://github.com/scala-ide/scala-ide/blob/master/org.scala-ide.sdt.core.tests/src/scala/tools/eclipse/testsetup/TestProjectSetup.scala">TestProjectSetup</a>,
 usually with an object. For example, the <a class="reference external" href="https://github.com/scala-ide/scala-ide/blob/master/org.scala-ide.sdt.core.tests/src/scala/tools/eclipse/structurebuilder/StructureBuilderTest.scala">StructureBuilderTest</a>
 declares</p>
@@ -125,8 +125,8 @@ declares</p>
 </div>
 <p>This gives a number of convenience handles that make it easy to retrieve elements of interest later:</p>
 <ul class="simple">
-<li><tt class="docutils literal"><span class="pre">project</span></tt> it is the (<a class="reference external" href="https://github.com/scala-ide/scala-ide/blob/master/org.scala-ide.sdt.core/src/scala/tools/eclipse/ScalaProject.scala">ScalaProject</a>) associated to the copied project.</li>
-<li><tt class="docutils literal"><span class="pre">srcPackageRoot</span></tt> is the <a class="reference external" href="http://publib.boulder.ibm.com/infocenter/iadthelp/v6r0/index.jsp?topic=/org.eclipse.jdt.doc.isv/reference/api/org/eclipse/jdt/core/IPackageFragmentRoot.html">IPackageFragmentRoot</a> instance of the <em>src</em> folder.</li>
+<li><code class="docutils literal"><span class="pre">project</span></code> it is the (<a class="reference external" href="https://github.com/scala-ide/scala-ide/blob/master/org.scala-ide.sdt.core/src/scala/tools/eclipse/ScalaProject.scala">ScalaProject</a>) associated to the copied project.</li>
+<li><code class="docutils literal"><span class="pre">srcPackageRoot</span></code> is the <a class="reference external" href="http://publib.boulder.ibm.com/infocenter/iadthelp/v6r0/index.jsp?topic=/org.eclipse.jdt.doc.isv/reference/api/org/eclipse/jdt/core/IPackageFragmentRoot.html">IPackageFragmentRoot</a> instance of the <em>src</em> folder.</li>
 </ul>
 <p>You can use compilationUnit with a full path to retrieve the <a class="reference external" href="http://publib.boulder.ibm.com/infocenter/iadthelp/v6r0/index.jsp?topic=/org.eclipse.jdt.doc.isv/reference/api/org/eclipse/jdt/core/ICompilationUnit.html">ICompilationUnit</a>
 of the corresponding file.</p>
@@ -151,9 +151,9 @@ one would write the following method:</p>
 <span class="o">}</span>
 </pre></div>
 </div>
-<p>This assumes the project has a file called <tt class="docutils literal"><span class="pre">ScalaTestSuite.scala</span></tt>, under <tt class="docutils literal"><span class="pre">src/annots</span></tt>. Note the
+<p>This assumes the project has a file called <code class="docutils literal"><span class="pre">ScalaTestSuite.scala</span></code>, under <code class="docutils literal"><span class="pre">src/annots</span></code>. Note the
 use of the JDT API again. Equivalently, one could use the convenience method
-<tt class="docutils literal"><span class="pre">compilationUnit(&quot;annots/ScalaTestSuite.scala&quot;)</span></tt>.</p>
+<code class="docutils literal"><span class="pre">compilationUnit(&quot;annots/ScalaTestSuite.scala&quot;)</span></code>.</p>
 </div>
 <div class="section" id="resolving-positions">
 <h2>Resolving positions</h2>
@@ -166,7 +166,7 @@ corresponding offset.</p>
 </div>
 <div class="section" id="markers">
 <h2>Markers</h2>
-<p>A marker is any string, but we use block comments with a character in between: <tt class="docutils literal"><span class="pre">/*!*/</span></tt>. Such a
+<p>A marker is any string, but we use block comments with a character in between: <code class="docutils literal"><span class="pre">/*!*/</span></code>. Such a
 marker has the advantage that it keeps the source compilable. Have a look at the hyperlink test
 project:</p>
 <div class="highlight-scala"><div class="highlight"><pre><span class="k">class</span> <span class="nc">SimpleHyperlinking</span> <span class="o">{</span>
@@ -239,15 +239,15 @@ test method will use the parsed integer to assert the correct number of matches 
 </div>
 <div class="section" id="running-tests-within-eclipse">
 <h2>Running tests within Eclipse</h2>
-<p>To run the tests inside Eclipse you need to <a class="reference internal" href="../setup/setup.html#setup-install-equinox-weaving-launcher"><em>install the Equinox Weaving Launcher</em></a> plug-in for Eclipse.
+<p>To run the tests inside Eclipse you need to <a class="reference internal" href="../setup/setup.html#setup-install-equinox-weaving-launcher"><span>install the Equinox Weaving Launcher</span></a> plug-in for Eclipse.
 Once you have installed the plug-in, running a test in headless mode boils down to the following
 steps:</p>
 <ul class="simple">
 <li>Open Run Configurations and double click on JUnit Plug-in Test with Equinox Weaving (which should have appeared after installing the above mentioned plug-in).</li>
 <li>In the Test tab, fill in the information about the test you want to run.</li>
 <li>In the Main tab, under Program to Run, check Run an application and select <em>[No Application] – Headless Mode</em>.</li>
-<li>In the Arguments tab, make sure to pass <tt class="docutils literal"><span class="pre">-Dsdtcore.headless</span></tt> in the VM arguments.</li>
-<li>In the Plug-ins tab, make sure that bundle <tt class="docutils literal"><span class="pre">org.scala-ide.sdt.core.tests</span></tt> is selected (or the test wont be able to find the test class file)</li>
+<li>In the Arguments tab, make sure to pass <code class="docutils literal"><span class="pre">-Dsdtcore.headless</span></code> in the VM arguments.</li>
+<li>In the Plug-ins tab, make sure that bundle <code class="docutils literal"><span class="pre">org.scala-ide.sdt.core.tests</span></code> is selected (or the test wont be able to find the test class file)</li>
 </ul>
 <p>At this point you should be good to run the test.</p>
 </div>

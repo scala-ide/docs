@@ -44,7 +44,7 @@
     <link rel="next" title="Logging" href="../logging/index.html" />
     <link rel="prev" title="Scala Debugger" href="../scaladebugger/index.html" /> 
   </head>
-  <body>
+  <body role="document">
 <div class="top-bar">
   <div class="top-bar-inner">
     <div class="container">
@@ -94,25 +94,25 @@
       <div class="span11 main-content">
         <div class="section" id="scala-interpreter">
 <h1>Scala Interpreter</h1>
-<p>Scala IDE integrate the Scala REPL. It is set in a view called <tt class="docutils literal"><span class="pre">Scala</span> <span class="pre">Interpreter</span></tt>.</p>
+<p>Scala IDE integrate the Scala REPL. It is set in a view called <code class="docutils literal"><span class="pre">Scala</span> <span class="pre">Interpreter</span></code>.</p>
 <p>Each view instance is associated to a project, and all artifacts defined or referenced in the project are available to the interpreter.</p>
 <div class="section" id="starting-the-interpreter">
 <h2>Starting the interpreter</h2>
 <p>There are multiple ways to start it:</p>
 <ul class="simple">
-<li>Opening the view. The view can be opened with <tt class="docutils literal"><span class="pre">Window</span> <span class="pre">→</span> <span class="pre">Show</span> <span class="pre">View</span> <span class="pre">→</span> <span class="pre">Scala</span> <span class="pre">Interpreter</span></tt> from the Scala perspective, or <tt class="docutils literal"><span class="pre">Window</span> <span class="pre">→</span> <span class="pre">Show</span> <span class="pre">View</span> <span class="pre">→</span> <span class="pre">Other...</span> <span class="pre">→</span> <span class="pre">Scala</span> <span class="pre">→</span> <span class="pre">Scala</span> <span class="pre">Interpreter</span></tt> from anywhere. This will display the list of available projects. The interpreter is initialized and configured to use the selected one.</li>
-<li>Executing some code. The <img alt="runSelection" src="../../../_images/run_interpreter2.gif" /> <tt class="docutils literal"><span class="pre">Run</span> <span class="pre">Selection</span> <span class="pre">in</span> <span class="pre">Scala</span> <span class="pre">Interpreter</span></tt> command triggers the creation of a view for the current project if needed. The code currently selected in the editor is then run in the interpreter.</li>
+<li>Opening the view. The view can be opened with <code class="docutils literal"><span class="pre">Window</span> <span class="pre">→</span> <span class="pre">Show</span> <span class="pre">View</span> <span class="pre">→</span> <span class="pre">Scala</span> <span class="pre">Interpreter</span></code> from the Scala perspective, or <code class="docutils literal"><span class="pre">Window</span> <span class="pre">→</span> <span class="pre">Show</span> <span class="pre">View</span> <span class="pre">→</span> <span class="pre">Other...</span> <span class="pre">→</span> <span class="pre">Scala</span> <span class="pre">→</span> <span class="pre">Scala</span> <span class="pre">Interpreter</span></code> from anywhere. This will display the list of available projects. The interpreter is initialized and configured to use the selected one.</li>
+<li>Executing some code. The <img alt="runSelection" src="../../../_images/run_interpreter2.gif" /> <code class="docutils literal"><span class="pre">Run</span> <span class="pre">Selection</span> <span class="pre">in</span> <span class="pre">Scala</span> <span class="pre">Interpreter</span></code> command triggers the creation of a view for the current project if needed. The code currently selected in the editor is then run in the interpreter.</li>
 </ul>
 </div>
 <div class="section" id="using-the-interpreter">
 <h2>Using the interpreter</h2>
 <ol class="arabic">
-<li><p class="first">Scala code can be entered directly in the interpreter view, in the <tt class="docutils literal"><span class="pre">Evaluate</span></tt> field by pressing <tt class="docutils literal"><span class="pre">Ctrl+Enter</span></tt>.</p>
-<p>The previously entered commands are kept in a history. They can be browsed using the <tt class="docutils literal"><span class="pre">Ctrl+Up</span></tt> and <tt class="docutils literal"><span class="pre">Ctrl+Down</span></tt> key combinations.</p>
+<li><p class="first">Scala code can be entered directly in the interpreter view, in the <code class="docutils literal"><span class="pre">Evaluate</span></code> field by pressing <code class="docutils literal"><span class="pre">Ctrl+Enter</span></code>.</p>
+<p>The previously entered commands are kept in a history. They can be browsed using the <code class="docutils literal"><span class="pre">Ctrl+Up</span></code> and <code class="docutils literal"><span class="pre">Ctrl+Down</span></code> key combinations.</p>
 <a class="reference external image-reference" href="../_images/feature-interpreter-01.png"><img alt="../../../_images/feature-interpreter-012.png" src="../../../_images/feature-interpreter-012.png" style="width: 100%;" /></a>
 </li>
-<li><p class="first">Existing code can be selected in the Scala Editor, and run in the interpreter using the <img alt="runSelection" src="../../../_images/run_interpreter2.gif" /> <tt class="docutils literal"><span class="pre">Run</span> <span class="pre">Selection</span> <span class="pre">in</span> <span class="pre">Scala</span> <span class="pre">Interpreter</span></tt> command.</p>
-<p>The command can also be invoked using the <tt class="docutils literal"><span class="pre">Ctrl+Shift+x</span></tt> or <tt class="docutils literal"><span class="pre">Cmd+Shift+x</span></tt> key shortcut.</p>
+<li><p class="first">Existing code can be selected in the Scala Editor, and run in the interpreter using the <img alt="runSelection" src="../../../_images/run_interpreter2.gif" /> <code class="docutils literal"><span class="pre">Run</span> <span class="pre">Selection</span> <span class="pre">in</span> <span class="pre">Scala</span> <span class="pre">Interpreter</span></code> command.</p>
+<p>The command can also be invoked using the <code class="docutils literal"><span class="pre">Ctrl+Shift+x</span></code> or <code class="docutils literal"><span class="pre">Cmd+Shift+x</span></code> key shortcut.</p>
 <a class="reference external image-reference" href="../_images/feature-interpreter-02.png"><img alt="../../../_images/feature-interpreter-022.png" src="../../../_images/feature-interpreter-022.png" style="width: 100%;" /></a>
 </li>
 <li><p class="first">An other way is to use the interpreter is combination with an editor to test new code.</p>

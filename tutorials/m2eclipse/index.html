@@ -44,7 +44,7 @@
     <link rel="next" title="Setup and use Play framework 2.1 in Scala IDE 3.0" href="../play/index.html" />
     <link rel="prev" title="Tutorials" href="../index.html" /> 
   </head>
-  <body>
+  <body role="document">
 <div class="top-bar">
   <div class="top-bar-inner">
     <div class="container">
@@ -107,7 +107,7 @@ it or not.</p>
 you need to install the <a class="reference external" href="https://github.com/sonatype/m2eclipse-scala">m2eclipse-scala</a> connector. This connector
 understands the Scala maven plugin and links the <em>compile</em> phase to
 the Eclipse Scala Builder.</p>
-<p>You can install both plugins by pointing Eclipse to the <tt class="docutils literal"><span class="pre">m2eclipse-scala</span></tt> <a class="reference external" href="http://alchim31.free.fr/m2e-scala/update-site">update site</a>.</p>
+<p>You can install both plugins by pointing Eclipse to the <code class="docutils literal"><span class="pre">m2eclipse-scala</span></code> <a class="reference external" href="http://alchim31.free.fr/m2e-scala/update-site">update site</a>.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">If you don&#8217;t have the vanilla <em>Maven Integration for Eclipse</em>,
@@ -130,14 +130,14 @@ this box unchecked.</p>
 installation. Let&#8217;s create a new Scala maven project, starting with a simple Scala project
 based on an archetype.</p>
 <p>Select <strong>New -&gt; Project -&gt; Other</strong> and then select <strong>Maven Project</strong>. On the next window,
-search for <tt class="docutils literal"><span class="pre">scala-archetype</span></tt>. Make sure you select the one in group <tt class="docutils literal"><span class="pre">net.alchim31.maven</span></tt>,
-and click <tt class="docutils literal"><span class="pre">Next</span></tt>.</p>
+search for <code class="docutils literal"><span class="pre">scala-archetype</span></code>. Make sure you select the one in group <code class="docutils literal"><span class="pre">net.alchim31.maven</span></code>,
+and click <code class="docutils literal"><span class="pre">Next</span></code>.</p>
 <img alt="../../_images/archetypes.png" src="../../_images/archetypes.png" />
 <p>Follow the wizard and enter values for group ID, artifact, etc. Click
 <em>Finish</em> and you should have a new Scala project in the workspace.</p>
 <img alt="../../_images/new-project.png" src="../../_images/new-project.png" />
 <p>Notice that the new project has both the Maven and Scala nature, and
-<tt class="docutils literal"><span class="pre">src/main/scala</span></tt> is listed as a source folder. You should be able to
+<code class="docutils literal"><span class="pre">src/main/scala</span></code> is listed as a source folder. You should be able to
 build and launch your project, or run tests.</p>
 </div>
 <div class="section" id="import-an-existing-scala-maven-project">
@@ -145,7 +145,7 @@ build and launch your project, or run tests.</p>
 <p>It is probably rare to start a new project, so let&#8217;s take a look at
 importing an existing Scala project.</p>
 <p>Assuming your project builds fine with maven, you should have
-something similar in your <tt class="docutils literal"><span class="pre">pom.xml</span></tt>:</p>
+something similar in your <code class="docutils literal"><span class="pre">pom.xml</span></code>:</p>
 <div class="highlight-xml"><div class="highlight"><pre><span class="nt">&lt;plugin&gt;</span>
   <span class="nt">&lt;groupId&gt;</span>net.alchim31.maven<span class="nt">&lt;/groupId&gt;</span>
   <span class="nt">&lt;artifactId&gt;</span>scala-maven-plugin<span class="nt">&lt;/artifactId&gt;</span>
@@ -165,17 +165,17 @@ navigate to the directory containing your maven project.</p>
 <img alt="../../_images/import.png" src="../../_images/import.png" />
 <p>When you click <strong>Finish</strong>, the project is imported and it should have
 both Maven and Scala natures. You&#8217;ll notice that both
-<tt class="docutils literal"><span class="pre">src/main/java</span></tt> and <tt class="docutils literal"><span class="pre">src/main/scala</span></tt> are listed as source
+<code class="docutils literal"><span class="pre">src/main/java</span></code> and <code class="docutils literal"><span class="pre">src/main/scala</span></code> are listed as source
 folders. You should be able to build and run your application, and use
 all Maven commands on your project.</p>
 <div class="admonition warning">
 <p class="first admonition-title">Warning</p>
-<p class="last">As of March 2013, a bug causes both <tt class="docutils literal"><span class="pre">src/main/scala</span></tt>
-and <tt class="docutils literal"><span class="pre">src/test/scala</span></tt> to use the default output folder
-(<tt class="docutils literal"><span class="pre">target/classes</span></tt>). This may be confusing when building tests, since
-their class files will <strong>not</strong> end in <tt class="docutils literal"><span class="pre">target/test-classes</span></tt>, as they
+<p class="last">As of March 2013, a bug causes both <code class="docutils literal"><span class="pre">src/main/scala</span></code>
+and <code class="docutils literal"><span class="pre">src/test/scala</span></code> to use the default output folder
+(<code class="docutils literal"><span class="pre">target/classes</span></code>). This may be confusing when building tests, since
+their class files will <strong>not</strong> end in <code class="docutils literal"><span class="pre">target/test-classes</span></code>, as they
 would when building on the command line. You can work around this
-by manually changing the output folder for <tt class="docutils literal"><span class="pre">src/test/scala</span></tt>.</p>
+by manually changing the output folder for <code class="docutils literal"><span class="pre">src/test/scala</span></code>.</p>
 </div>
 </div>
 </div>

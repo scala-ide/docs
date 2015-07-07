@@ -44,7 +44,7 @@
     <link rel="next" title="Building the Scala IDE" href="../building/building.html" />
     <link rel="prev" title="Welcome to the Scala IDE Developer Documentation" href="../index.html" /> 
   </head>
-  <body>
+  <body role="document">
 <div class="top-bar">
   <div class="top-bar-inner">
     <div class="container">
@@ -101,22 +101,22 @@ You are literally instants away from being all set and ready to start hacking th
 <li><a class="reference external" href="http://www.eclipse.org/downloads/">Eclipse 4.4 (Luna)</a>, including JDT. Look for
 <strong>Eclipse IDE for Eclipse Committers</strong>, which comes with <cite>Eclipse Plug-In Development Environment pre-installed</cite>.</li>
 <li>The <a class="reference external" href="http://www.eclipse.org/pde/">Eclipse Plug-in Development Environment (PDE)</a>, which ships with the
-Eclipse SDK (<strong>Eclipse IDE for Eclipse Committers</strong>) but may need to be installed manually.  Choose <tt class="docutils literal"><span class="pre">Help</span> <span class="pre">&gt;</span> <span class="pre">Install</span> <span class="pre">New</span> <span class="pre">Software...</span></tt>,
+Eclipse SDK (<strong>Eclipse IDE for Eclipse Committers</strong>) but may need to be installed manually.  Choose <code class="docutils literal"><span class="pre">Help</span> <span class="pre">&gt;</span> <span class="pre">Install</span> <span class="pre">New</span> <span class="pre">Software...</span></code>,
 select the <a class="reference external" href="http://download.eclipse.org/releases/luna">Luna Update Site</a>, then install
-<tt class="docutils literal"><span class="pre">General</span> <span class="pre">Purpose</span> <span class="pre">Tools</span> <span class="pre">&gt;</span> <span class="pre">Eclipse</span> <span class="pre">Plug-in</span> <span class="pre">Development</span> <span class="pre">Environment</span></tt>.</li>
+<code class="docutils literal"><span class="pre">General</span> <span class="pre">Purpose</span> <span class="pre">Tools</span> <span class="pre">&gt;</span> <span class="pre">Eclipse</span> <span class="pre">Plug-in</span> <span class="pre">Development</span> <span class="pre">Environment</span></code>.</li>
 <li>The <a class="reference external" href="http://scala-ide.org/download/nightly.html">Scala IDE nightly for Scala 2.11</a>. Make sure you are using the latest nightly</li>
 <li><a class="reference external" href="http://wiki.eclipse.org/Eclipse/Installation#Install_a_JVM">Java 7 is recommended for Eclipse 4.4</a>. Java 8 can also be used
 starting with <a class="reference external" href="https://github.com/scala-ide/scala-ide/pull/842">PR 842</a></li>
 <li><a class="reference external" href="http://maven.apache.org/download.html">Maven 3</a>.</li>
 <li><a class="reference external" href="http://git-scm.com/">Git</a> and a <a class="reference external" href="https://github.com/">GitHub</a> account.</li>
 </ul>
-<p>This document uses a script to build Scala IDE. If you are on Windows, you could try <a class="reference external" href="http://www.cygwin.com/">Cygwin</a>. Otherwise, the <a class="reference internal" href="../building/building.html#building-run-the-build"><em>Run the build</em></a> section of the documentation describes the different steps to execute for a full build.</p>
+<p>This document uses a script to build Scala IDE. If you are on Windows, you could try <a class="reference external" href="http://www.cygwin.com/">Cygwin</a>. Otherwise, the <a class="reference internal" href="../building/building.html#building-run-the-build"><span>Run the build</span></a> section of the documentation describes the different steps to execute for a full build.</p>
 </div>
 <div class="section" id="fork-the-project">
 <span id="setup-fork-the-project"></span><h2>Fork the project</h2>
 <p>The first thing you should do is forking the <a class="reference external" href="http://github.com/scala-ide/scala-ide">Scala IDE repository</a>,
 that will greatly simplify the process of sending us patches (remember to also read about the
-<a class="reference internal" href="../workflow/workflow.html#workflow-page"><em>Workflow</em></a> before creating pull requests).</p>
+<a class="reference internal" href="../workflow/workflow.html#workflow-page"><span>Workflow</span></a> before creating pull requests).</p>
 <p>If you are new to GitHub, <a class="reference external" href="http://help.github.com/fork-a-repo/">read here to learn how to fork a project</a>.</p>
 <p>After forking the project, simply open a terminal and clone your own fork to download the project&#8217;s
 sources. The command for cloning the fork should be very close to the following one (mind that
@@ -130,7 +130,7 @@ made in the project, and easily integrate them back in your fork.</p>
 </div>
 <div class="section" id="pull-the-libraries">
 <h2>Pull the libraries</h2>
-<p>The Scala IDE projects uses libraries which are pulled during the build process and copied in the <tt class="docutils literal"><span class="pre">target/lib</span></tt> folders.
+<p>The Scala IDE projects uses libraries which are pulled during the build process and copied in the <code class="docutils literal"><span class="pre">target/lib</span></code> folders.
 So let&#8217;s run the build.</p>
 <p>From the project root, run the following command:</p>
 <div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>./build-all.sh
@@ -140,21 +140,21 @@ So let&#8217;s run the build.</p>
 <div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>./build-all.sh -P scala-2.11.x -P eclipse-luna clean install
 </pre></div>
 </div>
-<p>If you want more information concerning the build, check out <a class="reference internal" href="../building/building.html#building-run-the-build"><em>Run the build</em></a>.</p>
+<p>If you want more information concerning the build, check out <a class="reference internal" href="../building/building.html#building-run-the-build"><span>Run the build</span></a>.</p>
 </div>
 <div class="section" id="import-the-projects-into-eclipse">
 <h2>Import the projects into Eclipse</h2>
 <p>The Scala IDE project already contains the metadata files needed by Eclipse to setup the project.
-To import the Scala IDE in your workspace simply click on <tt class="docutils literal"><span class="pre">File</span> <span class="pre">&gt;</span> <span class="pre">Import</span></tt>. The Eclipse Import dialog
-will open. There, select <tt class="docutils literal"><span class="pre">General</span> <span class="pre">&gt;</span> <span class="pre">Existing</span> <span class="pre">Projects</span> <span class="pre">into</span> <span class="pre">Workspace</span></tt> and click Next. A new dialog
+To import the Scala IDE in your workspace simply click on <code class="docutils literal"><span class="pre">File</span> <span class="pre">&gt;</span> <span class="pre">Import</span></code>. The Eclipse Import dialog
+will open. There, select <code class="docutils literal"><span class="pre">General</span> <span class="pre">&gt;</span> <span class="pre">Existing</span> <span class="pre">Projects</span> <span class="pre">into</span> <span class="pre">Workspace</span></code> and click Next. A new dialog
 will open. Browse to the folder that points to your cloned Scala IDE project&#8217;s and select it.</p>
 <p>A list of projects should then be loaded in the below white area. The only projects that you absolutely
-need to import in Eclipse are <tt class="docutils literal"><span class="pre">org.scala-ide.sdt.core</span></tt> and <tt class="docutils literal"><span class="pre">org.scala-ide.sdt.core.tests</span></tt>. If you want
-to work on Debugger select also <tt class="docutils literal"><span class="pre">org.scala-ide.sdt.debug(.tests)</span></tt> and for expression evaluator add
-<tt class="docutils literal"><span class="pre">org.scala-ide.sdt.debug.expression(.tests)</span></tt>. Select projects you want to work on and click Finish.</p>
+need to import in Eclipse are <code class="docutils literal"><span class="pre">org.scala-ide.sdt.core</span></code> and <code class="docutils literal"><span class="pre">org.scala-ide.sdt.core.tests</span></code>. If you want
+to work on Debugger select also <code class="docutils literal"><span class="pre">org.scala-ide.sdt.debug(.tests)</span></code> and for expression evaluator add
+<code class="docutils literal"><span class="pre">org.scala-ide.sdt.debug.expression(.tests)</span></code>. Select projects you want to work on and click Finish.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">If you want to hack on the Debugger it may be necessary for Linux systems to add the <tt class="docutils literal"><span class="pre">tools.jar</span></tt> to the classpath. This can be achieved by navigating to <tt class="docutils literal"><span class="pre">Preferences</span> <span class="pre">→</span> <span class="pre">Java</span> <span class="pre">→</span> <span class="pre">Installed</span> <span class="pre">JREs</span></tt> and adding the JAR to the JRE that builds your sources. The JAR itself can be found at <tt class="docutils literal"><span class="pre">&lt;path-to-JRE/lib/tools.jar&gt;</span></tt>.</p>
+<p class="last">If you want to hack on the Debugger it may be necessary for Linux systems to add the <code class="docutils literal"><span class="pre">tools.jar</span></code> to the classpath. This can be achieved by navigating to <code class="docutils literal"><span class="pre">Preferences</span> <span class="pre">→</span> <span class="pre">Java</span> <span class="pre">→</span> <span class="pre">Installed</span> <span class="pre">JREs</span></code> and adding the JAR to the JRE that builds your sources. The JAR itself can be found at <code class="docutils literal"><span class="pre">&lt;path-to-JRE/lib/tools.jar&gt;</span></code>.</p>
 </div>
 <p>If after rebuilding you see any errors, drop us a note in the <a class="reference external" href="http://groups.google.com/group/scala-ide-dev?pli=1">Scala IDE Developer
 Mailing List</a>.</p>
@@ -165,7 +165,7 @@ Mailing List</a>.</p>
 absolutely necessary, we recommend to install the Scalastyle plugin that will show errors whenever the style rules
 are violated. The update site for the plugin can be found on the homepage of Scalastyle.</p>
 <p>After installing the plugin one needs to add the Scalastyle configuration of the Scala IDE. This can easily be done
-in <tt class="docutils literal"><span class="pre">Window</span> <span class="pre">→</span> <span class="pre">Preferences</span> <span class="pre">→</span> <span class="pre">Scalastyle</span> <span class="pre">→</span> <span class="pre">Browse/Add</span></tt>, where the configuration can be found at <tt class="docutils literal"><span class="pre">&lt;path-to-scala-ide&gt;/org.scala-ide.sdt.core/scala-ide-style-config.xml</span></tt>.
+in <code class="docutils literal"><span class="pre">Window</span> <span class="pre">→</span> <span class="pre">Preferences</span> <span class="pre">→</span> <span class="pre">Scalastyle</span> <span class="pre">→</span> <span class="pre">Browse/Add</span></code>, where the configuration can be found at <code class="docutils literal"><span class="pre">&lt;path-to-scala-ide&gt;/org.scala-ide.sdt.core/scala-ide-style-config.xml</span></code>.
 The Scalastyle builder is already added to all projects that should be checked, thus no further configuration is required.</p>
 <p>It is also possible to run Scalastyle on the shell. For this type</p>
 <blockquote>
@@ -191,7 +191,7 @@ test with Equinox Weaving.</p>
 </div>
 <div class="section" id="create-a-run-configuration-for-launching-eclipse-with-scala-ide">
 <h3>Create a run configuration for launching Eclipse with Scala IDE</h3>
-<p>To create a run configuration, right click on the <tt class="docutils literal"><span class="pre">org.scala-ide.sdt.core</span></tt> project and select
+<p>To create a run configuration, right click on the <code class="docutils literal"><span class="pre">org.scala-ide.sdt.core</span></code> project and select
 Run As &gt; Equinox Weaving enabled Eclipse Application.  That should fire up a second Eclipse instance.
 To quickly test that all is working fine, try to create a Scala project.</p>
 <p>You are now ready to hack on the Scala IDE. Start by looking around, do some change and observe what
@@ -204,7 +204,7 @@ happens when you launch the second Eclipse&#8217;s instance.</p>
 <p>You can use the built-in JUnit runner to run or debug the tests inside Eclipse. As for the normal run,
 you need to the <em>Equinox Weaving Launcher</em>. In the <em>Run Configuration</em> Dialog, create a new configuration
 using the <strong>JUnit Plug-In test with Equinox Weaving</strong>. Make sure you selected the <em>org.scala-ide.sdt.core.tests</em>
-project, and choose the test class you want to run (use <tt class="docutils literal"><span class="pre">scala.tools.eclipse.TestsSuite</span></tt> to run all tests).</p>
+project, and choose the test class you want to run (use <code class="docutils literal"><span class="pre">scala.tools.eclipse.TestsSuite</span></code> to run all tests).</p>
 <p>In the <strong>Main</strong> tab make the following adjustments:</p>
 <ul class="simple">
 <li>Choose <strong>Run an application: [No Application] - Headless Mode</strong>.</li>
@@ -222,19 +222,19 @@ because of a timeout).</p>
 <div class="section" id="additional-information">
 <h2>Additional information</h2>
 <div class="section" id="org-scala-ide-sdt-aspects-project">
-<h3><tt class="docutils literal"><span class="pre">org.scala-ide.sdt.aspects</span></tt> project</h3>
+<h3><code class="docutils literal"><span class="pre">org.scala-ide.sdt.aspects</span></code> project</h3>
 <p>The Scala IDE uses AspectJ to weave into Eclipse and hook in to JDT internals. If you want to work
 on JDT integration within the Scala IDE, then it is a good idea to import
-<tt class="docutils literal"><span class="pre">org.scala-ide.sdt.aspects</span></tt> project in your Eclipse workspace and also install the <a class="reference external" href="http://www.eclipse.org/ajdt">AspectJ
+<code class="docutils literal"><span class="pre">org.scala-ide.sdt.aspects</span></code> project in your Eclipse workspace and also install the <a class="reference external" href="http://www.eclipse.org/ajdt">AspectJ
 Eclipse plug-in</a>.</p>
 </div>
 <div class="section" id="using-jrebel">
 <h3>Using JRebel</h3>
 <p>If you want to use JRebel, there are two things you need to know:</p>
 <ol class="arabic simple">
-<li>You can simply add <tt class="docutils literal"><span class="pre">-noverify</span> <span class="pre">-javaagent:path/to/javarebel.jar</span></tt> to the VM arguments in the
+<li>You can simply add <code class="docutils literal"><span class="pre">-noverify</span> <span class="pre">-javaagent:path/to/javarebel.jar</span></code> to the VM arguments in the
 run configuration. For Windows, this is
-<tt class="docutils literal"><span class="pre">-noverify</span> <span class="pre">&quot;-javaagent:C:\Program</span> <span class="pre">Files</span> <span class="pre">(x86)\ZeroTurnaround\JRebel\jrebel.jar&quot;</span></tt>.</li>
+<code class="docutils literal"><span class="pre">-noverify</span> <span class="pre">&quot;-javaagent:C:\Program</span> <span class="pre">Files</span> <span class="pre">(x86)\ZeroTurnaround\JRebel\jrebel.jar&quot;</span></code>.</li>
 <li>JRebel is free for Scala users, see Free JavaRebel for Scala users, ZeroTurnaround announces.</li>
 </ol>
 </div>

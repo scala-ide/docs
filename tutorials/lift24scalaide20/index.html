@@ -44,7 +44,7 @@
     <link rel="next" title="Enabling Scala continuations plugin in the Scala IDE" href="../continuations-plugin/index.html" />
     <link rel="prev" title="Setup and use Play framework 2.1 in Scala IDE 3.0" href="../play/index.html" /> 
   </head>
-  <body>
+  <body role="document">
 <div class="top-bar">
   <div class="top-bar-inner">
     <div class="container">
@@ -122,14 +122,14 @@
 <p>Start by creating a basic Lift project</p>
 <ul class="simple">
 <li>Download the Lift 2.4 release from <a class="reference external" href="http://liftweb.net/download">http://liftweb.net/download</a></li>
-<li>Unzip it and copy the folder <tt class="docutils literal"><span class="pre">scala_29/lift_basic</span></tt> to your preferred location. Let’s say <tt class="docutils literal"><span class="pre">/path/to/lift_basic</span></tt> for the purpose of this document.</li>
-<li>The lift example projects still use sbt 0.7.5 but we will use the sbteclipse plugin to configure our project for Eclipse. As this plugin only works with sbt 0.10 and above we will replace the sbt configuration files in the <tt class="docutils literal"><span class="pre">lift_basic</span></tt> project with one compatible with sbt 0.11.2. To do so go to <tt class="docutils literal"><span class="pre">/path/to/lift_basic</span></tt> and delete everything except the <tt class="docutils literal"><span class="pre">src</span></tt> folder. Your <tt class="docutils literal"><span class="pre">/path/to/lift_basic</span></tt> folder should now look like this:</li>
+<li>Unzip it and copy the folder <code class="docutils literal"><span class="pre">scala_29/lift_basic</span></code> to your preferred location. Let’s say <code class="docutils literal"><span class="pre">/path/to/lift_basic</span></code> for the purpose of this document.</li>
+<li>The lift example projects still use sbt 0.7.5 but we will use the sbteclipse plugin to configure our project for Eclipse. As this plugin only works with sbt 0.10 and above we will replace the sbt configuration files in the <code class="docutils literal"><span class="pre">lift_basic</span></code> project with one compatible with sbt 0.11.2. To do so go to <code class="docutils literal"><span class="pre">/path/to/lift_basic</span></code> and delete everything except the <code class="docutils literal"><span class="pre">src</span></code> folder. Your <code class="docutils literal"><span class="pre">/path/to/lift_basic</span></code> folder should now look like this:</li>
 </ul>
 <blockquote>
 <div><a class="reference external image-reference" href="../../_images/01-lift_basic_folder_structure.png"><img alt="lift-basic folder structure" src="../../_images/01-lift_basic_folder_structure.png" /></a>
 </div></blockquote>
 <ul class="simple">
-<li>Create a file <tt class="docutils literal"><span class="pre">build.sbt</span></tt> with the following contents:</li>
+<li>Create a file <code class="docutils literal"><span class="pre">build.sbt</span></code> with the following contents:</li>
 </ul>
 <blockquote>
 <div><div class="highlight-scala"><div class="highlight"><pre><span class="n">name</span> <span class="o">:=</span> <span class="s">&quot;lift-basic&quot;</span>
@@ -156,25 +156,25 @@
 </div>
 </div></blockquote>
 <ul class="simple">
-<li>In a console go to <tt class="docutils literal"><span class="pre">/path/to/lift_basic</span></tt> and run <tt class="docutils literal"><span class="pre">sbt</span></tt>.</li>
-<li>Once sbt has successfully started run the <tt class="docutils literal"><span class="pre">update</span></tt> task to download all needed dependencies.</li>
+<li>In a console go to <code class="docutils literal"><span class="pre">/path/to/lift_basic</span></code> and run <code class="docutils literal"><span class="pre">sbt</span></code>.</li>
+<li>Once sbt has successfully started run the <code class="docutils literal"><span class="pre">update</span></code> task to download all needed dependencies.</li>
 </ul>
 </div>
 <div class="section" id="configuring-the-lift-project-for-scala-ide">
 <h2>Configuring the Lift project for Scala IDE</h2>
 <p>To be able to import the project into Eclipse we are going to use the <a class="reference external" href="https://github.com/typesafehub/sbteclipse">sbteclipse</a> plugin for sbt to generate the Eclipse project files (.project, .classpath, etc.).</p>
 <ul>
-<li><p class="first">In your home folder create the file <tt class="docutils literal"><span class="pre">.sbt/plugins/build.sbt</span></tt> with the following contents:</p>
+<li><p class="first">In your home folder create the file <code class="docutils literal"><span class="pre">.sbt/plugins/build.sbt</span></code> with the following contents:</p>
 <div class="highlight-scala"><div class="highlight"><pre><span class="n">addSbtPlugin</span><span class="o">(</span><span class="s">&quot;com.typesafe.sbteclipse&quot;</span> <span class="o">%</span> <span class="s">&quot;sbteclipse-plugin&quot;</span> <span class="o">%</span> <span class="s">&quot;2.0.0&quot;</span><span class="o">)</span>
 </pre></div>
 </div>
 <p>This will make the sbteclipse plugin globally available in all your sbt projects. You can also install the sbteclipse plugin only for a particular project; see the <a class="reference external" href="https://github.com/typesafehub/sbteclipse/wiki/Installing-sbteclipse">sbteclipse wiki</a> for more information on how to install sbteclipse as a global vs. a project local plugin.</p>
 </li>
-<li><p class="first">Open <tt class="docutils literal"><span class="pre">/path/to/lift_basic/build.sbt</span></tt> and add the following line:</p>
+<li><p class="first">Open <code class="docutils literal"><span class="pre">/path/to/lift_basic/build.sbt</span></code> and add the following line:</p>
 <div class="highlight-scala"><div class="highlight"><pre><span class="nc">EclipseKeys</span><span class="o">.</span><span class="n">createSrc</span> <span class="o">:=</span> <span class="nc">EclipseCreateSrc</span><span class="o">.</span><span class="nc">Default</span> <span class="o">+</span> <span class="nc">EclipseCreateSrc</span><span class="o">.</span><span class="nc">Resource</span>
 </pre></div>
 </div>
-<p>Your <tt class="docutils literal"><span class="pre">/path/to/lift_basic/build.sbt</span></tt> should now look like this:</p>
+<p>Your <code class="docutils literal"><span class="pre">/path/to/lift_basic/build.sbt</span></code> should now look like this:</p>
 </li>
 </ul>
 <blockquote>
@@ -204,15 +204,15 @@
 </div>
 </div></blockquote>
 <ul class="simple">
-<li>In a console go to <tt class="docutils literal"><span class="pre">/path/to/lift_basic</span></tt> and run <tt class="docutils literal"><span class="pre">sbt</span></tt>.</li>
-<li>Once sbt has successfully started run the <tt class="docutils literal"><span class="pre">eclipse</span></tt> task to generate Eclipse project files. Optionally you can run <tt class="docutils literal"><span class="pre">eclipse</span> <span class="pre">with-source=true</span></tt> to tell sbteclipse to try to download source and doc artifacts and create Eclipse source and doc attachments for library dependencies.</li>
+<li>In a console go to <code class="docutils literal"><span class="pre">/path/to/lift_basic</span></code> and run <code class="docutils literal"><span class="pre">sbt</span></code>.</li>
+<li>Once sbt has successfully started run the <code class="docutils literal"><span class="pre">eclipse</span></code> task to generate Eclipse project files. Optionally you can run <code class="docutils literal"><span class="pre">eclipse</span> <span class="pre">with-source=true</span></code> to tell sbteclipse to try to download source and doc artifacts and create Eclipse source and doc attachments for library dependencies.</li>
 </ul>
 </div>
 <div class="section" id="importing-the-lift-project-into-scala-ide">
 <h2>Importing the Lift project into Scala IDE</h2>
 <p>Everything is setup, it is time to import the project into Eclipse.</p>
 <ul class="simple">
-<li>Import the Lift project as an <tt class="docutils literal"><span class="pre">Existing</span> <span class="pre">Project</span></tt> into your Workspace (<tt class="docutils literal"><span class="pre">File</span> <span class="pre">--&gt;</span> <span class="pre">Import</span> <span class="pre">--&gt;</span> <span class="pre">Existing</span> <span class="pre">Projects</span> <span class="pre">into</span> <span class="pre">Workspace</span></tt>). Set <tt class="docutils literal"><span class="pre">/path/to/lift_basic</span></tt> as the root directory and click <tt class="docutils literal"><span class="pre">Finish</span></tt>.</li>
+<li>Import the Lift project as an <code class="docutils literal"><span class="pre">Existing</span> <span class="pre">Project</span></code> into your Workspace (<code class="docutils literal"><span class="pre">File</span> <span class="pre">--&gt;</span> <span class="pre">Import</span> <span class="pre">--&gt;</span> <span class="pre">Existing</span> <span class="pre">Projects</span> <span class="pre">into</span> <span class="pre">Workspace</span></code>). Set <code class="docutils literal"><span class="pre">/path/to/lift_basic</span></code> as the root directory and click <code class="docutils literal"><span class="pre">Finish</span></code>.</li>
 </ul>
 <blockquote>
 <div><a class="reference external image-reference" href="../../_images/02-import_project_dialog.png"><img alt="eclipes import project dialog" src="../../_images/02-import_project_dialog.png" /></a>
@@ -226,9 +226,9 @@
 </div>
 <div class="section" id="running-and-debugging-the-lift-project-in-scala-ide">
 <h2>Running and Debugging the Lift project in Scala IDE</h2>
-<p>The <tt class="docutils literal"><span class="pre">lift_basic</span></tt> project includes the RunWebApp Application in <tt class="docutils literal"><span class="pre">src/test/scala</span></tt> which bootstraps the embedded Jetty server.</p>
+<p>The <code class="docutils literal"><span class="pre">lift_basic</span></code> project includes the RunWebApp Application in <code class="docutils literal"><span class="pre">src/test/scala</span></code> which bootstraps the embedded Jetty server.</p>
 <ul class="simple">
-<li>Right click <tt class="docutils literal"><span class="pre">RunWebApp.scala</span></tt> in Eclipse and select <tt class="docutils literal"><span class="pre">Run</span> <span class="pre">As</span> <span class="pre">--&gt;</span> <span class="pre">Scala</span> <span class="pre">Application</span></tt> (or <tt class="docutils literal"><span class="pre">Debug</span> <span class="pre">As</span> <span class="pre">--&gt;</span> <span class="pre">Scala</span> <span class="pre">Application</span></tt>).</li>
+<li>Right click <code class="docutils literal"><span class="pre">RunWebApp.scala</span></code> in Eclipse and select <code class="docutils literal"><span class="pre">Run</span> <span class="pre">As</span> <span class="pre">--&gt;</span> <span class="pre">Scala</span> <span class="pre">Application</span></code> (or <code class="docutils literal"><span class="pre">Debug</span> <span class="pre">As</span> <span class="pre">--&gt;</span> <span class="pre">Scala</span> <span class="pre">Application</span></code>).</li>
 <li>Open a web browser and go to <a class="reference external" href="http://localhost:8080">http://localhost:8080</a> to see your running Lift application.</li>
 </ul>
 </div>
@@ -236,13 +236,13 @@
 <h2>Optional: enabling JRebel support for the Lift project in Scala IDE</h2>
 <p>To enable JRebel support for your Lift project in Scala IDE you have to install the <a class="reference external" href="http://zeroturnaround.com/jrebel/installing-jrebel-plugin-for-eclipse/">JRebel Eclipse Plugin</a>. For more information on JRebel see <a class="reference external" href="http://zeroturnaround.com/jrebel/">JRebel website</a>.</p>
 <ul class="simple">
-<li>Once the JRebel plugin is installed and configured open the Run Configuration for <tt class="docutils literal"><span class="pre">RunWebApp.scala</span></tt> (Right click <tt class="docutils literal"><span class="pre">RunWebApp.scala</span></tt> in Eclipse and select <tt class="docutils literal"><span class="pre">Run</span> <span class="pre">As</span> <span class="pre">--&gt;</span> <span class="pre">Run</span> <span class="pre">Configurations...</span></tt>). Switch to the <tt class="docutils literal"><span class="pre">JRebel</span></tt> tab and activate JRebel:</li>
+<li>Once the JRebel plugin is installed and configured open the Run Configuration for <code class="docutils literal"><span class="pre">RunWebApp.scala</span></code> (Right click <code class="docutils literal"><span class="pre">RunWebApp.scala</span></code> in Eclipse and select <code class="docutils literal"><span class="pre">Run</span> <span class="pre">As</span> <span class="pre">--&gt;</span> <span class="pre">Run</span> <span class="pre">Configurations...</span></code>). Switch to the <code class="docutils literal"><span class="pre">JRebel</span></code> tab and activate JRebel:</li>
 </ul>
 <blockquote>
 <div><a class="reference external image-reference" href="../../_images/04-eclipse_run_configuration_jrebel.png"><img alt="eclipse run configuration jrebel tab" src="../../_images/04-eclipse_run_configuration_jrebel.png" /></a>
 </div></blockquote>
 <ul class="simple">
-<li>Now when debugging <tt class="docutils literal"><span class="pre">RunWebApp.scala</span></tt> JRebel will pick up your code changes and automatically replace them in the running application without the need for redeploying or restarting.</li>
+<li>Now when debugging <code class="docutils literal"><span class="pre">RunWebApp.scala</span></code> JRebel will pick up your code changes and automatically replace them in the running application without the need for redeploying or restarting.</li>
 </ul>
 </div>
 <div class="section" id="going-further">
