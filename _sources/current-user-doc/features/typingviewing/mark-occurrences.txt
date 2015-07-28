@@ -1,7 +1,5 @@
-.. include:: /global_defs.hrst
-
-Mark Occurrences |updated|
-==========================
+Mark Occurrences
+================
 
 As in the Java tooling, Mark Occurrences highlights within a file where a type, variable or method is referenced.
 

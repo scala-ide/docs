@@ -1,7 +1,5 @@
-.. include:: /global_defs.hrst
-
-Source generators |new|
-#######################
+Source generators
+#################
 
 Tired of writing ``hashCode`` and ``equals`` implementations by hand? Now you can let the IDE take care of it! The following source generators can be found under the *Source* context menu that appears after right-clicking in the editor.
 
