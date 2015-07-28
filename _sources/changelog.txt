@@ -1,13 +1,19 @@
 Changelog
 =========
 
-4.1
----
+4.1.x
+-----
+
+4.1.1 (2015-07-28)
+..................
+
+- Remove key binding for expression evaluator (:ticket:`1002509`)
+- Solve problem with not compiled Java files when they depend on Scala files (:ticket:`1002486`)
 
 RC2 (2015-05-18)
 ................
 
-- Compilation error regression in 4.1-RC1 (:ticket:`1002461` :ticket:`1002456`)
+- Compilation error regression in 4.1-RC1 (:ticket:`1002461`, :ticket:`1002456`)
 - Another key binding change (:ticket:`1002459`)
 - Move key binding for expression evaluator to different key (:ticket:`1002459`)
 - Proper closing of scaladoc comments even with quotes (:ticket:`1001650`)
