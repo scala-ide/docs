@@ -5,82 +5,23 @@
 Roadmap
 =======
 
-Goal
-----
+The central goal is to improve developer productivity by providing Eclipse based IDE with Scala specific features. We aim also at creating a tool supporting development of Reactive applications.
+Eclipse is the open platform of our choice but there are other IDE projects in the open-source space and we would like to contribute to them in one way or the other too by sharing ideas or even parts of the code where possible.
 
-The central goal until the end of 2014 is to improve Play experience in Eclipse. To that end, we need some infrastructure work: improve Scala IDE core to work with different versions of Scala (since Play does not switch at the same time a new Scala is released) and sbt server (for correctly building a Play project).
+In the following there is an incomplete list of features we intend to implement for upcoming Scala IDE revisions. Besides the performance improvements and bug fixes there is always a place for additional features and improvements. We encourage everyone to make suggestions via the `Scala IDE mailing list <https://groups.google.com/forum/#!forum/scala-ide-user>`_ or our `issue tracker <https://www.assembla.com/spaces/scala-ide/support/tickets>`_.
 
+4.2.0 (end of July)
+-------------------
 
-4.0.0 - codename Lithium
-------------------------
+- Async debugger: The new tool for control flow tracking in your cutting edge reactive applications. It is the must for every developer who needs to trace control flow in existing and newly built applications where Scala Future or Akka Actors are playing a key role. This debugger improvement allows you to stop at breakpoints and find the trigger of the suspicious event when it was sent from a different thread.
+- Auto edits: Whenever you type, the editor supports you by adding missing parentheses, by indenting the code correctly for you and by doing a lot of other little actions that save you keystrokes. Unfortunately, not everyone agreed with the actions that were done and sometimes there were not even the correct actions done. Auto edits solve this problem by making everything configurable - if something doesn't work in the way how you would expect it you can just change it. Beside from that new features like automatic template completion are going to be added.
+- Scala 2.12 support: A new major version of Scala is coming and Scala IDE should of course be able to handle it well.
+- Reliability improvements mostly around debugging
 
-Milestone 2 (end of May)
-~~~~~~~~~~~~~~~~~~~~~~~~
+4.3.0 (end of October)
+----------------------
 
-- Support multiple major Scala versions in the same Eclipse IDE (2.10 and 2.11). This feature allows people to have only one working installation of Eclipse, but mix 2.10 and 2.11 projects in the same workspace. It's been a long-requested feature, implemented based on the new source-flag added in the Scala compiler 2.11.0:
+- sbt-server integration: This is a long awaited feature. Every user of Play or Scala.js projects has the problem that not all IDE features work reliable on their codebase because internally the IDE uses its own builder to build the application, whereas it really should use the builder of your project. sbt is the builder of choice of Scala users and sbt-server makes it possible to remotely control it by the IDE. By integrating sbt-server into Scala IDE all problems that arise from bytecode inequality that comes from multiple builds fighting each other should be gone.
 
-   - use the newer type-checker (presentation compiler) in the compatibility mode (passing -Xsource:2.10)
-   - use the exact compiler for building (either 2.10 or 2.11), based on project configuration
-
-Milestone 3 (middle of July)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-- `Eclipse Luna <https://projects.eclipse.org/releases/luna>`_ support
-- clean up sdt.core API. The core Scala IDE is already being used by plugins (such as ScalaTest, Play or Worksheet), but it does not have a stable API. This work item cleans up existing functionality and offers a semantically-versioned interface for plugin writers.
-- community contributions
-
-RC1 (middle of August)
-~~~~~~~~~~~~~~~~~~~~~~
-
-- bugfixes in new features, integrate community contributions
-
-Play IDE
---------
-
-The main missing piece in the Play IDE experience is the builder. Play projects have a relatively complex build, involving asset compilers (routes, templates, CoffeeScript, etc.) or source generators. Instead of replicating the sbt build, we will build an sbt-based builder that delegates to an out-of-process Sbt server.
-
-- switch Play to Twirl (together with Lithium M3, middle of July )
-
-0.5.0 (middle of September)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-- sbt server support
-	- Import Sbt project (done) - 0.1.0
-	- Builder by delegating to Sbt server - (0.2.0 Sept 8)
-	- getting errors/warnings, acting on changed files
-
-
-1.0 (end of the year)
-~~~~~~~~~~~~~~~~~~~~~
-
-- launching and debugging support for Play apps
-- better completion in templates
-- report errors as you type in routes
-
-
-Community
----------
-
-In addition to the Typesafe team there is a very active community around the Scala IDE, who constantly donate their time and energy to build great features. If you are working on something and want to feature on the roadmap, please let us know!
-
-Simon Schäfer
-~~~~~~~~~~~~~~
-
-For GSoC14 there are several improvements in work. They include inprovements to the user experience and the starting transition to an "user extensible IDE". User extensible means that functionality of the IDE can be extended by users with there own moduls, which are written entirely in Scala.
-
-Improvement to the user experience include:
-
-- Better wizards and dialogs
-- Cleaned up hovers, icons, menu bars, error markers etc.
-- Behavior of the Scala IDE follows Scala preferences and not Java preferences
-
-New features should be implemented or reimplemented in so far that it is possible to extend them by users. This include:
-
-- Save actions. At the moment there are only the save actions of the Java editor available, which mostly do not work and/or produce error messages when they are applied on Scala code.
-- Auto edits. They do automatic changes to a document while the user types and are used to do small minor code edits, which developers normally don't want to do by themselves. This includes features such as automatic indentation and auto expanding multi line comments.
-- Refactorings. They are the big brother of auto edits, need to be invoked explicitly and can do even the most powerful code changes. Giving users the possibility to write them on their own means that they can automate their repetitive code changes much more easily.
-
-The full GSoC proposal, can be found `here <http://www.google-melange.com/gsoc/proposal/public/google/gsoc2014/sschaef/5629499534213120>`_.
-
-
+  Beside from the sbt-server integration, Scala IDE will provide an editor for ``*.sbt`` files and it will even be possible to fully handle the Scala code in your ``project/`` directory. Furthermore you will no longer need the ``sbteclipse`` plugin due to the fact that the IDE will be able to automatically import your sbt projects and track changes to them in the background and apply them silently to your working environment.
 
