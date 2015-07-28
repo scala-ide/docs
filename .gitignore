@@ -6,6 +6,6 @@ _build
 /.idea
 
 # sbt
-/target
-/project/target
-/project/project
+target
+project/target
+project/project
