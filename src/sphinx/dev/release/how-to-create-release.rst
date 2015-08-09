@@ -14,6 +14,15 @@ Prerequisites:
 
 If you want to build a new Scala IDE release but you don't have access to all of the things, please ask one of the current IDE maintainers for them.
 
+#. The ``scala-ide/scala-ide-product`` repo needs to be updated to the newest version number. This can be done with the following command:
+
+   .. code-block:: bash
+
+     cd /path/to/scala-ide-product
+     mvn -Dtycho.mode=maven org.eclipse.tycho:tycho-versions-plugin:set-version -DnewVersion=<new-version>-SNAPSHOT
+
+   where ``<new-version>`` needs to be replaced by the actual version, which is for example ``4.0.0``. Note, it is not relevant to add RC or final version appendixes here. This command forgets one file that needs to be updated too: ``org.scala-ide.sdk.feature/templates/feature.xml``.
+
 #. Create a new config file in the ``scala-ide/uber-build`` repo. The config files are located in the ``uber-build/config`` directory. The easiest way to do this is to copy the config file of the previous release. The config file contains a ``*_GIT_BRANCH`` property, which specifies the branch or tag of the corresponding git repo. During the build this branch or tag is checked out and then considered for the Scala IDE release. If the repo has been updated since the last release and the plan is to include these updates in the next release, a new tag needs to be specified.
 
 #. After all tags are specified in the configuration file, they need to be set to all git repos. This can either be done manually or with the help of the ``uber-build/mk-git-tags.sh`` file. This file should be called in the following way:
