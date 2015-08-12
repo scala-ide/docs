@@ -105,6 +105,13 @@
 </ul>
 <p>If you want to build a new Scala IDE release but you don&#8217;t have access to all of the things, please ask one of the current IDE maintainers for them.</p>
 <ol class="arabic">
+<li><p class="first">The <code class="docutils literal"><span class="pre">scala-ide/scala-ide-product</span></code> repo needs to be updated to the newest version number. This can be done with the following command:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nb">cd</span> /path/to/scala-ide-product
+mvn -Dtycho.mode<span class="o">=</span>maven org.eclipse.tycho:tycho-versions-plugin:set-version -DnewVersion<span class="o">=</span>&lt;new-version&gt;-SNAPSHOT
+</pre></div>
+</div>
+<p>where <code class="docutils literal"><span class="pre">&lt;new-version&gt;</span></code> needs to be replaced by the actual version, which is for example <code class="docutils literal"><span class="pre">4.0.0</span></code>. Note, it is not relevant to add RC or final version appendixes here. This command forgets one file that needs to be updated too: <code class="docutils literal"><span class="pre">org.scala-ide.sdk.feature/templates/feature.xml</span></code>.</p>
+</li>
 <li><p class="first">Create a new config file in the <code class="docutils literal"><span class="pre">scala-ide/uber-build</span></code> repo. The config files are located in the <code class="docutils literal"><span class="pre">uber-build/config</span></code> directory. The easiest way to do this is to copy the config file of the previous release. The config file contains a <code class="docutils literal"><span class="pre">*_GIT_BRANCH</span></code> property, which specifies the branch or tag of the corresponding git repo. During the build this branch or tag is checked out and then considered for the Scala IDE release. If the repo has been updated since the last release and the plan is to include these updates in the next release, a new tag needs to be specified.</p>
 </li>
 <li><p class="first">After all tags are specified in the configuration file, they need to be set to all git repos. This can either be done manually or with the help of the <code class="docutils literal"><span class="pre">uber-build/mk-git-tags.sh</span></code> file. This file should be called in the following way:</p>

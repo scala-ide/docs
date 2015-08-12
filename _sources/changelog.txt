@@ -1,6 +1,48 @@
 Changelog
 =========
 
+4.2.x
+-----
+
+RC1 (2015-08-??)
+................
+
+// TODO add newest entries
+- Synchronize all calls into the JDI (:ticket:`1002160`)
+- Add Scala 2.12 Support (:ticket:`1002393`, :ticket:`1002496`, :ticket:`1002457`)
+- Also treat block comments/scaladoc as comments (:ticket:`1002515`)
+- Skip expensive buildStructure on save events (:ticket:`1002412`)
+- A few fixes to surround block Auto Edit (:ticket:`1002515`, :ticket:`1002519`)
+- Resolve conflict between CloseBraces and SurroundBlock Auto Edits (:ticket:`1002518`)
+- Close matching pair when no text selection exists (:ticket:`1002513`)
+- Upgrade sbt to 0.13.8 (:ticket:`1002481` :ticket:`1002493`)
+- Solve problem with not compiled Java files when they depend on Scala files (:ticket:`1002486`)
+- Disable auto closing of char literals in multi line comments (:ticket:`1002507`)
+- Remove key binding for expression evaluator (:ticket:`1002509`)
+- Resolve execution conflict between surround selection and close pair (:ticket:`1002488`)
+- Replace Application with App in code template
+- Disable debug tracing in move class refactoring
+- Add description to wizard that explains that templates can be changed (:ticket:`1002497`)
+- Use OverlayPreferenceStore to handle correct UI semantics (:ticket:`1002487`)
+- Do not generate Scaladoc comments for new file templates (:ticket:`1002495`)
+- Remove stale HierarchyResolver.remember around advice.
+- Enables test for java var-arg constructors
+- Remove broken "Open Type Hierarchy" menu items (:ticket:`1002478`)
+- Update Scala IDE version to 4.2.0
+- Auto edits (:ticket:`1002484`, :ticket:`1002485`, :ticket:`1002463`, :ticket:`1002133`, :ticket:`1002157`, :ticket:`1002165`, :ticket:`1002236`, :ticket:`1002235`, :ticket:`1002056`)
+- Cannot use scala evaluator with scalatest (:ticket:`1002447`)
+- Better error message in case of SCU cast failure
+- LibraryJarInBootstrapTest activated in ScalaDebugTestSuite
+- Commented code removed
+- Refactor/remove todos
+- Set UTF-8 as default charset in test workspaces
+- Enable compiler driven save actions (:ticket:`1002308`)
+- Last warnings removed from Scala files
+- Add description to "Create Scala Project" wizard (:ticket:`1002430`)
+- Make codebase compatible with Java6
+- Add Unit return type to procedures
+- Refactor/shorter logging in expression evaluator
+
 4.1.x
 -----
 
