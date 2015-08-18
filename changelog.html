@@ -90,43 +90,45 @@
 <h1>Changelog</h1>
 <div class="section" id="x">
 <h2>4.2.x</h2>
-<div class="section" id="rc1-2015-08">
-<h3>RC1 (2015-08-??)</h3>
-<p>// TODO add newest entries
-- Synchronize all calls into the JDI (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002160">#1002160</a>)
-- Add Scala 2.12 Support (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002393">#1002393</a>, <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002496">#1002496</a>, <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002457">#1002457</a>)
-- Also treat block comments/scaladoc as comments (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002515">#1002515</a>)
-- Skip expensive buildStructure on save events (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002412">#1002412</a>)
-- A few fixes to surround block Auto Edit (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002515">#1002515</a>, <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002519">#1002519</a>)
-- Resolve conflict between CloseBraces and SurroundBlock Auto Edits (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002518">#1002518</a>)
-- Close matching pair when no text selection exists (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002513">#1002513</a>)
-- Upgrade sbt to 0.13.8 (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002481">#1002481</a> <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002493">#1002493</a>)
-- Solve problem with not compiled Java files when they depend on Scala files (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002486">#1002486</a>)
-- Disable auto closing of char literals in multi line comments (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002507">#1002507</a>)
-- Remove key binding for expression evaluator (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002509">#1002509</a>)
-- Resolve execution conflict between surround selection and close pair (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002488">#1002488</a>)
-- Replace Application with App in code template
-- Disable debug tracing in move class refactoring
-- Add description to wizard that explains that templates can be changed (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002497">#1002497</a>)
-- Use OverlayPreferenceStore to handle correct UI semantics (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002487">#1002487</a>)
-- Do not generate Scaladoc comments for new file templates (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002495">#1002495</a>)
-- Remove stale HierarchyResolver.remember around advice.
-- Enables test for java var-arg constructors
-- Remove broken &#8220;Open Type Hierarchy&#8221; menu items (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002478">#1002478</a>)
-- Update Scala IDE version to 4.2.0
-- Auto edits (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002484">#1002484</a>, <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002485">#1002485</a>, <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002463">#1002463</a>, <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002133">#1002133</a>, <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002157">#1002157</a>, <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002165">#1002165</a>, <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002236">#1002236</a>, <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002235">#1002235</a>, <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002056">#1002056</a>)
-- Cannot use scala evaluator with scalatest (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002447">#1002447</a>)
-- Better error message in case of SCU cast failure
-- LibraryJarInBootstrapTest activated in ScalaDebugTestSuite
-- Commented code removed
-- Refactor/remove todos
-- Set UTF-8 as default charset in test workspaces
-- Enable compiler driven save actions (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002308">#1002308</a>)
-- Last warnings removed from Scala files
-- Add description to &#8220;Create Scala Project&#8221; wizard (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002430">#1002430</a>)
-- Make codebase compatible with Java6
-- Add Unit return type to procedures
-- Refactor/shorter logging in expression evaluator</p>
+<div class="section" id="rc1-2015-08-18">
+<h3>RC1 (2015-08-18)</h3>
+<ul class="simple">
+<li>Async debugger (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002482">#1002482</a>)</li>
+<li>Synchronize all calls into the JDI (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002160">#1002160</a>)</li>
+<li>Add Scala 2.12 Support (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002393">#1002393</a>, <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002496">#1002496</a>, <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002457">#1002457</a>)</li>
+<li>Also treat block comments/scaladoc as comments (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002515">#1002515</a>)</li>
+<li>Skip expensive buildStructure on save events (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002412">#1002412</a>)</li>
+<li>A few fixes to surround block Auto Edit (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002515">#1002515</a>, <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002519">#1002519</a>)</li>
+<li>Resolve conflict between CloseBraces and SurroundBlock Auto Edits (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002518">#1002518</a>)</li>
+<li>Close matching pair when no text selection exists (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002513">#1002513</a>)</li>
+<li>Upgrade sbt to 0.13.8 (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002481">#1002481</a> <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002493">#1002493</a>)</li>
+<li>Solve problem with not compiled Java files when they depend on Scala files (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002486">#1002486</a>)</li>
+<li>Disable auto closing of char literals in multi line comments (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002507">#1002507</a>)</li>
+<li>Remove key binding for expression evaluator (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002509">#1002509</a>)</li>
+<li>Resolve execution conflict between surround selection and close pair (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002488">#1002488</a>)</li>
+<li>Replace Application with App in code template</li>
+<li>Disable debug tracing in move class refactoring</li>
+<li>Add description to wizard that explains that templates can be changed (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002497">#1002497</a>)</li>
+<li>Use OverlayPreferenceStore to handle correct UI semantics (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002487">#1002487</a>)</li>
+<li>Do not generate Scaladoc comments for new file templates (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002495">#1002495</a>)</li>
+<li>Remove stale HierarchyResolver.remember around advice.</li>
+<li>Enables test for java var-arg constructors</li>
+<li>Remove broken &#8220;Open Type Hierarchy&#8221; menu items (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002478">#1002478</a>)</li>
+<li>Update Scala IDE version to 4.2.0</li>
+<li>Auto edits (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002484">#1002484</a>, <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002485">#1002485</a>, <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002463">#1002463</a>, <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002133">#1002133</a>, <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002157">#1002157</a>, <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002165">#1002165</a>, <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002236">#1002236</a>, <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002235">#1002235</a>, <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002056">#1002056</a>)</li>
+<li>Cannot use scala evaluator with scalatest (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002447">#1002447</a>)</li>
+<li>Better error message in case of SCU cast failure</li>
+<li>LibraryJarInBootstrapTest activated in ScalaDebugTestSuite</li>
+<li>Commented code removed</li>
+<li>Refactor/remove todos</li>
+<li>Set UTF-8 as default charset in test workspaces</li>
+<li>Enable compiler driven save actions (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002308">#1002308</a>)</li>
+<li>Last warnings removed from Scala files</li>
+<li>Add description to &#8220;Create Scala Project&#8221; wizard (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002430">#1002430</a>)</li>
+<li>Make codebase compatible with Java6</li>
+<li>Add Unit return type to procedures</li>
+<li>Refactor/shorter logging in expression evaluator</li>
+</ul>
 </div>
 </div>
 <div class="section" id="id1">

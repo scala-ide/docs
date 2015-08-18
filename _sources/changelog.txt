@@ -4,10 +4,10 @@ Changelog
 4.2.x
 -----
 
-RC1 (2015-08-??)
+RC1 (2015-08-18)
 ................
 
-// TODO add newest entries
+- Async debugger (:ticket:`1002482`)
 - Synchronize all calls into the JDI (:ticket:`1002160`)
 - Add Scala 2.12 Support (:ticket:`1002393`, :ticket:`1002496`, :ticket:`1002457`)
 - Also treat block comments/scaladoc as comments (:ticket:`1002515`)
