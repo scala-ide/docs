@@ -4,6 +4,12 @@ Changelog
 4.2.x
 -----
 
+RC2 (2015-09-01)
+................
+- Remove dependency to VMHelper (:ticket:`1002538`)
+- Improvements in Async Debugger
+- Enable "Stop on next message" feature in Async Debugger
+
 RC1 (2015-08-18)
 ................
 
