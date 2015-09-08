@@ -5,14 +5,12 @@ Auto Edits |updated|
 
 Auto Edits are nice little features that facilitate working with source code a lot. Normally, users don't notice them when they are working because they do their work while users type. This stands in contrast to code completion which normally requires user interaction for its activation and even more user interaction to choose one of the completions that should be applied. Auto Edits are so lightweight that users never need to think about them because they always work the way they should.
 
-All available Auto Edits can be found in ``Preferences → Scala → Editor``. They can be set or unset on the fly which means that an open editor applies any changes in the preferences immediately.
+All available Auto Edits can be found in ``Preferences → Scala → Editor → Auto Edits`` where thhey can be enabled or disabled as one wishes. The following Auto Edits are available:
 
-Surround selection
-------------------
+.. image:: images/auto_edits.png
+   :width: 100%
 
-This group of Auto Edits are applied when some text inside of the editor is selected and one of the keys that insert a ``[``, ``{``, ``(`` or a ``"`` is pressed. In that case the whole selection is surrounded in the way the user wants it.
-
-**Example:** When the text ``Hello World`` is selected and the ``{`` key is pressed, the text ``{Hello World}`` is inserted into the editor.
+All Auto Edits include documentation that describes what they are doing at the bottom of the preference page. Some Auto Edits are also described here in the online documentation, especially the ones, which can't be configured in the Auto Edits preference page. Instead they need to be enabled or disabled in the ``Preferences → Scala → Editor`` preference page.
 
 Auto closing braces
 -------------------
@@ -49,12 +47,10 @@ Auto closing literals
 
 Whenever one enters character or string literals the corresponding closing part of the literal is automatically inserted. If one enters three times quotation marks a multi line string literal is created. The editor also supports the auto deletion of such literals whenever they are empty and one deletes the opening part of the literal.
 
-At the moment this feature cannot be disabled, it is always active.
-
 Auto indentations
 -----------------
 
-This is definitely one of the most useful features an editor can have. It is another Auto Edit nobody notices its existence but everybody immediately notices its absence when it does not work the way it should. The possibility to automatically indent the cursor to the right position saves a lot of time while coding. Thus, it is obvious that a lot of effort is spent in this feature to maximize usability of the IDE.
+This is definitely one of the most useful features an editor can have. It is another Auto Edit nobody notices but everybody immediately notices its absence when it does not work the way it should. The possibility to automatically indent the cursor to the right position saves a lot of time while coding. Thus, it is obvious that a lot of effort is spent in this feature to maximize usability of the IDE.
 
 **Example:** If one hits enter at the caret position (``^``) in this code snippet ::
 
@@ -79,7 +75,7 @@ If one hits enter at the caret position this is the result::
    *         ^
    */
 
-This feature is always active and can't be disabled.
+In contrast to other Auto Edits, this feature is always active and can't be disabled.
 
 Smart semicolons
 ----------------
@@ -94,8 +90,6 @@ this is the result::
 
 If it is intended to place a semicolon in the middle of a line one can hit backspace to move the semicolon back to its original position.
 
-This feature is inherited from the Java editor, thus at the moment it can only be configured under ``Java → Editor → Typing → Automatically insert at correct position``.
-
 Automatic escapes
 -----------------
 
@@ -106,7 +100,7 @@ In string or character literals it can be useful to automatically escape all the
 
 Furthermore, there is an option to automatically remove such escaped signs with one keystroke if either the backslash or the corresponding sign is deleted.
 
-Automatic expanding multi line comments and Scaladoc
+Automatically expand multi line comments and Scaladoc
 ----------------------------------------------------
 
 There also exists an option that automatically closes multi line comments and Scaladoc if one hits enter, it is called
