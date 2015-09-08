@@ -96,12 +96,9 @@
         <div class="section" id="auto-edits-updated">
 <h1>Auto Edits <span class="raw-html"><span class="label success">updated</span></span></h1>
 <p>Auto Edits are nice little features that facilitate working with source code a lot. Normally, users don&#8217;t notice them when they are working because they do their work while users type. This stands in contrast to code completion which normally requires user interaction for its activation and even more user interaction to choose one of the completions that should be applied. Auto Edits are so lightweight that users never need to think about them because they always work the way they should.</p>
-<p>All available Auto Edits can be found in <code class="docutils literal"><span class="pre">Preferences</span> <span class="pre">→</span> <span class="pre">Scala</span> <span class="pre">→</span> <span class="pre">Editor</span></code>. They can be set or unset on the fly which means that an open editor applies any changes in the preferences immediately.</p>
-<div class="section" id="surround-selection">
-<h2>Surround selection</h2>
-<p>This group of Auto Edits are applied when some text inside of the editor is selected and one of the keys that insert a <code class="docutils literal"><span class="pre">[</span></code>, <code class="docutils literal"><span class="pre">{</span></code>, <code class="docutils literal"><span class="pre">(</span></code> or a <code class="docutils literal"><span class="pre">&quot;</span></code> is pressed. In that case the whole selection is surrounded in the way the user wants it.</p>
-<p><strong>Example:</strong> When the text <code class="docutils literal"><span class="pre">Hello</span> <span class="pre">World</span></code> is selected and the <code class="docutils literal"><span class="pre">{</span></code> key is pressed, the text <code class="docutils literal"><span class="pre">{Hello</span> <span class="pre">World}</span></code> is inserted into the editor.</p>
-</div>
+<p>All available Auto Edits can be found in <code class="docutils literal"><span class="pre">Preferences</span> <span class="pre">→</span> <span class="pre">Scala</span> <span class="pre">→</span> <span class="pre">Editor</span> <span class="pre">→</span> <span class="pre">Auto</span> <span class="pre">Edits</span></code> where thhey can be enabled or disabled as one wishes. The following Auto Edits are available:</p>
+<a class="reference internal image-reference" href="../../../_images/auto_edits1.png"><img alt="../../../_images/auto_edits1.png" src="../../../_images/auto_edits1.png" style="width: 100%;" /></a>
+<p>All Auto Edits include documentation that describes what they are doing at the bottom of the preference page. Some Auto Edits are also described here in the online documentation, especially the ones, which can&#8217;t be configured in the Auto Edits preference page. Instead they need to be enabled or disabled in the <code class="docutils literal"><span class="pre">Preferences</span> <span class="pre">→</span> <span class="pre">Scala</span> <span class="pre">→</span> <span class="pre">Editor</span></code> preference page.</p>
 <div class="section" id="auto-closing-braces">
 <h2>Auto closing braces</h2>
 <p>As the name tells, this Auto Edit automatically closes braces when one types an opening brace. Even better, this feature can decide if it is really necessary to close opening braces. The rules on when braces automatically are closed are deterministic and easy to understand:</p>
@@ -137,11 +134,10 @@
 <div class="section" id="auto-closing-literals">
 <h2>Auto closing literals</h2>
 <p>Whenever one enters character or string literals the corresponding closing part of the literal is automatically inserted. If one enters three times quotation marks a multi line string literal is created. The editor also supports the auto deletion of such literals whenever they are empty and one deletes the opening part of the literal.</p>
-<p>At the moment this feature cannot be disabled, it is always active.</p>
 </div>
 <div class="section" id="auto-indentations">
 <h2>Auto indentations</h2>
-<p>This is definitely one of the most useful features an editor can have. It is another Auto Edit nobody notices its existence but everybody immediately notices its absence when it does not work the way it should. The possibility to automatically indent the cursor to the right position saves a lot of time while coding. Thus, it is obvious that a lot of effort is spent in this feature to maximize usability of the IDE.</p>
+<p>This is definitely one of the most useful features an editor can have. It is another Auto Edit nobody notices but everybody immediately notices its absence when it does not work the way it should. The possibility to automatically indent the cursor to the right position saves a lot of time while coding. Thus, it is obvious that a lot of effort is spent in this feature to maximize usability of the IDE.</p>
 <p><strong>Example:</strong> If one hits enter at the caret position (<code class="docutils literal"><span class="pre">^</span></code>) in this code snippet</p>
 <div class="highlight-python"><div class="highlight"><pre>def f(i: Int) = {^}
 </pre></div>
@@ -165,7 +161,7 @@
  */
 </pre></div>
 </div>
-<p>This feature is always active and can&#8217;t be disabled.</p>
+<p>In contrast to other Auto Edits, this feature is always active and can&#8217;t be disabled.</p>
 </div>
 <div class="section" id="smart-semicolons">
 <h2>Smart semicolons</h2>
@@ -178,7 +174,6 @@
 </pre></div>
 </div>
 <p>If it is intended to place a semicolon in the middle of a line one can hit backspace to move the semicolon back to its original position.</p>
-<p>This feature is inherited from the Java editor, thus at the moment it can only be configured under <code class="docutils literal"><span class="pre">Java</span> <span class="pre">→</span> <span class="pre">Editor</span> <span class="pre">→</span> <span class="pre">Typing</span> <span class="pre">→</span> <span class="pre">Automatically</span> <span class="pre">insert</span> <span class="pre">at</span> <span class="pre">correct</span> <span class="pre">position</span></code>.</p>
 </div>
 <div class="section" id="automatic-escapes">
 <h2>Automatic escapes</h2>
@@ -191,8 +186,8 @@
 </div></blockquote>
 <p>Furthermore, there is an option to automatically remove such escaped signs with one keystroke if either the backslash or the corresponding sign is deleted.</p>
 </div>
-<div class="section" id="automatic-expanding-multi-line-comments-and-scaladoc">
-<h2>Automatic expanding multi line comments and Scaladoc</h2>
+<div class="section" id="automatically-expand-multi-line-comments-and-scaladoc">
+<h2>Automatically expand multi line comments and Scaladoc</h2>
 <p>There also exists an option that automatically closes multi line comments and Scaladoc if one hits enter, it is called</p>
 <blockquote>
 <div><ul class="simple">
