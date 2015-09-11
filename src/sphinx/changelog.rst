@@ -4,8 +4,17 @@ Changelog
 4.2.x
 -----
 
+RC3 (2015-09-11)
+................
+
+- Enhancement of "step message out" functionality (:ticket:`1002542`)
+- Fix bug in "step out" functionality (:ticket:`1002541`)
+- Improve UI interaction with Async Debugger
+- Make Build Scopes configurable
+
 RC2 (2015-09-01)
 ................
+
 - Remove dependency to VMHelper (:ticket:`1002538`)
 - Improvements in Async Debugger
 - Enable "Stop on next message" feature in Async Debugger
