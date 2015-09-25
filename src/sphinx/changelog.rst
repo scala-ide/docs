@@ -4,6 +4,14 @@ Changelog
 4.2.x
 -----
 
+4.2.0 (2015-09-28)
+..................
+
+- Fix non working fading packages feature in Async Debug View (:ticket:`1002549`)
+- Consider "surround block" auto edit only for default partition (:ticket:`1002553`)
+- Prevent NPE in SbtInputs (:ticket:`1002544`)
+- Fix tooltip message for 'var's (:ticket:`1001007`)
+
 RC3 (2015-09-11)
 ................
 
