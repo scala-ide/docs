@@ -4,6 +4,32 @@ Changelog
 4.2.x
 -----
 
+4.2.0 (2015-09-28)
+..................
+
+- Fix non working fading packages feature in Async Debug View (:ticket:`1002549`)
+- Consider "surround block" auto edit only for default partition (:ticket:`1002553`)
+- Prevent NPE in SbtInputs (:ticket:`1002544`)
+- Fix tooltip message for 'var's (:ticket:`1001007`)
+
+The following changes belong to the scala-refactoring part:
+
+- Refactorings might mess with parens (:ticket:`1002088`)
+- Include Manifest file in sbt build
+- Adapt test to proposed change in classOf typechecking
+- Revert "Remove Eclipse update-site and feature"
+- Organize imports might insert surplus round brackets (:ticket:`1002166`)
+- Prepare for 0.7.0 release
+- Remove reference to non-existent repository
+- Add a test that makes sure that language feature imports are not removed
+- Consider local imports when calculating dependencies of Scala code (:ticket:`1002512`, :ticket:`1002511`)
+- Don't import local symbols on "Organize Imports" (:ticket:`1002506`)
+- Support writing trace output to files and remove unused imports
+- Don't reorder modifiers already defined in the original source (:ticket:`1002498`)
+- Handle type annotations on lazy vals and some refactoring (:ticket:`1002436`)
+- Don't emit duplicate "RenameSourceFileChanges" (:ticket:`1002490`)
+- Rename package private vals/defs with scoped access modifiers (:ticket:`1002446`)
+
 RC3 (2015-09-11)
 ................
 
