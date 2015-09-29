@@ -18,9 +18,15 @@ For more details and demo, have a look at this `ScalaDays 2014 presentation`_
 Configuration
 -------------
 
-The asynchronous extensions incurr a cost on your debugged application so they need to be explicitly enabled in your Debug Configuration. Look for the additional ``Async Debugger`` tab and enable the extensions.
+The asynchronous extensions incurr a cost on your debugged application so they need to be explicitly enabled in your Debug Configuration. Look for the additional ``Scala Debugger`` tab and enable the extensions. This tab is available on Java Debug configurations as well, to allow debugging Java Akka applications.
+
+.. image:: images/configuration.png
+	:width: 100%
 
 You can also define new *program points* where stacks are captured. A program point is defined by the fully qualified (and desugared) method name to intercept, and a 0-based index (0 being ``this``) in the method parameters. The index defines the object to which this additional stack is attached. Whenever the program is stopped at a regular breakpoint, clicking on a variable that points to that object will bring in the latest captured stack in the ``Async Stack View``.
+
+.. image:: images/program-points.png
+	:width: 100%
 
 Async Stack
 -----------
