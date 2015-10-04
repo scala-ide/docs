@@ -10,8 +10,8 @@ The Asynchronous Debugger extensions facilitate debugging of applications that u
 
 A few minor improvements, too:
 
-- logical structures for actors (see at a glance the supervisor, current sender, supervising strategy)
-- break on dead letters (breakpoint when a message arrives in dead letters)
+- Logical structures for actors (see at a glance the supervisor, current sender, supervising strategy).
+- Break on dead letters (breakpoint when a message arrives in dead letters).
 
 For more details and demo, have a look at this `ScalaDays 2014 presentation`_
 
@@ -33,8 +33,8 @@ Async Stack
 
 The Async Stack view is a tool which shows a time line (history) of coming Akka message or executed ``Future`` instance. To use this feature following actions need to be done:
 
-- asynchronous extension must be ticked in specific ``Debug Configuration`` how it is described in *Configuration*
-- there must be the object with history in current stack frame when breakpoint stops.
+- Asynchronous extension must be ticked in specific ``Debug Configuration`` how it is described in *Configuration*.
+- There must be the object with history in current stack frame when breakpoint stops.
 
 If the object with history is in current stack frame it can be clicked and then Async Stack shows its last stack trace from where this object has been triggered. Then to go back further in the past the stack frame in Async Stack can be clicked again and again up to the origin of the particular call flow.
 
@@ -68,7 +68,7 @@ Step with Message
 
 A mysterious green *bang* icon on ``Debug`` view toolbar is a next part of Async Debugger tools suite. When it is clicked and underlying code line launches a message then the code execution is continued up to a place where this message is received. In other case it works like ``step over`` action.
 
-Let's flick thru a simple example. First stop (with breakpoint) in a part of code which emits messages.
+Let's flick through a simple example. First stop (with breakpoint) in a part of code which emits messages.
 
 .. image:: images/step-msg-1.png
     :width: 100%
