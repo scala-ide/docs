@@ -22,5 +22,6 @@ The following pages provide a description of a list of selected features provide
    features/test-finder/index
    features/scalacompiler/index
    features/scaladebugger/index
+   features/async-debugger/index
    features/scalainterpreter/index
    features/logging/index
