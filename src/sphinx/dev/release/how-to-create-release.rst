@@ -49,7 +49,7 @@ If you want to build a new Scala IDE release but you don't have access to all of
 
    After the upload has been completed, the base ecosystem can be found in directory ``~/scala-ide.dreamhosters.com/sdk/next/lithium/e44/scala211/stable/`` whereas all the plugins can be found in ``~/scala-ide.dreamhosters.com/plugins/$pluginName/releases/e44/2.11.x/``.
 
-   To login use ``ssh scalaide@proxima-centauri.dreamhost.com``.
+   To login use ``ssh scalaide@download.scala-ide.org``.
 
 
 #. uber-build doesn't automatically upload the Scala IDE products to Amazon S3 host, therefore it has to be done manually. Get a client from somewhere that allows you to access the S3 contents and enter the credentials you got from the current IDE maintainers. For every new product a directory should be created in the directory ``downloads.typesafe.com/scalaide-pack``.
