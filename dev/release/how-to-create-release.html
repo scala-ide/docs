@@ -132,7 +132,7 @@ mvn -Dtycho.mode<span class="o">=</span>maven org.eclipse.tycho:tycho-versions-p
 </div>
 <p>If everything completes successfully, uber-build continues with uploading all binaries of the repos that were built. Notice that you will be asked for the password of your SSH key before the uploading can be started.</p>
 <p>After the upload has been completed, the base ecosystem can be found in directory <code class="docutils literal"><span class="pre">~/scala-ide.dreamhosters.com/sdk/next/lithium/e44/scala211/stable/</span></code> whereas all the plugins can be found in <code class="docutils literal"><span class="pre">~/scala-ide.dreamhosters.com/plugins/$pluginName/releases/e44/2.11.x/</span></code>.</p>
-<p>To login use <code class="docutils literal"><span class="pre">ssh</span> <span class="pre">scalaide&#64;proxima-centauri.dreamhost.com</span></code>.</p>
+<p>To login use <code class="docutils literal"><span class="pre">ssh</span> <span class="pre">scalaide&#64;download.scala-ide.org</span></code>.</p>
 </li>
 <li><p class="first">uber-build doesn&#8217;t automatically upload the Scala IDE products to Amazon S3 host, therefore it has to be done manually. Get a client from somewhere that allows you to access the S3 contents and enter the credentials you got from the current IDE maintainers. For every new product a directory should be created in the directory <code class="docutils literal"><span class="pre">downloads.typesafe.com/scalaide-pack</span></code>.</p>
 <p>The products can be found in the local directory <code class="docutils literal"><span class="pre">target/product/org.scala-ide.product/target/products/</span></code>.</p>
