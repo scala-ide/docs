@@ -89,8 +89,52 @@
         <div class="section" id="changelog">
 <h1>Changelog</h1>
 <div class="section" id="x">
-<h2>4.2.x</h2>
+<h2>4.3.x</h2>
+<div class="section" id="rc1-2015-11-20">
+<h3>RC1 (2015-11-20)</h3>
+<ul class="simple">
+<li>Outline view folds import nodes by default (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002595">#1002595</a>)</li>
+<li>Scopes build enhancements (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002555">#1002555</a>)</li>
+<li>Expression evaluator enhancements</li>
+<li>Improvements on Hover display</li>
+<li>Additional filtering for Step Out Message (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002575">#1002575</a>)</li>
+<li>Fix AIOOBE in outline view for 0-arity functions (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002592">#1002592</a>)</li>
+<li>Show ctors as <cite>this</cite> and not as <cite>&lt;init&gt;</cite> it outline view (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002588">#1002588</a>)</li>
+<li>Use project setting in the quick outline. (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002593">#1002593</a>)</li>
+<li>Feature/outline backticks1 1002590 (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002590">#1002590</a>)</li>
+<li>New Outline View (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002545">#1002545</a>, <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002554">#1002554</a>, <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002356">#1002356</a>, <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000863">#1000863</a>, <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000669">#1000669</a>, <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000746">#1000746</a>, <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000342">#1000342</a>, <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000500">#1000500</a>, <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002071">#1002071</a>, <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001711">#1001711</a>, <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001551">#1001551</a>, <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001144">#1001144</a>, <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001802">#1001802</a>)</li>
+<li>Statistics tracker (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002189">#1002189</a>)</li>
+<li>Do not apply cursor position translation twice (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002579">#1002579</a>)</li>
+<li>Fix transitive dependencies in ScalaProject (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002581">#1002581</a>)</li>
+<li>Fix NPE in SbtInputs (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002577">#1002577</a>)</li>
+<li>Add option to preserve wildcard imports during organize imports (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002574">#1002574</a>)</li>
+<li>Explicitly set empty extension name for backup files</li>
+<li>Do not use system default line delimiter by default (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002567">#1002567</a>)</li>
+<li>Wrap addImport in asyncExec (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002565">#1002565</a>)</li>
+<li>Enables Expression Evaluator for remote debugging (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002439">#1002439</a>)</li>
+<li>Do not call refactoring.prepare outside of PC thread (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002562">#1002562</a>)</li>
+<li>Bump development version to 4.3.0-SNAPSHOT.</li>
+<li>Use the declaration printer in “Show Type&#8221;.</li>
+</ul>
+<p>The following changes belong to the scala-refactoring part:</p>
+<ul class="simple">
+<li>Don&#8217;t break code when renaming lazy vals (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002502">#1002502</a>)</li>
+<li>Don&#8217;t break imports when renaming objects (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002537">#1002537</a>)</li>
+<li>Fix a stupid error when setting modifier positions for lazy vals (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002569">#1002569</a>)</li>
+<li>Revert &#8220;Don&#8217;t call symbol.isLazy in test suite&#8221;</li>
+<li>Don&#8217;t add imports to the wrong package (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002399">#1002399</a>)</li>
+<li>Various changes and a fix for #1002371 (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002371">#1002371</a>)</li>
+<li>Clarify comment on special cases for illegal code</li>
+<li>Don&#8217;t confuse <cite>_*</cite> with an ordinary type when organizing imports  (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002142">#1002142</a>)</li>
+<li>Don&#8217;t remove return times on rename refactorings (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002560">#1002560</a>)</li>
+<li>Fix locating parameter assignments in argument lists (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002540">#1002540</a>)</li>
+<li>Update sbt-pgp plugin and mention signed release step in README</li>
+</ul>
+</div>
+</div>
 <div class="section" id="id1">
+<h2>4.2.x</h2>
+<div class="section" id="id2">
 <h3>4.2.0 (2015-09-28)</h3>
 <ul class="simple">
 <li>Fix non working fading packages feature in Async Debug View (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002549">#1002549</a>)</li>
@@ -175,9 +219,9 @@
 </ul>
 </div>
 </div>
-<div class="section" id="id2">
-<h2>4.1.x</h2>
 <div class="section" id="id3">
+<h2>4.1.x</h2>
+<div class="section" id="id4">
 <h3>4.1.1 (2015-07-28)</h3>
 <ul class="simple">
 <li>Remove key binding for expression evaluator (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002509">#1002509</a>)</li>
@@ -538,7 +582,7 @@
 </ul>
 </div>
 </div>
-<div class="section" id="id4">
+<div class="section" id="id5">
 <h2>3.0.3</h2>
 <div class="section" id="rc1-2014-01-09">
 <h3>RC1 (2014-01-09)</h3>
@@ -548,7 +592,7 @@
 </ul>
 </div>
 </div>
-<div class="section" id="id5">
+<div class="section" id="id6">
 <h2>3.0.2</h2>
 <div class="section" id="rc2-2013-10-09">
 <h3>RC2 (2013-10-09)</h3>
@@ -575,7 +619,7 @@
 </ul>
 </div>
 </div>
-<div class="section" id="id6">
+<div class="section" id="id7">
 <h2>3.0.1</h2>
 <div class="section" id="rc2-2013-06-27">
 <h3>RC2 (2013-06-27)</h3>
@@ -808,7 +852,7 @@
 </ul>
 </div>
 </div>
-<div class="section" id="id51">
+<div class="section" id="id52">
 <h2>2.0.1 (release/scala-ide-2.0.x)</h2>
 <div class="section" id="final-released-2012-04-30">
 <h3>2.0.1-final (released: 2012-04-30)</h3>
@@ -1013,7 +1057,7 @@
 <li>delete : support of scala-2.8.0</li>
 </ul>
 </div>
-<div class="section" id="id99">
+<div class="section" id="id100">
 <h3>1.0.0.20100804</h3>
 <ul class="simple">
 <li>Refactoring Support</li>
