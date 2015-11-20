@@ -1,6 +1,49 @@
 Changelog
 =========
 
+4.3.x
+-----
+
+RC1 (2015-11-20)
+................
+
+- Outline view folds import nodes by default (:ticket:`1002595`)
+- Scopes build enhancements (:ticket:`1002555`)
+- Expression evaluator enhancements
+- Improvements on Hover display
+- Additional filtering for Step Out Message (:ticket:`1002575`)
+- Fix AIOOBE in outline view for 0-arity functions (:ticket:`1002592`)
+- Show ctors as `this` and not as `<init>` it outline view (:ticket:`1002588`)
+- Use project setting in the quick outline. (:ticket:`1002593`)
+- Feature/outline backticks1 1002590 (:ticket:`1002590`)
+- New Outline View (:ticket:`1002545`, :ticket:`1002554`, :ticket:`1002356`, :ticket:`1000863`, :ticket:`1000669`, :ticket:`1000746`, :ticket:`1000342`, :ticket:`1000500`, :ticket:`1002071`, :ticket:`1001711`, :ticket:`1001551`, :ticket:`1001144`, :ticket:`1001802`)
+- Statistics tracker (:ticket:`1002189`)
+- Do not apply cursor position translation twice (:ticket:`1002579`)
+- Fix transitive dependencies in ScalaProject (:ticket:`1002581`)
+- Fix NPE in SbtInputs (:ticket:`1002577`)
+- Add option to preserve wildcard imports during organize imports (:ticket:`1002574`)
+- Explicitly set empty extension name for backup files
+- Do not use system default line delimiter by default (:ticket:`1002567`)
+- Wrap addImport in asyncExec (:ticket:`1002565`)
+- Enables Expression Evaluator for remote debugging (:ticket:`1002439`)
+- Do not call refactoring.prepare outside of PC thread (:ticket:`1002562`)
+- Bump development version to 4.3.0-SNAPSHOT.
+- Use the declaration printer in “Show Type".
+
+The following changes belong to the scala-refactoring part:
+
+- Don't break code when renaming lazy vals (:ticket:`1002502`)
+- Don't break imports when renaming objects (:ticket:`1002537`)
+- Fix a stupid error when setting modifier positions for lazy vals (:ticket:`1002569`)
+- Revert "Don't call symbol.isLazy in test suite"
+- Don't add imports to the wrong package (:ticket:`1002399`)
+- Various changes and a fix for #1002371 (:ticket:`1002371`)
+- Clarify comment on special cases for illegal code
+- Don't confuse `_*` with an ordinary type when organizing imports  (:ticket:`1002142`)
+- Don't remove return times on rename refactorings (:ticket:`1002560`)
+- Fix locating parameter assignments in argument lists (:ticket:`1002540`)
+- Update sbt-pgp plugin and mention signed release step in README
+
 4.2.x
 -----
 
