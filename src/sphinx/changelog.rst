@@ -4,6 +4,13 @@ Changelog
 4.3.x
 -----
 
+4.3.0 (2015-12-01)
+..................
+
+- Start statistics tracker on startup of scala-ide bundle
+- Improve handling for corrupted statistics file (:ticket:`1002600`)
+- Handle src folders that are the same as project root folders (:ticket:`1002602`)
+
 RC1 (2015-11-20)
 ................
 
