@@ -13,7 +13,23 @@ In the following there is an incomplete list of features we intend to implement 
 4.4.0
 -----
 
-- sbt-server integration: This is a long awaited feature. Every user of Play or Scala.js projects has the problem that not all IDE features work reliable on their codebase because internally the IDE uses its own builder to build the application, whereas it really should use the builder of your project. sbt is the builder of choice of Scala users and sbt-server makes it possible to remotely control it by the IDE. By integrating sbt-server into Scala IDE all problems that arise from bytecode inequality that comes from multiple builds fighting each other should be gone.
+Enhancements and bug fixing:
 
-  Beside from the sbt-server integration, Scala IDE will provide an editor for ``*.sbt`` files and it will even be possible to fully handle the Scala code in your ``project/`` directory. Furthermore you will no longer need the ``sbteclipse`` plugin due to the fact that the IDE will be able to automatically import your sbt projects and track changes to them in the background and apply them silently to your working environment.
+- debugger backend transition from Scala ``Actors`` to ``Futures`` .
 
+- sbt incremental compiler upgrade to version 0.13.8.
+
+- enhancements in ``scala-refactoring`` focused on Organize Imports mainly but not only.
+
+4.5.0
+-----
+
+Coming features:
+
+- sbt project import. Easy way to start working on sbt project with no need to run ``sbt eclipse`` plugin.
+
+- sbt file editor.
+
+- Apache Spark project launcher. Feed with output of project and launch Apache Spark without leaving Scala IDE.
+
+And continuation of bug fixing.
