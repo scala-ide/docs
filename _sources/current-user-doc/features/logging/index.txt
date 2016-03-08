@@ -1,7 +1,5 @@
-.. include:: /global_defs.hrst
-
-Logging |new|
-=============
+Logging
+=======
 
 Logging isn't likely to be the most wanted feature, and we hope that you won't ever need to know about it. 
 But software can crash, and decent logging can go a long way into understanding the reasons behind a failure.

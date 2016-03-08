@@ -1,7 +1,7 @@
 .. include:: /global_defs.hrst
 
-Implicit Hyperlinking |new|
-===========================
+Implicit Hyperlinking
+=====================
 
 .. note::
 

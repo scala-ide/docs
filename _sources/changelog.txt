@@ -1,6 +1,81 @@
 Changelog
 =========
 
+4.4.x
+-----
+
+RC1 (2016-03-08)
+................
+
+- Select first match in quick outline (:ticket:`1002599`)
+- Rerun tests that run in Scala PR integration
+- Fix memory leak (:ticket:`1002655`)
+- Increase timeout for Futures in test suite
+- Temporarily add new resolvers for scalariform and equinox weaving
+- Allow users to specify the spacing around block imports (:ticket:`1001692`)
+- Store generated sources in Scala IDE source folder (:ticket:`1002652`)
+- Depend on scala-reafctoring 0.9.1-SNAPSHOT
+- Resolve scala-refactoring from sonatype repo
+- Rename references of PimpedTrees to EnrichedTrees
+- Retain async history should not break debugger
+- Fix early initialization bug in AbstractMemberProposal (:ticket:`1002642`)
+- Disable RemoteConnectorTest once again
+- Ignore remote connector tests
+- Ignore hot code replace tests
+- Remove unused imports
+- Fix race condition an SafeSymbol (:ticket:`1002633`)
+- Don't call `removeAll` if widget is disposed (:ticket:`1002630`)
+- Fix NPE in EclipseLogger (:ticket:`1002631`)
+- Open declaration on function jumps to value (:ticket:`1002087`)
+- Rename Scala Debug Test plugin
+- Removes scala actors from eclipse repl and scala ide in general
+- Forgotten test suite update with NonScalaSourceErrorMarkersTest
+- Add auto edits for better backtick handling (:ticket:`1002610`)
+- Hide quick fix entry from context menu (:ticket:`1002523`)
+- Make reconciliation time configurable (:ticket:`1002612`)
+- Improves eclipse error marker messages (:ticket:`1002623`)
+- Introduces barrier for Hot Code Replacement
+- Finds free port for debugee VM for RemoteConnectorTest
+- Debugger to future transition
+- Add update-site for scala-refactoring
+- Adds missing TRACE debug level
+- Fix race condition in CallByNameParamAtCreationPresenter (:ticket:`1002614`)
+- Refresh analysis store after build
+- Transition to IC.compile
+- Statistics tracker improvements (:ticket:`1002600`)
+- Makes Scala installation check less vulnerable
+- Handle src folders that are the same as project root folders (:ticket:`1002602`)
+- Don’t create a Scala reconciler for Scala files that are not part of a source folder
+- Update Scala IDE version to 4.4.0
+
+The following changes belong to the scala-refactoring part:
+
+- Publish with full Scala version
+- Do not throw exception when imports are collapsed to wildcard import (:ticket:`1002654`)
+- Do not depend on tree transformations for the add import refactoring  (:ticket:`1001848`, :ticket:`1002514`)
+- Avoid tree printing in organize imports logic (:ticket:`1002476`)
+- Generate correct version for nightly builds (:ticket:`1002653`)
+- Rename PimpedTrees to EnrichedTrees
+- Rename without tree printing (:ticket:`1002643`, :ticket:`1002622`, :ticket:`1001966`)
+- Fix for t1002619 (:ticket:`1002619`)
+- Enable inline refactoring for private values  (:ticket:`1002648`)
+- Prevents import removal for existential type (:ticket:`1002621`)
+- removes duplicate imports in method blocks
+- Remove maven build
+- Fixes Organize Imports in non-package blocks (:ticket:`1001078`)
+- Add scoverage plugin that can be omitted if necessary
+- Remove cod coverage plugin
+- Add scoverage plugin to sbt build
+- Be more careful when removing unneeded imports (:ticket:`1002626`)
+- Treat nested imports more carefully (:ticket:`1002613`)
+- Don't omit closing paren after rename operation (:ticket:`1002620`)
+- Bump version to 0.9.0-SNAPSHOT
+- Be more careful when printing type parameter lists (:ticket:`1002618`, :ticket:`1001932`)
+- Consider exotic but legal places for comments and spaces (:ticket:`1002611`)
+- Correctly set positions for selects involving package objects (:ticket:`1002609`)
+- Don't duplicate imports while grouping them (:ticket:`1002526`)
+- Fix two problems with printing trees related to default arguments (:ticket:`1002564`)
+
 4.3.x
 -----
 

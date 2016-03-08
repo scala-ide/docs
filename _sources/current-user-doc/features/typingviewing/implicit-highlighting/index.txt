@@ -1,7 +1,5 @@
-.. include:: /global_defs.hrst
-
-Implicit Highlighting |new|
-============================
+Implicit Highlighting
+=====================
 
 Implicit annotations are a very powerful feature in Scala. They allow for
 fluid DSLs, an amazing collection library, or enriching existing types. With

@@ -6,7 +6,7 @@ This document describes how to build a Scala IDE release and the corresponding E
 Prerequisites:
 
 * Your public SSH key needs to be added to Scala IDE's file hoster
-* You also need access to Amazon S2, which hosts the Scala IDE products
+* You also need access to Amazon S3, which hosts the Scala IDE products and the releases
 * Push permissions to all Github repos that need to be included in the release
 * Access rights to the keystore that contains the keys for the JAR/Eclipse signing
 * A GPG key if you want to sign any Git tags
