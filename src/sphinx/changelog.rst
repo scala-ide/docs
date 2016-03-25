@@ -4,6 +4,15 @@ Changelog
 4.4.x
 -----
 
+RC2 (2016-03-25)
+................
+
+- Do not use maven.build.timestamp for OSGi version of sbt project (:ticket:`1002667`)
+
+The following changes belong to the scala-refactoring part:
+
+- Add empty lines around added imports and put import at right location (:ticket:`1002672`)
+
 RC1 (2016-03-08)
 ................
 
