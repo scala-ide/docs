@@ -118,7 +118,7 @@ Also, note that users can easily control the amount of logged information throug
 (accessible under the Eclipse Preferences &gt; Scala &gt; Logging).</p>
 <p>To get a handle on the loggers, you only need to mix-in the <code class="docutils literal"><span class="pre">HasLogger</span></code> trait. The implementation should be
 somewhat similar to the following:</p>
-<div class="highlight-scala"><div class="highlight"><pre><span class="k">trait</span> <span class="nc">HasLogger</span> <span class="o">{</span>
+<div class="highlight-scala"><div class="highlight"><pre><span></span><span class="k">trait</span> <span class="nc">HasLogger</span> <span class="o">{</span>
 
   <span class="k">protected</span><span class="o">[</span><span class="kt">this</span><span class="o">]</span> <span class="k">lazy</span> <span class="k">val</span> <span class="n">logger</span><span class="k">:</span> <span class="kt">Logger</span> <span class="o">=</span> <span class="o">{</span>
     <span class="k">val</span> <span class="n">clazz</span> <span class="k">=</span> <span class="k">this</span><span class="o">.</span><span class="n">getClass</span>

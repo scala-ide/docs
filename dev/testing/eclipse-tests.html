@@ -120,7 +120,7 @@ number of <code class="docutils literal"><span class="pre">&#64;Test</span></cod
 <a class="reference external" href="https://github.com/scala-ide/scala-ide/blob/master/org.scala-ide.sdt.core.tests/src/scala/tools/eclipse/testsetup/TestProjectSetup.scala">TestProjectSetup</a>,
 usually with an object. For example, the <a class="reference external" href="https://github.com/scala-ide/scala-ide/blob/master/org.scala-ide.sdt.core.tests/src/scala/tools/eclipse/structurebuilder/StructureBuilderTest.scala">StructureBuilderTest</a>
 declares</p>
-<div class="highlight-scala"><div class="highlight"><pre><span class="k">object</span> <span class="nc">StructureBuilderTest</span> <span class="k">extends</span> <span class="n">testsetup</span><span class="o">.</span><span class="nc">TestProjectSetup</span><span class="o">(</span><span class="s">&quot;simple-structure-builder&quot;</span><span class="o">)</span>
+<div class="highlight-scala"><div class="highlight"><pre><span></span><span class="k">object</span> <span class="nc">StructureBuilderTest</span> <span class="k">extends</span> <span class="n">testsetup</span><span class="o">.</span><span class="nc">TestProjectSetup</span><span class="o">(</span><span class="s">&quot;simple-structure-builder&quot;</span><span class="o">)</span>
 </pre></div>
 </div>
 <p>This gives a number of convenience handles that make it easy to retrieve elements of interest later:</p>
@@ -134,7 +134,7 @@ of the corresponding file.</p>
 exercise the JDT and Scala integration layers. For instance, to test that annotations are correctly
 reported by the <a class="reference external" href="http://github.com/scala-ide/scala-ide/blob/master/org.scala-ide.sdt.core/src/scala/tools/eclipse/javaelements/ScalaStructureBuilder.scala">ScalaStructureBuilder</a>,
 one would write the following method:</p>
-<div class="highlight-scala"><div class="highlight"><pre><span class="nd">@Test</span> <span class="k">def</span> <span class="n">testAnnotations</span><span class="o">()</span> <span class="o">{</span>
+<div class="highlight-scala"><div class="highlight"><pre><span></span><span class="nd">@Test</span> <span class="k">def</span> <span class="n">testAnnotations</span><span class="o">()</span> <span class="o">{</span>
   <span class="k">val</span> <span class="n">annotsPkg</span> <span class="k">=</span> <span class="n">srcPackageRoot</span><span class="o">.</span><span class="n">getPackageFragment</span><span class="o">(</span><span class="s">&quot;annots&quot;</span><span class="o">);</span>
   <span class="n">assertNotNull</span><span class="o">(</span><span class="n">annotsPkg</span><span class="o">)</span>
   <span class="k">val</span> <span class="n">cu</span> <span class="k">=</span> <span class="n">annotsPkg</span><span class="o">.</span><span class="n">getCompilationUnit</span><span class="o">(</span><span class="s">&quot;ScalaTestSuite.scala&quot;</span><span class="o">)</span>
@@ -169,7 +169,7 @@ corresponding offset.</p>
 <p>A marker is any string, but we use block comments with a character in between: <code class="docutils literal"><span class="pre">/*!*/</span></code>. Such a
 marker has the advantage that it keeps the source compilable. Have a look at the hyperlink test
 project:</p>
-<div class="highlight-scala"><div class="highlight"><pre><span class="k">class</span> <span class="nc">SimpleHyperlinking</span> <span class="o">{</span>
+<div class="highlight-scala"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">SimpleHyperlinking</span> <span class="o">{</span>
   <span class="k">type</span> <span class="kt">Tpe</span><span class="o">[</span><span class="kt">T</span><span class="o">]</span> <span class="k">=</span> <span class="nc">List</span><span class="cm">/*^*/</span><span class="o">[</span><span class="kt">T</span><span class="o">]</span>
 
   <span class="k">def</span> <span class="n">foo</span><span class="o">(</span><span class="n">xs</span><span class="k">:</span> <span class="kt">Tpe/*^*/</span><span class="o">[</span><span class="kt">Int</span><span class="o">])</span> <span class="k">=</span> <span class="o">{</span>
@@ -183,7 +183,7 @@ project:</p>
 <p>Each marker will be used by our test method as a position to ask for hyperlinking. In the test
 method, we retrieve these positions (using <a class="reference external" href="https://github.com/scala-ide/scala-ide/blob/master/org.scala-ide.sdt.core.tests/src/scala/tools/eclipse/testsetup/SDTTestUtils.scala">SDTTestUtils</a>)
 and pass them to the hyperlink detector:</p>
-<div class="highlight-scala"><div class="highlight"><pre><span class="k">val</span> <span class="n">contents</span> <span class="k">=</span> <span class="n">unit</span><span class="o">.</span><span class="n">getContents</span>
+<div class="highlight-scala"><div class="highlight"><pre><span></span><span class="k">val</span> <span class="n">contents</span> <span class="k">=</span> <span class="n">unit</span><span class="o">.</span><span class="n">getContents</span>
 <span class="k">val</span> <span class="n">positions</span> <span class="k">=</span> <span class="nc">SDTTestUtils</span><span class="o">.</span><span class="n">positionsOf</span><span class="o">(</span><span class="n">contents</span><span class="o">,</span> <span class="s">&quot;/*^*/&quot;</span><span class="o">)</span>
 <span class="c1">// ..</span>
 <span class="k">val</span> <span class="n">detector</span> <span class="k">=</span> <span class="k">new</span> <span class="nc">ScalaHyperlinkDetector</span>
@@ -203,7 +203,7 @@ and pass them to the hyperlink detector:</p>
 functionality: each word that is highlighted may appear a different number of times in the source.
 One can associate a number with a marker by using <a class="reference external" href="https://github.com/scala-ide/scala-ide/blob/master/org.scala-ide.sdt.core.tests/src/scala/tools/eclipse/testsetup/SDTTestUtils.scala">SDTTestUtils.markersOf</a>.</p>
 <p>Consider this example:</p>
-<div class="highlight-scala"><div class="highlight"><pre>class DummyOccurrences(param: Int, func/*&lt;2*/: (Int/*&lt;5*/, Int) =&gt; Int) {
+<div class="highlight-scala"><div class="highlight"><pre><span></span>class DummyOccurrences(param: Int, func/*&lt;2*/: (Int/*&lt;5*/, Int) =&gt; Int) {
   type T/*&lt;2*/ = Int
 
   def sum(xs: List[T]) = {
@@ -218,14 +218,14 @@ One can associate a number with a marker by using <a class="reference external" 
 <p>In this test file, we expect that <cite>func</cite> will be highlighted 2 times, <cite>Int</cite> 5 times, and so on. The
 test method will use the parsed integer to assert the correct number of matches is reported by the
 <a class="reference external" href="https://github.com/scala-ide/scala-ide/blob/master/org.scala-ide.sdt.core/src/scala/tools/eclipse/markoccurrences/ScalaOccurrencesFinder.scala">ScalaOccurrencesFinder</a>.</p>
-<div class="highlight-scala"><div class="highlight"><pre><span class="k">val</span> <span class="n">contents</span> <span class="k">=</span> <span class="n">unit</span><span class="o">.</span><span class="n">getContents</span>
+<div class="highlight-scala"><div class="highlight"><pre><span></span><span class="k">val</span> <span class="n">contents</span> <span class="k">=</span> <span class="n">unit</span><span class="o">.</span><span class="n">getContents</span>
 <span class="k">val</span> <span class="n">positions</span> <span class="k">=</span> <span class="nc">SDTTestUtils</span><span class="o">.</span><span class="n">markersOf</span><span class="o">(</span><span class="n">contents</span><span class="o">,</span> <span class="s">&quot;&lt;&quot;</span><span class="o">)</span>
 
 <span class="n">println</span><span class="o">(</span><span class="s">&quot;checking %d positions&quot;</span><span class="o">.</span><span class="n">format</span><span class="o">(</span><span class="n">positions</span><span class="o">.</span><span class="n">size</span><span class="o">))</span>
 </pre></div>
 </div>
 <p>and the actual test:</p>
-<div class="highlight-scala"><div class="highlight"><pre><span class="k">for</span> <span class="o">((</span><span class="n">pos</span><span class="o">,</span> <span class="n">count</span><span class="o">)</span> <span class="k">&lt;-</span> <span class="n">positions</span><span class="o">)</span> <span class="o">{</span>
+<div class="highlight-scala"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="o">((</span><span class="n">pos</span><span class="o">,</span> <span class="n">count</span><span class="o">)</span> <span class="k">&lt;-</span> <span class="n">positions</span><span class="o">)</span> <span class="o">{</span>
   <span class="n">println</span><span class="o">(</span><span class="s">&quot;looking at position %d for %d occurrences&quot;</span><span class="o">.</span><span class="n">format</span><span class="o">(</span><span class="n">pos</span><span class="o">,</span> <span class="n">count</span><span class="o">))</span>
   <span class="k">val</span> <span class="n">region</span> <span class="k">=</span> <span class="nc">ScalaWordFinder</span><span class="o">.</span><span class="n">findWord</span><span class="o">(</span><span class="n">contents</span><span class="o">,</span> <span class="n">pos</span> <span class="o">-</span> <span class="mi">1</span><span class="o">)</span>
   <span class="n">println</span><span class="o">(</span><span class="s">&quot;using word region: &quot;</span> <span class="o">+</span> <span class="n">region</span><span class="o">)</span>

@@ -128,13 +128,13 @@ whole Scala community will benefit!</p>
 <ul class="simple">
 <li>Clone the Scala repository</li>
 </ul>
-<div class="highlight-bash"><div class="highlight"><pre>git clone git://github.com/scala/scala.git
+<div class="highlight-bash"><div class="highlight"><pre><span></span>git clone git://github.com/scala/scala.git
 </pre></div>
 </div>
 <ul class="simple">
 <li>Pull the binary dependencies:</li>
 </ul>
-<div class="highlight-bash"><div class="highlight"><pre>./pull-binary-libs.sh
+<div class="highlight-bash"><div class="highlight"><pre><span></span>./pull-binary-libs.sh
 </pre></div>
 </div>
 <ul class="simple">
@@ -164,7 +164,7 @@ whole Scala community will benefit!</p>
 <h2>Launching and Debugging scalac</h2>
 <p>Since the output directories are set to the default <code class="docutils literal"><span class="pre">ant</span></code> build directories, all the runner scripts work out of the box. If you built the project, you can run <code class="docutils literal"><span class="pre">build/quick/bin/scalac</span></code> on the command line, and it will pick your changes. However, the interesting part is being able to use the Eclipse debugger.</p>
 <p>To launch scalac from Eclipse you need to create a <code class="docutils literal"><span class="pre">Run</span> <span class="pre">Configuration</span></code>, from <code class="docutils literal"><span class="pre">Run</span> <span class="pre">→</span> <span class="pre">Run</span> <span class="pre">Configurations</span></code>. Choose <code class="docutils literal"><span class="pre">Scala</span> <span class="pre">Application</span></code> and set the main class to <code class="docutils literal"><span class="pre">scala.tools.nsc.Main</span></code>. On the <code class="docutils literal"><span class="pre">Arguments</span></code> page, you need to explicitly set the path to the Scala library (that is what the runner script does for you on the command line):</p>
-<div class="highlight-bash"><div class="highlight"><pre>-bootclasspath <span class="si">${</span><span class="nv">SCALA_BASEDIR</span><span class="si">}</span>/build/quick/classes/library -d /tmp /Users/dragos/sandbox/bugs/ticket3429.scala
+<div class="highlight-bash"><div class="highlight"><pre><span></span>-bootclasspath <span class="si">${</span><span class="nv">SCALA_BASEDIR</span><span class="si">}</span>/build/quick/classes/library -d /tmp /Users/dragos/sandbox/bugs/ticket3429.scala
 </pre></div>
 </div>
 <p>The run configuration should look like this:</p>
@@ -184,11 +184,11 @@ whole Scala community will benefit!</p>
 <p class="last">This is a risky operation. Given the tight dependency between the IDE and the compiler, you must be sure you are swapping two binary-compatible versions of the compiler. This may not work if the plugin was built against a much older version of <code class="docutils literal"><span class="pre">scalac</span></code> than the one you are replacing it with.</p>
 </div>
 <p>If you&#8217;re still here, go ahead and use the <a class="reference external" href="https://github.com/scala-ide/scala-ide/blob/master/update-scala.sh">update-scala.sh</a> script. Point it to your locally built scala, for instance <code class="docutils literal"><span class="pre">build/pack</span></code>.</p>
-<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>update-scala.sh --eclipse-dir /Applications/eclipse update build/pack
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ update-scala.sh --eclipse-dir /Applications/eclipse update build/pack
 </pre></div>
 </div>
 <p>If you run into trouble, the safest way out is to uninstall the plugin and re-install it. You can do that on the command line using the <a class="reference external" href="https://github.com/scala-ide/scala-ide/blob/master/eclipse-director.sh">eclipse-director.sh</a> script.</p>
-<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>eclipse-director.sh --eclipse-dir /Applications/eclipse uninstall
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ eclipse-director.sh --eclipse-dir /Applications/eclipse uninstall
 Unnstalling..
 Uninstalling org.scala-ide.sdt.feature.feature.group 2.1.0.nightly-2_10-201203020544-24a4734.
 !SESSION 2012-03-02 15:27:37.712 -----------------------------------------------
@@ -198,17 +198,17 @@ Uninstalling org.scala-ide.sdt.feature.feature.group 2.1.0.nightly-2_10-20120302
 <div class="section" id="separating-eclipse-installation-from-workspace">
 <h2>Separating Eclipse installation from workspace</h2>
 <p>In order to have an Eclipse installation more resilient to update/installation issues one can easily separate the main Eclipse installation from the specific configuration. We will make the main Eclipse installation read-only to be absolutely sure that nothing interferes with it. The whole configuration will be placed by Eclipse in <code class="docutils literal"><span class="pre">${HOME}/eclipse-conf</span></code></p>
-<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>mkdir /opt/eclipse-3.7.1
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ mkdir /opt/eclipse-3.7.1
 unzip the contents of the original eclipse installation to this directory
-make the whole directory <span class="nb">read</span>-only
-<span class="nv">$ </span>mkdir <span class="si">${</span><span class="nv">HOME</span><span class="si">}</span>/eclipse-conf
-<span class="nv">$ </span>mv /opt/eclipse-3.7.1/eclipse.ini <span class="si">${</span><span class="nv">HOME</span><span class="si">}</span>/eclipse-conf/eclipse.ini
-<span class="nv">$ </span>mkdir <span class="si">${</span><span class="nv">HOME</span><span class="si">}</span>/eclipse-workspace
-<span class="nv">$ </span>mkdir <span class="si">${</span><span class="nv">HOME</span><span class="si">}</span>/eclipse-conf/configuration
+make the whole directory read-only
+$ mkdir <span class="si">${</span><span class="nv">HOME</span><span class="si">}</span>/eclipse-conf
+$ mv /opt/eclipse-3.7.1/eclipse.ini <span class="si">${</span><span class="nv">HOME</span><span class="si">}</span>/eclipse-conf/eclipse.ini
+$ mkdir <span class="si">${</span><span class="nv">HOME</span><span class="si">}</span>/eclipse-workspace
+$ mkdir <span class="si">${</span><span class="nv">HOME</span><span class="si">}</span>/eclipse-conf/configuration
 </pre></div>
 </div>
 <p>With that setup in place you can start eclipse with the following command (we recommend creating a shell script for it or putting it in <code class="docutils literal"><span class="pre">.desktop</span></code> under Linux):</p>
-<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>/opt/eclipse-3.7.1/eclipse
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ /opt/eclipse-3.7.1/eclipse
     --launcher.ini <span class="si">${</span><span class="nv">HOME</span><span class="si">}</span>/eclipse-conf/eclipse.ini
     -data <span class="si">${</span><span class="nv">HOME</span><span class="si">}</span>/eclipse-workspace
     -configuration <span class="si">${</span><span class="nv">HOME</span><span class="si">}</span>/eclipse-conf/configuration

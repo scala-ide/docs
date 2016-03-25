@@ -108,11 +108,11 @@ more information about this point.</li>
 <span id="building-run-the-build"></span><h2>Run the build</h2>
 <p>If you just want to build Scala IDE, a script triggers the different step needed to generate Scala IDE.</p>
 <p>From the project root, run the following command to build Scala IDE for Scala 2.11:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>./build-all.sh
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ ./build-all.sh
 </pre></div>
 </div>
 <p>or the following to build Scala IDE for a given Scala version:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>./build-all.sh -P scala-2.11.x -P eclipse-luna clean install
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ ./build-all.sh -P scala-2.11.x -P eclipse-luna clean install
 </pre></div>
 </div>
 <p>Assuming your build is successful you should find an Eclipse update site has been built in
@@ -135,11 +135,11 @@ server, then the HTTP URL of its root directory is acceptable as an ordinary Ecl
 <p>The toolchain update site and the SDT build depend on the fact that the root pom and toolchain have been compiled and installed in the local maven repository using <code class="docutils literal"><span class="pre">mvn</span> <span class="pre">install</span></code>.</p>
 <p>After an initial complete build, maven can be used from any subproject.</p>
 <p><code class="docutils literal"><span class="pre">build-all.sh</span></code> is simply a helper script that calls maven on the different parts. Running it is equivalent to:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>mvn -P scala-2.11.x -P eclipse-luna clean install
-<span class="nv">$ </span><span class="nb">cd </span>org.scala-ide.build-toolchain
-<span class="nv">$ </span>mvn -P scala-2.11.x -P eclipse-luna clean install
-<span class="nv">$ </span><span class="nb">cd</span> ../org.scala-ide.sdt.build
-<span class="nv">$ </span>mvn -P scala-2.11.x -P eclipse-luna clean install
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ mvn -P scala-2.11.x -P eclipse-luna clean install
+$ <span class="nb">cd</span> org.scala-ide.build-toolchain
+$ mvn -P scala-2.11.x -P eclipse-luna clean install
+$ <span class="nb">cd</span> ../org.scala-ide.sdt.build
+$ mvn -P scala-2.11.x -P eclipse-luna clean install
 </pre></div>
 </div>
 </div>
@@ -153,7 +153,7 @@ in your Eclipse project if not using the defaults (by default, <code class="docu
 <li>Scala major number. Currently the build works with Scala 2.11 and has support for 2.12. Profiles: <code class="docutils literal"><span class="pre">scala-2.11.x</span></code>, <code class="docutils literal"><span class="pre">scala-2.12.x</span></code></li>
 </ul>
 <p>A specific Scala version can also be passed on the command line, <em>in addition to the Scala profile</em>:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>mvn -P scala-2.11.x -P eclipse-luna -Dscala211.version<span class="o">=</span>2.11.2 clean install
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ mvn -P scala-2.11.x -P eclipse-luna -Dscala211.version<span class="o">=</span>2.11.2 clean install
 </pre></div>
 </div>
 </div>
@@ -162,8 +162,8 @@ in your Eclipse project if not using the defaults (by default, <code class="docu
 <p>Scala IDE has a memory leak test. This test compiles 50 times the Scala compiler as a Scala IDE project, checking the memory consumption between each run.</p>
 <p>This test is not run by default in a normal build. org.scala-ide.sdt.core.test contains a special profile to run the test.</p>
 <p>Use the following command to run it after having build the toolchain.</p>
-<div class="highlight-bash"><div class="highlight"><pre><span class="c"># from org.scala-ide.sdt.build</span>
-<span class="nv">$ </span>mvn --projects ../org.scala-ide.sdt.aspects,../org.scala-ide.sdt.core,../org.scala-ide.sdt.core.tests -P scala-2.11.x,memory-test clean integration-test
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="c1"># from org.scala-ide.sdt.build</span>
+$ mvn --projects ../org.scala-ide.sdt.aspects,../org.scala-ide.sdt.core,../org.scala-ide.sdt.core.tests -P scala-2.11.x,memory-test clean integration-test
 </pre></div>
 </div>
 <p>The <code class="docutils literal"><span class="pre">--projects</span></code> option tells maven which modules to build, as we don&#8217;t need to build all of them in this case. The <code class="docutils literal"><span class="pre">memory-test</span></code> profile contains a sightly modified configuration for <code class="docutils literal"><span class="pre">sdt.core.test</span></code>. It pulls and extracts the Scala compiler source needed for the test, and sets the MemoryLeaksTest test to be run.</p>
@@ -178,19 +178,19 @@ Scala IDE plug-in reacts to the changes. If that is exactly what you want to do,
 Otherwise, you can safely skip this section.</p>
 </div>
 <p>Build the Scala compiler, package into maven format and deploy locally. If you are building Scala <strong>2.10.x</strong>, run</p>
-<div class="highlight-bash"><div class="highlight"><pre><span class="c"># From the main Scala directory</span>
-<span class="nv">$ </span>ant distpack-opt
-<span class="nv">$ </span><span class="o">(</span><span class="nb">cd </span>dists/maven/latest<span class="p">;</span> ant deploy.snapshot.local<span class="o">)</span>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="c1"># From the main Scala directory</span>
+$ ant distpack-opt
+$ <span class="o">(</span><span class="nb">cd</span> dists/maven/latest<span class="p">;</span> ant deploy.snapshot.local<span class="o">)</span>
 </pre></div>
 </div>
 <p>In case you are building Scala <strong>master</strong>, run</p>
-<div class="highlight-bash"><div class="highlight"><pre><span class="c"># From the main Scala directory</span>
-<span class="nv">$ </span>ant publish.local
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="c1"># From the main Scala directory</span>
+$ ant publish.local
 </pre></div>
 </div>
 <p>Then rebuild Scala IDE, the build will automatically pickup the compiler which was installed locally.</p>
-<div class="highlight-bash"><div class="highlight"><pre><span class="c"># From the main Scala IDE directory</span>
-<span class="nv">$ </span>./build-all.sh
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="c1"># From the main Scala IDE directory</span>
+$ ./build-all.sh
 </pre></div>
 </div>
 <p>When the build is successful, a complete update-site, with the local changes

@@ -97,7 +97,7 @@
 <div class="section" id="eclipse-configuration">
 <h2>Eclipse Configuration</h2>
 <p>The default Eclipse heap configuration is often inadequate for the Scala IDE. It is strongly recommended to edit the <code class="docutils literal"><span class="pre">eclipse/eclipse.ini</span></code> (<code class="docutils literal"><span class="pre">eclipse/Eclipse.app/Contents/MacOS/eclipse.ini</span></code> on Mac osX) file and add the following lines to increase various heap limits and virtual machine options:</p>
-<div class="highlight-bash"><div class="highlight"><pre>--launcher.XXMaxPermSize
+<div class="highlight-bash"><div class="highlight"><pre><span></span>--launcher.XXMaxPermSize
 256m
 -vmargs
 -Xms256m
@@ -109,11 +109,11 @@
 </pre></div>
 </div>
 <p>One recent Oracle JVM, the following might also be beneficial:</p>
-<div class="highlight-bash"><div class="highlight"><pre>-XX:+UseConcMarkSweepGC
+<div class="highlight-bash"><div class="highlight"><pre><span></span>-XX:+UseConcMarkSweepGC
 </pre></div>
 </div>
 <p>As is the following on Oracle 64-bits JVM:</p>
-<div class="highlight-bash"><div class="highlight"><pre>-XX:+UseCompressedOops
+<div class="highlight-bash"><div class="highlight"><pre><span></span>-XX:+UseCompressedOops
 </pre></div>
 </div>
 </div>

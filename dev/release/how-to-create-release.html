@@ -106,7 +106,7 @@
 <p>If you want to build a new Scala IDE release but you don&#8217;t have access to all of the things, please ask one of the current IDE maintainers for them.</p>
 <ol class="arabic">
 <li><p class="first">The <code class="docutils literal"><span class="pre">scala-ide/scala-ide-product</span></code> repo needs to be updated to the newest version number. This can be done with the following command:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span class="nb">cd</span> /path/to/scala-ide-product
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="nb">cd</span> /path/to/scala-ide-product
 mvn -Dtycho.mode<span class="o">=</span>maven org.eclipse.tycho:tycho-versions-plugin:set-version -DnewVersion<span class="o">=</span>&lt;new-version&gt;-SNAPSHOT
 </pre></div>
 </div>
@@ -115,7 +115,7 @@ mvn -Dtycho.mode<span class="o">=</span>maven org.eclipse.tycho:tycho-versions-p
 <li><p class="first">Create a new config file in the <code class="docutils literal"><span class="pre">scala-ide/uber-build</span></code> repo. The config files are located in the <code class="docutils literal"><span class="pre">uber-build/config</span></code> directory. The easiest way to do this is to copy the config file of the previous release. The config file contains a <code class="docutils literal"><span class="pre">*_GIT_BRANCH</span></code> property, which specifies the branch or tag of the corresponding git repo. During the build this branch or tag is checked out and then considered for the Scala IDE release. If the repo has been updated since the last release and the plan is to include these updates in the next release, a new tag needs to be specified.</p>
 </li>
 <li><p class="first">After all tags are specified in the configuration file, they need to be set to all git repos. This can either be done manually or with the help of the <code class="docutils literal"><span class="pre">uber-build/mk-git-tags.sh</span></code> file. This file should be called in the following way:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span class="nb">cd</span> /path/to/uber-build
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="nb">cd</span> /path/to/uber-build
 ./mk-git-tags.sh config/release-config-file.conf /path/to/scala-ide/base/dir <span class="s2">&quot;tag sign message&quot;</span>
 </pre></div>
 </div>
@@ -126,7 +126,7 @@ mvn -Dtycho.mode<span class="o">=</span>maven org.eclipse.tycho:tycho-versions-p
 <li><p class="first">Before uber-build can be run, it is probably necessary to specify some environment variables. All the variables that may be necessary are part of the file <code class="docutils literal"><span class="pre">uber-build/uber-build-exports.sh</span></code>.</p>
 </li>
 <li><p class="first">Run uber-build:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span class="nb">cd</span> /path/to/uber-build
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="nb">cd</span> /path/to/uber-build
 ./uber-build config/config-file.conf
 </pre></div>
 </div>
@@ -138,7 +138,7 @@ mvn -Dtycho.mode<span class="o">=</span>maven org.eclipse.tycho:tycho-versions-p
 <p>The products can be found in the local directory <code class="docutils literal"><span class="pre">target/product/org.scala-ide.product/target/products/</span></code>.</p>
 </li>
 <li><p class="first">Build a changelog for the <code class="docutils literal"><span class="pre">scala-ide/docs</span></code> repo. Run the following script in the <code class="docutils literal"><span class="pre">scala-ide/scala-ide</span></code> repo to generate the changelog:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span class="nb">cd</span> /path/to/scala-ide-repo
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="nb">cd</span> /path/to/scala-ide-repo
 ./GenChangeLog.bash &lt;previous-release&gt; &lt;new-release&gt;
 </pre></div>
 </div>

@@ -107,7 +107,7 @@
 <li>Open Contents/Info.plist in an editor</li>
 <li>Add the following at the end of the file, just before the closing tags. It should look like this:</li>
 </ul>
-<div class="highlight-xml"><div class="highlight"><pre><span class="nt">&lt;key&gt;</span>NSHighResolutionCapable<span class="nt">&lt;/key&gt;</span>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;key&gt;</span>NSHighResolutionCapable<span class="nt">&lt;/key&gt;</span>
 <span class="nt">&lt;true/&gt;</span>
 <span class="nt">&lt;/dict&gt;</span>
 <span class="nt">&lt;/plist&gt;</span>
@@ -152,17 +152,17 @@ then choose the appropriate update site.</p>
 <div class="section" id="i-am-running-out-of-stack-space-in-eclipse-how-do-i-increase-the-stack-size">
 <h3>I am running out of stack space in Eclipse.  How do I increase the stack size?</h3>
 <p>If you are starting Eclipse from the command line, you can supply virtual machine arguments, including stack size, like this:</p>
-<div class="highlight-bash"><div class="highlight"><pre>eclipse <span class="o">[</span>normal arguments<span class="o">]</span> -vmargs -Xss8M <span class="o">[</span>more VM args<span class="o">]</span>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>eclipse <span class="o">[</span>normal arguments<span class="o">]</span> -vmargs -Xss8M <span class="o">[</span>more VM args<span class="o">]</span>
 </pre></div>
 </div>
 <p>You can also edit eclipse.ini in the Eclipse installation/application. There, lines that look like</p>
-<div class="highlight-bash"><div class="highlight"><pre>-vmargs
+<div class="highlight-bash"><div class="highlight"><pre><span></span>-vmargs
 -Xms40m
 -Xmx256m
 </pre></div>
 </div>
 <p>can be replaced with something like (for an 8 megabyte stack, 700MB initial heap, 2GB maximum heap)</p>
-<div class="highlight-bash"><div class="highlight"><pre>-vmargs
+<div class="highlight-bash"><div class="highlight"><pre><span></span>-vmargs
 -Xss8m
 -Xms700m
 -Xmx2048m
@@ -243,7 +243,7 @@ The prime suspect is Maven Dependencies, which can download and add an incompati
 <div class="section" id="bad-completion-when-using-companion-object-in-java">
 <h3>Bad completion when using companion object in Java</h3>
 <p>Using the Java code assist to access a Scala companion object generates invalid code.</p>
-<div class="highlight-scala"><div class="highlight"><pre><span class="k">package</span> <span class="nn">stest</span>
+<div class="highlight-scala"><div class="highlight"><pre><span></span><span class="k">package</span> <span class="nn">stest</span>
 
 <span class="k">class</span> <span class="nc">S3</span>
 
@@ -252,7 +252,7 @@ The prime suspect is Maven Dependencies, which can download and add an incompati
 <span class="o">}</span>
 </pre></div>
 </div>
-<div class="highlight-java"><div class="highlight"><pre><span class="kn">package</span> <span class="nn">jtest</span><span class="o">;</span>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">jtest</span><span class="o">;</span>
 
 <span class="kn">import</span> <span class="nn">stest.S3</span><span class="o">;</span>
 
@@ -279,7 +279,7 @@ this problem if you upgrade to JRE 7 or newer.</p>
 <p>If you cannot use the JRE 7, then you can try the workaround described below.</p>
 <p><strong>Workaround</strong>:</p>
 <p>If the deadlock is an instance of <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000317">#1000317</a> (deadlock in the JDT weaving code) or <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000996">#1000996</a> (deadlock during indentation) you can edit your eclipse.ini file using the recommended settings:</p>
-<div class="highlight-bash"><div class="highlight"><pre>-XX:+UnlockDiagnosticVMOptions
+<div class="highlight-bash"><div class="highlight"><pre><span></span>-XX:+UnlockDiagnosticVMOptions
 -XX:+UnsyncloadClass
 -Dosgi.classloader.lock<span class="o">=</span>classname
 </pre></div>
@@ -288,11 +288,11 @@ this problem if you upgrade to JRE 7 or newer.</p>
 <p>If you encounter this problem, the best thing is to take a thread dump:</p>
 <blockquote>
 <div><p>Once the IDE is frozen, the following command provide the process id of the running virtual machines:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>jps -v
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ jps -v
 </pre></div>
 </div>
 <p>Then this command generates the thread dump:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>jstack &lt;pid&gt;
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ jstack &lt;pid&gt;
 </pre></div>
 </div>
 </div></blockquote>

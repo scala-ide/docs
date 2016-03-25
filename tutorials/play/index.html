@@ -136,7 +136,7 @@ read the <a class="reference external" href="https://github.com/scala-ide/scala-
 <em>(from the Play documentation: Running play writes some files to directories within the archive, so don’t install to</em> <code class="docutils literal"><span class="pre">/opt</span></code> <em>,</em> <code class="docutils literal"><span class="pre">/usr/local</span></code> <em>or anywhere else you’d need special permission to write to.)</em></p>
 </li>
 <li><p class="first">For convenience, add the Play folder to your system PATH:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span class="nb">export </span><span class="nv">PATH</span><span class="o">=</span><span class="nv">$PATH</span>:/path/to/play21
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="nv">$PATH</span>:/path/to/play21
 </pre></div>
 </div>
 </li>
@@ -211,14 +211,14 @@ read the <a class="reference external" href="https://github.com/scala-ide/scala-
 <a class="reference external image-reference" href="../../_images/play20-scalaide20-19.png"><img alt="create model.Quote" src="../../_images/play20-scalaide20-19.png" style="width: 100%;" /></a>
 </li>
 <li><p class="first">Add variables to <code class="docutils literal"><span class="pre">models.Quote</span></code>, and make it a case class.</p>
-<div class="highlight-scala"><div class="highlight"><pre><span class="k">package</span> <span class="nn">models</span>
+<div class="highlight-scala"><div class="highlight"><pre><span></span><span class="k">package</span> <span class="nn">models</span>
 
 <span class="k">case</span> <span class="k">class</span> <span class="nc">Quote</span><span class="o">(</span><span class="n">text</span><span class="k">:</span> <span class="kt">String</span><span class="o">,</span> <span class="n">author</span><span class="k">:</span> <span class="kt">String</span><span class="o">)</span>
 </pre></div>
 </div>
 </li>
 <li><p class="first">Add an extra parameter to the <code class="docutils literal"><span class="pre">index.scala.html</span></code> view and update the layout.</p>
-<div class="highlight-scala"><div class="highlight"><pre><span class="o">@(</span><span class="n">message</span><span class="k">:</span> <span class="kt">String</span><span class="o">,</span> <span class="n">quote</span><span class="k">:</span> <span class="kt">models.Quote</span><span class="o">)</span>
+<div class="highlight-scala"><div class="highlight"><pre><span></span><span class="o">@(</span><span class="n">message</span><span class="k">:</span> <span class="kt">String</span><span class="o">,</span> <span class="n">quote</span><span class="k">:</span> <span class="kt">models.Quote</span><span class="o">)</span>
 
 <span class="nd">@main</span><span class="o">(</span><span class="s">&quot;Welcome to Play 2.1&quot;</span><span class="o">)</span> <span class="o">{</span>
 
@@ -233,7 +233,7 @@ read the <a class="reference external" href="https://github.com/scala-ide/scala-
 <a class="reference external image-reference" href="../../_images/play20-scalaide20-17.png"><img alt="compilation error" src="../../_images/play20-scalaide20-17.png" style="width: 100%;" /></a>
 </li>
 <li><p class="first">Fix the application code, using a smart quote. And fix the imports as needed.</p>
-<div class="highlight-scala"><div class="highlight"><pre><span class="k">def</span> <span class="n">index</span> <span class="k">=</span> <span class="nc">Action</span> <span class="o">{</span>
+<div class="highlight-scala"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="n">index</span> <span class="k">=</span> <span class="nc">Action</span> <span class="o">{</span>
   <span class="nc">Ok</span><span class="o">(</span><span class="n">views</span><span class="o">.</span><span class="n">html</span><span class="o">.</span><span class="n">index</span><span class="o">(</span><span class="s">&quot;Your new application is ready.&quot;</span><span class="o">,</span>
       <span class="nc">Quote</span><span class="o">(</span><span class="s">&quot;Citer les pensees des autres, c&#39;est regretter de ne pas les avoir trouvees soi-meme.&quot;</span><span class="o">,</span>
           <span class="s">&quot;Sacha Guitry&quot;</span><span class="o">)))</span>

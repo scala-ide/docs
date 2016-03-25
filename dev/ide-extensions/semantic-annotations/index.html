@@ -113,7 +113,7 @@ that allows easy plugin creation.</p>
 <h2>Example</h2>
 <p>For example to highlight all method usages on Scala mutable collections one has to create
 a plugin containing a single classes inside that defines your traversers and highlighter:</p>
-<div class="highlight-python"><div class="highlight"><pre>package annotations.demo
+<div class="highlight-python"><div class="highlight"><pre><span></span>package annotations.demo
 
 import org.eclipse.jface.text.source.ISourceViewer
 import org.scalaide.core.extensions.SemanticHighlightingParticipant
@@ -152,7 +152,7 @@ class MutableCollectionCallHighlightingParticipant
 </div>
 <p>And plug them into Scala IDE</p>
 <p>in <code class="docutils literal"><span class="pre">plugin.xml</span></code>:</p>
-<div class="highlight-python"><div class="highlight"><pre>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+<div class="highlight-python"><div class="highlight"><pre><span></span>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;?eclipse version=&quot;3.4&quot;?&gt;
 &lt;plugin&gt;
     &lt;extension point=&quot;org.eclipse.ui.editors.annotationTypes&quot;&gt;
@@ -190,7 +190,7 @@ class MutableCollectionCallHighlightingParticipant
 </pre></div>
 </div>
 <p>in <code class="docutils literal"><span class="pre">MANIFEST.MF</span></code>:</p>
-<div class="highlight-python"><div class="highlight"><pre>Manifest-Version: 1.0
+<div class="highlight-python"><div class="highlight"><pre><span></span>Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: AnnotationsDemo
 Bundle-SymbolicName: annotations.demo;singleton:=true

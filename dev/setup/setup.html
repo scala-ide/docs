@@ -121,7 +121,7 @@ that will greatly simplify the process of sending us patches (remember to also r
 <p>After forking the project, simply open a terminal and clone your own fork to download the project&#8217;s
 sources. The command for cloning the fork should be very close to the following one (mind that
 you will have to replace <em>&lt;username&gt;</em> with your actual Git username).</p>
-<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>git clone git@github.com:&lt;username&gt;/scala-ide.git
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ git clone git@github.com:&lt;username&gt;/scala-ide.git
 </pre></div>
 </div>
 <p>Make sure to <a class="reference external" href="http://help.github.com/fork-a-repo/#Set-Up-Your-Local-Repo">add an Upstream</a> pointing
@@ -133,11 +133,11 @@ made in the project, and easily integrate them back in your fork.</p>
 <p>The Scala IDE projects uses libraries which are pulled during the build process and copied in the <code class="docutils literal"><span class="pre">target/lib</span></code> folders.
 So let&#8217;s run the build.</p>
 <p>From the project root, run the following command:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>./build-all.sh
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ ./build-all.sh
 </pre></div>
 </div>
 <p>In case you want to modify the default build you can pass different profiles:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>./build-all.sh -P scala-2.11.x -P eclipse-luna clean install
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ ./build-all.sh -P scala-2.11.x -P eclipse-luna clean install
 </pre></div>
 </div>
 <p>If you want more information concerning the build, check out <a class="reference internal" href="../building/building.html#building-run-the-build"><span>Run the build</span></a>.</p>
@@ -212,7 +212,7 @@ project, and choose the test class you want to run (use <code class="docutils li
 <p>The window should look like this:</p>
 <img alt="../../_images/setup.png" src="../../_images/setup.png" />
 <p>In the <strong>Arguments</strong> tab, make sure to add the following arguments to the VM arguments list:</p>
-<div class="highlight-bash"><div class="highlight"><pre>-Dsdtcore.headless -Dsdtcore.notimeouts
+<div class="highlight-bash"><div class="highlight"><pre><span></span>-Dsdtcore.headless -Dsdtcore.notimeouts
 </pre></div>
 </div>
 <p>The first one tells the IDE to not try to open any windows or dialogs, while the second one disables
