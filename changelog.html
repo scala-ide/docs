@@ -91,6 +91,31 @@
 <div class="section" id="x">
 <h2>4.4.x</h2>
 <div class="section" id="id1">
+<h3>4.4.1 (2016-05-05)</h3>
+<ul class="simple">
+<li>Consider enclosing classes when adding types to the index (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001103">#1001103</a>)</li>
+<li>Replaces AtomicReference (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002690">#1002690</a>)</li>
+<li>Improve class file check for mixed Scala/Java projects (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002687">#1002687</a>)</li>
+<li>Adds settings for organizing local imports</li>
+<li>Depend on final Scala version in nightly builds</li>
+<li>Fix src-luna source folders in classpath files</li>
+<li>Override Indicators now don’t hold on to compiler symbols. (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002293">#1002293</a>)</li>
+<li>Save only a position instead of a compiler symbol in implicit annotatations (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002679">#1002679</a>)</li>
+<li>Do not use maven.build.timestamp for OSGi version of sbt project (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002667">#1002667</a>)</li>
+</ul>
+<p>The following changes belong to the scala-refactoring part:</p>
+<ul class="simple">
+<li>Properly Rename Scala Annotation Arguments (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002680">#1002680</a>)</li>
+<li>Organize Imports in Blocks (DefDef) and Templates avoiding tree printer (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002476">#1002476</a>)</li>
+<li>Fix rename in for comprehensions (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002650">#1002650</a>)</li>
+<li>Fix rename for interpolated strings like f&#8221;$x&#8221; (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002651">#1002651</a>)</li>
+<li><cite>Movements.id</cite> must not match comments</li>
+<li>Consider named parameters during rename refactorings (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002501">#1002501</a> <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002572">#1002572</a>)</li>
+<li>Move the documentation to the thesis-documentation branch.</li>
+<li>Add empty lines around added imports and put import at right location (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002672">#1002672</a>)</li>
+</ul>
+</div>
+<div class="section" id="id2">
 <h3>4.4.0 (2016-04-01)</h3>
 <p>No changes.</p>
 </div>
@@ -178,9 +203,9 @@
 </ul>
 </div>
 </div>
-<div class="section" id="id2">
-<h2>4.3.x</h2>
 <div class="section" id="id3">
+<h2>4.3.x</h2>
+<div class="section" id="id4">
 <h3>4.3.0 (2015-12-01)</h3>
 <ul class="simple">
 <li>Start statistics tracker on startup of scala-ide bundle</li>
@@ -230,9 +255,9 @@
 </ul>
 </div>
 </div>
-<div class="section" id="id4">
-<h2>4.2.x</h2>
 <div class="section" id="id5">
+<h2>4.2.x</h2>
+<div class="section" id="id6">
 <h3>4.2.0 (2015-09-28)</h3>
 <ul class="simple">
 <li>Fix non working fading packages feature in Async Debug View (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002549">#1002549</a>)</li>
@@ -317,9 +342,9 @@
 </ul>
 </div>
 </div>
-<div class="section" id="id6">
-<h2>4.1.x</h2>
 <div class="section" id="id7">
+<h2>4.1.x</h2>
+<div class="section" id="id8">
 <h3>4.1.1 (2015-07-28)</h3>
 <ul class="simple">
 <li>Remove key binding for expression evaluator (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002509">#1002509</a>)</li>
@@ -680,7 +705,7 @@
 </ul>
 </div>
 </div>
-<div class="section" id="id8">
+<div class="section" id="id9">
 <h2>3.0.3</h2>
 <div class="section" id="rc1-2014-01-09">
 <h3>RC1 (2014-01-09)</h3>
@@ -690,7 +715,7 @@
 </ul>
 </div>
 </div>
-<div class="section" id="id9">
+<div class="section" id="id10">
 <h2>3.0.2</h2>
 <div class="section" id="rc2-2013-10-09">
 <h3>RC2 (2013-10-09)</h3>
@@ -717,7 +742,7 @@
 </ul>
 </div>
 </div>
-<div class="section" id="id10">
+<div class="section" id="id11">
 <h2>3.0.1</h2>
 <div class="section" id="rc2-2013-06-27">
 <h3>RC2 (2013-06-27)</h3>
@@ -813,7 +838,7 @@
 <h3>M3 (released: 2012-12-20)</h3>
 <ul class="simple">
 <li>Added a URL hyperlink detector - <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001266">#1001266</a></li>
-<li>Added a <a class="reference internal" href="3.0.x/features/test-finder/index.html"><em>Scala JUnit Test Finder</em></a> - <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001275">#1001275</a>, <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000782">#1000782</a></li>
+<li>Added a <a class="reference internal" href="3.0.x/features/test-finder/index.html"><span class="doc">Scala JUnit Test Finder</span></a> - <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001275">#1001275</a>, <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000782">#1000782</a></li>
 <li>Fixed missing implicit arguments in <em>implicit highlighting</em> - <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001280">#1001280</a></li>
 <li>Correctly find <strong>JUnit</strong> tests right-clicking on a Scala source - <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001234">#1001234</a>, <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001379">#1001379</a>, <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001380">#1001380</a>, <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000731">#1000731</a>.</li>
 <li>Fixed crash when hovering over <code class="docutils literal"><span class="pre">Run</span> <span class="pre">As</span></code> button - <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001304">#1001304</a></li>
@@ -950,7 +975,7 @@
 </ul>
 </div>
 </div>
-<div class="section" id="id55">
+<div class="section" id="id56">
 <h2>2.0.1 (release/scala-ide-2.0.x)</h2>
 <div class="section" id="final-released-2012-04-30">
 <h3>2.0.1-final (released: 2012-04-30)</h3>
@@ -1062,7 +1087,7 @@
 <li>new SBT-based builder with inter-project dependencies. The default builder remains &#8216;refined&#8217;, but you can enable the SBT builder in Eclipse -&gt; Preferences -&gt; Scala  -&gt; Compiler -&gt; Build manager.</li>
 <li>better integration of mixed Scala/Java project (no more spurious errors when Java classes call Scala classes that contain annotations).</li>
 <li>new field in Compiler preferences for additional command line parameters, cleanup of compiler options.</li>
-<li>new &#8220;Show Inferred Semicolons&#8221; feature: <a class="reference internal" href="2.0.x/features/typingviewing.html"><em>Typing and Viewing</em></a>.</li>
+<li>new &#8220;Show Inferred Semicolons&#8221; feature: <a class="reference internal" href="2.0.x/features/typingviewing.html"><span class="doc">Typing and Viewing</span></a>.</li>
 <li>syntax colouring for new REPL view.</li>
 <li>stop inappropriate Java save actions firing on Scala source. <a class="reference external" href="https://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1534">#1534</a></li>
 <li>corrected cursor&#8217;s positioning after asking completion.</li>
@@ -1086,7 +1111,7 @@
 <h3>2.0.0-beta08 (released: 2011-07-12)</h3>
 <ul class="simple">
 <li>fixed large memory leak in mark occurrences.</li>
-<li>new Run Selection REPL: edit window for commands (with history). Try it by pressing Ctrl-Shift-X inside a Scala editor to run the selected expression (or the current line). <a class="reference internal" href="2.0.x/features/scalainterpreter.html"><em>Read more</em></a>.</li>
+<li>new Run Selection REPL: edit window for commands (with history). Try it by pressing Ctrl-Shift-X inside a Scala editor to run the selected expression (or the current line). <a class="reference internal" href="2.0.x/features/scalainterpreter.html"><span class="doc">Read more</span></a>.</li>
 <li>JUnit runner finds tests in Scala files reliably (even when files are not open).</li>
 <li>Fixed errors shown in Java sources coming from the Scala compiler.</li>
 <li>Fixed crash in Java completion for Scala classes in the default (empty) package.</li>
@@ -1155,7 +1180,7 @@
 <li>delete : support of scala-2.8.0</li>
 </ul>
 </div>
-<div class="section" id="id103">
+<div class="section" id="id104">
 <h3>1.0.0.20100804</h3>
 <ul class="simple">
 <li>Refactoring Support</li>

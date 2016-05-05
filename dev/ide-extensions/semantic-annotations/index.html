@@ -113,46 +113,46 @@ that allows easy plugin creation.</p>
 <h2>Example</h2>
 <p>For example to highlight all method usages on Scala mutable collections one has to create
 a plugin containing a single classes inside that defines your traversers and highlighter:</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span>package annotations.demo
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">package</span> <span class="n">annotations</span><span class="o">.</span><span class="n">demo</span>
 
-import org.eclipse.jface.text.source.ISourceViewer
-import org.scalaide.core.extensions.SemanticHighlightingParticipant
-import org.scalaide.ui.internal.editor.decorators.SemanticAction
-import org.scalaide.ui.internal.editor.decorators.custom.AllMethodsTraverserDef
-import org.scalaide.ui.internal.editor.decorators.custom.CustomSemanticAction
-import org.scalaide.ui.internal.editor.decorators.custom.TraverserDef.TypeDefinition
+<span class="kn">import</span> <span class="nn">org.eclipse.jface.text.source.ISourceViewer</span>
+<span class="kn">import</span> <span class="nn">org.scalaide.core.extensions.SemanticHighlightingParticipant</span>
+<span class="kn">import</span> <span class="nn">org.scalaide.ui.internal.editor.decorators.SemanticAction</span>
+<span class="kn">import</span> <span class="nn">org.scalaide.ui.internal.editor.decorators.custom.AllMethodsTraverserDef</span>
+<span class="kn">import</span> <span class="nn">org.scalaide.ui.internal.editor.decorators.custom.CustomSemanticAction</span>
+<span class="kn">import</span> <span class="nn">org.scalaide.ui.internal.editor.decorators.custom.TraverserDef.TypeDefinition</span>
 
-/**
- * Object with some common properties used by this plugin.
- */
-object MutableCollectionCallHighlightingParticipant {
+<span class="o">/**</span>
+ <span class="o">*</span> <span class="n">Object</span> <span class="k">with</span> <span class="n">some</span> <span class="n">common</span> <span class="n">properties</span> <span class="n">used</span> <span class="n">by</span> <span class="n">this</span> <span class="n">plugin</span><span class="o">.</span>
+ <span class="o">*/</span>
+<span class="nb">object</span> <span class="n">MutableCollectionCallHighlightingParticipant</span> <span class="p">{</span>
 
-  /** Id of annotation, used in plugin.xml */
-  lazy val annotationId = &quot;annotations.demo.mutable&quot;
+  <span class="o">/**</span> <span class="n">Id</span> <span class="n">of</span> <span class="n">annotation</span><span class="p">,</span> <span class="n">used</span> <span class="ow">in</span> <span class="n">plugin</span><span class="o">.</span><span class="n">xml</span> <span class="o">*/</span>
+  <span class="n">lazy</span> <span class="n">val</span> <span class="n">annotationId</span> <span class="o">=</span> <span class="s2">&quot;annotations.demo.mutable&quot;</span>
 
-  /** Traverser that looks for all method calls on children of collection.mutable.Traversable */
-  lazy val traversers = Seq(
-    AllMethodsTraverserDef(
-      message = name =&gt; s&quot;Method call on a mutable collection: &#39;$name&#39;&quot;,
-      typeDefinition = TypeDefinition(&quot;scala&quot; :: &quot;collection&quot; :: &quot;mutable&quot; :: Nil, &quot;Traversable&quot;)))
+  <span class="o">/**</span> <span class="n">Traverser</span> <span class="n">that</span> <span class="n">looks</span> <span class="k">for</span> <span class="nb">all</span> <span class="n">method</span> <span class="n">calls</span> <span class="n">on</span> <span class="n">children</span> <span class="n">of</span> <span class="n">collection</span><span class="o">.</span><span class="n">mutable</span><span class="o">.</span><span class="n">Traversable</span> <span class="o">*/</span>
+  <span class="n">lazy</span> <span class="n">val</span> <span class="n">traversers</span> <span class="o">=</span> <span class="n">Seq</span><span class="p">(</span>
+    <span class="n">AllMethodsTraverserDef</span><span class="p">(</span>
+      <span class="n">message</span> <span class="o">=</span> <span class="n">name</span> <span class="o">=&gt;</span> <span class="n">s</span><span class="s2">&quot;Method call on a mutable collection: &#39;$name&#39;&quot;</span><span class="p">,</span>
+      <span class="n">typeDefinition</span> <span class="o">=</span> <span class="n">TypeDefinition</span><span class="p">(</span><span class="s2">&quot;scala&quot;</span> <span class="p">::</span> <span class="s2">&quot;collection&quot;</span> <span class="p">::</span> <span class="s2">&quot;mutable&quot;</span> <span class="p">::</span> <span class="n">Nil</span><span class="p">,</span> <span class="s2">&quot;Traversable&quot;</span><span class="p">)))</span>
 
-  /** Highlighting actions */
-  def action(viewer: ISourceViewer): SemanticAction =
-    new CustomSemanticAction(traversers, viewer, annotationId)
-}
+  <span class="o">/**</span> <span class="n">Highlighting</span> <span class="n">actions</span> <span class="o">*/</span>
+  <span class="k">def</span> <span class="nf">action</span><span class="p">(</span><span class="n">viewer</span><span class="p">:</span> <span class="n">ISourceViewer</span><span class="p">):</span> <span class="n">SemanticAction</span> <span class="o">=</span>
+    <span class="n">new</span> <span class="n">CustomSemanticAction</span><span class="p">(</span><span class="n">traversers</span><span class="p">,</span> <span class="n">viewer</span><span class="p">,</span> <span class="n">annotationId</span><span class="p">)</span>
+<span class="p">}</span>
 
-/**
- * Custom highlighter for mutable collection methods.
- *
- * It&#39;s plugged to Scala IDE extension (see plugin.xml).
- */
-class MutableCollectionCallHighlightingParticipant
-  extends SemanticHighlightingParticipant(MutableCollectionCallHighlightingParticipant.action)
+<span class="o">/**</span>
+ <span class="o">*</span> <span class="n">Custom</span> <span class="n">highlighter</span> <span class="k">for</span> <span class="n">mutable</span> <span class="n">collection</span> <span class="n">methods</span><span class="o">.</span>
+ <span class="o">*</span>
+ <span class="o">*</span> <span class="n">It</span><span class="s1">&#39;s plugged to Scala IDE extension (see plugin.xml).</span>
+ <span class="o">*/</span>
+<span class="k">class</span> <span class="nc">MutableCollectionCallHighlightingParticipant</span>
+  <span class="n">extends</span> <span class="n">SemanticHighlightingParticipant</span><span class="p">(</span><span class="n">MutableCollectionCallHighlightingParticipant</span><span class="o">.</span><span class="n">action</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>And plug them into Scala IDE</p>
 <p>in <code class="docutils literal"><span class="pre">plugin.xml</span></code>:</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+<div class="highlight-default"><div class="highlight"><pre><span></span>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;?eclipse version=&quot;3.4&quot;?&gt;
 &lt;plugin&gt;
     &lt;extension point=&quot;org.eclipse.ui.editors.annotationTypes&quot;&gt;
@@ -190,32 +190,32 @@ class MutableCollectionCallHighlightingParticipant
 </pre></div>
 </div>
 <p>in <code class="docutils literal"><span class="pre">MANIFEST.MF</span></code>:</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span>Manifest-Version: 1.0
-Bundle-ManifestVersion: 2
-Bundle-Name: AnnotationsDemo
-Bundle-SymbolicName: annotations.demo;singleton:=true
-Bundle-Version: 1.0.0.qualifier
-Bundle-Activator: annotations.demo.Activator
-Require-Bundle: org.eclipse.core.resources,
- org.eclipse.core.runtime,
- org.eclipse.jdt.core,
- org.eclipse.jdt.core.manipulation,
- org.eclipse.jdt.ui,
- org.eclipse.jface.text,
- org.eclipse.ui,
- org.eclipse.ui.browser,
- org.eclipse.ui.editors,
- org.eclipse.ui.workbench.texteditor,
- org.scala-lang.scala-library,
- org.scala-lang.scala-reflect,
- org.scala-lang.scala-compiler,
- org.scala-ide.sdt.core,
- org.scala-ide.sbt.compiler.interface,
- org.scala-ide.sbt.full.library
-Import-Package:
- scala.tools.eclipse.contribution.weaving.jdt;apply-aspects:=false
-Bundle-RequiredExecutionEnvironment: JavaSE-1.6
-Bundle-ActivationPolicy: lazy
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Manifest</span><span class="o">-</span><span class="n">Version</span><span class="p">:</span> <span class="mf">1.0</span>
+<span class="n">Bundle</span><span class="o">-</span><span class="n">ManifestVersion</span><span class="p">:</span> <span class="mi">2</span>
+<span class="n">Bundle</span><span class="o">-</span><span class="n">Name</span><span class="p">:</span> <span class="n">AnnotationsDemo</span>
+<span class="n">Bundle</span><span class="o">-</span><span class="n">SymbolicName</span><span class="p">:</span> <span class="n">annotations</span><span class="o">.</span><span class="n">demo</span><span class="p">;</span><span class="n">singleton</span><span class="p">:</span><span class="o">=</span><span class="n">true</span>
+<span class="n">Bundle</span><span class="o">-</span><span class="n">Version</span><span class="p">:</span> <span class="mf">1.0</span><span class="o">.</span><span class="mf">0.</span><span class="n">qualifier</span>
+<span class="n">Bundle</span><span class="o">-</span><span class="n">Activator</span><span class="p">:</span> <span class="n">annotations</span><span class="o">.</span><span class="n">demo</span><span class="o">.</span><span class="n">Activator</span>
+<span class="n">Require</span><span class="o">-</span><span class="n">Bundle</span><span class="p">:</span> <span class="n">org</span><span class="o">.</span><span class="n">eclipse</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">resources</span><span class="p">,</span>
+ <span class="n">org</span><span class="o">.</span><span class="n">eclipse</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">runtime</span><span class="p">,</span>
+ <span class="n">org</span><span class="o">.</span><span class="n">eclipse</span><span class="o">.</span><span class="n">jdt</span><span class="o">.</span><span class="n">core</span><span class="p">,</span>
+ <span class="n">org</span><span class="o">.</span><span class="n">eclipse</span><span class="o">.</span><span class="n">jdt</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">manipulation</span><span class="p">,</span>
+ <span class="n">org</span><span class="o">.</span><span class="n">eclipse</span><span class="o">.</span><span class="n">jdt</span><span class="o">.</span><span class="n">ui</span><span class="p">,</span>
+ <span class="n">org</span><span class="o">.</span><span class="n">eclipse</span><span class="o">.</span><span class="n">jface</span><span class="o">.</span><span class="n">text</span><span class="p">,</span>
+ <span class="n">org</span><span class="o">.</span><span class="n">eclipse</span><span class="o">.</span><span class="n">ui</span><span class="p">,</span>
+ <span class="n">org</span><span class="o">.</span><span class="n">eclipse</span><span class="o">.</span><span class="n">ui</span><span class="o">.</span><span class="n">browser</span><span class="p">,</span>
+ <span class="n">org</span><span class="o">.</span><span class="n">eclipse</span><span class="o">.</span><span class="n">ui</span><span class="o">.</span><span class="n">editors</span><span class="p">,</span>
+ <span class="n">org</span><span class="o">.</span><span class="n">eclipse</span><span class="o">.</span><span class="n">ui</span><span class="o">.</span><span class="n">workbench</span><span class="o">.</span><span class="n">texteditor</span><span class="p">,</span>
+ <span class="n">org</span><span class="o">.</span><span class="n">scala</span><span class="o">-</span><span class="n">lang</span><span class="o">.</span><span class="n">scala</span><span class="o">-</span><span class="n">library</span><span class="p">,</span>
+ <span class="n">org</span><span class="o">.</span><span class="n">scala</span><span class="o">-</span><span class="n">lang</span><span class="o">.</span><span class="n">scala</span><span class="o">-</span><span class="n">reflect</span><span class="p">,</span>
+ <span class="n">org</span><span class="o">.</span><span class="n">scala</span><span class="o">-</span><span class="n">lang</span><span class="o">.</span><span class="n">scala</span><span class="o">-</span><span class="n">compiler</span><span class="p">,</span>
+ <span class="n">org</span><span class="o">.</span><span class="n">scala</span><span class="o">-</span><span class="n">ide</span><span class="o">.</span><span class="n">sdt</span><span class="o">.</span><span class="n">core</span><span class="p">,</span>
+ <span class="n">org</span><span class="o">.</span><span class="n">scala</span><span class="o">-</span><span class="n">ide</span><span class="o">.</span><span class="n">sbt</span><span class="o">.</span><span class="n">compiler</span><span class="o">.</span><span class="n">interface</span><span class="p">,</span>
+ <span class="n">org</span><span class="o">.</span><span class="n">scala</span><span class="o">-</span><span class="n">ide</span><span class="o">.</span><span class="n">sbt</span><span class="o">.</span><span class="n">full</span><span class="o">.</span><span class="n">library</span>
+<span class="n">Import</span><span class="o">-</span><span class="n">Package</span><span class="p">:</span>
+ <span class="n">scala</span><span class="o">.</span><span class="n">tools</span><span class="o">.</span><span class="n">eclipse</span><span class="o">.</span><span class="n">contribution</span><span class="o">.</span><span class="n">weaving</span><span class="o">.</span><span class="n">jdt</span><span class="p">;</span><span class="n">apply</span><span class="o">-</span><span class="n">aspects</span><span class="p">:</span><span class="o">=</span><span class="n">false</span>
+<span class="n">Bundle</span><span class="o">-</span><span class="n">RequiredExecutionEnvironment</span><span class="p">:</span> <span class="n">JavaSE</span><span class="o">-</span><span class="mf">1.6</span>
+<span class="n">Bundle</span><span class="o">-</span><span class="n">ActivationPolicy</span><span class="p">:</span> <span class="n">lazy</span>
 </pre></div>
 </div>
 <p>For full example project see <a class="reference external" href="https://github.com/VirtusLab/scala-ide-annotations-demo">Demo project</a>.</p>

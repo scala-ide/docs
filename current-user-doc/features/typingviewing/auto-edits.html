@@ -116,17 +116,17 @@
 </div></blockquote>
 <p>is unset - if this option is set braces are always closed regardless if it is useful or not.</p>
 <p><strong>Example:</strong> In Scala users often decide to change parentheses to braces because the latter can contain multiple expressions. In the following line of code</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span>List(1, 2, 3) map (x =&gt; x+1)
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">List</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span> <span class="nb">map</span> <span class="p">(</span><span class="n">x</span> <span class="o">=&gt;</span> <span class="n">x</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>one can insert an opening brace directly before the opening parenthesis:</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span>List(1, 2, 3) map {(x =&gt; x+1)
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">List</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span> <span class="nb">map</span> <span class="p">{(</span><span class="n">x</span> <span class="o">=&gt;</span> <span class="n">x</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>In this case no closing brace in inserted. Instead the editor waits until the users has done all changes and presses enter. After that, the output may look something like this:</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span>List(1, 2, 3) map {
-  (x =&gt; x+1)
-}
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">List</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span> <span class="nb">map</span> <span class="p">{</span>
+  <span class="p">(</span><span class="n">x</span> <span class="o">=&gt;</span> <span class="n">x</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>where the closing brace and the code between the braces is inserted at the correct position as one expects it.</p>
@@ -139,26 +139,26 @@
 <h2>Auto indentations</h2>
 <p>This is definitely one of the most useful features an editor can have. It is another Auto Edit nobody notices but everybody immediately notices its absence when it does not work the way it should. The possibility to automatically indent the cursor to the right position saves a lot of time while coding. Thus, it is obvious that a lot of effort is spent in this feature to maximize usability of the IDE.</p>
 <p><strong>Example:</strong> If one hits enter at the caret position (<code class="docutils literal"><span class="pre">^</span></code>) in this code snippet</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span>def f(i: Int) = {^}
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">i</span><span class="p">:</span> <span class="n">Int</span><span class="p">)</span> <span class="o">=</span> <span class="p">{</span><span class="o">^</span><span class="p">}</span>
 </pre></div>
 </div>
 <p>one will get this as result:</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span>def f(i: Int) = {
-  ^
-}
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">i</span><span class="p">:</span> <span class="n">Int</span><span class="p">)</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="o">^</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>Auto indentation also works inside multi line comments and Scaladoc:</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span>/**
- *         indented text^
- */
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">/**</span>
+ <span class="o">*</span>         <span class="n">indented</span> <span class="n">text</span><span class="o">^</span>
+ <span class="o">*/</span>
 </pre></div>
 </div>
 <p>If one hits enter at the caret position this is the result:</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span>/**
- *         indented text
- *         ^
- */
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">/**</span>
+ <span class="o">*</span>         <span class="n">indented</span> <span class="n">text</span>
+ <span class="o">*</span>         <span class="o">^</span>
+ <span class="o">*/</span>
 </pre></div>
 </div>
 <p>In contrast to other Auto Edits, this feature is always active and can&#8217;t be disabled.</p>
@@ -166,11 +166,11 @@
 <div class="section" id="smart-semicolons">
 <h2>Smart semicolons</h2>
 <p>Smart semicolons allow to place an inserted semicolon at the end of a line instead of the position where the cursor is placed. This is useful to jump over closing parenthesis with one keystroke. For example if one enters the semicolon at the caret position (<code class="docutils literal"><span class="pre">^</span></code>) in this example</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span>a(b(c(d(e^))))
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">a</span><span class="p">(</span><span class="n">b</span><span class="p">(</span><span class="n">c</span><span class="p">(</span><span class="n">d</span><span class="p">(</span><span class="n">e</span><span class="o">^</span><span class="p">))))</span>
 </pre></div>
 </div>
 <p>this is the result:</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span>a(b(c(d(e))));^
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">a</span><span class="p">(</span><span class="n">b</span><span class="p">(</span><span class="n">c</span><span class="p">(</span><span class="n">d</span><span class="p">(</span><span class="n">e</span><span class="p">))));</span><span class="o">^</span>
 </pre></div>
 </div>
 <p>If it is intended to place a semicolon in the middle of a line one can hit backspace to move the semicolon back to its original position.</p>
@@ -196,29 +196,29 @@
 </div></blockquote>
 <p>If a multi line or Scaladoc comment is already closed they are expanded automatically if one inserts a new line. This means that each new line is automatically indented to the position of the first sign of the previous line. If the previous line starts with a star, then this star is included too, otherwise not.</p>
 <p><strong>Example:</strong> The previous line starts with a star:</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span>/*
- * a multi line comment^
- */
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">/*</span>
+ <span class="o">*</span> <span class="n">a</span> <span class="n">multi</span> <span class="n">line</span> <span class="n">comment</span><span class="o">^</span>
+ <span class="o">*/</span>
 </pre></div>
 </div>
 <p>If one hits enter at the caret position (<code class="docutils literal"><span class="pre">^</span></code>) the comment is expanded to:</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span>/*
- * a multi line comment
- * ^
- */
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">/*</span>
+ <span class="o">*</span> <span class="n">a</span> <span class="n">multi</span> <span class="n">line</span> <span class="n">comment</span>
+ <span class="o">*</span> <span class="o">^</span>
+ <span class="o">*/</span>
 </pre></div>
 </div>
 <p>On the other side if the previous line doesn&#8217;t start with a star</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span>/*
-   multi line comment^
- */
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">/*</span>
+   <span class="n">multi</span> <span class="n">line</span> <span class="n">comment</span><span class="o">^</span>
+ <span class="o">*/</span>
 </pre></div>
 </div>
 <p>the result is the following:</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span>/*
-   multi line comment
-   ^
- */
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">/*</span>
+   <span class="n">multi</span> <span class="n">line</span> <span class="n">comment</span>
+   <span class="o">^</span>
+ <span class="o">*/</span>
 </pre></div>
 </div>
 </div>

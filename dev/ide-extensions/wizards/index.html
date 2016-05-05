@@ -108,7 +108,7 @@
 <p>You can now export a bundle and install it to your Eclipse installation. If you made everything correctly, the new wizard should show your template in the kind field.</p>
 <p>In the following we show you an example bundle manifest and plugin configuration:</p>
 <p><code class="docutils literal"><span class="pre">plugin.xml</span></code>:</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+<div class="highlight-default"><div class="highlight"><pre><span></span>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;?eclipse version=&quot;3.4&quot;?&gt;
 &lt;plugin&gt;
    &lt;extension
@@ -137,17 +137,17 @@
 </pre></div>
 </div>
 <p><code class="docutils literal"><span class="pre">MANIFEST.MF</span></code>:</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span>Manifest-Version: 1.0
-Bundle-ManifestVersion: 2
-Bundle-Name: Wizardextension
-Bundle-SymbolicName: org.scalaide.wizardextension;singleton:=true
-Bundle-Version: 1.0.0.qualifier
-Bundle-RequiredExecutionEnvironment: JavaSE-1.7
-Require-Bundle: org.scala-ide.sdt.core;bundle-version=&quot;4.0.0&quot;,
- org.scala-lang.scala-library,
- org.eclipse.core.resources;bundle-version=&quot;3.8.101&quot;,
- org.eclipse.core.runtime;bundle-version=&quot;3.9.100&quot;,
- org.eclipse.ui.editors;bundle-version=&quot;3.8.100&quot;
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Manifest</span><span class="o">-</span><span class="n">Version</span><span class="p">:</span> <span class="mf">1.0</span>
+<span class="n">Bundle</span><span class="o">-</span><span class="n">ManifestVersion</span><span class="p">:</span> <span class="mi">2</span>
+<span class="n">Bundle</span><span class="o">-</span><span class="n">Name</span><span class="p">:</span> <span class="n">Wizardextension</span>
+<span class="n">Bundle</span><span class="o">-</span><span class="n">SymbolicName</span><span class="p">:</span> <span class="n">org</span><span class="o">.</span><span class="n">scalaide</span><span class="o">.</span><span class="n">wizardextension</span><span class="p">;</span><span class="n">singleton</span><span class="p">:</span><span class="o">=</span><span class="n">true</span>
+<span class="n">Bundle</span><span class="o">-</span><span class="n">Version</span><span class="p">:</span> <span class="mf">1.0</span><span class="o">.</span><span class="mf">0.</span><span class="n">qualifier</span>
+<span class="n">Bundle</span><span class="o">-</span><span class="n">RequiredExecutionEnvironment</span><span class="p">:</span> <span class="n">JavaSE</span><span class="o">-</span><span class="mf">1.7</span>
+<span class="n">Require</span><span class="o">-</span><span class="n">Bundle</span><span class="p">:</span> <span class="n">org</span><span class="o">.</span><span class="n">scala</span><span class="o">-</span><span class="n">ide</span><span class="o">.</span><span class="n">sdt</span><span class="o">.</span><span class="n">core</span><span class="p">;</span><span class="n">bundle</span><span class="o">-</span><span class="n">version</span><span class="o">=</span><span class="s2">&quot;4.0.0&quot;</span><span class="p">,</span>
+ <span class="n">org</span><span class="o">.</span><span class="n">scala</span><span class="o">-</span><span class="n">lang</span><span class="o">.</span><span class="n">scala</span><span class="o">-</span><span class="n">library</span><span class="p">,</span>
+ <span class="n">org</span><span class="o">.</span><span class="n">eclipse</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">resources</span><span class="p">;</span><span class="n">bundle</span><span class="o">-</span><span class="n">version</span><span class="o">=</span><span class="s2">&quot;3.8.101&quot;</span><span class="p">,</span>
+ <span class="n">org</span><span class="o">.</span><span class="n">eclipse</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">runtime</span><span class="p">;</span><span class="n">bundle</span><span class="o">-</span><span class="n">version</span><span class="o">=</span><span class="s2">&quot;3.9.100&quot;</span><span class="p">,</span>
+ <span class="n">org</span><span class="o">.</span><span class="n">eclipse</span><span class="o">.</span><span class="n">ui</span><span class="o">.</span><span class="n">editors</span><span class="p">;</span><span class="n">bundle</span><span class="o">-</span><span class="n">version</span><span class="o">=</span><span class="s2">&quot;3.8.100&quot;</span>
 </pre></div>
 </div>
 </div>

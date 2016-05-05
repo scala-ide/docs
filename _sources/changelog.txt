@@ -4,6 +4,30 @@ Changelog
 4.4.x
 -----
 
+4.4.1 (2016-05-05)
+..................
+
+- Consider enclosing classes when adding types to the index (:ticket:`1001103`)
+- Replaces AtomicReference (:ticket:`1002690`)
+- Improve class file check for mixed Scala/Java projects (:ticket:`1002687`)
+- Adds settings for organizing local imports
+- Depend on final Scala version in nightly builds
+- Fix src-luna source folders in classpath files
+- Override Indicators now don’t hold on to compiler symbols. (:ticket:`1002293`)
+- Save only a position instead of a compiler symbol in implicit annotatations (:ticket:`1002679`)
+- Do not use maven.build.timestamp for OSGi version of sbt project (:ticket:`1002667`)
+
+The following changes belong to the scala-refactoring part:
+
+- Properly Rename Scala Annotation Arguments (:ticket:`1002680`)
+- Organize Imports in Blocks (DefDef) and Templates avoiding tree printer (:ticket:`1002476`)
+- Fix rename in for comprehensions (:ticket:`1002650`)
+- Fix rename for interpolated strings like f"$x" (:ticket:`1002651`)
+- `Movements.id` must not match comments
+- Consider named parameters during rename refactorings (:ticket:`1002501` :ticket:`1002572`)
+- Move the documentation to the thesis-documentation branch.
+- Add empty lines around added imports and put import at right location (:ticket:`1002672`)
+
 4.4.0 (2016-04-01)
 ..................
 
