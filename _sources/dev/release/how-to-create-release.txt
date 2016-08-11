@@ -5,14 +5,12 @@ This document describes how to build a Scala IDE release and the corresponding E
 
 Prerequisites:
 
-* Your public SSH key needs to be added to Scala IDE's file hoster
-* You also need access to Amazon S3, which hosts the Scala IDE products and the releases
+* Access to Amazon S3, which hosts the Scala IDE products and the releases
 * Push permissions to all Github repos that need to be included in the release
 * Access rights to the keystore that contains the keys for the JAR/Eclipse signing
 * A GPG key if you want to sign any Git tags
-* Access to Jenkins if you want to build the Scala IDE ecosystem by yourself
 
-If you want to build a new Scala IDE release but you don't have access to all of the things, please ask one of the current IDE maintainers for them.
+If you want to build a new Scala IDE release but you don't have access to all of the things, please ask one of the current IDE maintainers for them. Also, make sure to read all steps first before you run the first steps. You don't want to accidentally release something that should not have been released yet.
 
 #. The ``scala-ide/scala-ide-product`` repo needs to be updated to the newest version number. This can be done with the following command:
 
@@ -36,7 +34,7 @@ If you want to build a new Scala IDE release but you don't have access to all of
 
 #. In order to build the Scala IDE SDK (the Eclipse product), an Eclipse installation is required. Download the "Eclipse IDE for Java Developers" from their `download page <https://www.eclipse.org/downloads/>`_ and extract it somewhere in your file system. It is not important which OS dependent archive is downloaded - Eclipse will figure out by itself how to create executables for each OS based on the extracted Eclipse installation.
 
-#. Before uber-build can be run, it is probably necessary to specify some environment variables. All the variables that may be necessary are part of the file ``uber-build/uber-build-exports.sh``.
+#. Before uber-build can be run, it may be necessary to specify some environment variables. All the variables are part of the file ``uber-build/uber-build-config.sh``.
 
 #. Run uber-build:
 
@@ -45,14 +43,11 @@ If you want to build a new Scala IDE release but you don't have access to all of
      cd /path/to/uber-build
      ./uber-build config/config-file.conf
 
-   If everything completes successfully, uber-build continues with uploading all binaries of the repos that were built. Notice that you will be asked for the password of your SSH key before the uploading can be started.
+   If everything completes successfully, uber-build continues with uploading all binaries of the repos that were built.
 
-   After the upload has been completed, the base ecosystem can be found in directory ``~/scala-ide.dreamhosters.com/sdk/next/lithium/e44/scala211/stable/`` whereas all the plugins can be found in ``~/scala-ide.dreamhosters.com/plugins/$pluginName/releases/e44/2.11.x/``.
+#. The binaries are uploaded to a staging area. This means that they are not yet available to users once the uploading has been finished. As long as the binaries are in the staging area, they can be safely tested and verified. If something is wrong, repeat the previous steps until the uploaded binaries are ready to be published to users. Once this is the case, simply run the generated file ``target/release-from-staging-area.sh``. Note, that after this step there is no return! The release is online and can be seen by everyone.
 
-   To login use ``ssh scalaide@download.scala-ide.org``.
-
-
-#. uber-build doesn't automatically upload the Scala IDE products to Amazon S3 host, therefore it has to be done manually. Get a client from somewhere that allows you to access the S3 contents and enter the credentials you got from the current IDE maintainers. For every new product a directory should be created in the directory ``downloads.typesafe.com/scalaide-pack``.
+#. uber-build doesn't automatically upload the Scala IDE products to the Amazon S3 host, therefore it has to be done manually. Get a client from somewhere that allows you to access the S3 contents and enter the credentials you got from the current IDE maintainers. For every new product a directory should be created in the directory ``downloads.typesafe.com/scalaide-pack``. Note, that uber-build already downloaded a CLI to access S3, it can be run with ``source target/aws-virtualenv/bin/activate`` and left by typing ``deactivate``. This interface is cumbersome to use manually, therefore you may want to use a graphical interface.
 
    The products can be found in the local directory ``target/product/org.scala-ide.product/target/products/``.
 
@@ -67,8 +62,4 @@ If you want to build a new Scala IDE release but you don't have access to all of
 
 #. Create release notes for the ``scala-ide/scala-ide.github.com`` repo. See the README of this repo for more information about how to proceed in creating the release notes.
 
-#. A Scala IDE ecosystem build needs to be triggered in Jenkins. This can be done manually but Jenkins builds the ecosystem periodically and completely automatically. The ecosystem is created based on the binaries you uploaded with uber-build. After this happened, the ecosystem is located in a staging area on the server where you can check a last time that everything has been done correctly.
-
-   The job in Jenkins that builds the ecosystem is called ``ecosystem/ecosystem-all`` and the staging area is located at ``http://download.scala-ide.org/sdk/next/lithium/e44/scala211/stable/``.
-
-#. The last step is to release the IDE from the staging area to the big wide world. This needs to be done manually with the Jenkins job ``ecosystem/ecosystem-merge-bases``. After this job is run, the job ``ecosystem/ecosystem-all`` needs to run once again. This time it frees the ecosystem from the staging area. After both jobs are run, the ecosystem can be found in the directory ``http://download.scala-ide.org/sdk/lithium/e44/scala211/stable/``.
+#. That's it you are done.

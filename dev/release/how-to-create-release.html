@@ -96,14 +96,12 @@
 <p>This document describes how to build a Scala IDE release and the corresponding Eclipse products.</p>
 <p>Prerequisites:</p>
 <ul class="simple">
-<li>Your public SSH key needs to be added to Scala IDE&#8217;s file hoster</li>
-<li>You also need access to Amazon S3, which hosts the Scala IDE products and the releases</li>
+<li>Access to Amazon S3, which hosts the Scala IDE products and the releases</li>
 <li>Push permissions to all Github repos that need to be included in the release</li>
 <li>Access rights to the keystore that contains the keys for the JAR/Eclipse signing</li>
 <li>A GPG key if you want to sign any Git tags</li>
-<li>Access to Jenkins if you want to build the Scala IDE ecosystem by yourself</li>
 </ul>
-<p>If you want to build a new Scala IDE release but you don&#8217;t have access to all of the things, please ask one of the current IDE maintainers for them.</p>
+<p>If you want to build a new Scala IDE release but you don&#8217;t have access to all of the things, please ask one of the current IDE maintainers for them. Also, make sure to read all steps first before you run the first steps. You don&#8217;t want to accidentally release something that should not have been released yet.</p>
 <ol class="arabic">
 <li><p class="first">The <code class="docutils literal"><span class="pre">scala-ide/scala-ide-product</span></code> repo needs to be updated to the newest version number. This can be done with the following command:</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span><span class="nb">cd</span> /path/to/scala-ide-product
@@ -123,18 +121,18 @@ mvn -Dtycho.mode<span class="o">=</span>maven org.eclipse.tycho:tycho-versions-p
 </li>
 <li><p class="first">In order to build the Scala IDE SDK (the Eclipse product), an Eclipse installation is required. Download the &#8220;Eclipse IDE for Java Developers&#8221; from their <a class="reference external" href="https://www.eclipse.org/downloads/">download page</a> and extract it somewhere in your file system. It is not important which OS dependent archive is downloaded - Eclipse will figure out by itself how to create executables for each OS based on the extracted Eclipse installation.</p>
 </li>
-<li><p class="first">Before uber-build can be run, it is probably necessary to specify some environment variables. All the variables that may be necessary are part of the file <code class="docutils literal"><span class="pre">uber-build/uber-build-exports.sh</span></code>.</p>
+<li><p class="first">Before uber-build can be run, it may be necessary to specify some environment variables. All the variables are part of the file <code class="docutils literal"><span class="pre">uber-build/uber-build-config.sh</span></code>.</p>
 </li>
 <li><p class="first">Run uber-build:</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span><span class="nb">cd</span> /path/to/uber-build
 ./uber-build config/config-file.conf
 </pre></div>
 </div>
-<p>If everything completes successfully, uber-build continues with uploading all binaries of the repos that were built. Notice that you will be asked for the password of your SSH key before the uploading can be started.</p>
-<p>After the upload has been completed, the base ecosystem can be found in directory <code class="docutils literal"><span class="pre">~/scala-ide.dreamhosters.com/sdk/next/lithium/e44/scala211/stable/</span></code> whereas all the plugins can be found in <code class="docutils literal"><span class="pre">~/scala-ide.dreamhosters.com/plugins/$pluginName/releases/e44/2.11.x/</span></code>.</p>
-<p>To login use <code class="docutils literal"><span class="pre">ssh</span> <span class="pre">scalaide&#64;download.scala-ide.org</span></code>.</p>
+<p>If everything completes successfully, uber-build continues with uploading all binaries of the repos that were built.</p>
 </li>
-<li><p class="first">uber-build doesn&#8217;t automatically upload the Scala IDE products to Amazon S3 host, therefore it has to be done manually. Get a client from somewhere that allows you to access the S3 contents and enter the credentials you got from the current IDE maintainers. For every new product a directory should be created in the directory <code class="docutils literal"><span class="pre">downloads.typesafe.com/scalaide-pack</span></code>.</p>
+<li><p class="first">The binaries are uploaded to a staging area. This means that they are not yet available to users once the uploading has been finished. As long as the binaries are in the staging area, they can be safely tested and verified. If something is wrong, repeat the previous steps until the uploaded binaries are ready to be published to users. Once this is the case, simply run the generated file <code class="docutils literal"><span class="pre">target/release-from-staging-area.sh</span></code>. Note, that after this step there is no return! The release is online and can be seen by everyone.</p>
+</li>
+<li><p class="first">uber-build doesn&#8217;t automatically upload the Scala IDE products to the Amazon S3 host, therefore it has to be done manually. Get a client from somewhere that allows you to access the S3 contents and enter the credentials you got from the current IDE maintainers. For every new product a directory should be created in the directory <code class="docutils literal"><span class="pre">downloads.typesafe.com/scalaide-pack</span></code>. Note, that uber-build already downloaded a CLI to access S3, it can be run with <code class="docutils literal"><span class="pre">source</span> <span class="pre">target/aws-virtualenv/bin/activate</span></code> and left by typing <code class="docutils literal"><span class="pre">deactivate</span></code>. This interface is cumbersome to use manually, therefore you may want to use a graphical interface.</p>
 <p>The products can be found in the local directory <code class="docutils literal"><span class="pre">target/product/org.scala-ide.product/target/products/</span></code>.</p>
 </li>
 <li><p class="first">Build a changelog for the <code class="docutils literal"><span class="pre">scala-ide/docs</span></code> repo. Run the following script in the <code class="docutils literal"><span class="pre">scala-ide/scala-ide</span></code> repo to generate the changelog:</p>
@@ -146,10 +144,7 @@ mvn -Dtycho.mode<span class="o">=</span>maven org.eclipse.tycho:tycho-versions-p
 </li>
 <li><p class="first">Create release notes for the <code class="docutils literal"><span class="pre">scala-ide/scala-ide.github.com</span></code> repo. See the README of this repo for more information about how to proceed in creating the release notes.</p>
 </li>
-<li><p class="first">A Scala IDE ecosystem build needs to be triggered in Jenkins. This can be done manually but Jenkins builds the ecosystem periodically and completely automatically. The ecosystem is created based on the binaries you uploaded with uber-build. After this happened, the ecosystem is located in a staging area on the server where you can check a last time that everything has been done correctly.</p>
-<p>The job in Jenkins that builds the ecosystem is called <code class="docutils literal"><span class="pre">ecosystem/ecosystem-all</span></code> and the staging area is located at <code class="docutils literal"><span class="pre">http://download.scala-ide.org/sdk/next/lithium/e44/scala211/stable/</span></code>.</p>
-</li>
-<li><p class="first">The last step is to release the IDE from the staging area to the big wide world. This needs to be done manually with the Jenkins job <code class="docutils literal"><span class="pre">ecosystem/ecosystem-merge-bases</span></code>. After this job is run, the job <code class="docutils literal"><span class="pre">ecosystem/ecosystem-all</span></code> needs to run once again. This time it frees the ecosystem from the staging area. After both jobs are run, the ecosystem can be found in the directory <code class="docutils literal"><span class="pre">http://download.scala-ide.org/sdk/lithium/e44/scala211/stable/</span></code>.</p>
+<li><p class="first">That&#8217;s it you are done.</p>
 </li>
 </ol>
 </div>
