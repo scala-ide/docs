@@ -17,6 +17,26 @@ The Scala elements compatible with Java are provided in **Java source files**.
    :width: 100%
    :target: ../_images/feature-code-completion-02.png
 
+Type completion relevance |new|
+-------------------------------
+
+The order in which type completions are presented to the user can be tweaked in ``Preferences → Scala → Editor → Completions`` based on their package:
+
+.. image:: images/feature-code-completion-03.png
+   :width: 100%
+   :target: ../_images/feature-code-completion-03.png
+
+Generally, completions are ordered by a so called relevance score, that is modified accordingly if the package matches one of the supplied regular expressions.
+**Favorite Packages** get a significant, and **Preferred Packages** a slight bonus to their relevance scores. Likewise, **Unpopular Packages** get a slight, and
+**Shunned Packages** a significant penalty. If a package is matched by multiple regular expressions, the associated bonuses or penalties are simply added up (even
+if the regular expressions are part of the same group). This can be exploited for fine tuning. For example, adding ``scala\.(?!xml).*`` to **Favorite Packages**
+and ``scala\.collection\.immutable\b.*`` to **Preferred Packages** will add a significant bonus to all Scala types (except for APIs under ``scala.xml``), but an 
+even slightly larger bonus to immutable Scala collections, to make sure that they are preferred to their mutable counterparts. Note that we would have gotten a
+similar effect, if we had added ``scala\.collection\.immutable\b.*`` to **Favorite Packages** as well, but then the added bonus for immutable collections would have 
+been bigger. Related, but not identical behaviour, would be observed after adding ``scala\.collection\.mutable\b.*`` to **Unpopular Packages** or **Shunned Packages**.
+
+.. warning:: The supplied regular expressions are matched against full package names. A partial match is not enough. Always double check them if you woulder why your changes do not have the desired effect.
+
 Completion overwrites
 ---------------------
 
