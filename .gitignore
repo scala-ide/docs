@@ -9,3 +9,6 @@ _build
 target
 project/target
 project/project
+
+# Vim
+.*.swp
