@@ -26,4 +26,4 @@ Users can choose if identifiers inserted by the code completion mechanism should
 
 where ``^`` denotes the cursors position, it would not be that useful when as completion ``flatMap`` is chosen but the already existing ``map`` is not replaced. Completion overwrites allow exactly these sort of replacements. They need to be configured in ``Preferences → Java → Editor → Content Assist`` and then in the section ``Insertion``.
 
-A small detail do mention here, is, that it is possible to toggle between the completion modes by holding ``Ctrl`` while applying the completion.
+A small detail to mention here, is, that it is possible to toggle between the completion modes by holding ``Ctrl`` while applying the completion.
