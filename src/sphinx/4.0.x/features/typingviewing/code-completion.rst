@@ -17,8 +17,8 @@ The Scala elements compatible with Java are provided in **Java source files**.
    :width: 100%
    :target: ../_images/feature-code-completion-02.png
 
-Completion overwrites |new|
----------------------------
+Completion overwrites
+---------------------
 
 Users can choose if identifiers inserted by the code completion mechanism should overwrite already existing ones. This is a very useful feauture if one decides to change already existing source code. For example, if we have the following ::
 
