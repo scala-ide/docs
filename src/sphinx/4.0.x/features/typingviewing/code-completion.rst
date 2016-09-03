@@ -35,12 +35,12 @@ even slightly larger bonus to immutable Scala collections, to make sure that the
 similar effect, if we had added ``scala\.collection\.immutable\b.*`` to **Favorite Packages** as well, but then the added bonus for immutable collections would have 
 been bigger. Related, but not identical behaviour, would be observed after adding ``scala\.collection\.mutable\b.*`` to **Unpopular Packages** or **Shunned Packages**.
 
-.. warning:: The supplied regular expressions are matched against full package names. A partial match is not enough. Always double check them if you woulder why your changes do not have the desired effect.
+.. warning:: The supplied regular expressions are matched against full package names. A partial match is not enough. Always double check them if you wonder why your changes do not have the desired effect.
 
 Completion overwrites
 ---------------------
 
-Users can choose if identifiers inserted by the code completion mechanism should overwrite already existing ones. This is a very useful feauture if one decides to change already existing source code. For example, if we have the following ::
+Users can choose if identifiers inserted by the code completion mechanism should overwrite already existing ones. This is a very useful feature if one decides to change already existing source code. For example, if we have the following ::
 
   List(1).fl^map(List(_))
 
