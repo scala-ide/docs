@@ -12,6 +12,7 @@ Contents:
    advancedsetup/index
    features
    /tutorials/index
+   how-to/index
    faq/index
    /community
    testingframeworks/index
