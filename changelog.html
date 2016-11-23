@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Changelog &mdash; Scala IDE 0.1-SNAPSHOT documentation</title>
+    <title>Changelog &#8212; Scala IDE 0.1-SNAPSHOT documentation</title>
     
     <link rel="stylesheet" href="_static/resources/stylesheets/base.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -39,6 +39,8 @@
     <script type="text/javascript" src="_static/resources/javascript/bootstrap-dropdown-app.js"></script>
     <script type="text/javascript" src="_static/resources/javascript/contentsFix.js"></script>
     <link rel="shortcut icon" href="_static/favicon.ico"/>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
     <link rel="top" title="Scala IDE 0.1-SNAPSHOT documentation" href="index.html" />
     <link rel="next" title="User Documentation for the Scala IDE 2.0.x" href="2.0.x/index.html" />
     <link rel="prev" title="Videos" href="videos.html" /> 
@@ -89,8 +91,48 @@
         <div class="section" id="changelog">
 <h1>Changelog</h1>
 <div class="section" id="x">
-<h2>4.4.x</h2>
+<h2>4.5.x</h2>
+<div class="section" id="rc1-2016-11-23">
+<h3>4.5.0 RC1 (2016-11-23)</h3>
+<ul class="simple">
+<li>Disable HOF completion on default (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002794">#1002794</a>)</li>
+<li>Special handling type definitions in <cite>ScalaStructureBuilder</cite> (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002773">#1002773</a>)</li>
+<li>Check if widget is disposed before calling it (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002766">#1002766</a>)</li>
+<li>Be insensitive for missing files</li>
+<li>Replace sbt dependency with zinc 1.0.0-X6</li>
+<li>Ensure that mark occurrences is not called if it is disabled</li>
+<li>Allows scalac ignores java errors. (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002738">#1002738</a>)</li>
+<li>Remove annotations that belong to a removed range of an editor (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002726">#1002726</a>)</li>
+<li>Expose <cite>ProposalRelevanceCfg</cite> in user preferences (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002706">#1002706</a>)</li>
+<li>Do not show errors for block imports</li>
+<li>Do now pass compiler reference to reporter (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002733">#1002733</a>)</li>
+<li>Exposes configuration for new organize imports feature</li>
+<li>Log an error message in case an error is thrown</li>
+<li>Do not log missing cases in outline to error log (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002710">#1002710</a>)</li>
+<li>Enable <cite>MarkOccurrences</cite> for operators (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002703">#1002703</a>)</li>
+<li>Do not cache the <cite>MarkOccurrenceIndex</cite> (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002701">#1002701</a>)</li>
+<li>Make Neon default build and remove Luna and Mars builds</li>
+<li>Sort type completions differently (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002686">#1002686</a>)</li>
+<li>Escape dollar sign in shell script</li>
+</ul>
+<p>The following changes belong to the scala-refactoring part:</p>
+<ul class="simple">
+<li>Fix some issues with <cite>MoveClass</cite> (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002761">#1002761</a> <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002785">#1002785</a>)</li>
+<li>Be more careful with imports when moving class (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002723">#1002723</a>)</li>
+<li>Adds improvements in organize imports. See added tests. (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002678">#1002678</a>)</li>
+<li>Fix renaming identifiers starting with &#8216;_&#8217; (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002674">#1002674</a>)</li>
+<li>Organize Imports in packages avoiding tree printer</li>
+<li>Rename file name from PimpedTreesTest to EnrichedTreesTest</li>
+<li>Swallow exception after nameString call (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002711">#1002711</a>)</li>
+<li>Improve debug output</li>
+<li>Implement <cite>Rename</cite> on top of <cite>MarkOccurences</cite> (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002698">#1002698</a>)</li>
+<li>Adds enhancements to organize imports working</li>
+</ul>
+</div>
+</div>
 <div class="section" id="id1">
+<h2>4.4.x</h2>
+<div class="section" id="id2">
 <h3>4.4.1 (2016-05-05)</h3>
 <ul class="simple">
 <li>Consider enclosing classes when adding types to the index (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001103">#1001103</a>)</li>
@@ -115,7 +157,7 @@
 <li>Add empty lines around added imports and put import at right location (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002672">#1002672</a>)</li>
 </ul>
 </div>
-<div class="section" id="id2">
+<div class="section" id="id3">
 <h3>4.4.0 (2016-04-01)</h3>
 <p>No changes.</p>
 </div>
@@ -203,9 +245,9 @@
 </ul>
 </div>
 </div>
-<div class="section" id="id3">
-<h2>4.3.x</h2>
 <div class="section" id="id4">
+<h2>4.3.x</h2>
+<div class="section" id="id5">
 <h3>4.3.0 (2015-12-01)</h3>
 <ul class="simple">
 <li>Start statistics tracker on startup of scala-ide bundle</li>
@@ -255,9 +297,9 @@
 </ul>
 </div>
 </div>
-<div class="section" id="id5">
-<h2>4.2.x</h2>
 <div class="section" id="id6">
+<h2>4.2.x</h2>
+<div class="section" id="id7">
 <h3>4.2.0 (2015-09-28)</h3>
 <ul class="simple">
 <li>Fix non working fading packages feature in Async Debug View (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002549">#1002549</a>)</li>
@@ -342,9 +384,9 @@
 </ul>
 </div>
 </div>
-<div class="section" id="id7">
-<h2>4.1.x</h2>
 <div class="section" id="id8">
+<h2>4.1.x</h2>
+<div class="section" id="id9">
 <h3>4.1.1 (2015-07-28)</h3>
 <ul class="simple">
 <li>Remove key binding for expression evaluator (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002509">#1002509</a>)</li>
@@ -705,7 +747,7 @@
 </ul>
 </div>
 </div>
-<div class="section" id="id9">
+<div class="section" id="id10">
 <h2>3.0.3</h2>
 <div class="section" id="rc1-2014-01-09">
 <h3>RC1 (2014-01-09)</h3>
@@ -715,7 +757,7 @@
 </ul>
 </div>
 </div>
-<div class="section" id="id10">
+<div class="section" id="id11">
 <h2>3.0.2</h2>
 <div class="section" id="rc2-2013-10-09">
 <h3>RC2 (2013-10-09)</h3>
@@ -742,7 +784,7 @@
 </ul>
 </div>
 </div>
-<div class="section" id="id11">
+<div class="section" id="id12">
 <h2>3.0.1</h2>
 <div class="section" id="rc2-2013-06-27">
 <h3>RC2 (2013-06-27)</h3>
@@ -975,7 +1017,7 @@
 </ul>
 </div>
 </div>
-<div class="section" id="id56">
+<div class="section" id="id57">
 <h2>2.0.1 (release/scala-ide-2.0.x)</h2>
 <div class="section" id="final-released-2012-04-30">
 <h3>2.0.1-final (released: 2012-04-30)</h3>
@@ -1180,7 +1222,7 @@
 <li>delete : support of scala-2.8.0</li>
 </ul>
 </div>
-<div class="section" id="id104">
+<div class="section" id="id105">
 <h3>1.0.0.20100804</h3>
 <ul class="simple">
 <li>Refactoring Support</li>
