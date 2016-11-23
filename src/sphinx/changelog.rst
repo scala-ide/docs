@@ -1,6 +1,45 @@
 Changelog
 =========
 
+4.5.x
+-----
+
+4.5.0 RC1 (2016-11-23)
+......................
+
+- Disable HOF completion on default (:ticket:`1002794`)
+- Special handling type definitions in `ScalaStructureBuilder` (:ticket:`1002773`)
+- Check if widget is disposed before calling it (:ticket:`1002766`)
+- Be insensitive for missing files 
+- Replace sbt dependency with zinc 1.0.0-X6
+- Ensure that mark occurrences is not called if it is disabled 
+- Allows scalac ignores java errors. (:ticket:`1002738`)
+- Remove annotations that belong to a removed range of an editor (:ticket:`1002726`)
+- Expose `ProposalRelevanceCfg` in user preferences (:ticket:`1002706`)
+- Do not show errors for block imports 
+- Do now pass compiler reference to reporter (:ticket:`1002733`)
+- Exposes configuration for new organize imports feature 
+- Log an error message in case an error is thrown 
+- Do not log missing cases in outline to error log (:ticket:`1002710`)
+- Enable `MarkOccurrences` for operators (:ticket:`1002703`)
+- Do not cache the `MarkOccurrenceIndex` (:ticket:`1002701`)
+- Make Neon default build and remove Luna and Mars builds 
+- Sort type completions differently (:ticket:`1002686`)
+- Escape dollar sign in shell script 
+
+The following changes belong to the scala-refactoring part:
+
+- Fix some issues with `MoveClass` (:ticket:`1002761` :ticket:`1002785`)
+- Be more careful with imports when moving class (:ticket:`1002723`)
+- Adds improvements in organize imports. See added tests. (:ticket:`1002678`)
+- Fix renaming identifiers starting with '_' (:ticket:`1002674`)
+- Organize Imports in packages avoiding tree printer 
+- Rename file name from PimpedTreesTest to EnrichedTreesTest 
+- Swallow exception after nameString call (:ticket:`1002711`)
+- Improve debug output 
+- Implement `Rename` on top of `MarkOccurences` (:ticket:`1002698`)
+- Adds enhancements to organize imports working 
+
 4.4.x
 -----
 
