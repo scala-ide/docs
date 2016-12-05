@@ -4,6 +4,11 @@ Changelog
 4.5.x
 -----
 
+4.5.0 RC2 (2016-12-05)
+......................
+
+- Fixes problem of java/scala compilation
+
 4.5.0 RC1 (2016-11-23)
 ......................
 
