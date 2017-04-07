@@ -1,6 +1,51 @@
 Changelog
 =========
 
+4.6.x
+-----
+
+4.6.0 RC1 (2017-04-06)
+......................
+
+- Modifies wrong object descriptor
+- Adds existential type to java type descriptor 
+- Prepare Scala IDE to run with scala 2.12.1 
+- Implements Type to BType conversion. 
+- Get rid of withNameHashing option 
+- Fix Maybe usage in zinc 
+- Rename `incrementalCompile` to `compile` 
+- Remove nameHashing option because it no longer exists 
+- Update zinc version to X-10 
+- Use 2.12 instead of 2.11 variable in 2.12 build 
+- Simplify copy resource structure for 2.11 build 
+- Build 2.12 jars bundle in 2.12 build 
+- Use ValDef instead of DefDef to find val declaration 
+- Disable fatal warnings 
+- Disable 2.11 integration for 2.12 build 
+- Fix deprecation warnings 
+- Fix errors due to deprecated eta-expansion of zero argument methods 
+- Fix compilation errors due to non exhaustive pattern matches 
+- Replace JavaConversions with JavaConverters 
+- Add 2.12 installation to ScalaInstallationAction 
+- Add sourceLevel property to preferences 
+- Remove usage of JavaConversions 
+- Fix compilation error due to multiple implicits of same type in scope 
+- Add 2.12 entry to CompilerSettings 
+- Update settings to consider 2.12 Scala installation 
+- Include newest scala-refactoring version in 2.12 build 
+- Fix compilation error because of missing override keyword 
+- Fix compilation errors because of type inference changes 
+- Fix compilation error due to changed method signature in compiler 
+- Fix code after TypeKind has been replaced by BType 
+- Replace hardcoded versions by constants 
+- Set correct Scala version for sdt.feature module 
+- Update version ranges in debug.expression module 
+- Remove scala-swing dependency from 2.12 build 
+- Fix breakpoint in code 
+- Adapt scala refactoring config 
+- Compiler bridge source 2.10 
+- Don't rely on custom hacks when doing a local rename (:ticket:`1002803`)
+
 4.5.x
 -----
 
