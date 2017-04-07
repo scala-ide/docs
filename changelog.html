@@ -22,7 +22,8 @@
         VERSION:     '0.1-SNAPSHOT',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
       };
     </script>
     <script type="text/javascript" src="_static/jquery.js"></script>
@@ -41,7 +42,6 @@
     <link rel="shortcut icon" href="_static/favicon.ico"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="top" title="Scala IDE 0.1-SNAPSHOT documentation" href="index.html" />
     <link rel="next" title="User Documentation for the Scala IDE 2.0.x" href="2.0.x/index.html" />
     <link rel="prev" title="Videos" href="videos.html" /> 
   </head>
@@ -91,8 +91,54 @@
         <div class="section" id="changelog">
 <h1>Changelog</h1>
 <div class="section" id="x">
-<h2>4.5.x</h2>
+<h2>4.6.x</h2>
+<div class="section" id="rc1-2017-04-06">
+<h3>4.6.0 RC1 (2017-04-06)</h3>
+<ul class="simple">
+<li>Modifies wrong object descriptor</li>
+<li>Adds existential type to java type descriptor</li>
+<li>Prepare Scala IDE to run with scala 2.12.1</li>
+<li>Implements Type to BType conversion.</li>
+<li>Get rid of withNameHashing option</li>
+<li>Fix Maybe usage in zinc</li>
+<li>Rename <cite>incrementalCompile</cite> to <cite>compile</cite></li>
+<li>Remove nameHashing option because it no longer exists</li>
+<li>Update zinc version to X-10</li>
+<li>Use 2.12 instead of 2.11 variable in 2.12 build</li>
+<li>Simplify copy resource structure for 2.11 build</li>
+<li>Build 2.12 jars bundle in 2.12 build</li>
+<li>Use ValDef instead of DefDef to find val declaration</li>
+<li>Disable fatal warnings</li>
+<li>Disable 2.11 integration for 2.12 build</li>
+<li>Fix deprecation warnings</li>
+<li>Fix errors due to deprecated eta-expansion of zero argument methods</li>
+<li>Fix compilation errors due to non exhaustive pattern matches</li>
+<li>Replace JavaConversions with JavaConverters</li>
+<li>Add 2.12 installation to ScalaInstallationAction</li>
+<li>Add sourceLevel property to preferences</li>
+<li>Remove usage of JavaConversions</li>
+<li>Fix compilation error due to multiple implicits of same type in scope</li>
+<li>Add 2.12 entry to CompilerSettings</li>
+<li>Update settings to consider 2.12 Scala installation</li>
+<li>Include newest scala-refactoring version in 2.12 build</li>
+<li>Fix compilation error because of missing override keyword</li>
+<li>Fix compilation errors because of type inference changes</li>
+<li>Fix compilation error due to changed method signature in compiler</li>
+<li>Fix code after TypeKind has been replaced by BType</li>
+<li>Replace hardcoded versions by constants</li>
+<li>Set correct Scala version for sdt.feature module</li>
+<li>Update version ranges in debug.expression module</li>
+<li>Remove scala-swing dependency from 2.12 build</li>
+<li>Fix breakpoint in code</li>
+<li>Adapt scala refactoring config</li>
+<li>Compiler bridge source 2.10</li>
+<li>Don&#8217;t rely on custom hacks when doing a local rename (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002803">#1002803</a>)</li>
+</ul>
+</div>
+</div>
 <div class="section" id="id1">
+<h2>4.5.x</h2>
+<div class="section" id="id2">
 <h3>4.5.0 (2016-12-13)</h3>
 <ul class="simple">
 <li>No changes.</li>
@@ -142,9 +188,9 @@
 </ul>
 </div>
 </div>
-<div class="section" id="id2">
-<h2>4.4.x</h2>
 <div class="section" id="id3">
+<h2>4.4.x</h2>
+<div class="section" id="id4">
 <h3>4.4.1 (2016-05-05)</h3>
 <ul class="simple">
 <li>Consider enclosing classes when adding types to the index (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001103">#1001103</a>)</li>
@@ -169,7 +215,7 @@
 <li>Add empty lines around added imports and put import at right location (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002672">#1002672</a>)</li>
 </ul>
 </div>
-<div class="section" id="id4">
+<div class="section" id="id5">
 <h3>4.4.0 (2016-04-01)</h3>
 <p>No changes.</p>
 </div>
@@ -257,9 +303,9 @@
 </ul>
 </div>
 </div>
-<div class="section" id="id5">
-<h2>4.3.x</h2>
 <div class="section" id="id6">
+<h2>4.3.x</h2>
+<div class="section" id="id7">
 <h3>4.3.0 (2015-12-01)</h3>
 <ul class="simple">
 <li>Start statistics tracker on startup of scala-ide bundle</li>
@@ -309,9 +355,9 @@
 </ul>
 </div>
 </div>
-<div class="section" id="id7">
-<h2>4.2.x</h2>
 <div class="section" id="id8">
+<h2>4.2.x</h2>
+<div class="section" id="id9">
 <h3>4.2.0 (2015-09-28)</h3>
 <ul class="simple">
 <li>Fix non working fading packages feature in Async Debug View (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002549">#1002549</a>)</li>
@@ -396,9 +442,9 @@
 </ul>
 </div>
 </div>
-<div class="section" id="id9">
-<h2>4.1.x</h2>
 <div class="section" id="id10">
+<h2>4.1.x</h2>
+<div class="section" id="id11">
 <h3>4.1.1 (2015-07-28)</h3>
 <ul class="simple">
 <li>Remove key binding for expression evaluator (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002509">#1002509</a>)</li>
@@ -759,7 +805,7 @@
 </ul>
 </div>
 </div>
-<div class="section" id="id11">
+<div class="section" id="id12">
 <h2>3.0.3</h2>
 <div class="section" id="rc1-2014-01-09">
 <h3>RC1 (2014-01-09)</h3>
@@ -769,7 +815,7 @@
 </ul>
 </div>
 </div>
-<div class="section" id="id12">
+<div class="section" id="id13">
 <h2>3.0.2</h2>
 <div class="section" id="rc2-2013-10-09">
 <h3>RC2 (2013-10-09)</h3>
@@ -796,7 +842,7 @@
 </ul>
 </div>
 </div>
-<div class="section" id="id13">
+<div class="section" id="id14">
 <h2>3.0.1</h2>
 <div class="section" id="rc2-2013-06-27">
 <h3>RC2 (2013-06-27)</h3>
@@ -1029,7 +1075,7 @@
 </ul>
 </div>
 </div>
-<div class="section" id="id58">
+<div class="section" id="id59">
 <h2>2.0.1 (release/scala-ide-2.0.x)</h2>
 <div class="section" id="final-released-2012-04-30">
 <h3>2.0.1-final (released: 2012-04-30)</h3>
@@ -1173,22 +1219,16 @@
 </div>
 <div class="section" id="beta6">
 <h3>2.0.0-beta6</h3>
-<ul>
-<li><p class="first">Improved stability (correct use of &#8216;ask&#8217; calls)</p>
-</li>
-<li><p class="first">Removed dummy features used for upgrading from the old 2.7 IDE.</p>
-</li>
-<li><p class="first">Better description of the JDT weaving feature when installing it.</p>
-</li>
-<li><p class="first">Downgraded the JDT weaving plugin to the latest released version. We were using the development repository, and that caused conflicts on installation, when the user had AspectJ (or was using STS) installed &#8211; requiring the user to unselect the JDT weaving plugin from our update site. Now the versions are the same, and no conflict is reported.</p>
-</li>
-<li><p class="first">Organize Imports improvements: various configuration options and support for adding missing imports.</p>
-</li>
-<li><p class="first">Eclipse 3.7.0 (Indigo) compatibility</p>
-</li>
+<ul class="simple">
+<li>Improved stability (correct use of &#8216;ask&#8217; calls)</li>
+<li>Removed dummy features used for upgrading from the old 2.7 IDE.</li>
+<li>Better description of the JDT weaving feature when installing it.</li>
+<li>Downgraded the JDT weaving plugin to the latest released version. We were using the development repository, and that caused conflicts on installation, when the user had AspectJ (or was using STS) installed &#8211; requiring the user to unselect the JDT weaving plugin from our update site. Now the versions are the same, and no conflict is reported.</li>
+<li>Organize Imports improvements: various configuration options and support for adding missing imports.</li>
+<li>Eclipse 3.7.0 (Indigo) compatibility</li>
 <li><dl class="first docutils">
 <dt>New REPL view: Launch by selecting text and pressing Ctrl+Shift+X (Cmd+Shift+X on the Mac).</dt>
-<dd><ul class="first last simple">
+<dd><ul class="first last">
 <li>A different key combination can be set by going to General -&gt; Keys, and redefining the key binding for &#8220;Send Selection to REPL.&#8221;</li>
 <li>The interpreter can be stopped and restarted, with optional replay.</li>
 <li>NOTE: the colon commands (e.g. &#8221;:implicits&#8221;) that work in the terminal REPL do not yet work in this REPL view, but this will be fixed for the next beta.</li>
@@ -1234,7 +1274,7 @@
 <li>delete : support of scala-2.8.0</li>
 </ul>
 </div>
-<div class="section" id="id106">
+<div class="section" id="id107">
 <h3>1.0.0.20100804</h3>
 <ul class="simple">
 <li>Refactoring Support</li>

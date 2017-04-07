@@ -22,7 +22,8 @@
         VERSION:     '0.1-SNAPSHOT',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
       };
     </script>
     <script type="text/javascript" src="../../../../_static/jquery.js"></script>
@@ -41,8 +42,6 @@
     <link rel="shortcut icon" href="../../../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
-    <link rel="top" title="Scala IDE 0.1-SNAPSHOT documentation" href="../../../../index.html" />
-    <link rel="up" title="Typing and Viewing" href="../index.html" />
     <link rel="next" title="Semantic Highlighting" href="../semantic-highlighting/index.html" />
     <link rel="prev" title="Quick Fixes updated" href="../quick-fixes.html" /> 
   </head>
@@ -119,14 +118,12 @@
 <p>When you found the extraction that you want to become applied you can choose it by hitting <code class="docutils literal"><span class="pre">Enter</span></code> and the extraction tool performs the according transformations to the source code. Finally, Eclipse enters the linked mode that allows you to rename the new abstraction right in the editor window. If you extracted a method with parameters you can also jump to the parameters by hitting <code class="docutils literal"><span class="pre">Tab</span></code> and rename them as well.</p>
 <img alt="../../../../_images/extract-code-inline-renaming1.png" src="../../../../_images/extract-code-inline-renaming1.png" />
 <p>The extraction refactorings offer many useful features:</p>
-<ul>
-<li><p class="first">Only one shortcut for all kinds of extraction refactorings</p>
-</li>
-<li><p class="first">Lets you precisely choose the scope in which you want to create the new abstraction</p>
-</li>
+<ul class="simple">
+<li>Only one shortcut for all kinds of extraction refactorings</li>
+<li>Lets you precisely choose the scope in which you want to create the new abstraction</li>
 <li><dl class="first docutils">
 <dt>All tools support idiomatic features of the Scala language</dt>
-<dd><ul class="first last simple">
+<dd><ul class="first last">
 <li>Extraction of higher order functions</li>
 <li>The resulting code uses type inference when possible</li>
 <li>Extraction into local closure methods</li>
@@ -138,14 +135,12 @@
 </ul>
 <div class="section" id="limitations">
 <h3>Limitations</h3>
-<ul>
-<li><p class="first">There are some cases where Extract Parameter can&#8217;t correctly infer the type of the extracted expression. This issue occurs mostly when Extract Parameter is invoked on  variables that are part of expressions written in infix notation (e.g. <code class="docutils literal"><span class="pre">a</span></code> in <code class="docutils literal"><span class="pre">100</span> <span class="pre">*</span> <span class="pre">a</span></code>).</p>
-</li>
-<li><p class="first">The extraction of reassignments into scopes that do not see the reassigned variable are not supported. E.g. extracting <code class="docutils literal"><span class="pre">a</span> <span class="pre">+=</span> <span class="pre">1</span></code> into a scope where <code class="docutils literal"><span class="pre">a</span></code> is not visible is not possible.</p>
-</li>
+<ul class="simple">
+<li>There are some cases where Extract Parameter can&#8217;t correctly infer the type of the extracted expression. This issue occurs mostly when Extract Parameter is invoked on  variables that are part of expressions written in infix notation (e.g. <code class="docutils literal"><span class="pre">a</span></code> in <code class="docutils literal"><span class="pre">100</span> <span class="pre">*</span> <span class="pre">a</span></code>).</li>
+<li>The extraction of reassignments into scopes that do not see the reassigned variable are not supported. E.g. extracting <code class="docutils literal"><span class="pre">a</span> <span class="pre">+=</span> <span class="pre">1</span></code> into a scope where <code class="docutils literal"><span class="pre">a</span></code> is not visible is not possible.</li>
 <li><dl class="first docutils">
 <dt>Pretty printing of the refactoring result is not always correct:</dt>
-<dd><ul class="first last simple">
+<dd><ul class="first last">
 <li>The generated code may be misaligned</li>
 <li>In some cases the refactoring generates unbalanced parenthesis</li>
 </ul>
