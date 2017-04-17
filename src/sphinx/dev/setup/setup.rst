@@ -1,30 +1,31 @@
 Setup
 =====
 
-In this page you will learn everything you need to know to setup the Scala IDE project in Eclipse.
+In this page you will learn everything you need to know to setup the Scala IDE plug-in project in Eclipse.
 You are literally instants away from being all set and ready to start hacking the Scala IDE sources!
 
 Requirements
 ------------
 
-* `Eclipse 4.4 (Luna)  <http://www.eclipse.org/downloads/>`_, including JDT. Look for
+* `Eclipse <http://www.eclipse.org/downloads/>`_, including JDT (by 2017-04, Eclipse 4.6 Neon should be used). Look for
   **Eclipse IDE for Eclipse Committers**, which comes with `Eclipse Plug-In Development Environment pre-installed`.
+  You can use this Eclipse installation to develop the plug-in, run unit tests, debug changes to the plug-in, etc.
 
 * The `Eclipse Plug-in Development Environment (PDE) <http://www.eclipse.org/pde/>`_, which ships with the
   Eclipse SDK (**Eclipse IDE for Eclipse Committers**) but may need to be installed manually.  Choose ``Help > Install New Software...``,
-  select the `Luna Update Site <http://download.eclipse.org/releases/luna>`_, then install
+  select the release update site for the given version of Eclipse (ie. for Eclipse 4.6 Neon, choose
+  `<http://download.eclipse.org/releases/neon>`_), then install
   ``General Purpose Tools > Eclipse Plug-in Development Environment``.
 
-* The `Scala IDE nightly for Scala 2.11 <http://scala-ide.org/download/nightly.html>`_. Make sure you are using the latest nightly
+* The `Scala IDE plug-in nightly <http://scala-ide.org/download/nightly.html>`_. Make sure you are using the latest nightly.
 
-* `Java 7 is recommended for Eclipse 4.4 <http://wiki.eclipse.org/Eclipse/Installation#Install_a_JVM>`_. Java 8 can also be used
-  starting with `PR 842 <https://github.com/scala-ide/scala-ide/pull/842>`_
+* `Java 8 is required for Eclipse 4.6 <http://wiki.eclipse.org/Eclipse/Installation#Install_a_JVM>`_.
 
 * `Maven 3 <http://maven.apache.org/download.html>`_.
 
 * `Git <http://git-scm.com/>`_ and a `GitHub <https://github.com/>`_ account.
 
-This document uses a script to build Scala IDE. If you are on Windows, you could try `Cygwin <http://www.cygwin.com/>`_. Otherwise, the :ref:`building_run-the-build` section of the documentation describes the different steps to execute for a full build.
+This document uses a script to build the Scala IDE plug-in. If you are on Windows, you could try `Cygwin <http://www.cygwin.com/>`_. Otherwise, the :ref:`building_run-the-build` section of the documentation describes the different steps to execute for a full build.
 
 .. _setup_fork-the-project:
 
@@ -149,7 +150,7 @@ Run the test suite inside Eclipse
 You can use the built-in JUnit runner to run or debug the tests inside Eclipse. As for the normal run,
 you need to the *Equinox Weaving Launcher*. In the *Run Configuration* Dialog, create a new configuration
 using the **JUnit Plug-In test with Equinox Weaving**. Make sure you selected the *org.scala-ide.sdt.core.tests*
-project, and choose the test class you want to run (use ``scala.tools.eclipse.TestsSuite`` to run all tests).
+project, and choose the test class you want to run (use ``org.scalaide.TestsSuite`` to run all tests).
 
 In the **Main** tab make the following adjustments:
 
@@ -176,8 +177,8 @@ Additional information
 ``org.scala-ide.sdt.aspects`` project
 .....................................
 
-The Scala IDE uses AspectJ to weave into Eclipse and hook in to JDT internals. If you want to work
-on JDT integration within the Scala IDE, then it is a good idea to import
+The Scala IDE plug-in uses AspectJ to weave into Eclipse and hook in to JDT internals. If you want to work
+on JDT integration within the Scala IDE plug-in, then it is a good idea to import
 ``org.scala-ide.sdt.aspects`` project in your Eclipse workspace and also install the `AspectJ
 Eclipse plug-in <http://www.eclipse.org/ajdt>`_.
 
