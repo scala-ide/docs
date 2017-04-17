@@ -94,24 +94,25 @@
       <div class="span11 main-content">
         <div class="section" id="setup">
 <h1>Setup</h1>
-<p>In this page you will learn everything you need to know to setup the Scala IDE project in Eclipse.
+<p>In this page you will learn everything you need to know to setup the Scala IDE plug-in project in Eclipse.
 You are literally instants away from being all set and ready to start hacking the Scala IDE sources!</p>
 <div class="section" id="requirements">
 <h2>Requirements</h2>
 <ul class="simple">
-<li><a class="reference external" href="http://www.eclipse.org/downloads/">Eclipse 4.4 (Luna)</a>, including JDT. Look for
-<strong>Eclipse IDE for Eclipse Committers</strong>, which comes with <cite>Eclipse Plug-In Development Environment pre-installed</cite>.</li>
+<li><a class="reference external" href="http://www.eclipse.org/downloads/">Eclipse</a>, including JDT (by 2017-04, Eclipse 4.6 Neon should be used). Look for
+<strong>Eclipse IDE for Eclipse Committers</strong>, which comes with <cite>Eclipse Plug-In Development Environment pre-installed</cite>.
+You can use this Eclipse installation to develop the plug-in, run unit tests, debug changes to the plug-in, etc.</li>
 <li>The <a class="reference external" href="http://www.eclipse.org/pde/">Eclipse Plug-in Development Environment (PDE)</a>, which ships with the
 Eclipse SDK (<strong>Eclipse IDE for Eclipse Committers</strong>) but may need to be installed manually.  Choose <code class="docutils literal"><span class="pre">Help</span> <span class="pre">&gt;</span> <span class="pre">Install</span> <span class="pre">New</span> <span class="pre">Software...</span></code>,
-select the <a class="reference external" href="http://download.eclipse.org/releases/luna">Luna Update Site</a>, then install
+select the release update site for the given version of Eclipse (ie. for Eclipse 4.6 Neon, choose
+<a class="reference external" href="http://download.eclipse.org/releases/neon">http://download.eclipse.org/releases/neon</a>), then install
 <code class="docutils literal"><span class="pre">General</span> <span class="pre">Purpose</span> <span class="pre">Tools</span> <span class="pre">&gt;</span> <span class="pre">Eclipse</span> <span class="pre">Plug-in</span> <span class="pre">Development</span> <span class="pre">Environment</span></code>.</li>
-<li>The <a class="reference external" href="http://scala-ide.org/download/nightly.html">Scala IDE nightly for Scala 2.11</a>. Make sure you are using the latest nightly</li>
-<li><a class="reference external" href="http://wiki.eclipse.org/Eclipse/Installation#Install_a_JVM">Java 7 is recommended for Eclipse 4.4</a>. Java 8 can also be used
-starting with <a class="reference external" href="https://github.com/scala-ide/scala-ide/pull/842">PR 842</a></li>
+<li>The <a class="reference external" href="http://scala-ide.org/download/nightly.html">Scala IDE plug-in nightly</a>. Make sure you are using the latest nightly.</li>
+<li><a class="reference external" href="http://wiki.eclipse.org/Eclipse/Installation#Install_a_JVM">Java 8 is required for Eclipse 4.6</a>.</li>
 <li><a class="reference external" href="http://maven.apache.org/download.html">Maven 3</a>.</li>
 <li><a class="reference external" href="http://git-scm.com/">Git</a> and a <a class="reference external" href="https://github.com/">GitHub</a> account.</li>
 </ul>
-<p>This document uses a script to build Scala IDE. If you are on Windows, you could try <a class="reference external" href="http://www.cygwin.com/">Cygwin</a>. Otherwise, the <a class="reference internal" href="../building/building.html#building-run-the-build"><span class="std std-ref">Run the build</span></a> section of the documentation describes the different steps to execute for a full build.</p>
+<p>This document uses a script to build the Scala IDE plug-in. If you are on Windows, you could try <a class="reference external" href="http://www.cygwin.com/">Cygwin</a>. Otherwise, the <a class="reference internal" href="../building/building.html#building-run-the-build"><span class="std std-ref">Run the build</span></a> section of the documentation describes the different steps to execute for a full build.</p>
 </div>
 <div class="section" id="fork-the-project">
 <span id="setup-fork-the-project"></span><h2>Fork the project</h2>
@@ -205,7 +206,7 @@ happens when you launch the second Eclipse&#8217;s instance.</p>
 <p>You can use the built-in JUnit runner to run or debug the tests inside Eclipse. As for the normal run,
 you need to the <em>Equinox Weaving Launcher</em>. In the <em>Run Configuration</em> Dialog, create a new configuration
 using the <strong>JUnit Plug-In test with Equinox Weaving</strong>. Make sure you selected the <em>org.scala-ide.sdt.core.tests</em>
-project, and choose the test class you want to run (use <code class="docutils literal"><span class="pre">scala.tools.eclipse.TestsSuite</span></code> to run all tests).</p>
+project, and choose the test class you want to run (use <code class="docutils literal"><span class="pre">org.scalaide.TestsSuite</span></code> to run all tests).</p>
 <p>In the <strong>Main</strong> tab make the following adjustments:</p>
 <ul class="simple">
 <li>Choose <strong>Run an application: [No Application] - Headless Mode</strong>.</li>
@@ -224,8 +225,8 @@ because of a timeout).</p>
 <h2>Additional information</h2>
 <div class="section" id="org-scala-ide-sdt-aspects-project">
 <h3><code class="docutils literal"><span class="pre">org.scala-ide.sdt.aspects</span></code> project</h3>
-<p>The Scala IDE uses AspectJ to weave into Eclipse and hook in to JDT internals. If you want to work
-on JDT integration within the Scala IDE, then it is a good idea to import
+<p>The Scala IDE plug-in uses AspectJ to weave into Eclipse and hook in to JDT internals. If you want to work
+on JDT integration within the Scala IDE plug-in, then it is a good idea to import
 <code class="docutils literal"><span class="pre">org.scala-ide.sdt.aspects</span></code> project in your Eclipse workspace and also install the <a class="reference external" href="http://www.eclipse.org/ajdt">AspectJ
 Eclipse plug-in</a>.</p>
 </div>
