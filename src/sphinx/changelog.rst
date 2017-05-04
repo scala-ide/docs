@@ -4,6 +4,19 @@ Changelog
 4.6.x
 -----
 
+4.6.0 RC2 (2017-05-04)
+......................
+
+- Links breakpoint in Breakpoint View with Code Editor for scala class file 
+- Update scalac options 
+- Update .classpath file 
+- Set scalap version in MAFIFEST.MF through filtering 
+- Update zinc dependencies 
+- Enables Scala Version interoperability. 
+- Upgrade Scala 2.12 dependency to Scala 2.12.2 
+- Improves back-quote names in Scala file wizard UI. 
+- Guards Scala Debug against fetching data outside of presentation compiler.
+
 4.6.0 RC1 (2017-04-06)
 ......................
 
