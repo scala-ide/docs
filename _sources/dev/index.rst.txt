@@ -26,7 +26,6 @@ Contents:
    workflow/workflow
    appendix/appendix
    release/how-to-create-release
-   roadmap
    /license
 
 .. include:: /contribute.rst.inc

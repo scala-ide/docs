@@ -19,7 +19,3 @@ The current Scala test finder does not find:
 
 * tests using the 3.8-style (extending ``TestCase``)
 * tests that have no ``@Test`` annotations, for instance a test that inherits all the test methods from a super class. This limitation can be worked around by adding `@Test` in a comment.
-
-The missing functionality depends on having a good *Scala Search* implementation, planned for Lithium_.
-
-.. _Lithium: http://scala-ide.org/docs/dev/roadmap.html
