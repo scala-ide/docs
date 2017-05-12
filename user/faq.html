@@ -64,7 +64,6 @@
 		</li>
         <li><a href="/blog/index.html">News</a></li>
         <li><a href="/team.html">Team</a></li>
-        <li><a href="/docs/dev/roadmap.html">Roadmap</a></li>
       </ul>
     </div>
   </div>
@@ -313,6 +312,13 @@ this problem if you upgrade to JRE 7 or newer.</p>
 <tr><td class="label"><a class="fn-backref" href="#id4">[1]</a></td><td>The Eclipse preferences are accessible using <code class="docutils literal"><span class="pre">Windows</span> <span class="pre">→</span> <span class="pre">Preferences</span></code> (or <code class="docutils literal"><span class="pre">Eclipse</span> <span class="pre">→</span> <span class="pre">Preferences</span></code> on Mac osX).</td></tr>
 </tbody>
 </table>
+</div>
+<div class="section" id="phantom-errors-involving-missing-implicts">
+<h3>Phantom errors involving missing implicts</h3>
+<p><strong>Symptoms</strong></p>
+<p>An error involving missing implicit parameter values is reported by the IDE in an open editor but is not visible in the Problems view or during batch compilation (in SBT or similar). This ususally happens when using libraries that use Shapeless under the hood to automatically derive typeclass instances, like Circe and Doobie.</p>
+<p><strong>Solution</strong></p>
+<p>Add <code class="docutils literal"><span class="pre">-Ymacro-expand:normal</span></code> to &#8220;Additional commans line parameters&#8221; field in <code class="docutils literal"><span class="pre">Preferences</span> <span class="pre">→</span> <span class="pre">Scala</span> <span class="pre">→</span> <span class="pre">Compiler</span></code>. See <a class="reference external" href="https://github.com/scala/bug/issues/9716">SI-9716</a> for details.</p>
 </div>
 </div>
 </div>

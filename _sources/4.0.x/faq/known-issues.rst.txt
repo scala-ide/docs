@@ -163,3 +163,17 @@ In rare circumstances, the interactive typecheker (a.k.a., presentation compiler
 .. _m2eclipse-scala: https://github.com/sonatype/m2eclipse-scala
 
 .. [#preferences] The Eclipse preferences are accessible using ``Windows → Preferences`` (or ``Eclipse → Preferences`` on Mac osX).
+
+
+Phantom errors involving missing implicts
+.........................................
+
+**Symptoms**
+
+An error involving missing implicit parameter values is reported by the IDE in an open editor but is not visible in the Problems view or during batch compilation (in SBT or similar). This ususally happens when using libraries that use Shapeless under the hood to automatically derive typeclass instances, like Circe and Doobie.
+
+**Solution**
+
+Add ``-Ymacro-expand:normal`` to "Additional commans line parameters" field in ``Preferences → Scala → Compiler``. See `SI-9716`__ for details.
+
+__ https://github.com/scala/bug/issues/9716

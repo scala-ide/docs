@@ -4,61 +4,60 @@ Changelog
 4.6.x
 -----
 
+4.6.0 RC2 (2017-05-04)
+......................
+
+- Links breakpoint in Breakpoint View with Code Editor for scala class file 
+- Update scalac options 
+- Update .classpath file 
+- Set scalap version in MAFIFEST.MF through filtering 
+- Update zinc dependencies 
+- Enables Scala Version interoperability. 
+- Upgrade Scala 2.12 dependency to Scala 2.12.2 
+- Improves back-quote names in Scala file wizard UI. 
+- Guards Scala Debug against fetching data outside of presentation compiler.
+
 4.6.0 RC1 (2017-04-06)
 ......................
 
 - Modifies wrong object descriptor
-- Adds existential type to java type descriptor
-- Prepare Scala IDE to run with scala 2.12.1
-- Implements Type to BType conversion.
-- Get rid of withNameHashing option
-- Fix Maybe usage in zinc
-- Rename `incrementalCompile` to `compile`
-- Remove nameHashing option because it no longer exists
-- Update zinc version to X-10
-- Use 2.12 instead of 2.11 variable in 2.12 build
-- Simplify copy resource structure for 2.11 build
-- Build 2.12 jars bundle in 2.12 build
-- Use ValDef instead of DefDef to find val declaration
-- Disable fatal warnings
-- Disable 2.11 integration for 2.12 build
-- Fix deprecation warnings
-- Fix errors due to deprecated eta-expansion of zero argument methods
-- Fix compilation errors due to non exhaustive pattern matches
-- Replace JavaConversions with JavaConverters
-- Add 2.12 installation to ScalaInstallationAction
-- Add sourceLevel property to preferences
-- Remove usage of JavaConversions
-- Fix compilation error due to multiple implicits of same type in scope
-- Add 2.12 entry to CompilerSettings
-- Update settings to consider 2.12 Scala installation
-- Include newest scala-refactoring version in 2.12 build
-- Fix compilation error because of missing override keyword
-- Fix compilation errors because of type inference changes
-- Fix compilation error due to changed method signature in compiler
-- Fix code after TypeKind has been replaced by BType
-- Replace hardcoded versions by constants
-- Set correct Scala version for sdt.feature module
-- Update version ranges in debug.expression module
-- Remove scala-swing dependency from 2.12 build
-- Fix breakpoint in code
-- Adapt scala refactoring config
-- Compiler bridge source 2.10
+- Adds existential type to java type descriptor 
+- Prepare Scala IDE to run with scala 2.12.1 
+- Implements Type to BType conversion. 
+- Get rid of withNameHashing option 
+- Fix Maybe usage in zinc 
+- Rename `incrementalCompile` to `compile` 
+- Remove nameHashing option because it no longer exists 
+- Update zinc version to X-10 
+- Use 2.12 instead of 2.11 variable in 2.12 build 
+- Simplify copy resource structure for 2.11 build 
+- Build 2.12 jars bundle in 2.12 build 
+- Use ValDef instead of DefDef to find val declaration 
+- Disable fatal warnings 
+- Disable 2.11 integration for 2.12 build 
+- Fix deprecation warnings 
+- Fix errors due to deprecated eta-expansion of zero argument methods 
+- Fix compilation errors due to non exhaustive pattern matches 
+- Replace JavaConversions with JavaConverters 
+- Add 2.12 installation to ScalaInstallationAction 
+- Add sourceLevel property to preferences 
+- Remove usage of JavaConversions 
+- Fix compilation error due to multiple implicits of same type in scope 
+- Add 2.12 entry to CompilerSettings 
+- Update settings to consider 2.12 Scala installation 
+- Include newest scala-refactoring version in 2.12 build 
+- Fix compilation error because of missing override keyword 
+- Fix compilation errors because of type inference changes 
+- Fix compilation error due to changed method signature in compiler 
+- Fix code after TypeKind has been replaced by BType 
+- Replace hardcoded versions by constants 
+- Set correct Scala version for sdt.feature module 
+- Update version ranges in debug.expression module 
+- Remove scala-swing dependency from 2.12 build 
+- Fix breakpoint in code 
+- Adapt scala refactoring config 
+- Compiler bridge source 2.10 
 - Don't rely on custom hacks when doing a local rename (:ticket:`1002803`)
-
-The following changes belong to the scala-refactoring part:
-
-- Set version for 0.12.0 release
-- Disable several tests for Scala-2.12.1
-- Fixes import tests
-- Clean up the sbt files for community build
-- Get rid of dependency on `SourceFileScanner`
-- Special handling for qualfied self types in rename and mark occurrences (:ticket:`1002677`)
-- Changes path dependent types for sake of better defined responsibilities
-- Bump version to 0.12
-- Adapts scala-refactoring library for scala 2.12
-- Special treatment for self references (:ticket:`1002803`)
-- Be more careful before rewriting imports in `MoveClass`  (:ticket:`1002786`)
 
 4.5.x
 -----
@@ -79,22 +78,22 @@ The following changes belong to the scala-refactoring part:
 - Disable HOF completion on default (:ticket:`1002794`)
 - Special handling type definitions in `ScalaStructureBuilder` (:ticket:`1002773`)
 - Check if widget is disposed before calling it (:ticket:`1002766`)
-- Be insensitive for missing files
+- Be insensitive for missing files 
 - Replace sbt dependency with zinc 1.0.0-X6
-- Ensure that mark occurrences is not called if it is disabled
+- Ensure that mark occurrences is not called if it is disabled 
 - Allows scalac ignores java errors. (:ticket:`1002738`)
 - Remove annotations that belong to a removed range of an editor (:ticket:`1002726`)
 - Expose `ProposalRelevanceCfg` in user preferences (:ticket:`1002706`)
-- Do not show errors for block imports
+- Do not show errors for block imports 
 - Do now pass compiler reference to reporter (:ticket:`1002733`)
-- Exposes configuration for new organize imports feature
-- Log an error message in case an error is thrown
+- Exposes configuration for new organize imports feature 
+- Log an error message in case an error is thrown 
 - Do not log missing cases in outline to error log (:ticket:`1002710`)
 - Enable `MarkOccurrences` for operators (:ticket:`1002703`)
 - Do not cache the `MarkOccurrenceIndex` (:ticket:`1002701`)
-- Make Neon default build and remove Luna and Mars builds
+- Make Neon default build and remove Luna and Mars builds 
 - Sort type completions differently (:ticket:`1002686`)
-- Escape dollar sign in shell script
+- Escape dollar sign in shell script 
 
 The following changes belong to the scala-refactoring part:
 
@@ -102,12 +101,12 @@ The following changes belong to the scala-refactoring part:
 - Be more careful with imports when moving class (:ticket:`1002723`)
 - Adds improvements in organize imports. See added tests. (:ticket:`1002678`)
 - Fix renaming identifiers starting with '_' (:ticket:`1002674`)
-- Organize Imports in packages avoiding tree printer
-- Rename file name from PimpedTreesTest to EnrichedTreesTest
+- Organize Imports in packages avoiding tree printer 
+- Rename file name from PimpedTreesTest to EnrichedTreesTest 
 - Swallow exception after nameString call (:ticket:`1002711`)
-- Improve debug output
+- Improve debug output 
 - Implement `Rename` on top of `MarkOccurences` (:ticket:`1002698`)
-- Adds enhancements to organize imports working
+- Adds enhancements to organize imports working 
 
 4.4.x
 -----
