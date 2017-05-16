@@ -4,18 +4,41 @@ Changelog
 4.6.x
 -----
 
+4.6.0 (2017-05-16)
+..................
+
+- No changes.
+
 4.6.0 RC2 (2017-05-04)
 ......................
 
 - Links breakpoint in Breakpoint View with Code Editor for scala class file 
 - Update scalac options 
 - Update .classpath file 
-- Set scalap version in MAFIFEST.MF through filtering 
+- Set scalap version in MANIFEST.MF through filtering 
 - Update zinc dependencies 
 - Enables Scala Version interoperability. 
 - Upgrade Scala 2.12 dependency to Scala 2.12.2 
 - Improves back-quote names in Scala file wizard UI. 
 - Guards Scala Debug against fetching data outside of presentation compiler.
+
+The following changes belong to the scala-refactoring part:
+
+- Include .settings folder 
+- Cross publish only to 2.12.2 and fix 2.11 compilation options
+- Reorganized imports preserve existing end of line (:ticket:`1002873`)
+- Removes options from OrganizeImports
+- Enables including trailing line for Windows line separator
+- Make renaming packages work
+- Bump version to 0.13.0
+- Fixes import tests
+- Clean up the sbt files for community build
+- Get rid of dependency on `SourceFileScanner`
+- Special handling for qualfied self types in rename and mark occurrences (:ticket:`1002677`)
+- Changes path dependent types for sake of better defined responsibilities
+- Compilation Unit Dependencies update
+- Adapts scala-refactoring library for scala 2.12.2
+- Special treatment for self references
 
 4.6.0 RC1 (2017-04-06)
 ......................
