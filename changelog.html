@@ -91,18 +91,42 @@
 <h1>Changelog</h1>
 <div class="section" id="x">
 <h2>4.6.x</h2>
+<div class="section" id="id1">
+<h3>4.6.0 (2017-05-16)</h3>
+<ul class="simple">
+<li>No changes.</li>
+</ul>
+</div>
 <div class="section" id="rc2-2017-05-04">
 <h3>4.6.0 RC2 (2017-05-04)</h3>
 <ul class="simple">
 <li>Links breakpoint in Breakpoint View with Code Editor for scala class file</li>
 <li>Update scalac options</li>
 <li>Update .classpath file</li>
-<li>Set scalap version in MAFIFEST.MF through filtering</li>
+<li>Set scalap version in MANIFEST.MF through filtering</li>
 <li>Update zinc dependencies</li>
 <li>Enables Scala Version interoperability.</li>
 <li>Upgrade Scala 2.12 dependency to Scala 2.12.2</li>
 <li>Improves back-quote names in Scala file wizard UI.</li>
 <li>Guards Scala Debug against fetching data outside of presentation compiler.</li>
+</ul>
+<p>The following changes belong to the scala-refactoring part:</p>
+<ul class="simple">
+<li>Include .settings folder</li>
+<li>Cross publish only to 2.12.2 and fix 2.11 compilation options</li>
+<li>Reorganized imports preserve existing end of line (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002873">#1002873</a>)</li>
+<li>Removes options from OrganizeImports</li>
+<li>Enables including trailing line for Windows line separator</li>
+<li>Make renaming packages work</li>
+<li>Bump version to 0.13.0</li>
+<li>Fixes import tests</li>
+<li>Clean up the sbt files for community build</li>
+<li>Get rid of dependency on <cite>SourceFileScanner</cite></li>
+<li>Special handling for qualfied self types in rename and mark occurrences (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002677">#1002677</a>)</li>
+<li>Changes path dependent types for sake of better defined responsibilities</li>
+<li>Compilation Unit Dependencies update</li>
+<li>Adapts scala-refactoring library for scala 2.12.2</li>
+<li>Special treatment for self references</li>
 </ul>
 </div>
 <div class="section" id="rc1-2017-04-06">
@@ -149,9 +173,9 @@
 </ul>
 </div>
 </div>
-<div class="section" id="id1">
-<h2>4.5.x</h2>
 <div class="section" id="id2">
+<h2>4.5.x</h2>
+<div class="section" id="id3">
 <h3>4.5.0 (2016-12-13)</h3>
 <ul class="simple">
 <li>No changes.</li>
@@ -201,9 +225,9 @@
 </ul>
 </div>
 </div>
-<div class="section" id="id3">
-<h2>4.4.x</h2>
 <div class="section" id="id4">
+<h2>4.4.x</h2>
+<div class="section" id="id5">
 <h3>4.4.1 (2016-05-05)</h3>
 <ul class="simple">
 <li>Consider enclosing classes when adding types to the index (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001103">#1001103</a>)</li>
@@ -228,7 +252,7 @@
 <li>Add empty lines around added imports and put import at right location (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002672">#1002672</a>)</li>
 </ul>
 </div>
-<div class="section" id="id5">
+<div class="section" id="id6">
 <h3>4.4.0 (2016-04-01)</h3>
 <p>No changes.</p>
 </div>
@@ -316,9 +340,9 @@
 </ul>
 </div>
 </div>
-<div class="section" id="id6">
-<h2>4.3.x</h2>
 <div class="section" id="id7">
+<h2>4.3.x</h2>
+<div class="section" id="id8">
 <h3>4.3.0 (2015-12-01)</h3>
 <ul class="simple">
 <li>Start statistics tracker on startup of scala-ide bundle</li>
@@ -368,9 +392,9 @@
 </ul>
 </div>
 </div>
-<div class="section" id="id8">
-<h2>4.2.x</h2>
 <div class="section" id="id9">
+<h2>4.2.x</h2>
+<div class="section" id="id10">
 <h3>4.2.0 (2015-09-28)</h3>
 <ul class="simple">
 <li>Fix non working fading packages feature in Async Debug View (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002549">#1002549</a>)</li>
@@ -455,9 +479,9 @@
 </ul>
 </div>
 </div>
-<div class="section" id="id10">
-<h2>4.1.x</h2>
 <div class="section" id="id11">
+<h2>4.1.x</h2>
+<div class="section" id="id12">
 <h3>4.1.1 (2015-07-28)</h3>
 <ul class="simple">
 <li>Remove key binding for expression evaluator (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002509">#1002509</a>)</li>
@@ -818,7 +842,7 @@
 </ul>
 </div>
 </div>
-<div class="section" id="id12">
+<div class="section" id="id13">
 <h2>3.0.3</h2>
 <div class="section" id="rc1-2014-01-09">
 <h3>RC1 (2014-01-09)</h3>
@@ -828,7 +852,7 @@
 </ul>
 </div>
 </div>
-<div class="section" id="id13">
+<div class="section" id="id14">
 <h2>3.0.2</h2>
 <div class="section" id="rc2-2013-10-09">
 <h3>RC2 (2013-10-09)</h3>
@@ -855,7 +879,7 @@
 </ul>
 </div>
 </div>
-<div class="section" id="id14">
+<div class="section" id="id15">
 <h2>3.0.1</h2>
 <div class="section" id="rc2-2013-06-27">
 <h3>RC2 (2013-06-27)</h3>
@@ -1088,7 +1112,7 @@
 </ul>
 </div>
 </div>
-<div class="section" id="id59">
+<div class="section" id="id60">
 <h2>2.0.1 (release/scala-ide-2.0.x)</h2>
 <div class="section" id="final-released-2012-04-30">
 <h3>2.0.1-final (released: 2012-04-30)</h3>
@@ -1287,7 +1311,7 @@
 <li>delete : support of scala-2.8.0</li>
 </ul>
 </div>
-<div class="section" id="id107">
+<div class="section" id="id108">
 <h3>1.0.0.20100804</h3>
 <ul class="simple">
 <li>Refactoring Support</li>
