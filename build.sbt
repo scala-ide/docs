@@ -1,4 +1,4 @@
-name := "scala-ide-docs"
+name := "docs"
 
 site.settings
 
