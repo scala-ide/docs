@@ -1,3 +1,4 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
@@ -6,7 +7,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Wizards new &#8212; Scala IDE 0.1-SNAPSHOT documentation</title>
+    <title>Wizards new &mdash; Scala IDE 0.1-SNAPSHOT documentation</title>
     
     <link rel="stylesheet" href="../../../_static/resources/stylesheets/base.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
@@ -22,8 +23,7 @@
         VERSION:     '0.1-SNAPSHOT',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
+        HAS_SOURCE:  true
       };
     </script>
     <script type="text/javascript" src="../../../_static/jquery.js"></script>
@@ -40,12 +40,12 @@
     <script type="text/javascript" src="../../../_static/resources/javascript/bootstrap-dropdown-app.js"></script>
     <script type="text/javascript" src="../../../_static/resources/javascript/contentsFix.js"></script>
     <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
-    <link rel="index" title="Index" href="../../../genindex.html" />
-    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="top" title="Scala IDE 0.1-SNAPSHOT documentation" href="../../../index.html" />
+    <link rel="up" title="IDE Extensions new" href="../ide-extensions.html" />
     <link rel="next" title="Custom semantic annotations new" href="../semantic-annotations/index.html" />
     <link rel="prev" title="IDE Extensions new" href="../ide-extensions.html" /> 
   </head>
-  <body role="document">
+  <body>
 <div class="top-bar">
   <div class="top-bar-inner">
     <div class="container">
@@ -98,57 +98,55 @@
 <p>In the following there is a description on how to create such an OSGi bundle:</p>
 <ol class="arabic simple">
 <li>Create a new Plug-in Project in Eclipse and add the Scala nature.</li>
-<li>Add the Scala IDE bundle as a dependency in the dependencies section of your manifest file. This bundle is called <code class="docutils literal"><span class="pre">org.scala-ide.sdt.core</span></code> and its minimum version needs to be 4.0.0. Because the public API of the wizard makes use of Eclipse based classes, you also have to add <code class="docutils literal"><span class="pre">org.eclipse.core.resources</span></code> and <code class="docutils literal"><span class="pre">org.eclipse.core.runtime</span></code> as dependencies.</li>
-<li>In the extensions section add the extension point <code class="docutils literal"><span class="pre">org.scala-ide.sdt.core.fileCreator</span></code>.</li>
-<li>Create a new <code class="docutils literal"><span class="pre">fileCreator</span></code>.</li>
-<li>In order to fill out all values of the <code class="docutils literal"><span class="pre">fileCreator</span></code> you have to provide a class that implements <code class="docutils literal"><span class="pre">org.scalaide.ui.wizards.FileCreator</span></code>. See the Scaladoc of this trait to find out how to implement it correctly.</li>
-<li>Once you are done with implementing the class, you have to provide a template, which is later used by the wizard to create the contents of a newly created file. To do so, first add a new dependency to <code class="docutils literal"><span class="pre">org.eclipse.ui.editors</span></code> and then add the extension point <code class="docutils literal"><span class="pre">org.eclipse.ui.editors.templates</span></code>.</li>
-<li>Create a <code class="docutils literal"><span class="pre">template</span></code>, whose <code class="docutils literal"><span class="pre">contextTypeId</span></code> must be <code class="docutils literal"><span class="pre">org.scala-ide.sdt.core.templates</span></code>. Fill in the template ID into the corresponding field in your <code class="docutils literal"><span class="pre">fileCreator</span></code>.</li>
+<li>Add the Scala IDE bundle as a dependency in the dependencies section of your manifest file. This bundle is called <tt class="docutils literal"><span class="pre">org.scala-ide.sdt.core</span></tt> and its minimum version needs to be 4.0.0. Because the public API of the wizard makes use of Eclipse based classes, you also have to add <tt class="docutils literal"><span class="pre">org.eclipse.core.resources</span></tt> and <tt class="docutils literal"><span class="pre">org.eclipse.core.runtime</span></tt> as dependencies.</li>
+<li>In the extensions section add the extension point <tt class="docutils literal"><span class="pre">org.scala-ide.sdt.core.fileCreator</span></tt>.</li>
+<li>Create a new <tt class="docutils literal"><span class="pre">fileCreator</span></tt>.</li>
+<li>In order to fill out all values of the <tt class="docutils literal"><span class="pre">fileCreator</span></tt> you have to provide a class that implements <tt class="docutils literal"><span class="pre">org.scalaide.ui.wizards.FileCreator</span></tt>. See the Scaladoc of this trait to find out how to implement it correctly.</li>
+<li>Once you are done with implementing the class, you have to provide a template, which is later used by the wizard to create the contents of a newly created file. To do so, first add a new dependency to <tt class="docutils literal"><span class="pre">org.eclipse.ui.editors</span></tt> and then add the extension point <tt class="docutils literal"><span class="pre">org.eclipse.ui.editors.templates</span></tt>.</li>
+<li>Create a <tt class="docutils literal"><span class="pre">template</span></tt>, whose <tt class="docutils literal"><span class="pre">contextTypeId</span></tt> must be <tt class="docutils literal"><span class="pre">org.scala-ide.sdt.core.templates</span></tt>. Fill in the template ID into the corresponding field in your <tt class="docutils literal"><span class="pre">fileCreator</span></tt>.</li>
 </ol>
 <p>You can now export a bundle and install it to your Eclipse installation. If you made everything correctly, the new wizard should show your template in the kind field.</p>
 <p>In the following we show you an example bundle manifest and plugin configuration:</p>
-<p><code class="docutils literal"><span class="pre">plugin.xml</span></code>:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
-&lt;?eclipse version=&quot;3.4&quot;?&gt;
+<p><tt class="docutils literal"><span class="pre">plugin.xml</span></tt>:</p>
+<div class="highlight-python"><pre>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;?eclipse version="3.4"?&gt;
 &lt;plugin&gt;
    &lt;extension
-         point=&quot;org.scala-ide.sdt.core.fileCreator&quot;&gt;
+         point="org.scala-ide.sdt.core.fileCreator"&gt;
       &lt;fileCreator
-            class=&quot;org.scalaide.wizardextension.TestFileCreator&quot;
-            description=&quot;test dcription&quot;
-            id=&quot;org.scalaide.wizardextension.id&quot;
-            name=&quot;test name&quot;
-            templateId=&quot;org.scalaide.wizardextension.template&quot;&gt;
+            class="org.scalaide.wizardextension.TestFileCreator"
+            description="test dcription"
+            id="org.scalaide.wizardextension.id"
+            name="test name"
+            templateId="org.scalaide.wizardextension.template"&gt;
       &lt;/fileCreator&gt;
    &lt;/extension&gt;
    &lt;extension
-         point=&quot;org.eclipse.ui.editors.templates&quot;&gt;
+         point="org.eclipse.ui.editors.templates"&gt;
       &lt;template
-            autoinsert=&quot;true&quot;
-            contextTypeId=&quot;org.scala-ide.sdt.core.templates&quot;
-            id=&quot;org.scalaide.wizardextension.template&quot;
-            name=&quot;wizard_test&quot;&gt;
+            autoinsert="true"
+            contextTypeId="org.scala-ide.sdt.core.templates"
+            id="org.scalaide.wizardextension.template"
+            name="wizard_test"&gt;
          &lt;pattern&gt;
             My test content
          &lt;/pattern&gt;
       &lt;/template&gt;
    &lt;/extension&gt;
-&lt;/plugin&gt;
-</pre></div>
+&lt;/plugin&gt;</pre>
 </div>
-<p><code class="docutils literal"><span class="pre">MANIFEST.MF</span></code>:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Manifest</span><span class="o">-</span><span class="n">Version</span><span class="p">:</span> <span class="mf">1.0</span>
-<span class="n">Bundle</span><span class="o">-</span><span class="n">ManifestVersion</span><span class="p">:</span> <span class="mi">2</span>
-<span class="n">Bundle</span><span class="o">-</span><span class="n">Name</span><span class="p">:</span> <span class="n">Wizardextension</span>
-<span class="n">Bundle</span><span class="o">-</span><span class="n">SymbolicName</span><span class="p">:</span> <span class="n">org</span><span class="o">.</span><span class="n">scalaide</span><span class="o">.</span><span class="n">wizardextension</span><span class="p">;</span><span class="n">singleton</span><span class="p">:</span><span class="o">=</span><span class="n">true</span>
-<span class="n">Bundle</span><span class="o">-</span><span class="n">Version</span><span class="p">:</span> <span class="mf">1.0</span><span class="o">.</span><span class="mf">0.</span><span class="n">qualifier</span>
-<span class="n">Bundle</span><span class="o">-</span><span class="n">RequiredExecutionEnvironment</span><span class="p">:</span> <span class="n">JavaSE</span><span class="o">-</span><span class="mf">1.7</span>
-<span class="n">Require</span><span class="o">-</span><span class="n">Bundle</span><span class="p">:</span> <span class="n">org</span><span class="o">.</span><span class="n">scala</span><span class="o">-</span><span class="n">ide</span><span class="o">.</span><span class="n">sdt</span><span class="o">.</span><span class="n">core</span><span class="p">;</span><span class="n">bundle</span><span class="o">-</span><span class="n">version</span><span class="o">=</span><span class="s2">&quot;4.0.0&quot;</span><span class="p">,</span>
- <span class="n">org</span><span class="o">.</span><span class="n">scala</span><span class="o">-</span><span class="n">lang</span><span class="o">.</span><span class="n">scala</span><span class="o">-</span><span class="n">library</span><span class="p">,</span>
- <span class="n">org</span><span class="o">.</span><span class="n">eclipse</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">resources</span><span class="p">;</span><span class="n">bundle</span><span class="o">-</span><span class="n">version</span><span class="o">=</span><span class="s2">&quot;3.8.101&quot;</span><span class="p">,</span>
- <span class="n">org</span><span class="o">.</span><span class="n">eclipse</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">runtime</span><span class="p">;</span><span class="n">bundle</span><span class="o">-</span><span class="n">version</span><span class="o">=</span><span class="s2">&quot;3.9.100&quot;</span><span class="p">,</span>
- <span class="n">org</span><span class="o">.</span><span class="n">eclipse</span><span class="o">.</span><span class="n">ui</span><span class="o">.</span><span class="n">editors</span><span class="p">;</span><span class="n">bundle</span><span class="o">-</span><span class="n">version</span><span class="o">=</span><span class="s2">&quot;3.8.100&quot;</span>
-</pre></div>
+<p><tt class="docutils literal"><span class="pre">MANIFEST.MF</span></tt>:</p>
+<div class="highlight-python"><pre>Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Wizardextension
+Bundle-SymbolicName: org.scalaide.wizardextension;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Require-Bundle: org.scala-ide.sdt.core;bundle-version="4.0.0",
+ org.scala-lang.scala-library,
+ org.eclipse.core.resources;bundle-version="3.8.101",
+ org.eclipse.core.runtime;bundle-version="3.9.100",
+ org.eclipse.ui.editors;bundle-version="3.8.100"</pre>
 </div>
 </div>
 

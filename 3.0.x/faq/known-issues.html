@@ -1,3 +1,4 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
@@ -6,7 +7,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Know Issues &#8212; Scala IDE 0.1-SNAPSHOT documentation</title>
+    <title>Know Issues &mdash; Scala IDE 0.1-SNAPSHOT documentation</title>
     
     <link rel="stylesheet" href="../../_static/resources/stylesheets/base.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
@@ -22,8 +23,7 @@
         VERSION:     '0.1-SNAPSHOT',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
+        HAS_SOURCE:  true
       };
     </script>
     <script type="text/javascript" src="../../_static/jquery.js"></script>
@@ -40,12 +40,12 @@
     <script type="text/javascript" src="../../_static/resources/javascript/bootstrap-dropdown-app.js"></script>
     <script type="text/javascript" src="../../_static/resources/javascript/contentsFix.js"></script>
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
-    <link rel="index" title="Index" href="../../genindex.html" />
-    <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Frequently Asked Questions" href="../../user/faq.html" />
-    <link rel="prev" title="Using Unit Testing Frameworks" href="../testingframeworks/index.html" /> 
+    <link rel="top" title="Scala IDE 0.1-SNAPSHOT documentation" href="../../index.html" />
+    <link rel="up" title="User Documentation for the Scala IDE 3.0.x" href="../index.html" />
+    <link rel="next" title="User Documentation for the Scala IDE 4.x - Lithium" href="../../4.0.x/index.html" />
+    <link rel="prev" title="License" href="../../license.html" /> 
   </head>
-  <body role="document">
+  <body>
 <div class="top-bar">
   <div class="top-bar-inner">
     <div class="container">
@@ -103,15 +103,15 @@
 checks it is activated at every launch. The easiest way to debug
 this is therefore to accept activation of JDT weaving at
 launch. Otherwise, you can look into turning it on manually using
-the <a class="reference internal" href="../../current-user-doc/advancedsetup/index.html"><span class="doc">Scala Diagnostics Dialog</span></a>.</p>
+the <a class="reference internal" href="../../current-user-doc/advancedsetup/index.html"><em>Scala Diagnostics Dialog</em></a>.</p>
 </div>
 <div class="section" id="scala-errors-on-all-unicode-arrows">
 <h2>Scala errors on all Unicode arrows</h2>
 <p><strong>Symptoms</strong>:</p>
-<p>The code contains Unicode niceties like <code class="docutils literal"><span class="pre">←</span></code> and <code class="docutils literal"><span class="pre">⇒</span></code>, but the editor doesn&#8217;t seem to be able to display them, and errors are reported at their location.</p>
+<p>The code contains Unicode niceties like <tt class="docutils literal"><span class="pre">←</span></tt> and <tt class="docutils literal"><span class="pre">⇒</span></tt>, but the editor doesn&#8217;t seem to be able to display them, and errors are reported at their location.</p>
 <p><strong>Solution</strong>:</p>
 <p>The operating system is not using UTF-8 by default, and its default encoding is used inside Eclipse.</p>
-<p>The encoding used to open files can be configured at different levels. Most of the time, setting Eclipse default encoding to UTF-8 in <code class="docutils literal"><span class="pre">General</span> <span class="pre">→</span> <span class="pre">Workspace</span></code> preferences is enough. But in some case, the wrong encoding might also have been set in the project properties, or even the file properties.</p>
+<p>The encoding used to open files can be configured at different levels. Most of the time, setting Eclipse default encoding to UTF-8 in <tt class="docutils literal"><span class="pre">General</span> <span class="pre">→</span> <span class="pre">Workspace</span></tt> preferences is enough. But in some case, the wrong encoding might also have been set in the project properties, or even the file properties.</p>
 </div>
 <div class="section" id="red-screen-of-death-red-squiggles-everywhere">
 <h2>Red screen of death (red squiggles everywhere)</h2>
@@ -124,14 +124,14 @@ The prime suspect is Maven Dependencies, which can download and add an incompati
 <p><strong>Symptoms</strong>:</p>
 <p>When pressing Ctrl-Space, the list doesn&#8217;t contain code completion proposals, only templates, but other semantic actions (such as hyperlinking) work fine.</p>
 <p><strong>Solution</strong>:</p>
-<p>During the development of version 2.0.0, the configuration of the Scala completion engines has been modified to make sure that no more disabled by mistake. If Scala IDE has been updated from an old beta version, it is possible that the Scala completion engines (<code class="docutils literal"><span class="pre">Scala</span> <span class="pre">Completions</span></code> and <code class="docutils literal"><span class="pre">Scala</span> <span class="pre">Completion</span> <span class="pre">(Java</span> <span class="pre">sources)</span></code>) need to be re-enabled.</p>
-<p>The diagnostic tool at <code class="docutils literal"><span class="pre">Scala</span> <span class="pre">→</span> <span class="pre">Run</span> <span class="pre">Setup</span> <span class="pre">Diagnostic</span></code> allows to fix this problem. Make sure that <code class="docutils literal"><span class="pre">Use</span> <span class="pre">Scala-compatible</span> <span class="pre">JDT</span> <span class="pre">content</span> <span class="pre">assist</span> <span class="pre">proposals</span></code> is enabled.</p>
+<p>During the development of version 2.0.0, the configuration of the Scala completion engines has been modified to make sure that no more disabled by mistake. If Scala IDE has been updated from an old beta version, it is possible that the Scala completion engines (<tt class="docutils literal"><span class="pre">Scala</span> <span class="pre">Completions</span></tt> and <tt class="docutils literal"><span class="pre">Scala</span> <span class="pre">Completion</span> <span class="pre">(Java</span> <span class="pre">sources)</span></tt>) need to be re-enabled.</p>
+<p>The diagnostic tool at <tt class="docutils literal"><span class="pre">Scala</span> <span class="pre">→</span> <span class="pre">Run</span> <span class="pre">Setup</span> <span class="pre">Diagnostic</span></tt> allows to fix this problem. Make sure that <tt class="docutils literal"><span class="pre">Use</span> <span class="pre">Scala-compatible</span> <span class="pre">JDT</span> <span class="pre">content</span> <span class="pre">assist</span> <span class="pre">proposals</span></tt> is enabled.</p>
 <img alt="../../_images/setup-diagnostics-011.png" src="../../_images/setup-diagnostics-011.png" />
 </div>
 <div class="section" id="bad-completion-when-using-companion-object-in-java">
 <h2>Bad completion when using companion object in Java</h2>
 <p>Using the Java code assist to access a Scala companion object generates invalid code.</p>
-<div class="highlight-scala"><div class="highlight"><pre><span></span><span class="k">package</span> <span class="nn">stest</span>
+<div class="highlight-scala"><div class="highlight"><pre><span class="k">package</span> <span class="nn">stest</span>
 
 <span class="k">class</span> <span class="nc">S3</span>
 
@@ -140,7 +140,7 @@ The prime suspect is Maven Dependencies, which can download and add an incompati
 <span class="o">}</span>
 </pre></div>
 </div>
-<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">jtest</span><span class="o">;</span>
+<div class="highlight-java"><div class="highlight"><pre><span class="kn">package</span> <span class="n">jtest</span><span class="o">;</span>
 
 <span class="kn">import</span> <span class="nn">stest.S3</span><span class="o">;</span>
 
@@ -157,7 +157,7 @@ The prime suspect is Maven Dependencies, which can download and add an incompati
 <h2>Eclipse freezes (deadlock)</h2>
 <p><strong>Symptoms</strong>:</p>
 <p>The IDE is completely frozen.</p>
-<p>A known manifestation of this problem occurs when the <code class="docutils literal"><span class="pre">SmartIndenter</span></code> kicks in (for
+<p>A known manifestation of this problem occurs when the <tt class="docutils literal"><span class="pre">SmartIndenter</span></tt> kicks in (for
 instance when a return carriage is inserted in the Eclipse Editor), which is particularly
 annoying since all unsaved work will be lost.</p>
 <p><strong>Solution</strong>:</p>
@@ -167,7 +167,7 @@ this problem if you upgrade to JRE 7 or newer.</p>
 <p>If you cannot use the JRE 7, then you can try the workaround described below.</p>
 <p><strong>Workaround</strong>:</p>
 <p>If the deadlock is an instance of <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000317">#1000317</a> (deadlock in the JDT weaving code) or <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000996">#1000996</a> (deadlock during indentation) you can edit your eclipse.ini file using the recommended settings:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>-XX:+UnlockDiagnosticVMOptions
+<div class="highlight-bash"><div class="highlight"><pre>-XX:+UnlockDiagnosticVMOptions
 -XX:+UnsyncloadClass
 -Dosgi.classloader.lock<span class="o">=</span>classname
 </pre></div>
@@ -176,11 +176,11 @@ this problem if you upgrade to JRE 7 or newer.</p>
 <p>If you encounter this problem, the best thing is to take a thread dump:</p>
 <blockquote>
 <div><p>Once the IDE is frozen, the following command provide the process id of the running virtual machines:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>$ jps -v
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>jps -v
 </pre></div>
 </div>
 <p>Then this command generates the thread dump:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>$ jstack &lt;pid&gt;
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>jstack &lt;pid&gt;
 </pre></div>
 </div>
 </div></blockquote>
@@ -189,9 +189,9 @@ this problem if you upgrade to JRE 7 or newer.</p>
 <div class="section" id="noclassdeffounderror-scala-tools-nsc-settings-mutablesettings-settingvalue">
 <h2>NoClassDefFoundError (scala/tools/nsc/settings/MutableSettings$SettingValue)</h2>
 <p><strong>Symptoms</strong>:</p>
-<p>After upgrading the Scala plug-in, <code class="docutils literal"><span class="pre">java.lang.NoClassDefFoundError:</span> <span class="pre">scala/tools/nsc/settings/MutableSettings$SettingValue</span></code> exception is reported for all Scala projects in the workspace. Scala IDE is then unusable.</p>
+<p>After upgrading the Scala plug-in, <tt class="docutils literal"><span class="pre">java.lang.NoClassDefFoundError:</span> <span class="pre">scala/tools/nsc/settings/MutableSettings$SettingValue</span></tt> exception is reported for all Scala projects in the workspace. Scala IDE is then unusable.</p>
 <p><strong>Solution</strong>:</p>
-<p>If you have several update sites providing different version of Scala IDE, Eclipse may have decided that a newest Scala library should be used instead of the one provided by the plug-in to be installed. To avoid this problem, make sure to uncheck the <code class="docutils literal"><span class="pre">Contact</span> <span class="pre">all</span> <span class="pre">update</span> <span class="pre">sites</span> <span class="pre">during</span> <span class="pre">install</span> <span class="pre">to</span> <span class="pre">find</span> <span class="pre">required</span> <span class="pre">software</span></code> option. It is situated at the bottom of the <code class="docutils literal"><span class="pre">Help</span> <span class="pre">→</span> <span class="pre">Install</span> <span class="pre">New</span> <span class="pre">Software...</span></code> dialog.</p>
+<p>If you have several update sites providing different version of Scala IDE, Eclipse may have decided that a newest Scala library should be used instead of the one provided by the plug-in to be installed. To avoid this problem, make sure to uncheck the <tt class="docutils literal"><span class="pre">Contact</span> <span class="pre">all</span> <span class="pre">update</span> <span class="pre">sites</span> <span class="pre">during</span> <span class="pre">install</span> <span class="pre">to</span> <span class="pre">find</span> <span class="pre">required</span> <span class="pre">software</span></tt> option. It is situated at the bottom of the <tt class="docutils literal"><span class="pre">Help</span> <span class="pre">→</span> <span class="pre">Install</span> <span class="pre">New</span> <span class="pre">Software...</span></tt> dialog.</p>
 </div>
 </div>
 

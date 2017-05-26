@@ -1,3 +1,4 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
@@ -6,7 +7,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Scala Debugger &#8212; Scala IDE 0.1-SNAPSHOT documentation</title>
+    <title>Scala Debugger &mdash; Scala IDE 0.1-SNAPSHOT documentation</title>
     
     <link rel="stylesheet" href="../../../_static/resources/stylesheets/base.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
@@ -22,8 +23,7 @@
         VERSION:     '0.1-SNAPSHOT',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
+        HAS_SOURCE:  true
       };
     </script>
     <script type="text/javascript" src="../../../_static/jquery.js"></script>
@@ -40,12 +40,12 @@
     <script type="text/javascript" src="../../../_static/resources/javascript/bootstrap-dropdown-app.js"></script>
     <script type="text/javascript" src="../../../_static/resources/javascript/contentsFix.js"></script>
     <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
-    <link rel="index" title="Index" href="../../../genindex.html" />
-    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="top" title="Scala IDE 0.1-SNAPSHOT documentation" href="../../../index.html" />
+    <link rel="up" title="Features" href="../../features.html" />
     <link rel="next" title="Asynchronous Debugger new" href="../async-debugger/index.html" />
     <link rel="prev" title="Scala Scopes Building new (since 4.1)" href="../scalacompiler/index.html" /> 
   </head>
-  <body role="document">
+  <body>
 <div class="top-bar">
   <div class="top-bar-inner">
     <div class="container">
@@ -111,7 +111,7 @@
 <div class="section" id="using-the-scala-debugger">
 <h2>Using the Scala debugger</h2>
 <p>The Scala debugger is available as an alternate debug mode launcher for the Scala applications and Equinox Weaving Eclipse applications.</p>
-<p>It can be set as the default launcher from the <code class="docutils literal"><span class="pre">Run\Debug</span> <span class="pre">→</span> <span class="pre">Launching</span> <span class="pre">→</span> <span class="pre">Default</span> <span class="pre">Launchers</span></code> preferences:</p>
+<p>It can be set as the default launcher from the <tt class="docutils literal"><span class="pre">Run\Debug</span> <span class="pre">→</span> <span class="pre">Launching</span> <span class="pre">→</span> <span class="pre">Default</span> <span class="pre">Launchers</span></tt> preferences:</p>
 <img alt="Scala debugger switch" src="../../../_images/preferences-012.png" />
 <p>Or it can be selected in each launch configuration:</p>
 <img alt="Scala debugger switch" src="../../../_images/preferences-022.png" />
@@ -125,27 +125,27 @@
 </div>
 <div class="section" id="tostring-display">
 <h3>toString display</h3>
-<p>In the variables view, the detail pane show the <code class="docutils literal"><span class="pre">toString</span></code> value, or its equivalent, for the currently selected entity.</p>
+<p>In the variables view, the detail pane show the <tt class="docutils literal"><span class="pre">toString</span></tt> value, or its equivalent, for the currently selected entity.</p>
 <img alt="toString in detail pane" src="../../../_images/detailpane-012.png" />
 </div>
 <div class="section" id="logical-structures-support">
 <span id="id1"></span><h3>Logical structures support</h3>
 <p>By default, the variables view shows the internals of each entity.</p>
 <img alt="logical structure disabled" src="../../../_images/logicalstructure-012.png" />
-<p>But in a lot of cases, it is not the sought after information. Using the <code class="docutils literal"><span class="pre">Show</span> <span class="pre">Logical</span> <span class="pre">Structure</span></code> toolbar button, the data is shown is a more synthetic way.</p>
+<p>But in a lot of cases, it is not the sought after information. Using the <tt class="docutils literal"><span class="pre">Show</span> <span class="pre">Logical</span> <span class="pre">Structure</span></tt> toolbar button, the data is shown is a more synthetic way.</p>
 <img alt="logical structure enabled" src="../../../_images/logicalstructure-022.png" />
 <p><em>In the preview version, only support for List has been tested</em></p>
 </div>
 <div class="section" id="smart-stepping">
 <h3>Smart stepping</h3>
 <p>A normal Java debugger is made to debug applications written in Java. It cannot handle concept like closures.</p>
-<p>In a situation like the following, it would jump the full <code class="docutils literal"><span class="pre">map</span></code> call when asked to do a &#8216;step over&#8217;.</p>
+<p>In a situation like the following, it would jump the full <tt class="docutils literal"><span class="pre">map</span></tt> call when asked to do a &#8216;step over&#8217;.</p>
 <img alt="smart stepping - initial state" src="../../../_images/smartstepping-012.png" />
 <p>The Scala debugger is able to find those and stop inside the closure. The closure variables are visible.</p>
 <img alt="smart stepping - initial state" src="../../../_images/smartstepping-022.png" />
 <p>After an other &#8216;step over&#8217;, the debugger stops at the evaluation of the closure for the second element.</p>
 <img alt="smart stepping - initial state" src="../../../_images/smartstepping-032.png" />
-<p>At the next &#8216;step over&#8217;, the debugger exits the map call, and stop at the assignment. After an extra &#8216;step over&#8217;, the result is visible in <code class="docutils literal"><span class="pre">k</span></code>.</p>
+<p>At the next &#8216;step over&#8217;, the debugger exits the map call, and stop at the assignment. After an extra &#8216;step over&#8217;, the result is visible in <tt class="docutils literal"><span class="pre">k</span></tt>.</p>
 <img alt="smart stepping - initial state" src="../../../_images/smartstepping-042.png" />
 <p>The same way, the &#8216;step into&#8217; action allows you to step right into the closure, and the &#8216;step out&#8217; action to return to the original call.</p>
 <p><em>In the preview version, &#8216;step into&#8217; is not working fine with primitive types</em></p>
@@ -155,9 +155,9 @@
 <p>Often when stepping in and out of Scala methods you don&#8217;t want to stop in all the artifacts produced by the Scala compiler. Those includes:</p>
 <ul class="simple">
 <li>synthetic methods</li>
-<li>Scala getters for <code class="docutils literal"><span class="pre">val</span></code> members</li>
-<li>Scala getters and setters for <code class="docutils literal"><span class="pre">var</span></code> members</li>
-<li>getters for default argument (ending in <code class="docutils literal"><span class="pre">$default$1,2,..</span></code>)</li>
+<li>Scala getters for <tt class="docutils literal"><span class="pre">val</span></tt> members</li>
+<li>Scala getters and setters for <tt class="docutils literal"><span class="pre">var</span></tt> members</li>
+<li>getters for default argument (ending in <tt class="docutils literal"><span class="pre">$default$1,2,..</span></tt>)</li>
 <li>forwarders for concrete trait methods</li>
 </ul>
 <p>You can enable/disable step filters on the debugger configuration page:</p>
@@ -179,7 +179,7 @@
 </div>
 <div class="section" id="drop-to-frame-new-since-4-0">
 <h3>Drop to frame <span class="raw-html"><span class="label info">new</span></span> (since 4.0)</h3>
-<p>Select the <code class="docutils literal"><span class="pre">Drop</span> <span class="pre">to</span> <span class="pre">Frame</span></code> command to re-enter the selected stack frame in the <code class="docutils literal"><span class="pre">Debug</span></code> View.</p>
+<p>Select the <tt class="docutils literal"><span class="pre">Drop</span> <span class="pre">to</span> <span class="pre">Frame</span></tt> command to re-enter the selected stack frame in the <tt class="docutils literal"><span class="pre">Debug</span></tt> View.</p>
 <img alt="drop to frame option in menu" src="../../../_images/drop-to-frame1.png" />
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
@@ -212,7 +212,7 @@ execution (resume and hit another breakpoint, step into etc.).</li>
 <p class="last">These problems should disappear in the future after adding to HCR the missing feature which we are aware of.</p>
 </div>
 <p>Multiple parameters of HCR can be configured in menu:</p>
-<a class="reference internal image-reference" href="../../../_images/hot-code-replace1.png"><img alt="hot code replace configuration menu" src="../../../_images/hot-code-replace1.png" style="width: 100%;" /></a>
+<img alt="hot code replace configuration menu" src="../../../_images/hot-code-replace1.png" style="width: 100%;" />
 <p>Those allows to:</p>
 <ul class="simple">
 <li>enable or disable HCR,</li>
@@ -226,9 +226,9 @@ This one may be needed only if you disable automatic drop to frame after HCR.</l
 </div>
 <div class="section" id="expression-evaluator-new-since-4-1">
 <h2>Expression evaluator <span class="raw-html"><span class="label info">new</span></span> (since 4.1)</h2>
-<p>Scala debugger since 4.1 features new expression evaluator, which translates user code into invocations of <code class="docutils literal"><span class="pre">JDI</span></code> remote
+<p>Scala debugger since 4.1 features new expression evaluator, which translates user code into invocations of <tt class="docutils literal"><span class="pre">JDI</span></tt> remote
 calls. This allows evaluation of expression in context of breakpoint, with access to local variables and methods.</p>
-<p>For more detailed documentation, with examples and limitations see <a class="reference internal" href="expression-evaluator.html#expression-evaluator-user-docs"><span class="std std-ref">Expression evaluator user documentation</span></a>.</p>
+<p>For more detailed documentation, with examples and limitations see <a class="reference internal" href="expression-evaluator.html#expression-evaluator-user-docs"><em>Expression evaluator user documentation</em></a>.</p>
 </div>
 <div class="section" id="further-improvements-and-unsupported-features">
 <h2>Further improvements and unsupported features</h2>
@@ -240,7 +240,7 @@ calls. This allows evaluation of expression in context of breakpoint, with acces
 <li>Improve the labels<ul>
 <li><em>Running</em>, <em>Suspended</em>, <em>Terminated</em> suffix on debug target and thread</li>
 <li>option to display simple or fully qualified types</li>
-<li>clean way to display object name, without the <code class="docutils literal"><span class="pre">$</span></code></li>
+<li>clean way to display object name, without the <tt class="docutils literal"><span class="pre">$</span></tt></li>
 </ul>
 </li>
 <li>filtered stack frames option<ul>
@@ -273,20 +273,20 @@ calls. This allows evaluation of expression in context of breakpoint, with acces
 </div>
 <div class="section" id="development-setup">
 <h2>Development setup</h2>
-<p>The Scala debugger adds 4 new plugins, 2 for debugger: <code class="docutils literal"><span class="pre">org.scala-ide.sdt.debug</span></code>, <code class="docutils literal"><span class="pre">org.scala-ide.sdt.debug.tests</span></code> and 2 for expression evaluator: <code class="docutils literal"><span class="pre">org.scala-ide.sdt.debug.expression</span></code>, <code class="docutils literal"><span class="pre">org.scala-ide.sdt.debug.expression.tests</span></code></p>
+<p>The Scala debugger adds 4 new plugins, 2 for debugger: <tt class="docutils literal"><span class="pre">org.scala-ide.sdt.debug</span></tt>, <tt class="docutils literal"><span class="pre">org.scala-ide.sdt.debug.tests</span></tt> and 2 for expression evaluator: <tt class="docutils literal"><span class="pre">org.scala-ide.sdt.debug.expression</span></tt>, <tt class="docutils literal"><span class="pre">org.scala-ide.sdt.debug.expression.tests</span></tt></p>
 <div class="section" id="in-eclipse">
 <h3>In Eclipse</h3>
 <p>The Scala debugger makes use of the <a class="reference external" href="http://docs.oracle.com/javase/6/docs/jdk/api/jpda/jdi/index.html">JDI</a> to communicate with the VM. For some valid reasons, the jdt.debug plug-in provides a non-generic version of it. The Scala debugger uses the newer generic version, so some tweaking is needed inside Eclipse.</p>
 <div class="section" id="on-mac-os-x">
 <h4>On Mac OS X</h4>
-<p>The generic version of the JDI is included by default in the VM libraries, just remove the <code class="docutils literal"><span class="pre">JAVA_HOME/lib/tools.jar</span></code> entry from the Java build path to have the project to compile.</p>
+<p>The generic version of the JDI is included by default in the VM libraries, just remove the <tt class="docutils literal"><span class="pre">JAVA_HOME/lib/tools.jar</span></tt> entry from the Java build path to have the project to compile.</p>
 </div>
 <div class="section" id="on-the-other-oses">
 <h4>On the other OSes</h4>
 <p>On non-Mac OS X systems, JDI is not part of the VM default libraries. To steps are needed to have the project to compile correctly:</p>
 <ul class="simple">
-<li>create a <code class="docutils literal"><span class="pre">Classpath</span> <span class="pre">Variable</span></code> in <code class="docutils literal"><span class="pre">Window</span> <span class="pre">→</span> <span class="pre">Preferences</span> <span class="pre">→</span> <span class="pre">Java</span> <span class="pre">→</span> <span class="pre">Build</span> <span class="pre">Path</span> <span class="pre">→</span> <span class="pre">Classpath</span> <span class="pre">Variables</span></code> named <code class="docutils literal"><span class="pre">JAVA_HOME</span></code>, which points to the root folder of your JDK installation.</li>
-<li>in <code class="docutils literal"><span class="pre">Window</span> <span class="pre">→</span> <span class="pre">Preferences</span> <span class="pre">→</span> <span class="pre">Java</span> <span class="pre">→</span> <span class="pre">Installed</span> <span class="pre">JREs</span></code>, edit your JDK, and use <code class="docutils literal"><span class="pre">Add</span> <span class="pre">External</span> <span class="pre">JARs</span></code> to add the <code class="docutils literal"><span class="pre">JDK_HOME/lib/tools.jar</span></code> library.</li>
+<li>create a <tt class="docutils literal"><span class="pre">Classpath</span> <span class="pre">Variable</span></tt> in <tt class="docutils literal"><span class="pre">Window</span> <span class="pre">→</span> <span class="pre">Preferences</span> <span class="pre">→</span> <span class="pre">Java</span> <span class="pre">→</span> <span class="pre">Build</span> <span class="pre">Path</span> <span class="pre">→</span> <span class="pre">Classpath</span> <span class="pre">Variables</span></tt> named <tt class="docutils literal"><span class="pre">JAVA_HOME</span></tt>, which points to the root folder of your JDK installation.</li>
+<li>in <tt class="docutils literal"><span class="pre">Window</span> <span class="pre">→</span> <span class="pre">Preferences</span> <span class="pre">→</span> <span class="pre">Java</span> <span class="pre">→</span> <span class="pre">Installed</span> <span class="pre">JREs</span></tt>, edit your JDK, and use <tt class="docutils literal"><span class="pre">Add</span> <span class="pre">External</span> <span class="pre">JARs</span></tt> to add the <tt class="docutils literal"><span class="pre">JDK_HOME/lib/tools.jar</span></tt> library.</li>
 </ul>
 </div>
 </div>

@@ -1,3 +1,4 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
@@ -6,7 +7,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Implicit Highlighting &#8212; Scala IDE 0.1-SNAPSHOT documentation</title>
+    <title>Implicit Highlighting &mdash; Scala IDE 0.1-SNAPSHOT documentation</title>
     
     <link rel="stylesheet" href="../../../../_static/resources/stylesheets/base.css" type="text/css" />
     <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
@@ -22,8 +23,7 @@
         VERSION:     '0.1-SNAPSHOT',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
+        HAS_SOURCE:  true
       };
     </script>
     <script type="text/javascript" src="../../../../_static/jquery.js"></script>
@@ -40,12 +40,12 @@
     <script type="text/javascript" src="../../../../_static/resources/javascript/bootstrap-dropdown-app.js"></script>
     <script type="text/javascript" src="../../../../_static/resources/javascript/contentsFix.js"></script>
     <link rel="shortcut icon" href="../../../../_static/favicon.ico"/>
-    <link rel="index" title="Index" href="../../../../genindex.html" />
-    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="top" title="Scala IDE 0.1-SNAPSHOT documentation" href="../../../../index.html" />
+    <link rel="up" title="Typing and Viewing" href="../index.html" />
     <link rel="next" title="Javadoc on hover" href="../javadoc.html" />
     <link rel="prev" title="Inferred Type Hover" href="../inferred-hover.html" /> 
   </head>
-  <body role="document">
+  <body>
 <div class="top-bar">
   <div class="top-bar-inner">
     <div class="container">
@@ -104,13 +104,13 @@ great power comes great responsability, and a desire to control. Meet <em>Implic
 <p>We have defined a class for rational numbers, and defined an implicit comversion from integers
 to rationals. This way we can easily mix integers and rationals in arithmetic
 expressions, for instance by adding 42 with a rational number.</p>
-<p>Notice that the number <code class="docutils literal"><span class="pre">42</span></code> is underlined, and a marker is added to the left
-gutter. This signals that the method <code class="docutils literal"><span class="pre">plus</span></code> was added through an implicit
+<p>Notice that the number <tt class="docutils literal"><span class="pre">42</span></tt> is underlined, and a marker is added to the left
+gutter. This signals that the method <tt class="docutils literal"><span class="pre">plus</span></tt> was added through an implicit
 conversion. If you move your mouse over the gutter, you will see the actual
-conversion (<code class="docutils literal"><span class="pre">intToRational</span></code>).</p>
+conversion (<tt class="docutils literal"><span class="pre">intToRational</span></tt>).</p>
 <img alt="../../../../_images/hover1.png" src="../../../../_images/hover1.png" />
-<p>There is also a QuickFix available (<code class="docutils literal"><span class="pre">CMD-1</span></code>)
-that makes the call the implicit conversion explicit! Check <a class="reference internal" href="../quick-fixes.html"><span class="doc">Expand Implicit Conversion</span></a> for more details.</p>
+<p>There is also a QuickFix available (<tt class="docutils literal"><span class="pre">CMD-1</span></tt>)
+that makes the call the implicit conversion explicit! Check <a class="reference internal" href="../quick-fixes.html"><em>Expand Implicit Conversion</em></a> for more details.</p>
 <img alt="../../../../_images/quick-fix2.png" src="../../../../_images/quick-fix2.png" />
 </div>
 <div class="section" id="configuration">
@@ -118,7 +118,7 @@ that makes the call the implicit conversion explicit! Check <a class="reference 
 <p>By default, only <em>implicit conversions</em> are highlighted. This makes sense,
 since most of the times implicit values that are passed around are not too
 costly, nor interesting. However, if you&#8217;d like to show those as well, you can
-enable them from the <code class="docutils literal"><span class="pre">Implicits</span></code> preferences page.</p>
+enable them from the <tt class="docutils literal"><span class="pre">Implicits</span></tt> preferences page.</p>
 <a class="reference external image-reference" href="../../../_images/prefs.png"><img alt="../../../../_images/prefs2.png" src="../../../../_images/prefs2.png" style="width: 100%;" /></a>
 </div>
 <div class="section" id="thank-you">

@@ -4,6 +4,15 @@ Changelog
 4.6.x
 -----
 
+4.6.1 RC1 (2017-05-25)
+......................
+
+- Bumps up version to 4.6.1
+- Include JDK version into compiler bridge cache path
+- Enable projection document (needed by Play2 plugin)
+- Adds explicit type to `analyzer` (needed by scalameta compiler plugin)
+- Move compiler bridge cache outside the workspace
+
 4.6.0 (2017-05-16)
 ..................
 

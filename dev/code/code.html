@@ -1,3 +1,4 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
@@ -6,7 +7,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Codebase &#8212; Scala IDE 0.1-SNAPSHOT documentation</title>
+    <title>Codebase &mdash; Scala IDE 0.1-SNAPSHOT documentation</title>
     
     <link rel="stylesheet" href="../../_static/resources/stylesheets/base.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
@@ -22,8 +23,7 @@
         VERSION:     '0.1-SNAPSHOT',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
+        HAS_SOURCE:  true
       };
     </script>
     <script type="text/javascript" src="../../_static/jquery.js"></script>
@@ -40,12 +40,12 @@
     <script type="text/javascript" src="../../_static/resources/javascript/bootstrap-dropdown-app.js"></script>
     <script type="text/javascript" src="../../_static/resources/javascript/contentsFix.js"></script>
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
-    <link rel="index" title="Index" href="../../genindex.html" />
-    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="top" title="Scala IDE 0.1-SNAPSHOT documentation" href="../../index.html" />
+    <link rel="up" title="Welcome to the Scala IDE Developer Documentation" href="../index.html" />
     <link rel="next" title="IDE Extensions new" href="../ide-extensions/ide-extensions.html" />
     <link rel="prev" title="Expression evaluator new" href="../architecture/expression-evaluator.html" /> 
   </head>
-  <body role="document">
+  <body>
 <div class="top-bar">
   <div class="top-bar-inner">
     <div class="container">
@@ -101,7 +101,7 @@ available components and some of the pattern in use (or that we&#8217;d like to 
 right information and provide the user with a way to report logs can go a long way in understanding
 the reason of a bug, and it can definitely save you some debug time!</p>
 <p>Now, you may know that the Eclipse environment already provides a logging component. As a matter of
-fact, a plugin can get a logger instance by simply calling <code class="docutils literal"><span class="pre">getLog()</span></code> on the <code class="docutils literal"><span class="pre">plugin</span></code>&#8216;s reference. The
+fact, a plugin can get a logger instance by simply calling <tt class="docutils literal"><span class="pre">getLog()</span></tt> on the <tt class="docutils literal"><span class="pre">plugin</span></tt>&#8216;s reference. The
 returned logger, of type <a class="reference external" href="http://help.eclipse.org/indigo/index.jsp?topic=%2Forg.eclipse.platform.doc.isv%2Freference%2Fapi%2Forg%2Feclipse%2Fcore%2Fruntime%2FILog.html">ILog</a>,
 can be used to communicate to the user any useful information. All log messages sent through
 the Eclipse logger are collected in <a class="reference external" href="http://help.eclipse.org/indigo/index.jsp?topic=/org.eclipse.pde.doc.user/guide/tools/views/error_log.htm">Eclipse Error Log view component</a>,
@@ -113,12 +113,12 @@ issue.</p>
 <p>Inside the Scala IDE we offer two different loggers. The first one, is a handle on the
 Eclipse logger described above. The second one, is a logger backed by Log4j (which we will refer to as
 the &#8220;default logger&#8221; from now on). Log messages sent to the default logger are stored in a file named
-<code class="docutils literal"><span class="pre">scala-ide.log</span></code>, located in the <code class="docutils literal"><span class="pre">${workspace}\.metadata\.plugins\org.scala-ide.sdt.core\</span></code> directory.
+<tt class="docutils literal"><span class="pre">scala-ide.log</span></tt>, located in the <tt class="docutils literal"><span class="pre">${workspace}\.metadata\.plugins\org.scala-ide.sdt.core\</span></tt> directory.
 Also, note that users can easily control the amount of logged information through Logging preference page
 (accessible under the Eclipse Preferences &gt; Scala &gt; Logging).</p>
-<p>To get a handle on the loggers, you only need to mix-in the <code class="docutils literal"><span class="pre">HasLogger</span></code> trait. The implementation should be
+<p>To get a handle on the loggers, you only need to mix-in the <tt class="docutils literal"><span class="pre">HasLogger</span></tt> trait. The implementation should be
 somewhat similar to the following:</p>
-<div class="highlight-scala"><div class="highlight"><pre><span></span><span class="k">trait</span> <span class="nc">HasLogger</span> <span class="o">{</span>
+<div class="highlight-scala"><div class="highlight"><pre><span class="k">trait</span> <span class="nc">HasLogger</span> <span class="o">{</span>
 
   <span class="k">protected</span><span class="o">[</span><span class="kt">this</span><span class="o">]</span> <span class="k">lazy</span> <span class="k">val</span> <span class="n">logger</span><span class="k">:</span> <span class="kt">Logger</span> <span class="o">=</span> <span class="o">{</span>
     <span class="k">val</span> <span class="n">clazz</span> <span class="k">=</span> <span class="k">this</span><span class="o">.</span><span class="n">getClass</span>
@@ -130,13 +130,13 @@ somewhat similar to the following:</p>
 </pre></div>
 </div>
 <p>Deciding which logger you should use is simple. If you want to inform the user, use the
-<code class="docutils literal"><span class="pre">eclipseLog</span></code> instance. For instance, if a severe error occurred (i.e., an unexpected exception), it
+<tt class="docutils literal"><span class="pre">eclipseLog</span></tt> instance. For instance, if a severe error occurred (i.e., an unexpected exception), it
 is a good idea to inform the user!
-In all other cases (or if you are unsure), prefer the default <code class="docutils literal"><span class="pre">logger</span></code>. Also, note that
-messages sent through the <code class="docutils literal"><span class="pre">eclipseLog</span></code> are also forwarded to the default <code class="docutils literal"><span class="pre">logger</span></code> (meaning that
+In all other cases (or if you are unsure), prefer the default <tt class="docutils literal"><span class="pre">logger</span></tt>. Also, note that
+messages sent through the <tt class="docutils literal"><span class="pre">eclipseLog</span></tt> are also forwarded to the default <tt class="docutils literal"><span class="pre">logger</span></tt> (meaning that
 you never need to log the same message twice). Further, all printings in the Standard Output or the
-Standard Error are redirected to the default <code class="docutils literal"><span class="pre">logger</span></code>.</p>
-<p>In short, the <code class="docutils literal"><span class="pre">scala-ide.log</span></code> file always contain the complete list of log messages occurred within the Scala IDE!</p>
+Standard Error are redirected to the default <tt class="docutils literal"><span class="pre">logger</span></tt>.</p>
+<p>In short, the <tt class="docutils literal"><span class="pre">scala-ide.log</span></tt> file always contain the complete list of log messages occurred within the Scala IDE!</p>
 </div>
 </div>
 

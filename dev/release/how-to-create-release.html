@@ -1,3 +1,4 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
@@ -6,7 +7,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>How to create a Scala IDE release &#8212; Scala IDE 0.1-SNAPSHOT documentation</title>
+    <title>How to create a Scala IDE release &mdash; Scala IDE 0.1-SNAPSHOT documentation</title>
     
     <link rel="stylesheet" href="../../_static/resources/stylesheets/base.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
@@ -22,8 +23,7 @@
         VERSION:     '0.1-SNAPSHOT',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
+        HAS_SOURCE:  true
       };
     </script>
     <script type="text/javascript" src="../../_static/jquery.js"></script>
@@ -40,12 +40,12 @@
     <script type="text/javascript" src="../../_static/resources/javascript/bootstrap-dropdown-app.js"></script>
     <script type="text/javascript" src="../../_static/resources/javascript/contentsFix.js"></script>
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
-    <link rel="index" title="Index" href="../../genindex.html" />
-    <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="User Documentation for the Scala IDE 3.0.x" href="../../3.0.x/index.html" />
+    <link rel="top" title="Scala IDE 0.1-SNAPSHOT documentation" href="../../index.html" />
+    <link rel="up" title="Welcome to the Scala IDE Developer Documentation" href="../index.html" />
+    <link rel="next" title="License" href="../../license.html" />
     <link rel="prev" title="Suggested Shortcuts" href="../appendix/shortcuts.html" /> 
   </head>
-  <body role="document">
+  <body>
 <div class="top-bar">
   <div class="top-bar-inner">
     <div class="container">
@@ -103,46 +103,46 @@
 </ul>
 <p>If you want to build a new Scala IDE release but you don&#8217;t have access to all of the things, please ask one of the current IDE maintainers for them. Also, make sure to read all steps first before you run the first steps. You don&#8217;t want to accidentally release something that should not have been released yet.</p>
 <ol class="arabic">
-<li><p class="first">The <code class="docutils literal"><span class="pre">scala-ide/scala-ide-product</span></code> repo needs to be updated to the newest version number. This can be done with the following command:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="nb">cd</span> /path/to/scala-ide-product
+<li><p class="first">The <tt class="docutils literal"><span class="pre">scala-ide/scala-ide-product</span></tt> repo needs to be updated to the newest version number. This can be done with the following command:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nb">cd</span> /path/to/scala-ide-product
 mvn -Dtycho.mode<span class="o">=</span>maven org.eclipse.tycho:tycho-versions-plugin:set-version -DnewVersion<span class="o">=</span>&lt;new-version&gt;-SNAPSHOT
 </pre></div>
 </div>
-<p>where <code class="docutils literal"><span class="pre">&lt;new-version&gt;</span></code> needs to be replaced by the actual version, which is for example <code class="docutils literal"><span class="pre">4.0.0</span></code>. Note, it is not relevant to add RC or final version appendixes here. This command forgets one file that needs to be updated too: <code class="docutils literal"><span class="pre">org.scala-ide.sdk.feature/templates/feature.xml</span></code>.</p>
+<p>where <tt class="docutils literal"><span class="pre">&lt;new-version&gt;</span></tt> needs to be replaced by the actual version, which is for example <tt class="docutils literal"><span class="pre">4.0.0</span></tt>. Note, it is not relevant to add RC or final version appendixes here. This command forgets one file that needs to be updated too: <tt class="docutils literal"><span class="pre">org.scala-ide.sdk.feature/templates/feature.xml</span></tt>.</p>
 </li>
-<li><p class="first">Create a new config file in the <code class="docutils literal"><span class="pre">scala-ide/uber-build</span></code> repo. The config files are located in the <code class="docutils literal"><span class="pre">uber-build/config</span></code> directory. The easiest way to do this is to copy the config file of the previous release. The config file contains a <code class="docutils literal"><span class="pre">*_GIT_BRANCH</span></code> property, which specifies the branch or tag of the corresponding git repo. During the build this branch or tag is checked out and then considered for the Scala IDE release. If the repo has been updated since the last release and the plan is to include these updates in the next release, a new tag needs to be specified.</p>
+<li><p class="first">Create a new config file in the <tt class="docutils literal"><span class="pre">scala-ide/uber-build</span></tt> repo. The config files are located in the <tt class="docutils literal"><span class="pre">uber-build/config</span></tt> directory. The easiest way to do this is to copy the config file of the previous release. The config file contains a <tt class="docutils literal"><span class="pre">*_GIT_BRANCH</span></tt> property, which specifies the branch or tag of the corresponding git repo. During the build this branch or tag is checked out and then considered for the Scala IDE release. If the repo has been updated since the last release and the plan is to include these updates in the next release, a new tag needs to be specified.</p>
 </li>
-<li><p class="first">After all tags are specified in the configuration file, they need to be set to all git repos. This can either be done manually or with the help of the <code class="docutils literal"><span class="pre">uber-build/mk-git-tags.sh</span></code> file. This file should be called in the following way:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="nb">cd</span> /path/to/uber-build
+<li><p class="first">After all tags are specified in the configuration file, they need to be set to all git repos. This can either be done manually or with the help of the <tt class="docutils literal"><span class="pre">uber-build/mk-git-tags.sh</span></tt> file. This file should be called in the following way:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nb">cd</span> /path/to/uber-build
 ./mk-git-tags.sh config/release-config-file.conf /path/to/scala-ide/base/dir <span class="s2">&quot;tag sign message&quot;</span>
 </pre></div>
 </div>
-<p><code class="docutils literal"><span class="pre">mk-git-tags.sh</span></code> assumes that all repos under the <code class="docutils literal"><span class="pre">scala-ide</span></code> organization are located in a base directory. If this is the case it will load the specified config file and add all the tags to the repositories. After that it will upload them to Github. During this process all tags are signed with a GPG key. If such a key does not exist, either create it or create the tags manually without any signing.</p>
+<p><tt class="docutils literal"><span class="pre">mk-git-tags.sh</span></tt> assumes that all repos under the <tt class="docutils literal"><span class="pre">scala-ide</span></tt> organization are located in a base directory. If this is the case it will load the specified config file and add all the tags to the repositories. After that it will upload them to Github. During this process all tags are signed with a GPG key. If such a key does not exist, either create it or create the tags manually without any signing.</p>
 </li>
 <li><p class="first">In order to build the Scala IDE SDK (the Eclipse product), an Eclipse installation is required. Download the &#8220;Eclipse IDE for Java Developers&#8221; from their <a class="reference external" href="https://www.eclipse.org/downloads/">download page</a> and extract it somewhere in your file system. It is not important which OS dependent archive is downloaded - Eclipse will figure out by itself how to create executables for each OS based on the extracted Eclipse installation.</p>
 </li>
-<li><p class="first">Before uber-build can be run, it may be necessary to specify some environment variables. All the variables are part of the file <code class="docutils literal"><span class="pre">uber-build/uber-build-config.sh</span></code>.</p>
+<li><p class="first">Before uber-build can be run, it may be necessary to specify some environment variables. All the variables are part of the file <tt class="docutils literal"><span class="pre">uber-build/uber-build-config.sh</span></tt>.</p>
 </li>
 <li><p class="first">Run uber-build:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="nb">cd</span> /path/to/uber-build
+<div class="highlight-bash"><div class="highlight"><pre><span class="nb">cd</span> /path/to/uber-build
 ./uber-build config/config-file.conf
 </pre></div>
 </div>
 <p>If everything completes successfully, uber-build continues with uploading all binaries of the repos that were built.</p>
 </li>
-<li><p class="first">The binaries are uploaded to a staging area. This means that they are not yet available to users once the uploading has been finished. As long as the binaries are in the staging area, they can be safely tested and verified. If something is wrong, repeat the previous steps until the uploaded binaries are ready to be published to users. Once this is the case, simply run the generated file <code class="docutils literal"><span class="pre">target/release-from-staging-area.sh</span></code>. Note, that after this step there is no return! The release is online and can be seen by everyone.</p>
+<li><p class="first">The binaries are uploaded to a staging area. This means that they are not yet available to users once the uploading has been finished. As long as the binaries are in the staging area, they can be safely tested and verified. If something is wrong, repeat the previous steps until the uploaded binaries are ready to be published to users. Once this is the case, simply run the generated file <tt class="docutils literal"><span class="pre">target/release-from-staging-area.sh</span></tt>. Note, that after this step there is no return! The release is online and can be seen by everyone.</p>
 </li>
-<li><p class="first">uber-build doesn&#8217;t automatically upload the Scala IDE products to the Amazon S3 host, therefore it has to be done manually. Get a client from somewhere that allows you to access the S3 contents and enter the credentials you got from the current IDE maintainers. For every new product a directory should be created in the directory <code class="docutils literal"><span class="pre">downloads.typesafe.com/scalaide-pack</span></code>. Note, that uber-build already downloaded a CLI to access S3, it can be run with <code class="docutils literal"><span class="pre">source</span> <span class="pre">target/aws-virtualenv/bin/activate</span></code> and left by typing <code class="docutils literal"><span class="pre">deactivate</span></code>. This interface is cumbersome to use manually, therefore you may want to use a graphical interface.</p>
-<p>The products can be found in the local directory <code class="docutils literal"><span class="pre">target/product/org.scala-ide.product/target/products/</span></code>.</p>
+<li><p class="first">uber-build doesn&#8217;t automatically upload the Scala IDE products to the Amazon S3 host, therefore it has to be done manually. Get a client from somewhere that allows you to access the S3 contents and enter the credentials you got from the current IDE maintainers. For every new product a directory should be created in the directory <tt class="docutils literal"><span class="pre">downloads.typesafe.com/scalaide-pack</span></tt>. Note, that uber-build already downloaded a CLI to access S3, it can be run with <tt class="docutils literal"><span class="pre">source</span> <span class="pre">target/aws-virtualenv/bin/activate</span></tt> and left by typing <tt class="docutils literal"><span class="pre">deactivate</span></tt>. This interface is cumbersome to use manually, therefore you may want to use a graphical interface.</p>
+<p>The products can be found in the local directory <tt class="docutils literal"><span class="pre">target/product/org.scala-ide.product/target/products/</span></tt>.</p>
 </li>
-<li><p class="first">Build a changelog for the <code class="docutils literal"><span class="pre">scala-ide/docs</span></code> repo. Run the following script in the <code class="docutils literal"><span class="pre">scala-ide/scala-ide</span></code> repo to generate the changelog:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="nb">cd</span> /path/to/scala-ide-repo
+<li><p class="first">Build a changelog for the <tt class="docutils literal"><span class="pre">scala-ide/docs</span></tt> repo. Run the following script in the <tt class="docutils literal"><span class="pre">scala-ide/scala-ide</span></tt> repo to generate the changelog:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nb">cd</span> /path/to/scala-ide-repo
 ./GenChangeLog.bash &lt;previous-release&gt; &lt;new-release&gt;
 </pre></div>
 </div>
-<p>where <code class="docutils literal"><span class="pre">previous-release</span></code> and <code class="docutils literal"><span class="pre">new-release</span></code> are tags. The output of this script should be included in <code class="docutils literal"><span class="pre">scala-ide/docs/src/sphinx/changelog.rst</span></code>. Note, that the output of this script is not perfect, you may want to manually improve it.</p>
+<p>where <tt class="docutils literal"><span class="pre">previous-release</span></tt> and <tt class="docutils literal"><span class="pre">new-release</span></tt> are tags. The output of this script should be included in <tt class="docutils literal"><span class="pre">scala-ide/docs/src/sphinx/changelog.rst</span></tt>. Note, that the output of this script is not perfect, you may want to manually improve it.</p>
 </li>
-<li><p class="first">Create release notes for the <code class="docutils literal"><span class="pre">scala-ide/scala-ide.github.com</span></code> repo. See the README of this repo for more information about how to proceed in creating the release notes.</p>
+<li><p class="first">Create release notes for the <tt class="docutils literal"><span class="pre">scala-ide/scala-ide.github.com</span></tt> repo. See the README of this repo for more information about how to proceed in creating the release notes.</p>
 </li>
 <li><p class="first">That&#8217;s it you are done.</p>
 </li>

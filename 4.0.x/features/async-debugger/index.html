@@ -1,3 +1,4 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
@@ -6,7 +7,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Asynchronous Debugger new &#8212; Scala IDE 0.1-SNAPSHOT documentation</title>
+    <title>Asynchronous Debugger new &mdash; Scala IDE 0.1-SNAPSHOT documentation</title>
     
     <link rel="stylesheet" href="../../../_static/resources/stylesheets/base.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
@@ -22,8 +23,7 @@
         VERSION:     '0.1-SNAPSHOT',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
+        HAS_SOURCE:  true
       };
     </script>
     <script type="text/javascript" src="../../../_static/jquery.js"></script>
@@ -40,12 +40,12 @@
     <script type="text/javascript" src="../../../_static/resources/javascript/bootstrap-dropdown-app.js"></script>
     <script type="text/javascript" src="../../../_static/resources/javascript/contentsFix.js"></script>
     <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
-    <link rel="index" title="Index" href="../../../genindex.html" />
-    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="top" title="Scala IDE 0.1-SNAPSHOT documentation" href="../../../index.html" />
+    <link rel="up" title="Features" href="../../features.html" />
     <link rel="next" title="Scala Interpreter" href="../scalainterpreter/index.html" />
     <link rel="prev" title="Scala Debugger" href="../scaladebugger/index.html" /> 
   </head>
-  <body role="document">
+  <body>
 <div class="top-bar">
   <div class="top-bar-inner">
     <div class="container">
@@ -107,49 +107,49 @@
 <p>For more details and demo, have a look at this <a class="reference external" href="https://www.parleys.com/tutorial/rethinking-debugger">ScalaDays 2014 presentation</a></p>
 <div class="section" id="configuration">
 <h2>Configuration</h2>
-<p>The asynchronous extensions incur a cost on your debugged application so they need to be explicitly enabled in your Debug Configuration. Look for the additional <code class="docutils literal"><span class="pre">Scala</span> <span class="pre">Debugger</span></code> tab and enable the extensions. This tab is available on Java Debug configurations as well, to allow debugging Java Akka applications.</p>
-<a class="reference internal image-reference" href="../../../_images/configuration.png"><img alt="../../../_images/configuration.png" src="../../../_images/configuration.png" style="width: 100%;" /></a>
-<p>You can also define new <em>program points</em> where stacks are captured. A program point is defined by the fully qualified (and desugared) method name to intercept, and a 0-based index (0 being <code class="docutils literal"><span class="pre">this</span></code>) in the method parameters. The index defines the object to which this additional stack is attached. Whenever the program is stopped at a regular breakpoint, clicking on a variable that points to that object will bring in the latest captured stack in the <code class="docutils literal"><span class="pre">Async</span> <span class="pre">Stack</span> <span class="pre">View</span></code>.</p>
-<a class="reference internal image-reference" href="../../../_images/program-points.png"><img alt="../../../_images/program-points.png" src="../../../_images/program-points.png" style="width: 100%;" /></a>
+<p>The asynchronous extensions incur a cost on your debugged application so they need to be explicitly enabled in your Debug Configuration. Look for the additional <tt class="docutils literal"><span class="pre">Scala</span> <span class="pre">Debugger</span></tt> tab and enable the extensions. This tab is available on Java Debug configurations as well, to allow debugging Java Akka applications.</p>
+<img alt="../../../_images/configuration.png" src="../../../_images/configuration.png" style="width: 100%;" />
+<p>You can also define new <em>program points</em> where stacks are captured. A program point is defined by the fully qualified (and desugared) method name to intercept, and a 0-based index (0 being <tt class="docutils literal"><span class="pre">this</span></tt>) in the method parameters. The index defines the object to which this additional stack is attached. Whenever the program is stopped at a regular breakpoint, clicking on a variable that points to that object will bring in the latest captured stack in the <tt class="docutils literal"><span class="pre">Async</span> <span class="pre">Stack</span> <span class="pre">View</span></tt>.</p>
+<img alt="../../../_images/program-points.png" src="../../../_images/program-points.png" style="width: 100%;" />
 </div>
 <div class="section" id="async-stack">
 <h2>Async Stack</h2>
-<p>The Async Stack view is a tool which shows a time line (history) of coming Akka message or executed <code class="docutils literal"><span class="pre">Future</span></code> instance. To use this feature following actions need to be done:</p>
+<p>The Async Stack view is a tool which shows a time line (history) of coming Akka message or executed <tt class="docutils literal"><span class="pre">Future</span></tt> instance. To use this feature following actions need to be done:</p>
 <ul class="simple">
-<li>Asynchronous extension must be ticked in specific <code class="docutils literal"><span class="pre">Debug</span> <span class="pre">Configuration</span></code> how it is described in <em>Configuration</em>.</li>
+<li>Asynchronous extension must be ticked in specific <tt class="docutils literal"><span class="pre">Debug</span> <span class="pre">Configuration</span></tt> how it is described in <em>Configuration</em>.</li>
 <li>There must be the object with history in current stack frame when breakpoint stops.</li>
 </ul>
 <p>If the object with history is in current stack frame it can be clicked and then Async Stack shows its last stack trace from where this object has been triggered. Then to go back further in the past the stack frame in Async Stack can be clicked again and again up to the origin of the particular call flow.</p>
-<p>Let&#8217;s see a short example. The execution of code has been stopped in line 23. Variable view shows object (message) <code class="docutils literal"><span class="pre">GreetMe</span></code> which has got a time line. We also can notice in Async Stack view that message has came from line 34 of <code class="docutils literal"><span class="pre">Greeter</span></code> class.</p>
-<a class="reference internal image-reference" href="../../../_images/async-stack-1.png"><img alt="../../../_images/async-stack-1.png" src="../../../_images/async-stack-1.png" style="width: 100%;" /></a>
-<p>Clicking on this stack trace (<em>sample.hello.Greeter...at line: 34</em>) in Async Stack view we are moved to the place in code from where this message has been sent. On other hand Variables view shows the origin message. This time it&#8217;s <code class="docutils literal"><span class="pre">GreatMe</span></code> again.</p>
-<a class="reference internal image-reference" href="../../../_images/async-stack-2.png"><img alt="../../../_images/async-stack-2.png" src="../../../_images/async-stack-2.png" style="width: 100%;" /></a>
-<p>Clicking again we end up in line 28 of <code class="docutils literal"><span class="pre">Greeter</span></code>.</p>
-<a class="reference internal image-reference" href="../../../_images/async-stack-3.png"><img alt="../../../_images/async-stack-3.png" src="../../../_images/async-stack-3.png" style="width: 100%;" /></a>
-<p>And at last we see that this series of <code class="docutils literal"><span class="pre">GreetMe</span></code> messages has been initiated by <code class="docutils literal"><span class="pre">Greet</span></code> message</p>
-<a class="reference internal image-reference" href="../../../_images/async-stack-4.png"><img alt="../../../_images/async-stack-4.png" src="../../../_images/async-stack-4.png" style="width: 100%;" /></a>
-<p>If we are even more curious finally we find that first message has been sent from <code class="docutils literal"><span class="pre">HelloWorld.preStart()</span></code> method. Blank Async Stack view says that there is no more history.</p>
-<a class="reference internal image-reference" href="../../../_images/async-stack-5.png"><img alt="../../../_images/async-stack-5.png" src="../../../_images/async-stack-5.png" style="width: 100%;" /></a>
+<p>Let&#8217;s see a short example. The execution of code has been stopped in line 23. Variable view shows object (message) <tt class="docutils literal"><span class="pre">GreetMe</span></tt> which has got a time line. We also can notice in Async Stack view that message has came from line 34 of <tt class="docutils literal"><span class="pre">Greeter</span></tt> class.</p>
+<img alt="../../../_images/async-stack-1.png" src="../../../_images/async-stack-1.png" style="width: 100%;" />
+<p>Clicking on this stack trace (<em>sample.hello.Greeter...at line: 34</em>) in Async Stack view we are moved to the place in code from where this message has been sent. On other hand Variables view shows the origin message. This time it&#8217;s <tt class="docutils literal"><span class="pre">GreatMe</span></tt> again.</p>
+<img alt="../../../_images/async-stack-2.png" src="../../../_images/async-stack-2.png" style="width: 100%;" />
+<p>Clicking again we end up in line 28 of <tt class="docutils literal"><span class="pre">Greeter</span></tt>.</p>
+<img alt="../../../_images/async-stack-3.png" src="../../../_images/async-stack-3.png" style="width: 100%;" />
+<p>And at last we see that this series of <tt class="docutils literal"><span class="pre">GreetMe</span></tt> messages has been initiated by <tt class="docutils literal"><span class="pre">Greet</span></tt> message</p>
+<img alt="../../../_images/async-stack-4.png" src="../../../_images/async-stack-4.png" style="width: 100%;" />
+<p>If we are even more curious finally we find that first message has been sent from <tt class="docutils literal"><span class="pre">HelloWorld.preStart()</span></tt> method. Blank Async Stack view says that there is no more history.</p>
+<img alt="../../../_images/async-stack-5.png" src="../../../_images/async-stack-5.png" style="width: 100%;" />
 </div>
 <div class="section" id="step-with-message">
 <h2>Step with Message</h2>
-<p>A mysterious green <em>bang</em> icon on <code class="docutils literal"><span class="pre">Debug</span></code> view toolbar is a next part of Async Debugger tools suite. When it is clicked and underlying code line launches a message then the code execution is continued up to a place where this message is received. In other case it works like <code class="docutils literal"><span class="pre">step</span> <span class="pre">over</span></code> action.</p>
+<p>A mysterious green <em>bang</em> icon on <tt class="docutils literal"><span class="pre">Debug</span></tt> view toolbar is a next part of Async Debugger tools suite. When it is clicked and underlying code line launches a message then the code execution is continued up to a place where this message is received. In other case it works like <tt class="docutils literal"><span class="pre">step</span> <span class="pre">over</span></tt> action.</p>
 <p>Let&#8217;s flick through a simple example. First stop (with breakpoint) in a part of code which emits messages.</p>
-<a class="reference internal image-reference" href="../../../_images/step-msg-1.png"><img alt="../../../_images/step-msg-1.png" src="../../../_images/step-msg-1.png" style="width: 100%;" /></a>
+<img alt="../../../_images/step-msg-1.png" src="../../../_images/step-msg-1.png" style="width: 100%;" />
 <p>Now we can click on <em>bang</em> and land in next line.</p>
-<a class="reference internal image-reference" href="../../../_images/step-msg-2.png"><img alt="../../../_images/step-msg-2.png" src="../../../_images/step-msg-2.png" style="width: 100%;" /></a>
-<p>Assume now that we want to see where we land with message <code class="docutils literal"><span class="pre">Unknown</span></code>. So we skip current line simply with <code class="docutils literal"><span class="pre">step</span> <span class="pre">over</span></code>.</p>
-<a class="reference internal image-reference" href="../../../_images/step-msg-3.png"><img alt="../../../_images/step-msg-3.png" src="../../../_images/step-msg-3.png" style="width: 100%;" /></a>
-<p>Finally pushing <em>bang</em> we see that message <code class="docutils literal"><span class="pre">Unknown</span></code> is handled by <code class="docutils literal"><span class="pre">Gritter</span></code> class.</p>
-<a class="reference internal image-reference" href="../../../_images/step-msg-4.png"><img alt="../../../_images/step-msg-4.png" src="../../../_images/step-msg-4.png" style="width: 100%;" /></a>
+<img alt="../../../_images/step-msg-2.png" src="../../../_images/step-msg-2.png" style="width: 100%;" />
+<p>Assume now that we want to see where we land with message <tt class="docutils literal"><span class="pre">Unknown</span></tt>. So we skip current line simply with <tt class="docutils literal"><span class="pre">step</span> <span class="pre">over</span></tt>.</p>
+<img alt="../../../_images/step-msg-3.png" src="../../../_images/step-msg-3.png" style="width: 100%;" />
+<p>Finally pushing <em>bang</em> we see that message <tt class="docutils literal"><span class="pre">Unknown</span></tt> is handled by <tt class="docutils literal"><span class="pre">Gritter</span></tt> class.</p>
+<img alt="../../../_images/step-msg-4.png" src="../../../_images/step-msg-4.png" style="width: 100%;" />
 </div>
 <div class="section" id="break-on-dead-letters">
 <h2>Break on Dead Letters</h2>
-<p>It is a counterpart of <em>stop on exception</em> in regular debugging but this time the debugging process is stopped when <code class="docutils literal"><span class="pre">Dead</span> <span class="pre">Letter</span></code> comes.</p>
-<p>To activate this feature push the <em>blue envelope</em> on the <code class="docutils literal"><span class="pre">Breakpoints</span></code> view. Observe that we are going to send a <code class="docutils literal"><span class="pre">PoisonPill</span></code> to <code class="docutils literal"><span class="pre">greeter</span></code>.</p>
-<a class="reference internal image-reference" href="../../../_images/dead-letter-1.png"><img alt="../../../_images/dead-letter-1.png" src="../../../_images/dead-letter-1.png" style="width: 100%;" /></a>
+<p>It is a counterpart of <em>stop on exception</em> in regular debugging but this time the debugging process is stopped when <tt class="docutils literal"><span class="pre">Dead</span> <span class="pre">Letter</span></tt> comes.</p>
+<p>To activate this feature push the <em>blue envelope</em> on the <tt class="docutils literal"><span class="pre">Breakpoints</span></tt> view. Observe that we are going to send a <tt class="docutils literal"><span class="pre">PoisonPill</span></tt> to <tt class="docutils literal"><span class="pre">greeter</span></tt>.</p>
+<img alt="../../../_images/dead-letter-1.png" src="../../../_images/dead-letter-1.png" style="width: 100%;" />
 <p>Now just run debugging and expect to stop when <em>dead letter</em> is caught.</p>
-<a class="reference internal image-reference" href="../../../_images/dead-letter-2.png"><img alt="../../../_images/dead-letter-2.png" src="../../../_images/dead-letter-2.png" style="width: 100%;" /></a>
+<img alt="../../../_images/dead-letter-2.png" src="../../../_images/dead-letter-2.png" style="width: 100%;" />
 </div>
 </div>
 

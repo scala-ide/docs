@@ -1,3 +1,4 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
@@ -6,7 +7,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Wizards new &#8212; Scala IDE 0.1-SNAPSHOT documentation</title>
+    <title>Wizards new &mdash; Scala IDE 0.1-SNAPSHOT documentation</title>
     
     <link rel="stylesheet" href="../../../_static/resources/stylesheets/base.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
@@ -22,8 +23,7 @@
         VERSION:     '0.1-SNAPSHOT',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
+        HAS_SOURCE:  true
       };
     </script>
     <script type="text/javascript" src="../../../_static/jquery.js"></script>
@@ -40,12 +40,12 @@
     <script type="text/javascript" src="../../../_static/resources/javascript/bootstrap-dropdown-app.js"></script>
     <script type="text/javascript" src="../../../_static/resources/javascript/contentsFix.js"></script>
     <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
-    <link rel="index" title="Index" href="../../../genindex.html" />
-    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="top" title="Scala IDE 0.1-SNAPSHOT documentation" href="../../../index.html" />
+    <link rel="up" title="Features" href="../../features.html" />
     <link rel="next" title="Scala JUnit Test Finder" href="../test-finder/index.html" />
     <link rel="prev" title="Tasks View" href="../navigating/tasks-view.html" /> 
   </head>
-  <body role="document">
+  <body>
 <div class="top-bar">
   <div class="top-bar-inner">
     <div class="container">
@@ -96,33 +96,32 @@
 <h1>Wizards <span class="raw-html"><span class="label info">new</span></span></h1>
 <p>Scala IDE 4 includes a new wizard, which is a simplified version compared to the old wizards. It basically looks like this:</p>
 <img alt="../../../_images/new-file-wizard1.png" src="../../../_images/new-file-wizard1.png" />
-<p>There are two ways to open this new wizard. The easiest one is to press <code class="docutils literal"><span class="pre">Ctrl+3</span></code> to open the quick access search field. You can find the new wizard under the name &#8220;New Scala File&#8221;:</p>
-<a class="reference internal image-reference" href="../../../_images/search-field-scala-file-entry1.png"><img alt="../../../_images/search-field-scala-file-entry1.png" src="../../../_images/search-field-scala-file-entry1.png" style="width: 100%;" /></a>
+<p>There are two ways to open this new wizard. The easiest one is to press <tt class="docutils literal"><span class="pre">Ctrl+3</span></tt> to open the quick access search field. You can find the new wizard under the name &#8220;New Scala File&#8221;:</p>
+<img alt="../../../_images/search-field-scala-file-entry1.png" src="../../../_images/search-field-scala-file-entry1.png" style="width: 100%;" />
 <p>The second way is to navigate to the &#8220;New&#8221; menu and select &#8220;New Scala File&#8221;:</p>
 <img alt="../../../_images/new-menu-scala-file-entry1.png" src="../../../_images/new-menu-scala-file-entry1.png" />
 <div class="section" id="what-functionality-is-provided">
 <h2>What functionality is provided?</h2>
 <p>You have the possibility to select the kind of file (for example a Scala Class), the source folder of a project and of course the fully qualified name of the file.</p>
 <p>For example, if you want to create a Scala type in a package you have to prepend the package names separated by dots to the type name. If you don&#8217;t specify any package name the file will be created in the default package of the selected source folder.</p>
-<p>While you type you get code completion support. Whenever you type a dot the wizard will automatically show you a completion popup for available package names. In case you don&#8217;t want to wait until the wizard opens the completion popup for you, you can explicitly ask for code completion by pressing <code class="docutils literal"><span class="pre">Ctrl+Space</span></code>.</p>
+<p>While you type you get code completion support. Whenever you type a dot the wizard will automatically show you a completion popup for available package names. In case you don&#8217;t want to wait until the wizard opens the completion popup for you, you can explicitly ask for code completion by pressing <tt class="docutils literal"><span class="pre">Ctrl+Space</span></tt>.</p>
 <img alt="../../../_images/code-completion-support1.png" src="../../../_images/code-completion-support1.png" />
-<p>The wizard is made to be controlled easily with your keyboard, which means that you can reach all input fields without touching the mouse. You can rotate through the list of file kinds by pressing the up or down keys of your keyboard while the file name field is focused and with <code class="docutils literal"><span class="pre">Ctrl+Tab</span></code> you can move the focus to the source folder field. By pressing <code class="docutils literal"><span class="pre">Enter</span></code> when the source folder field is selected you get a dialog that shows you all available projects and their source folders. After you selected one of them, the focus is automatically moved back to the file name field.</p>
+<p>The wizard is made to be controlled easily with your keyboard, which means that you can reach all input fields without touching the mouse. You can rotate through the list of file kinds by pressing the up or down keys of your keyboard while the file name field is focused and with <tt class="docutils literal"><span class="pre">Ctrl+Tab</span></tt> you can move the focus to the source folder field. By pressing <tt class="docutils literal"><span class="pre">Enter</span></tt> when the source folder field is selected you get a dialog that shows you all available projects and their source folders. After you selected one of them, the focus is automatically moved back to the file name field.</p>
 </div>
 <div class="section" id="configurable-templates">
 <h2>Configurable templates</h2>
-<p>Once you press <em>Finish</em> on the wizard, it will create a file and insert content based on a template. For example if you select the kind <em>Scala Trait</em> and enter the name <code class="docutils literal"><span class="pre">a.test.pkg.TestClass</span></code> the following file content will be created by default:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">package</span> <span class="n">a</span><span class="o">.</span><span class="n">test</span><span class="o">.</span><span class="n">pkg</span>
+<p>Once you press <em>Finish</em> on the wizard, it will create a file and insert content based on a template. For example if you select the kind <em>Scala Trait</em> and enter the name <tt class="docutils literal"><span class="pre">a.test.pkg.TestClass</span></tt> the following file content will be created by default:</p>
+<div class="highlight-python"><pre>package a.test.pkg
 
-<span class="o">/**</span>
- <span class="o">*</span> <span class="nd">@author</span> <span class="n">nickname</span>
- <span class="o">*/</span>
-<span class="n">trait</span> <span class="n">TestClass</span> <span class="p">{</span>
-  <span class="o">^</span>
-<span class="p">}</span>
-</pre></div>
+/**
+ * @author nickname
+ */
+trait TestClass {
+  ^
+}</pre>
 </div>
-<p>where <code class="docutils literal"><span class="pre">^</span></code> denotes the position of the cursor. If you don&#8217;t like the automatically created content you can easily change it by navigating to <code class="docutils literal"><span class="pre">Window</span> <span class="pre">→</span> <span class="pre">Preferences</span> <span class="pre">→</span> <span class="pre">Scala</span> <span class="pre">→</span> <span class="pre">Editor</span> <span class="pre">→</span> <span class="pre">Templates</span></code> and search for template names that start with <code class="docutils literal"><span class="pre">wizard_</span></code>. The <em>Scala Trait</em> type for example will choose the <code class="docutils literal"><span class="pre">wizard_trait</span></code> template.</p>
-<a class="reference internal image-reference" href="../../../_images/template-preference-page1.png"><img alt="../../../_images/template-preference-page1.png" src="../../../_images/template-preference-page1.png" style="width: 100%;" /></a>
+<p>where <tt class="docutils literal"><span class="pre">^</span></tt> denotes the position of the cursor. If you don&#8217;t like the automatically created content you can easily change it by navigating to <tt class="docutils literal"><span class="pre">Window</span> <span class="pre">→</span> <span class="pre">Preferences</span> <span class="pre">→</span> <span class="pre">Scala</span> <span class="pre">→</span> <span class="pre">Editor</span> <span class="pre">→</span> <span class="pre">Templates</span></tt> and search for template names that start with <tt class="docutils literal"><span class="pre">wizard_</span></tt>. The <em>Scala Trait</em> type for example will choose the <tt class="docutils literal"><span class="pre">wizard_trait</span></tt> template.</p>
+<img alt="../../../_images/template-preference-page1.png" src="../../../_images/template-preference-page1.png" style="width: 100%;" />
 <p>All the other features of the old wizards like the automatic adding of a super type are no longer supported. The design goal of the new wizard is to send users as fast as possible back to the editor where they can do whatever they want.</p>
 </div>
 <div class="section" id="developer-support">

@@ -1,3 +1,4 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
@@ -6,7 +7,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Refactoring updated &#8212; Scala IDE 0.1-SNAPSHOT documentation</title>
+    <title>Refactoring updated &mdash; Scala IDE 0.1-SNAPSHOT documentation</title>
     
     <link rel="stylesheet" href="../../../../_static/resources/stylesheets/base.css" type="text/css" />
     <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
@@ -22,8 +23,7 @@
         VERSION:     '0.1-SNAPSHOT',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
+        HAS_SOURCE:  true
       };
     </script>
     <script type="text/javascript" src="../../../../_static/jquery.js"></script>
@@ -40,12 +40,12 @@
     <script type="text/javascript" src="../../../../_static/resources/javascript/bootstrap-dropdown-app.js"></script>
     <script type="text/javascript" src="../../../../_static/resources/javascript/contentsFix.js"></script>
     <link rel="shortcut icon" href="../../../../_static/favicon.ico"/>
-    <link rel="index" title="Index" href="../../../../genindex.html" />
-    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="top" title="Scala IDE 0.1-SNAPSHOT documentation" href="../../../../index.html" />
+    <link rel="up" title="Typing and Viewing" href="../index.html" />
     <link rel="next" title="Semantic Highlighting new" href="../semantic-highlighting/index.html" />
     <link rel="prev" title="Quick Fixes" href="../quick-fixes.html" /> 
   </head>
-  <body role="document">
+  <body>
 <div class="top-bar">
   <div class="top-bar-inner">
     <div class="container">
@@ -119,7 +119,7 @@
 <h2>Organizing Imports</h2>
 <p>The <a class="reference external" href="http://scala-refactoring.org/organize-imports/">Organize Imports</a> action allows to do some automated cleanup on the list of imports. It removes the unused or unneeded imports and organizes the remainder.</p>
 <a class="reference external image-reference" href="../_images/feature-refactoring-organize-import-01.png"><img alt="../../../../_images/feature-refactoring-organize-import-011.png" src="../../../../_images/feature-refactoring-organize-import-011.png" style="width: 100%;" /></a>
-<p>This action can be configure in the <code class="docutils literal"><span class="pre">Scala</span> <span class="pre">→</span> <span class="pre">Organize</span> <span class="pre">Import</span></code> preference page.</p>
+<p>This action can be configure in the <tt class="docutils literal"><span class="pre">Scala</span> <span class="pre">→</span> <span class="pre">Organize</span> <span class="pre">Import</span></tt> preference page.</p>
 </div>
 <div class="section" id="renaming">
 <h2>Renaming</h2>
@@ -187,20 +187,20 @@ so please <a class="reference external" href="http://scala-ide-portfolio.assembl
 <img alt="../../../../_images/merge-dialog.png" src="../../../../_images/merge-dialog.png" />
 <p>Having merged the right parameter lists we get back our original method signature from the beginning, before we applied the <em>Split parameter lists</em> refactoring:</p>
 <img alt="../../../../_images/merge-preview.png" src="../../../../_images/merge-preview.png" />
-<p>Note that there are situations where parameter lists can&#8217;t be merged because they are partially applied. As an example, we can&#8217;t merge the remaining two parameter lists of the method <code class="docutils literal"><span class="pre">reorder</span></code> because of the partial application in the method <code class="docutils literal"><span class="pre">partial</span></code>:</p>
+<p>Note that there are situations where parameter lists can&#8217;t be merged because they are partially applied. As an example, we can&#8217;t merge the remaining two parameter lists of the method <tt class="docutils literal"><span class="pre">reorder</span></tt> because of the partial application in the method <tt class="docutils literal"><span class="pre">partial</span></tt>:</p>
 <img alt="../../../../_images/merge-not-possible.png" src="../../../../_images/merge-not-possible.png" />
 </div>
 </div>
 <div class="section" id="extract-trait-new">
 <h2>Extract trait <span class="raw-html"><span class="label info">new</span></span></h2>
 <p><em>Extract trait</em> moves selected members from a class/object/trait to a new trait. If the new trait accesses non-private members of the original class/object/trait, a self type annotation is added to the new trait.</p>
-<p>We start with a simple <code class="docutils literal"><span class="pre">Calculator</span></code> class:</p>
+<p>We start with a simple <tt class="docutils literal"><span class="pre">Calculator</span></tt> class:</p>
 <img alt="../../../../_images/extract-trait-before.png" src="../../../../_images/extract-trait-before.png" />
-<p>We select the <code class="docutils literal"><span class="pre">mul</span></code> method for extraction in the dialog and give the new trait the name <code class="docutils literal"><span class="pre">Multiplicator</span></code>:</p>
+<p>We select the <tt class="docutils literal"><span class="pre">mul</span></tt> method for extraction in the dialog and give the new trait the name <tt class="docutils literal"><span class="pre">Multiplicator</span></tt>:</p>
 <img alt="../../../../_images/extract-trait-dialog.png" src="../../../../_images/extract-trait-dialog.png" />
-<p>The class <code class="docutils literal"><span class="pre">Calculator</span></code> is changed accordingly:</p>
+<p>The class <tt class="docutils literal"><span class="pre">Calculator</span></tt> is changed accordingly:</p>
 <img alt="../../../../_images/extract-trait-preview.png" src="../../../../_images/extract-trait-preview.png" />
-<p>The new trait <code class="docutils literal"><span class="pre">Multiplicator</span></code> uses the <code class="docutils literal"><span class="pre">add</span></code> method from <code class="docutils literal"><span class="pre">Calculator</span></code>, so a self type annotation needs to be added to <code class="docutils literal"><span class="pre">Multiplicator</span></code>:</p>
+<p>The new trait <tt class="docutils literal"><span class="pre">Multiplicator</span></tt> uses the <tt class="docutils literal"><span class="pre">add</span></tt> method from <tt class="docutils literal"><span class="pre">Calculator</span></tt>, so a self type annotation needs to be added to <tt class="docutils literal"><span class="pre">Multiplicator</span></tt>:</p>
 <img alt="../../../../_images/extract-trait-extracted.png" src="../../../../_images/extract-trait-extracted.png" />
 <p>Import statements are also handled: In the original class/object/trait all import statements that are not used after the extraction of the trait are removed, and in the extracted trait all needed import statements are added.</p>
 <p><em>Limitations</em></p>
@@ -208,10 +208,10 @@ so please <a class="reference external" href="http://scala-ide-portfolio.assembl
 </div>
 <div class="section" id="move-constructor-to-companion-object-new">
 <h2>Move constructor to companion object <span class="raw-html"><span class="label info">new</span></span></h2>
-<p>You want to create a factory method such that the constructor of your class is not accessed directly, but tracking down and redirecting all constructor calls is cumbersome? Then <em>Move constructor to companion</em> object is here to help! It creates an <code class="docutils literal"><span class="pre">apply</span></code> method in the companion object (which is generated as well if necessary) that calls the constructor. All constructor calls get redirected to the new factory method.</p>
-<p>As a simple example we start with a <code class="docutils literal"><span class="pre">Target</span></code> class and a class <code class="docutils literal"><span class="pre">User</span></code> that calls <code class="docutils literal"><span class="pre">Target</span></code>&#8216;s constructor:</p>
+<p>You want to create a factory method such that the constructor of your class is not accessed directly, but tracking down and redirecting all constructor calls is cumbersome? Then <em>Move constructor to companion</em> object is here to help! It creates an <tt class="docutils literal"><span class="pre">apply</span></tt> method in the companion object (which is generated as well if necessary) that calls the constructor. All constructor calls get redirected to the new factory method.</p>
+<p>As a simple example we start with a <tt class="docutils literal"><span class="pre">Target</span></tt> class and a class <tt class="docutils literal"><span class="pre">User</span></tt> that calls <tt class="docutils literal"><span class="pre">Target</span></tt>&#8216;s constructor:</p>
 <img alt="../../../../_images/move-constructor-before.png" src="../../../../_images/move-constructor-before.png" />
-<p>Selecting the <code class="docutils literal"><span class="pre">Target</span></code> class and applying the <em>Move constructor to companion object</em> refactoring creates a companion object and an <code class="docutils literal"><span class="pre">apply</span></code> method that wraps the constructor call. The constructor call in the <code class="docutils literal"><span class="pre">User</span></code> class is redirected to the new factory method.</p>
+<p>Selecting the <tt class="docutils literal"><span class="pre">Target</span></tt> class and applying the <em>Move constructor to companion object</em> refactoring creates a companion object and an <tt class="docutils literal"><span class="pre">apply</span></tt> method that wraps the constructor call. The constructor call in the <tt class="docutils literal"><span class="pre">User</span></tt> class is redirected to the new factory method.</p>
 <img alt="../../../../_images/move-constructor-preview.png" src="../../../../_images/move-constructor-preview.png" />
 <p><em>Limitations</em></p>
 <p>Currently this is only supported for the primary constructor (thus no refactoring dialog is needed), moving auxiliary constructors is not (yet) possible.</p>

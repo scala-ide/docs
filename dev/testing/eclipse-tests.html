@@ -1,3 +1,4 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
@@ -6,7 +7,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Testing Eclipse integration &#8212; Scala IDE 0.1-SNAPSHOT documentation</title>
+    <title>Testing Eclipse integration &mdash; Scala IDE 0.1-SNAPSHOT documentation</title>
     
     <link rel="stylesheet" href="../../_static/resources/stylesheets/base.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
@@ -22,8 +23,7 @@
         VERSION:     '0.1-SNAPSHOT',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
+        HAS_SOURCE:  true
       };
     </script>
     <script type="text/javascript" src="../../_static/jquery.js"></script>
@@ -40,12 +40,12 @@
     <script type="text/javascript" src="../../_static/resources/javascript/bootstrap-dropdown-app.js"></script>
     <script type="text/javascript" src="../../_static/resources/javascript/contentsFix.js"></script>
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
-    <link rel="index" title="Index" href="../../genindex.html" />
-    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="top" title="Scala IDE 0.1-SNAPSHOT documentation" href="../../index.html" />
+    <link rel="up" title="Regression Test Suite" href="testing.html" />
     <link rel="next" title="Testing the Scala Presentation Compiler in isolation" href="presentation-compiler-tests.html" />
     <link rel="prev" title="Regression Test Suite" href="testing.html" /> 
   </head>
-  <body role="document">
+  <body>
 <div class="top-bar">
   <div class="top-bar-inner">
     <div class="container">
@@ -94,18 +94,18 @@
       <div class="span11 main-content">
         <div class="section" id="testing-eclipse-integration">
 <h1>Testing Eclipse integration</h1>
-<p>All tests are grouped under the <code class="docutils literal"><span class="pre">org.scala-ide.sdt.core.tests</span></code> project, following standard
+<p>All tests are grouped under the <tt class="docutils literal"><span class="pre">org.scala-ide.sdt.core.tests</span></tt> project, following standard
 practice for Eclipse plug-in tests (in OSGi terms, this module is a ‘bundle fragment’ of
-<code class="docutils literal"><span class="pre">org.scala-ide.sdt.core</span></code>, but this means only that it has access to all packages defined by
-<code class="docutils literal"><span class="pre">org.scala-ide.sdt.core</span></code>).</p>
+<tt class="docutils literal"><span class="pre">org.scala-ide.sdt.core</span></tt>, but this means only that it has access to all packages defined by
+<tt class="docutils literal"><span class="pre">org.scala-ide.sdt.core</span></tt>).</p>
 <p>One can run tests in two ways:</p>
 <ul class="simple">
 <li>using the Eclipse JUnit Plugin Test runner (with Equinox weaving, of course)</li>
 <li>using maven/tycho</li>
 </ul>
-<p>Both ways launch a new Eclipse instance, installs the <code class="docutils literal"><span class="pre">sdt.core</span></code> and <code class="docutils literal"><span class="pre">sdt.core.tests</span></code> bundles in
+<p>Both ways launch a new Eclipse instance, installs the <tt class="docutils literal"><span class="pre">sdt.core</span></tt> and <tt class="docutils literal"><span class="pre">sdt.core.tests</span></tt> bundles in
 the target instance, creates a clean (empty) workspace, and launches the test runner. Of course,
-<code class="docutils literal"><span class="pre">sdt.core</span></code> can not run by itself: it needs a lot of other bundles, such as the eclipse core
+<tt class="docutils literal"><span class="pre">sdt.core</span></tt> can not run by itself: it needs a lot of other bundles, such as the eclipse core
 bundles and the JDT bundles. Depending on the way the test is launched, these dependencies are
 provided differently:</p>
 <ul class="simple">
@@ -115,18 +115,18 @@ provided differently:</p>
 <div class="section" id="individual-tests">
 <h2>Individual tests</h2>
 <p>An integration test is usually set up by copying an existing project from
-<code class="docutils literal"><span class="pre">org.scala-ide.sdt.core.tests/test-workspace</span></code> to the target (clean) workspace, then running a
-number of <code class="docutils literal"><span class="pre">&#64;Test</span></code> methods on it. The setup step is taken care of by subclassing
+<tt class="docutils literal"><span class="pre">org.scala-ide.sdt.core.tests/test-workspace</span></tt> to the target (clean) workspace, then running a
+number of <tt class="docutils literal"><span class="pre">&#64;Test</span></tt> methods on it. The setup step is taken care of by subclassing
 <a class="reference external" href="https://github.com/scala-ide/scala-ide/blob/master/org.scala-ide.sdt.core.tests/src/scala/tools/eclipse/testsetup/TestProjectSetup.scala">TestProjectSetup</a>,
 usually with an object. For example, the <a class="reference external" href="https://github.com/scala-ide/scala-ide/blob/master/org.scala-ide.sdt.core.tests/src/scala/tools/eclipse/structurebuilder/StructureBuilderTest.scala">StructureBuilderTest</a>
 declares</p>
-<div class="highlight-scala"><div class="highlight"><pre><span></span><span class="k">object</span> <span class="nc">StructureBuilderTest</span> <span class="k">extends</span> <span class="n">testsetup</span><span class="o">.</span><span class="nc">TestProjectSetup</span><span class="o">(</span><span class="s">&quot;simple-structure-builder&quot;</span><span class="o">)</span>
+<div class="highlight-scala"><div class="highlight"><pre><span class="k">object</span> <span class="nc">StructureBuilderTest</span> <span class="k">extends</span> <span class="n">testsetup</span><span class="o">.</span><span class="nc">TestProjectSetup</span><span class="o">(</span><span class="s">&quot;simple-structure-builder&quot;</span><span class="o">)</span>
 </pre></div>
 </div>
 <p>This gives a number of convenience handles that make it easy to retrieve elements of interest later:</p>
 <ul class="simple">
-<li><code class="docutils literal"><span class="pre">project</span></code> it is the (<a class="reference external" href="https://github.com/scala-ide/scala-ide/blob/master/org.scala-ide.sdt.core/src/scala/tools/eclipse/ScalaProject.scala">ScalaProject</a>) associated to the copied project.</li>
-<li><code class="docutils literal"><span class="pre">srcPackageRoot</span></code> is the <a class="reference external" href="http://publib.boulder.ibm.com/infocenter/iadthelp/v6r0/index.jsp?topic=/org.eclipse.jdt.doc.isv/reference/api/org/eclipse/jdt/core/IPackageFragmentRoot.html">IPackageFragmentRoot</a> instance of the <em>src</em> folder.</li>
+<li><tt class="docutils literal"><span class="pre">project</span></tt> it is the (<a class="reference external" href="https://github.com/scala-ide/scala-ide/blob/master/org.scala-ide.sdt.core/src/scala/tools/eclipse/ScalaProject.scala">ScalaProject</a>) associated to the copied project.</li>
+<li><tt class="docutils literal"><span class="pre">srcPackageRoot</span></tt> is the <a class="reference external" href="http://publib.boulder.ibm.com/infocenter/iadthelp/v6r0/index.jsp?topic=/org.eclipse.jdt.doc.isv/reference/api/org/eclipse/jdt/core/IPackageFragmentRoot.html">IPackageFragmentRoot</a> instance of the <em>src</em> folder.</li>
 </ul>
 <p>You can use compilationUnit with a full path to retrieve the <a class="reference external" href="http://publib.boulder.ibm.com/infocenter/iadthelp/v6r0/index.jsp?topic=/org.eclipse.jdt.doc.isv/reference/api/org/eclipse/jdt/core/ICompilationUnit.html">ICompilationUnit</a>
 of the corresponding file.</p>
@@ -134,7 +134,7 @@ of the corresponding file.</p>
 exercise the JDT and Scala integration layers. For instance, to test that annotations are correctly
 reported by the <a class="reference external" href="http://github.com/scala-ide/scala-ide/blob/master/org.scala-ide.sdt.core/src/scala/tools/eclipse/javaelements/ScalaStructureBuilder.scala">ScalaStructureBuilder</a>,
 one would write the following method:</p>
-<div class="highlight-scala"><div class="highlight"><pre><span></span><span class="nd">@Test</span> <span class="k">def</span> <span class="n">testAnnotations</span><span class="o">()</span> <span class="o">{</span>
+<div class="highlight-scala"><div class="highlight"><pre><span class="nd">@Test</span> <span class="k">def</span> <span class="n">testAnnotations</span><span class="o">()</span> <span class="o">{</span>
   <span class="k">val</span> <span class="n">annotsPkg</span> <span class="k">=</span> <span class="n">srcPackageRoot</span><span class="o">.</span><span class="n">getPackageFragment</span><span class="o">(</span><span class="s">&quot;annots&quot;</span><span class="o">);</span>
   <span class="n">assertNotNull</span><span class="o">(</span><span class="n">annotsPkg</span><span class="o">)</span>
   <span class="k">val</span> <span class="n">cu</span> <span class="k">=</span> <span class="n">annotsPkg</span><span class="o">.</span><span class="n">getCompilationUnit</span><span class="o">(</span><span class="s">&quot;ScalaTestSuite.scala&quot;</span><span class="o">)</span>
@@ -151,9 +151,9 @@ one would write the following method:</p>
 <span class="o">}</span>
 </pre></div>
 </div>
-<p>This assumes the project has a file called <code class="docutils literal"><span class="pre">ScalaTestSuite.scala</span></code>, under <code class="docutils literal"><span class="pre">src/annots</span></code>. Note the
+<p>This assumes the project has a file called <tt class="docutils literal"><span class="pre">ScalaTestSuite.scala</span></tt>, under <tt class="docutils literal"><span class="pre">src/annots</span></tt>. Note the
 use of the JDT API again. Equivalently, one could use the convenience method
-<code class="docutils literal"><span class="pre">compilationUnit(&quot;annots/ScalaTestSuite.scala&quot;)</span></code>.</p>
+<tt class="docutils literal"><span class="pre">compilationUnit(&quot;annots/ScalaTestSuite.scala&quot;)</span></tt>.</p>
 </div>
 <div class="section" id="resolving-positions">
 <h2>Resolving positions</h2>
@@ -166,10 +166,10 @@ corresponding offset.</p>
 </div>
 <div class="section" id="markers">
 <h2>Markers</h2>
-<p>A marker is any string, but we use block comments with a character in between: <code class="docutils literal"><span class="pre">/*!*/</span></code>. Such a
+<p>A marker is any string, but we use block comments with a character in between: <tt class="docutils literal"><span class="pre">/*!*/</span></tt>. Such a
 marker has the advantage that it keeps the source compilable. Have a look at the hyperlink test
 project:</p>
-<div class="highlight-scala"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">SimpleHyperlinking</span> <span class="o">{</span>
+<div class="highlight-scala"><div class="highlight"><pre><span class="k">class</span> <span class="nc">SimpleHyperlinking</span> <span class="o">{</span>
   <span class="k">type</span> <span class="kt">Tpe</span><span class="o">[</span><span class="kt">T</span><span class="o">]</span> <span class="k">=</span> <span class="nc">List</span><span class="cm">/*^*/</span><span class="o">[</span><span class="kt">T</span><span class="o">]</span>
 
   <span class="k">def</span> <span class="n">foo</span><span class="o">(</span><span class="n">xs</span><span class="k">:</span> <span class="kt">Tpe/*^*/</span><span class="o">[</span><span class="kt">Int</span><span class="o">])</span> <span class="k">=</span> <span class="o">{</span>
@@ -183,7 +183,7 @@ project:</p>
 <p>Each marker will be used by our test method as a position to ask for hyperlinking. In the test
 method, we retrieve these positions (using <a class="reference external" href="https://github.com/scala-ide/scala-ide/blob/master/org.scala-ide.sdt.core.tests/src/scala/tools/eclipse/testsetup/SDTTestUtils.scala">SDTTestUtils</a>)
 and pass them to the hyperlink detector:</p>
-<div class="highlight-scala"><div class="highlight"><pre><span></span><span class="k">val</span> <span class="n">contents</span> <span class="k">=</span> <span class="n">unit</span><span class="o">.</span><span class="n">getContents</span>
+<div class="highlight-scala"><div class="highlight"><pre><span class="k">val</span> <span class="n">contents</span> <span class="k">=</span> <span class="n">unit</span><span class="o">.</span><span class="n">getContents</span>
 <span class="k">val</span> <span class="n">positions</span> <span class="k">=</span> <span class="nc">SDTTestUtils</span><span class="o">.</span><span class="n">positionsOf</span><span class="o">(</span><span class="n">contents</span><span class="o">,</span> <span class="s">&quot;/*^*/&quot;</span><span class="o">)</span>
 <span class="c1">// ..</span>
 <span class="k">val</span> <span class="n">detector</span> <span class="k">=</span> <span class="k">new</span> <span class="nc">ScalaHyperlinkDetector</span>
@@ -203,7 +203,7 @@ and pass them to the hyperlink detector:</p>
 functionality: each word that is highlighted may appear a different number of times in the source.
 One can associate a number with a marker by using <a class="reference external" href="https://github.com/scala-ide/scala-ide/blob/master/org.scala-ide.sdt.core.tests/src/scala/tools/eclipse/testsetup/SDTTestUtils.scala">SDTTestUtils.markersOf</a>.</p>
 <p>Consider this example:</p>
-<div class="highlight-scala"><div class="highlight"><pre><span></span>class DummyOccurrences(param: Int, func/*&lt;2*/: (Int/*&lt;5*/, Int) =&gt; Int) {
+<div class="highlight-scala"><pre>class DummyOccurrences(param: Int, func/*&lt;2*/: (Int/*&lt;5*/, Int) =&gt; Int) {
   type T/*&lt;2*/ = Int
 
   def sum(xs: List[T]) = {
@@ -212,20 +212,19 @@ One can associate a number with a marker by using <a class="reference external" 
       (param /: xs)(func)
     }
   }
-}
-</pre></div>
+}</pre>
 </div>
 <p>In this test file, we expect that <cite>func</cite> will be highlighted 2 times, <cite>Int</cite> 5 times, and so on. The
 test method will use the parsed integer to assert the correct number of matches is reported by the
 <a class="reference external" href="https://github.com/scala-ide/scala-ide/blob/master/org.scala-ide.sdt.core/src/scala/tools/eclipse/markoccurrences/ScalaOccurrencesFinder.scala">ScalaOccurrencesFinder</a>.</p>
-<div class="highlight-scala"><div class="highlight"><pre><span></span><span class="k">val</span> <span class="n">contents</span> <span class="k">=</span> <span class="n">unit</span><span class="o">.</span><span class="n">getContents</span>
+<div class="highlight-scala"><div class="highlight"><pre><span class="k">val</span> <span class="n">contents</span> <span class="k">=</span> <span class="n">unit</span><span class="o">.</span><span class="n">getContents</span>
 <span class="k">val</span> <span class="n">positions</span> <span class="k">=</span> <span class="nc">SDTTestUtils</span><span class="o">.</span><span class="n">markersOf</span><span class="o">(</span><span class="n">contents</span><span class="o">,</span> <span class="s">&quot;&lt;&quot;</span><span class="o">)</span>
 
 <span class="n">println</span><span class="o">(</span><span class="s">&quot;checking %d positions&quot;</span><span class="o">.</span><span class="n">format</span><span class="o">(</span><span class="n">positions</span><span class="o">.</span><span class="n">size</span><span class="o">))</span>
 </pre></div>
 </div>
 <p>and the actual test:</p>
-<div class="highlight-scala"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="o">((</span><span class="n">pos</span><span class="o">,</span> <span class="n">count</span><span class="o">)</span> <span class="k">&lt;-</span> <span class="n">positions</span><span class="o">)</span> <span class="o">{</span>
+<div class="highlight-scala"><div class="highlight"><pre><span class="k">for</span> <span class="o">((</span><span class="n">pos</span><span class="o">,</span> <span class="n">count</span><span class="o">)</span> <span class="k">&lt;-</span> <span class="n">positions</span><span class="o">)</span> <span class="o">{</span>
   <span class="n">println</span><span class="o">(</span><span class="s">&quot;looking at position %d for %d occurrences&quot;</span><span class="o">.</span><span class="n">format</span><span class="o">(</span><span class="n">pos</span><span class="o">,</span> <span class="n">count</span><span class="o">))</span>
   <span class="k">val</span> <span class="n">region</span> <span class="k">=</span> <span class="nc">ScalaWordFinder</span><span class="o">.</span><span class="n">findWord</span><span class="o">(</span><span class="n">contents</span><span class="o">,</span> <span class="n">pos</span> <span class="o">-</span> <span class="mi">1</span><span class="o">)</span>
   <span class="n">println</span><span class="o">(</span><span class="s">&quot;using word region: &quot;</span> <span class="o">+</span> <span class="n">region</span><span class="o">)</span>
@@ -239,15 +238,15 @@ test method will use the parsed integer to assert the correct number of matches 
 </div>
 <div class="section" id="running-tests-within-eclipse">
 <h2>Running tests within Eclipse</h2>
-<p>To run the tests inside Eclipse you need to <a class="reference internal" href="../setup/setup.html#setup-install-equinox-weaving-launcher"><span class="std std-ref">install the Equinox Weaving Launcher</span></a> plug-in for Eclipse.
+<p>To run the tests inside Eclipse you need to <a class="reference internal" href="../setup/setup.html#setup-install-equinox-weaving-launcher"><em>install the Equinox Weaving Launcher</em></a> plug-in for Eclipse.
 Once you have installed the plug-in, running a test in headless mode boils down to the following
 steps:</p>
 <ul class="simple">
 <li>Open Run Configurations and double click on JUnit Plug-in Test with Equinox Weaving (which should have appeared after installing the above mentioned plug-in).</li>
 <li>In the Test tab, fill in the information about the test you want to run.</li>
 <li>In the Main tab, under Program to Run, check Run an application and select <em>[No Application] – Headless Mode</em>.</li>
-<li>In the Arguments tab, make sure to pass <code class="docutils literal"><span class="pre">-Dsdtcore.headless</span></code> in the VM arguments.</li>
-<li>In the Plug-ins tab, make sure that bundle <code class="docutils literal"><span class="pre">org.scala-ide.sdt.core.tests</span></code> is selected (or the test wont be able to find the test class file)</li>
+<li>In the Arguments tab, make sure to pass <tt class="docutils literal"><span class="pre">-Dsdtcore.headless</span></tt> in the VM arguments.</li>
+<li>In the Plug-ins tab, make sure that bundle <tt class="docutils literal"><span class="pre">org.scala-ide.sdt.core.tests</span></tt> is selected (or the test wont be able to find the test class file)</li>
 </ul>
 <p>At this point you should be good to run the test.</p>
 </div>

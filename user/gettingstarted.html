@@ -1,3 +1,4 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
@@ -6,7 +7,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Getting Started &#8212; Scala IDE 0.1-SNAPSHOT documentation</title>
+    <title>Getting Started &mdash; Scala IDE 0.1-SNAPSHOT documentation</title>
     
     <link rel="stylesheet" href="../_static/resources/stylesheets/base.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -22,8 +23,7 @@
         VERSION:     '0.1-SNAPSHOT',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
+        HAS_SOURCE:  true
       };
     </script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
@@ -40,12 +40,11 @@
     <script type="text/javascript" src="../_static/resources/javascript/bootstrap-dropdown-app.js"></script>
     <script type="text/javascript" src="../_static/resources/javascript/contentsFix.js"></script>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
-    <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
+    <link rel="top" title="Scala IDE 0.1-SNAPSHOT documentation" href="../index.html" />
     <link rel="next" title="Image placeholder" href="../image_placeholder.html" />
     <link rel="prev" title="Frequently Asked Questions" href="faq.html" /> 
   </head>
-  <body role="document">
+  <body>
 <div class="top-bar">
   <div class="top-bar-inner">
     <div class="container">
@@ -113,7 +112,7 @@
 <div class="section" id="installation">
 <h2>Installation</h2>
 <p>Scala IDE for Eclipse is best installed (and updated) directly from within Eclipse.</p>
-<p>This is done by using <code class="docutils literal"><span class="pre">Help</span> <span class="pre">→</span> <span class="pre">Install</span> <span class="pre">New</span> <span class="pre">Software...</span></code>, add the <code class="docutils literal"><span class="pre">Add...</span></code> button in the dialog.</p>
+<p>This is done by using <tt class="docutils literal"><span class="pre">Help</span> <span class="pre">→</span> <span class="pre">Install</span> <span class="pre">New</span> <span class="pre">Software...</span></tt>, add the <tt class="docutils literal"><span class="pre">Add...</span></tt> button in the dialog.</p>
 <p>Choose a name for the update site (<cite>Scala IDE</cite> is an obvious choice). Then read the next section to select which version you will install.</p>
 <div class="section" id="choosing-what-version-to-install">
 <h3>Choosing what version to install</h3>
@@ -127,12 +126,12 @@
 </div>
 <div class="section" id="finishing-installation">
 <h3>Finishing installation</h3>
-<p>Copy the URL as location and hit <code class="docutils literal"><span class="pre">OK</span></code> to validate.</p>
-<p>Select <code class="docutils literal"><span class="pre">Scala</span> <span class="pre">IDE</span> <span class="pre">for</span> <span class="pre">Eclipse</span></code> from the list of available features.</p>
-<p>If you want to install any additional plug-ins (this step is optional), expand the <code class="docutils literal"><span class="pre">Scala</span> <span class="pre">IDE</span> <span class="pre">plugins</span></code> category and select the plug-ins that fits you best.</p>
-<p>Go through the next screens to validate the list of plug-ins to install, the <a class="reference internal" href="../license.html"><span class="doc">License</span></a> and start the installation.</p>
+<p>Copy the URL as location and hit <tt class="docutils literal"><span class="pre">OK</span></tt> to validate.</p>
+<p>Select <tt class="docutils literal"><span class="pre">Scala</span> <span class="pre">IDE</span> <span class="pre">for</span> <span class="pre">Eclipse</span></tt> from the list of available features.</p>
+<p>If you want to install any additional plug-ins (this step is optional), expand the <tt class="docutils literal"><span class="pre">Scala</span> <span class="pre">IDE</span> <span class="pre">plugins</span></tt> category and select the plug-ins that fits you best.</p>
+<p>Go through the next screens to validate the list of plug-ins to install, the <a class="reference internal" href="../license.html"><em>License</em></a> and start the installation.</p>
 <p>After having restarted Eclipse, Scala IDE is installed.</p>
-<p>For a more fine-tuned setup, check the <a class="reference internal" href="../current-user-doc/advancedsetup/index.html"><span class="doc">Advanced Setup</span></a> page.</p>
+<p>For a more fine-tuned setup, check the <a class="reference internal" href="../current-user-doc/advancedsetup/index.html"><em>Advanced Setup</em></a> page.</p>
 </div>
 </div>
 <div class="section" id="using-scala-ide-with-an-existing-project">
@@ -150,7 +149,7 @@ Each package should appear in its own directory with the same name. Eclipse expe
 <li>If you are using <strong>sbt 0.7.x</strong>, use <a class="reference external" href="https://github.com/musk/SbtEclipsify/tree/0.8.0">eclipsify</a>. Follow this <a class="reference external" href="https://github.com/musk/SbtEclipsify/tree/0.8.0">instructions</a> to install the plug-in. You may want to check out the update-sources plug-in, which can download attached sources for your dependencies. This allows you to navigate through the libraries source in the IDE.</li>
 <li>If you are using <strong>sbt 0.12.x</strong>, use <a class="reference external" href="https://github.com/typesafehub/sbteclipse">sbteclipse</a>. Follow the instructions on the project page to install and use the plug-in to generate the project definition. sbteclipse can download attached sources natively, so you do not need the update-sources plug-in.</li>
 </ul>
-<p>Once you have installed and generated the Eclipse project files using one of the above plug-ins, start Eclipse. Use <code class="docutils literal"><span class="pre">File</span> <span class="pre">→</span> <span class="pre">Import</span> <span class="pre">→</span> <span class="pre">General/Existing</span> <span class="pre">Project</span> <span class="pre">into</span> <span class="pre">Workspace</span></code>. Select the directory containing your project as <code class="docutils literal"><span class="pre">root</span> <span class="pre">directory</span></code>, select the project and hit <code class="docutils literal"><span class="pre">Finish</span></code>. And <em>Voila</em>.</p>
+<p>Once you have installed and generated the Eclipse project files using one of the above plug-ins, start Eclipse. Use <tt class="docutils literal"><span class="pre">File</span> <span class="pre">→</span> <span class="pre">Import</span> <span class="pre">→</span> <span class="pre">General/Existing</span> <span class="pre">Project</span> <span class="pre">into</span> <span class="pre">Workspace</span></tt>. Select the directory containing your project as <tt class="docutils literal"><span class="pre">root</span> <span class="pre">directory</span></tt>, select the project and hit <tt class="docutils literal"><span class="pre">Finish</span></tt>. And <em>Voila</em>.</p>
 <div class="admonition important">
 <p class="first admonition-title">Important</p>
 <p class="last">sbt manages the dependency to scala-library.jar. Make sure the version of Scala you use in your sbt project matches the version of Scala installed in Eclipse.</p>
@@ -160,12 +159,12 @@ Each package should appear in its own directory with the same name. Eclipse expe
 <h3>Import a Maven project</h3>
 <p><a class="reference external" href="http://maven.apache.org/">maven</a> support on the Eclipse platform is provided by the <a class="reference external" href="http://www.eclipse.org/m2e/">m2eclipse</a> plug-in. Because of some specificities of Scala, <a class="reference external" href="https://github.com/sonatype/m2eclipse-scala">m2eclipse-scala</a> has been created as an extension to m2eclipse to provide better Scala support.</p>
 <p>To install the latest version of m2eclipse-scala, use the update site at this location: <a class="reference external" href="http://alchim31.free.fr/m2e-scala/update-site/">http://alchim31.free.fr/m2e-scala/update-site/</a>.</p>
-<p>After installation, maven projects can be imported using <code class="docutils literal"><span class="pre">File</span> <span class="pre">→</span> <span class="pre">Import</span> <span class="pre">→</span> <span class="pre">Maven</span> <span class="pre">→</span> <span class="pre">Existing</span> <span class="pre">Maven</span> <span class="pre">Projects</span></code>.</p>
+<p>After installation, maven projects can be imported using <tt class="docutils literal"><span class="pre">File</span> <span class="pre">→</span> <span class="pre">Import</span> <span class="pre">→</span> <span class="pre">Maven</span> <span class="pre">→</span> <span class="pre">Existing</span> <span class="pre">Maven</span> <span class="pre">Projects</span></tt>.</p>
 </div>
 </div>
 <div class="section" id="troubleshooting">
 <h2>Troubleshooting</h2>
-<p>Check the <a class="reference internal" href="../current-user-doc/faq/known-issues.html"><span class="doc">Known Issues</span></a> section.</p>
+<p>Check the <a class="reference internal" href="../current-user-doc/faq/known-issues.html"><em>Known Issues</em></a> section.</p>
 </div>
 </div>
 
