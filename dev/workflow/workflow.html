@@ -2,13 +2,10 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
-
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
-    <title>Workflow &mdash; Scala IDE 0.1-SNAPSHOT documentation</title>
-    
+    <title>Workflow &#8212; Scala IDE 0.1-SNAPSHOT documentation</title>
     <link rel="stylesheet" href="../../_static/resources/stylesheets/base.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/resources/stylesheets/bootstrap.css" type="text/css" />
@@ -16,14 +13,14 @@
     <link rel="stylesheet" href="../../_static/resources/stylesheets/doc.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/resources/stylesheets/sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/resources/stylesheets/prettify.css" type="text/css" />
-    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
         VERSION:     '0.1-SNAPSHOT',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
       };
     </script>
     <script type="text/javascript" src="../../_static/jquery.js"></script>
@@ -40,8 +37,8 @@
     <script type="text/javascript" src="../../_static/resources/javascript/bootstrap-dropdown-app.js"></script>
     <script type="text/javascript" src="../../_static/resources/javascript/contentsFix.js"></script>
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
-    <link rel="top" title="Scala IDE 0.1-SNAPSHOT documentation" href="../../index.html" />
-    <link rel="up" title="Welcome to the Scala IDE Developer Documentation" href="../index.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Appendix" href="../appendix/appendix.html" />
     <link rel="prev" title="Repository organization" href="../repository-organization/repository-organization.html" /> 
   </head>
@@ -97,13 +94,13 @@
 between the two is very thin, and it boils down to having the rights for integrating patches (pull
 requests, in GitHub terminology) in the mainline.</p>
 <p>We assume you are comfortable with both Git and GitHub. If you need an introduction to these
-essential tools, we suggest you to start by reading <a class="reference internal" href="../appendix/git-github.html#git-github-page"><em>Git &amp; GitHub</em></a>.</p>
+essential tools, we suggest you to start by reading <a class="reference internal" href="../appendix/git-github.html#git-github-page"><span class="std std-ref">Git &amp; GitHub</span></a>.</p>
 <div class="section" id="external-contributors">
 <h2>External contributors</h2>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">If you are an external contributor, the first thing you want to do is <a class="reference internal" href="../setup/setup.html#setup-fork-the-project"><em>forking the Scala IDE
-repository</em></a>.</p>
+<p class="last">If you are an external contributor, the first thing you want to do is <a class="reference internal" href="../setup/setup.html#setup-fork-the-project"><span class="std std-ref">forking the Scala IDE
+repository</span></a>.</p>
 </div>
 <p>In your own fork, you are clearly free to adopt the workflow that better suits you. Though, the
 moment you decide to send a pull request (so that your changes can be integrated in the Scala IDE
@@ -119,16 +116,16 @@ feedback, which can help you being more effective and avoid wasting time. As usu
 touch just drop a note in the <a class="reference external" href="https://groups.google.com/group/scala-ide-dev?hl=en">scala-ide-dev</a> mailing list.</li>
 <li>Second, make sure that a ticket describing the defect/feature you want to tackle exists in our
 <a class="reference external" href="https://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets">Assembla issue tracker</a>. If you
-can&#8217;t find one, just go ahead and create it. Once you have a ticket, assign it to you. In short,
+can’t find one, just go ahead and create it. Once you have a ticket, assign it to you. In short,
 we would like defect/enhancement/feature to be driven by tickets as much as possible, as this
 help us keeping track of changes between each release.</li>
 </ul>
-<p>Alright, now it&#8217;s time to create a new branch (standard git workflow).</p>
+<p>Alright, now it’s time to create a new branch (standard git workflow).</p>
 <div class="section" id="branch-name-convention">
 <span id="workflow-branch-name-convention"></span><h3>Branch name convention</h3>
 <p>The convention for naming a branch is straightforward, the name should convey what the branch is
 about (i.e., a short description) and the ticket number should be suffixed. Words are separated by
-dashes (<tt class="docutils literal"><span class="pre">-</span></tt>). For instance, <tt class="docutils literal"><span class="pre">scala-java-interop-1000508</span></tt> is a perfectly valid name.</p>
+dashes (<code class="docutils literal"><span class="pre">-</span></code>). For instance, <code class="docutils literal"><span class="pre">scala-java-interop-1000508</span></code> is a perfectly valid name.</p>
 </div>
 <div class="section" id="ready-to-push-your-changes">
 <h3>Ready to push your changes?</h3>
@@ -137,21 +134,21 @@ dashes (<tt class="docutils literal"><span class="pre">-</span></tt>). For insta
 <li>Your code is clean and documented. And you have made your best effort to decouple UI elements from
 core logic (that enables you to create tests for the core logic).</li>
 <li>You have done your best to create a set of tests that exercise the implemented feature. (Read
-<a class="reference internal" href="../testing/testing.html#testing-regression-test-suite"><em>Regression Test Suite</em></a> for learning how to create tests for the Scala IDE).</li>
-<li>Your branch compiles against Scala 2.9.x and 2.10 (read <a class="reference internal" href="../building/building.html#building-run-the-build"><em>Run the build</em></a> for
+<a class="reference internal" href="../testing/testing.html#testing-regression-test-suite"><span class="std std-ref">Regression Test Suite</span></a> for learning how to create tests for the Scala IDE).</li>
+<li>Your branch compiles against Scala 2.9.x and 2.10 (read <a class="reference internal" href="../building/building.html#building-run-the-build"><span class="std std-ref">Run the build</span></a> for
 learning how to build the Scala IDE with different versions of Scala). Of course, that also
 implies all tests succeeded.</li>
 <li>Rebase your branch on the latest upstream (read <a class="reference external" href="https://github.com/diaspora/diaspora/wiki/Git-Workflow">here</a> for more information on how to do this).</li>
 </ul>
 <p>If you get stuck with any of the above, just write a note in the <a class="reference external" href="https://groups.google.com/group/scala-ide-dev?hl=en">scala-ide-dev</a> mailing list. We are very keen in making
-sure you can integrate your awesome work back in the project&#8217;s mainline, so we will be very happy
+sure you can integrate your awesome work back in the project’s mainline, so we will be very happy
 to help you fix any of the above points.</p>
 </div>
 <div class="section" id="send-us-a-pull-request">
 <h3>Send us a pull request</h3>
 <p>Once you think your work is ready to be integrated, send us a pull request (read <a class="reference external" href="http://help.github.com/send-pull-requests/">here</a> for how
 to do this). When sending a pull request, contributors will review your code. There might be a few
-iterations (code review, update code) before your pull request is merged in the mainline. Don&#8217;t get
+iterations (code review, update code) before your pull request is merged in the mainline. Don’t get
 discouraged, we absolutely want your code to be in the mainline, but we also need to make sure that
 the quality standards are met. In the end, all we want is simply a better Scala IDE and a nice
 codebase, so that we can make it as simple as possible for new contributors to enter the project.</p>
@@ -160,7 +157,7 @@ codebase, so that we can make it as simple as possible for new contributors to e
 <p class="first admonition-title">Note</p>
 <p>All individual contributors are requested to read and sign the online
 <a class="reference external" href="http://www.typesafe.com/contribute/cla">Contributor License Agreement</a> (CLA). Please,
-make sure to sign the CLA before sending a pull request, or we won&#8217;t be able to accept
+make sure to sign the CLA before sending a pull request, or we won’t be able to accept
 your contribution.</p>
 <p>Organizations can sign the <a class="reference external" href="http://scala-ide.org/resources/pdfs/cla-org.pdf">Corporate CLA</a>
 and send it to</p>
@@ -187,11 +184,11 @@ specific software stack (including IDE dependencies such as
 distinct version of Scala — usually the latest stable Scala
 release and the upcoming one. The pull request validation jobs
 are named with strict conventions, and can be found listed with
-the prefix <tt class="docutils literal"><span class="pre">pr-validator-</span></tt> on the <a class="reference external" href="https://jenkins.scala-ide.org:8496/jenkins/">integration server</a>.</p>
+the prefix <code class="docutils literal"><span class="pre">pr-validator-</span></code> on the <a class="reference external" href="https://jenkins.scala-ide.org:8496/jenkins/">integration server</a>.</p>
 <p>Interacting with the Jenkins server, and reporting the results of
 builds from Jenkins back to Github, is the role of the Typesafe
-pull request validator, affectionately nicknamed &#8220;the build
-kitteh&#8221;. The source code for that piece of software is <a class="reference external" href="https://github.com/typesafehub/ghpullrequest-validator/">available
+pull request validator, affectionately nicknamed “the build
+kitteh”. The source code for that piece of software is <a class="reference external" href="https://github.com/typesafehub/ghpullrequest-validator/">available
 on Github</a>. It
 draws its name from the internet meme of <a class="reference external" href="http://knowyourmeme.com/memes/lolcats">LOLcats</a>, started by the website
 <a class="reference external" href="http://icanhas.cheezburger.com/">icanhascheezeburger.com</a>, of
@@ -218,7 +215,7 @@ submitted as a pull request, please consider closing your
 pull request and re-opening another. You can trigger
 another build from the kitteh (e.g. after making a few
 additions) by commenting against your pull request with
-the string <tt class="docutils literal"><span class="pre">PLS</span> <span class="pre">REBUILD</span> <span class="pre">ALL</span></tt>.</p>
+the string <code class="docutils literal"><span class="pre">PLS</span> <span class="pre">REBUILD</span> <span class="pre">ALL</span></code>.</p>
 </div>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
@@ -227,8 +224,8 @@ the letter of the law, though : adding to commit messages
 is fine, since it creates no conflicts, adding commits is
 also OK — no conflicts there either —, and there is
 somewhat of a tolerance for squashing and reorganizing a
-set of commits that was &#8220;splayed out&#8221; to ease review at
-the last minute, provided it&#8217;s clear that no resulting
+set of commits that was “splayed out” to ease review at
+the last minute, provided it’s clear that no resulting
 commit will break the build.
 However, any meaningful reorganization of your pull
 request that should go again through examination should
@@ -241,26 +238,26 @@ request.</p>
 <h2>Committers</h2>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">This section assumes that you know how the <a class="reference internal" href="../repository-organization/repository-organization.html#repository-organization-page"><em>repository is organized</em></a>.</p>
+<p class="last">This section assumes that you know how the <a class="reference internal" href="../repository-organization/repository-organization.html#repository-organization-page"><span class="std std-ref">repository is organized</span></a>.</p>
 </div>
 <p>The workflow for committers is very similar to the one described in the above
-<a class="reference internal" href="#external-contributors">External contributors</a> section, with the only difference that you don&#8217;t need to fork the project
+<a class="reference internal" href="#external-contributors">External contributors</a> section, with the only difference that you don’t need to fork the project
 and you can push your branches directly in the main Scala IDE git repository.</p>
 <p>It is easy to decide where your branch should live:</p>
 <ul class="simple">
-<li>If you are experimenting a new idea, create it under <tt class="docutils literal"><span class="pre">feature</span></tt>.</li>
-<li>If you want to work on a defect/enhancement/feature, create it under <tt class="docutils literal"><span class="pre">issue</span></tt>. If you can&#8217;t find
+<li>If you are experimenting a new idea, create it under <code class="docutils literal"><span class="pre">feature</span></code>.</li>
+<li>If you want to work on a defect/enhancement/feature, create it under <code class="docutils literal"><span class="pre">issue</span></code>. If you can’t find
 a ticket describing what you want to work on, create a new one before starting to do any work. For
 each branch created under issue it is mandatory to have a ticket linked to it.</li>
 </ul>
-<p>Overall, we expect to have very few (possibly none at all) branches living in <tt class="docutils literal"><span class="pre">feature</span></tt>, as we
+<p>Overall, we expect to have very few (possibly none at all) branches living in <code class="docutils literal"><span class="pre">feature</span></code>, as we
 would like defect/enhancement/feature to be driven by tickets as much as possible.</p>
-<p>Branches should be named using the same convention described in <a class="reference internal" href="#workflow-branch-name-convention"><em>Branch name convention</em></a>.</p>
-<p>When creating a new branch under <tt class="docutils literal"><span class="pre">issue</span></tt>, you should push your branch remotely as soon as
-possible. Don&#8217;t be afraid of sharing bad code, none will blame you for that. The only moment when
-code quality does matter is when you ask to merge your changes into the mainline (<tt class="docutils literal"><span class="pre">master</span></tt>
+<p>Branches should be named using the same convention described in <a class="reference internal" href="#workflow-branch-name-convention"><span class="std std-ref">Branch name convention</span></a>.</p>
+<p>When creating a new branch under <code class="docutils literal"><span class="pre">issue</span></code>, you should push your branch remotely as soon as
+possible. Don’t be afraid of sharing bad code, none will blame you for that. The only moment when
+code quality does matter is when you ask to merge your changes into the mainline (<code class="docutils literal"><span class="pre">master</span></code>
 branch). Until that moment you are free of committing almost anything on your own branch (but please
-do not push binaries in remote branches, as they will considerably increase the repository&#8217;s
+do not push binaries in remote branches, as they will considerably increase the repository’s
 footprint).</p>
 <p>When you are done working on a branch, create a pull request for it.</p>
 <p>Once the review process is over, you are good to merge. But before doing so, you need to know on
@@ -270,15 +267,15 @@ branches.</p>
 <p>A new release branch is created when it is time to start working on stabilizing the Scala IDE for a
 final release. For instance, at the time of this writing, work is being done for releasing 2.0.0.
 Consequently, when working on a ticket with its Milestone set to 2.0, you will always need to merge
-your work with both master and <tt class="docutils literal"><span class="pre">scala-ide-2.0.x</span></tt>. If the ticket&#8217;s Milestone is not 2.0, you may still
-be allowed to merge in the <tt class="docutils literal"><span class="pre">scala-ide-2.0.x</span></tt> release branch, depending on the content of your changes.
+your work with both master and <code class="docutils literal"><span class="pre">scala-ide-2.0.x</span></code>. If the ticket’s Milestone is not 2.0, you may still
+be allowed to merge in the <code class="docutils literal"><span class="pre">scala-ide-2.0.x</span></code> release branch, depending on the content of your changes.
 The best way to know whether you should merge in a release branch is, again, to open a discussion in
 the <a class="reference external" href="https://groups.google.com/group/scala-ide-dev?hl=en">scala-ide-dev</a> mailing list.</p>
 <p>The following are the steps you should follow when your work is ready to be integrated in the
 mainline:</p>
 <ul class="simple">
-<li>before merging, rebase your branch (this step is optional, but it keeps the repository&#8217;s history cleaner),</li>
-<li>merge your branch into master (and in a release branch if needed. Look at the ticket&#8217;s Milestone field),</li>
+<li>before merging, rebase your branch (this step is optional, but it keeps the repository’s history cleaner),</li>
+<li>merge your branch into master (and in a release branch if needed. Look at the ticket’s Milestone field),</li>
 <li>close the ticket, and</li>
 <li>delete the remote branch associated with the above closed ticket.</li>
 </ul>

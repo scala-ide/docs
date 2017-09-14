@@ -2,13 +2,10 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
-
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
-    <title>Repository organization &mdash; Scala IDE 0.1-SNAPSHOT documentation</title>
-    
+    <title>Repository organization &#8212; Scala IDE 0.1-SNAPSHOT documentation</title>
     <link rel="stylesheet" href="../../_static/resources/stylesheets/base.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/resources/stylesheets/bootstrap.css" type="text/css" />
@@ -16,14 +13,14 @@
     <link rel="stylesheet" href="../../_static/resources/stylesheets/doc.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/resources/stylesheets/sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/resources/stylesheets/prettify.css" type="text/css" />
-    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
         VERSION:     '0.1-SNAPSHOT',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
       };
     </script>
     <script type="text/javascript" src="../../_static/jquery.js"></script>
@@ -40,8 +37,8 @@
     <script type="text/javascript" src="../../_static/resources/javascript/bootstrap-dropdown-app.js"></script>
     <script type="text/javascript" src="../../_static/resources/javascript/contentsFix.js"></script>
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
-    <link rel="top" title="Scala IDE 0.1-SNAPSHOT documentation" href="../../index.html" />
-    <link rel="up" title="Welcome to the Scala IDE Developer Documentation" href="../index.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Workflow" href="../workflow/workflow.html" />
     <link rel="prev" title="Testing the Scala Presentation Compiler in isolation" href="../testing/presentation-compiler-tests.html" /> 
   </head>
@@ -93,8 +90,8 @@
       <div class="span11 main-content">
         <div class="section" id="repository-organization">
 <span id="repository-organization-page"></span><h1>Repository organization</h1>
-<p>Ideally, the project&#8217;s directory structure should be close to the following:</p>
-<div class="highlight-text"><div class="highlight"><pre>| - master
+<p>Ideally, the project’s directory structure should be close to the following:</p>
+<div class="highlight-text"><div class="highlight"><pre><span></span>| - master
 | - feature
           | - gwt-support
 | - issue
@@ -109,15 +106,15 @@
 </pre></div>
 </div>
 <ul class="simple">
-<li><tt class="docutils literal"><span class="pre">master</span></tt>: The main development branch.</li>
-<li><tt class="docutils literal"><span class="pre">feature</span></tt>: Hosts branches for trying out ideas.</li>
-<li><tt class="docutils literal"><span class="pre">issue</span></tt>: All branches under <cite>issue</cite> are related to an Assembla ticket. The ticket&#8217;s number must
+<li><code class="docutils literal"><span class="pre">master</span></code>: The main development branch.</li>
+<li><code class="docutils literal"><span class="pre">feature</span></code>: Hosts branches for trying out ideas.</li>
+<li><code class="docutils literal"><span class="pre">issue</span></code>: All branches under <cite>issue</cite> are related to an Assembla ticket. The ticket’s number must
 be suffixed to the name of the branch.</li>
-<li><tt class="docutils literal"><span class="pre">platform</span></tt>: Branches for experimental support of future Eclipse platforms (with different JDT).</li>
-<li><tt class="docutils literal"><span class="pre">release</span></tt>: Development branches for a target release. Stability is an important requirement for
+<li><code class="docutils literal"><span class="pre">platform</span></code>: Branches for experimental support of future Eclipse platforms (with different JDT).</li>
+<li><code class="docutils literal"><span class="pre">release</span></code>: Development branches for a target release. Stability is an important requirement for
 all branches living here.</li>
 </ul>
-<p>Branches should be named using the following <a class="reference internal" href="../workflow/workflow.html#workflow-branch-name-convention"><em>convention</em></a>.</p>
+<p>Branches should be named using the following <a class="reference internal" href="../workflow/workflow.html#workflow-branch-name-convention"><span class="std std-ref">convention</span></a>.</p>
 </div>
 
 	    </div>

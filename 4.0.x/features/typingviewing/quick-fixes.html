@@ -2,13 +2,10 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
-
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
-    <title>Quick Fixes updated &mdash; Scala IDE 0.1-SNAPSHOT documentation</title>
-    
+    <title>Quick Fixes updated &#8212; Scala IDE 0.1-SNAPSHOT documentation</title>
     <link rel="stylesheet" href="../../../_static/resources/stylesheets/base.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/resources/stylesheets/bootstrap.css" type="text/css" />
@@ -16,14 +13,14 @@
     <link rel="stylesheet" href="../../../_static/resources/stylesheets/doc.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/resources/stylesheets/sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/resources/stylesheets/prettify.css" type="text/css" />
-    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../../',
         VERSION:     '0.1-SNAPSHOT',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
       };
     </script>
     <script type="text/javascript" src="../../../_static/jquery.js"></script>
@@ -40,8 +37,8 @@
     <script type="text/javascript" src="../../../_static/resources/javascript/bootstrap-dropdown-app.js"></script>
     <script type="text/javascript" src="../../../_static/resources/javascript/contentsFix.js"></script>
     <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
-    <link rel="top" title="Scala IDE 0.1-SNAPSHOT documentation" href="../../../index.html" />
-    <link rel="up" title="Typing and Viewing" href="index.html" />
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
     <link rel="next" title="Refactoring updated" href="refactoring/index.html" />
     <link rel="prev" title="Mark Occurrences" href="mark-occurrences.html" /> 
   </head>
@@ -104,26 +101,27 @@
 <h2>Expand Implicit Conversion</h2>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last"><a class="reference internal" href="implicit-highlighting/index.html"><em>Implicit Highlighting</em></a> needs to be enabled.</p>
+<p class="last"><a class="reference internal" href="implicit-highlighting/index.html"><span class="doc">Implicit Highlighting</span></a> needs to be enabled.</p>
 </div>
 <p><a class="reference external" href="http://wiki.eclipse.org/FAQ_What_is_a_Quick_Fix%3F">Quick Fix</a> can be used to expand an implicit conversion.</p>
 <img alt="../../../_images/quick-fix3.png" src="../../../_images/quick-fix3.png" />
 </div>
 <div class="section" id="create-method-and-class-new">
 <h2>Create Method and Class <span class="raw-html"><span class="label info">new</span></span></h2>
-<p>For the following code snippet there exists a quick fix for the method call of <tt class="docutils literal"><span class="pre">g</span></tt>:</p>
+<p>For the following code snippet there exists a quick fix for the method call of <code class="docutils literal"><span class="pre">g</span></code>:</p>
 <img alt="../../../_images/create-method.png" src="../../../_images/create-method.png" />
 <p>The result of applying this quick fix is the following:</p>
-<div class="highlight-python"><pre>object Test extends App {
+<div class="highlight-default"><div class="highlight"><pre><span></span>object Test extends App {
 
   def f() {
-    val value = g("a string")
+    val value = g(&quot;a string&quot;)
   }
 
   def g(arg: String) = {
     ???
   }
-}</pre>
+}
+</pre></div>
 </div>
 <p>As one can see in the screenshot above it is also possible to create classes, not only methods.</p>
 </div>
@@ -134,7 +132,7 @@
 </div>
 <div class="section" id="add-explicit-type-new">
 <h2>Add Explicit Type <span class="raw-html"><span class="label info">new</span></span></h2>
-<p>If you want to add an explicit type to a method or a value definition, you can automatically add the inferred type. Position the cursor on the value or method definition and type <tt class="docutils literal"><span class="pre">Ctrl-1</span></tt> (or <tt class="docutils literal"><span class="pre">CMD</span></tt> for Macs). You should see a popup offering to add the explicit type, like the in the picture below:</p>
+<p>If you want to add an explicit type to a method or a value definition, you can automatically add the inferred type. Position the cursor on the value or method definition and type <code class="docutils literal"><span class="pre">Ctrl-1</span></code> (or <code class="docutils literal"><span class="pre">CMD</span></code> for Macs). You should see a popup offering to add the explicit type, like the in the picture below:</p>
 <img alt="../../../_images/explicit-type.png" src="../../../_images/explicit-type.png" />
 </div>
 </div>

@@ -2,13 +2,10 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
-
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
-    <title>Enabling Scala continuations plugin in the Scala IDE &mdash; Scala IDE 0.1-SNAPSHOT documentation</title>
-    
+    <title>Enabling Scala continuations plugin in the Scala IDE &#8212; Scala IDE 0.1-SNAPSHOT documentation</title>
     <link rel="stylesheet" href="../../_static/resources/stylesheets/base.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/resources/stylesheets/bootstrap.css" type="text/css" />
@@ -16,14 +13,14 @@
     <link rel="stylesheet" href="../../_static/resources/stylesheets/doc.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/resources/stylesheets/sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/resources/stylesheets/prettify.css" type="text/css" />
-    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
         VERSION:     '0.1-SNAPSHOT',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
       };
     </script>
     <script type="text/javascript" src="../../_static/jquery.js"></script>
@@ -40,8 +37,8 @@
     <script type="text/javascript" src="../../_static/resources/javascript/bootstrap-dropdown-app.js"></script>
     <script type="text/javascript" src="../../_static/resources/javascript/contentsFix.js"></script>
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
-    <link rel="top" title="Scala IDE 0.1-SNAPSHOT documentation" href="../../index.html" />
-    <link rel="up" title="Tutorials" href="../index.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Setup and use the Scalac project with the Scala IDE" href="../scalac-trunk/index.html" />
     <link rel="prev" title="Setup and use Lift framework 2.4 in Scala IDE 2.0" href="../lift24scalaide20/index.html" /> 
   </head>
@@ -84,7 +81,7 @@
       <div class="span16">
           <ul class="breadcrumb">
             <li><a href="../../index.html">ScalaIDE Documentation</a> » </li>
-              <li><a href="../../4.0.x/index.html">User Documentation for the Scala IDE 4.x - Lithium</a> » </li>
+              <li><a href="../../current-user-doc/index.html">User Documentation for the Scala IDE 4.x - Lithium</a> » </li>
               <li><a href="../index.html">Tutorials</a> » </li>
           </ul>
       </div>
@@ -99,7 +96,7 @@
 <ul>
 <li><p class="first"><a class="reference external" href="http://www.eclipse.org/">Eclipse</a> 3.6 (Helios) with a <a class="reference external" href="http://scala-ide.org/download/current.html">Scala IDE 2.0</a> installed, or
 <a class="reference external" href="http://www.eclipse.org/">Eclipse</a> 3.7 (Indigo) with a <a class="reference external" href="http://scala-ide.org/download/nightly.html">Scala IDE Helium nightly</a> installed.</p>
-<p>Check the <a class="reference internal" href="../../current-user-doc/gettingstarted/index.html"><em>getting started</em></a> page for instructions on how to install Scala IDE.</p>
+<p>Check the <a class="reference internal" href="../../current-user-doc/gettingstarted/index.html"><span class="doc">getting started</span></a> page for instructions on how to install Scala IDE.</p>
 </li>
 <li><p class="first">A basic knowledge of the Eclipse user interface is required.</p>
 </li>
@@ -112,7 +109,7 @@
 support for <a class="reference external" href="http://en.wikipedia.org/wiki/Continuation-passing_style">continuation-passing style</a> through a compiler plugin, which is shipped together with
 the main Scala distribution.</p>
 <p>Enabling continuations in Scala 2.9 is really simple, you only need to pass
-<tt class="docutils literal"><span class="pre">-P:continuations:enable</span></tt> to the Scala compiler, and the continuations plugin will be loaded and
+<code class="docutils literal"><span class="pre">-P:continuations:enable</span></code> to the Scala compiler, and the continuations plugin will be loaded and
 used to compile your sources.</p>
 <p>In this tutorial we will learn how to enable the continuations plugin with the Scala IDE for Scala 2.9.</p>
 </div>
@@ -122,17 +119,17 @@ used to compile your sources.</p>
 the Problems view you will get an error message such as: <em>this code must be compiled with the Scala
 continuations plugin enabled</em>.</p>
 <a class="reference external image-reference" href="../../_images/1-continuations-disabled.png"><img alt="Errors dues to disabled continuations plugin" src="../../_images/1-continuations-disabled.png" style="width: 100%;" /></a>
-<p>Let&#8217;s fix this!
+<p>Let’s fix this!
 Right click on your project folder and select Properties.</p>
 <a class="reference external image-reference" href="../../_images/2-project-properties.png"><img alt="Open the project properties" src="../../_images/2-project-properties.png" style="width: 100%;" /></a>
 <p>Then, under Scala Compiler, click on <strong>Use Project Settings</strong>.</p>
 <a class="reference external image-reference" href="../../_images/3-use-project-settings.png"><img alt="Use project settings" src="../../_images/3-use-project-settings.png" style="width: 100%;" /></a>
-<p>Now, write <strong>continuations:enable</strong> in the <tt class="docutils literal"><span class="pre">P</span></tt> field.</p>
+<p>Now, write <strong>continuations:enable</strong> in the <code class="docutils literal"><span class="pre">P</span></code> field.</p>
 <a class="reference external image-reference" href="../../_images/4-enable-continuations-plugin.png"><img alt="Enable the continuations plugin" src="../../_images/4-enable-continuations-plugin.png" style="width: 100%;" /></a>
 <p><cite>Apply</cite> then <cite>Ok</cite> to close the properties window. The errors should go away (if that is not the
 case, rebuild your sources).</p>
 <a class="reference external image-reference" href="../../_images/5-no-errors.png"><img alt="No more errors in the project" src="../../_images/5-no-errors.png" style="width: 100%;" /></a>
-<p>That&#8217;s it! You have successfully enabled continuations in your project.</p>
+<p>That’s it! You have successfully enabled continuations in your project.</p>
 </div>
 <div class="section" id="known-problems">
 <h3>Known Problems</h3>
@@ -142,14 +139,14 @@ the <cite>Scala IDE 2.0.x</cite> nightly and the <cite>Scala IDE Helium</cite> n
 <p>If you are using the Scala IDE 2.0.0 and the above step-by-step description does not work in your
 case, we suggest you to do the following:</p>
 <ol class="arabic">
-<li><p class="first">Pass to <tt class="docutils literal"><span class="pre">-Xplugin</span></tt> the path to the <tt class="docutils literal"><span class="pre">continuations.jar</span></tt>.</p>
+<li><p class="first">Pass to <code class="docutils literal"><span class="pre">-Xplugin</span></code> the path to the <code class="docutils literal"><span class="pre">continuations.jar</span></code>.</p>
 <blockquote>
 <div><ul class="simple">
 <li><strong>Important:</strong> Make sure that the path contains <strong>no whitespaces</strong>.</li>
 </ul>
 </div></blockquote>
 </li>
-<li><p class="first">Pass <tt class="docutils literal"><span class="pre">continuations:enable</span></tt> to the <tt class="docutils literal"><span class="pre">P</span></tt> compiler setting.</p>
+<li><p class="first">Pass <code class="docutils literal"><span class="pre">continuations:enable</span></code> to the <code class="docutils literal"><span class="pre">P</span></code> compiler setting.</p>
 </li>
 </ol>
 <p>But the best suggestion we have is to use the <a class="reference external" href="http://scala-ide.org/download/nightly.html">Scala IDE 2.0.x nightly</a>, if you can do so.</p>

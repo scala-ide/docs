@@ -2,13 +2,10 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
-
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
-    <title>Expression evaluator user documentation &mdash; Scala IDE 0.1-SNAPSHOT documentation</title>
-    
+    <title>Expression evaluator user documentation &#8212; Scala IDE 0.1-SNAPSHOT documentation</title>
     <link rel="stylesheet" href="../../../_static/resources/stylesheets/base.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/resources/stylesheets/bootstrap.css" type="text/css" />
@@ -16,14 +13,14 @@
     <link rel="stylesheet" href="../../../_static/resources/stylesheets/doc.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/resources/stylesheets/sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/resources/stylesheets/prettify.css" type="text/css" />
-    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../../',
         VERSION:     '0.1-SNAPSHOT',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
       };
     </script>
     <script type="text/javascript" src="../../../_static/jquery.js"></script>
@@ -40,7 +37,8 @@
     <script type="text/javascript" src="../../../_static/resources/javascript/bootstrap-dropdown-app.js"></script>
     <script type="text/javascript" src="../../../_static/resources/javascript/contentsFix.js"></script>
     <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
-    <link rel="top" title="Scala IDE 0.1-SNAPSHOT documentation" href="../../../index.html" /> 
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
   </head>
   <body>
 <div class="top-bar">
@@ -86,61 +84,61 @@
       <div class="span11 main-content">
         <div class="section" id="expression-evaluator-user-documentation">
 <span id="expression-evaluator-user-docs"></span><h1>Expression evaluator user documentation</h1>
-<p>Scala debugger uses new expression evaluator, which translates user code into invocations of <tt class="docutils literal"><span class="pre">JDI</span></tt> remote calls. This
+<p>Scala debugger uses new expression evaluator, which translates user code into invocations of <code class="docutils literal"><span class="pre">JDI</span></code> remote calls. This
 allows evaluation of expression in context of some breakpoint, with access to local variables and methods.</p>
-<p>Expression evaluator adds separate view to Scala IDE (similar to <tt class="docutils literal"><span class="pre">Scala</span> <span class="pre">interpreter</span></tt> view). It also enables conditional breakpoints - breakpoints that are enabled only if some condition is met.</p>
+<p>Expression evaluator adds separate view to Scala IDE (similar to <code class="docutils literal"><span class="pre">Scala</span> <span class="pre">interpreter</span></code> view). It also enables conditional breakpoints - breakpoints that are enabled only if some condition is met.</p>
 <div class="section" id="evaluator-view">
 <h2>Evaluator view</h2>
-<p>To open evaluator view use <tt class="docutils literal"><span class="pre">Window</span> <span class="pre">→</span> <span class="pre">Show</span> <span class="pre">View</span> <span class="pre">→</span> <span class="pre">Other</span> <span class="pre">→</span> <span class="pre">Debug</span> <span class="pre">→</span> <span class="pre">Scala</span> <span class="pre">Expression</span> <span class="pre">Evaluator</span></tt>. In there, any
+<p>To open evaluator view use <code class="docutils literal"><span class="pre">Window</span> <span class="pre">→</span> <span class="pre">Show</span> <span class="pre">View</span> <span class="pre">→</span> <span class="pre">Other</span> <span class="pre">→</span> <span class="pre">Debug</span> <span class="pre">→</span> <span class="pre">Scala</span> <span class="pre">Expression</span> <span class="pre">Evaluator</span></code>. In there, any
 expression can be evaluated in context of your current breakpoint. This allows usage any values and types visible
 from breakpoint and (possibly) modification of state of your application.</p>
-<img alt="Sample expression evaluation" src="../../../_images/expression1.png" style="width: 100%;" />
-<p><tt class="docutils literal"><span class="pre">CTRL+ENTER</span></tt> evaluates expression. <tt class="docutils literal"><span class="pre">CTRL+Up</span></tt> and <tt class="docutils literal"><span class="pre">CTRL+Down</span></tt> browses expression history. Code completion can be
-triggered with <tt class="docutils literal"><span class="pre">CTRL+Space</span></tt> (enabled in properties).</p>
-<p><tt class="docutils literal"><span class="pre">Tree</span> <span class="pre">view</span></tt> part contains structure of result which can be traversed to inspect it further (see also
-<a class="reference internal" href="index.html#logical-structures-support"><em>Logical structures support</em></a>).</p>
+<a class="reference internal image-reference" href="../../../_images/expression1.png"><img alt="Sample expression evaluation" src="../../../_images/expression1.png" style="width: 100%;" /></a>
+<p><code class="docutils literal"><span class="pre">CTRL+ENTER</span></code> evaluates expression. <code class="docutils literal"><span class="pre">CTRL+Up</span></code> and <code class="docutils literal"><span class="pre">CTRL+Down</span></code> browses expression history. Code completion can be
+triggered with <code class="docutils literal"><span class="pre">CTRL+Space</span></code> (enabled in properties).</p>
+<p><code class="docutils literal"><span class="pre">Tree</span> <span class="pre">view</span></code> part contains structure of result which can be traversed to inspect it further (see also
+<a class="reference internal" href="index.html#logical-structures-support"><span class="std std-ref">Logical structures support</span></a>).</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">Evaluator view works only when using Scala debugger and on <tt class="docutils literal"><span class="pre">SUSPENDED</span></tt> threads.</p>
+<p class="last">Evaluator view works only when using Scala debugger and on <code class="docutils literal"><span class="pre">SUSPENDED</span></code> threads.</p>
 </div>
-<p>It is also possible to immediately evaluate a selected text from the editor. One can do that using <tt class="docutils literal"><span class="pre">CTRL+SHIFT+K</span></tt>
-shortcut or the dedicated button. If there&#8217;s no selected text, a whole line containing a cursor will be sent to the evaluator.</p>
+<p>It is also possible to immediately evaluate a selected text from the editor. One can do that using <code class="docutils literal"><span class="pre">CTRL+SHIFT+K</span></code>
+shortcut or the dedicated button. If there’s no selected text, a whole line containing a cursor will be sent to the evaluator.</p>
 <img alt="Run Selection in Scala Expression Evaluator" src="../../../_images/run-selection-in-ee1.png" />
 <div class="section" id="configuring-expression-view">
 <h3>Configuring expression view</h3>
 <p>Expression view can be configured to your liking. There are 5 pre-configured views to choose from:</p>
 <div class="section" id="console">
 <h4>Console</h4>
-<img alt="Console" src="../../../_images/console1.png" style="width: 100%;" />
+<a class="reference internal image-reference" href="../../../_images/console1.png"><img alt="Console" src="../../../_images/console1.png" style="width: 100%;" /></a>
 </div>
 <div class="section" id="console-and-tree-on-bottom">
 <h4>Console and tree on bottom</h4>
-<img alt="Console and tree on bottom" src="../../../_images/console-and-tree-on-bottom1.png" style="width: 100%;" />
+<a class="reference internal image-reference" href="../../../_images/console-and-tree-on-bottom1.png"><img alt="Console and tree on bottom" src="../../../_images/console-and-tree-on-bottom1.png" style="width: 100%;" /></a>
 </div>
 <div class="section" id="console-and-tree-on-right-default">
 <h4>Console and tree on right (default)</h4>
-<img alt="Console and tree on right (default)" src="../../../_images/console-and-tree-on-right1.png" style="width: 100%;" />
+<a class="reference internal image-reference" href="../../../_images/console-and-tree-on-right1.png"><img alt="Console and tree on right (default)" src="../../../_images/console-and-tree-on-right1.png" style="width: 100%;" /></a>
 </div>
 <div class="section" id="input-and-tree-on-bottom">
 <h4>Input and tree on bottom</h4>
-<img alt="Input and tree on bottom" src="../../../_images/input-and-tree-on-bottom1.png" style="width: 100%;" />
+<a class="reference internal image-reference" href="../../../_images/input-and-tree-on-bottom1.png"><img alt="Input and tree on bottom" src="../../../_images/input-and-tree-on-bottom1.png" style="width: 100%;" /></a>
 </div>
 <div class="section" id="input-and-tree-on-right">
 <h4>Input and tree on right</h4>
-<img alt="Input and tree on right" src="../../../_images/input-and-tree-on-right1.png" style="width: 100%;" />
+<a class="reference internal image-reference" href="../../../_images/input-and-tree-on-right1.png"><img alt="Input and tree on right" src="../../../_images/input-and-tree-on-right1.png" style="width: 100%;" /></a>
 </div>
 </div>
 <div class="section" id="preferences">
 <h3>Preferences</h3>
-<p>In context menu <tt class="docutils literal"><span class="pre">Text</span> <span class="pre">clear</span> <span class="pre">after</span> <span class="pre">evaluation</span></tt> and <tt class="docutils literal"><span class="pre">line</span> <span class="pre">numbers</span></tt> can be enabled/disabled:</p>
+<p>In context menu <code class="docutils literal"><span class="pre">Text</span> <span class="pre">clear</span> <span class="pre">after</span> <span class="pre">evaluation</span></code> and <code class="docutils literal"><span class="pre">line</span> <span class="pre">numbers</span></code> can be enabled/disabled:</p>
 <img alt="Context menu" src="../../../_images/context-menu1.png" />
-<p>More settings can be configured in preferences view (<tt class="docutils literal"><span class="pre">Window</span> <span class="pre">→</span> <span class="pre">Preferences</span> <span class="pre">→</span> <span class="pre">Scala</span> <span class="pre">→</span> <span class="pre">Debug</span> <span class="pre">→</span> <span class="pre">Expression</span> <span class="pre">Evaluator</span></tt>):</p>
+<p>More settings can be configured in preferences view (<code class="docutils literal"><span class="pre">Window</span> <span class="pre">→</span> <span class="pre">Preferences</span> <span class="pre">→</span> <span class="pre">Scala</span> <span class="pre">→</span> <span class="pre">Debug</span> <span class="pre">→</span> <span class="pre">Expression</span> <span class="pre">Evaluator</span></code>):</p>
 <img alt="Expression evaluator preferences" src="../../../_images/preferences3.png" />
 </div>
 <div class="section" id="choosing-frame-on-which-to-evaluate-expression">
 <h3>Choosing frame on which to evaluate expression</h3>
 <p>Expressions can be evaluated on any (non-native) frame in current thread. Frames can be changed by simply clicking on
-them in <tt class="docutils literal"><span class="pre">Debug</span></tt> view:</p>
+them in <code class="docutils literal"><span class="pre">Debug</span></code> view:</p>
 <img alt="Choosing frames to evaluate" src="../../../_images/choosing-frames1.png" />
 </div>
 <div class="section" id="refreshing-variables-view-after-evaluation">
@@ -152,19 +150,19 @@ preferences.</p>
 <div class="section" id="conditional-breakpoints">
 <h2>Conditional breakpoints</h2>
 <p>Expressions can be assigned to breakpoint as a condition. Such breakpoint will only stop if expression evaluates to
-<tt class="docutils literal"><span class="pre">true</span></tt> or if evaluation completes with error.</p>
-<p>To convert standard breakpoint to conditional one enter <tt class="docutils literal"><span class="pre">Breakpoint</span> <span class="pre">properties</span></tt> either via context menu or
-<tt class="docutils literal"><span class="pre">CTRL</span> <span class="pre">+</span> <span class="pre">Double</span> <span class="pre">click</span></tt> shortcut:</p>
+<code class="docutils literal"><span class="pre">true</span></code> or if evaluation completes with error.</p>
+<p>To convert standard breakpoint to conditional one enter <code class="docutils literal"><span class="pre">Breakpoint</span> <span class="pre">properties</span></code> either via context menu or
+<code class="docutils literal"><span class="pre">CTRL</span> <span class="pre">+</span> <span class="pre">Double</span> <span class="pre">click</span></code> shortcut:</p>
 <img alt="Access to breakpoint settings" src="../../../_images/conditional-menu1.png" />
-<p>In settings, enable <tt class="docutils literal"><span class="pre">conditional</span></tt> and type in expression.</p>
+<p>In settings, enable <code class="docutils literal"><span class="pre">conditional</span></code> and type in expression.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">Condition must return <tt class="docutils literal"><span class="pre">Boolean</span></tt>, otherwise an error will be issued.</p>
+<p class="last">Condition must return <code class="docutils literal"><span class="pre">Boolean</span></code>, otherwise an error will be issued.</p>
 </div>
-<img alt="Breakpoint settings" src="../../../_images/conditional-properties1.png" style="width: 100%;" />
+<a class="reference internal image-reference" href="../../../_images/conditional-properties1.png"><img alt="Breakpoint settings" src="../../../_images/conditional-properties1.png" style="width: 100%;" /></a>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">Currently only <tt class="docutils literal"><span class="pre">Suspend</span> <span class="pre">when</span> <span class="pre">'true'</span></tt> is supported, <tt class="docutils literal"><span class="pre">Suspend</span> <span class="pre">when</span> <span class="pre">value</span> <span class="pre">changes</span></tt> is not.</p>
+<p class="last">Currently only <code class="docutils literal"><span class="pre">Suspend</span> <span class="pre">when</span> <span class="pre">'true'</span></code> is supported, <code class="docutils literal"><span class="pre">Suspend</span> <span class="pre">when</span> <span class="pre">value</span> <span class="pre">changes</span></code> is not.</p>
 </div>
 </div>
 <div class="section" id="features-and-problems">
@@ -173,32 +171,32 @@ preferences.</p>
 The following should work fine:</p>
 <ul class="simple">
 <li>access to all values visible from breakpoint (both locally and globally) with exception of access modifiers (see known limitations),</li>
-<li>assignment to Scala <tt class="docutils literal"><span class="pre">var</span></tt>s,</li>
-<li>control structures: <tt class="docutils literal"><span class="pre">if/else</span></tt>, <tt class="docutils literal"><span class="pre">while</span></tt>, <tt class="docutils literal"><span class="pre">do/while</span></tt> and <tt class="docutils literal"><span class="pre">for</span></tt> comprehensions,</li>
+<li>assignment to Scala <code class="docutils literal"><span class="pre">var</span></code>s,</li>
+<li>control structures: <code class="docutils literal"><span class="pre">if/else</span></code>, <code class="docutils literal"><span class="pre">while</span></code>, <code class="docutils literal"><span class="pre">do/while</span></code> and <code class="docutils literal"><span class="pre">for</span></code> comprehensions,</li>
 <li>both Java and Scala var-arg methods and Scala var-arg constructors,</li>
 <li>implicits,</li>
-<li>methods from <tt class="docutils literal"><span class="pre">this</span></tt> and <tt class="docutils literal"><span class="pre">super</span></tt>,</li>
-<li>number, tuple, unit and <tt class="docutils literal"><span class="pre">null</span></tt> literals,</li>
+<li>methods from <code class="docutils literal"><span class="pre">this</span></code> and <code class="docutils literal"><span class="pre">super</span></code>,</li>
+<li>number, tuple, unit and <code class="docutils literal"><span class="pre">null</span></code> literals,</li>
 <li>creating new instances (those are created on debugged jvm),</li>
 <li>limited support for lambdas (you need to specify types of arguments sometimes),</li>
-<li>operations on <tt class="docutils literal"><span class="pre">Array</span></tt>s,</li>
+<li>operations on <code class="docutils literal"><span class="pre">Array</span></code>s,</li>
 <li>access to Java fields and methods (both static and instance),</li>
 <li>assignment to Java fields,</li>
-<li><tt class="docutils literal"><span class="pre">isInstanceOf</span></tt> and <tt class="docutils literal"><span class="pre">asInstanceOf</span></tt>,</li>
+<li><code class="docutils literal"><span class="pre">isInstanceOf</span></code> and <code class="docutils literal"><span class="pre">asInstanceOf</span></code>,</li>
 <li>named-parameters,</li>
 <li>and default values.</li>
 </ul>
 <p>Expression evaluator depends on implementation details of Scala, JDI and JVM platform and not all Scala features are
 supported yet. Known limitations includes:</p>
 <ul class="simple">
-<li>assignment to local variables (those inside methods) of type boxed Java primitive (eg: <tt class="docutils literal"><span class="pre">java.lang.Integer</span></tt>),</li>
-<li><tt class="docutils literal"><span class="pre">try/catch</span></tt>,</li>
-<li><tt class="docutils literal"><span class="pre">throw</span></tt>,</li>
-<li><tt class="docutils literal"><span class="pre">scala.Dynamic</span></tt>,</li>
-<li>Java constructors with var-args (<tt class="docutils literal"><span class="pre">ToolBox</span></tt> fails to compile those - see <a class="reference external" href="https://issues.scala-lang.org/browse/SI-9212">SI-9212</a>),</li>
+<li>assignment to local variables (those inside methods) of type boxed Java primitive (eg: <code class="docutils literal"><span class="pre">java.lang.Integer</span></code>),</li>
+<li><code class="docutils literal"><span class="pre">try/catch</span></code>,</li>
+<li><code class="docutils literal"><span class="pre">throw</span></code>,</li>
+<li><code class="docutils literal"><span class="pre">scala.Dynamic</span></code>,</li>
+<li>Java constructors with var-args (<code class="docutils literal"><span class="pre">ToolBox</span></code> fails to compile those - see <a class="reference external" href="https://issues.scala-lang.org/browse/SI-9212">SI-9212</a>),</li>
 <li>relative imports (see <a class="reference external" href="https://issues.scala-lang.org/browse/SI-6393">SI-6393</a>),</li>
-<li>access to <tt class="docutils literal"><span class="pre">private</span></tt> and <tt class="docutils literal"><span class="pre">protected</span></tt> methods and fields,</li>
-<li>float literals (for some reason <tt class="docutils literal"><span class="pre">1.0f</span></tt> becomes <tt class="docutils literal"><span class="pre">1.0</span></tt> after parsing with <tt class="docutils literal"><span class="pre">ToolBox</span></tt>),</li>
+<li>access to <code class="docutils literal"><span class="pre">private</span></code> and <code class="docutils literal"><span class="pre">protected</span></code> methods and fields,</li>
+<li>float literals (for some reason <code class="docutils literal"><span class="pre">1.0f</span></code> becomes <code class="docutils literal"><span class="pre">1.0</span></code> after parsing with <code class="docutils literal"><span class="pre">ToolBox</span></code>),</li>
 <li>and probably more unknown to us.</li>
 </ul>
 </div>
