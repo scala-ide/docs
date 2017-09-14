@@ -19,27 +19,10 @@ The default Eclipse heap configuration is often inadequate for the Scala IDE. It
 
 .. code-block:: bash
 
-   --launcher.XXMaxPermSize
-   256m
-   -vmargs
-   -Xms256m
-   -Xmx1024m
-   -XX:PermSize=64m
-   -Xss1M
    -server
-   -XX:+DoEscapeAnalysis
-
-One recent Oracle JVM, the following might also be beneficial:
-
-.. code-block:: bash
-
-   -XX:+UseConcMarkSweepGC
-
-As is the following on Oracle 64-bits JVM:
-
-.. code-block:: bash
-
-   -XX:+UseCompressedOops
+   -Xms1024m
+   -Xmx3500m
+   -Xss2M
 
 Required Preferences
 --------------------
