@@ -1,9 +1,6 @@
 name := "docs"
 
-site.settings
-
-ghpages.settings
-
-site.sphinxSupport()
+enablePlugins(GhpagesPlugin)
+enablePlugins(SphinxPlugin)
 
 git.remoteRepo := "git@github.com:scala-ide/docs.git"
