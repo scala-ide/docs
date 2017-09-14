@@ -1,0 +1,303 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Setup and use the Scalac project with the Scala IDE &mdash; Scala IDE 0.1-SNAPSHOT documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/resources/stylesheets/base.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/resources/stylesheets/bootstrap.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/resources/stylesheets/base.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/resources/stylesheets/doc.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/resources/stylesheets/sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/resources/stylesheets/prettify.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '0.1-SNAPSHOT',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/resources/javascript/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/resources/javascript/toc.js"></script>
+    <script type="text/javascript" src="../../_static/resources/javascript/prettify.js"></script>
+    <script type="text/javascript" src="../../_static/resources/javascript/highlightCode.js"></script>
+    <script type="text/javascript" src="../../_static/resources/javascript/effects.core.js"></script>
+    <script type="text/javascript" src="../../_static/resources/javascript/effects.highlight.js"></script>
+    <script type="text/javascript" src="../../_static/resources/javascript/scrollTo.js"></script>
+    <script type="text/javascript" src="../../_static/resources/javascript/bootstrap-dropdown.js"></script>
+    <script type="text/javascript" src="../../_static/resources/javascript/bootstrap-dropdown-app.js"></script>
+    <script type="text/javascript" src="../../_static/resources/javascript/contentsFix.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="top" title="Scala IDE 0.1-SNAPSHOT documentation" href="../../index.html" />
+    <link rel="up" title="Tutorials" href="../index.html" />
+    <link rel="next" title="Frequently Asked Questions" href="../../4.0.x/faq/index.html" />
+    <link rel="prev" title="Enabling Scala continuations plugin in the Scala IDE" href="../continuations-plugin/index.html" /> 
+  </head>
+  <body>
+<div class="top-bar">
+  <div class="top-bar-inner">
+    <div class="container">
+      <a class="brand" href="/index.html"><img src="../../_static/resources/images/logo.png" height="70px"></a>
+      <ul class="nav">
+        <li><a href="/index.html#features">Features</a></li>
+        <li><a href="/documentation.html">Documentation</a></li>
+		<li class="menu">
+	      	<a href="#" class="menu">Download</a>
+	      	<ul class="menu-dropdown">
+	        	<li><a href="/download/sdk.html">Bundle</a></li>
+	        	<li><a href="/download/current.html">Stable</a></li>
+	        	<li><a href="/download/milestone.html">Milestone</a></li>
+	        	<li><a href="/download/nightly.html">Nightlies</a></li>
+	      	</ul>
+		</li>
+        <li><a href="/blog/index.html">News</a></li>
+        <li><a href="/team.html">Team</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="slider">
+  <div class="container">
+    <div class="row">
+      <div class="span16">
+        <h1>Setup and use the Scalac project with the Scala IDE</h1>
+	  </div>
+    </div>
+  </div>
+</div>
+<div class="bottom">
+  <div class="container" style="position: relative;">
+
+    <div class="row" style="position: relative; clear: both;">
+      <div class="span16">
+          <ul class="breadcrumb">
+            <li><a href="../../index.html">ScalaIDE Documentation</a> » </li>
+              <li><a href="../../4.0.x/index.html">User Documentation for the Scala IDE 4.x - Lithium</a> » </li>
+              <li><a href="../index.html">Tutorials</a> » </li>
+          </ul>
+      </div>
+    </div>
+
+    <div class="row" style="position: relative; clear: both;">
+      <div class="span11 main-content">
+        <div class="section" id="setup-and-use-the-scalac-project-with-the-scala-ide">
+<h1>Setup and use the Scalac project with the Scala IDE</h1>
+<div class="admonition-disclaimer admonition">
+<p class="first admonition-title">Disclaimer</p>
+<p class="last">The Scala IDE is, as far as we know, the only project built every night on top of the lastest nightly build
+of the Scala compiler. As such, you are bound to be the first to step on compiler bugs. Overall, the experience
+may not be that of a production-ready IDE. Please report issues that you see, or even better, attempt a fix! The
+whole Scala community will benefit!</p>
+</div>
+<div class="section" id="what-is-in-this-guide">
+<h2>What is in this guide?</h2>
+<p>This guide will show you how to configure Eclipse and your workspace for development work on the <a class="reference external" href="https://github.com/scala/scala">Scala compiler</a>.</p>
+<div class="section" id="prerequisites">
+<h3>Prerequisites</h3>
+<ul>
+<li><p class="first"><a class="reference external" href="http://www.eclipse.org/">Eclipse</a> 4.4 (Luna) with a <strong>very recent</strong> Scala IDE for Scala 2.11 installed (update site: <a class="reference external" href="http://scala-ide.org/download/nightly.html">http://scala-ide.org/download/nightly.html</a>).</p>
+<p>Check the <a class="reference internal" href="../../current-user-doc/gettingstarted/index.html"><em>getting started</em></a> page for instructions on how to install Scala IDE.</p>
+</li>
+<li><p class="first">A basic knowledge of the Eclipse user interface is required.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="setting-up-eclipse">
+<h2>Setting up Eclipse</h2>
+<p>In order to build the Scala compiler inside Eclipse, you need to make sure Eclipse runs with enough heap. We recommend at least 2GB, but be generous if you can. The detailed instructions on how to do that can be found in <a class="reference internal" href="../../current-user-doc/advancedsetup/index.html"><em>advanced setup</em></a></p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If you have an older version of the Scala IDE plugin, you may run into trouble when updating to the latest nightly. Frequent changes in the compiler version numbering scheme may confuse Eclipse, and keep an older version of the compiler bundle that doesn&#8217;t match the IDE. To make sure things run smoothly, you can uninstall the previous version. There is a <a class="reference external" href="http://scala-ide.org/blog/director-script.html">command line tool</a> for doing that without firing up Eclipse.</p>
+</div>
+</div>
+<div class="section" id="setting-up-the-eclipse-project">
+<h2>Setting up the Eclipse project</h2>
+<ul class="simple">
+<li>Clone the Scala repository</li>
+</ul>
+<div class="highlight-bash"><div class="highlight"><pre>git clone git://github.com/scala/scala.git
+</pre></div>
+</div>
+<ul class="simple">
+<li>Pull the binary dependencies:</li>
+</ul>
+<div class="highlight-bash"><div class="highlight"><pre>./pull-binary-libs.sh
+</pre></div>
+</div>
+<ul class="simple">
+<li>Import the project in Eclipse (<tt class="docutils literal"><span class="pre">File</span> <span class="pre">→</span> <span class="pre">Import</span> <span class="pre">Existing</span> <span class="pre">Projects</span> <span class="pre">into</span> <span class="pre">Workspace</span></tt>) Navigate to src/eclipse. Check all projects and click ok.</li>
+</ul>
+<p>You should see at least the following projects in your workspace:</p>
+<ul class="simple">
+<li>asm</li>
+<li>continuations-library</li>
+<li>reflect</li>
+<li>scala-library</li>
+<li>scala-compiler</li>
+</ul>
+<p>If you work on a version of the scala compiler older than 2.10.0, you may also find here the old <tt class="docutils literal"><span class="pre">fjbg</span></tt> project (an older bytecode generator backend).</p>
+<p>Before you go on, you need to follow the steps described in the <a class="reference external" href="https://github.com/scala/scala/blob/2.11.x/src/eclipse/README.md">README.md</a> on the Scala website. Come back once you are done.</p>
+</div>
+<div class="section" id="using-eclipse-for-compiler-development">
+<h2>Using Eclipse for compiler development</h2>
+<p>Now you are ready to start using Eclipse on the Scala compiler itself. Eclipse works by always keeping the binaries up to date, building each time you save a file. Since the compiler is such a large project, and has intricate dependencies, building may take a long time even for small changes. We suggest you switch off <tt class="docutils literal"><span class="pre">Project</span> <span class="pre">→</span> <span class="pre">Build</span> <span class="pre">Automatically</span></tt> and build explicitly (<tt class="docutils literal"><span class="pre">CMD-B</span></tt>).</p>
+<p>The builder inside Eclipse is based on <a class="reference external" href="https://github.com/harrah/xsbt">Sbt</a>, which is correct but conservative. The Scala IDE has a different builder that is much more aggressive in tracking dependencies, but which may sometimes be incorrect. You can enable it on the <tt class="docutils literal"><span class="pre">Build</span> <span class="pre">Manager</span></tt> page on Scala Compiler properties.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Mac OS Users: the default encoding for the JVM (and picked up by Eclipse) is <tt class="docutils literal"><span class="pre">MacRoman</span></tt>. To change the encoding to <tt class="docutils literal"><span class="pre">UTF-8</span></tt> you have to go to <tt class="docutils literal"><span class="pre">Eclipse</span> <span class="pre">Preferences</span> <span class="pre">→</span> <span class="pre">General</span> <span class="pre">→</span> <span class="pre">Workspace</span></tt> and choose the correct <tt class="docutils literal"><span class="pre">Text</span> <span class="pre">File</span> <span class="pre">Encoding</span></tt>.</p>
+</div>
+</div>
+<div class="section" id="launching-and-debugging-scalac">
+<h2>Launching and Debugging scalac</h2>
+<p>Since the output directories are set to the default <tt class="docutils literal"><span class="pre">ant</span></tt> build directories, all the runner scripts work out of the box. If you built the project, you can run <tt class="docutils literal"><span class="pre">build/quick/bin/scalac</span></tt> on the command line, and it will pick your changes. However, the interesting part is being able to use the Eclipse debugger.</p>
+<p>To launch scalac from Eclipse you need to create a <tt class="docutils literal"><span class="pre">Run</span> <span class="pre">Configuration</span></tt>, from <tt class="docutils literal"><span class="pre">Run</span> <span class="pre">→</span> <span class="pre">Run</span> <span class="pre">Configurations</span></tt>. Choose <tt class="docutils literal"><span class="pre">Scala</span> <span class="pre">Application</span></tt> and set the main class to <tt class="docutils literal"><span class="pre">scala.tools.nsc.Main</span></tt>. On the <tt class="docutils literal"><span class="pre">Arguments</span></tt> page, you need to explicitly set the path to the Scala library (that is what the runner script does for you on the command line):</p>
+<div class="highlight-bash"><div class="highlight"><pre>-bootclasspath <span class="k">${</span><span class="nv">SCALA_BASEDIR</span><span class="k">}</span>/build/quick/classes/library -d /tmp /Users/dragos/sandbox/bugs/ticket3429.scala
+</pre></div>
+</div>
+<p>The run configuration should look like this:</p>
+<img alt="../../_images/scalac-launch.png" src="../../_images/scalac-launch.png" />
+<p>Now you can launch the scala compiler, by choosing either <tt class="docutils literal"><span class="pre">Run</span></tt> or <tt class="docutils literal"><span class="pre">Debug</span></tt> from the menu. You can set breakpoints and step through Scala code just as you&#8217;d expect.</p>
+</div>
+<div class="section" id="cheat-sheet">
+<h2>Cheat sheet</h2>
+<p>On our <a class="reference internal" href="../../dev/appendix/shortcuts.html"><em>shortcuts</em></a> page, you will find a collection of the shortcuts used the most in daily development. Hopefully they will be helpful for others.</p>
+<p>If you are new to Eclipse, you should have a look at the <a class="reference internal" href="../../current-user-doc/gettingstarted/index.html"><em>getting started</em></a> guide and watch the screencast.</p>
+</div>
+<div class="section" id="swapping-the-scala-compiler-inside-eclipse-risky">
+<h2>Swapping the Scala compiler inside Eclipse (<em>risky</em>)</h2>
+<p>The Scala plugin packages a Scala compiler and library (since you are reading this, it&#8217;s most probably the nightly version of master). There may be times when you&#8217;d like to change it for your own version: say, you are developing a new feature that has not yet been included in Scala master, or you fixed a bug and can&#8217;t wait until the next nightly.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">This is a risky operation. Given the tight dependency between the IDE and the compiler, you must be sure you are swapping two binary-compatible versions of the compiler. This may not work if the plugin was built against a much older version of <tt class="docutils literal"><span class="pre">scalac</span></tt> than the one you are replacing it with.</p>
+</div>
+<p>If you&#8217;re still here, go ahead and use the <a class="reference external" href="https://github.com/scala-ide/scala-ide/blob/master/update-scala.sh">update-scala.sh</a> script. Point it to your locally built scala, for instance <tt class="docutils literal"><span class="pre">build/pack</span></tt>.</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>update-scala.sh --eclipse-dir /Applications/eclipse update build/pack
+</pre></div>
+</div>
+<p>If you run into trouble, the safest way out is to uninstall the plugin and re-install it. You can do that on the command line using the <a class="reference external" href="https://github.com/scala-ide/scala-ide/blob/master/eclipse-director.sh">eclipse-director.sh</a> script.</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>eclipse-director.sh --eclipse-dir /Applications/eclipse uninstall
+Unnstalling..
+Uninstalling org.scala-ide.sdt.feature.feature.group 2.1.0.nightly-2_10-201203020544-24a4734.
+!SESSION 2012-03-02 15:27:37.712 -----------------------------------------------
+</pre></div>
+</div>
+</div>
+<div class="section" id="separating-eclipse-installation-from-workspace">
+<h2>Separating Eclipse installation from workspace</h2>
+<p>In order to have an Eclipse installation more resilient to update/installation issues one can easily separate the main Eclipse installation from the specific configuration. We will make the main Eclipse installation read-only to be absolutely sure that nothing interferes with it. The whole configuration will be placed by Eclipse in <tt class="docutils literal"><span class="pre">${HOME}/eclipse-conf</span></tt></p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>mkdir /opt/eclipse-3.7.1
+unzip the contents of the original eclipse installation to this directory
+make the whole directory <span class="nb">read</span>-only
+<span class="nv">$ </span>mkdir <span class="k">${</span><span class="nv">HOME</span><span class="k">}</span>/eclipse-conf
+<span class="nv">$ </span>mv /opt/eclipse-3.7.1/eclipse.ini <span class="k">${</span><span class="nv">HOME</span><span class="k">}</span>/eclipse-conf/eclipse.ini
+<span class="nv">$ </span>mkdir <span class="k">${</span><span class="nv">HOME</span><span class="k">}</span>/eclipse-workspace
+<span class="nv">$ </span>mkdir <span class="k">${</span><span class="nv">HOME</span><span class="k">}</span>/eclipse-conf/configuration
+</pre></div>
+</div>
+<p>With that setup in place you can start eclipse with the following command (we recommend creating a shell script for it or putting it in <tt class="docutils literal"><span class="pre">.desktop</span></tt> under Linux):</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>/opt/eclipse-3.7.1/eclipse
+    --launcher.ini <span class="k">${</span><span class="nv">HOME</span><span class="k">}</span>/eclipse-conf/eclipse.ini
+    -data <span class="k">${</span><span class="nv">HOME</span><span class="k">}</span>/eclipse-workspace
+    -configuration <span class="k">${</span><span class="nv">HOME</span><span class="k">}</span>/eclipse-conf/configuration
+    -clean
+</pre></div>
+</div>
+<p>That will install all the plugins, features and specific configuration under the <tt class="docutils literal"><span class="pre">${HOME}/eclipse-conf</span></tt> directory, so if you encounter any errors after installation/update of the plugin, you can easilly purge the invalid data by simply cleaning up the directory (Eclipse sometimes caches installation details so it may not be so easy to clean things up in a standard setup).</p>
+<p>Remember to be consistent when changing the directories names in the above configuration.</p>
+</div>
+<div class="section" id="feedback">
+<h2>Feedback</h2>
+<p>This guide is managed through in the <a class="reference external" href="https://github.com/scala-ide/docs">Scala IDE documentation project</a> on github.
+Please use github tickets and pull requests system for feedback.</p>
+<p>Iulian Dragos - <a class="reference external" href="https://twitter.com/jaguarul">&#64;jaguarul</a></p>
+<p>based on a document created by Grzegorz Kossakowski - <a class="reference external" href="https://twitter.com/gkossakowski">&#64;gkossakowski</a> and improved by <a class="reference external" href="http://people.epfl.ch/vlad.ureche">Vlad Ureche</a>, and input from <a class="reference external" href="http://people.epfl.ch/hubert.plociniczak">Hubert Plociniczak</a> and Nada Amin - <a class="reference external" href="https://twitter.com/nadamin">&#64;nadamin</a>.</p>
+</div>
+</div>
+
+	    </div>
+      <div class="span5 sidebar">
+        <p class="contents-title">Contents</p>
+        <div id="scroller-anchor">
+          <div id="scroller">
+            <div id="toc"></div>
+          </div>
+        </div>
+	    </div>
+    </div>
+
+  </div>
+</div>
+<div class="footer" style="position:relative; clear: both; ">
+  <div class="container">
+    <ul>
+      <li><h5>Download</h5></li>
+      <li><a href="/download/sdk.html">Bundle</a></li>
+      <li><a href="/download/current.html">Stable</a></li>
+      <li><a href="/download/milestone.html">Milestone</a></li>
+      <li><a href="/download/nightly.html">Nightlies</a></li>
+    </ul>
+    <ul>
+      <li><h5>Documentation</h5></li>
+      <li><a href="/docs/user/gettingstarted.html">Getting Started</a></li>
+      <li><a href="/docs/videos.html">Videos</a></li>
+      <li><a href="/docs/tutorials/index.html">Tutorials</a></li>
+      <li><a href="http://groups.google.com/group/scala-ide-user">User Mailing List</a></li>
+    </ul>
+    <ul>
+      <li><h5>Contribute</h5></li>
+      <li><a href="https://github.com/scala-ide/scala-ide">Source Code</a></li>
+      <li><a href="/docs/dev/index.html">Developer Documentation</a></li>
+      <li><a href="http://groups.google.com/group/scala-ide-dev">Developer Mailing List</a></li>
+      <li><a href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/support/tickets">Report a Bug</a></li>
+      <li><a href="http://www.typesafe.com/contribute/cla">Individual CLA</a></li>
+      <li><a href="/resources/pdfs/cla-org.pdf">Organization CLA</a></li>
+    </ul>
+    <ul>
+      <li><img src="../../_static/resources/images/watermark.png" align="center"/></li>
+    </ul>
+  </div>
+  <div class="container copyright">
+    <p>
+      <a href="http://creativecommons.org/licenses/by/2.0/uk/">Creative Commons</a>
+	  <a href="http://scala-ide.org/feed.rss"><img align="right" height="20px" width="20px" src="http://scala-ide.org/resources/images/rss.png" alt="RSS feed of updates to the Scala IDE blog"></a>
+    </p>
+  </div>
+</div>
+<script type="text/javascript">
+  $('#toc').toc();
+</script>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-574683-7']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+  function startVideo(div_id, youtube_id) {
+    var video = '<iframe class="doc_video" src="http://www.youtube.com/embed/' + youtube_id + '?rel=0&autoplay=1&vq=hd720" frameborder="0" allowfullscreen></iframe>';
+    document.getElementById(div_id).innerHTML = video
+  }
+
+
+</script>
+
+  </body>
+</html>

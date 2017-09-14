@@ -1,0 +1,134 @@
+li {
+	color: #404040;
+}
+
+.related h3 {
+	visibility: hidden;
+}
+.related ul {
+	visibility: hidden;	
+	float: right;
+	list-style-type: none;
+	margin-left: 0;
+	padding-left: 0;
+	display: inline;
+	}
+.related ul li {
+	visibility: hidden;	
+	margin-left: 0;
+	margin-bottom: 0;
+	list-style: none;
+	display: inline;
+	}
+	
+.related ul li:first-child {
+	visibility: hidden;	
+	border-left: none;
+	list-style: none;
+	display: inline;
+}	
+
+a.headerlink {
+	visibility: hidden;
+}
+
+span.strikethrough { text-decoration: line-through; }
+
+.topic-title {
+	color: rgba(0, 0, 0, 0.6);
+	text-shadow: 0 1px 0 rgba(255, 255, 255, .7);
+	margin-bottom: 6px;
+	font-size: 24px;
+	font-weight: bold;
+	line-height: 36px;
+}
+
+.admonition {
+  background-image: none;
+  background-color: #fdf5d9;
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+  padding: 14px;
+  border-color: #f4fece;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  margin-bottom: 18px;
+  position: relative;
+  padding: 7px 15px;
+  color: #404040;
+  background-repeat: repeat-x;
+  background-image: -khtml-gradient(linear, left top, left bottom, from(#f4fece), to(#dff69a));
+  background-image: -moz-linear-gradient(top, #f4fece, #dff69a);
+  background-image: -ms-linear-gradient(top, #f4fece, #dff69a);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #f4fece), color-stop(100%, #dff69a));
+  background-image: -webkit-linear-gradient(top, #f4fece, #dff69a);
+  background-image: -o-linear-gradient(top, #f4fece, #dff69a);
+  background-image: linear-gradient(top, #f4fece, #dff69a);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f4fece', endColorstr='#dff69a', GradientType=0);
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+  border-color: #dff69a #dff69a #E4C652;
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+  border-width: 1px;
+  border-style: solid;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25);
+  -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25);
+}
+
+.admonition p.admonition-title {
+	color: rgba(0, 0, 0, 0.6);
+	text-shadow: 0 1px 0 rgba(255, 255, 255, .7);
+	margin-bottom: 6px;
+	font-size: 16px;
+	font-weight: bold;
+	line-height: 20px;
+}
+
+tt > .pre {
+	font-family: monaco, monospace;
+	font-size: 11px;
+}
+
+.topic {
+  background-image: none;
+  background-color: #fdf5d9;
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+  padding: 14px;
+  border-color: #def1f4;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  margin-bottom: 18px;
+  position: relative;
+  padding: 7px 15px;
+  color: #404040;
+  background-repeat: repeat-x;
+  background-image: -khtml-gradient(linear, left top, left bottom, from(#def1f4), to(#c1dfe6));
+  background-image: -moz-linear-gradient(top, #def1f4, #c1dfe6);
+  background-image: -ms-linear-gradient(top, #def1f4, #c1dfe6);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #def1f4), color-stop(100%, #c1dfe6));
+  background-image: -webkit-linear-gradient(top, #def1f4, #c1dfe6);
+  background-image: -o-linear-gradient(top, #def1f4, #c1dfe6);
+  background-image: linear-gradient(top, #def1f4, #c1dfe6);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#def1f4', endColorstr='#c1dfe6', GradientType=0);
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+  border-color: #c1dfe6 #c1dfe6 #E4C652;
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+  border-width: 1px;
+  border-style: solid;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25);
+  -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25);
+}
+
+.menu-dropdown,.dropdown-menu{
+	top: 90px;
+}

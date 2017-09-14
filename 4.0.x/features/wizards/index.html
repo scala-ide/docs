@@ -1,0 +1,206 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Wizards new &mdash; Scala IDE 0.1-SNAPSHOT documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/resources/stylesheets/base.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/resources/stylesheets/bootstrap.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/resources/stylesheets/base.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/resources/stylesheets/doc.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/resources/stylesheets/sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/resources/stylesheets/prettify.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '0.1-SNAPSHOT',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../_static/resources/javascript/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/resources/javascript/toc.js"></script>
+    <script type="text/javascript" src="../../../_static/resources/javascript/prettify.js"></script>
+    <script type="text/javascript" src="../../../_static/resources/javascript/highlightCode.js"></script>
+    <script type="text/javascript" src="../../../_static/resources/javascript/effects.core.js"></script>
+    <script type="text/javascript" src="../../../_static/resources/javascript/effects.highlight.js"></script>
+    <script type="text/javascript" src="../../../_static/resources/javascript/scrollTo.js"></script>
+    <script type="text/javascript" src="../../../_static/resources/javascript/bootstrap-dropdown.js"></script>
+    <script type="text/javascript" src="../../../_static/resources/javascript/bootstrap-dropdown-app.js"></script>
+    <script type="text/javascript" src="../../../_static/resources/javascript/contentsFix.js"></script>
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+    <link rel="top" title="Scala IDE 0.1-SNAPSHOT documentation" href="../../../index.html" />
+    <link rel="up" title="Features" href="../../features.html" />
+    <link rel="next" title="Scala JUnit Test Finder" href="../test-finder/index.html" />
+    <link rel="prev" title="Tasks View" href="../navigating/tasks-view.html" /> 
+  </head>
+  <body>
+<div class="top-bar">
+  <div class="top-bar-inner">
+    <div class="container">
+      <a class="brand" href="/index.html"><img src="../../../_static/resources/images/logo.png" height="70px"></a>
+      <ul class="nav">
+        <li><a href="/index.html#features">Features</a></li>
+        <li><a href="/documentation.html">Documentation</a></li>
+		<li class="menu">
+	      	<a href="#" class="menu">Download</a>
+	      	<ul class="menu-dropdown">
+	        	<li><a href="/download/sdk.html">Bundle</a></li>
+	        	<li><a href="/download/current.html">Stable</a></li>
+	        	<li><a href="/download/milestone.html">Milestone</a></li>
+	        	<li><a href="/download/nightly.html">Nightlies</a></li>
+	      	</ul>
+		</li>
+        <li><a href="/blog/index.html">News</a></li>
+        <li><a href="/team.html">Team</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="slider">
+  <div class="container">
+    <div class="row">
+      <div class="span16">
+        <h1>Wizards <span class="raw-html"><span class="label info">new</span></span></h1>
+	  </div>
+    </div>
+  </div>
+</div>
+<div class="bottom">
+  <div class="container" style="position: relative;">
+
+    <div class="row" style="position: relative; clear: both;">
+      <div class="span16">
+          <ul class="breadcrumb">
+            <li><a href="../../../index.html">ScalaIDE Documentation</a> » </li>
+              <li><a href="../../index.html">User Documentation for the Scala IDE 4.x - Lithium</a> » </li>
+              <li><a href="../../features.html">Features</a> » </li>
+          </ul>
+      </div>
+    </div>
+
+    <div class="row" style="position: relative; clear: both;">
+      <div class="span11 main-content">
+        <div class="section" id="wizards-new">
+<h1>Wizards <span class="raw-html"><span class="label info">new</span></span></h1>
+<p>Scala IDE 4 includes a new wizard, which is a simplified version compared to the old wizards. It basically looks like this:</p>
+<img alt="../../../_images/new-file-wizard.png" src="../../../_images/new-file-wizard.png" />
+<p>There are two ways to open this new wizard. The easiest one is to press <tt class="docutils literal"><span class="pre">Ctrl+3</span></tt> to open the quick access search field. You can find the new wizard under the name &#8220;New Scala File&#8221;:</p>
+<img alt="../../../_images/search-field-scala-file-entry.png" src="../../../_images/search-field-scala-file-entry.png" style="width: 100%;" />
+<p>The second way is to navigate to the &#8220;New&#8221; menu and select &#8220;New Scala File&#8221;:</p>
+<img alt="../../../_images/new-menu-scala-file-entry.png" src="../../../_images/new-menu-scala-file-entry.png" />
+<div class="section" id="what-functionality-is-provided">
+<h2>What functionality is provided?</h2>
+<p>You have the possibility to select the kind of file (for example a Scala Class), the source folder of a project and of course the fully qualified name of the file.</p>
+<p>For example, if you want to create a Scala type in a package you have to prepend the package names separated by dots to the type name. If you don&#8217;t specify any package name the file will be created in the default package of the selected source folder.</p>
+<p>While you type you get code completion support. Whenever you type a dot the wizard will automatically show you a completion popup for available package names. In case you don&#8217;t want to wait until the wizard opens the completion popup for you, you can explicitly ask for code completion by pressing <tt class="docutils literal"><span class="pre">Ctrl+Space</span></tt>.</p>
+<img alt="../../../_images/code-completion-support.png" src="../../../_images/code-completion-support.png" />
+<p>The wizard is made to be controlled easily with your keyboard, which means that you can reach all input fields without touching the mouse. You can rotate through the list of file kinds by pressing the up or down keys of your keyboard while the file name field is focused and with <tt class="docutils literal"><span class="pre">Ctrl+Tab</span></tt> you can move the focus to the source folder field. By pressing <tt class="docutils literal"><span class="pre">Enter</span></tt> when the source folder field is selected you get a dialog that shows you all available projects and their source folders. After you selected one of them, the focus is automatically moved back to the file name field.</p>
+</div>
+<div class="section" id="configurable-templates">
+<h2>Configurable templates</h2>
+<p>Once you press <em>Finish</em> on the wizard, it will create a file and insert content based on a template. For example if you select the kind <em>Scala Trait</em> and enter the name <tt class="docutils literal"><span class="pre">a.test.pkg.TestClass</span></tt> the following file content will be created by default:</p>
+<div class="highlight-python"><pre>package a.test.pkg
+
+/**
+ * @author nickname
+ */
+trait TestClass {
+  ^
+}</pre>
+</div>
+<p>where <tt class="docutils literal"><span class="pre">^</span></tt> denotes the position of the cursor. If you don&#8217;t like the automatically created content you can easily change it by navigating to <tt class="docutils literal"><span class="pre">Window</span> <span class="pre">→</span> <span class="pre">Preferences</span> <span class="pre">→</span> <span class="pre">Scala</span> <span class="pre">→</span> <span class="pre">Editor</span> <span class="pre">→</span> <span class="pre">Templates</span></tt> and search for template names that start with <tt class="docutils literal"><span class="pre">wizard_</span></tt>. The <em>Scala Trait</em> type for example will choose the <tt class="docutils literal"><span class="pre">wizard_trait</span></tt> template.</p>
+<img alt="../../../_images/template-preference-page.png" src="../../../_images/template-preference-page.png" style="width: 100%;" />
+<p>All the other features of the old wizards like the automatic adding of a super type are no longer supported. The design goal of the new wizard is to send users as fast as possible back to the editor where they can do whatever they want.</p>
+</div>
+<div class="section" id="developer-support">
+<h2>Developer support</h2>
+<p>One further important property of the new wizard is that it can be extended by users of the IDE with their own file kinds. Basically this means that once a template and the corresponding configuration is provided, the wizard will automatically find it and provide it as a selection option in the &#8220;kind&#8221; section. However, this requires that an OSGi bundle is provided and is therefore not as straightforward as just changing the content of a template in the preferences. If it is your interest to provide such an OSGi bundle, you should take a look to the <a class="reference external" href="../../../dev/ide-extensions/wizards/index.html">developer documentation</a> of the wizard.</p>
+</div>
+</div>
+
+	    </div>
+      <div class="span5 sidebar">
+        <p class="contents-title">Contents</p>
+        <div id="scroller-anchor">
+          <div id="scroller">
+            <div id="toc"></div>
+          </div>
+        </div>
+	    </div>
+    </div>
+
+  </div>
+</div>
+<div class="footer" style="position:relative; clear: both; ">
+  <div class="container">
+    <ul>
+      <li><h5>Download</h5></li>
+      <li><a href="/download/sdk.html">Bundle</a></li>
+      <li><a href="/download/current.html">Stable</a></li>
+      <li><a href="/download/milestone.html">Milestone</a></li>
+      <li><a href="/download/nightly.html">Nightlies</a></li>
+    </ul>
+    <ul>
+      <li><h5>Documentation</h5></li>
+      <li><a href="/docs/user/gettingstarted.html">Getting Started</a></li>
+      <li><a href="/docs/videos.html">Videos</a></li>
+      <li><a href="/docs/tutorials/index.html">Tutorials</a></li>
+      <li><a href="http://groups.google.com/group/scala-ide-user">User Mailing List</a></li>
+    </ul>
+    <ul>
+      <li><h5>Contribute</h5></li>
+      <li><a href="https://github.com/scala-ide/scala-ide">Source Code</a></li>
+      <li><a href="/docs/dev/index.html">Developer Documentation</a></li>
+      <li><a href="http://groups.google.com/group/scala-ide-dev">Developer Mailing List</a></li>
+      <li><a href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/support/tickets">Report a Bug</a></li>
+      <li><a href="http://www.typesafe.com/contribute/cla">Individual CLA</a></li>
+      <li><a href="/resources/pdfs/cla-org.pdf">Organization CLA</a></li>
+    </ul>
+    <ul>
+      <li><img src="../../../_static/resources/images/watermark.png" align="center"/></li>
+    </ul>
+  </div>
+  <div class="container copyright">
+    <p>
+      <a href="http://creativecommons.org/licenses/by/2.0/uk/">Creative Commons</a>
+	  <a href="http://scala-ide.org/feed.rss"><img align="right" height="20px" width="20px" src="http://scala-ide.org/resources/images/rss.png" alt="RSS feed of updates to the Scala IDE blog"></a>
+    </p>
+  </div>
+</div>
+<script type="text/javascript">
+  $('#toc').toc();
+</script>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-574683-7']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+  function startVideo(div_id, youtube_id) {
+    var video = '<iframe class="doc_video" src="http://www.youtube.com/embed/' + youtube_id + '?rel=0&autoplay=1&vq=hd720" frameborder="0" allowfullscreen></iframe>';
+    document.getElementById(div_id).innerHTML = video
+  }
+
+
+</script>
+
+  </body>
+</html>

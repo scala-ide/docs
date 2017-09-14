@@ -1,0 +1,318 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Setup &mdash; Scala IDE 0.1-SNAPSHOT documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/resources/stylesheets/base.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/resources/stylesheets/bootstrap.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/resources/stylesheets/base.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/resources/stylesheets/doc.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/resources/stylesheets/sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/resources/stylesheets/prettify.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '0.1-SNAPSHOT',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/resources/javascript/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/resources/javascript/toc.js"></script>
+    <script type="text/javascript" src="../../_static/resources/javascript/prettify.js"></script>
+    <script type="text/javascript" src="../../_static/resources/javascript/highlightCode.js"></script>
+    <script type="text/javascript" src="../../_static/resources/javascript/effects.core.js"></script>
+    <script type="text/javascript" src="../../_static/resources/javascript/effects.highlight.js"></script>
+    <script type="text/javascript" src="../../_static/resources/javascript/scrollTo.js"></script>
+    <script type="text/javascript" src="../../_static/resources/javascript/bootstrap-dropdown.js"></script>
+    <script type="text/javascript" src="../../_static/resources/javascript/bootstrap-dropdown-app.js"></script>
+    <script type="text/javascript" src="../../_static/resources/javascript/contentsFix.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="top" title="Scala IDE 0.1-SNAPSHOT documentation" href="../../index.html" />
+    <link rel="up" title="Welcome to the Scala IDE Developer Documentation" href="../index.html" />
+    <link rel="next" title="Building the Scala IDE" href="../building/building.html" />
+    <link rel="prev" title="Welcome to the Scala IDE Developer Documentation" href="../index.html" /> 
+  </head>
+  <body>
+<div class="top-bar">
+  <div class="top-bar-inner">
+    <div class="container">
+      <a class="brand" href="/index.html"><img src="../../_static/resources/images/logo.png" height="70px"></a>
+      <ul class="nav">
+        <li><a href="/index.html#features">Features</a></li>
+        <li><a href="/documentation.html">Documentation</a></li>
+		<li class="menu">
+	      	<a href="#" class="menu">Download</a>
+	      	<ul class="menu-dropdown">
+	        	<li><a href="/download/sdk.html">Bundle</a></li>
+	        	<li><a href="/download/current.html">Stable</a></li>
+	        	<li><a href="/download/milestone.html">Milestone</a></li>
+	        	<li><a href="/download/nightly.html">Nightlies</a></li>
+	      	</ul>
+		</li>
+        <li><a href="/blog/index.html">News</a></li>
+        <li><a href="/team.html">Team</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="slider">
+  <div class="container">
+    <div class="row">
+      <div class="span16">
+        <h1>Setup</h1>
+	  </div>
+    </div>
+  </div>
+</div>
+<div class="bottom">
+  <div class="container" style="position: relative;">
+
+    <div class="row" style="position: relative; clear: both;">
+      <div class="span16">
+          <ul class="breadcrumb">
+            <li><a href="../../index.html">ScalaIDE Documentation</a> » </li>
+              <li><a href="../index.html">Welcome to the Scala IDE Developer Documentation</a> » </li>
+          </ul>
+      </div>
+    </div>
+
+    <div class="row" style="position: relative; clear: both;">
+      <div class="span11 main-content">
+        <div class="section" id="setup">
+<h1>Setup</h1>
+<p>In this page you will learn everything you need to know to setup the Scala IDE plug-in project in Eclipse.
+You are literally instants away from being all set and ready to start hacking the Scala IDE sources!</p>
+<div class="section" id="requirements">
+<h2>Requirements</h2>
+<ul class="simple">
+<li><a class="reference external" href="http://www.eclipse.org/downloads/">Eclipse</a>, including JDT (by 2017-04, Eclipse 4.6 Neon should be used). Look for
+<strong>Eclipse IDE for Eclipse Committers</strong>, which comes with <cite>Eclipse Plug-In Development Environment pre-installed</cite>.
+You can use this Eclipse installation to develop the plug-in, run unit tests, debug changes to the plug-in, etc.</li>
+<li>The <a class="reference external" href="http://www.eclipse.org/pde/">Eclipse Plug-in Development Environment (PDE)</a>, which ships with the
+Eclipse SDK (<strong>Eclipse IDE for Eclipse Committers</strong>) but may need to be installed manually.  Choose <tt class="docutils literal"><span class="pre">Help</span> <span class="pre">&gt;</span> <span class="pre">Install</span> <span class="pre">New</span> <span class="pre">Software...</span></tt>,
+select the release update site for the given version of Eclipse (ie. for Eclipse 4.6 Neon, choose
+<a class="reference external" href="http://download.eclipse.org/releases/neon">http://download.eclipse.org/releases/neon</a>), then install
+<tt class="docutils literal"><span class="pre">General</span> <span class="pre">Purpose</span> <span class="pre">Tools</span> <span class="pre">&gt;</span> <span class="pre">Eclipse</span> <span class="pre">Plug-in</span> <span class="pre">Development</span> <span class="pre">Environment</span></tt>.</li>
+<li>The <a class="reference external" href="http://scala-ide.org/download/nightly.html">Scala IDE plug-in nightly</a>. Make sure you are using the latest nightly.</li>
+<li><a class="reference external" href="http://wiki.eclipse.org/Eclipse/Installation#Install_a_JVM">Java 8 is required for Eclipse 4.6</a>.</li>
+<li><a class="reference external" href="http://maven.apache.org/download.html">Maven 3</a>.</li>
+<li><a class="reference external" href="http://git-scm.com/">Git</a> and a <a class="reference external" href="https://github.com/">GitHub</a> account.</li>
+</ul>
+<p>This document uses a script to build the Scala IDE plug-in. If you are on Windows, you could try <a class="reference external" href="http://www.cygwin.com/">Cygwin</a>. Otherwise, the <a class="reference internal" href="../building/building.html#building-run-the-build"><em>Run the build</em></a> section of the documentation describes the different steps to execute for a full build.</p>
+</div>
+<div class="section" id="fork-the-project">
+<span id="setup-fork-the-project"></span><h2>Fork the project</h2>
+<p>The first thing you should do is forking the <a class="reference external" href="http://github.com/scala-ide/scala-ide">Scala IDE repository</a>,
+that will greatly simplify the process of sending us patches (remember to also read about the
+<a class="reference internal" href="../workflow/workflow.html#workflow-page"><em>Workflow</em></a> before creating pull requests).</p>
+<p>If you are new to GitHub, <a class="reference external" href="http://help.github.com/fork-a-repo/">read here to learn how to fork a project</a>.</p>
+<p>After forking the project, simply open a terminal and clone your own fork to download the project&#8217;s
+sources. The command for cloning the fork should be very close to the following one (mind that
+you will have to replace <em>&lt;username&gt;</em> with your actual Git username).</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>git clone git@github.com:&lt;username&gt;/scala-ide.git
+</pre></div>
+</div>
+<p>Make sure to <a class="reference external" href="http://help.github.com/fork-a-repo/#Set-Up-Your-Local-Repo">add an Upstream</a> pointing
+to the original Scala IDE git remote repository, so that you can keep fetching the latest changes
+made in the project, and easily integrate them back in your fork.</p>
+</div>
+<div class="section" id="pull-the-libraries">
+<h2>Pull the libraries</h2>
+<p>The Scala IDE projects uses libraries which are pulled during the build process and copied in the <tt class="docutils literal"><span class="pre">target/lib</span></tt> folders.
+So let&#8217;s run the build.</p>
+<p>From the project root, run the following command:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>./build-all.sh
+</pre></div>
+</div>
+<p>In case you want to modify the default build you can pass different profiles:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>./build-all.sh -P scala-2.11.x -P eclipse-luna clean install
+</pre></div>
+</div>
+<p>If you want more information concerning the build, check out <a class="reference internal" href="../building/building.html#building-run-the-build"><em>Run the build</em></a>.</p>
+</div>
+<div class="section" id="import-the-projects-into-eclipse">
+<h2>Import the projects into Eclipse</h2>
+<p>The Scala IDE project already contains the metadata files needed by Eclipse to setup the project.
+To import the Scala IDE in your workspace simply click on <tt class="docutils literal"><span class="pre">File</span> <span class="pre">&gt;</span> <span class="pre">Import</span></tt>. The Eclipse Import dialog
+will open. There, select <tt class="docutils literal"><span class="pre">General</span> <span class="pre">&gt;</span> <span class="pre">Existing</span> <span class="pre">Projects</span> <span class="pre">into</span> <span class="pre">Workspace</span></tt> and click Next. A new dialog
+will open. Browse to the folder that points to your cloned Scala IDE project&#8217;s and select it.</p>
+<p>A list of projects should then be loaded in the below white area. The only projects that you absolutely
+need to import in Eclipse are <tt class="docutils literal"><span class="pre">org.scala-ide.sdt.core</span></tt> and <tt class="docutils literal"><span class="pre">org.scala-ide.sdt.core.tests</span></tt>. If you want
+to work on Debugger select also <tt class="docutils literal"><span class="pre">org.scala-ide.sdt.debug(.tests)</span></tt> and for expression evaluator add
+<tt class="docutils literal"><span class="pre">org.scala-ide.sdt.debug.expression(.tests)</span></tt>. Select projects you want to work on and click Finish.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If you want to hack on the Debugger it may be necessary for Linux systems to add the <tt class="docutils literal"><span class="pre">tools.jar</span></tt> to the classpath. This can be achieved by navigating to <tt class="docutils literal"><span class="pre">Preferences</span> <span class="pre">→</span> <span class="pre">Java</span> <span class="pre">→</span> <span class="pre">Installed</span> <span class="pre">JREs</span></tt> and adding the JAR to the JRE that builds your sources. The JAR itself can be found at <tt class="docutils literal"><span class="pre">&lt;path-to-JRE/lib/tools.jar&gt;</span></tt>.</p>
+</div>
+<p>If after rebuilding you see any errors, drop us a note in the <a class="reference external" href="http://groups.google.com/group/scala-ide-dev?pli=1">Scala IDE Developer
+Mailing List</a>.</p>
+</div>
+<div class="section" id="install-the-scalastyle-plugin">
+<h2>Install the Scalastyle plugin</h2>
+<p>The Scala IDE uses <a class="reference external" href="http://www.scalastyle.org/">Scalastyle</a> to ensure a clean code base. Thus, while it is not
+absolutely necessary, we recommend to install the Scalastyle plugin that will show errors whenever the style rules
+are violated. The update site for the plugin can be found on the homepage of Scalastyle.</p>
+<p>After installing the plugin one needs to add the Scalastyle configuration of the Scala IDE. This can easily be done
+in <tt class="docutils literal"><span class="pre">Window</span> <span class="pre">→</span> <span class="pre">Preferences</span> <span class="pre">→</span> <span class="pre">Scalastyle</span> <span class="pre">→</span> <span class="pre">Browse/Add</span></tt>, where the configuration can be found at <tt class="docutils literal"><span class="pre">&lt;path-to-scala-ide&gt;/org.scala-ide.sdt.core/scala-ide-style-config.xml</span></tt>.
+The Scalastyle builder is already added to all projects that should be checked, thus no further configuration is required.</p>
+<p>It is also possible to run Scalastyle on the shell. For this type</p>
+<blockquote>
+<div>mvn scalastyle:check</div></blockquote>
+<p>in the root directory of the Scala IDE to invoke Scalastyle.</p>
+</div>
+<div class="section" id="run-the-scala-ide-within-eclipse">
+<h2>Run the Scala IDE within Eclipse</h2>
+<p>So, you managed to have the Scala IDE sources compiling, now it&#8217;s time to learn how to run the Scala
+IDE within Eclipse.</p>
+<p>Doing this is especially useful if you need to do some manual debugging of the plug-in. Since the
+Scala IDE uses weaving, you need to launch the IDE with weaving enabled, which is not configurable
+in the vanilla launcher.</p>
+<p>That is why we suggest you to install the
+<a class="reference external" href="https://github.com/milessabin/equinox-weaving-launcher">Equinox Weaving Launcher</a>.</p>
+<div class="section" id="install-the-equinox-weaving-launcher">
+<span id="setup-install-equinox-weaving-launcher"></span><h3>Install the Equinox Weaving Launcher</h3>
+<p>To install the Equinox Weaving Launcher, use the following Eclipse update site:</p>
+<blockquote>
+<div><a class="reference external" href="http://download.scala-ide.org/plugins/equinox-weaving-launcher/releases/site/">http://download.scala-ide.org/plugins/equinox-weaving-launcher/releases/site/</a></div></blockquote>
+<p>This adds two more launch configurations: Eclipse Application with Equinox Weaving, and JUnit plug-in
+test with Equinox Weaving.</p>
+</div>
+<div class="section" id="create-a-run-configuration-for-launching-eclipse-with-scala-ide">
+<h3>Create a run configuration for launching Eclipse with Scala IDE</h3>
+<p>To create a run configuration, right click on the <tt class="docutils literal"><span class="pre">org.scala-ide.sdt.core</span></tt> project and select
+Run As &gt; Equinox Weaving enabled Eclipse Application.  That should fire up a second Eclipse instance.
+To quickly test that all is working fine, try to create a Scala project.</p>
+<p>You are now ready to hack on the Scala IDE. Start by looking around, do some change and observe what
+happens when you launch the second Eclipse&#8217;s instance.</p>
+<p>Read the rest of the developer documentation to get more insights about the overall architecture.</p>
+</div>
+</div>
+<div class="section" id="run-the-test-suite-inside-eclipse">
+<h2>Run the test suite inside Eclipse</h2>
+<p>You can use the built-in JUnit runner to run or debug the tests inside Eclipse. As for the normal run,
+you need to the <em>Equinox Weaving Launcher</em>. In the <em>Run Configuration</em> Dialog, create a new configuration
+using the <strong>JUnit Plug-In test with Equinox Weaving</strong>. Make sure you selected the <em>org.scala-ide.sdt.core.tests</em>
+project, and choose the test class you want to run (use <tt class="docutils literal"><span class="pre">org.scalaide.TestsSuite</span></tt> to run all tests).</p>
+<p>In the <strong>Main</strong> tab make the following adjustments:</p>
+<ul class="simple">
+<li>Choose <strong>Run an application: [No Application] - Headless Mode</strong>.</li>
+</ul>
+<p>The window should look like this:</p>
+<img alt="../../_images/setup.png" src="../../_images/setup.png" />
+<p>In the <strong>Arguments</strong> tab, make sure to add the following arguments to the VM arguments list:</p>
+<div class="highlight-bash"><div class="highlight"><pre>-Dsdtcore.headless -Dsdtcore.notimeouts
+</pre></div>
+</div>
+<p>The first one tells the IDE to not try to open any windows or dialogs, while the second one disables
+timeouts for certain actions (otherwise, on a slow or overloaded system, the tests might fail simply
+because of a timeout).</p>
+</div>
+<div class="section" id="additional-information">
+<h2>Additional information</h2>
+<div class="section" id="org-scala-ide-sdt-aspects-project">
+<h3><tt class="docutils literal"><span class="pre">org.scala-ide.sdt.aspects</span></tt> project</h3>
+<p>The Scala IDE plug-in uses AspectJ to weave into Eclipse and hook in to JDT internals. If you want to work
+on JDT integration within the Scala IDE plug-in, then it is a good idea to import
+<tt class="docutils literal"><span class="pre">org.scala-ide.sdt.aspects</span></tt> project in your Eclipse workspace and also install the <a class="reference external" href="http://www.eclipse.org/ajdt">AspectJ
+Eclipse plug-in</a>.</p>
+</div>
+<div class="section" id="using-jrebel">
+<h3>Using JRebel</h3>
+<p>If you want to use JRebel, there are two things you need to know:</p>
+<ol class="arabic simple">
+<li>You can simply add <tt class="docutils literal"><span class="pre">-noverify</span> <span class="pre">-javaagent:path/to/javarebel.jar</span></tt> to the VM arguments in the
+run configuration. For Windows, this is
+<tt class="docutils literal"><span class="pre">-noverify</span> <span class="pre">&quot;-javaagent:C:\Program</span> <span class="pre">Files</span> <span class="pre">(x86)\ZeroTurnaround\JRebel\jrebel.jar&quot;</span></tt>.</li>
+<li>JRebel is free for Scala users, see Free JavaRebel for Scala users, ZeroTurnaround announces.</li>
+</ol>
+</div>
+</div>
+</div>
+
+	    </div>
+      <div class="span5 sidebar">
+        <p class="contents-title">Contents</p>
+        <div id="scroller-anchor">
+          <div id="scroller">
+            <div id="toc"></div>
+          </div>
+        </div>
+	    </div>
+    </div>
+
+  </div>
+</div>
+<div class="footer" style="position:relative; clear: both; ">
+  <div class="container">
+    <ul>
+      <li><h5>Download</h5></li>
+      <li><a href="/download/sdk.html">Bundle</a></li>
+      <li><a href="/download/current.html">Stable</a></li>
+      <li><a href="/download/milestone.html">Milestone</a></li>
+      <li><a href="/download/nightly.html">Nightlies</a></li>
+    </ul>
+    <ul>
+      <li><h5>Documentation</h5></li>
+      <li><a href="/docs/user/gettingstarted.html">Getting Started</a></li>
+      <li><a href="/docs/videos.html">Videos</a></li>
+      <li><a href="/docs/tutorials/index.html">Tutorials</a></li>
+      <li><a href="http://groups.google.com/group/scala-ide-user">User Mailing List</a></li>
+    </ul>
+    <ul>
+      <li><h5>Contribute</h5></li>
+      <li><a href="https://github.com/scala-ide/scala-ide">Source Code</a></li>
+      <li><a href="/docs/dev/index.html">Developer Documentation</a></li>
+      <li><a href="http://groups.google.com/group/scala-ide-dev">Developer Mailing List</a></li>
+      <li><a href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/support/tickets">Report a Bug</a></li>
+      <li><a href="http://www.typesafe.com/contribute/cla">Individual CLA</a></li>
+      <li><a href="/resources/pdfs/cla-org.pdf">Organization CLA</a></li>
+    </ul>
+    <ul>
+      <li><img src="../../_static/resources/images/watermark.png" align="center"/></li>
+    </ul>
+  </div>
+  <div class="container copyright">
+    <p>
+      <a href="http://creativecommons.org/licenses/by/2.0/uk/">Creative Commons</a>
+	  <a href="http://scala-ide.org/feed.rss"><img align="right" height="20px" width="20px" src="http://scala-ide.org/resources/images/rss.png" alt="RSS feed of updates to the Scala IDE blog"></a>
+    </p>
+  </div>
+</div>
+<script type="text/javascript">
+  $('#toc').toc();
+</script>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-574683-7']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+  function startVideo(div_id, youtube_id) {
+    var video = '<iframe class="doc_video" src="http://www.youtube.com/embed/' + youtube_id + '?rel=0&autoplay=1&vq=hd720" frameborder="0" allowfullscreen></iframe>';
+    document.getElementById(div_id).innerHTML = video
+  }
+
+
+</script>
+
+  </body>
+</html>

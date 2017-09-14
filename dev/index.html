@@ -1,0 +1,258 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Welcome to the Scala IDE Developer Documentation &mdash; Scala IDE 0.1-SNAPSHOT documentation</title>
+    
+    <link rel="stylesheet" href="../_static/resources/stylesheets/base.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/resources/stylesheets/bootstrap.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/resources/stylesheets/base.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/resources/stylesheets/doc.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/resources/stylesheets/sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/resources/stylesheets/prettify.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.1-SNAPSHOT',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/resources/javascript/jquery.js"></script>
+    <script type="text/javascript" src="../_static/resources/javascript/toc.js"></script>
+    <script type="text/javascript" src="../_static/resources/javascript/prettify.js"></script>
+    <script type="text/javascript" src="../_static/resources/javascript/highlightCode.js"></script>
+    <script type="text/javascript" src="../_static/resources/javascript/effects.core.js"></script>
+    <script type="text/javascript" src="../_static/resources/javascript/effects.highlight.js"></script>
+    <script type="text/javascript" src="../_static/resources/javascript/scrollTo.js"></script>
+    <script type="text/javascript" src="../_static/resources/javascript/bootstrap-dropdown.js"></script>
+    <script type="text/javascript" src="../_static/resources/javascript/bootstrap-dropdown-app.js"></script>
+    <script type="text/javascript" src="../_static/resources/javascript/contentsFix.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="top" title="Scala IDE 0.1-SNAPSHOT documentation" href="../index.html" />
+    <link rel="next" title="Setup" href="setup/setup.html" />
+    <link rel="prev" title="Know Issues" href="../4.0.x/faq/known-issues.html" /> 
+  </head>
+  <body>
+<div class="top-bar">
+  <div class="top-bar-inner">
+    <div class="container">
+      <a class="brand" href="/index.html"><img src="../_static/resources/images/logo.png" height="70px"></a>
+      <ul class="nav">
+        <li><a href="/index.html#features">Features</a></li>
+        <li><a href="/documentation.html">Documentation</a></li>
+		<li class="menu">
+	      	<a href="#" class="menu">Download</a>
+	      	<ul class="menu-dropdown">
+	        	<li><a href="/download/sdk.html">Bundle</a></li>
+	        	<li><a href="/download/current.html">Stable</a></li>
+	        	<li><a href="/download/milestone.html">Milestone</a></li>
+	        	<li><a href="/download/nightly.html">Nightlies</a></li>
+	      	</ul>
+		</li>
+        <li><a href="/blog/index.html">News</a></li>
+        <li><a href="/team.html">Team</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="slider">
+  <div class="container">
+    <div class="row">
+      <div class="span16">
+        <h1>Welcome to the Scala IDE Developer Documentation</h1>
+	  </div>
+    </div>
+  </div>
+</div>
+<div class="bottom">
+  <div class="container" style="position: relative;">
+
+    <div class="row" style="position: relative; clear: both;">
+      <div class="span16">
+      </div>
+    </div>
+
+    <div class="row" style="position: relative; clear: both;">
+      <div class="span11 main-content">
+        <div class="section" id="welcome-to-the-scala-ide-developer-documentation">
+<h1>Welcome to the Scala IDE Developer Documentation</h1>
+<p>This document is intended for developers interested in exploring with the Scala IDE sources to
+contribute to the project.</p>
+<p>Feel free to ask questions related to the Scala IDE internals and discuss ideas for enhancements
+and bug fixes on the <a class="reference external" href="http://groups.google.com/group/scala-ide-dev">scala-ide-dev</a> mailing list.</p>
+<p>Contents:</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="setup/setup.html">Setup</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="setup/setup.html#requirements">Requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="setup/setup.html#fork-the-project">Fork the project</a></li>
+<li class="toctree-l2"><a class="reference internal" href="setup/setup.html#pull-the-libraries">Pull the libraries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="setup/setup.html#import-the-projects-into-eclipse">Import the projects into Eclipse</a></li>
+<li class="toctree-l2"><a class="reference internal" href="setup/setup.html#install-the-scalastyle-plugin">Install the Scalastyle plugin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="setup/setup.html#run-the-scala-ide-within-eclipse">Run the Scala IDE within Eclipse</a></li>
+<li class="toctree-l2"><a class="reference internal" href="setup/setup.html#run-the-test-suite-inside-eclipse">Run the test suite inside Eclipse</a></li>
+<li class="toctree-l2"><a class="reference internal" href="setup/setup.html#additional-information">Additional information</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="building/building.html">Building the Scala IDE</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="building/building.html#requirements">Requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="building/building.html#run-the-build">Run the build</a></li>
+<li class="toctree-l2"><a class="reference internal" href="building/building.html#the-build-in-details">The build in details</a></li>
+<li class="toctree-l2"><a class="reference internal" href="building/building.html#build-profiles">Build Profiles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="building/building.html#running-the-memory-leak-test">Running the memory leak test</a></li>
+<li class="toctree-l2"><a class="reference internal" href="building/building.html#build-the-scala-ide-with-a-local-version-of-the-scala-compiler">Build the Scala IDE with a local version of the Scala Compiler</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="architecture/architecture.html">Architecture</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="architecture/architecture.html#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="architecture/architecture.html#the-build-system">The Build system</a></li>
+<li class="toctree-l2"><a class="reference internal" href="architecture/architecture.html#the-set-featues-step">The set-featues step</a></li>
+<li class="toctree-l2"><a class="reference internal" href="architecture/architecture.html#scala-ide-eclipse-jdt">Scala IDE &amp; Eclipse JDT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="architecture/architecture.html#scala-ide-debugger">Scala IDE debugger</a></li>
+<li class="toctree-l2"><a class="reference internal" href="architecture/architecture.html#the-scala-structure-builder">The Scala Structure Builder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="architecture/architecture.html#the-scala-presentation-compiler">The Scala Presentation Compiler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="architecture/architecture.html#code-formatting">Code formatting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="architecture/architecture.html#refactoring">Refactoring</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="architecture/presentation-compiler.html">The Scala Presentation Compiler</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="architecture/presentation-compiler.html#key-classes">Key Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="architecture/presentation-compiler.html#tying-it-together">Tying it together</a></li>
+<li class="toctree-l2"><a class="reference internal" href="architecture/presentation-compiler.html#risks-related-to-the-presentation-compiler">Risks Related to the Presentation Compiler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="architecture/presentation-compiler.html#examples-of-interactions-between-the-ide-and-the-presentation-compiler">Examples of interactions between the IDE and the Presentation Compiler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="architecture/presentation-compiler.html#resources">Resources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="architecture/presentation-compiler.html#older-resources">Older Resources</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="architecture/expression-evaluator.html">Expression evaluator <span class="raw-html"><span class="label info">new</span></span></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="architecture/expression-evaluator.html#expression-evaluation">Expression evaluation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="architecture/expression-evaluator.html#conditional-breakpoints">Conditional breakpoints</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="code/code.html">Codebase</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="code/code.html#logging">Logging</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="ide-extensions/ide-extensions.html">IDE Extensions <span class="raw-html"><span class="label info">new</span></span></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ide-extensions/wizards/index.html">Wizards <span class="raw-html"><span class="label info">new</span></span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="ide-extensions/semantic-annotations/index.html">Custom semantic annotations <span class="raw-html"><span class="label info">new</span></span></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="testing/testing.html">Regression Test Suite</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="testing/eclipse-tests.html">Testing Eclipse integration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="testing/presentation-compiler-tests.html">Testing the Scala Presentation Compiler in isolation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="repository-organization/repository-organization.html">Repository organization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="workflow/workflow.html">Workflow</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="workflow/workflow.html#external-contributors">External contributors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="workflow/workflow.html#committers">Committers</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="appendix/appendix.html">Appendix</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="appendix/what-to-work-on.html">What to work on</a></li>
+<li class="toctree-l2"><a class="reference internal" href="appendix/git-github.html">Git &amp; GitHub</a></li>
+<li class="toctree-l2"><a class="reference internal" href="appendix/resources.html">External Resources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="appendix/shortcuts.html">Suggested Shortcuts</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="release/how-to-create-release.html">How to create a Scala IDE release</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../license.html">License</a></li>
+</ul>
+</div>
+<div class="topic">
+<p class="topic-title first">Contribute!</p>
+<p>This documentation could use your help to grow and be refined. It is managed as a GitHub project at <a class="reference external" href="http://github.com/scala-ide/docs">http://github.com/scala-ide/docs</a>. Use the different available <a class="reference internal" href="../community.html"><em>tools</em></a> to communicate with development team.</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The documentation is redacted using <a class="reference external" href="http://docutils.sourceforge.net/rst.html">reStructuredText markup language</a> (reST). As with other <a class="reference external" href="http://en.wikipedia.org/wiki/Markup_language">markup languages</a>, reST is the moral descendant of DocBook, and intended to be a lightweight way to structure text without having to deal with the presentation details involved in HTML. You can find references and tools for editing reST on its <a class="reference external" href="http://en.wikipedia.org/wiki/ReStructuredText">wikipedia page</a>.</p>
+</div>
+</div>
+
+	    </div>
+      <div class="span5 sidebar">
+        <p class="contents-title">Contents</p>
+        <div id="scroller-anchor">
+          <div id="scroller">
+            <div id="toc"></div>
+          </div>
+        </div>
+	    </div>
+    </div>
+
+  </div>
+</div>
+<div class="footer" style="position:relative; clear: both; ">
+  <div class="container">
+    <ul>
+      <li><h5>Download</h5></li>
+      <li><a href="/download/sdk.html">Bundle</a></li>
+      <li><a href="/download/current.html">Stable</a></li>
+      <li><a href="/download/milestone.html">Milestone</a></li>
+      <li><a href="/download/nightly.html">Nightlies</a></li>
+    </ul>
+    <ul>
+      <li><h5>Documentation</h5></li>
+      <li><a href="/docs/user/gettingstarted.html">Getting Started</a></li>
+      <li><a href="/docs/videos.html">Videos</a></li>
+      <li><a href="/docs/tutorials/index.html">Tutorials</a></li>
+      <li><a href="http://groups.google.com/group/scala-ide-user">User Mailing List</a></li>
+    </ul>
+    <ul>
+      <li><h5>Contribute</h5></li>
+      <li><a href="https://github.com/scala-ide/scala-ide">Source Code</a></li>
+      <li><a href="/docs/dev/index.html">Developer Documentation</a></li>
+      <li><a href="http://groups.google.com/group/scala-ide-dev">Developer Mailing List</a></li>
+      <li><a href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/support/tickets">Report a Bug</a></li>
+      <li><a href="http://www.typesafe.com/contribute/cla">Individual CLA</a></li>
+      <li><a href="/resources/pdfs/cla-org.pdf">Organization CLA</a></li>
+    </ul>
+    <ul>
+      <li><img src="../_static/resources/images/watermark.png" align="center"/></li>
+    </ul>
+  </div>
+  <div class="container copyright">
+    <p>
+      <a href="http://creativecommons.org/licenses/by/2.0/uk/">Creative Commons</a>
+	  <a href="http://scala-ide.org/feed.rss"><img align="right" height="20px" width="20px" src="http://scala-ide.org/resources/images/rss.png" alt="RSS feed of updates to the Scala IDE blog"></a>
+    </p>
+  </div>
+</div>
+<script type="text/javascript">
+  $('#toc').toc();
+</script>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-574683-7']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+  function startVideo(div_id, youtube_id) {
+    var video = '<iframe class="doc_video" src="http://www.youtube.com/embed/' + youtube_id + '?rel=0&autoplay=1&vq=hd720" frameborder="0" allowfullscreen></iframe>';
+    document.getElementById(div_id).innerHTML = video
+  }
+
+
+</script>
+
+  </body>
+</html>

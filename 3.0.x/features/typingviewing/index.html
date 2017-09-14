@@ -1,0 +1,234 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Typing and Viewing &mdash; Scala IDE 0.1-SNAPSHOT documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/resources/stylesheets/base.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/resources/stylesheets/bootstrap.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/resources/stylesheets/base.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/resources/stylesheets/doc.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/resources/stylesheets/sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/resources/stylesheets/prettify.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '0.1-SNAPSHOT',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../_static/resources/javascript/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/resources/javascript/toc.js"></script>
+    <script type="text/javascript" src="../../../_static/resources/javascript/prettify.js"></script>
+    <script type="text/javascript" src="../../../_static/resources/javascript/highlightCode.js"></script>
+    <script type="text/javascript" src="../../../_static/resources/javascript/effects.core.js"></script>
+    <script type="text/javascript" src="../../../_static/resources/javascript/effects.highlight.js"></script>
+    <script type="text/javascript" src="../../../_static/resources/javascript/scrollTo.js"></script>
+    <script type="text/javascript" src="../../../_static/resources/javascript/bootstrap-dropdown.js"></script>
+    <script type="text/javascript" src="../../../_static/resources/javascript/bootstrap-dropdown-app.js"></script>
+    <script type="text/javascript" src="../../../_static/resources/javascript/contentsFix.js"></script>
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+    <link rel="top" title="Scala IDE 0.1-SNAPSHOT documentation" href="../../../index.html" />
+    <link rel="up" title="Features" href="../../features.html" />
+    <link rel="next" title="As You Type Error Reporting" href="errors-as-you-type.html" />
+    <link rel="prev" title="Features" href="../../features.html" /> 
+  </head>
+  <body>
+<div class="top-bar">
+  <div class="top-bar-inner">
+    <div class="container">
+      <a class="brand" href="/index.html"><img src="../../../_static/resources/images/logo.png" height="70px"></a>
+      <ul class="nav">
+        <li><a href="/index.html#features">Features</a></li>
+        <li><a href="/documentation.html">Documentation</a></li>
+		<li class="menu">
+	      	<a href="#" class="menu">Download</a>
+	      	<ul class="menu-dropdown">
+	        	<li><a href="/download/sdk.html">Bundle</a></li>
+	        	<li><a href="/download/current.html">Stable</a></li>
+	        	<li><a href="/download/milestone.html">Milestone</a></li>
+	        	<li><a href="/download/nightly.html">Nightlies</a></li>
+	      	</ul>
+		</li>
+        <li><a href="/blog/index.html">News</a></li>
+        <li><a href="/team.html">Team</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="slider">
+  <div class="container">
+    <div class="row">
+      <div class="span16">
+        <h1>Typing and Viewing</h1>
+	  </div>
+    </div>
+  </div>
+</div>
+<div class="bottom">
+  <div class="container" style="position: relative;">
+
+    <div class="row" style="position: relative; clear: both;">
+      <div class="span16">
+          <ul class="breadcrumb">
+            <li><a href="../../../index.html">ScalaIDE Documentation</a> » </li>
+              <li><a href="../../index.html">User Documentation for the Scala IDE 3.0.x</a> » </li>
+              <li><a href="../../features.html">Features</a> » </li>
+          </ul>
+      </div>
+    </div>
+
+    <div class="row" style="position: relative; clear: both;">
+      <div class="span11 main-content">
+        <div class="section" id="typing-and-viewing">
+<h1>Typing and Viewing</h1>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="errors-as-you-type.html">As You Type Error Reporting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code-completion.html">Code Completion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code-templates.html">Code Templates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="auto-edits.html">Auto Edits <span class="raw-html"><span class="label info">new</span></span></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="auto-edits.html#surround-selection">Surround selection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="auto-edits.html#auto-closing-braces">Auto closing braces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="auto-edits.html#auto-closing-literals">Auto closing literals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="auto-edits.html#auto-indentations">Auto indentations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="auto-edits.html#smart-semicolons">Smart semicolons</a></li>
+<li class="toctree-l2"><a class="reference internal" href="auto-edits.html#automatic-escapes">Automatic escapes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="auto-edits.html#automatic-expanding-multi-line-comments-and-scaladoc">Automatic expanding multi line comments and Scaladoc</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="formatting/index.html">Formatting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="inferred-hover.html">Inferred Type Hover</a></li>
+<li class="toctree-l1"><a class="reference internal" href="implicit-highlighting/index.html">Implicit Highlighting <span class="raw-html"><span class="label info">new</span></span></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="implicit-highlighting/index.html#implicit-highlighting">Implicit highlighting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="implicit-highlighting/index.html#configuration">Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="implicit-highlighting/index.html#thank-you">Thank you</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="javadoc.html">Javadoc on hover</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mark-occurrences.html">Mark Occurrences <span class="raw-html"><span class="label success">updated</span></span></a></li>
+<li class="toctree-l1"><a class="reference internal" href="quick-fixes.html">Quick Fixes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="quick-fixes.html#quick-fix-import">Quick Fix Import</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quick-fixes.html#expand-implicit-conversion-new">Expand Implicit Conversion <span class="raw-html"><span class="label info">new</span></span></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="refactoring/index.html">Refactoring <span class="raw-html"><span class="label success">updated</span></span></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="refactoring/index.html#extracting-local-values">Extracting Local Values</a></li>
+<li class="toctree-l2"><a class="reference internal" href="refactoring/index.html#extracting-methods">Extracting Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="refactoring/index.html#inlining-local-values">Inlining Local Values</a></li>
+<li class="toctree-l2"><a class="reference internal" href="refactoring/index.html#organizing-imports">Organizing Imports</a></li>
+<li class="toctree-l2"><a class="reference internal" href="refactoring/index.html#renaming">Renaming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="refactoring/index.html#move-class-object-or-trait-refactoring-new">Move Class, Object or Trait Refactoring <span class="raw-html"><span class="label info">new</span></span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="refactoring/index.html#method-signature-refactoring-new">Method signature refactoring <span class="raw-html"><span class="label info">new</span></span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="refactoring/index.html#extract-trait-new">Extract trait <span class="raw-html"><span class="label info">new</span></span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="refactoring/index.html#move-constructor-to-companion-object-new">Move constructor to companion object <span class="raw-html"><span class="label info">new</span></span></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="semantic-highlighting/index.html">Semantic Highlighting <span class="raw-html"><span class="label info">new</span></span></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="semantic-highlighting/index.html#introduction">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="semantic-highlighting/index.html#configuration">Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="semantic-highlighting/index.html#thank-you">Thank you</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="show-type-of-selection.html">Show Type of Selection <span class="raw-html"><span class="label info">new</span></span></a></li>
+<li class="toctree-l1"><a class="reference internal" href="show-inferred-semicolons.html">Show Inferred Semicolons</a></li>
+<li class="toctree-l1"><a class="reference internal" href="source-generators/index.html">Source generators <span class="raw-html"><span class="label info">new</span></span></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="source-generators/index.html#generate-hashcode-and-equals">Generate hashCode and equals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="source-generators/index.html#introduce-productn-trait">Introduce ProductN trait</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="structured-selection.html">Structured Selection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="syntax-highlighting.html">Syntax Highlighting <span class="raw-html"><span class="label success">updated</span></span></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="syntax-highlighting.html#configuration">Configuration</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+	    </div>
+      <div class="span5 sidebar">
+        <p class="contents-title">Contents</p>
+        <div id="scroller-anchor">
+          <div id="scroller">
+            <div id="toc"></div>
+          </div>
+        </div>
+	    </div>
+    </div>
+
+  </div>
+</div>
+<div class="footer" style="position:relative; clear: both; ">
+  <div class="container">
+    <ul>
+      <li><h5>Download</h5></li>
+      <li><a href="/download/sdk.html">Bundle</a></li>
+      <li><a href="/download/current.html">Stable</a></li>
+      <li><a href="/download/milestone.html">Milestone</a></li>
+      <li><a href="/download/nightly.html">Nightlies</a></li>
+    </ul>
+    <ul>
+      <li><h5>Documentation</h5></li>
+      <li><a href="/docs/user/gettingstarted.html">Getting Started</a></li>
+      <li><a href="/docs/videos.html">Videos</a></li>
+      <li><a href="/docs/tutorials/index.html">Tutorials</a></li>
+      <li><a href="http://groups.google.com/group/scala-ide-user">User Mailing List</a></li>
+    </ul>
+    <ul>
+      <li><h5>Contribute</h5></li>
+      <li><a href="https://github.com/scala-ide/scala-ide">Source Code</a></li>
+      <li><a href="/docs/dev/index.html">Developer Documentation</a></li>
+      <li><a href="http://groups.google.com/group/scala-ide-dev">Developer Mailing List</a></li>
+      <li><a href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/support/tickets">Report a Bug</a></li>
+      <li><a href="http://www.typesafe.com/contribute/cla">Individual CLA</a></li>
+      <li><a href="/resources/pdfs/cla-org.pdf">Organization CLA</a></li>
+    </ul>
+    <ul>
+      <li><img src="../../../_static/resources/images/watermark.png" align="center"/></li>
+    </ul>
+  </div>
+  <div class="container copyright">
+    <p>
+      <a href="http://creativecommons.org/licenses/by/2.0/uk/">Creative Commons</a>
+	  <a href="http://scala-ide.org/feed.rss"><img align="right" height="20px" width="20px" src="http://scala-ide.org/resources/images/rss.png" alt="RSS feed of updates to the Scala IDE blog"></a>
+    </p>
+  </div>
+</div>
+<script type="text/javascript">
+  $('#toc').toc();
+</script>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-574683-7']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+  function startVideo(div_id, youtube_id) {
+    var video = '<iframe class="doc_video" src="http://www.youtube.com/embed/' + youtube_id + '?rel=0&autoplay=1&vq=hd720" frameborder="0" allowfullscreen></iframe>';
+    document.getElementById(div_id).innerHTML = video
+  }
+
+
+</script>
+
+  </body>
+</html>

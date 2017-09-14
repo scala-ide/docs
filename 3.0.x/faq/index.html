@@ -1,0 +1,404 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Frequently Asked Questions &mdash; Scala IDE 0.1-SNAPSHOT documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/resources/stylesheets/base.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/resources/stylesheets/bootstrap.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/resources/stylesheets/base.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/resources/stylesheets/doc.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/resources/stylesheets/sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/resources/stylesheets/prettify.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '0.1-SNAPSHOT',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/resources/javascript/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/resources/javascript/toc.js"></script>
+    <script type="text/javascript" src="../../_static/resources/javascript/prettify.js"></script>
+    <script type="text/javascript" src="../../_static/resources/javascript/highlightCode.js"></script>
+    <script type="text/javascript" src="../../_static/resources/javascript/effects.core.js"></script>
+    <script type="text/javascript" src="../../_static/resources/javascript/effects.highlight.js"></script>
+    <script type="text/javascript" src="../../_static/resources/javascript/scrollTo.js"></script>
+    <script type="text/javascript" src="../../_static/resources/javascript/bootstrap-dropdown.js"></script>
+    <script type="text/javascript" src="../../_static/resources/javascript/bootstrap-dropdown-app.js"></script>
+    <script type="text/javascript" src="../../_static/resources/javascript/contentsFix.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="top" title="Scala IDE 0.1-SNAPSHOT documentation" href="../../index.html" />
+    <link rel="up" title="User Documentation for the Scala IDE 3.0.x" href="../index.html" />
+    <link rel="next" title="Community" href="../../community.html" />
+    <link rel="prev" title="Setup and use the Scalac project with the Scala IDE" href="../../tutorials/scalac-trunk/index.html" /> 
+  </head>
+  <body>
+<div class="top-bar">
+  <div class="top-bar-inner">
+    <div class="container">
+      <a class="brand" href="/index.html"><img src="../../_static/resources/images/logo.png" height="70px"></a>
+      <ul class="nav">
+        <li><a href="/index.html#features">Features</a></li>
+        <li><a href="/documentation.html">Documentation</a></li>
+		<li class="menu">
+	      	<a href="#" class="menu">Download</a>
+	      	<ul class="menu-dropdown">
+	        	<li><a href="/download/sdk.html">Bundle</a></li>
+	        	<li><a href="/download/current.html">Stable</a></li>
+	        	<li><a href="/download/milestone.html">Milestone</a></li>
+	        	<li><a href="/download/nightly.html">Nightlies</a></li>
+	      	</ul>
+		</li>
+        <li><a href="/blog/index.html">News</a></li>
+        <li><a href="/team.html">Team</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="slider">
+  <div class="container">
+    <div class="row">
+      <div class="span16">
+        <h1>Frequently Asked Questions</h1>
+	  </div>
+    </div>
+  </div>
+</div>
+<div class="bottom">
+  <div class="container" style="position: relative;">
+
+    <div class="row" style="position: relative; clear: both;">
+      <div class="span16">
+          <ul class="breadcrumb">
+            <li><a href="../../index.html">ScalaIDE Documentation</a> » </li>
+              <li><a href="../index.html">User Documentation for the Scala IDE 3.0.x</a> » </li>
+          </ul>
+      </div>
+    </div>
+
+    <div class="row" style="position: relative; clear: both;">
+      <div class="span11 main-content">
+        <div class="section" id="frequently-asked-questions">
+<h1>Frequently Asked Questions</h1>
+<div class="section" id="general">
+<h2>General</h2>
+<div class="section" id="what-eclipse-platforms-are-supported">
+<h3>What Eclipse Platforms are supported?</h3>
+<p>The Scala IDE 3.0 officially supports both <a class="reference external" href="http://www.eclipse.org/downloads/packages/release/indigo/sr2">Eclipse 3.7 (Indigo)</a> and has experimental support for <a class="reference external" href="http://www.eclipse.org/juno/">Eclipse 3.8/4.2 (Juno)</a> and <a class="reference external" href="http://www.eclipse.org/kepler/">Eclipse 4.3 (Kepler)</a>.</p>
+</div>
+<div class="section" id="i-have-a-retina-display-and-eclipse-looks-blurry-how-can-i-fix-it">
+<h3>I have a Retina Display and Eclipse looks blurry. How can I fix it?</h3>
+<p>You need to tell Mac OS that Eclipse is high-resolution capable.</p>
+<ul class="simple">
+<li>Right-click on the Eclipse.app and choose &#8220;Show package contents&#8221;</li>
+<li>Open Contents/Info.plist in an editor</li>
+<li>Add the following at the end of the file, just before the closing tags. It should look like this:</li>
+</ul>
+<div class="highlight-xml"><div class="highlight"><pre><span class="nt">&lt;key&gt;</span>NSHighResolutionCapable<span class="nt">&lt;/key&gt;</span>
+<span class="nt">&lt;true/&gt;</span>
+<span class="nt">&lt;/dict&gt;</span>
+<span class="nt">&lt;/plist&gt;</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li>Move the Eclipse.app to a new folder (to clear OS X&#8217;s cache of the Info.plist), then move it back to the old folder.</li>
+<li>Launch Eclipse</li>
+</ul>
+</div>
+<div class="section" id="what-eclipse-package-should-i-use">
+<h3>What Eclipse package should I use?</h3>
+<p>The Scala IDE can be installed effortless on any of the below Eclipse packages:</p>
+<ul class="simple">
+<li>Eclipse Classic / Eclipse Standard</li>
+<li>Eclipse IDE for Java EE Developers</li>
+<li>Eclipse IDE for Java Developers</li>
+<li>SpringSource Tool Suite</li>
+</ul>
+<p>If you are using one of the above Eclipse packages you are all set and ready to <a class="reference internal" href="../../current-user-doc/gettingstarted/index.html"><em>install the Scala
+IDE</em></a>.</p>
+<p>In case you are using a different Eclipse package (e.g., Eclipse IDE for C/C++ Developers), don&#8217;t panic,
+the Scala IDE has only one dependency and it&#8217;s a two minutes job to update your Eclipse environment and
+be ready to start your Scala journey.</p>
+<p>Start by installing the Eclipse JDT (Eclipse Java Development Tools). To do so, open Eclipse and go
+to the <tt class="docutils literal"><span class="pre">Help</span> <span class="pre">&gt;</span> <span class="pre">Install</span> <span class="pre">New</span> <span class="pre">Software</span></tt> menu, select the eclipse update site (e.g. &#8220;Indigo -
+<a class="reference external" href="http://download.eclipse.org/releases/indigo">http://download.eclipse.org/releases/indigo</a>&#8221;) and, under the Programming Languages section, select
+Eclipse Java Development Tools. Install it.</p>
+<p>Now that the JDT is installed, go ahead and <a class="reference internal" href="../../current-user-doc/gettingstarted/index.html"><em>install the Scala IDE</em></a>.</p>
+</div>
+<div class="section" id="can-i-install-more-than-one-scala-ide-plugin">
+<h3>Can I install more than one Scala IDE plugin?</h3>
+<p>Currently, it is not possible to install more than one Scala IDE plugin within the same
+Eclipse installation. You need to decide what version of Scala you want to be using and
+then choose the appropriate update site.</p>
+</div>
+<div class="section" id="i-have-an-existing-java-project-and-i-wish-to-add-scala-files-how-do-i-convince-eclipse-to-work-with-scala">
+<h3>I have an existing Java project and I wish to add Scala files. How do I convince Eclipse to work with Scala?</h3>
+<p>Right click on the project in the Package Explorer view, and in the context menu select
+<tt class="docutils literal"><span class="pre">Configure</span> <span class="pre">→</span> <span class="pre">Add</span> <span class="pre">Scala</span> <span class="pre">Nature</span></tt>.</p>
+</div>
+<div class="section" id="i-am-running-out-of-stack-space-in-eclipse-how-do-i-increase-the-stack-size">
+<h3>I am running out of stack space in Eclipse.  How do I increase the stack size?</h3>
+<p>If you are starting Eclipse from the command line, you can supply virtual machine arguments, including stack size, like this:</p>
+<div class="highlight-bash"><div class="highlight"><pre>eclipse <span class="o">[</span>normal arguments<span class="o">]</span> -vmargs -Xss8M <span class="o">[</span>more VM args<span class="o">]</span>
+</pre></div>
+</div>
+<p>You can also edit eclipse.ini in the Eclipse installation/application. There, lines that look like</p>
+<div class="highlight-bash"><div class="highlight"><pre>-vmargs
+-Xms40m
+-Xmx256m
+</pre></div>
+</div>
+<p>can be replaced with something like (for an 8 megabyte stack, 700MB initial heap, 2GB maximum heap)</p>
+<div class="highlight-bash"><div class="highlight"><pre>-vmargs
+-Xss8m
+-Xms700m
+-Xmx2048m
+</pre></div>
+</div>
+</div>
+<div class="section" id="scala-ide-complains-about-no-scala-library-or-more-than-one-scala-library">
+<h3>Scala IDE complains about &#8216;no Scala library...&#8217; or &#8216;More than one Scala library...&#8217;</h3>
+<p>The Scala IDE validates all Scala projects&#8217; classpaths to check that the Scala library has been correctly setup. It is checking two points: that the project build path contains only one Scala libraries, and that its version is compatible with the installed version of Scala IDE.</p>
+<div class="section" id="not-using-m2eclipse">
+<h4>Not using m2eclipse</h4>
+<p>It needs to be fixed manually.</p>
+<ul class="simple">
+<li>If the error is &#8216;no Scala library...&#8217;, one Scala library needs to be added to the build path. The simplest thing is to add the Scala library container: right-click on the project in the Package Explorer view, then in the context menu select <tt class="docutils literal"><span class="pre">Build</span> <span class="pre">Path</span> <span class="pre">→</span> <span class="pre">Add</span> <span class="pre">Libraries...</span></tt>, and add the <tt class="docutils literal"><span class="pre">Scala</span> <span class="pre">Library</span></tt>.</li>
+<li>If the error is &#8216;more than one Scala library...&#8217;, the number of Scala libraries needs to limited to one in the build path. If possible, make it being the Scala library container provided by Scala IDE.</li>
+</ul>
+</div>
+<div class="section" id="using-m2eclipse">
+<h4>Using m2eclipse</h4>
+<p>With projects imported using m2eclipse, the classpath validator can report an error because the Scala library is visible more than once in the build path. The <a class="reference external" href="https://github.com/sonatype/m2eclipse-scala">m2eclipse-scala</a> project was created to, among other things, fix these classpath problems.</p>
+<p>Use this <a class="reference external" href="http://alchim31.free.fr/m2e-scala/update-site/">update site</a> to get the latest version.</p>
+<p>After installation, re-importing your projects should get them configured correctly.</p>
+</div>
+</div>
+<div class="section" id="scala-ide-complains-about-is-cross-compiled-with-an-incompatible-version-of-scala">
+<h3>Scala IDE complains about &#8216;... is cross-compiled with an incompatible version of Scala ...&#8217;</h3>
+<p>The Scala IDE tries to check if binary incompatible Scala libraries have been inadvertently mixed in a project&#8217;s classpath. It works by extracting, from the name of the jars, which major version of Scala it has been compiled against (assuming the Scala convention for publishing cross-compiled libraries, and further assuming that Scala minor releases are binary compatible). If the extracted Scala major version doesn&#8217;t match the one bundled with the Scala IDE, a problem is reported. This ad-hoc validation prevents one of the most common reason for compiler crashes and lack of intelligent behavior in the Scala IDE.</p>
+<p>If this check returns a false-negative, it can be disabled at the workspace level, or at the project level. The setting is <tt class="docutils literal"><span class="pre">withVersionClasspathValidator</span></tt> in the <tt class="docutils literal"><span class="pre">Scala</span> <span class="pre">→</span> <span class="pre">Compiler</span> <span class="pre">→</span> <span class="pre">Build</span> <span class="pre">Manager</span></tt> preference section.</p>
+</div>
+</div>
+<div class="section" id="scala-interpreter">
+<h2>Scala Interpreter</h2>
+<div class="section" id="what-are-the-limitations">
+<h3>What are the limitations?</h3>
+<ul class="simple">
+<li>The colon commands available in the terminal REPL are not supported.</li>
+<li>Commands cannot be forcibly killed. For example, if an infinite loop is launched, it will continue in the background until Eclipse is shutdown.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="know-issues">
+<h2>Know Issues</h2>
+<div class="section" id="do-not-enter-road-sign-when-opening-a-scala-editor">
+<h3>Do Not Enter road sign when opening a Scala Editor</h3>
+<p><strong>Symptoms</strong>:</p>
+<p>When opening a Scala editor, the error &#8220;Could not open the editor: org.eclipse.jdt.internal.core.CompilationUnit cannot be cast to scala.tools.eclipse.InteractiveCompilationUnit&#8221; (or something similar) appears.</p>
+<p><strong>Solution</strong>:</p>
+<p>The Scala IDE uses weaving to behave as (much) more than a Java editor on Scala files, and this is the message you get when it is not active.</p>
+<p>JDT weaving is activated by default. Moreover, Scala plugin
+checks it is activated at every launch. The easiest way to debug
+this is therefore to accept activation of JDT weaving at
+launch. Otherwise, you can look into turning it on manually using
+the <a class="reference internal" href="../advancedsetup/index.html"><em>Scala Diagnostics Dialog</em></a>.</p>
+</div>
+<div class="section" id="scala-errors-on-all-unicode-arrows">
+<h3>Scala errors on all Unicode arrows</h3>
+<p><strong>Symptoms</strong>:</p>
+<p>The code contains Unicode niceties like <tt class="docutils literal"><span class="pre">←</span></tt> and <tt class="docutils literal"><span class="pre">⇒</span></tt>, but the editor doesn&#8217;t seem to be able to display them, and errors are reported at their location.</p>
+<p><strong>Solution</strong>:</p>
+<p>The operating system is not using UTF-8 by default, and its default encoding is used inside Eclipse.</p>
+<p>The encoding used to open files can be configured at different levels. Most of the time, setting Eclipse default encoding to UTF-8 in <tt class="docutils literal"><span class="pre">General</span> <span class="pre">→</span> <span class="pre">Workspace</span></tt> in the preferences <a class="footnote-reference" href="#preferences" id="id5">[1]</a> is enough. But in some case, the wrong encoding might also have been set in the project properties, or even the file properties.</p>
+</div>
+<div class="section" id="red-screen-of-death-red-squiggles-everywhere">
+<h3>Red screen of death (red squiggles everywhere)</h3>
+<p>The number one cause of <em>nothing works</em> is a mismatch between the Scala version of the Eclipse plug-in and your project&#8217;s. Make sure there is only one version of the Scala library on your classpath, and that it matches the version provided by Scala IDE.
+The prime suspect is Maven Dependencies, which can download and add an incompatible scala-library.jar.</p>
+<p>The classpath validator added in Scala IDE 2.0.0 should detect this problem and provide meaningful problem markers.</p>
+</div>
+<div class="section" id="no-completions-available">
+<h3>No completions available</h3>
+<p><strong>Symptoms</strong>:</p>
+<p>When pressing Ctrl-Space, the list doesn&#8217;t contain code completion proposals, only templates, but other semantic actions (such as hyperlinking) work fine.</p>
+<p><strong>Solution</strong>:</p>
+<p>During the development of version 2.0.0, the configuration of the Scala completion engines has been modified to make sure that no more disabled by mistake. If Scala IDE has been updated from an old beta version, it is possible that the Scala completion engines (<tt class="docutils literal"><span class="pre">Scala</span> <span class="pre">Completions</span></tt> and <tt class="docutils literal"><span class="pre">Scala</span> <span class="pre">Completion</span> <span class="pre">(Java</span> <span class="pre">sources)</span></tt>) need to be re-enabled.</p>
+<p>The diagnostic tool at <tt class="docutils literal"><span class="pre">Scala</span> <span class="pre">→</span> <span class="pre">Run</span> <span class="pre">Setup</span> <span class="pre">Diagnostic</span></tt> allows to fix this problem. Make sure that <tt class="docutils literal"><span class="pre">Use</span> <span class="pre">Scala-compatible</span> <span class="pre">JDT</span> <span class="pre">content</span> <span class="pre">assist</span> <span class="pre">proposals</span></tt> is enabled.</p>
+<img alt="../../_images/setup-diagnostics-011.png" src="../../_images/setup-diagnostics-011.png" />
+</div>
+<div class="section" id="bad-completion-when-using-companion-object-in-java">
+<h3>Bad completion when using companion object in Java</h3>
+<p>Using the Java code assist to access a Scala companion object generates invalid code.</p>
+<div class="highlight-scala"><div class="highlight"><pre><span class="k">package</span> <span class="nn">stest</span>
+
+<span class="k">class</span> <span class="nc">S3</span>
+
+<span class="k">object</span> <span class="nc">S3</span> <span class="o">{</span>
+  <span class="k">def</span> <span class="n">some</span> <span class="o">{</span> <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+<div class="highlight-java"><div class="highlight"><pre><span class="kn">package</span> <span class="n">jtest</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">stest.S3</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">J</span> <span class="o">{</span>
+  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">s</span><span class="o">()</span> <span class="o">{</span>
+    <span class="n">S3$</span><span class="o">.</span><span class="c1">// call code assist here, select MODULE$</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+<p>This a JDT problem. See <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1729">#1729</a>.</p>
+</div>
+<div class="section" id="eclipse-freezes-deadlock">
+<h3>Eclipse freezes (deadlock)</h3>
+<p><strong>Symptoms</strong>:</p>
+<p>The IDE is completely frozen.</p>
+<p>A known manifestation of this problem occurs when the <tt class="docutils literal"><span class="pre">SmartIndenter</span></tt> kicks in (for
+instance when a return carriage is inserted in the Eclipse Editor), which is particularly
+annoying since all unsaved work will be lost.</p>
+<p><strong>Solution</strong>:</p>
+<p>Apparently, this problem is due to a bug in the Oracle JVM, and it is fixed in the JRE 7 (<a class="reference external" href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=377609">read
+more...</a>). Hence, you should not experience
+this problem if you upgrade to JRE 7 or newer.</p>
+<p>If you cannot use the JRE 7, then you can try the workaround described below.</p>
+<p><strong>Workaround</strong>:</p>
+<p>If the deadlock is an instance of <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000317">#1000317</a> (deadlock in the JDT weaving code) or <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000996">#1000996</a> (deadlock during indentation) you can edit your eclipse.ini file using the recommended settings:</p>
+<div class="highlight-bash"><div class="highlight"><pre>-XX:+UnlockDiagnosticVMOptions
+-XX:+UnsyncloadClass
+-Dosgi.classloader.lock<span class="o">=</span>classname
+</pre></div>
+</div>
+<p>This will reduce the probability of getting a deadlock, but wont fix it.</p>
+<p>If you encounter this problem, the best thing is to take a thread dump:</p>
+<blockquote>
+<div><p>Once the IDE is frozen, the following command provide the process id of the running virtual machines:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>jps -v
+</pre></div>
+</div>
+<p>Then this command generates the thread dump:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>jstack &lt;pid&gt;
+</pre></div>
+</div>
+</div></blockquote>
+<p>If the thread dump doesn&#8217;t match the one in <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000317">#1000317</a> or <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000996">#1000996</a>, please open a new ticket with your thread dump attached.</p>
+</div>
+<div class="section" id="noclassdeffounderror-scala-tools-nsc-settings-mutablesettings-settingvalue">
+<h3>NoClassDefFoundError (scala/tools/nsc/settings/MutableSettings$SettingValue)</h3>
+<p><strong>Symptoms</strong>:</p>
+<p>After upgrading the Scala plug-in, <tt class="docutils literal"><span class="pre">java.lang.NoClassDefFoundError:</span> <span class="pre">scala/tools/nsc/settings/MutableSettings$SettingValue</span></tt> exception is reported for all Scala projects in the workspace. Scala IDE is then unusable.</p>
+<p><strong>Solution</strong>:</p>
+<p>If you have several update sites providing different version of Scala IDE, Eclipse may have decided that a newest Scala library should be used instead of the one provided by the plug-in to be installed. To avoid this problem, make sure to uncheck the <tt class="docutils literal"><span class="pre">Contact</span> <span class="pre">all</span> <span class="pre">update</span> <span class="pre">sites</span> <span class="pre">during</span> <span class="pre">install</span> <span class="pre">to</span> <span class="pre">find</span> <span class="pre">required</span> <span class="pre">software</span></tt> option. It is situated at the bottom of the <tt class="docutils literal"><span class="pre">Help</span> <span class="pre">→</span> <span class="pre">Install</span> <span class="pre">New</span> <span class="pre">Software...</span></tt> dialog.</p>
+</div>
+<div class="section" id="incorrect-compiler-error-reported-in-the-scala-editor">
+<h3>Incorrect compiler error reported in the Scala Editor</h3>
+<p><strong>Symptoms</strong>:</p>
+<p>A compiler error is reported in the Scala editor, when indeed the code is correct.</p>
+<p><strong>Solution</strong>:</p>
+<p>In rare circumstances, the interactive typecheker (a.k.a., presentation compiler) can get in a state where it reports false, type-checking errors. As a workaround, we&#8217;ve provided a UI action that force restarts the presentation compiler. You can access it by right clicking on the project folder in the Package Explorer view, then <tt class="docutils literal"><span class="pre">Scala</span> <span class="pre">→</span> <span class="pre">Restart</span> <span class="pre">Presentation</span> <span class="pre">Compiler</span></tt>. If the incorrect error is still reported after restarting the presentation compiler, please drop us a note in the scala-ide-user mailing list.</p>
+<table class="docutils footnote" frame="void" id="preferences" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id5">[1]</a></td><td>The Eclipse preferences are accessible using <tt class="docutils literal"><span class="pre">Windows</span> <span class="pre">→</span> <span class="pre">Preferences</span></tt> (or <tt class="docutils literal"><span class="pre">Eclipse</span> <span class="pre">→</span> <span class="pre">Preferences</span></tt> on Mac osX).</td></tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="phantom-errors-involving-missing-implicts">
+<h3>Phantom errors involving missing implicts</h3>
+<p><strong>Symptoms</strong></p>
+<p>An error involving missing implicit parameter values is reported by the IDE in an open editor but is not visible in the Problems view or during batch compilation (in SBT or similar). This ususally happens when using libraries that use Shapeless under the hood to automatically derive typeclass instances, like Circe and Doobie.</p>
+<p><strong>Solution</strong></p>
+<p>Add <tt class="docutils literal"><span class="pre">-Ymacro-expand:normal</span></tt> to &#8220;Additional commans line parameters&#8221; field in <tt class="docutils literal"><span class="pre">Preferences</span> <span class="pre">→</span> <span class="pre">Scala</span> <span class="pre">→</span> <span class="pre">Compiler</span></tt>. See <a class="reference external" href="https://github.com/scala/bug/issues/9716">SI-9716</a> for details.</p>
+</div>
+</div>
+</div>
+
+	    </div>
+      <div class="span5 sidebar">
+        <p class="contents-title">Contents</p>
+        <div id="scroller-anchor">
+          <div id="scroller">
+            <div id="toc"></div>
+          </div>
+        </div>
+	    </div>
+    </div>
+
+  </div>
+</div>
+<div class="footer" style="position:relative; clear: both; ">
+  <div class="container">
+    <ul>
+      <li><h5>Download</h5></li>
+      <li><a href="/download/sdk.html">Bundle</a></li>
+      <li><a href="/download/current.html">Stable</a></li>
+      <li><a href="/download/milestone.html">Milestone</a></li>
+      <li><a href="/download/nightly.html">Nightlies</a></li>
+    </ul>
+    <ul>
+      <li><h5>Documentation</h5></li>
+      <li><a href="/docs/user/gettingstarted.html">Getting Started</a></li>
+      <li><a href="/docs/videos.html">Videos</a></li>
+      <li><a href="/docs/tutorials/index.html">Tutorials</a></li>
+      <li><a href="http://groups.google.com/group/scala-ide-user">User Mailing List</a></li>
+    </ul>
+    <ul>
+      <li><h5>Contribute</h5></li>
+      <li><a href="https://github.com/scala-ide/scala-ide">Source Code</a></li>
+      <li><a href="/docs/dev/index.html">Developer Documentation</a></li>
+      <li><a href="http://groups.google.com/group/scala-ide-dev">Developer Mailing List</a></li>
+      <li><a href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/support/tickets">Report a Bug</a></li>
+      <li><a href="http://www.typesafe.com/contribute/cla">Individual CLA</a></li>
+      <li><a href="/resources/pdfs/cla-org.pdf">Organization CLA</a></li>
+    </ul>
+    <ul>
+      <li><img src="../../_static/resources/images/watermark.png" align="center"/></li>
+    </ul>
+  </div>
+  <div class="container copyright">
+    <p>
+      <a href="http://creativecommons.org/licenses/by/2.0/uk/">Creative Commons</a>
+	  <a href="http://scala-ide.org/feed.rss"><img align="right" height="20px" width="20px" src="http://scala-ide.org/resources/images/rss.png" alt="RSS feed of updates to the Scala IDE blog"></a>
+    </p>
+  </div>
+</div>
+<script type="text/javascript">
+  $('#toc').toc();
+</script>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-574683-7']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+  function startVideo(div_id, youtube_id) {
+    var video = '<iframe class="doc_video" src="http://www.youtube.com/embed/' + youtube_id + '?rel=0&autoplay=1&vq=hd720" frameborder="0" allowfullscreen></iframe>';
+    document.getElementById(div_id).innerHTML = video
+  }
+
+
+</script>
+
+  </body>
+</html>

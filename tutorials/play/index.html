@@ -1,0 +1,336 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Setup and use Play framework 2.1 in Scala IDE 3.0 &mdash; Scala IDE 0.1-SNAPSHOT documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/resources/stylesheets/base.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/resources/stylesheets/bootstrap.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/resources/stylesheets/base.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/resources/stylesheets/doc.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/resources/stylesheets/sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/resources/stylesheets/prettify.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '0.1-SNAPSHOT',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/resources/javascript/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/resources/javascript/toc.js"></script>
+    <script type="text/javascript" src="../../_static/resources/javascript/prettify.js"></script>
+    <script type="text/javascript" src="../../_static/resources/javascript/highlightCode.js"></script>
+    <script type="text/javascript" src="../../_static/resources/javascript/effects.core.js"></script>
+    <script type="text/javascript" src="../../_static/resources/javascript/effects.highlight.js"></script>
+    <script type="text/javascript" src="../../_static/resources/javascript/scrollTo.js"></script>
+    <script type="text/javascript" src="../../_static/resources/javascript/bootstrap-dropdown.js"></script>
+    <script type="text/javascript" src="../../_static/resources/javascript/bootstrap-dropdown-app.js"></script>
+    <script type="text/javascript" src="../../_static/resources/javascript/contentsFix.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="top" title="Scala IDE 0.1-SNAPSHOT documentation" href="../../index.html" />
+    <link rel="up" title="Tutorials" href="../index.html" />
+    <link rel="next" title="Setup and use Lift framework 2.4 in Scala IDE 2.0" href="../lift24scalaide20/index.html" />
+    <link rel="prev" title="Using Scala IDE on Maven projects" href="../m2eclipse/index.html" /> 
+  </head>
+  <body>
+<div class="top-bar">
+  <div class="top-bar-inner">
+    <div class="container">
+      <a class="brand" href="/index.html"><img src="../../_static/resources/images/logo.png" height="70px"></a>
+      <ul class="nav">
+        <li><a href="/index.html#features">Features</a></li>
+        <li><a href="/documentation.html">Documentation</a></li>
+		<li class="menu">
+	      	<a href="#" class="menu">Download</a>
+	      	<ul class="menu-dropdown">
+	        	<li><a href="/download/sdk.html">Bundle</a></li>
+	        	<li><a href="/download/current.html">Stable</a></li>
+	        	<li><a href="/download/milestone.html">Milestone</a></li>
+	        	<li><a href="/download/nightly.html">Nightlies</a></li>
+	      	</ul>
+		</li>
+        <li><a href="/blog/index.html">News</a></li>
+        <li><a href="/team.html">Team</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="slider">
+  <div class="container">
+    <div class="row">
+      <div class="span16">
+        <h1>Setup and use Play framework 2.1 in Scala IDE 3.0</h1>
+	  </div>
+    </div>
+  </div>
+</div>
+<div class="bottom">
+  <div class="container" style="position: relative;">
+
+    <div class="row" style="position: relative; clear: both;">
+      <div class="span16">
+          <ul class="breadcrumb">
+            <li><a href="../../index.html">ScalaIDE Documentation</a> » </li>
+              <li><a href="../../4.0.x/index.html">User Documentation for the Scala IDE 4.x - Lithium</a> » </li>
+              <li><a href="../index.html">Tutorials</a> » </li>
+          </ul>
+      </div>
+    </div>
+
+    <div class="row" style="position: relative; clear: both;">
+      <div class="span11 main-content">
+        <div class="section" id="setup-and-use-play-framework-2-1-in-scala-ide-3-0">
+<h1>Setup and use Play framework 2.1 in Scala IDE 3.0</h1>
+<div class="section" id="what-is-in-this-guide">
+<h2>What is in this guide?</h2>
+<p>This guide will show you how to configure a Play web application to import it in Scala IDE, how to configure <a class="reference external" href="http://www.scala-ide.org">Scala IDE</a> to work fine with the Play framework and finally how to develop Play web application from inside Scala IDE.</p>
+<div class="section" id="prerequisites">
+<h3>Prerequisites</h3>
+<ul>
+<li><p class="first"><a class="reference external" href="http://www.eclipse.org/">Eclipse</a> 3.7 (Indigo) with <a class="reference external" href="http://scala-ide.org/download/current.html#eclipse_37_indigo">Scala IDE 3.0 for Scala 2.10 installed</a>, or</p>
+<p><a class="reference external" href="http://www.eclipse.org/">Eclipse</a> 4.2 (Juno) with <a class="reference external" href="http://scala-ide.org/download/current.html#eclipse_42_juno">Scala IDE 3.0 for Scala 2.10 installed</a>.</p>
+<p>Read the <a class="reference internal" href="../../current-user-doc/gettingstarted/index.html"><em>getting started</em></a> for instructions on how to install Scala IDE.</p>
+</li>
+<li><p class="first">A basic knowledge of the Eclipse user interface is required.</p>
+</li>
+<li><p class="first">No knowledge of the Scala language is required (in this guide).</p>
+</li>
+<li><p class="first">No knowledge of the Play framework is required (in this guide).</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="installing-the-scala-ide-play2-plug-in">
+<h2>Installing the Scala IDE Play2 plug-in</h2>
+<p>The <a class="reference external" href="https://github.com/scala-ide/scala-ide-play2">Scala IDE Play2 plug-in</a> provides
+first-class support for Play2 Route and Template files in Eclipse, for both Java and Scala
+projects. In practice, what this means is that many of the features your are used to having
+in the Scala or Java Editor (e.g., syntax highlighting, errors-as-you-type reporting, code
+completion, hyperlinking) are also available when editing Play2 files.</p>
+<p>The Play2 plug-in can be installed via <strong>the same Eclipse update-site that you used to install
+the Scala IDE</strong>. The Play2 plug-in is listed under the <em>Scala IDE plugins</em> group.</p>
+<img alt="install Play2 plug-in" src="../../_images/install-play2-plugin.png" />
+<p>For a comprehensive review of the main features available in the Play2 plug-in, please
+read the <a class="reference external" href="https://github.com/scala-ide/scala-ide-play2/wiki">here</a>.</p>
+</div>
+<div class="section" id="setting-up-play-2-1">
+<h2>Setting up Play 2.1</h2>
+<p>To be able to create a Play web application, the Play framework need to be installed. If you have not installed it already, follow this few steps, or use the <a class="reference external" href="http://www.playframework.com/documentation/2.1.0/Home">Play documentation</a>.</p>
+<ul>
+<li><p class="first">Download Play framework 2.1 from <a class="reference external" href="http://www.playframework.org/">http://www.playframework.org/</a>.</p>
+</li>
+<li><p class="first">Unzip it in your preferred location. Let&#8217;s say <tt class="docutils literal"><span class="pre">/path/to/play21</span></tt> for the purpose of this document.
+<em>(from the Play documentation: Running play writes some files to directories within the archive, so don’t install to</em> <tt class="docutils literal"><span class="pre">/opt</span></tt> <em>,</em> <tt class="docutils literal"><span class="pre">/usr/local</span></tt> <em>or anywhere else you’d need special permission to write to.)</em></p>
+</li>
+<li><p class="first">For convenience, add the Play folder to your system PATH:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nb">export </span><span class="nv">PATH</span><span class="o">=</span><span class="nv">$PATH</span>:/path/to/play21
+</pre></div>
+</div>
+</li>
+</ul>
+</div>
+<div class="section" id="creating-a-play-2-1-application">
+<h2>Creating a Play 2.1 application</h2>
+<ul>
+<li><p class="first">In your development folder, ask Play to create a new web application, as a <tt class="docutils literal"><span class="pre">simple</span> <span class="pre">Scala</span> <span class="pre">application</span></tt>.</p>
+<a class="reference external image-reference" href="../../_images/play20-scalaide20-01.png"><img alt="play new testApp" src="../../_images/play20-scalaide20-01.png" style="width: 100%;" /></a>
+</li>
+<li><p class="first">Go into the application folder.</p>
+<a class="reference external image-reference" href="../../_images/play20-scalaide20-02.png"><img alt="cd testApp" src="../../_images/play20-scalaide20-02.png" style="width: 100%;" /></a>
+</li>
+<li><p class="first">And launch Play.</p>
+<a class="reference external image-reference" href="../../_images/play20-scalaide20-03.png"><img alt="play" src="../../_images/play20-scalaide20-03.png" style="width: 100%;" /></a>
+</li>
+<li><p class="first">In Play, launch your newly created web application.</p>
+<a class="reference external image-reference" href="../../_images/play20-scalaide20-04.png"><img alt="run" src="../../_images/play20-scalaide20-04.png" style="width: 100%;" /></a>
+</li>
+<li><p class="first">Check that the application works: <a class="reference external" href="http://localhost:9000/">http://localhost:9000/</a>.</p>
+<a class="reference external image-reference" href="../../_images/play20-scalaide20-05.png"><img alt="running" src="../../_images/play20-scalaide20-05.png" style="width: 100%;" /></a>
+</li>
+</ul>
+</div>
+<div class="section" id="configuring-the-play-2-1-web-application-for-scala-ide">
+<h2>Configuring the Play 2.1 web application for Scala IDE</h2>
+<p>Now that the Play application is running, it needs to be configured so it can be imported into Scala IDE.</p>
+<p>Play 2.1 integrates <a class="reference external" href="https://github.com/typesafehub/sbteclipse">sbteclipse</a>, which allow to create configuration files of a project for Eclipse.</p>
+<ul>
+<li><p class="first">First, exit the &#8216;run&#8217; mode in Play using <tt class="docutils literal"><span class="pre">ctrl-d</span></tt>.</p>
+<a class="reference external image-reference" href="../../_images/play20-scalaide20-06.png"><img alt="ctrl-d, exit" src="../../_images/play20-scalaide20-06.png" style="width: 100%;" /></a>
+</li>
+<li><p class="first"><tt class="docutils literal"><span class="pre">eclipse</span></tt> is the command to invoke sbteclipse in Play. (or <tt class="docutils literal"><span class="pre">eclipse</span> <span class="pre">with-source=true</span></tt> if you want to also download sources attachment of your dependencies)</p>
+<a class="reference external image-reference" href="../../_images/play20-scalaide20-09.png"><img alt="eclipse" src="../../_images/play20-scalaide20-09.png" style="width: 100%;" /></a>
+</li>
+<li><p class="first">Relaunch the web application, in &#8216;auto-reloading&#8217; mode, using <tt class="docutils literal"><span class="pre">~</span> <span class="pre">run</span></tt>, so it is running in the background.</p>
+<a class="reference external image-reference" href="../../_images/play20-scalaide20-10.png"><img alt="run" src="../../_images/play20-scalaide20-10.png" style="width: 100%;" /></a>
+</li>
+</ul>
+</div>
+<div class="section" id="configuring-scala-ide-for-the-play-2-1-web-application">
+<h2>Configuring Scala IDE for the Play 2.1 web application</h2>
+<p>Setting a few preferences in Eclipse will make everything easier to use.</p>
+<ul>
+<li><p class="first">Open the internal web browser view in Eclipse, and check you can access your web application.</p>
+<a class="reference external image-reference" href="../../_images/play20-scalaide20-12.png"><img alt="http://localhost:9000/" src="../../_images/play20-scalaide20-12.png" style="width: 100%;" /></a>
+</li>
+<li><p class="first">Configure Eclipse so changes on the file system are automatically picked up.</p>
+<a class="reference external image-reference" href="../../_images/refresh-on-access.png"><img alt="refresh automatically" src="../../_images/refresh-on-access.png" style="width: 100%;" /></a>
+</li>
+</ul>
+</div>
+<div class="section" id="importing-the-play-web-application-into-scala-ide">
+<h2>Importing the Play web application into Scala IDE</h2>
+<p>Everything is setup, it is time to import the project in the IDE.</p>
+<ul>
+<li><p class="first">Import the Play 2.1 application as an <tt class="docutils literal"><span class="pre">Existing</span> <span class="pre">Projects</span> <span class="pre">into</span> <span class="pre">Workspace</span></tt>.</p>
+<a class="reference external image-reference" href="../../_images/play20-scalaide20-15.png"><img alt="import project" src="../../_images/play20-scalaide20-15.png" style="width: 100%;" /></a>
+</li>
+<li><p class="first">Everything is good, everything compiles.</p>
+<a class="reference external image-reference" href="../../_images/play20-scalaide20-16.png"><img alt="everything compiles" src="../../_images/play20-scalaide20-16.png" style="width: 100%;" /></a>
+</li>
+</ul>
+</div>
+<div class="section" id="doing-some-development">
+<h2>Doing some development</h2>
+<p>Now that everything is setup, we can start to do some real work.</p>
+<p>Let&#8217;s change the main page to display a quote instead of the default page.</p>
+<ul>
+<li><p class="first">First, create the <tt class="docutils literal"><span class="pre">models.Quote</span></tt> class using the new <tt class="docutils literal"><span class="pre">Scala</span> <span class="pre">Class</span></tt> wizard.</p>
+<a class="reference external image-reference" href="../../_images/play20-scalaide20-19.png"><img alt="create model.Quote" src="../../_images/play20-scalaide20-19.png" style="width: 100%;" /></a>
+</li>
+<li><p class="first">Add variables to <tt class="docutils literal"><span class="pre">models.Quote</span></tt>, and make it a case class.</p>
+<div class="highlight-scala"><div class="highlight"><pre><span class="k">package</span> <span class="nn">models</span>
+
+<span class="k">case</span> <span class="k">class</span> <span class="nc">Quote</span><span class="o">(</span><span class="n">text</span><span class="k">:</span> <span class="kt">String</span><span class="o">,</span> <span class="n">author</span><span class="k">:</span> <span class="kt">String</span><span class="o">)</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Add an extra parameter to the <tt class="docutils literal"><span class="pre">index.scala.html</span></tt> view and update the layout.</p>
+<div class="highlight-scala"><div class="highlight"><pre><span class="o">@(</span><span class="n">message</span><span class="k">:</span> <span class="kt">String</span><span class="o">,</span> <span class="n">quote</span><span class="k">:</span> <span class="kt">models.Quote</span><span class="o">)</span>
+
+<span class="nd">@main</span><span class="o">(</span><span class="s">&quot;Welcome to Play 2.1&quot;</span><span class="o">)</span> <span class="o">{</span>
+
+    <span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;@</span><span class="n">quote</span><span class="o">.</span><span class="n">text</span><span class="o">&lt;</span><span class="n">em</span><span class="o">&gt;</span> <span class="o">-</span> <span class="nd">@quote</span><span class="o">.</span><span class="n">author</span><span class="o">&lt;/</span><span class="n">em</span><span class="o">&gt;&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+
+<span class="o">}</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">The templates are transformed into Scala code by the Play framework. As Play has been started in auto-reloading mode in the background, templates are recompiled as soon as the file is saved.</p>
+<p>After saving the file, the changes are picked up by Scala IDE, and it reports an error in the code of <tt class="docutils literal"><span class="pre">Application.scala</span></tt>. The application is not using the template correctly.</p>
+<a class="reference external image-reference" href="../../_images/play20-scalaide20-17.png"><img alt="compilation error" src="../../_images/play20-scalaide20-17.png" style="width: 100%;" /></a>
+</li>
+<li><p class="first">Fix the application code, using a smart quote. And fix the imports as needed.</p>
+<div class="highlight-scala"><div class="highlight"><pre><span class="k">def</span> <span class="n">index</span> <span class="k">=</span> <span class="nc">Action</span> <span class="o">{</span>
+  <span class="nc">Ok</span><span class="o">(</span><span class="n">views</span><span class="o">.</span><span class="n">html</span><span class="o">.</span><span class="n">index</span><span class="o">(</span><span class="s">&quot;Your new application is ready.&quot;</span><span class="o">,</span>
+      <span class="nc">Quote</span><span class="o">(</span><span class="s">&quot;Citer les pensees des autres, c&#39;est regretter de ne pas les avoir trouvees soi-meme.&quot;</span><span class="o">,</span>
+          <span class="s">&quot;Sacha Guitry&quot;</span><span class="o">)))</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">The code compiles. Check the result in the internal web browser.</p>
+<a class="reference external image-reference" href="../../_images/play20-scalaide20-18.png"><img alt="done" src="../../_images/play20-scalaide20-18.png" style="width: 100%;" /></a>
+</li>
+</ul>
+</div>
+<div class="section" id="going-further">
+<h2>Going further</h2>
+<p>You now have all you need to create great web applications with Play 2.1 and Scala.</p>
+<p>For more information about Play 2.1, check out the <a class="reference external" href="http://localhost:9000/&#64;documentation/Home">embedded documentation</a>.</p>
+<p>For more information about Scala, go to the <a class="reference external" href="http://docs.scala-lang.org/">documentation website</a> or get the downloadable <a class="reference external" href="http://typesafe.com/resources/scala-for-the-impatient">eBook</a>.</p>
+</div>
+<div class="section" id="feedback">
+<h2>Feedback</h2>
+<p>This guide is managed through in the <a class="reference external" href="https://github.com/scala-ide/docs">Scala IDE documentation project</a> on github.
+Please use github tickets and pull requests system for feedback.</p>
+<p>Luc Bourlier - <a class="reference external" href="https://plus.google.com/106787944777810934000/posts">+Luc Bourlier</a> <a class="reference external" href="https://twitter.com/sky1uc">&#64;sky1uc</a></p>
+</div>
+</div>
+
+	    </div>
+      <div class="span5 sidebar">
+        <p class="contents-title">Contents</p>
+        <div id="scroller-anchor">
+          <div id="scroller">
+            <div id="toc"></div>
+          </div>
+        </div>
+	    </div>
+    </div>
+
+  </div>
+</div>
+<div class="footer" style="position:relative; clear: both; ">
+  <div class="container">
+    <ul>
+      <li><h5>Download</h5></li>
+      <li><a href="/download/sdk.html">Bundle</a></li>
+      <li><a href="/download/current.html">Stable</a></li>
+      <li><a href="/download/milestone.html">Milestone</a></li>
+      <li><a href="/download/nightly.html">Nightlies</a></li>
+    </ul>
+    <ul>
+      <li><h5>Documentation</h5></li>
+      <li><a href="/docs/user/gettingstarted.html">Getting Started</a></li>
+      <li><a href="/docs/videos.html">Videos</a></li>
+      <li><a href="/docs/tutorials/index.html">Tutorials</a></li>
+      <li><a href="http://groups.google.com/group/scala-ide-user">User Mailing List</a></li>
+    </ul>
+    <ul>
+      <li><h5>Contribute</h5></li>
+      <li><a href="https://github.com/scala-ide/scala-ide">Source Code</a></li>
+      <li><a href="/docs/dev/index.html">Developer Documentation</a></li>
+      <li><a href="http://groups.google.com/group/scala-ide-dev">Developer Mailing List</a></li>
+      <li><a href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/support/tickets">Report a Bug</a></li>
+      <li><a href="http://www.typesafe.com/contribute/cla">Individual CLA</a></li>
+      <li><a href="/resources/pdfs/cla-org.pdf">Organization CLA</a></li>
+    </ul>
+    <ul>
+      <li><img src="../../_static/resources/images/watermark.png" align="center"/></li>
+    </ul>
+  </div>
+  <div class="container copyright">
+    <p>
+      <a href="http://creativecommons.org/licenses/by/2.0/uk/">Creative Commons</a>
+	  <a href="http://scala-ide.org/feed.rss"><img align="right" height="20px" width="20px" src="http://scala-ide.org/resources/images/rss.png" alt="RSS feed of updates to the Scala IDE blog"></a>
+    </p>
+  </div>
+</div>
+<script type="text/javascript">
+  $('#toc').toc();
+</script>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-574683-7']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+  function startVideo(div_id, youtube_id) {
+    var video = '<iframe class="doc_video" src="http://www.youtube.com/embed/' + youtube_id + '?rel=0&autoplay=1&vq=hd720" frameborder="0" allowfullscreen></iframe>';
+    document.getElementById(div_id).innerHTML = video
+  }
+
+
+</script>
+
+  </body>
+</html>
