@@ -1,6 +1,32 @@
 Changelog
 =========
 
+4.7.x
+-----
+
+4.7.0 RC1 (2017-09-11)
+......................
+
+ - Remove old configuration for Scala 2.10 and 2.11
+ - Update build
+ - Update to Eclipse 4.7.0 (Oxygen)
+ - Zinc 1.0.0 upgrade
+ - Fix warnings
+ - Version checks for compiler plugins consistent with publisher's policy
+ - Fix compilation errors after updating to Scala 2.12.3
+ - Update scalariform
+ - Upgrade Scala 2.12 dependency to Scala 2.12.3
+ - Update version to 4.7.0
+ - Remove unnecessary gitignore files
+
+The following changes belong to the scala-refactoring part:
+
+ - Kicks up scala-refactoring version to 0.14.0-SNAPSHOT
+ - Fix broken link
+ - Update sbt and Scala version
+ - Fixes bug related to import grouping. Adds comma separated grouping prefixes
+ - Default imports grouping
+
 4.6.x
 -----
 
