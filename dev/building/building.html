@@ -2,10 +2,13 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
+
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Building the Scala IDE &#8212; Scala IDE 0.1-SNAPSHOT documentation</title>
+    
+    <title>Building the Scala IDE &mdash; Scala IDE 0.1-SNAPSHOT documentation</title>
+    
     <link rel="stylesheet" href="../../_static/resources/stylesheets/base.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/resources/stylesheets/bootstrap.css" type="text/css" />
@@ -13,14 +16,14 @@
     <link rel="stylesheet" href="../../_static/resources/stylesheets/doc.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/resources/stylesheets/sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/resources/stylesheets/prettify.css" type="text/css" />
+    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
         VERSION:     '0.1-SNAPSHOT',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
+        HAS_SOURCE:  true
       };
     </script>
     <script type="text/javascript" src="../../_static/jquery.js"></script>
@@ -37,8 +40,8 @@
     <script type="text/javascript" src="../../_static/resources/javascript/bootstrap-dropdown-app.js"></script>
     <script type="text/javascript" src="../../_static/resources/javascript/contentsFix.js"></script>
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
-    <link rel="index" title="Index" href="../../genindex.html" />
-    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="top" title="Scala IDE 0.1-SNAPSHOT documentation" href="../../index.html" />
+    <link rel="up" title="Welcome to the Scala IDE Developer Documentation" href="../index.html" />
     <link rel="next" title="Architecture" href="../architecture/architecture.html" />
     <link rel="prev" title="Setup" href="../setup/setup.html" /> 
   </head>
@@ -97,7 +100,7 @@ done, for example, during the <a class="reference external" href="https://jenkin
 <ul class="simple">
 <li>A working JDK</li>
 <li><a class="reference external" href="http://maven.apache.org/download.html">Maven 3</a>.</li>
-<li>You have cloned the Scala IDE project. Read <a class="reference internal" href="../setup/setup.html#setup-fork-the-project"><span class="std std-ref">Fork the project</span></a> for
+<li>You have cloned the Scala IDE project. Read <a class="reference internal" href="../setup/setup.html#setup-fork-the-project"><em>Fork the project</em></a> for
 more information about this point.</li>
 </ul>
 </div>
@@ -105,18 +108,18 @@ more information about this point.</li>
 <span id="building-run-the-build"></span><h2>Run the build</h2>
 <p>If you just want to build Scala IDE, a script triggers the different step needed to generate Scala IDE.</p>
 <p>From the project root, run the following command to build Scala IDE for Scala 2.11:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>$ ./build-all.sh
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>./build-all.sh
 </pre></div>
 </div>
 <p>or the following to build Scala IDE for a given Scala version:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>$ ./build-all.sh -P scala-2.11.x -P eclipse-luna clean install
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>./build-all.sh -P scala-2.11.x -P eclipse-luna clean install
 </pre></div>
 </div>
 <p>Assuming your build is successful you should find an Eclipse update site has been built in
-<code class="docutils literal"><span class="pre">org.scala-ide.sdt.update-site/target/site</span></code> and a zipped version of the same at
-<code class="docutils literal"><span class="pre">org.scala-ide.sdt.update-site/target/site_assembly.zip</span></code>. You can install directly into Eclipse
+<tt class="docutils literal"><span class="pre">org.scala-ide.sdt.update-site/target/site</span></tt> and a zipped version of the same at
+<tt class="docutils literal"><span class="pre">org.scala-ide.sdt.update-site/target/site_assembly.zip</span></tt>. You can install directly into Eclipse
 from this update site by adding it as a local update site via the Eclipse
-“Install New Software …” action. Alternatively, if you make the unpacked site available via a web
+&#8220;Install New Software ...&#8221; action. Alternatively, if you make the unpacked site available via a web
 server, then the HTTP URL of its root directory is acceptable as an ordinary Eclipse update site URL.</p>
 </div>
 <div class="section" id="the-build-in-details">
@@ -129,14 +132,14 @@ server, then the HTTP URL of its root directory is acceptable as an ordinary Ecl
 <li><em>org.scala-ide.toolchain.update-site</em> creates an update site containing the bundles created by the build-toolchain (needed for the nightly builds)</li>
 <li><em>org.scala-ide.sdt.build</em> compiles, tests and creates the update site for Scala IDE</li>
 </ul>
-<p>The toolchain update site and the SDT build depend on the fact that the root pom and toolchain have been compiled and installed in the local maven repository using <code class="docutils literal"><span class="pre">mvn</span> <span class="pre">install</span></code>.</p>
+<p>The toolchain update site and the SDT build depend on the fact that the root pom and toolchain have been compiled and installed in the local maven repository using <tt class="docutils literal"><span class="pre">mvn</span> <span class="pre">install</span></tt>.</p>
 <p>After an initial complete build, maven can be used from any subproject.</p>
-<p><code class="docutils literal"><span class="pre">build-all.sh</span></code> is simply a helper script that calls maven on the different parts. Running it is equivalent to:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>$ mvn -P scala-2.11.x -P eclipse-luna clean install
-$ <span class="nb">cd</span> org.scala-ide.build-toolchain
-$ mvn -P scala-2.11.x -P eclipse-luna clean install
-$ <span class="nb">cd</span> ../org.scala-ide.sdt.build
-$ mvn -P scala-2.11.x -P eclipse-luna clean install
+<p><tt class="docutils literal"><span class="pre">build-all.sh</span></tt> is simply a helper script that calls maven on the different parts. Running it is equivalent to:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>mvn -P scala-2.11.x -P eclipse-luna clean install
+<span class="nv">$ </span><span class="nb">cd </span>org.scala-ide.build-toolchain
+<span class="nv">$ </span>mvn -P scala-2.11.x -P eclipse-luna clean install
+<span class="nv">$ </span><span class="nb">cd</span> ../org.scala-ide.sdt.build
+<span class="nv">$ </span>mvn -P scala-2.11.x -P eclipse-luna clean install
 </pre></div>
 </div>
 </div>
@@ -144,13 +147,13 @@ $ mvn -P scala-2.11.x -P eclipse-luna clean install
 <h2>Build Profiles</h2>
 <p>The build is controlled through profiles, and there are several dimensions on which the build can be controlled:</p>
 <ul class="simple">
-<li>Eclipse platform. Currently the build works with Eclipse Kepler and Luna. Profiles: <code class="docutils literal"><span class="pre">eclipse-kepler</span></code>, <code class="docutils literal"><span class="pre">eclipse-luna</span></code>. The two profiles use different
-source folders for a couple of files. The additional sources are found in <code class="docutils literal"><span class="pre">src-luna</span></code> and <code class="docutils literal"><span class="pre">src-kepler</span></code> respectively. Make sure to add the right one
-in your Eclipse project if not using the defaults (by default, <code class="docutils literal"><span class="pre">src-luna</span></code> is part of the project)</li>
-<li>Scala major number. Currently the build works with Scala 2.11 and has support for 2.12. Profiles: <code class="docutils literal"><span class="pre">scala-2.11.x</span></code>, <code class="docutils literal"><span class="pre">scala-2.12.x</span></code></li>
+<li>Eclipse platform. Currently the build works with Eclipse Kepler and Luna. Profiles: <tt class="docutils literal"><span class="pre">eclipse-kepler</span></tt>, <tt class="docutils literal"><span class="pre">eclipse-luna</span></tt>. The two profiles use different
+source folders for a couple of files. The additional sources are found in <tt class="docutils literal"><span class="pre">src-luna</span></tt> and <tt class="docutils literal"><span class="pre">src-kepler</span></tt> respectively. Make sure to add the right one
+in your Eclipse project if not using the defaults (by default, <tt class="docutils literal"><span class="pre">src-luna</span></tt> is part of the project)</li>
+<li>Scala major number. Currently the build works with Scala 2.11 and has support for 2.12. Profiles: <tt class="docutils literal"><span class="pre">scala-2.11.x</span></tt>, <tt class="docutils literal"><span class="pre">scala-2.12.x</span></tt></li>
 </ul>
 <p>A specific Scala version can also be passed on the command line, <em>in addition to the Scala profile</em>:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>$ mvn -P scala-2.11.x -P eclipse-luna -Dscala211.version<span class="o">=</span><span class="m">2</span>.11.2 clean install
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>mvn -P scala-2.11.x -P eclipse-luna -Dscala211.version<span class="o">=</span>2.11.2 clean install
 </pre></div>
 </div>
 </div>
@@ -159,11 +162,11 @@ in your Eclipse project if not using the defaults (by default, <code class="docu
 <p>Scala IDE has a memory leak test. This test compiles 50 times the Scala compiler as a Scala IDE project, checking the memory consumption between each run.</p>
 <p>This test is not run by default in a normal build. org.scala-ide.sdt.core.test contains a special profile to run the test.</p>
 <p>Use the following command to run it after having build the toolchain.</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="c1"># from org.scala-ide.sdt.build</span>
-$ mvn --projects ../org.scala-ide.sdt.aspects,../org.scala-ide.sdt.core,../org.scala-ide.sdt.core.tests -P scala-2.11.x,memory-test clean integration-test
+<div class="highlight-bash"><div class="highlight"><pre><span class="c"># from org.scala-ide.sdt.build</span>
+<span class="nv">$ </span>mvn --projects ../org.scala-ide.sdt.aspects,../org.scala-ide.sdt.core,../org.scala-ide.sdt.core.tests -P scala-2.11.x,memory-test clean integration-test
 </pre></div>
 </div>
-<p>The <code class="docutils literal"><span class="pre">--projects</span></code> option tells maven which modules to build, as we don’t need to build all of them in this case. The <code class="docutils literal"><span class="pre">memory-test</span></code> profile contains a sightly modified configuration for <code class="docutils literal"><span class="pre">sdt.core.test</span></code>. It pulls and extracts the Scala compiler source needed for the test, and sets the MemoryLeaksTest test to be run.</p>
+<p>The <tt class="docutils literal"><span class="pre">--projects</span></tt> option tells maven which modules to build, as we don&#8217;t need to build all of them in this case. The <tt class="docutils literal"><span class="pre">memory-test</span></tt> profile contains a sightly modified configuration for <tt class="docutils literal"><span class="pre">sdt.core.test</span></tt>. It pulls and extracts the Scala compiler source needed for the test, and sets the MemoryLeaksTest test to be run.</p>
 </div>
 <div class="section" id="build-the-scala-ide-with-a-local-version-of-the-scala-compiler">
 <h2>Build the Scala IDE with a local version of the Scala Compiler</h2>
@@ -175,23 +178,23 @@ Scala IDE plug-in reacts to the changes. If that is exactly what you want to do,
 Otherwise, you can safely skip this section.</p>
 </div>
 <p>Build the Scala compiler, package into maven format and deploy locally. If you are building Scala <strong>2.10.x</strong>, run</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="c1"># From the main Scala directory</span>
-$ ant distpack-opt
-$ <span class="o">(</span><span class="nb">cd</span> dists/maven/latest<span class="p">;</span> ant deploy.snapshot.local<span class="o">)</span>
+<div class="highlight-bash"><div class="highlight"><pre><span class="c"># From the main Scala directory</span>
+<span class="nv">$ </span>ant distpack-opt
+<span class="nv">$ </span><span class="o">(</span><span class="nb">cd </span>dists/maven/latest; ant deploy.snapshot.local<span class="o">)</span>
 </pre></div>
 </div>
 <p>In case you are building Scala <strong>master</strong>, run</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="c1"># From the main Scala directory</span>
-$ ant publish.local
+<div class="highlight-bash"><div class="highlight"><pre><span class="c"># From the main Scala directory</span>
+<span class="nv">$ </span>ant publish.local
 </pre></div>
 </div>
 <p>Then rebuild Scala IDE, the build will automatically pickup the compiler which was installed locally.</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="c1"># From the main Scala IDE directory</span>
-$ ./build-all.sh
+<div class="highlight-bash"><div class="highlight"><pre><span class="c"># From the main Scala IDE directory</span>
+<span class="nv">$ </span>./build-all.sh
 </pre></div>
 </div>
 <p>When the build is successful, a complete update-site, with the local changes
-you made in the Scala compiler, is available in <code class="docutils literal"><span class="pre">org.scala-ide.sdt.update-site/target/site</span></code>.</p>
+you made in the Scala compiler, is available in <tt class="docutils literal"><span class="pre">org.scala-ide.sdt.update-site/target/site</span></tt>.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">If you get weird errors about missing methods, then you are probably mixing Scala versions in the
