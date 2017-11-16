@@ -2,13 +2,10 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
-
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
-    <title>Code Completion updated &mdash; Scala IDE 0.1-SNAPSHOT documentation</title>
-    
+    <title>Code Completion updated &#8212; Scala IDE 0.1-SNAPSHOT documentation</title>
     <link rel="stylesheet" href="../../../_static/resources/stylesheets/base.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/resources/stylesheets/bootstrap.css" type="text/css" />
@@ -16,14 +13,14 @@
     <link rel="stylesheet" href="../../../_static/resources/stylesheets/doc.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/resources/stylesheets/sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/resources/stylesheets/prettify.css" type="text/css" />
-    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../../',
         VERSION:     '0.1-SNAPSHOT',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
       };
     </script>
     <script type="text/javascript" src="../../../_static/jquery.js"></script>
@@ -40,8 +37,8 @@
     <script type="text/javascript" src="../../../_static/resources/javascript/bootstrap-dropdown-app.js"></script>
     <script type="text/javascript" src="../../../_static/resources/javascript/contentsFix.js"></script>
     <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
-    <link rel="top" title="Scala IDE 0.1-SNAPSHOT documentation" href="../../../index.html" />
-    <link rel="up" title="Typing and Viewing" href="index.html" />
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
     <link rel="next" title="Code Templates" href="code-templates.html" />
     <link rel="prev" title="As You Type Error Reporting" href="errors-as-you-type.html" /> 
   </head>
@@ -95,23 +92,23 @@
       <div class="span11 main-content">
         <div class="section" id="code-completion-updated">
 <h1>Code Completion <span class="raw-html"><span class="label success">updated</span></span></h1>
-<p>Scala IDE provides full code completion support, returning the entities available in the current context. Code completion is enable by using <tt class="docutils literal"><span class="pre">Ctrl+Space</span></tt> in the Scala Editor.</p>
+<p>Scala IDE provides full code completion support, returning the entities available in the current context. Code completion is enable by using <code class="docutils literal"><span class="pre">Ctrl+Space</span></code> in the Scala Editor.</p>
 <p>In <strong>Scala source files</strong>, code completion returns the valid Scala and Java proposals.</p>
 <a class="reference external image-reference" href="../_images/feature-code-completion-01.png"><img alt="../../../_images/feature-code-completion-012.png" src="../../../_images/feature-code-completion-012.png" style="width: 100%;" /></a>
 <p>The Scala elements compatible with Java are provided in <strong>Java source files</strong>.</p>
 <a class="reference external image-reference" href="../_images/feature-code-completion-02.png"><img alt="../../../_images/feature-code-completion-022.png" src="../../../_images/feature-code-completion-022.png" style="width: 100%;" /></a>
 <div class="section" id="type-completion-relevance-new">
 <h2>Type completion relevance <span class="raw-html"><span class="label info">new</span></span></h2>
-<p>The order in which type completions are presented to the user can be tweaked in <tt class="docutils literal"><span class="pre">Preferences</span> <span class="pre">→</span> <span class="pre">Scala</span> <span class="pre">→</span> <span class="pre">Editor</span> <span class="pre">→</span> <span class="pre">Completions</span></tt> based on their package:</p>
+<p>The order in which type completions are presented to the user can be tweaked in <code class="docutils literal"><span class="pre">Preferences</span> <span class="pre">→</span> <span class="pre">Scala</span> <span class="pre">→</span> <span class="pre">Editor</span> <span class="pre">→</span> <span class="pre">Completions</span></code> based on their package:</p>
 <a class="reference external image-reference" href="../_images/feature-code-completion-03.png"><img alt="../../../_images/feature-code-completion-03.png" src="../../../_images/feature-code-completion-03.png" style="width: 100%;" /></a>
 <p>Generally, completions are ordered by a so called relevance score, that is modified accordingly if the package matches one of the supplied regular expressions.
 <strong>Favorite Packages</strong> get a significant, and <strong>Preferred Packages</strong> a slight bonus to their relevance scores. Likewise, <strong>Unpopular Packages</strong> get a slight, and
 <strong>Shunned Packages</strong> a significant penalty. If a package is matched by multiple regular expressions, the associated bonuses or penalties are simply added up (even
-if the regular expressions are part of the same group). This can be exploited for fine tuning. For example, adding <tt class="docutils literal"><span class="pre">scala\.(?!xml).*</span></tt> to <strong>Favorite Packages</strong>
-and <tt class="docutils literal"><span class="pre">scala\.collection\.immutable\b.*</span></tt> to <strong>Preferred Packages</strong> will add a significant bonus to all Scala types (except for APIs under <tt class="docutils literal"><span class="pre">scala.xml</span></tt>), but an
+if the regular expressions are part of the same group). This can be exploited for fine tuning. For example, adding <code class="docutils literal"><span class="pre">scala\.(?!xml).*</span></code> to <strong>Favorite Packages</strong>
+and <code class="docutils literal"><span class="pre">scala\.collection\.immutable\b.*</span></code> to <strong>Preferred Packages</strong> will add a significant bonus to all Scala types (except for APIs under <code class="docutils literal"><span class="pre">scala.xml</span></code>), but an
 even slightly larger bonus to immutable Scala collections, to make sure that they are preferred to their mutable counterparts. Note that we would have gotten a
-similar effect, if we had added <tt class="docutils literal"><span class="pre">scala\.collection\.immutable\b.*</span></tt> to <strong>Favorite Packages</strong> as well, but then the added bonus for immutable collections would have
-been bigger. Related, but not identical behaviour, would be observed after adding <tt class="docutils literal"><span class="pre">scala\.collection\.mutable\b.*</span></tt> to <strong>Unpopular Packages</strong> or <strong>Shunned Packages</strong>.</p>
+similar effect, if we had added <code class="docutils literal"><span class="pre">scala\.collection\.immutable\b.*</span></code> to <strong>Favorite Packages</strong> as well, but then the added bonus for immutable collections would have
+been bigger. Related, but not identical behaviour, would be observed after adding <code class="docutils literal"><span class="pre">scala\.collection\.mutable\b.*</span></code> to <strong>Unpopular Packages</strong> or <strong>Shunned Packages</strong>.</p>
 <div class="admonition warning">
 <p class="first admonition-title">Warning</p>
 <p class="last">The supplied regular expressions are matched against full package names. A partial match is not enough. Always double check them if you wonder why your changes do not have the desired effect.</p>
@@ -120,11 +117,11 @@ been bigger. Related, but not identical behaviour, would be observed after addin
 <div class="section" id="completion-overwrites">
 <h2>Completion overwrites</h2>
 <p>Users can choose if identifiers inserted by the code completion mechanism should overwrite already existing ones. This is a very useful feature if one decides to change already existing source code. For example, if we have the following</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">List</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">fl</span><span class="o">^</span><span class="nb">map</span><span class="p">(</span><span class="n">List</span><span class="p">(</span><span class="n">_</span><span class="p">))</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">List</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">fl</span><span class="o">^</span><span class="nb">map</span><span class="p">(</span><span class="n">List</span><span class="p">(</span><span class="n">_</span><span class="p">))</span>
 </pre></div>
 </div>
-<p>where <tt class="docutils literal"><span class="pre">^</span></tt> denotes the cursors position, it would not be that useful when as completion <tt class="docutils literal"><span class="pre">flatMap</span></tt> is chosen but the already existing <tt class="docutils literal"><span class="pre">map</span></tt> is not replaced. Completion overwrites allow exactly these sort of replacements. They need to be configured in <tt class="docutils literal"><span class="pre">Preferences</span> <span class="pre">→</span> <span class="pre">Java</span> <span class="pre">→</span> <span class="pre">Editor</span> <span class="pre">→</span> <span class="pre">Content</span> <span class="pre">Assist</span></tt> and then in the section <tt class="docutils literal"><span class="pre">Insertion</span></tt>.</p>
-<p>A small detail to mention here, is, that it is possible to toggle between the completion modes by holding <tt class="docutils literal"><span class="pre">Ctrl</span></tt> while applying the completion.</p>
+<p>where <code class="docutils literal"><span class="pre">^</span></code> denotes the cursors position, it would not be that useful when as completion <code class="docutils literal"><span class="pre">flatMap</span></code> is chosen but the already existing <code class="docutils literal"><span class="pre">map</span></code> is not replaced. Completion overwrites allow exactly these sort of replacements. They need to be configured in <code class="docutils literal"><span class="pre">Preferences</span> <span class="pre">→</span> <span class="pre">Java</span> <span class="pre">→</span> <span class="pre">Editor</span> <span class="pre">→</span> <span class="pre">Content</span> <span class="pre">Assist</span></code> and then in the section <code class="docutils literal"><span class="pre">Insertion</span></code>.</p>
+<p>A small detail to mention here, is, that it is possible to toggle between the completion modes by holding <code class="docutils literal"><span class="pre">Ctrl</span></code> while applying the completion.</p>
 </div>
 </div>
 

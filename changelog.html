@@ -2,13 +2,10 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
-
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
-    <title>Changelog &mdash; Scala IDE 0.1-SNAPSHOT documentation</title>
-    
+    <title>Changelog &#8212; Scala IDE 0.1-SNAPSHOT documentation</title>
     <link rel="stylesheet" href="_static/resources/stylesheets/base.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="_static/resources/stylesheets/bootstrap.css" type="text/css" />
@@ -16,14 +13,14 @@
     <link rel="stylesheet" href="_static/resources/stylesheets/doc.css" type="text/css" />
     <link rel="stylesheet" href="_static/resources/stylesheets/sphinx.css" type="text/css" />
     <link rel="stylesheet" href="_static/resources/stylesheets/prettify.css" type="text/css" />
-    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '',
+        URL_ROOT:    './',
         VERSION:     '0.1-SNAPSHOT',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
       };
     </script>
     <script type="text/javascript" src="_static/jquery.js"></script>
@@ -40,9 +37,10 @@
     <script type="text/javascript" src="_static/resources/javascript/bootstrap-dropdown-app.js"></script>
     <script type="text/javascript" src="_static/resources/javascript/contentsFix.js"></script>
     <link rel="shortcut icon" href="_static/favicon.ico"/>
-    <link rel="top" title="Scala IDE 0.1-SNAPSHOT documentation" href="index.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="User Documentation for the Scala IDE 2.0.x" href="2.0.x/index.html" />
-    <link rel="prev" title="Setup and use the Scalac project with the Scala IDE" href="tutorials/scalac-trunk/index.html" /> 
+    <link rel="prev" title="Videos" href="videos.html" /> 
   </head>
   <body>
 <div class="top-bar">
@@ -90,6 +88,26 @@
 <h1>Changelog</h1>
 <div class="section" id="x">
 <h2>4.7.x</h2>
+<div class="section" id="rc1-2017-11-15">
+<h3>4.7.1 RC1 (2017-11-15)</h3>
+<ul class="simple">
+<li>Fixes problem with AssertionError thrown from scalap when potential bytecode is not JVM</li>
+<li>Worksheet multi scala support</li>
+<li>upgrade to scalariform 0.2.6</li>
+<li>fix nightlies</li>
+</ul>
+<p>The following changes belong to the scala-worksheet part:</p>
+<ul class="simple">
+<li>Multi scala support for scala worksheet</li>
+<li>Bumps up plugin-profiles version for eclipse-oxygen.</li>
+</ul>
+<p>The following changes belong to the scala-ide-play2 part:</p>
+<ul class="simple">
+<li>Fixes problem with malfunctioned closing of twirl template comments</li>
+<li>Enables syntax highlighting in scala.html files.</li>
+<li>Bumps up plugin-profiles version for eclipse oxygen.</li>
+</ul>
+</div>
 <div class="section" id="id1">
 <h3>4.7.0 (2017-09-29)</h3>
 <ul class="simple">
@@ -104,7 +122,7 @@
 <li>Update to Eclipse 4.7.0 (Oxygen)</li>
 <li>Zinc 1.0.0 upgrade</li>
 <li>Fix warnings</li>
-<li>Version checks for compiler plugins consistent with publisher&#8217;s policy</li>
+<li>Version checks for compiler plugins consistent with publisher’s policy</li>
 <li>Fix compilation errors after updating to Scala 2.12.3</li>
 <li>Update scalariform</li>
 <li>Upgrade Scala 2.12 dependency to Scala 2.12.3</li>
@@ -217,7 +235,7 @@
 <li>Fix breakpoint in code</li>
 <li>Adapt scala refactoring config</li>
 <li>Compiler bridge source 2.10</li>
-<li>Don&#8217;t rely on custom hacks when doing a local rename (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002803">#1002803</a>)</li>
+<li>Don’t rely on custom hacks when doing a local rename (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002803">#1002803</a>)</li>
 </ul>
 </div>
 </div>
@@ -263,7 +281,7 @@
 <li>Fix some issues with <cite>MoveClass</cite> (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002761">#1002761</a> <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002785">#1002785</a>)</li>
 <li>Be more careful with imports when moving class (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002723">#1002723</a>)</li>
 <li>Adds improvements in organize imports. See added tests. (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002678">#1002678</a>)</li>
-<li>Fix renaming identifiers starting with &#8216;_&#8217; (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002674">#1002674</a>)</li>
+<li>Fix renaming identifiers starting with ‘_’ (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002674">#1002674</a>)</li>
 <li>Organize Imports in packages avoiding tree printer</li>
 <li>Rename file name from PimpedTreesTest to EnrichedTreesTest</li>
 <li>Swallow exception after nameString call (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002711">#1002711</a>)</li>
@@ -293,7 +311,7 @@
 <li>Properly Rename Scala Annotation Arguments (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002680">#1002680</a>)</li>
 <li>Organize Imports in Blocks (DefDef) and Templates avoiding tree printer (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002476">#1002476</a>)</li>
 <li>Fix rename in for comprehensions (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002650">#1002650</a>)</li>
-<li>Fix rename for interpolated strings like f&#8221;$x&#8221; (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002651">#1002651</a>)</li>
+<li>Fix rename for interpolated strings like f”$x” (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002651">#1002651</a>)</li>
 <li><cite>Movements.id</cite> must not match comments</li>
 <li>Consider named parameters during rename refactorings (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002501">#1002501</a> <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002572">#1002572</a>)</li>
 <li>Move the documentation to the thesis-documentation branch.</li>
@@ -334,7 +352,7 @@
 <li>Ignore hot code replace tests</li>
 <li>Remove unused imports</li>
 <li>Fix race condition an SafeSymbol (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002633">#1002633</a>)</li>
-<li>Don&#8217;t call <cite>removeAll</cite> if widget is disposed (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002630">#1002630</a>)</li>
+<li>Don’t call <cite>removeAll</cite> if widget is disposed (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002630">#1002630</a>)</li>
 <li>Fix NPE in EclipseLogger (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002631">#1002631</a>)</li>
 <li>Open declaration on function jumps to value (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002087">#1002087</a>)</li>
 <li>Rename Scala Debug Test plugin</li>
@@ -378,12 +396,12 @@
 <li>Add scoverage plugin to sbt build</li>
 <li>Be more careful when removing unneeded imports (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002626">#1002626</a>)</li>
 <li>Treat nested imports more carefully (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002613">#1002613</a>)</li>
-<li>Don&#8217;t omit closing paren after rename operation (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002620">#1002620</a>)</li>
+<li>Don’t omit closing paren after rename operation (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002620">#1002620</a>)</li>
 <li>Bump version to 0.9.0-SNAPSHOT</li>
 <li>Be more careful when printing type parameter lists (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002618">#1002618</a>, <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001932">#1001932</a>)</li>
 <li>Consider exotic but legal places for comments and spaces (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002611">#1002611</a>)</li>
 <li>Correctly set positions for selects involving package objects (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002609">#1002609</a>)</li>
-<li>Don&#8217;t duplicate imports while grouping them (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002526">#1002526</a>)</li>
+<li>Don’t duplicate imports while grouping them (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002526">#1002526</a>)</li>
 <li>Fix two problems with printing trees related to default arguments (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002564">#1002564</a>)</li>
 </ul>
 </div>
@@ -422,19 +440,19 @@
 <li>Enables Expression Evaluator for remote debugging (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002439">#1002439</a>)</li>
 <li>Do not call refactoring.prepare outside of PC thread (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002562">#1002562</a>)</li>
 <li>Bump development version to 4.3.0-SNAPSHOT.</li>
-<li>Use the declaration printer in “Show Type&#8221;.</li>
+<li>Use the declaration printer in “Show Type”.</li>
 </ul>
 <p>The following changes belong to the scala-refactoring part:</p>
 <ul class="simple">
-<li>Don&#8217;t break code when renaming lazy vals (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002502">#1002502</a>)</li>
-<li>Don&#8217;t break imports when renaming objects (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002537">#1002537</a>)</li>
+<li>Don’t break code when renaming lazy vals (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002502">#1002502</a>)</li>
+<li>Don’t break imports when renaming objects (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002537">#1002537</a>)</li>
 <li>Fix a stupid error when setting modifier positions for lazy vals (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002569">#1002569</a>)</li>
-<li>Revert &#8220;Don&#8217;t call symbol.isLazy in test suite&#8221;</li>
-<li>Don&#8217;t add imports to the wrong package (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002399">#1002399</a>)</li>
+<li>Revert “Don’t call symbol.isLazy in test suite”</li>
+<li>Don’t add imports to the wrong package (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002399">#1002399</a>)</li>
 <li>Various changes and a fix for #1002371 (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002371">#1002371</a>)</li>
 <li>Clarify comment on special cases for illegal code</li>
-<li>Don&#8217;t confuse <cite>_*</cite> with an ordinary type when organizing imports  (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002142">#1002142</a>)</li>
-<li>Don&#8217;t remove return times on rename refactorings (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002560">#1002560</a>)</li>
+<li>Don’t confuse <cite>_*</cite> with an ordinary type when organizing imports  (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002142">#1002142</a>)</li>
+<li>Don’t remove return times on rename refactorings (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002560">#1002560</a>)</li>
 <li>Fix locating parameter assignments in argument lists (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002540">#1002540</a>)</li>
 <li>Update sbt-pgp plugin and mention signed release step in README</li>
 </ul>
@@ -446,34 +464,34 @@
 <h3>4.2.0 (2015-09-28)</h3>
 <ul class="simple">
 <li>Fix non working fading packages feature in Async Debug View (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002549">#1002549</a>)</li>
-<li>Consider &#8220;surround block&#8221; auto edit only for default partition (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002553">#1002553</a>)</li>
+<li>Consider “surround block” auto edit only for default partition (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002553">#1002553</a>)</li>
 <li>Prevent NPE in SbtInputs (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002544">#1002544</a>)</li>
-<li>Fix tooltip message for &#8216;var&#8217;s (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001007">#1001007</a>)</li>
+<li>Fix tooltip message for ‘var’s (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001007">#1001007</a>)</li>
 </ul>
 <p>The following changes belong to the scala-refactoring part:</p>
 <ul class="simple">
 <li>Refactorings might mess with parens (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002088">#1002088</a>)</li>
 <li>Include Manifest file in sbt build</li>
 <li>Adapt test to proposed change in classOf typechecking</li>
-<li>Revert &#8220;Remove Eclipse update-site and feature&#8221;</li>
+<li>Revert “Remove Eclipse update-site and feature”</li>
 <li>Organize imports might insert surplus round brackets (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002166">#1002166</a>)</li>
 <li>Prepare for 0.7.0 release</li>
 <li>Remove reference to non-existent repository</li>
 <li>Add a test that makes sure that language feature imports are not removed</li>
 <li>Consider local imports when calculating dependencies of Scala code (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002512">#1002512</a>, <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002511">#1002511</a>)</li>
-<li>Don&#8217;t import local symbols on &#8220;Organize Imports&#8221; (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002506">#1002506</a>)</li>
+<li>Don’t import local symbols on “Organize Imports” (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002506">#1002506</a>)</li>
 <li>Support writing trace output to files and remove unused imports</li>
-<li>Don&#8217;t reorder modifiers already defined in the original source (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002498">#1002498</a>)</li>
+<li>Don’t reorder modifiers already defined in the original source (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002498">#1002498</a>)</li>
 <li>Handle type annotations on lazy vals and some refactoring (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002436">#1002436</a>)</li>
-<li>Don&#8217;t emit duplicate &#8220;RenameSourceFileChanges&#8221; (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002490">#1002490</a>)</li>
+<li>Don’t emit duplicate “RenameSourceFileChanges” (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002490">#1002490</a>)</li>
 <li>Rename package private vals/defs with scoped access modifiers (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002446">#1002446</a>)</li>
 </ul>
 </div>
 <div class="section" id="rc3-2015-09-11">
 <h3>RC3 (2015-09-11)</h3>
 <ul class="simple">
-<li>Enhancement of &#8220;step message out&#8221; functionality (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002542">#1002542</a>)</li>
-<li>Fix bug in &#8220;step out&#8221; functionality (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002541">#1002541</a>)</li>
+<li>Enhancement of “step message out” functionality (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002542">#1002542</a>)</li>
+<li>Fix bug in “step out” functionality (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002541">#1002541</a>)</li>
 <li>Improve UI interaction with Async Debugger</li>
 <li>Make Build Scopes configurable</li>
 </ul>
@@ -483,7 +501,7 @@
 <ul class="simple">
 <li>Remove dependency to VMHelper (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002538">#1002538</a>)</li>
 <li>Improvements in Async Debugger</li>
-<li>Enable &#8220;Stop on next message&#8221; feature in Async Debugger</li>
+<li>Enable “Stop on next message” feature in Async Debugger</li>
 </ul>
 </div>
 <div class="section" id="rc1-2015-08-18">
@@ -509,7 +527,7 @@
 <li>Do not generate Scaladoc comments for new file templates (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002495">#1002495</a>)</li>
 <li>Remove stale HierarchyResolver.remember around advice.</li>
 <li>Enables test for java var-arg constructors</li>
-<li>Remove broken &#8220;Open Type Hierarchy&#8221; menu items (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002478">#1002478</a>)</li>
+<li>Remove broken “Open Type Hierarchy” menu items (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002478">#1002478</a>)</li>
 <li>Update Scala IDE version to 4.2.0</li>
 <li>Auto edits (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002484">#1002484</a>, <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002485">#1002485</a>, <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002463">#1002463</a>, <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002133">#1002133</a>, <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002157">#1002157</a>, <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002165">#1002165</a>, <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002236">#1002236</a>, <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002235">#1002235</a>, <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002056">#1002056</a>)</li>
 <li>Cannot use scala evaluator with scalatest (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002447">#1002447</a>)</li>
@@ -520,7 +538,7 @@
 <li>Set UTF-8 as default charset in test workspaces</li>
 <li>Enable compiler driven save actions (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002308">#1002308</a>)</li>
 <li>Last warnings removed from Scala files</li>
-<li>Add description to &#8220;Create Scala Project&#8221; wizard (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002430">#1002430</a>)</li>
+<li>Add description to “Create Scala Project” wizard (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002430">#1002430</a>)</li>
 <li>Make codebase compatible with Java6</li>
 <li>Add Unit return type to procedures</li>
 <li>Refactor/shorter logging in expression evaluator</li>
@@ -573,7 +591,7 @@
 <li>Take care of file rename operations in <cite>rename</cite> refactorings (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001928">#1001928</a>)</li>
 <li>Fix NPE in Scala Reconciler (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002396">#1002396</a>)</li>
 <li>Improve wording in implicit preference page (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001003">#1001003</a>)</li>
-<li>Don&#8217;t leak <cite>ScalaSourceFileEditors</cite></li>
+<li>Don’t leak <cite>ScalaSourceFileEditors</cite></li>
 <li>Update URL of equinox weaving launcher</li>
 <li>Remove an option to close SPCs when editors are open (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002387">#1002387</a>)</li>
 <li>Improvements for NamePrinter and NamePrinterTest</li>
@@ -596,7 +614,7 @@
 <li>Fixes several warnings that occur during the build</li>
 <li>Show svelto link in report bug dialog</li>
 <li>Fix spelling mistake in constant in SdtConstants</li>
-<li>Implementation for &#8220;Copy Qualified Name&#8221; (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001257">#1001257</a>, <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001257">#1001257</a>)</li>
+<li>Implementation for “Copy Qualified Name” (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001257">#1001257</a>, <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001257">#1001257</a>)</li>
 <li>Remove version numbers that made the plugin refuse to install in Kepler</li>
 <li>Correctly handle NullaryMethodTypes in the Java type mapper (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001734">#1001734</a>)</li>
 <li>Create the right ElementInfo for package declaration (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000572">#1000572</a>)</li>
@@ -607,7 +625,7 @@
 <li>Faster project loading in classpath computation (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002179">#1002179</a>, <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002311">#1002311</a>)</li>
 <li>Remove instance-creating implicit that shadowed BooleanSettingWithDefault</li>
 <li>Code completion: reduce relevance for non class fields and for java.*, scala.* packages (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002343">#1002343</a>)</li>
-<li>Revert &#8220;Treat files as external dependencies.&#8221;</li>
+<li>Revert “Treat files as external dependencies.”</li>
 <li>Treat files as external dependencies. (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002344">#1002344</a>)</li>
 <li>Automatically select problem position on quick assist invocation (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002305">#1002305</a>)</li>
 <li>Adds back Scala notation in the outline labels (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002339">#1002339</a>)</li>
@@ -635,7 +653,7 @@
 <div class="section" id="rc3-2014-11-30">
 <h3>RC3 (2014-11-30)</h3>
 <ul class="simple">
-<li>Revert &#8220;replaces CheckBoxSettingWithDefault with a by-name parameter and additional constructor&#8221; (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002335">#1002335</a>)</li>
+<li>Revert “replaces CheckBoxSettingWithDefault with a by-name parameter and additional constructor” (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002335">#1002335</a>)</li>
 <li>Adds back Scala notation in the outline labels (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002339">#1002339</a>)</li>
 <li>Avoid logging twice the same stack trace</li>
 <li>Wraps the Java spelling API call</li>
@@ -649,9 +667,9 @@
 <div class="section" id="rc2-2014-10-28">
 <h3>RC2 (2014-10-28)</h3>
 <ul class="simple">
-<li>Avoid spurious typer cycles / &#8220;no progress completing&#8221; errors (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002325">#1002325</a>)</li>
-<li>Create a build marker when a project is not built due to upstream errors... (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002320">#1002320</a>)</li>
-<li>Revert &#8220;Interrupt Scala builder on resource change&#8221; (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002319">#1002319</a>)</li>
+<li>Avoid spurious typer cycles / “no progress completing” errors (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002325">#1002325</a>)</li>
+<li>Create a build marker when a project is not built due to upstream errors… (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002320">#1002320</a>)</li>
+<li>Revert “Interrupt Scala builder on resource change” (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002319">#1002319</a>)</li>
 <li>Show &#64;return in scaladoc hovers (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002312">#1002312</a>)</li>
 <li>Restore correct selection when region changed at end of selection (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002314">#1002314</a>)</li>
 <li>Don’t catch <cite>AssertionError</cite> in <cite>getOption</cite></li>
@@ -696,12 +714,12 @@
 <li>Prevent Race Condition in mkImplicitConversionAnnotation (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002269">#1002269</a>)</li>
 <li>Disentangle presentation compiler and Scala project</li>
 <li>Adds missing getOption() synchronization call</li>
-<li>Close ScalaPresentationCompilers which weren&#8217;t used for specified time <span class="raw-html"><span class="label success">new</span></span></li>
+<li>Close ScalaPresentationCompilers which weren’t used for specified time <span class="raw-html"><span class="label success">new</span></span></li>
 <li>Initial stab at a cleaner interface for Scala presentation compiler.</li>
 <li>Addditionnal changes for ScalaImage API</li>
 <li>Fixes problem build disabled after clean</li>
 <li>Completion improvements for higher-order-functions (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002250">#1002250</a>) <span class="raw-html"><span class="label success">new</span></span></li>
-<li>Revert &#8220;Unused member warning doesn&#8217;t highlight whole definition anymore... (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002209">#1002209</a>)</li>
+<li>Revert “Unused member warning doesn’t highlight whole definition anymore… (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002209">#1002209</a>)</li>
 <li>Set ScalaImages constants as API</li>
 <li>Temporary disables UI support for -Xlint</li>
 <li>A couple of simple improvements in completions (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002171">#1002171</a>)</li>
@@ -731,7 +749,7 @@
 <li>Sbt builder fix and refactor (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002148">#1002148</a>)</li>
 <li>Treat projects in subfolders correctly in <cite>NewFileWizard</cite> (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002188">#1002188</a> <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002185">#1002185</a>)</li>
 <li>Use <cite>Import-Package</cite> instead of <cite>Require-Bundle</cite> for org.eclipse.core.runtime</li>
-<li>Revert &#8220;Merge pull request #742 from sschaef/remove-java-partitions&#8221;</li>
+<li>Revert “Merge pull request #742 from sschaef/remove-java-partitions”</li>
 <li>Remove java partitions</li>
 <li>Update build-all script to kepler.</li>
 <li>Use UTF-8 for tests.</li>
@@ -754,7 +772,7 @@
 <li>Adds support for Scala 2.12</li>
 <li>Don’t reuse platform classloader when ScalaInstallation matches its version</li>
 <li>Disable tab to spaces converter in TextViewer (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002167">#1002167</a>)</li>
-<li>Don&#8217;t use Scala reflection for asInstanceOfOpt (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002128">#1002128</a>)</li>
+<li>Don’t use Scala reflection for asInstanceOfOpt (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002128">#1002128</a>)</li>
 <li>Show variable values in hovers when in suspended debug mode <span class="raw-html"><span class="label success">new</span></span></li>
 <li>Scala Installations support (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001777">#1001777</a>) <span class="raw-html"><span class="label success">new</span></span></li>
 <li>Finish cleanup of removed extraction refactorings</li>
@@ -793,7 +811,7 @@
 <li>Re-enable and improved Scala Templates (indentation) (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000058">#1000058</a>)</li>
 <li>Replaces PropertyStore with a set of sparser platform calls.</li>
 <li>new syntax coloring for Dynamic calls (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001656">#1001656</a>)</li>
-<li>Don&#8217;t clean workspace unless compiler settings really changed (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002075">#1002075</a>)</li>
+<li>Don’t clean workspace unless compiler settings really changed (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002075">#1002075</a>)</li>
 <li>Remove preference store listener on deactivation</li>
 <li>Disable javaextdirs setting in Scala projects. (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002072">#1002072</a>)</li>
 <li>More robust handling of virtual files. (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002073">#1002073</a>)</li>
@@ -813,7 +831,7 @@
 <li>Presentation Compiler should not reload managed units while keeping the lock (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002003">#1002003</a>, <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002007">#1002007</a>, <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001943">#1001943</a>, <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001911">#1001911</a>)</li>
 <li>Show confirmation dialog before doing a workspace wide clean (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002043">#1002043</a>)</li>
 <li>Implementation of an indent guide + test suite (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000828">#1000828</a>, <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002033">#1002033</a>) <span class="raw-html"><span class="label success">new</span></span></li>
-<li>Add &#8216;Xlint&#8217; and &#8216;feature&#8217; to the compiler preference site (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002039">#1002039</a>)</li>
+<li>Add ‘Xlint’ and ‘feature’ to the compiler preference site (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002039">#1002039</a>)</li>
 <li>Allow task tags to start with a special sign (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000991">#1000991</a>)</li>
 <li>Refactorings in wizard components</li>
 <li>prevent NPE on classpath problems</li>
@@ -831,16 +849,16 @@
 <li>Issue/remove continuations plugin support (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002012">#1002012</a>, <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1002011">#1002011</a>)</li>
 <li>Adds decorator extension point to change icons for Scala files (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001975">#1001975</a>)</li>
 <li>Add synchronisation around map <cite>getOrElse</cite>.</li>
-<li>Don&#8217;t add local suffix (one space character) for field completions (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001973">#1001973</a>)</li>
+<li>Don’t add local suffix (one space character) for field completions (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001973">#1001973</a>)</li>
 <li>Cache info about jar files that might contain Scala classifies. (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001999">#1001999</a>)</li>
 <li>Workaround for race condition during source indexing</li>
 <li>Ignored completion test causing spurious failures on 2.11 build</li>
 <li>Correct completion overwrite behavior when nothing is overwritten (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001791">#1001791</a>)</li>
 <li>Make pointcut pick up subclasses of ScalaJavaBuilder. (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001995">#1001995</a>)</li>
-<li>Don&#8217;t skip trees with transparent positions when looking for references</li>
+<li>Don’t skip trees with transparent positions when looking for references</li>
 <li>Catch up with Scala Library Modularization.</li>
 <li>Lets the sdt.core pom.xml copy scala-reflect from the m2repo to the target folder (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001987">#1001987</a>)</li>
-<li>Unused member warning doesn&#8217;t highlight whole definition anymore (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001983">#1001983</a>)</li>
+<li>Unused member warning doesn’t highlight whole definition anymore (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001983">#1001983</a>)</li>
 <li>Fix syntax coloring window crash</li>
 <li>Reverts logic for unloading units in askLoadedType</li>
 <li>Fix race condition in local rename refactoring</li>
@@ -855,7 +873,7 @@
 <div class="section" id="m1-2013-11-05">
 <h3>M1  (2013-11-05)</h3>
 <ul class="simple">
-<li>&#8216;Add explicit type&#8217; quick assist (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001951">#1001951</a>) <span class="raw-html"><span class="label success">new</span></span></li>
+<li>‘Add explicit type’ quick assist (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001951">#1001951</a>) <span class="raw-html"><span class="label success">new</span></span></li>
 <li>Implemented completion overwrites (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000569">#1000569</a>) <span class="raw-html"><span class="label success">new</span></span></li>
 <li>Corrected completion on import clause for module methods (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001125">#1001125</a>)</li>
 <li>Corrected completion inside method arugments (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001218">#1001218</a>)</li>
@@ -875,11 +893,11 @@
 <li>Export all packages in  MANIFEST of debug bundle</li>
 <li>Fix caching of SourceFiles (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001859">#1001859</a>)</li>
 <li>source attachments for sbt dependencies (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001888">#1001888</a>)</li>
-<li>&#8220;Restart Presentation Compiler&#8221; action (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000555">#1000555</a>) <span class="raw-html"><span class="label success">new</span></span></li>
+<li>“Restart Presentation Compiler” action (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000555">#1000555</a>) <span class="raw-html"><span class="label success">new</span></span></li>
 <li>Fixed NPE when completing a wizard  (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001784">#1001784</a>)</li>
 <li>New Class wizard injects stubs for inherited abstract methods (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001774">#1001774</a>)</li>
 <li>Do not close string and character literals before text (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001652">#1001652</a>)</li>
-<li>Corrected link in &#8220;Run Setup Diagnostics&#8221; Dialog (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001673">#1001673</a>)</li>
+<li>Corrected link in “Run Setup Diagnostics” Dialog (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001673">#1001673</a>)</li>
 <li>Issue/auto closing literals (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001583">#1001583</a>, <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001600">#1001600</a>)</li>
 <li>Fix rename refactoring selection/tab behavior (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001641">#1001641</a>)</li>
 <li>Issue/string auto edit strategy (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001498">#1001498</a>, <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001491">#1001491</a>, <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001403">#1001403</a>, <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001398">#1001398</a>)</li>
@@ -932,7 +950,7 @@
 <div class="section" id="rc2-2013-06-27">
 <h3>RC2 (2013-06-27)</h3>
 <ul class="simple">
-<li>Run As shouldn&#8217;t display an error when a binary Main can be found (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001760">#1001760</a>)</li>
+<li>Run As shouldn’t display an error when a binary Main can be found (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001760">#1001760</a>)</li>
 </ul>
 </div>
 <div class="section" id="rc1-2013-06-07">
@@ -947,14 +965,14 @@
 <li>Implemented <cite>skipAllBreakpoints</cite> for the Scala Debugger (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001437">#1001437</a>)</li>
 <li>Removed all calls to <cite>List.head</cite> in <cite>StructureBuilder</cite> (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001707">#1001707</a>)</li>
 <li>Correctly attach to a running VM (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001639">#1001639</a>)</li>
-<li>Don&#8217;t force <cite>-Xprint-types</cite> (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001677">#1001677</a>)</li>
+<li>Don’t force <cite>-Xprint-types</cite> (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001677">#1001677</a>)</li>
 <li>Deprecation warnings no longer accumulate (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001595">#1001595</a>)</li>
-<li>Only consider opened projects when computing a project&#8217;s direct dependencies (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001714">#1001714</a>)</li>
+<li>Only consider opened projects when computing a project’s direct dependencies (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001714">#1001714</a>)</li>
 <li>Version bumping across the board, which should make our 3.0.x nightlies work better (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001713">#1001713</a>)</li>
 <li>Improve <cite>Open Type</cite> This is a backport of #384. (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000743">#1000743</a>, <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001035">#1001035</a>)</li>
 <li>Fix race condition during semantic highlighting (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001623">#1001623</a>)</li>
 <li>Avoid workspace locks when building (enabling future parallel builds) (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001631">#1001631</a>)</li>
-<li>Correctly search for threads, and don&#8217;t use <cite>Option.get</cite> (fix JRebel compatibility) (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001599">#1001599</a>)</li>
+<li>Correctly search for threads, and don’t use <cite>Option.get</cite> (fix JRebel compatibility) (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001599">#1001599</a>)</li>
 </ul>
 </div>
 </div>
@@ -964,7 +982,7 @@
 <h3>RC3 (2013-03-13)</h3>
 <ul class="simple">
 <li>Workaround for NPE in debugger variable view when using Eclipse Juno (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001585">#1001585</a>)</li>
-<li>Don&#8217;t add arguments templates for parameterless method&#8217;s completion (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001591">#1001591</a>)</li>
+<li>Don’t add arguments templates for parameterless method’s completion (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001591">#1001591</a>)</li>
 <li>Expanding variable in debugger resulted in NPE (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001586">#1001586</a>)</li>
 <li>Return <cite>OK_STATUS</cite> from the semantic highlighting job when the editor is dirty. (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001536">#1001536</a>)</li>
 </ul>
@@ -980,19 +998,19 @@
 <h3>RC1 (2013-02-28)</h3>
 <ul class="simple">
 <li>Fixed continuations plugin (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001030">#1001030</a>)</li>
-<li>Fixed &#8220;todo&#8221; items disappearing in the task list (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001401">#1001401</a>)</li>
+<li>Fixed “todo” items disappearing in the task list (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001401">#1001401</a>)</li>
 <li>More robust against VM exceptions. (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001328">#1001328</a>) <span class="raw-html"><span class="label info">debugger</span></span></li>
 <li>Possible deadlock fix. (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001512">#1001512</a>) <span class="raw-html"><span class="label info">debugger</span></span></li>
-<li>Implement &#8216;Search test methods&#8217; in the Scala JUnit4 test runner. (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001474">#1001474</a>)</li>
-<li>Revert &#8220;Merge pull request #269 from mads379/parsetree-1001326&#8221;</li>
-<li>Clean projects in a background job when project settings&#8217; change (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001527">#1001527</a>)</li>
+<li>Implement ‘Search test methods’ in the Scala JUnit4 test runner. (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001474">#1001474</a>)</li>
+<li>Revert “Merge pull request #269 from mads379/parsetree-1001326”</li>
+<li>Clean projects in a background job when project settings’ change (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001527">#1001527</a>)</li>
 <li>Semantic highlighting done in background (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001156">#1001156</a>, <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001507">#1001507</a>, <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001508">#1001508</a>, <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001493">#1001493</a>)</li>
 <li>Make stepping as fast as in the JDT debugger. <span class="raw-html"><span class="label info">debugger</span></span></li>
 <li>Adds a preference for the classpath validator (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001482">#1001482</a>)</li>
 <li>Initialize symbols for primitive types on compiler startup.</li>
 <li>Mark occurrence preference (and off by default) (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001466">#1001466</a>)</li>
 <li><cite>requires</cite> is not a keyword (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000750">#1000750</a>)</li>
-<li>Disabled flaky debugger <tt class="docutils literal"><span class="pre">RemoteConnectorTest</span></tt> tests class</li>
+<li>Disabled flaky debugger <code class="docutils literal"><span class="pre">RemoteConnectorTest</span></code> tests class</li>
 <li>Use a Job when reading classpath markers in test.</li>
 <li>Add checks if the underlying project closed/not exists (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001465">#1001465</a>)</li>
 <li>Rebuild Scala projects after a global compiler settings change. (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001460">#1001460</a>)</li>
@@ -1007,7 +1025,7 @@
 <li>Correct syntax highlighting for while-keyword (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000984">#1000984</a>)</li>
 <li>README now contains exhaustive developers guidelines</li>
 <li>Issue/bracket auto edit strategy (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001309">#1001309</a>)</li>
-<li>Don&#8217;t wait indefinitely for the hyperlink computer. (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001348">#1001348</a>, <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001251">#1001251</a>)</li>
+<li>Don’t wait indefinitely for the hyperlink computer. (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001348">#1001348</a>, <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001251">#1001251</a>)</li>
 <li>Add syntax highlighting for escape sequences in character literals (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001444">#1001444</a>)</li>
 <li>Correct partitioning of octal sequences in character literals (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001443">#1001443</a>)</li>
 <li>Disable useless and expensive Java goodies for Scala sources. (<a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001434">#1001434</a>, <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001178">#1001178</a>)</li>
@@ -1023,21 +1041,21 @@
 <h3>M3 (released: 2012-12-20)</h3>
 <ul class="simple">
 <li>Added a URL hyperlink detector - <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001266">#1001266</a></li>
-<li>Added a <a class="reference internal" href="3.0.x/features/test-finder/index.html"><em>Scala JUnit Test Finder</em></a> - <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001275">#1001275</a>, <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000782">#1000782</a></li>
+<li>Added a <a class="reference internal" href="3.0.x/features/test-finder/index.html"><span class="doc">Scala JUnit Test Finder</span></a> - <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001275">#1001275</a>, <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000782">#1000782</a></li>
 <li>Fixed missing implicit arguments in <em>implicit highlighting</em> - <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001280">#1001280</a></li>
 <li>Correctly find <strong>JUnit</strong> tests right-clicking on a Scala source - <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001234">#1001234</a>, <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001379">#1001379</a>, <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001380">#1001380</a>, <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000731">#1000731</a>.</li>
-<li>Fixed crash when hovering over <tt class="docutils literal"><span class="pre">Run</span> <span class="pre">As</span></tt> button - <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001304">#1001304</a></li>
+<li>Fixed crash when hovering over <code class="docutils literal"><span class="pre">Run</span> <span class="pre">As</span></code> button - <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001304">#1001304</a></li>
 <li>Show Logical Structures working on 2.10 - <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001315">#1001315</a> <span class="raw-html"><span class="label info">debugger</span></span></li>
-<li>Fixed race condition in refactoring &#8216;rename&#8217; - <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001381">#1001381</a></li>
+<li>Fixed race condition in refactoring ‘rename’ - <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001381">#1001381</a></li>
 <li>Fixed Juno build - <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001374">#1001374</a></li>
 <li>Fixed race condition in the indexer - <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001376">#1001376</a></li>
 <li>Updated the AspectJ weaving version, possibly fixing weaving crashes on startup - <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001163">#1001163</a></li>
 <li>Correctly set breakpoints in source attachments - <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001202">#1001202</a> <span class="raw-html"><span class="label info">debugger</span></span></li>
 <li>Improved mark occurrences caching: less memory consumption, and always using the correct compiler - <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001303">#1001303</a></li>
-<li>Install breakpoints correctly for inner classes and objects deriving from <tt class="docutils literal"><span class="pre">App</span></tt> - <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001197">#1001197</a>, <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001367">#1001367</a> <span class="raw-html"><span class="label info">debugger</span></span></li>
+<li>Install breakpoints correctly for inner classes and objects deriving from <code class="docutils literal"><span class="pre">App</span></code> - <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001197">#1001197</a>, <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001367">#1001367</a> <span class="raw-html"><span class="label info">debugger</span></span></li>
 <li>Implement enable/disable breakpoint - <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001289">#1001289</a> <span class="raw-html"><span class="label info">debugger</span></span></li>
 <li>Better relevance metrics in completions - <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000485">#1000485</a></li>
-<li>Semantic highlighting for scala &#8216;symbols - <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001364">#1001364</a></li>
+<li>Semantic highlighting for scala ‘symbols - <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001364">#1001364</a></li>
 <li>Fixed regression in the way project preferences are passed to the builder - <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001241">#1001241</a>, <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001267">#1001267</a></li>
 <li>Added remote debugging - <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001129">#1001129</a>  <span class="raw-html"><span class="label info">debugger</span></span></li>
 <li>Fixed race condition in hyperlink computer, possibly leading to spurious errors - <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001330">#1001330</a></li>
@@ -1053,14 +1071,14 @@
 <li>Step filters for Scala getters/setters - <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001137">#1001137</a>, <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001283">#1001283</a>  <span class="raw-html"><span class="label info">debugger</span></span></li>
 <li>Faster completions for Java symbols - <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001287">#1001287</a></li>
 <li>Removed dependency on Eclipse SDK - <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001281">#1001281</a></li>
-<li>Added <tt class="docutils literal"><span class="pre">-Dsdtcore.notimeouts</span></tt> to allow for long-running tests - <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001269">#1001269</a></li>
+<li>Added <code class="docutils literal"><span class="pre">-Dsdtcore.notimeouts</span></code> to allow for long-running tests - <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001269">#1001269</a></li>
 <li>Fixed NPE in mark occurrences when a source is deleted - <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001268">#1001268</a></li>
 <li>Report errors when the Sbt builder crashes - <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001274">#1001274</a></li>
 <li>Faster scope-completions - <a class="reference external" href="https://github.com/scala-ide/scala-ide/pull/206">pull #206</a></li>
-<li>Filter out completions that contain <tt class="docutils literal"><span class="pre">$</span></tt> - <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001264">#1001264</a></li>
+<li>Filter out completions that contain <code class="docutils literal"><span class="pre">$</span></code> - <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001264">#1001264</a></li>
 <li>Faster <em>scaladoc</em> auto-edit strategy - <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001263">#1001263</a></li>
 <li>Scala Plugin Spy included in the dev-tools plugin - <a class="reference external" href="https://github.com/scala-ide/scala-ide/pull/203">pull #203</a></li>
-<li>Quick-fixes for type mismatches (suggest <tt class="docutils literal"><span class="pre">flatten</span></tt> or <tt class="docutils literal"><span class="pre">Option</span></tt>) - <a class="reference external" href="https://github.com/scala-ide/scala-ide/pull/188">pull #188</a></li>
+<li>Quick-fixes for type mismatches (suggest <code class="docutils literal"><span class="pre">flatten</span></code> or <code class="docutils literal"><span class="pre">Option</span></code>) - <a class="reference external" href="https://github.com/scala-ide/scala-ide/pull/188">pull #188</a></li>
 <li>Fixed deadlock and freezes due to presentation compiler resets - <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001102">#1001102</a>, <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000945">#1000945</a>, <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001029">#1001029</a></li>
 </ul>
 </div>
@@ -1084,15 +1102,15 @@
 <li>Missing Scala library in run classpath - <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000786">#1000786</a>, <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000919">#1000919</a>, <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001022">#1001022</a></li>
 <li>Provide reusable sdt.core.tests bundle - <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001080">#1001080</a></li>
 <li>Problem deleting files on Windows - <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000909">#1000909</a>, <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000923">#1000923</a></li>
-<li>Removed code generation groups from editor&#8217;s context menu - <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000972">#1000972</a></li>
+<li>Removed code generation groups from editor’s context menu - <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000972">#1000972</a></li>
 <li>Correctly expose Scala &#64;throw annotation to Java - <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000707">#1000707</a>, <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000800">#1000800</a>, <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001005">#1001005</a></li>
 <li>Support nested projects (Maven style) - <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000881">#1000881</a>, <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000734">#1000734</a>, <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000621">#1000621</a></li>
 <li>Fixed crash in tooltip launch button - <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000951">#1000951</a></li>
-<li>Made <tt class="docutils literal"><span class="pre">Run</span> <span class="pre">As</span> <span class="pre">Scala</span> <span class="pre">Application</span></tt> more robust - <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000911">#1000911</a>, <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001096">#1001096</a></li>
+<li>Made <code class="docutils literal"><span class="pre">Run</span> <span class="pre">As</span> <span class="pre">Scala</span> <span class="pre">Application</span></code> more robust - <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000911">#1000911</a>, <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001096">#1001096</a></li>
 <li>Use the configured JDK when instantiating the presentation compiler. - <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000820">#1000820</a></li>
 <li>Warn the user if JDT Weaving is disabled - <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001104">#1001104</a></li>
-<li>Fixed NullPointerException occurring when using the <tt class="docutils literal"><span class="pre">New</span> <span class="pre">Application</span></tt> wizard - <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000797">#1000797</a>, <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001115">#1001115</a></li>
-<li>Fixed Assertion exception: <tt class="docutils literal"><span class="pre">Marker</span> <span class="pre">property</span> <span class="pre">value</span> <span class="pre">too</span> <span class="pre">long</span></tt> - <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001107">#1001107</a></li>
+<li>Fixed NullPointerException occurring when using the <code class="docutils literal"><span class="pre">New</span> <span class="pre">Application</span></code> wizard - <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000797">#1000797</a>, <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001115">#1001115</a></li>
+<li>Fixed Assertion exception: <code class="docutils literal"><span class="pre">Marker</span> <span class="pre">property</span> <span class="pre">value</span> <span class="pre">too</span> <span class="pre">long</span></code> - <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001107">#1001107</a></li>
 </ul>
 </div>
 <div class="section" id="m1-released-2012-04-13">
@@ -1101,7 +1119,7 @@
 <li>Bundled with Scala 2.9.2.</li>
 <li>Linked refactoring actions to quickfix proposals. <a class="reference external" href="https://github.com/scala-ide/scala-ide/pull/86">pr-86</a></li>
 <li>Fixed incomplete package problem with auto-import on code completion. <a class="reference external" href="https://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000855">#1000855</a></li>
-<li>Fixed &#8216;invalid thread access&#8217; when creating first Java file. <a class="reference external" href="https://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000738">#1000738</a></li>
+<li>Fixed ‘invalid thread access’ when creating first Java file. <a class="reference external" href="https://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000738">#1000738</a></li>
 <li>Improve reference of selected elements. <a class="reference external" href="https://github.com/scala-ide/scala-ide/pull/76">pr-76</a></li>
 <li>Semantic highlighting support. <a class="reference external" href="https://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000591">#1000591</a></li>
 <li>Fixed open declaration from context menu. <a class="reference external" href="https://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000920">#1000920</a></li>
@@ -1115,7 +1133,7 @@
 <li>Move Class, Trait and Object refactoring. <a class="reference external" href="https://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000422">#1000422</a>, <a class="reference external" href="https://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000839">#1000839</a>, <a class="reference external" href="https://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000842">#1000842</a></li>
 <li>Improved logging infrastructure. <a class="reference external" href="https://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000880">#1000880</a></li>
 <li>Extracted external libraries from source code.</li>
-<li>Improved &#8216;package.scala&#8217; support. <a class="reference external" href="https://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000859">#1000859</a></li>
+<li>Improved ‘package.scala’ support. <a class="reference external" href="https://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000859">#1000859</a></li>
 <li>Implicit highlighting support. <a class="reference external" href="https://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000628">#1000628</a></li>
 <li>Eclipse 3.7 Indigo support. <a class="reference external" href="https://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000852">#1000852</a></li>
 <li>Fixed occasional problem with auto-import on code completion. <a class="reference external" href="https://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000854">#1000854</a></li>
@@ -1134,14 +1152,14 @@
 <div class="section" id="rc03-released-2012-07-04">
 <h3>2.0.2-rc03 (released: 2012-07-04)</h3>
 <ul class="simple">
-<li>Fixed NullPointerException occurring when using the <tt class="docutils literal"><span class="pre">New</span> <span class="pre">Application</span></tt> wizard - <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000797">#1000797</a>, <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001115">#1001115</a></li>
-<li>Fixed Assertion exception: <tt class="docutils literal"><span class="pre">Marker</span> <span class="pre">property</span> <span class="pre">value</span> <span class="pre">too</span> <span class="pre">long</span></tt> - <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001107">#1001107</a></li>
+<li>Fixed NullPointerException occurring when using the <code class="docutils literal"><span class="pre">New</span> <span class="pre">Application</span></code> wizard - <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000797">#1000797</a>, <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001115">#1001115</a></li>
+<li>Fixed Assertion exception: <code class="docutils literal"><span class="pre">Marker</span> <span class="pre">property</span> <span class="pre">value</span> <span class="pre">too</span> <span class="pre">long</span></code> - <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001107">#1001107</a></li>
 </ul>
 </div>
 <div class="section" id="rc02-released-2012-06-28">
 <h3>2.0.2-rc02 (released: 2012-06-28)</h3>
 <ul class="simple">
-<li>Fixed issue with <tt class="docutils literal"><span class="pre">Run</span> <span class="pre">As</span> <span class="pre">Scala</span> <span class="pre">Application</span></tt> - <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001096">#1001096</a></li>
+<li>Fixed issue with <code class="docutils literal"><span class="pre">Run</span> <span class="pre">As</span> <span class="pre">Scala</span> <span class="pre">Application</span></code> - <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001096">#1001096</a></li>
 <li>Warn the user if JDT Weaving is disabled - <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001104">#1001104</a></li>
 </ul>
 </div>
@@ -1151,11 +1169,11 @@
 <li>Missing Scala library in run classpath - <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000786">#1000786</a>, <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000919">#1000919</a>, <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001022">#1001022</a></li>
 <li>Provide reusable sdt.core.tests bundle - <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001080">#1001080</a></li>
 <li>Problem deleting files on Windows - <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000909">#1000909</a>, <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000923">#1000923</a></li>
-<li>Removed code generation groups from editor&#8217;s context menu - <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000972">#1000972</a></li>
+<li>Removed code generation groups from editor’s context menu - <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000972">#1000972</a></li>
 <li>Correctly expose Scala &#64;throw annotation to Java - <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000707">#1000707</a>, <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000800">#1000800</a>, <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001005">#1001005</a></li>
 <li>Support nested projects (Maven style) - <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000881">#1000881</a>, <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000734">#1000734</a>, <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000621">#1000621</a></li>
 <li>Fixed crash in tooltip launch button - <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000951">#1000951</a></li>
-<li>Made <tt class="docutils literal"><span class="pre">Run</span> <span class="pre">As</span> <span class="pre">Scala</span> <span class="pre">Application</span></tt> more robust - <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000911">#1000911</a></li>
+<li>Made <code class="docutils literal"><span class="pre">Run</span> <span class="pre">As</span> <span class="pre">Scala</span> <span class="pre">Application</span></code> more robust - <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000911">#1000911</a></li>
 <li>Use the configured JDK when instantiating the presentation compiler. - <a class="reference external" href="http://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000820">#1000820</a></li>
 </ul>
 </div>
@@ -1183,7 +1201,7 @@
 <div class="section" id="rc01-released-2012-03-22">
 <h3>2.0.1-rc01 (released: 2012-03-22)</h3>
 <ul class="simple">
-<li>Fixed &#8216;invalid thread access&#8217; when creating first Java file. <a class="reference external" href="https://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000738">#1000738</a></li>
+<li>Fixed ‘invalid thread access’ when creating first Java file. <a class="reference external" href="https://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000738">#1000738</a></li>
 <li>Fixed open declaration from context menu. <a class="reference external" href="https://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000920">#1000920</a></li>
 <li>Improved closing braces management. <a class="reference external" href="https://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000926">#1000926</a></li>
 <li>Propagate fine-grained build information to downstream projects <a class="reference external" href="https://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000894">#1000894</a></li>
@@ -1214,7 +1232,7 @@
 <li>Incremental compilation of Java files that depend on Scala files is now correctly handled. <a class="reference external" href="https://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000607">#1000607</a></li>
 <li>Corrected completion suggestions for overloaded methods. <a class="reference external" href="https://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000654">#1000654</a></li>
 <li>Make Scala Interpreter view more visible. <a class="reference external" href="https://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000791">#1000791</a></li>
-<li>Corrected unnecessary warning generated at start-up (<em>Couldn&#8217;t find a match for 2.9.2.r26031-b20111119033233 in . Using default.</em>). <a class="reference external" href="https://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000793">#1000793</a></li>
+<li>Corrected unnecessary warning generated at start-up (<em>Couldn’t find a match for 2.9.2.r26031-b20111119033233 in . Using default.</em>). <a class="reference external" href="https://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000793">#1000793</a></li>
 </ul>
 </div>
 <div class="section" id="rc02-released-2011-11-24">
@@ -1223,7 +1241,7 @@
 <li>Better error reporting. <a class="reference external" href="https://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000757">#1000757</a></li>
 <li>Fixed crash in the Eclipse Outline. <a class="reference external" href="https://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000748">#1000748</a></li>
 <li><em>protected</em> Scala entities are now exposed to Java code as <em>public</em> (this matches Scala compiler behavior). <a class="reference external" href="https://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000751">#1000751</a></li>
-<li>Scan project&#8217;s dependencies only for Scala projects. <a class="reference external" href="https://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000643">#1000643</a></li>
+<li>Scan project’s dependencies only for Scala projects. <a class="reference external" href="https://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000643">#1000643</a></li>
 <li>Better error handling for missing class files in dependent projects.</li>
 </ul>
 </div>
@@ -1234,7 +1252,7 @@
 <li>TODO comments are now displayed in Eclipse Task section. <a class="reference external" href="https://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000634">#1000634</a></li>
 <li>Fixed an important source of instability affecting Windows Eclipse users (causing the following exception to be reported: <em>java.lang.IllegalArgumentException: Path for project must have only one segment.</em>). <a class="reference external" href="https://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000715">#1000715</a>, <a class="reference external" href="https://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000660">#1000660</a></li>
 <li>Improved the Run Selection Interpreter (a project picker is now displayed when no project is selected). <a class="reference external" href="https://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000480">#1000480</a></li>
-<li>The JDK selected in the project&#8217;s classpath is now honored. <a class="reference external" href="https://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000406">#1000406</a></li>
+<li>The JDK selected in the project’s classpath is now honored. <a class="reference external" href="https://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000406">#1000406</a></li>
 <li>Resource files are copied to the output directory. <a class="reference external" href="https://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000636">#1000636</a></li>
 <li>Braces and parenthesis are now (correctly) automatically matched in the editor. <a class="reference external" href="https://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000688">#1000688</a></li>
 <li>Better support for dependent projects in the presentation compiler, leading to less spurious errors. <a class="reference external" href="https://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000699">#1000699</a>, <a class="reference external" href="https://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000645">#1000645</a></li>
@@ -1245,7 +1263,7 @@
 <h3>2.0.0-beta12 (released: 2011-10-31)</h3>
 <ul class="simple">
 <li>Hyperlinking on definitions between dependent projects works correctly.</li>
-<li>For mixed Scala/Java project, allow to change sources&#8217; compilation order (i.e., first Java and then Scala, or the other way around).</li>
+<li>For mixed Scala/Java project, allow to change sources’ compilation order (i.e., first Java and then Scala, or the other way around).</li>
 <li>Improved interoperability of mixed Scala/Java. <a class="reference external" href="https://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000652">#1000652</a>, <a class="reference external" href="https://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000670">#1000670</a>, <a class="reference external" href="https://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000678">#1000678</a></li>
 <li>Fixed a deadlock when the presentation compiler was awaken during builds.</li>
 <li>Presentation compiler is notified of changes in dependent projects (no spurious errors after rebuild).</li>
@@ -1269,14 +1287,14 @@
 <div class="section" id="beta10-released-2011-09-13">
 <h3>2.0.0-beta10 (released: 2011-09-13)</h3>
 <ul class="simple">
-<li>new SBT-based builder with inter-project dependencies. The default builder remains &#8216;refined&#8217;, but you can enable the SBT builder in Eclipse -&gt; Preferences -&gt; Scala  -&gt; Compiler -&gt; Build manager.</li>
+<li>new SBT-based builder with inter-project dependencies. The default builder remains ‘refined’, but you can enable the SBT builder in Eclipse -&gt; Preferences -&gt; Scala  -&gt; Compiler -&gt; Build manager.</li>
 <li>better integration of mixed Scala/Java project (no more spurious errors when Java classes call Scala classes that contain annotations).</li>
 <li>new field in Compiler preferences for additional command line parameters, cleanup of compiler options.</li>
-<li>new &#8220;Show Inferred Semicolons&#8221; feature: <a class="reference internal" href="2.0.x/features/typingviewing.html"><em>Typing and Viewing</em></a>.</li>
+<li>new “Show Inferred Semicolons” feature: <a class="reference internal" href="2.0.x/features/typingviewing.html"><span class="doc">Typing and Viewing</span></a>.</li>
 <li>syntax colouring for new REPL view.</li>
 <li>stop inappropriate Java save actions firing on Scala source. <a class="reference external" href="https://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1534">#1534</a></li>
-<li>corrected cursor&#8217;s positioning after asking completion.</li>
-<li>better navigation and occurrences highlighting when clicking on <tt class="docutils literal"><span class="pre">import</span></tt> clauses.</li>
+<li>corrected cursor’s positioning after asking completion.</li>
+<li>better navigation and occurrences highlighting when clicking on <code class="docutils literal"><span class="pre">import</span></code> clauses.</li>
 <li>Error Log is not in the default Scala perspective anymore.</li>
 <li>fixed Toggle Comment action which was incorrectly commenting an additional line. <a class="reference external" href="https://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1000462">#1000462</a></li>
 </ul>
@@ -1286,7 +1304,7 @@
 <ul class="simple">
 <li>better breakpoint support (fixes errors when setting breakpoints in traits coming from external libraries).</li>
 <li>better completions (works in many more situations, such as partially typed method names).</li>
-<li>better diagnostics (&#8216;no completions at all syndrome&#8217;) and re-setting the Java completions flag.</li>
+<li>better diagnostics (‘no completions at all syndrome’) and re-setting the Java completions flag.</li>
 <li>better integration with Eclipse. When clicking a Scala classfile on a stack trace report, the Scala file editor will be correctly opened and functionalities such as navigation and setting breakpoint just work.</li>
 <li>moved Scala completions to its own category (instead of Java Proposals). This eliminates a source of incompatibilities with the Mylyn plugin. Now you can enable/disable Scala completions from Preferences, Java/Editor/ContentAssist/Advanced Scala Completions and Scala Completions (Java sources).</li>
 <li>added package object wizard.</li>
@@ -1296,7 +1314,7 @@
 <h3>2.0.0-beta08 (released: 2011-07-12)</h3>
 <ul class="simple">
 <li>fixed large memory leak in mark occurrences.</li>
-<li>new Run Selection REPL: edit window for commands (with history). Try it by pressing Ctrl-Shift-X inside a Scala editor to run the selected expression (or the current line). <a class="reference internal" href="2.0.x/features/scalainterpreter.html"><em>Read more</em></a>.</li>
+<li>new Run Selection REPL: edit window for commands (with history). Try it by pressing Ctrl-Shift-X inside a Scala editor to run the selected expression (or the current line). <a class="reference internal" href="2.0.x/features/scalainterpreter.html"><span class="doc">Read more</span></a>.</li>
 <li>JUnit runner finds tests in Scala files reliably (even when files are not open).</li>
 <li>Fixed errors shown in Java sources coming from the Scala compiler.</li>
 <li>Fixed crash in Java completion for Scala classes in the default (empty) package.</li>
@@ -1304,25 +1322,19 @@
 </div>
 <div class="section" id="beta6">
 <h3>2.0.0-beta6</h3>
-<ul>
-<li><p class="first">Improved stability (correct use of &#8216;ask&#8217; calls)</p>
-</li>
-<li><p class="first">Removed dummy features used for upgrading from the old 2.7 IDE.</p>
-</li>
-<li><p class="first">Better description of the JDT weaving feature when installing it.</p>
-</li>
-<li><p class="first">Downgraded the JDT weaving plugin to the latest released version. We were using the development repository, and that caused conflicts on installation, when the user had AspectJ (or was using STS) installed &#8211; requiring the user to unselect the JDT weaving plugin from our update site. Now the versions are the same, and no conflict is reported.</p>
-</li>
-<li><p class="first">Organize Imports improvements: various configuration options and support for adding missing imports.</p>
-</li>
-<li><p class="first">Eclipse 3.7.0 (Indigo) compatibility</p>
-</li>
+<ul class="simple">
+<li>Improved stability (correct use of ‘ask’ calls)</li>
+<li>Removed dummy features used for upgrading from the old 2.7 IDE.</li>
+<li>Better description of the JDT weaving feature when installing it.</li>
+<li>Downgraded the JDT weaving plugin to the latest released version. We were using the development repository, and that caused conflicts on installation, when the user had AspectJ (or was using STS) installed – requiring the user to unselect the JDT weaving plugin from our update site. Now the versions are the same, and no conflict is reported.</li>
+<li>Organize Imports improvements: various configuration options and support for adding missing imports.</li>
+<li>Eclipse 3.7.0 (Indigo) compatibility</li>
 <li><dl class="first docutils">
 <dt>New REPL view: Launch by selecting text and pressing Ctrl+Shift+X (Cmd+Shift+X on the Mac).</dt>
-<dd><ul class="first last simple">
-<li>A different key combination can be set by going to General -&gt; Keys, and redefining the key binding for &#8220;Send Selection to REPL.&#8221;</li>
+<dd><ul class="first last">
+<li>A different key combination can be set by going to General -&gt; Keys, and redefining the key binding for “Send Selection to REPL.”</li>
 <li>The interpreter can be stopped and restarted, with optional replay.</li>
-<li>NOTE: the colon commands (e.g. &#8221;:implicits&#8221;) that work in the terminal REPL do not yet work in this REPL view, but this will be fixed for the next beta.</li>
+<li>NOTE: the colon commands (e.g. “:implicits”) that work in the terminal REPL do not yet work in this REPL view, but this will be fixed for the next beta.</li>
 </ul>
 </dd>
 </dl>
@@ -1360,7 +1372,7 @@
 <li>update : better Mark Occurrences</li>
 <li>update : better Quick Fix Imports</li>
 <li>update : better Structured Selections</li>
-<li>update : better code completion (don&#8217;t forgot to enable Java Completion)</li>
+<li>update : better code completion (don’t forgot to enable Java Completion)</li>
 <li>update : better hyperlink code navigation</li>
 <li>delete : support of scala-2.8.0</li>
 </ul>

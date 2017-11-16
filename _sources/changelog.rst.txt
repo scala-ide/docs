@@ -4,6 +4,25 @@ Changelog
 4.7.x
 -----
 
+4.7.1 RC1 (2017-11-15)
+......................
+
+- Fixes problem with AssertionError thrown from scalap when potential bytecode is not JVM
+- Worksheet multi scala support
+- upgrade to scalariform 0.2.6
+- fix nightlies
+
+The following changes belong to the scala-worksheet part:
+
+- Multi scala support for scala worksheet
+- Bumps up plugin-profiles version for eclipse-oxygen.
+
+The following changes belong to the scala-ide-play2 part:
+
+- Fixes problem with malfunctioned closing of twirl template comments
+- Enables syntax highlighting in scala.html files.
+- Bumps up plugin-profiles version for eclipse oxygen.
+
 4.7.0 (2017-09-29)
 ..................
 
