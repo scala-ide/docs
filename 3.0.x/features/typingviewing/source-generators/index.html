@@ -2,10 +2,13 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
+
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Source generators new &#8212; Scala IDE 0.1-SNAPSHOT documentation</title>
+    
+    <title>Source generators new &mdash; Scala IDE 0.1-SNAPSHOT documentation</title>
+    
     <link rel="stylesheet" href="../../../../_static/resources/stylesheets/base.css" type="text/css" />
     <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../../../../_static/resources/stylesheets/bootstrap.css" type="text/css" />
@@ -13,14 +16,14 @@
     <link rel="stylesheet" href="../../../../_static/resources/stylesheets/doc.css" type="text/css" />
     <link rel="stylesheet" href="../../../../_static/resources/stylesheets/sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../../../../_static/resources/stylesheets/prettify.css" type="text/css" />
+    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../../../',
         VERSION:     '0.1-SNAPSHOT',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
+        HAS_SOURCE:  true
       };
     </script>
     <script type="text/javascript" src="../../../../_static/jquery.js"></script>
@@ -37,8 +40,8 @@
     <script type="text/javascript" src="../../../../_static/resources/javascript/bootstrap-dropdown-app.js"></script>
     <script type="text/javascript" src="../../../../_static/resources/javascript/contentsFix.js"></script>
     <link rel="shortcut icon" href="../../../../_static/favicon.ico"/>
-    <link rel="index" title="Index" href="../../../../genindex.html" />
-    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="top" title="Scala IDE 0.1-SNAPSHOT documentation" href="../../../../index.html" />
+    <link rel="up" title="Typing and Viewing" href="../index.html" />
     <link rel="next" title="Structured Selection" href="../structured-selection.html" />
     <link rel="prev" title="Show Inferred Semicolons" href="../show-inferred-semicolons.html" /> 
   </head>
@@ -92,25 +95,25 @@
       <div class="span11 main-content">
         <div class="section" id="source-generators-new">
 <h1>Source generators <span class="raw-html"><span class="label info">new</span></span></h1>
-<p>Tired of writing <code class="docutils literal"><span class="pre">hashCode</span></code> and <code class="docutils literal"><span class="pre">equals</span></code> implementations by hand? Now you can let the IDE take care of it! The following source generators can be found under the <em>Source</em> context menu that appears after right-clicking in the editor.</p>
+<p>Tired of writing <tt class="docutils literal"><span class="pre">hashCode</span></tt> and <tt class="docutils literal"><span class="pre">equals</span></tt> implementations by hand? Now you can let the IDE take care of it! The following source generators can be found under the <em>Source</em> context menu that appears after right-clicking in the editor.</p>
 <div class="section" id="generate-hashcode-and-equals">
 <h2>Generate hashCode and equals</h2>
-<p><em>Generate hashCode and equals</em> generates implementations for the <code class="docutils literal"><span class="pre">hashCode</span></code> and <code class="docutils literal"><span class="pre">equals</span></code> methods based on selected class parameters. The implementations are based on the recommendations from <a class="reference external" href="http://www.artima.com/pins1ed/object-equality.html">Programming in Scala</a>. This includes a <code class="docutils literal"><span class="pre">canEqual</span></code> method, thus the <code class="docutils literal"><span class="pre">Equals</span></code> trait is mixed in as well.</p>
-<p>To start this refactoring simply select a class. As an example we will use the class <code class="docutils literal"><span class="pre">Generate</span></code>:</p>
+<p><em>Generate hashCode and equals</em> generates implementations for the <tt class="docutils literal"><span class="pre">hashCode</span></tt> and <tt class="docutils literal"><span class="pre">equals</span></tt> methods based on selected class parameters. The implementations are based on the recommendations from <a class="reference external" href="http://www.artima.com/pins1ed/object-equality.html">Programming in Scala</a>. This includes a <tt class="docutils literal"><span class="pre">canEqual</span></tt> method, thus the <tt class="docutils literal"><span class="pre">Equals</span></tt> trait is mixed in as well.</p>
+<p>To start this refactoring simply select a class. As an example we will use the class <tt class="docutils literal"><span class="pre">Generate</span></tt>:</p>
 <img alt="../../../../_images/generate-before.png" src="../../../../_images/generate-before.png" />
-<p>In the refactoring dialog the class parameters that should be included in the equals comparison and the hashcode computation can be selected. Optionally calls to <code class="docutils literal"><span class="pre">super</span></code> can be inserted:</p>
+<p>In the refactoring dialog the class parameters that should be included in the equals comparison and the hashcode computation can be selected. Optionally calls to <tt class="docutils literal"><span class="pre">super</span></tt> can be inserted:</p>
 <img alt="../../../../_images/hashcode-and-equals-dialog.png" src="../../../../_images/hashcode-and-equals-dialog.png" />
-<p>Selecting both class parameters and inserting calls to <code class="docutils literal"><span class="pre">super</span></code> results in this:</p>
+<p>Selecting both class parameters and inserting calls to <tt class="docutils literal"><span class="pre">super</span></tt> results in this:</p>
 <img alt="../../../../_images/hashcode-and-equals-after.png" src="../../../../_images/hashcode-and-equals-after.png" />
-<p>If the original class already has existing implementations for <code class="docutils literal"><span class="pre">canEqual</span></code>, <code class="docutils literal"><span class="pre">equals</span></code> or <code class="docutils literal"><span class="pre">hashCode</span></code>, the refactoring dialog offers the option to keep those or let them be replaced by newly generated implementations:</p>
+<p>If the original class already has existing implementations for <tt class="docutils literal"><span class="pre">canEqual</span></tt>, <tt class="docutils literal"><span class="pre">equals</span></tt> or <tt class="docutils literal"><span class="pre">hashCode</span></tt>, the refactoring dialog offers the option to keep those or let them be replaced by newly generated implementations:</p>
 <img alt="../../../../_images/generate-existing-dialog.png" src="../../../../_images/generate-existing-dialog.png" />
 </div>
 <div class="section" id="introduce-productn-trait">
 <h2>Introduce ProductN trait</h2>
-<p>Asked for by the community, <em>Introduce ProductN trait</em> is an extension of <em>Generate hashCode and equals</em>. In addition to <em>Generate hashCode and equals</em> this generator creates the methods <code class="docutils literal"><span class="pre">_1</span></code> to <code class="docutils literal"><span class="pre">_n</span></code> for the selected class parameters and mixes in the trait <code class="docutils literal"><span class="pre">ProductN</span></code>, where <em>n</em> stands for the number of selected class parameters.</p>
+<p>Asked for by the community, <em>Introduce ProductN trait</em> is an extension of <em>Generate hashCode and equals</em>. In addition to <em>Generate hashCode and equals</em> this generator creates the methods <tt class="docutils literal"><span class="pre">_1</span></tt> to <tt class="docutils literal"><span class="pre">_n</span></tt> for the selected class parameters and mixes in the trait <tt class="docutils literal"><span class="pre">ProductN</span></tt>, where <em>n</em> stands for the number of selected class parameters.</p>
 <p>The refactoring dialog is almost the same as for <em>Generate hashCode and equals</em>:</p>
 <img alt="../../../../_images/productN-dialog.png" src="../../../../_images/productN-dialog.png" />
-<p>Selecting only the first parameter <code class="docutils literal"><span class="pre">a</span></code> and omitting calls to <code class="docutils literal"><span class="pre">super</span></code> results in this:</p>
+<p>Selecting only the first parameter <tt class="docutils literal"><span class="pre">a</span></tt> and omitting calls to <tt class="docutils literal"><span class="pre">super</span></tt> results in this:</p>
 <img alt="../../../../_images/productN-after.png" src="../../../../_images/productN-after.png" />
 </div>
 </div>

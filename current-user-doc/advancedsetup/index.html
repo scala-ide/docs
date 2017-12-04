@@ -2,10 +2,13 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
+
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Advanced Setup &#8212; Scala IDE 0.1-SNAPSHOT documentation</title>
+    
+    <title>Advanced Setup &mdash; Scala IDE 0.1-SNAPSHOT documentation</title>
+    
     <link rel="stylesheet" href="../../_static/resources/stylesheets/base.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/resources/stylesheets/bootstrap.css" type="text/css" />
@@ -13,14 +16,14 @@
     <link rel="stylesheet" href="../../_static/resources/stylesheets/doc.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/resources/stylesheets/sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/resources/stylesheets/prettify.css" type="text/css" />
+    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
         VERSION:     '0.1-SNAPSHOT',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
+        HAS_SOURCE:  true
       };
     </script>
     <script type="text/javascript" src="../../_static/jquery.js"></script>
@@ -37,8 +40,8 @@
     <script type="text/javascript" src="../../_static/resources/javascript/bootstrap-dropdown-app.js"></script>
     <script type="text/javascript" src="../../_static/resources/javascript/contentsFix.js"></script>
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
-    <link rel="index" title="Index" href="../../genindex.html" />
-    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="top" title="Scala IDE 0.1-SNAPSHOT documentation" href="../../index.html" />
+    <link rel="up" title="User Documentation for the Scala IDE 4.x - Lithium" href="../index.html" />
     <link rel="next" title="Scala Multiple Installation Support" href="scala-installations.html" />
     <link rel="prev" title="Getting Started" href="../gettingstarted/index.html" /> 
   </head>
@@ -109,14 +112,14 @@ Scala 2.10. For 2.11, you had to have a version compiled for
 Scala 2.11. This led to users working with both 2.11 and 2.10
 projects to have two installations of Eclipse, with different
 flavors of the Scala IDE plugin installed.</p>
-<p>This also constrained us developers: since most of the IDE’s
+<p>This also constrained us developers: since most of the IDE&#8217;s
 source code had to pass compilation with both 2.10 and 2.11, it
 was impossible to remove some obsolete things, led to some
 regression headaches, and made us maintain two parallel branches
 for the source.</p>
 <p>With this multi-version support feature, we want to use a single
 version of the IDE, built on the latest version of Scala, to
-handle both “modern” projects built using 2.11, as well as “legacy”
+handle both &#8220;modern&#8221; projects built using 2.11, as well as &#8220;legacy&#8221;
 projects built with 2.10.</p>
 <p>It will also let us retire the 2.10 branch of the IDE builds,
 focusing the efforts of our small team on one branch, and
@@ -127,7 +130,7 @@ letting us deliver features to our users faster.</p>
 <p>The gist of it is the following: the IDE is, as of its 4.0.0 release, a
 2.11 build. The Presentation Compiler it ships with is a part of Scala
 2.11. But its typechecker can run with a specific option,
-<code class="docutils literal"><span class="pre">-Xsource:2.10</span></code> that lets it work on 2.10 source files. That’s now a
+<tt class="docutils literal"><span class="pre">-Xsource:2.10</span></tt> that lets it work on 2.10 source files. That&#8217;s now a
 standalone <a class="reference external" href="http://www.scala-lang.org/news/2.11.1">scala compiler</a> option,
 by the way — though please note it only affects up to the typechecker
 phase <a class="footnote-reference" href="#id12" id="id2">[2]</a>.</p>
@@ -150,17 +153,17 @@ hacking.</p>
 <div class="section" id="source-level">
 <h3>Source Level</h3>
 <p>To configure a new, fresh project for 2.10 compatibility, you have to
-go to project-specific settings: the platform’s default is still
+go to project-specific settings: the platform&#8217;s default is still
 to consider that projects are based on Scala 2.11 <a class="footnote-reference" href="#id13" id="id3">[3]</a>.</p>
-<p>Here’s what you’ll see:</p>
-<p><a class="reference internal" href="http://scala-ide.org/resources/images/xsource-screenshots/installations/compiler-before.png"><img alt="img1" src="http://scala-ide.org/resources/images/xsource-screenshots/installations/compiler-before.png" style="width: 100%;" /></a></p>
+<p>Here&#8217;s what you&#8217;ll see:</p>
+<p><img alt="img1" src="http://scala-ide.org/resources/images/xsource-screenshots/installations/compiler-before.png" style="width: 100%;" /></p>
 <p>You can now toggle project-specific settings and look at the
 drop-down just below it. It displays a list of versioned Scala
 installations that should include (at least) both a 2.10 version
 and a 2.11 version. Some are labeled as <em>dynamic</em>, others as
 <em>fixed</em>.</p>
-<p>Here’s an example:</p>
-<p><a class="reference internal" href="http://scala-ide.org/resources/images/xsource-screenshots/installations/compiler-toggled.png"><img alt="img2" src="http://scala-ide.org/resources/images/xsource-screenshots/installations/compiler-toggled.png" style="width: 100%;" /></a></p>
+<p>Here&#8217;s an example:</p>
+<p><img alt="img2" src="http://scala-ide.org/resources/images/xsource-screenshots/installations/compiler-toggled.png" style="width: 100%;" /></p>
 <p>The meaning of a fixed version is just that: if you select any
 fixed version, your project will be type-checked with that
 particular version of Scala, for as long as the IDE can find it <a class="footnote-reference" href="#id14" id="id4">[4]</a>.</p>
@@ -169,16 +172,16 @@ binary compatible way as we ship updates of the IDE through
 Eclipse <a class="reference external" href="http://wiki.eclipse.org/FAQ_How_do_I_upgrade_Eclipse%253F">update sites</a>. You have the insurance that if you choose
 a dynamic 2.11 version, what will be used is the latest
 available 2.11 installation the IDE ships with <a class="footnote-reference" href="#id15" id="id5">[5]</a>.</p>
-<p><strong>That’s it</strong>&nbsp;! Now once you select one of these options
+<p><strong>That&#8217;s it</strong>&nbsp;! Now once you select one of these options
 (hopefully a
-2.10 installation, since this is what we’re here to do), you
+2.10 installation, since this is what we&#8217;re here to do), you
 will not see any changes to other compilation options. But if
 you subsequently reopen compiler settings for that project,
-you’ll see that the <code class="docutils literal"><span class="pre">-Xsource:2.10</span> <span class="pre">-Ymacro-expand:none</span></code> string has
+you&#8217;ll see that the <tt class="docutils literal"><span class="pre">-Xsource:2.10</span> <span class="pre">-Ymacro-expand:none</span></tt> string has
 been added to your compiler settings:</p>
-<p><a class="reference internal" href="http://scala-ide.org/resources/images/xsource-screenshots/installations/compiler-after.png"><img alt="img3" src="http://scala-ide.org/resources/images/xsource-screenshots/installations/compiler-after.png" style="width: 100%;" /></a></p>
+<p><img alt="img3" src="http://scala-ide.org/resources/images/xsource-screenshots/installations/compiler-after.png" style="width: 100%;" /></p>
 <p>Note that if you decide to <em>revert</em> that change and come back to
-a 2.11 configuration, the IDE will look closely at your project’s
+a 2.11 configuration, the IDE will look closely at your project&#8217;s
 compiler settings as compared to workspace-wide settings. If just
 removing scala-version-related makes your project configuration
 equivalent to workspace settings, it will automatically revert the
@@ -187,7 +190,7 @@ current workspace-wide settings.</p>
 <p>Also, note this setting will not affect what your projct is built
 with. What your project runs on is, as usual, the compiler it
 finds on classpath. But what is actually found on classpath may
-vary according to your project’s specific settings <a class="footnote-reference" href="#id16" id="id6">[6]</a>.</p>
+vary according to your project&#8217;s specific settings <a class="footnote-reference" href="#id16" id="id6">[6]</a>.</p>
 </div>
 <div class="section" id="multiple-scala-installation-settings-at-once">
 <h3>Multiple Scala Installation Settings at once</h3>
@@ -196,22 +199,22 @@ quickly, without having to open project preferences for each project. So,
 choosing a Scala Installation is now a multi-select action: just choose
 your target projects, right-click, go to the Scala menu, and choose ‘Set
 the Scala Installation’, as below.</p>
-<p><a class="reference internal" href="http://scala-ide.org/resources/images/xsource-screenshots/new-support/multiselect-action.png"><img alt="img13" src="http://scala-ide.org/resources/images/xsource-screenshots/new-support/multiselect-action.png" style="width: 100%;" /></a></p>
+<p><img alt="img13" src="http://scala-ide.org/resources/images/xsource-screenshots/new-support/multiselect-action.png" style="width: 100%;" /></p>
 </div>
 <div class="section" id="scala-installation-detection">
 <h3>Scala Installation detection</h3>
 <p>The IDE will try to understand what version of Scala your project
 is designed to work with. It does this by looking at your
-<em>resolved</em> classpath. A resolved classpath means “expanded until
-it explicitly contains just paths to existing files” <a class="footnote-reference" href="#id17" id="id7">[7]</a>.
+<em>resolved</em> classpath. A resolved classpath means &#8220;expanded until
+it explicitly contains just paths to existing files&#8221; <a class="footnote-reference" href="#id17" id="id7">[7]</a>.
 Files in that classpath will possibly contain a scala-library
 jar, in which we know where to look for a version, or other,
 external jar files which filename might hint at a Scala version.</p>
-<p>If we detect a 2.10 scala library, you’ll see the following
+<p>If we detect a 2.10 scala library, you&#8217;ll see the following
 error marker appear in the problems view:</p>
-<p><a class="reference internal" href="http://scala-ide.org/resources/images/xsource-screenshots/installations/error-marker.png"><img alt="img4" src="http://scala-ide.org/resources/images/xsource-screenshots/installations/error-marker.png" style="width: 100%;" /></a></p>
+<p><img alt="img4" src="http://scala-ide.org/resources/images/xsource-screenshots/installations/error-marker.png" style="width: 100%;" /></p>
 <p>If you try to quick-fix this error (by pressing Ctrl+1 or right-clicking and selecting Quickfix), you’ll see the following dialog:</p>
-<p><a class="reference internal" href="http://scala-ide.org/resources/images/xsource-screenshots/installations/quickfix.png"><img alt="img5" src="http://scala-ide.org/resources/images/xsource-screenshots/installations/quickfix.png" style="width: 100%;" /></a></p>
+<p><img alt="img5" src="http://scala-ide.org/resources/images/xsource-screenshots/installations/quickfix.png" style="width: 100%;" /></p>
 <p>Opening Project Properties here (by clicking <em>Finish</em>) is equivalent to
 doing it through menus, you can then toggle project-specific compiler
 settings if necessary, and set the correct compiler flags.</p>
@@ -224,9 +227,9 @@ those dialogs do not appear. This is because your project is
 using a Classpath Container.</p>
 <p>Basically, classpath containers are an indirection in your
 classpath that is elaborated by the platform Eclipse using
-settings. They’re the technical notion behind the Eclipse feature
+settings. They&#8217;re the technical notion behind the Eclipse feature
 named <a class="reference external" href="http://help.eclipse.org/juno/index.jsp?topic%3D%252Forg.eclipse.jdt.doc.user%252Freference%252Fpreferences%252Fjava%252Fbuildpath%252Fref-preferences-user-libraries.htm">user libraries.</a></p>
-<p>Your project’s physical representation contains a string (a classpath
+<p>Your project&#8217;s physical representation contains a string (a classpath
 container <em>path</em>) in its classpath, that Eclipse resolves depending on its
 own settings and context <a class="footnote-reference" href="#id18" id="id8">[8]</a>. This has been the way Scala projects in the
 IDE have been dealt with so far: your projects contained that indirection
@@ -238,23 +241,23 @@ built with the latest version of the scala compiler embedded with the IDE.</p>
 Containers. First of all, choosing a project-specific scala
 installation in compiler settings, as discussed above, also sets
 the classpath container. You can witness that by expanding your
-project in the Package Explorer. Here’s how it look for our test
+project in the Package Explorer. Here&#8217;s how it look for our test
 project, set to use the latest 2.10 Scala above:</p>
-<p><a class="reference internal" href="http://scala-ide.org/resources/images/xsource-screenshots/installations/package-explorer.png"><img alt="img6" src="http://scala-ide.org/resources/images/xsource-screenshots/installations/package-explorer.png" style="width: 100%;" /></a></p>
-<p>You’ll notice this is not the generic 2.11 container you would
+<p><img alt="img6" src="http://scala-ide.org/resources/images/xsource-screenshots/installations/package-explorer.png" style="width: 100%;" /></p>
+<p>You&#8217;ll notice this is not the generic 2.11 container you would
 get with a fresh new (and therefore 2.11) project. You can also
 see that in the <em>Java Build Path</em> preference page in the project
 settings:</p>
-<p><a class="reference internal" href="http://scala-ide.org/resources/images/xsource-screenshots/installations/properties-build-path.png"><img alt="img7" src="http://scala-ide.org/resources/images/xsource-screenshots/installations/properties-build-path.png" style="width: 100%;" /></a></p>
+<p><img alt="img7" src="http://scala-ide.org/resources/images/xsource-screenshots/installations/properties-build-path.png" style="width: 100%;" /></p>
 <p>You can also edit this classpath container, by right-clicking in
 the <em>Package Explorer</em> view, or by clicking <em>Edit</em> on the <em>Java
 Build Path</em> Preference page.</p>
-<p><a class="reference internal" href="http://scala-ide.org/resources/images/xsource-screenshots/installations/edit-container.png"><img alt="img8" src="http://scala-ide.org/resources/images/xsource-screenshots/installations/edit-container.png" style="width: 100%;" /></a></p>
+<p><img alt="img8" src="http://scala-ide.org/resources/images/xsource-screenshots/installations/edit-container.png" style="width: 100%;" /></p>
 <p>Choosing a particular installation here will have the same
 effect as choosing a particular Scala Installation in the
-project’s compiler settings, as outlined above. In fact, if you
-reopen your project’s settings after applying that classpath
-container change, you’ll notice that the settings for your
+project&#8217;s compiler settings, as outlined above. In fact, if you
+reopen your project&#8217;s settings after applying that classpath
+container change, you&#8217;ll notice that the settings for your
 installation and use of project-specific settings have changed
 appropriately.</p>
 <p>Note that if you decide to write a plugin, or do something that
@@ -270,7 +273,7 @@ make sure that the compiler and library container settings would
 not get out of sync, we had to make sure that classpath container
 edition should not fire if you have both Scala-library and
 Scala-compiler on classpath. The best way to proceed is
-from a project’s choice of Scala Installation, which cascades to
+from a project&#8217;s choice of Scala Installation, which cascades to
 classpath containers — and a link will guide you there if you
 try to modify such a classpath container directly anyway <a class="footnote-reference" href="#id19" id="id9">[9]</a>.</p>
 <p>This will let you have a project which classpath is managed the
@@ -290,15 +293,15 @@ there has always been the option of having a manually-managed
 classpath. You can either use the <em>Add External Jars</em> function
 for the <em>Java Build Path</em> preference page to set up your
 scala-compiler and/or scala-library (etc) jars, or you could use
-sbteclipse with the <code class="docutils literal"><span class="pre">EclipseKeys.withBundledScalaContainers:=false</span></code>
+sbteclipse with the <tt class="docutils literal"><span class="pre">EclipseKeys.withBundledScalaContainers:=false</span></tt>
 option, which copies exactly the settings resolved by sbt.</p>
-<p>But using this is tedious, and it’s per-project. Or perhaps your project
+<p>But using this is tedious, and it&#8217;s per-project. Or perhaps your project
 does not have an sbt build. How about setting a custom, workspace-wide
 installation that your projects can then reuse ?</p>
 <p>This is what you can do from the Scala Installations preference
 page. You will find it in the preference dialog for the
 workspace.</p>
-<p><a class="reference internal" href="http://scala-ide.org/resources/images/xsource-screenshots/installations/scala-installations.png"><img alt="img9" src="http://scala-ide.org/resources/images/xsource-screenshots/installations/scala-installations.png" style="width: 100%;" /></a></p>
+<p><img alt="img9" src="http://scala-ide.org/resources/images/xsource-screenshots/installations/scala-installations.png" style="width: 100%;" /></p>
 <p>Notice how there is no notion of dynamic or fixed represented here: those
 notions are relevant for a choice of Scala Installation when you configure
 a project (dictating how that choice will be realized accross
@@ -315,19 +318,19 @@ such as scala-reflect.</p>
 <p>It will try to do a best effort to understand the version of
 your installation given what we know of how such jars are
 produced by the compiler build <a class="footnote-reference" href="#id20" id="id10">[10]</a>, and try to check those
-jars’ versions are consistent with each other.</p>
-<p>Let’s now try to add an installation from the <code class="docutils literal"><span class="pre">~/.sbt/boot</span></code>
+jars&#8217; versions are consistent with each other.</p>
+<p>Let&#8217;s now try to add an installation from the <tt class="docutils literal"><span class="pre">~/.sbt/boot</span></tt>
 directory, a place where sbt stores the scala jars it requires to
 boot.</p>
-<p><a class="reference internal" href="http://scala-ide.org/resources/images/xsource-screenshots/installations/sbt-installation.png"><img alt="img10" src="http://scala-ide.org/resources/images/xsource-screenshots/installations/sbt-installation.png" style="width: 100%;" /></a></p>
+<p><img alt="img10" src="http://scala-ide.org/resources/images/xsource-screenshots/installations/sbt-installation.png" style="width: 100%;" /></p>
 <p>A dialog then comes up asking for a name: this name gives you
 the option of labeling a custom installation with a tag that is
 easier to find in all the dialogs above, or even to have several
 names for a given choice of jars.</p>
-<p><a class="reference internal" href="http://scala-ide.org/resources/images/xsource-screenshots/installations/naming-installation.png"><img alt="img11" src="http://scala-ide.org/resources/images/xsource-screenshots/installations/naming-installation.png" style="width: 100%;" /></a></p>
+<p><img alt="img11" src="http://scala-ide.org/resources/images/xsource-screenshots/installations/naming-installation.png" style="width: 100%;" /></p>
 <p>You can now see your installation listed in all relevant dialogs
 mentioned above, and you can select it in Compiler Settings.</p>
-<p><a class="reference internal" href="http://scala-ide.org/resources/images/xsource-screenshots/installations/custom-installation-visible.png"><img alt="img12" src="http://scala-ide.org/resources/images/xsource-screenshots/installations/custom-installation-visible.png" style="width: 100%;" /></a></p>
+<p><img alt="img12" src="http://scala-ide.org/resources/images/xsource-screenshots/installations/custom-installation-visible.png" style="width: 100%;" /></p>
 <p>Note that any scala installation created in that custom manner
 is necessarily fixed: dynamic installations vary following
 upgrades of the Scala IDE packaged compilers, and we would not
@@ -342,7 +345,7 @@ custom scala installation for use in your IDE. If you have a
 preferred way (explicitly choosing every jar ? looking at your
 maven/ivy cache ?), please <a class="reference external" href="https://groups.google.com/d/forum/scala-ide-dev">let us know</a>.</p>
 <p>Finally, note that so far, we only support Scala Versions
-posterior to 2.10.0. Indeed, the <code class="docutils literal"><span class="pre">-Xsource</span></code> flag only knows so
+posterior to 2.10.0. Indeed, the <tt class="docutils literal"><span class="pre">-Xsource</span></tt> flag only knows so
 far how to run both in 2.11 (normal) and 2.10 (compatibility)
 modes. But it no longer knows about old typing ways of the past.</p>
 <table class="docutils footnote" frame="void" id="id11" rules="none">
@@ -355,7 +358,7 @@ delegated to another piece of byte code.</td></tr>
 <table class="docutils footnote" frame="void" id="id12" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id2">[2]</a></td><td>In other terms, there’s no way for you to generate
+<tr><td class="label"><a class="fn-backref" href="#id2">[2]</a></td><td>In other terms, there&#8217;s no way for you to generate
 class files for a 2.10 code base using a 2.11 compiler and this
 option.</td></tr>
 </tbody>
@@ -398,7 +401,7 @@ project that uses 2.10 whitebox macros, you may want to look at
 <table class="docutils footnote" frame="void" id="id17" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id7">[7]</a></td><td>We’ll see why and how a classpath might <em>not</em> be
+<tr><td class="label"><a class="fn-backref" href="#id7">[7]</a></td><td>We&#8217;ll see why and how a classpath might <em>not</em> be
 expanded in a moment.</td></tr>
 </tbody>
 </table>
@@ -422,7 +425,7 @@ its classpath, and configures itself correctly based on that.</p>
 <tbody valign="top">
 <tr><td class="label"><a class="fn-backref" href="#id9">[9]</a></td><td>If you need to know, the issue here is on refreshing the
 <em>Java Build Path</em> window, rather than modifying both classpath
-containers in the background. We’d be very eager to receive a
+containers in the background. We&#8217;d be very eager to receive a
 contribution from an Eclipse expert on that point !</td></tr>
 </tbody>
 </table>
@@ -441,8 +444,8 @@ over to the <a class="reference external" href="./scala-installations.html">Mult
 </div>
 <div class="section" id="eclipse-configuration">
 <h3>Eclipse Configuration</h3>
-<p>The default Eclipse heap configuration is often inadequate for the Scala IDE. It is strongly recommended to edit the <code class="docutils literal"><span class="pre">eclipse/eclipse.ini</span></code> (<code class="docutils literal"><span class="pre">eclipse/Eclipse.app/Contents/MacOS/eclipse.ini</span></code> on Mac osX) file and add the following lines to increase various heap limits and virtual machine options:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>-server
+<p>The default Eclipse heap configuration is often inadequate for the Scala IDE. It is strongly recommended to edit the <tt class="docutils literal"><span class="pre">eclipse/eclipse.ini</span></tt> (<tt class="docutils literal"><span class="pre">eclipse/Eclipse.app/Contents/MacOS/eclipse.ini</span></tt> on Mac osX) file and add the following lines to increase various heap limits and virtual machine options:</p>
+<div class="highlight-bash"><div class="highlight"><pre>-server
 -Xms1024m
 -Xmx3500m
 -Xss2M
@@ -454,7 +457,7 @@ over to the <a class="reference external" href="./scala-installations.html">Mult
 <ul>
 <li><p class="first"><strong>JDT Weaving</strong></p>
 <p>Scala IDE uses AOP to tweak the Eclipse JDT, so JDT weaving has to be enable. Otherwise, Scala files would be managed as Java files.</p>
-<p>It is set in the <code class="docutils literal"><span class="pre">JDT</span> <span class="pre">Weaving</span></code> section of Scala Setup Diagnostics dialog <a class="footnote-reference" href="#diagnostics" id="id21">[12]</a>. <em>JDT Weaving</em> should be checked (and disabled, to prevent accidental changes). If it is not the case, click to enable it.</p>
+<p>It is set in the <tt class="docutils literal"><span class="pre">JDT</span> <span class="pre">Weaving</span></tt> section of Scala Setup Diagnostics dialog <a class="footnote-reference" href="#diagnostics" id="id21">[12]</a>. <em>JDT Weaving</em> should be checked (and disabled, to prevent accidental changes). If it is not the case, click to enable it.</p>
 <img alt="../../_images/advancedsetup-jdtweaving-013.png" src="../../_images/advancedsetup-jdtweaving-013.png" />
 </li>
 </ul>
@@ -463,11 +466,11 @@ over to the <a class="reference external" href="./scala-installations.html">Mult
 <h3>Optional Preferences</h3>
 <ul>
 <li><p class="first"><strong>Heap Status</strong></p>
-<p>When the memory usage nears the limit, the Garbage Collector activity increases (when the compiler runs, …) and system slows down. It is good to keep a eye on the heap status. It is possible by enabling <code class="docutils literal"><span class="pre">Show</span> <span class="pre">heap</span> <span class="pre">status</span></code> in the <code class="docutils literal"><span class="pre">General</span></code> section <a class="footnote-reference" href="#preferences" id="id22">[11]</a>.</p>
+<p>When the memory usage nears the limit, the Garbage Collector activity increases (when the compiler runs, ...) and system slows down. It is good to keep a eye on the heap status. It is possible by enabling <tt class="docutils literal"><span class="pre">Show</span> <span class="pre">heap</span> <span class="pre">status</span></tt> in the <tt class="docutils literal"><span class="pre">General</span></tt> section <a class="footnote-reference" href="#preferences" id="id22">[11]</a>.</p>
 <a class="reference external image-reference" href="../_images/advancedsetup-heapstatus-01.png"><img alt="../../_images/advancedsetup-heapstatus-013.png" src="../../_images/advancedsetup-heapstatus-013.png" style="width: 100%;" /></a>
 </li>
 <li><p class="first"><strong>Limit Simultaneously Open Editors</strong></p>
-<p>Having too many editors open can claim a lot of memory. Unless you are an exceptional multi-tasker or you use a task-focused interface such as <a class="reference external" href="http://www.eclipse.org/mylyn/">Mylyn</a>, you may want to limit the number of simultaneously opened editors in the <code class="docutils literal"><span class="pre">General</span></code> section <a class="footnote-reference" href="#preferences" id="id23">[11]</a>..</p>
+<p>Having too many editors open can claim a lot of memory. Unless you are an exceptional multi-tasker or you use a task-focused interface such as <a class="reference external" href="http://www.eclipse.org/mylyn/">Mylyn</a>, you may want to limit the number of simultaneously opened editors in the <tt class="docutils literal"><span class="pre">General</span></tt> section <a class="footnote-reference" href="#preferences" id="id23">[11]</a>..</p>
 <blockquote>
 <div><a class="reference external image-reference" href="../_images/limit-editors.png"><img alt="../../_images/limit-editors2.png" src="../../_images/limit-editors2.png" style="width: 100%;" /></a>
 </div></blockquote>
@@ -484,7 +487,7 @@ be a good idea : proceed at your own risk.</p>
 <a class="reference external image-reference" href="../_images/content-assist-deactivation.png"><img alt="../../_images/content-assist-deactivation2.png" src="../../_images/content-assist-deactivation2.png" style="width: 100%;" /></a>
 <ul>
 <li><p class="first"><strong>Activate Completion</strong></p>
-<p>You should enable completion however — and you may even want to activate word proposals, if you don’t want to have to hit several shortcuts to complete what you type.</p>
+<p>You should enable completion however — and you may even want to activate word proposals, if you don&#8217;t want to have to hit several shortcuts to complete what you type.</p>
 <blockquote>
 <div><a class="reference external image-reference" href="../_images/completion.png"><img alt="../../_images/completion2.png" src="../../_images/completion2.png" style="width: 100%;" /></a>
 </div></blockquote>
@@ -499,19 +502,19 @@ be a good idea : proceed at your own risk.</p>
 <li>to monitor CPU and swap, use your native system monitor (some of the other system monitors are big resource users themselves).</li>
 <li>to monitor Garbage Collector activity, use <em>visualvm</em> on the eclipse instance. It is a profiling tool provided with jdk 1.6.x. It is possible also to get a feel of the memory usage with the heap status bar <a class="reference internal" href="#optional-preferences">Optional Preferences</a> in Eclipse.</li>
 </ul>
-<p>Depending of the problem, the memory allocated to the JVM can be increased, or some of the other application closed (like the web browser, or some flash application, …).</p>
+<p>Depending of the problem, the memory allocated to the JVM can be increased, or some of the other application closed (like the web browser, or some flash application, ...).</p>
 </div>
 <div class="section" id="memory-consumption-new">
 <h3>Memory consumption <span class="raw-html"><span class="label info">new</span></span></h3>
 <p>The Scala IDE for Eclipse uses the Scala Presentation Compiler which provides semantic features such as live error markers, inferred type hovers etc.</p>
-<p>Each project has its own presentation compiler instance working in a separate thread. It is created after importing or opening a previously closed project, as well as when you open .scala file or type something and a presentation compiler didn’t exist at a given moment.</p>
-<p>In the case of complex projects with many dependencies, each presentation compiler can consume a lot of memory. Therefore, there’s a special mechanism which can close presentation compilers automatically. It can do that when a given project still exists in a workspace, but when the user hasn’t edited its code for a long time and there are no opened Scala Editors for the files managed by given presentation compilers.</p>
-<p>You can specify a length of inactivity in seconds, after which the presentation compiler can be closed. Note that the presentation compiler will have to be recreated, when you will open the first file for a project. This can cause a small delay but in most of cases it shouldn’t be significant - up to several seconds in the case of big projects. After that there are no other noticeable effects.</p>
+<p>Each project has its own presentation compiler instance working in a separate thread. It is created after importing or opening a previously closed project, as well as when you open .scala file or type something and a presentation compiler didn&#8217;t exist at a given moment.</p>
+<p>In the case of complex projects with many dependencies, each presentation compiler can consume a lot of memory. Therefore, there&#8217;s a special mechanism which can close presentation compilers automatically. It can do that when a given project still exists in a workspace, but when the user hasn&#8217;t edited its code for a long time and there are no opened Scala Editors for the files managed by given presentation compilers.</p>
+<p>You can specify a length of inactivity in seconds, after which the presentation compiler can be closed. Note that the presentation compiler will have to be recreated, when you will open the first file for a project. This can cause a small delay but in most of cases it shouldn&#8217;t be significant - up to several seconds in the case of big projects. After that there are no other noticeable effects.</p>
 <a class="reference external image-reference" href="../_images/closing-presentation-compilers.png"><img alt="../../_images/closing-presentation-compilers1.png" src="../../_images/closing-presentation-compilers1.png" style="width: 80%;" /></a>
 </div>
 <div class="section" id="suggested-interesting-keyboard-shortcuts">
 <h3>Suggested interesting keyboard shortcuts</h3>
-<p>You may want to head out to our <a class="reference internal" href="../../dev/appendix/shortcuts.html#shortcuts"><span class="std std-ref">Suggested Shortcuts</span></a> page to get a list of shortcuts that will speed up your Scala development.</p>
+<p>You may want to head out to our <a class="reference internal" href="../../dev/appendix/shortcuts.html#shortcuts"><em>Suggested Shortcuts</em></a> page to get a list of shortcuts that will speed up your Scala development.</p>
 </div>
 <div class="section" id="additional-links">
 <h3>Additional Links</h3>
@@ -524,13 +527,13 @@ be a good idea : proceed at your own risk.</p>
 <table class="docutils footnote" frame="void" id="preferences" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label">[11]</td><td><em>(<a class="fn-backref" href="#id22">1</a>, <a class="fn-backref" href="#id23">2</a>)</em> The Eclipse preferences are accessible using <code class="docutils literal"><span class="pre">Windows</span> <span class="pre">→</span> <span class="pre">Preferences</span></code> (or <code class="docutils literal"><span class="pre">Eclipse</span> <span class="pre">→</span> <span class="pre">Preferences</span></code> on Mac OS X).</td></tr>
+<tr><td class="label">[11]</td><td><em>(<a class="fn-backref" href="#id22">1</a>, <a class="fn-backref" href="#id23">2</a>)</em> The Eclipse preferences are accessible using <tt class="docutils literal"><span class="pre">Windows</span> <span class="pre">→</span> <span class="pre">Preferences</span></tt> (or <tt class="docutils literal"><span class="pre">Eclipse</span> <span class="pre">→</span> <span class="pre">Preferences</span></tt> on Mac OS X).</td></tr>
 </tbody>
 </table>
 <table class="docutils footnote" frame="void" id="diagnostics" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id21">[12]</a></td><td>The Scala Diagnostics dialog is accessible using <code class="docutils literal"><span class="pre">Scala</span> <span class="pre">→</span> <span class="pre">Run</span> <span class="pre">Setup</span> <span class="pre">Diagnostics</span></code>.</td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id21">[12]</a></td><td>The Scala Diagnostics dialog is accessible using <tt class="docutils literal"><span class="pre">Scala</span> <span class="pre">→</span> <span class="pre">Run</span> <span class="pre">Setup</span> <span class="pre">Diagnostics</span></tt>.</td></tr>
 </tbody>
 </table>
 </div>

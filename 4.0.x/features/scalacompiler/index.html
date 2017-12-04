@@ -2,10 +2,13 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
+
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Scala Scopes Building new (since 4.1) &#8212; Scala IDE 0.1-SNAPSHOT documentation</title>
+    
+    <title>Scala Scopes Building new (since 4.1) &mdash; Scala IDE 0.1-SNAPSHOT documentation</title>
+    
     <link rel="stylesheet" href="../../../_static/resources/stylesheets/base.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/resources/stylesheets/bootstrap.css" type="text/css" />
@@ -13,14 +16,14 @@
     <link rel="stylesheet" href="../../../_static/resources/stylesheets/doc.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/resources/stylesheets/sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/resources/stylesheets/prettify.css" type="text/css" />
+    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../../',
         VERSION:     '0.1-SNAPSHOT',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
+        HAS_SOURCE:  true
       };
     </script>
     <script type="text/javascript" src="../../../_static/jquery.js"></script>
@@ -37,8 +40,8 @@
     <script type="text/javascript" src="../../../_static/resources/javascript/bootstrap-dropdown-app.js"></script>
     <script type="text/javascript" src="../../../_static/resources/javascript/contentsFix.js"></script>
     <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
-    <link rel="index" title="Index" href="../../../genindex.html" />
-    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="top" title="Scala IDE 0.1-SNAPSHOT documentation" href="../../../index.html" />
+    <link rel="up" title="Features" href="../../features.html" />
     <link rel="next" title="Scala Debugger" href="../scaladebugger/index.html" />
     <link rel="prev" title="Scala JUnit Test Finder" href="../test-finder/index.html" /> 
   </head>
@@ -92,42 +95,42 @@
         <div class="section" id="scala-scopes-building-new-since-4-1">
 <h1>Scala Scopes Building <span class="raw-html"><span class="label info">new</span></span> (since 4.1)</h1>
 <p>Scala IDE provides two different ways to build a project. The first and one takes all sources in a project and compiles them regardless where they are stored and what their output folders are. The second one breaks up the build process of a project into stages called scopes.</p>
-<p>A Scope is a set of source files, which are compiled together and whose “product of compilation units” is stored in a specific output folder.</p>
+<p>A Scope is a set of source files, which are compiled together and whose &#8220;product of compilation units&#8221; is stored in a specific output folder.</p>
 <p>This feature has been designed to solve a problem of compiling macro code. Up to now macro code had to be moved to a separate project on which the main project depends on. With the Scala Scopes Builder macro code can be defined and used in the same project.</p>
 <p>3 scopes are defined by convention:</p>
 <ul class="simple">
-<li><code class="docutils literal"><span class="pre">macros</span></code> with the default source path: <code class="docutils literal"><span class="pre">&lt;project</span> <span class="pre">root&gt;/src/macros*</span></code> and especially for Play projects <code class="docutils literal"><span class="pre">&lt;project</span> <span class="pre">root&gt;/conf*</span></code></li>
-<li><code class="docutils literal"><span class="pre">tests</span></code> with the default source path: <code class="docutils literal"><span class="pre">&lt;project</span> <span class="pre">root&gt;/src/test*</span></code> and (because of Play projects) <code class="docutils literal"><span class="pre">&lt;project</span> <span class="pre">root&gt;/test*</span></code></li>
-<li><code class="docutils literal"><span class="pre">main</span></code> which gets all source paths that don’t match macros and tests scopes</li>
+<li><tt class="docutils literal"><span class="pre">macros</span></tt> with the default source path: <tt class="docutils literal"><span class="pre">&lt;project</span> <span class="pre">root&gt;/src/macros*</span></tt> and especially for Play projects <tt class="docutils literal"><span class="pre">&lt;project</span> <span class="pre">root&gt;/conf*</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">tests</span></tt> with the default source path: <tt class="docutils literal"><span class="pre">&lt;project</span> <span class="pre">root&gt;/src/test*</span></tt> and (because of Play projects) <tt class="docutils literal"><span class="pre">&lt;project</span> <span class="pre">root&gt;/test*</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">main</span></tt> which gets all source paths that don&#8217;t match macros and tests scopes</li>
 </ul>
 <p><sub>(* is just a wildcard so for example to tests scope are assigned sources from folders src/test, src/test-my-special)</sub></p>
-<p>The scopes are compiled in order: <code class="docutils literal"><span class="pre">macros</span></code>, <code class="docutils literal"><span class="pre">main</span></code>, <code class="docutils literal"><span class="pre">tests</span></code>. The compilation is conditional so if any compilation scope fails then further scopes are not compiled anymore. So when <code class="docutils literal"><span class="pre">macros</span></code> compilation fails then neither <code class="docutils literal"><span class="pre">main</span></code> nor <code class="docutils literal"><span class="pre">tests</span></code> are compiled. When <code class="docutils literal"><span class="pre">macros</span></code> compiles successfully and <code class="docutils literal"><span class="pre">main</span></code> fails then the <code class="docutils literal"><span class="pre">tests</span></code> scope is not compiled.</p>
-<p>Of course the output folder of a particular scope is added to the classpath of the depending scopes. This means that the output of <code class="docutils literal"><span class="pre">macros</span></code> is added to <code class="docutils literal"><span class="pre">main</span></code> and <code class="docutils literal"><span class="pre">tests</span></code> classpaths and output of <code class="docutils literal"><span class="pre">main</span></code> is added to <code class="docutils literal"><span class="pre">tests</span></code> classpath.</p>
-<p>Besides of scopes dependencies in a single project there are the dependencies defined across projects’ scopes too. When some given project (for simplicity let’s call it <em>B</em>) depends on another project (let’s call it <em>A</em>) then the dependencies between
-these two projects’ scopes are determined in the following way:</p>
+<p>The scopes are compiled in order: <tt class="docutils literal"><span class="pre">macros</span></tt>, <tt class="docutils literal"><span class="pre">main</span></tt>, <tt class="docutils literal"><span class="pre">tests</span></tt>. The compilation is conditional so if any compilation scope fails then further scopes are not compiled anymore. So when <tt class="docutils literal"><span class="pre">macros</span></tt> compilation fails then neither <tt class="docutils literal"><span class="pre">main</span></tt> nor <tt class="docutils literal"><span class="pre">tests</span></tt> are compiled. When <tt class="docutils literal"><span class="pre">macros</span></tt> compiles successfully and <tt class="docutils literal"><span class="pre">main</span></tt> fails then the <tt class="docutils literal"><span class="pre">tests</span></tt> scope is not compiled.</p>
+<p>Of course the output folder of a particular scope is added to the classpath of the depending scopes. This means that the output of <tt class="docutils literal"><span class="pre">macros</span></tt> is added to <tt class="docutils literal"><span class="pre">main</span></tt> and <tt class="docutils literal"><span class="pre">tests</span></tt> classpaths and output of <tt class="docutils literal"><span class="pre">main</span></tt> is added to <tt class="docutils literal"><span class="pre">tests</span></tt> classpath.</p>
+<p>Besides of scopes dependencies in a single project there are the dependencies defined across projects&#8217; scopes too. When some given project (for simplicity let&#8217;s call it <em>B</em>) depends on another project (let&#8217;s call it <em>A</em>) then the dependencies between
+these two projects&#8217; scopes are determined in the following way:</p>
 <ul class="simple">
-<li><code class="docutils literal"><span class="pre">macros</span></code> of <em>B</em> depends on <code class="docutils literal"><span class="pre">macros</span></code> and <code class="docutils literal"><span class="pre">main</span></code> of <em>A</em> (so <code class="docutils literal"><span class="pre">macros</span></code> of <em>B</em> requires a successful compilation of <code class="docutils literal"><span class="pre">macros</span></code> and <code class="docutils literal"><span class="pre">main</span></code> scopes in project <em>A</em>)</li>
-<li><code class="docutils literal"><span class="pre">main</span></code> of <em>B</em> depends on <code class="docutils literal"><span class="pre">macros</span></code> and <code class="docutils literal"><span class="pre">main</span></code> of <em>A</em></li>
-<li><code class="docutils literal"><span class="pre">tests</span></code> of <em>B</em> depends on <code class="docutils literal"><span class="pre">macros</span></code>, <code class="docutils literal"><span class="pre">main</span></code> and <code class="docutils literal"><span class="pre">tests</span></code> of <em>A</em></li>
+<li><tt class="docutils literal"><span class="pre">macros</span></tt> of <em>B</em> depends on <tt class="docutils literal"><span class="pre">macros</span></tt> and <tt class="docutils literal"><span class="pre">main</span></tt> of <em>A</em> (so <tt class="docutils literal"><span class="pre">macros</span></tt> of <em>B</em> requires a successful compilation of <tt class="docutils literal"><span class="pre">macros</span></tt> and <tt class="docutils literal"><span class="pre">main</span></tt> scopes in project <em>A</em>)</li>
+<li><tt class="docutils literal"><span class="pre">main</span></tt> of <em>B</em> depends on <tt class="docutils literal"><span class="pre">macros</span></tt> and <tt class="docutils literal"><span class="pre">main</span></tt> of <em>A</em></li>
+<li><tt class="docutils literal"><span class="pre">tests</span></tt> of <em>B</em> depends on <tt class="docutils literal"><span class="pre">macros</span></tt>, <tt class="docutils literal"><span class="pre">main</span></tt> and <tt class="docutils literal"><span class="pre">tests</span></tt> of <em>A</em></li>
 </ul>
 <div class="section" id="enabling-scopes-compilation">
 <h2>Enabling scopes compilation</h2>
-<p>The feature is turned <code class="docutils literal"><span class="pre">on</span></code> by default. To suppress it go to the project properties: <code class="docutils literal"><span class="pre">Right</span> <span class="pre">click</span> <span class="pre">on</span> <span class="pre">a</span> <span class="pre">project</span> <span class="pre">→</span> <span class="pre">Properties</span> <span class="pre">→</span> <span class="pre">Scala</span> <span class="pre">Compiler</span> <span class="pre">→</span> <span class="pre">Build</span> <span class="pre">manager</span></code> and uncheck <code class="docutils literal"><span class="pre">useScopesCompiler</span></code>. Clean your project afterwards.</p>
+<p>The feature is turned <tt class="docutils literal"><span class="pre">on</span></tt> by default. To suppress it go to the project properties: <tt class="docutils literal"><span class="pre">Right</span> <span class="pre">click</span> <span class="pre">on</span> <span class="pre">a</span> <span class="pre">project</span> <span class="pre">→</span> <span class="pre">Properties</span> <span class="pre">→</span> <span class="pre">Scala</span> <span class="pre">Compiler</span> <span class="pre">→</span> <span class="pre">Build</span> <span class="pre">manager</span></tt> and uncheck <tt class="docutils literal"><span class="pre">useScopesCompiler</span></tt>. Clean your project afterwards.</p>
 <blockquote>
-<div><a class="reference internal image-reference" href="../../../_images/uncheck-scopes-compilation.PNG"><img alt="../../../_images/uncheck-scopes-compilation.PNG" src="../../../_images/uncheck-scopes-compilation.PNG" style="width: 100%;" /></a>
+<div><img alt="../../../_images/uncheck-scopes-compilation.PNG" src="../../../_images/uncheck-scopes-compilation.PNG" style="width: 100%;" />
 </div></blockquote>
 </div>
 <div class="section" id="changing-the-settings-for-existing-project">
 <h2>Changing the settings for existing project</h2>
 <p>If project already exists you can change its configuration to get advantage of scopes compilation and resolve problems with dependent builds in the following way:</p>
 <ul>
-<li><p class="first">Open project context menu and select path <code class="docutils literal"><span class="pre">Right</span> <span class="pre">click</span> <span class="pre">on</span> <span class="pre">a</span> <span class="pre">project</span> <span class="pre">→</span> <span class="pre">Properties</span> <span class="pre">→</span> <span class="pre">Java</span> <span class="pre">Build</span> <span class="pre">Path</span> <span class="pre">→</span> <span class="pre">Source</span></code>.</p>
+<li><p class="first">Open project context menu and select path <tt class="docutils literal"><span class="pre">Right</span> <span class="pre">click</span> <span class="pre">on</span> <span class="pre">a</span> <span class="pre">project</span> <span class="pre">→</span> <span class="pre">Properties</span> <span class="pre">→</span> <span class="pre">Java</span> <span class="pre">Build</span> <span class="pre">Path</span> <span class="pre">→</span> <span class="pre">Source</span></tt>.</p>
 </li>
-<li><p class="first">Check <code class="docutils literal"><span class="pre">Allow</span> <span class="pre">output</span> <span class="pre">folders</span> <span class="pre">for</span> <span class="pre">source</span> <span class="pre">folders</span></code>.</p>
-<a class="reference internal image-reference" href="../../../_images/allow-output-folders.PNG"><img alt="../../../_images/allow-output-folders.PNG" src="../../../_images/allow-output-folders.PNG" style="width: 100%;" /></a>
+<li><p class="first">Check <tt class="docutils literal"><span class="pre">Allow</span> <span class="pre">output</span> <span class="pre">folders</span> <span class="pre">for</span> <span class="pre">source</span> <span class="pre">folders</span></tt>.</p>
+<img alt="../../../_images/allow-output-folders.PNG" src="../../../_images/allow-output-folders.PNG" style="width: 100%;" />
 </li>
-<li><p class="first">Edit <code class="docutils literal"><span class="pre">Output</span> <span class="pre">folder</span></code> of chosen source folder and set your output folder. Click <em>Ok</em>.</p>
-<a class="reference internal image-reference" href="../../../_images/set-output-folder.PNG"><img alt="../../../_images/set-output-folder.PNG" src="../../../_images/set-output-folder.PNG" style="width: 100%;" /></a>
+<li><p class="first">Edit <tt class="docutils literal"><span class="pre">Output</span> <span class="pre">folder</span></tt> of chosen source folder and set your output folder. Click <em>Ok</em>.</p>
+<img alt="../../../_images/set-output-folder.PNG" src="../../../_images/set-output-folder.PNG" style="width: 100%;" />
 </li>
 <li><p class="first">Clean the project.</p>
 </li>

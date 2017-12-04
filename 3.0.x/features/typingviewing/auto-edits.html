@@ -2,10 +2,13 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
+
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Auto Edits new &#8212; Scala IDE 0.1-SNAPSHOT documentation</title>
+    
+    <title>Auto Edits new &mdash; Scala IDE 0.1-SNAPSHOT documentation</title>
+    
     <link rel="stylesheet" href="../../../_static/resources/stylesheets/base.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/resources/stylesheets/bootstrap.css" type="text/css" />
@@ -13,14 +16,14 @@
     <link rel="stylesheet" href="../../../_static/resources/stylesheets/doc.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/resources/stylesheets/sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/resources/stylesheets/prettify.css" type="text/css" />
+    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../../',
         VERSION:     '0.1-SNAPSHOT',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
+        HAS_SOURCE:  true
       };
     </script>
     <script type="text/javascript" src="../../../_static/jquery.js"></script>
@@ -37,8 +40,8 @@
     <script type="text/javascript" src="../../../_static/resources/javascript/bootstrap-dropdown-app.js"></script>
     <script type="text/javascript" src="../../../_static/resources/javascript/contentsFix.js"></script>
     <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
-    <link rel="index" title="Index" href="../../../genindex.html" />
-    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="top" title="Scala IDE 0.1-SNAPSHOT documentation" href="../../../index.html" />
+    <link rel="up" title="Typing and Viewing" href="index.html" />
     <link rel="next" title="Formatting" href="formatting/index.html" />
     <link rel="prev" title="Code Templates" href="code-templates.html" /> 
   </head>
@@ -92,19 +95,19 @@
       <div class="span11 main-content">
         <div class="section" id="auto-edits-new">
 <h1>Auto Edits <span class="raw-html"><span class="label info">new</span></span></h1>
-<p>Auto Edits are nice little features that facilitate working with source code a lot. Normally, users don’t notice them when they are working because they do their work while users type. This stands in contrast to code completion which normally requires user interaction for its activation and even more user interaction to choose one of the completions that should be applied. Auto Edits are so lightweight that users never need to think about them because they always work the way they should.</p>
-<p>All available Auto Edits can be found in <code class="docutils literal"><span class="pre">Preferences</span> <span class="pre">→</span> <span class="pre">Scala</span> <span class="pre">→</span> <span class="pre">Editor</span></code>. They can be set or unset on the fly which means that an open editor applies any changes in the preferences immediately.</p>
+<p>Auto Edits are nice little features that facilitate working with source code a lot. Normally, users don&#8217;t notice them when they are working because they do their work while users type. This stands in contrast to code completion which normally requires user interaction for its activation and even more user interaction to choose one of the completions that should be applied. Auto Edits are so lightweight that users never need to think about them because they always work the way they should.</p>
+<p>All available Auto Edits can be found in <tt class="docutils literal"><span class="pre">Preferences</span> <span class="pre">→</span> <span class="pre">Scala</span> <span class="pre">→</span> <span class="pre">Editor</span></tt>. They can be set or unset on the fly which means that an open editor applies any changes in the preferences immediately.</p>
 <div class="section" id="surround-selection">
 <h2>Surround selection</h2>
-<p>This group of Auto Edits are applied when some text inside of the editor is selected and one of the keys that insert a <code class="docutils literal"><span class="pre">[</span></code>, <code class="docutils literal"><span class="pre">{</span></code>, <code class="docutils literal"><span class="pre">(</span></code> or a <code class="docutils literal"><span class="pre">&quot;</span></code> is pressed. In that case the whole selection is surrounded in the way the user wants it.</p>
-<p><strong>Example:</strong> When the text <code class="docutils literal"><span class="pre">Hello</span> <span class="pre">World</span></code> is selected and the <code class="docutils literal"><span class="pre">{</span></code> key is pressed, the text <code class="docutils literal"><span class="pre">{Hello</span> <span class="pre">World}</span></code> is inserted into the editor.</p>
+<p>This group of Auto Edits are applied when some text inside of the editor is selected and one of the keys that insert a <tt class="docutils literal"><span class="pre">[</span></tt>, <tt class="docutils literal"><span class="pre">{</span></tt>, <tt class="docutils literal"><span class="pre">(</span></tt> or a <tt class="docutils literal"><span class="pre">&quot;</span></tt> is pressed. In that case the whole selection is surrounded in the way the user wants it.</p>
+<p><strong>Example:</strong> When the text <tt class="docutils literal"><span class="pre">Hello</span> <span class="pre">World</span></tt> is selected and the <tt class="docutils literal"><span class="pre">{</span></tt> key is pressed, the text <tt class="docutils literal"><span class="pre">{Hello</span> <span class="pre">World}</span></tt> is inserted into the editor.</p>
 </div>
 <div class="section" id="auto-closing-braces">
 <h2>Auto closing braces</h2>
 <p>As the name tells, this Auto Edit automatically closes braces when one types an opening brace. Even better, this feature can decide if it is really necessary to close opening braces. The rules on when braces automatically are closed are deterministic and easy to understand:</p>
 <blockquote>
 <div><ul class="simple">
-<li>The first rule is that braces are only closed when there doesn’t already exist a closing brace</li>
+<li>The first rule is that braces are only closed when there doesn&#8217;t already exist a closing brace</li>
 <li>The second rule is that braces are not closed whenever the cursor is positioned directly before non white-space</li>
 </ul>
 </div></blockquote>
@@ -116,18 +119,15 @@
 </div></blockquote>
 <p>is unset - if this option is set braces are always closed regardless if it is useful or not.</p>
 <p><strong>Example:</strong> In Scala users often decide to change parentheses to braces because the latter can contain multiple expressions. In the following line of code</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">List</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span> <span class="nb">map</span> <span class="p">(</span><span class="n">x</span> <span class="o">=&gt;</span> <span class="n">x</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
-</pre></div>
+<div class="highlight-python"><pre>List(1, 2, 3) map (x =&gt; x+1)</pre>
 </div>
 <p>one can insert an opening brace directly before the opening parenthesis:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">List</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span> <span class="nb">map</span> <span class="p">{(</span><span class="n">x</span> <span class="o">=&gt;</span> <span class="n">x</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
-</pre></div>
+<div class="highlight-python"><pre>List(1, 2, 3) map {(x =&gt; x+1)</pre>
 </div>
 <p>In this case no closing brace in inserted. Instead the editor waits until the users has done all changes and presses enter. After that, the output may look something like this:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">List</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span> <span class="nb">map</span> <span class="p">{</span>
-  <span class="p">(</span><span class="n">x</span> <span class="o">=&gt;</span> <span class="n">x</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
-<span class="p">}</span>
-</pre></div>
+<div class="highlight-python"><pre>List(1, 2, 3) map {
+  (x =&gt; x+1)
+}</pre>
 </div>
 <p>where the closing brace and the code between the braces is inserted at the correct position as one expects it.</p>
 </div>
@@ -139,50 +139,44 @@
 <div class="section" id="auto-indentations">
 <h2>Auto indentations</h2>
 <p>This is definitely one of the most useful features an editor can have. It is another Auto Edit nobody notices its existence but everybody immediately notices its absence when it does not work the way it should. The possibility to automatically indent the cursor to the right position saves a lot of time while coding. Thus, it is obvious that a lot of effort is spent in this feature to maximize usability of the IDE.</p>
-<p><strong>Example:</strong> If one hits enter at the caret position (<code class="docutils literal"><span class="pre">^</span></code>) in this code snippet</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">i</span><span class="p">:</span> <span class="n">Int</span><span class="p">)</span> <span class="o">=</span> <span class="p">{</span><span class="o">^</span><span class="p">}</span>
-</pre></div>
+<p><strong>Example:</strong> If one hits enter at the caret position (<tt class="docutils literal"><span class="pre">^</span></tt>) in this code snippet</p>
+<div class="highlight-python"><pre>def f(i: Int) = {^}</pre>
 </div>
 <p>one will get this as result:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">i</span><span class="p">:</span> <span class="n">Int</span><span class="p">)</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="o">^</span>
-<span class="p">}</span>
-</pre></div>
+<div class="highlight-python"><pre>def f(i: Int) = {
+  ^
+}</pre>
 </div>
 <p>Auto indentation also works inside multi line comments and Scaladoc:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">/**</span>
- <span class="o">*</span>         <span class="n">indented</span> <span class="n">text</span><span class="o">^</span>
- <span class="o">*/</span>
-</pre></div>
+<div class="highlight-python"><pre>/**
+ *         indented text^
+ */</pre>
 </div>
 <p>If one hits enter at the caret position this is the result:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">/**</span>
- <span class="o">*</span>         <span class="n">indented</span> <span class="n">text</span>
- <span class="o">*</span>         <span class="o">^</span>
- <span class="o">*/</span>
-</pre></div>
+<div class="highlight-python"><pre>/**
+ *         indented text
+ *         ^
+ */</pre>
 </div>
-<p>This feature is always active and can’t be disabled.</p>
+<p>This feature is always active and can&#8217;t be disabled.</p>
 </div>
 <div class="section" id="smart-semicolons">
 <h2>Smart semicolons</h2>
-<p>Smart semicolons allow to place an inserted semicolon at the end of a line instead of the position where the cursor is placed. This is useful to jump over closing parenthesis with one keystroke. For example if one enters the semicolon at the caret position (<code class="docutils literal"><span class="pre">^</span></code>) in this example</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">a</span><span class="p">(</span><span class="n">b</span><span class="p">(</span><span class="n">c</span><span class="p">(</span><span class="n">d</span><span class="p">(</span><span class="n">e</span><span class="o">^</span><span class="p">))))</span>
-</pre></div>
+<p>Smart semicolons allow to place an inserted semicolon at the end of a line instead of the position where the cursor is placed. This is useful to jump over closing parenthesis with one keystroke. For example if one enters the semicolon at the caret position (<tt class="docutils literal"><span class="pre">^</span></tt>) in this example</p>
+<div class="highlight-python"><pre>a(b(c(d(e^))))</pre>
 </div>
 <p>this is the result:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">a</span><span class="p">(</span><span class="n">b</span><span class="p">(</span><span class="n">c</span><span class="p">(</span><span class="n">d</span><span class="p">(</span><span class="n">e</span><span class="p">))));</span><span class="o">^</span>
-</pre></div>
+<div class="highlight-python"><pre>a(b(c(d(e))));^</pre>
 </div>
 <p>If it is intended to place a semicolon in the middle of a line one can hit backspace to move the semicolon back to its original position.</p>
-<p>This feature is inherited from the Java editor, thus at the moment it can only be configured under <code class="docutils literal"><span class="pre">Java</span> <span class="pre">→</span> <span class="pre">Editor</span> <span class="pre">→</span> <span class="pre">Typing</span> <span class="pre">→</span> <span class="pre">Automatically</span> <span class="pre">insert</span> <span class="pre">at</span> <span class="pre">correct</span> <span class="pre">position</span></code>.</p>
+<p>This feature is inherited from the Java editor, thus at the moment it can only be configured under <tt class="docutils literal"><span class="pre">Java</span> <span class="pre">→</span> <span class="pre">Editor</span> <span class="pre">→</span> <span class="pre">Typing</span> <span class="pre">→</span> <span class="pre">Automatically</span> <span class="pre">insert</span> <span class="pre">at</span> <span class="pre">correct</span> <span class="pre">position</span></tt>.</p>
 </div>
 <div class="section" id="automatic-escapes">
 <h2>Automatic escapes</h2>
 <p>In string or character literals it can be useful to automatically escape all the signs that can lead to compiler errors if they are inserted. Inside of string literals this could be the insertion of a quotation mark because the compiler would accidentally treat it as the closing part of the literal. To avoid such compiler errors there are two options, which - when activated - prefix such signs with a backslash to escape them. The two options are</p>
 <blockquote>
 <div><ul class="simple">
-<li>Automatically escape ” signs in string literals</li>
+<li>Automatically escape &#8221; signs in string literals</li>
 <li>Automatically escape \ signs in string and character literals</li>
 </ul>
 </div></blockquote>
@@ -198,30 +192,26 @@
 </div></blockquote>
 <p>If a multi line or Scaladoc comment is already closed they are expanded automatically if one inserts a new line. This means that each new line is automatically indented to the position of the first sign of the previous line. If the previous line starts with a star, then this star is included too, otherwise not.</p>
 <p><strong>Example:</strong> The previous line starts with a star:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">/*</span>
- <span class="o">*</span> <span class="n">a</span> <span class="n">multi</span> <span class="n">line</span> <span class="n">comment</span><span class="o">^</span>
- <span class="o">*/</span>
-</pre></div>
+<div class="highlight-python"><pre>/*
+ * a multi line comment^
+ */</pre>
 </div>
-<p>If one hits enter at the caret position (<code class="docutils literal"><span class="pre">^</span></code>) the comment is expanded to:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">/*</span>
- <span class="o">*</span> <span class="n">a</span> <span class="n">multi</span> <span class="n">line</span> <span class="n">comment</span>
- <span class="o">*</span> <span class="o">^</span>
- <span class="o">*/</span>
-</pre></div>
+<p>If one hits enter at the caret position (<tt class="docutils literal"><span class="pre">^</span></tt>) the comment is expanded to:</p>
+<div class="highlight-python"><pre>/*
+ * a multi line comment
+ * ^
+ */</pre>
 </div>
-<p>On the other side if the previous line doesn’t start with a star</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">/*</span>
-   <span class="n">multi</span> <span class="n">line</span> <span class="n">comment</span><span class="o">^</span>
- <span class="o">*/</span>
-</pre></div>
+<p>On the other side if the previous line doesn&#8217;t start with a star</p>
+<div class="highlight-python"><pre>/*
+   multi line comment^
+ */</pre>
 </div>
 <p>the result is the following:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">/*</span>
-   <span class="n">multi</span> <span class="n">line</span> <span class="n">comment</span>
-   <span class="o">^</span>
- <span class="o">*/</span>
-</pre></div>
+<div class="highlight-python"><pre>/*
+   multi line comment
+   ^
+ */</pre>
 </div>
 </div>
 </div>

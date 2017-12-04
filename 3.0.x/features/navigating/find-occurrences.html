@@ -2,10 +2,13 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
+
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Find Occurrences new plug-in &#8212; Scala IDE 0.1-SNAPSHOT documentation</title>
+    
+    <title>Find Occurrences new plug-in &mdash; Scala IDE 0.1-SNAPSHOT documentation</title>
+    
     <link rel="stylesheet" href="../../../_static/resources/stylesheets/base.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/resources/stylesheets/bootstrap.css" type="text/css" />
@@ -13,14 +16,14 @@
     <link rel="stylesheet" href="../../../_static/resources/stylesheets/doc.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/resources/stylesheets/sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/resources/stylesheets/prettify.css" type="text/css" />
+    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../../',
         VERSION:     '0.1-SNAPSHOT',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
+        HAS_SOURCE:  true
       };
     </script>
     <script type="text/javascript" src="../../../_static/jquery.js"></script>
@@ -37,8 +40,8 @@
     <script type="text/javascript" src="../../../_static/resources/javascript/bootstrap-dropdown-app.js"></script>
     <script type="text/javascript" src="../../../_static/resources/javascript/contentsFix.js"></script>
     <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
-    <link rel="index" title="Index" href="../../../genindex.html" />
-    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="top" title="Scala IDE 0.1-SNAPSHOT documentation" href="../../../index.html" />
+    <link rel="up" title="Navigating" href="index.html" />
     <link rel="next" title="Type Hierarchy new plug-in" href="type-hierarchy.html" />
     <link rel="prev" title="Tasks View" href="tasks-view.html" /> 
   </head>
@@ -96,7 +99,7 @@
 <p class="first admonition-title">Note</p>
 <p class="last">This feature requires the <a class="reference external" href="http://github.com/scala-ide/scala-search">Scala Search plugin</a>. In the future this will be merged with the IDE</p>
 </div>
-<p>It is possible to find all occurrences of a specific Scala entity by selecting the entity in the editor and press the shortcut <code class="docutils literal"><span class="pre">Ctrl-Alt-Shift-R</span></code> (or <code class="docutils literal"><span class="pre">Cmd-Alt-Shift-R</span></code> on Mac). Currently, find references only works for members, i.e., methods and fields.</p>
+<p>It is possible to find all occurrences of a specific Scala entity by selecting the entity in the editor and press the shortcut <tt class="docutils literal"><span class="pre">Ctrl-Alt-Shift-R</span></tt> (or <tt class="docutils literal"><span class="pre">Cmd-Alt-Shift-R</span></tt> on Mac). Currently, find references only works for members, i.e., methods and fields.</p>
 <p><em>It currently only monitors file changes that happen inside of Eclipse, so if a file is changed outside of Eclipse (e.g. by switching git branch) it might not find the correct occurrence in that document. Refreshing the workspace should help, if not, delete the indices (&lt;workspace&gt;/.metadata/.plugins/org.scala.tools.eclipse.search/lucene-indices). This will be fixed in the next release, see the relevant</em> <a class="reference external" href="https://scala-ide-portfolio.assembla.com/spaces/scala-ide/tickets/1001608#/activity/ticket:">ticket</a>. <em>for more information</em></p>
 <img alt="../../../_images/scala-search-find-occurrences-01.png" src="../../../_images/scala-search-find-occurrences-01.png" />
 </div>

@@ -2,10 +2,13 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
+
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Expression evaluator new &#8212; Scala IDE 0.1-SNAPSHOT documentation</title>
+    
+    <title>Expression evaluator new &mdash; Scala IDE 0.1-SNAPSHOT documentation</title>
+    
     <link rel="stylesheet" href="../../_static/resources/stylesheets/base.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/resources/stylesheets/bootstrap.css" type="text/css" />
@@ -13,14 +16,14 @@
     <link rel="stylesheet" href="../../_static/resources/stylesheets/doc.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/resources/stylesheets/sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/resources/stylesheets/prettify.css" type="text/css" />
+    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
         VERSION:     '0.1-SNAPSHOT',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
+        HAS_SOURCE:  true
       };
     </script>
     <script type="text/javascript" src="../../_static/jquery.js"></script>
@@ -37,8 +40,8 @@
     <script type="text/javascript" src="../../_static/resources/javascript/bootstrap-dropdown-app.js"></script>
     <script type="text/javascript" src="../../_static/resources/javascript/contentsFix.js"></script>
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
-    <link rel="index" title="Index" href="../../genindex.html" />
-    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="top" title="Scala IDE 0.1-SNAPSHOT documentation" href="../../index.html" />
+    <link rel="up" title="Welcome to the Scala IDE Developer Documentation" href="../index.html" />
     <link rel="next" title="Codebase" href="../code/code.html" />
     <link rel="prev" title="The Scala Presentation Compiler" href="presentation-compiler.html" /> 
   </head>
@@ -90,32 +93,32 @@
       <div class="span11 main-content">
         <div class="section" id="expression-evaluator-new">
 <h1>Expression evaluator <span class="raw-html"><span class="label info">new</span></span></h1>
-<p>Scala debugger uses new expression evaluator, which translates user code into invocations of <code class="docutils literal"><span class="pre">JDI</span></code> remote calls. This allows evaluation of expression in context of some breakpoint, with access to local variables and methods.</p>
+<p>Scala debugger uses new expression evaluator, which translates user code into invocations of <tt class="docutils literal"><span class="pre">JDI</span></tt> remote calls. This allows evaluation of expression in context of some breakpoint, with access to local variables and methods.</p>
 <div class="section" id="expression-evaluation">
 <span id="expression-evaluator"></span><h2>Expression evaluation</h2>
 <div class="section" id="overview">
 <h3>Overview</h3>
-<p>Main entry point into expression evaluation in Scala IDE debugger is <code class="docutils literal"><span class="pre">ExpressionManager</span></code> object which takes care of holding debug session state, and evaluating expressions in GUI friendly way.</p>
-<p>Expression evaluation is done in <code class="docutils literal"><span class="pre">ExpressionEvaluator</span></code> which parses the code using <code class="docutils literal"><span class="pre">ToolBox</span></code>, applies several transformations to it and then compiles the result with <code class="docutils literal"><span class="pre">ToolBox</span></code>.</p>
+<p>Main entry point into expression evaluation in Scala IDE debugger is <tt class="docutils literal"><span class="pre">ExpressionManager</span></tt> object which takes care of holding debug session state, and evaluating expressions in GUI friendly way.</p>
+<p>Expression evaluation is done in <tt class="docutils literal"><span class="pre">ExpressionEvaluator</span></tt> which parses the code using <tt class="docutils literal"><span class="pre">ToolBox</span></tt>, applies several transformations to it and then compiles the result with <tt class="docutils literal"><span class="pre">ToolBox</span></tt>.</p>
 </div>
 <div class="section" id="transformation-phases">
 <h3>Transformation phases</h3>
-<p>Before evaluation multiple AST transformations (called <code class="docutils literal"><span class="pre">phases</span></code>) are performed.</p>
+<p>Before evaluation multiple AST transformations (called <tt class="docutils literal"><span class="pre">phases</span></tt>) are performed.</p>
 <p>Those are split into 3 groups:</p>
 <ul class="simple">
-<li>First few of them are necessary to make user-defined code type-check. Unbound variables, lambdas, usages of <code class="docutils literal"><span class="pre">this</span></code> and <code class="docutils literal"><span class="pre">super</span></code> etc. are mocked.</li>
-<li>Next comes type-check (from <code class="docutils literal"><span class="pre">ToolBox</span></code>), which expands implicits, assigns types and make some other Scala magic.</li>
-<li>After type-check code is transformed further to allow remote execution. All mocks and method calls are replaced with code mimicking their behavior using <code class="docutils literal"><span class="pre">JDI</span></code> calls to debugged jvm.</li>
+<li>First few of them are necessary to make user-defined code type-check. Unbound variables, lambdas, usages of <tt class="docutils literal"><span class="pre">this</span></tt> and <tt class="docutils literal"><span class="pre">super</span></tt> etc. are mocked.</li>
+<li>Next comes type-check (from <tt class="docutils literal"><span class="pre">ToolBox</span></tt>), which expands implicits, assigns types and make some other Scala magic.</li>
+<li>After type-check code is transformed further to allow remote execution. All mocks and method calls are replaced with code mimicking their behavior using <tt class="docutils literal"><span class="pre">JDI</span></tt> calls to debugged jvm.</li>
 </ul>
 </div>
 <div class="section" id="jdiproxy">
 <h3>JdiProxy</h3>
-<p>Every type used in evaluated expression is replaced with <code class="docutils literal"><span class="pre">JdiProxy</span></code>. Those proxies uses <code class="docutils literal"><span class="pre">scala.Dynamic</span></code> trait to intercept all method calls and proxy them to debugged jvm.</p>
-<p>Because of different handling of arrays, primitives and <code class="docutils literal"><span class="pre">String</span></code>s on jvm, we had to create a separate proxy flavors for each of those.</p>
+<p>Every type used in evaluated expression is replaced with <tt class="docutils literal"><span class="pre">JdiProxy</span></tt>. Those proxies uses <tt class="docutils literal"><span class="pre">scala.Dynamic</span></tt> trait to intercept all method calls and proxy them to debugged jvm.</p>
+<p>Because of different handling of arrays, primitives and <tt class="docutils literal"><span class="pre">String</span></tt>s on jvm, we had to create a separate proxy flavors for each of those.</p>
 </div>
 <div class="section" id="jdicontext">
 <h3>JdiContext</h3>
-<p>All methods related to debugged jvm are encapsulated within a <code class="docutils literal"><span class="pre">JdiContext</span></code> instance. It provides abilities to:</p>
+<p>All methods related to debugged jvm are encapsulated within a <tt class="docutils literal"><span class="pre">JdiContext</span></tt> instance. It provides abilities to:</p>
 <ul class="simple">
 <li>run methods on debugged jvm,</li>
 <li>access types and values in context of debugged jvm,</li>
@@ -127,7 +130,7 @@
 </div>
 <div class="section" id="conditional-breakpoints">
 <h2>Conditional breakpoints</h2>
-<p>Support for conditional breakpoints is placed in <code class="docutils literal"><span class="pre">ConditionManager</span></code> and relies on <code class="docutils literal"><span class="pre">ExpressionManager</span></code> to do all heavy lifting.</p>
+<p>Support for conditional breakpoints is placed in <tt class="docutils literal"><span class="pre">ConditionManager</span></tt> and relies on <tt class="docutils literal"><span class="pre">ExpressionManager</span></tt> to do all heavy lifting.</p>
 </div>
 </div>
 
