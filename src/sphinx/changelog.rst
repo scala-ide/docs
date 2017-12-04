@@ -4,6 +4,15 @@ Changelog
 4.7.x
 -----
 
+4.7.1 RC2 (2017-11-30)
+......................
+
+- Fixes incompatibility of presentation reporter
+
+The following changes belong to the scala-worksheet part:
+
+- Fixes problem with non-existing syntetic file
+
 4.7.1 RC1 (2017-11-15)
 ......................
 
