@@ -4,6 +4,18 @@ Changelog
 4.7.x
 -----
 
+4.7.1 RC3 (2018-01-02)
+......................
+
+- Amends Resident Compiler. 
+- Adds error handling to resident compiler. 
+- Enables worksheet macro expansion. Makes worksheet more stabble.
+
+The following changes belong to the scala-worksheet part:
+
+- Amends worksheet implementation. 
+- Adds stable worksheet.
+
 4.7.1 RC2 (2017-11-30)
 ......................
 
